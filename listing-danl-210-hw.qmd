@@ -1,0 +1,13 @@
+---
+title: DANL 210 - Homework
+date-modified: ""
+listing:
+  contents: "danl-hw/*.qmd"
+  type: table
+  fields: [title, subtitle, date]
+  sort: "date desc"
+  sort-ui: false
+  page-size: 36
+  
+comments: false
+---

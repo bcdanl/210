@@ -1,0 +1,590 @@
+[
+  {
+    "objectID": "listing-danl-210-hw.html",
+    "href": "listing-danl-210-hw.html",
+    "title": "DANL 210 - Homework",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 2\n\n\nDANL 210\n\n\nJanuary 14, 2024\n\n\n\n\nHomework Assignment 1\n\n\nDANL 210\n\n\nJanuary 14, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html",
+    "href": "danl-hw/danl-210-hw-1.html",
+    "title": "Homework Assignment 1",
+    "section": "",
+    "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nUse your working directory with the subfolder, data, so that the relative pathname of CSV files in the subfolder data is sufficient to import the CSV files."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q1a",
+    "href": "danl-hw/danl-210-hw-1.html#q1a",
+    "title": "Homework Assignment 1",
+    "section": "Q1a",
+    "text": "Q1a\n\nCalculate the simple difference between the probability of survival when passengers are first-class and the probability of survival when they are not.\n\n\n# Count the number of passengers in each class and return the count in descending order\ntitanic_1[['pclass']].value_counts()\n\n# Count the number of passengers who survived and who didn't and return the count in descending order\ntitanic_1[['survived']].value_counts()\n\n# Add a new column 'd' to the titanic_1 dataframe and set all values to 0\ntitanic_1['d'] = 0\n\n# For rows where the 'pclass' column is '1st class', set the value of the 'd' column to 1\ntitanic_1.loc[titanic_1['pclass']=='1st class', 'd'] = 1\n\n# Add a new column 'survived_d' to the titanic_1 DataFrame and set all values to 0\ntitanic_1['survived_d'] = 0\n\n# For rows where the 'survived' column is 'yes', set the value of the 'survived_d' column to 1\ntitanic_1.loc[titanic_1['survived']=='yes', 'survived_d'] = 1\n\n# Compute the mean of 'survived_d' for rows where 'd' is 0\ne_y0 = titanic_1.loc[titanic_1['d']==0, 'survived_d'].mean()\n\n# Compute the mean of 'survived_d' for rows where 'd' is 1\ne_y1 = titanic_1.loc[titanic_1['d']==1, 'survived_d'].mean()\n\n# Compute the SDP (so called treatment effect) by subtracting the mean of 'survived_d' where 'd' is 0 from the mean where 'd' is 1\nSDP = e_y1 - e_y0\n\n# Return the value of SDP\nSDP\n\n0.3152436786584735"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q1b",
+    "href": "danl-hw/danl-210-hw-1.html#q1b",
+    "title": "Homework Assignment 1",
+    "section": "Q1b",
+    "text": "Q1b\n\nHow much does the probability of survival increase for first-class passengers relative to those who are not first-class passengers?\nSDP tells us what would happen to the probability of survival if non-first-class passengers were first-class.\n\nIn other words, SDP means the effect of being the first-class on the probability of survival from the Titanic Disaster."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q1c",
+    "href": "danl-hw/danl-210-hw-1.html#q1c",
+    "title": "Homework Assignment 1",
+    "section": "Q1c",
+    "text": "Q1c\n\nConsider the probability of survival in titanic_2.csv.\n\n\ntitanic_2 = pd.read_csv('https://bcdanl.github.io/data/titanic_2.csv')\n\n\ntitanic_2.head()\n\n\n\n\n\n\n\n\npclass\nsurvived\nsex\nage\n\n\n\n\n0\n1st class\nyes\nfemale\n29.0000\n\n\n1\n1st class\nyes\nmale\n0.9167\n\n\n2\n1st class\nno\nfemale\n2.0000\n\n\n3\n1st class\nno\nmale\n30.0000\n\n\n4\n1st class\nno\nfemale\n25.0000\n\n\n\n\n\n\n\n\ntitanic_2.describe()\n\n\n\n\n\n\n\n\nage\n\n\n\n\ncount\n1046.000000\n\n\nmean\n29.881135\n\n\nstd\n14.413500\n\n\nmin\n0.166700\n\n\n25%\n21.000000\n\n\n50%\n28.000000\n\n\n75%\n39.000000\n\n\nmax\n80.000000\n\n\n\n\n\n\n\n\nAfter stratifying on gender and age, what happens to the difference in the probabilities of survival between first-class passengers and non-first-class passengers.\nExplain in your own words what stratifying on gender and age did for this difference in probabilities of survival between first-class passengers and non-first-class passengers.\n\n\n# Get count of passengers by pclass\ntitanic_2[['pclass']].value_counts()\n\n# Get count of passengers who survived or not\ntitanic_2[['survived']].value_counts()\n\n# Get count of passengers by gender\ntitanic_2[['sex']].value_counts()\n\n# Get count of passengers by age\ntitanic_2[['age']].value_counts()\n\nage    \n24.0000    47\n22.0000    43\n21.0000    41\n30.0000    40\n18.0000    39\n           ..\n20.5000     1\n11.5000     1\n0.6667      1\n0.4167      1\n80.0000     1\nName: count, Length: 98, dtype: int64\n\n\n\ntitanic_2.groupby('sex').describe()\n\n\n\n\n\n\n\n\nage\n\n\n\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\n\n\nsex\n\n\n\n\n\n\n\n\n\n\n\n\nfemale\n388.0\n28.687071\n14.576995\n0.1667\n19.0\n27.0\n38.0\n76.0\n\n\nmale\n658.0\n30.585233\n14.280571\n0.3333\n21.0\n28.0\n39.0\n80.0\n\n\n\n\n\n\n\n\n# Create a new column 'd' and set its value to 0 for all rows\ntitanic_2['d'] = 0\n\n# Set the value of column 'd' to 1 for rows where pclass is '1st class'\ntitanic_2.loc[titanic_2['pclass']=='1st class', 'd'] = 1\n\n# Create a new column 'survived_d' and set its value to 0 for all rows\ntitanic_2['survived_d'] = 0\n\n# Set the value of column 'survived_d' to 1 for rows where survived is 'yes'\ntitanic_2.loc[titanic_2['survived']=='yes', 'survived_d'] = 1\n\n# Create a new column 'sex_d' and set its value to 0 for all rows\ntitanic_2['sex_d'] = 0\n\n# Set the value of column 'sex_d' to 1 for rows where sex is 'male'\ntitanic_2.loc[titanic_2['sex']=='male', 'sex_d'] = 1\n\n# Create a new column 'AgeGroup' and set its value to 0 for all rows\ntitanic_2['AgeGroup'] = 0\n\n# Set the value of column 'AgeGroup' to 1 for rows where age is greater than or equal to 18\ntitanic_2.loc[titanic_2['age'] &gt;= 18, 'AgeGroup'] = 1\n\n\ntitanic_2.groupby('AgeGroup').describe()\n\n\n\n\n\n\n\n\nage\nd\n...\nsurvived_d\nsex_d\n\n\n\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\ncount\nmean\n...\n75%\nmax\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\n\n\nAgeGroup\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n154.0\n9.101732\n6.015429\n0.1667\n3.0\n9.0\n15.75\n17.0\n418.0\n0.129187\n...\n1.0\n1.0\n418.0\n0.638756\n0.480937\n0.0\n0.0\n1.0\n1.0\n1.0\n\n\n1\n892.0\n33.468610\n12.244544\n18.0000\n24.0\n30.0\n41.00\n80.0\n892.0\n0.301570\n...\n1.0\n1.0\n892.0\n0.645740\n0.478557\n0.0\n0.0\n1.0\n1.0\n1.0\n\n\n\n\n2 rows × 32 columns\n\n\n\n\ntitanic_2.groupby(['sex', 'AgeGroup']).describe()\n\n\n\n\n\n\n\n\n\nage\nd\n...\nsurvived_d\nsex_d\n\n\n\n\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\ncount\nmean\n...\n75%\nmax\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\n\n\nsex\nAgeGroup\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfemale\n0\n72.0\n9.015047\n5.974978\n0.1667\n3.00\n9.0\n15.0\n17.0\n150.0\n0.126667\n...\n1.0\n1.0\n150.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n1\n316.0\n33.169304\n12.016747\n18.0000\n23.75\n30.0\n40.0\n76.0\n316.0\n0.395570\n...\n1.0\n1.0\n316.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\nmale\n0\n82.0\n9.177845\n6.086437\n0.3333\n3.00\n9.0\n16.0\n17.0\n267.0\n0.131086\n...\n0.0\n1.0\n267.0\n1.0\n0.0\n1.0\n1.0\n1.0\n1.0\n1.0\n\n\n1\n576.0\n33.632812\n12.375016\n18.0000\n24.00\n30.0\n41.0\n80.0\n576.0\n0.250000\n...\n0.0\n1.0\n576.0\n1.0\n0.0\n1.0\n1.0\n1.0\n1.0\n1.0\n\n\n\n\n4 rows × 32 columns\n\n\n\n\n# Create a new column 's' and set its value to 0 for all rows\ntitanic_2['s'] = 0 \n\n# Set the value of column 's' based on gender and age group\ntitanic_2.loc[(titanic_2.sex_d == 0) & (titanic_2.AgeGroup == 1), 's'] = 1\ntitanic_2.loc[(titanic_2.sex_d == 0) & (titanic_2.AgeGroup == 0), 's'] = 2\ntitanic_2.loc[(titanic_2.sex_d == 1) & (titanic_2.AgeGroup == 1), 's'] = 3\ntitanic_2.loc[(titanic_2.sex_d == 1) & (titanic_2.AgeGroup == 0), 's'] = 4\n\n# Get the number of observations where d is 0\nobs = titanic_2.loc[titanic_2.d == 0].shape[0]\n\n# Define a function to calculate weighted average effect\ndef weighted_avg_effect(df):\n  \n  # Calculate the difference in survival rates between the treatment and control groups\n    diff = ( df[ df.d == 1 ].survived_d.mean() - \n             df[ df.d == 0 ].survived_d.mean() )\n  \n  # Calculate the weight assigned to the treatment group\n    weight = df[ df.d == 0 ].shape[0] / obs\n    \n  # Calculate the weighted average effect\n    return diff * weight\n\n\n# Apply the weighted_avg_effect function to each group in the data frame grouped by the s variable\nSDP2 = titanic_2.groupby('s').apply( weighted_avg_effect )\n\n# Calculate the weighted average effect of treatment for the entire population\nWSDP = SDP2.sum()\n\nWSDP\n\n0.24695099450754543\n\n\n\nThe probability of survival for the first-class passengers can be different across gender and age groups.\n\nIn other words, the effect of being the first-class on the probability of survival from the Titanic Disaster can be different across genders and age groups.\n\nWSDP takes into account the difference in the effect of being first-class across gender and age groups by weighting.\n\n\nWSDP - SDP\n\n-0.0682926841509281\n\n\n\nThe probability of survival for first-class after taking into account gender and age (WSDP) is less than that (SDP) which does presumably assume that characteristics of passengers such as gender and ages is related with the probability of survival."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2a",
+    "href": "danl-hw/danl-210-hw-1.html#q2a",
+    "title": "Homework Assignment 1",
+    "section": "Q2a",
+    "text": "Q2a\n\nHow many players have been recorded?\n\n\n# the number of unique players\nq2a = nhl1617['id_player'].nunique()  \n\nq2a\n\n888"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2b.",
+    "href": "danl-hw/danl-210-hw-1.html#q2b.",
+    "title": "Homework Assignment 1",
+    "section": "Q2b.",
+    "text": "Q2b.\n\nA column points (“P”) is missing in the data. The number of points of a player is defined as the sum of his goals (“G”) and assists (“A”).\nAdd the point column “P” to your DataFrame.\n\n\n# create a new column called 'P' in the nhl1617 dataframe that is the sum of the 'G' and 'A' columns\nq2b = nhl1617.assign(P = nhl1617['G'] + nhl1617['A'])\n\nq2b\n\n\n\n\n\n\n\n\nid_player\nBorn\nCity\nCntry\nNat\nHt\nWt\nLast_Name\nFirst_Name\nPosition\nTeam\nGP\nG\nA\nTOI\nTOI_GP\nP\n\n\n\n\n0\n1\n30.04.1988\nHamilton\nCAN\nCAN\n69\n170\nAbbott\nSpencer\nLW\nCHI\n1\n0\n0\n514\n8.57\n0\n\n\n1\n2\n25.02.1987\nMuskegon\nUSA\nUSA\n74\n218\nAbdelkader\nJustin\nLW/RW\nDET\n64\n7\n14\n63969\n16.65\n21\n\n\n2\n3\n23.09.1993\nStockholm\nSWE\nSWE\n71\n196\nAberg\nPontus\nLW\nNSH\n15\n1\n1\n11102\n12.33\n2\n\n\n3\n4\n01.12.1991\nJohnston\nUSA\nUSA\n70\n208\nAcciari\nNoel\nC\nBOS\n29\n2\n3\n18047\n10.23\n5\n\n\n4\n5\n30.04.1992\nMorristown\nUSA\nUSA\n72\n202\nAgostino\nKenny\nLW\nSTL\n7\n1\n2\n5366\n12.78\n3\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n883\n884\n18.04.1993\nHuddinge\nSWE\nSWE\n74\n215\nZibanejad\nMika\nC/RW\nNYR\n56\n14\n23\n57362\n17.07\n37\n\n\n884\n885\n01.09.1987\nToronto\nCAN\nCAN\n71\n180\nZolnierczyk\nHarry\nLW\nNSH\n24\n2\n2\n12776\n8.87\n4\n\n\n885\n886\n01.09.1987\nOslo\nNOR\nNOR\n67\n179\nZuccarello\nMats\nRW/C/LW\nNYR\n80\n15\n44\n90378\n18.83\n59\n\n\n886\n887\n16.01.1992\nNewport Beach\nUSA\nUSA\n71\n187\nZucker\nJason\nLW/RW\nMIN\n79\n22\n25\n72455\n15.28\n47\n\n\n887\n888\n15.05.1995\nSt. Petersburg\nRUS\nRUS\n73\n224\nZykov\nValentin\nLW\nCAR\n2\n1\n0\n750\n6.25\n1\n\n\n\n\n888 rows × 17 columns"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2c.",
+    "href": "danl-hw/danl-210-hw-1.html#q2c.",
+    "title": "Homework Assignment 1",
+    "section": "Q2c.",
+    "text": "Q2c.\n\nWho is the top scorer in terms of points?\n\n\n# Sort the DataFrame q2b by the column 'P' in descending order\nq2c = q2b.sort_values(by= 'P', ascending=False)\n\nq2c\n\n\n\n\n\n\n\n\nid_player\nBorn\nCity\nCntry\nNat\nHt\nWt\nLast_Name\nFirst_Name\nPosition\nTeam\nGP\nG\nA\nTOI\nTOI_GP\nP\n\n\n\n\n509\n510\n13.01.1997\nRichmond Hill\nCAN\nCAN\n73\n200\nMcDavid\nConnor\nC\nEDM\n82\n30\n70\n103967\n21.13\n100\n\n\n149\n150\n07.08.1987\nCole Harbour\nCAN\nCAN\n71\n200\nCrosby\nSidney\nC\nPIT\n75\n44\n45\n89450\n19.88\n89\n\n\n389\n390\n19.11.1988\nBuffalo\nUSA\nUSA\n71\n177\nKane\nPatrick\nRW/C\nCHI\n82\n34\n55\n105263\n21.40\n89\n\n\n21\n22\n23.11.1987\nGävle\nSWE\nSWE\n73\n213\nBackstrom\nNicklas\nC\nWSH\n82\n23\n63\n89839\n18.27\n86\n\n\n426\n427\n17.06.1993\nMaykop\nRUS\nRUS\n71\n178\nKucherov\nNikita\nRW\nT.B\n74\n40\n45\n86320\n19.43\n85\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n512\n513\n22.05.1994\nHamilton\nCAN\nCAN\n74\n203\nMcEneny\nEvan\nD\nVAN\n1\n0\n0\n908\n15.13\n0\n\n\n520\n521\n22.02.1993\nLangley\nCAN\nCAN\n74\n214\nMcNeill\nMark\nC/RW\nDAL\n1\n0\n0\n829\n13.82\n0\n\n\n781\n782\n22.04.1994\nSaskatoon\nCAN\nCAN\n72\n204\nStephenson\nChandler\nC\nWSH\n4\n0\n0\n2131\n8.88\n0\n\n\n523\n524\n10.12.1992\nPlantation\nUSA\nUSA\n78\n225\nMegna\nJaycob\nD\nANA\n1\n0\n0\n920\n15.33\n0\n\n\n0\n1\n30.04.1988\nHamilton\nCAN\nCAN\n69\n170\nAbbott\nSpencer\nLW\nCHI\n1\n0\n0\n514\n8.57\n0\n\n\n\n\n888 rows × 17 columns"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2d.",
+    "href": "danl-hw/danl-210-hw-1.html#q2d.",
+    "title": "Homework Assignment 1",
+    "section": "Q2d.",
+    "text": "Q2d.\n\nHow many Russian (non-goalie) players had some ice time in there 2016/2017 regular season?\nHint: Nationality of a player can be found in “Nat”. Russians are indicated by “RUS”.\n\n\n# the number of rows in the 'nhl1617' dataframe where the value in the 'Nat' column is equal to 'RUS', and returns the count as output.\nq2d = len( nhl1617[nhl1617['Nat'] == 'RUS'] )\n\nq2d\n\n38"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2e.",
+    "href": "danl-hw/danl-210-hw-1.html#q2e.",
+    "title": "Homework Assignment 1",
+    "section": "Q2e.",
+    "text": "Q2e.\n\nWhat are their names?\n\n\n# Select rows where the 'Nat' column equals 'RUS', then select only the 'Last_Name' and 'First_Name' columns\nq2e = nhl1617[ nhl1617['Nat'] == 'RUS' ][ ['Last_Name', 'First_Name'] ]\n\nq2e\n\n\n\n\n\n\n\n\nLast_Name\nFirst_Name\n\n\n\n\n11\nAnisimov\nArtem\n\n\n27\nBarbashev\nIvan\n\n\n87\nBuchnevich\nPavel\n\n\n90\nBurmistrov\nAlex\n\n\n207\nEmelin\nAlexei\n\n\n272\nGoldobin\nNikolay\n\n\n293\nGrigorenko\nMikhail\n\n\n303\nGurianov\nDenis\n\n\n385\nKalinin\nSergey\n\n\n386\nKamenev\nVladislav\n\n\n426\nKucherov\nNikita\n\n\n429\nKulemin\nNikolay\n\n\n430\nKulikov\nDmitry\n\n\n433\nKuznetsov\nEvgeny\n\n\n473\nLyubimov\nRoman\n\n\n480\nMalkin\nEvgeni\n\n\n486\nMarchenko\nAlexey\n\n\n489\nMarkov\nAndrei\n\n\n557\nNamestnikov\nVladislav\n\n\n566\nNesterov\nNikita\n\n\n595\nOrlov\nDmitry\n\n\n600\nOvechkin\nAlex\n\n\n607\nPanarin\nArtemi\n\n\n646\nProvorov\nIvan\n\n\n657\nRadulov\nAlex\n\n\n707\nScherbak\nNikita\n\n\n724\nSergachev\nMikhail\n\n\n749\nSlepyshev\nAnton\n\n\n763\nSoshnikov\nNikita\n\n\n799\nSvechnikov\nEvgeny\n\n\n802\nTarasenko\nVladimir\n\n\n819\nTolchinsky\nSergey\n\n\n824\nTryamkin\nNikita\n\n\n828\nTyutin\nFedor\n\n\n875\nYakupov\nNail\n\n\n878\nZadorov\nNikita\n\n\n879\nZaitsev\nNikita\n\n\n887\nZykov\nValentin"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2f.",
+    "href": "danl-hw/danl-210-hw-1.html#q2f.",
+    "title": "Homework Assignment 1",
+    "section": "Q2f.",
+    "text": "Q2f.\n\nWho performed best among the Russian players in terms of points (“P”)?\n\n\n# Select only the rows where 'Nat' column is 'RUS'\n# Then sort these rows in descending order based on the values in the 'P' column\nq2f = q2b[q2b['Nat'] == 'RUS'].sort_values(by='P', ascending = False)\n\nq2f\n\n\n\n\n\n\n\n\nid_player\nBorn\nCity\nCntry\nNat\nHt\nWt\nLast_Name\nFirst_Name\nPosition\nTeam\nGP\nG\nA\nTOI\nTOI_GP\nP\n\n\n\n\n426\n427\n17.06.1993\nMaykop\nRUS\nRUS\n71\n178\nKucherov\nNikita\nRW\nT.B\n74\n40\n45\n86320\n19.43\n85\n\n\n802\n803\n13.12.1991\nYaroslavl\nRUS\nRUS\n72\n219\nTarasenko\nVladimir\nRW\nSTL\n82\n39\n36\n90872\n18.47\n75\n\n\n607\n608\n30.10.1991\nKorkino\nRUS\nRUS\n71\n170\nPanarin\nArtemi\nLW/C\nCHI\n82\n31\n43\n95798\n19.47\n74\n\n\n480\n481\n31.07.1986\nMagnitogorsk\nRUS\nRUS\n75\n195\nMalkin\nEvgeni\nC/RW\nPIT\n62\n33\n39\n69263\n18.62\n72\n\n\n600\n601\n17.09.1985\nMoscow\nRUS\nRUS\n75\n239\nOvechkin\nAlex\nLW/RW\nWSH\n82\n33\n36\n90361\n18.37\n69\n\n\n433\n434\n19.05.1992\nChelyabinsk\nRUS\nRUS\n74\n192\nKuznetsov\nEvgeny\nC/LW\nWSH\n82\n19\n40\n83410\n16.95\n59\n\n\n657\n658\n05.07.1986\nNizhny Tagil\nRUS\nRUS\n74\n205\nRadulov\nAlex\nRW\nMTL\n76\n18\n36\n83405\n18.30\n54\n\n\n11\n12\n24.05.1988\nYaroslavl\nRUS\nRUS\n76\n198\nAnisimov\nArtem\nC/LW\nCHI\n64\n22\n23\n68529\n17.85\n45\n\n\n489\n490\n20.12.1978\nVoskresensk\nRUS\nRUS\n72\n200\nMarkov\nAndrei\nD\nMTL\n62\n6\n30\n81230\n21.83\n36\n\n\n879\n880\n29.10.1991\nMoscow\nRUS\nRUS\n74\n195\nZaitsev\nNikita\nD\nTOR\n82\n4\n32\n108332\n21.85\n36\n\n\n595\n596\n23.07.1991\nNovokuznetsk\nRUS\nRUS\n71\n212\nOrlov\nDmitry\nD\nWSH\n82\n6\n27\n96107\n19.53\n33\n\n\n646\n647\n13.01.1997\nYaroslavl\nRUS\nRUS\n73\n201\nProvorov\nIvan\nD\nPHI\n82\n6\n24\n108132\n21.98\n30\n\n\n557\n558\n22.11.1992\nZhukovskiy\nRUS\nRUS\n71\n180\nNamestnikov\nVladislav\nC/LW\nT.B\n74\n10\n18\n65645\n14.78\n28\n\n\n293\n294\n16.05.1994\nKhabarovsk\nRUS\nRUS\n75\n209\nGrigorenko\nMikhail\nC\nCOL\n75\n10\n13\n63401\n14.08\n23\n\n\n429\n430\n14.07.1986\nMagnitogorsk\nRUS\nRUS\n73\n225\nKulemin\nNikolay\nLW/RW\nNYI\n72\n12\n11\n59691\n13.82\n23\n\n\n87\n88\n17.04.1995\nCherepovets\nRUS\nRUS\n74\n193\nBuchnevich\nPavel\nRW/LW\nNYR\n41\n8\n12\n32616\n13.25\n20\n\n\n566\n567\n28.03.1993\nChelyabinsk\nRUS\nRUS\n71\n191\nNesterov\nNikita\nD\nMTL/T.B\n48\n4\n13\n46901\n16.28\n17\n\n\n90\n91\n21.10.1991\nKazan\nRUS\nRUS\n73\n180\nBurmistrov\nAlex\nC/RW\nARI/WPG\n49\n5\n11\n39266\n13.35\n16\n\n\n828\n829\n19.07.1983\nIzhevsk\nRUS\nRUS\n74\n221\nTyutin\nFedor\nD\nCOL\n69\n1\n12\n78405\n18.93\n13\n\n\n27\n28\n14.12.1995\nMoscow\nRUS\nRUS\n72\n180\nBarbashev\nIvan\nC\nSTL\n30\n5\n7\n21224\n11.78\n12\n\n\n749\n750\n13.05.1994\nPenza\nRUS\nRUS\n74\n218\nSlepyshev\nAnton\nLW\nEDM\n41\n4\n6\n27342\n11.12\n10\n\n\n878\n879\n16.04.1995\nMoscow\nRUS\nRUS\n77\n230\nZadorov\nNikita\nD\nCOL\n56\n0\n10\n63960\n19.03\n10\n\n\n207\n208\n25.04.1986\nTogliatti\nRUS\nRUS\n74\n218\nEmelin\nAlexei\nD\nMTL\n76\n2\n8\n97227\n21.32\n10\n\n\n763\n764\n14.10.1993\nNizhny Tagil\nRUS\nRUS\n71\n190\nSoshnikov\nNikita\nRW\nTOR\n56\n5\n4\n36450\n10.70\n9\n\n\n875\n876\n06.10.1993\nNizhnekamsk\nRUS\nRUS\n71\n195\nYakupov\nNail\nRW/LW\nSTL\n40\n3\n6\n25553\n10.67\n9\n\n\n824\n825\n30.08.1994\nYekaterinburg\nRUS\nRUS\n79\n265\nTryamkin\nNikita\nD\nVAN\n66\n2\n7\n66291\n16.73\n9\n\n\n486\n487\n02.01.1992\nMoscow\nRUS\nRUS\n75\n210\nMarchenko\nAlexey\nD\nDET/TOR\n41\n1\n7\n41700\n16.95\n8\n\n\n473\n474\n06.01.1992\nTver\nRUS\nRUS\n74\n207\nLyubimov\nRoman\nLW\nPHI\n47\n4\n2\n27011\n9.58\n6\n\n\n430\n431\n29.10.1990\nLipetsk\nRUS\nRUS\n73\n204\nKulikov\nDmitry\nD\nBUF\n47\n2\n3\n61766\n21.90\n5\n\n\n385\n386\n17.03.1991\nOmsk\nRUS\nRUS\n75\n200\nKalinin\nSergey\nC/RW\nN.J\n43\n2\n2\n33008\n12.63\n4\n\n\n272\n273\n07.10.1995\nMoscow\nRUS\nRUS\n71\n185\nGoldobin\nNikolay\nRW/LW\nS.J/VAN\n14\n3\n0\n9551\n11.37\n3\n\n\n707\n708\n30.12.1995\nMoscow\nRUS\nRUS\n74\n190\nScherbak\nNikita\nRW\nMTL\n3\n1\n0\n2048\n11.38\n1\n\n\n819\n820\n03.02.1995\nMoscow\nRUS\nRUS\n68\n170\nTolchinsky\nSergey\nLW\nCAR\n2\n0\n1\n1377\n11.48\n1\n\n\n887\n888\n15.05.1995\nSt. Petersburg\nRUS\nRUS\n73\n224\nZykov\nValentin\nLW\nCAR\n2\n1\n0\n750\n6.25\n1\n\n\n724\n725\n25.06.1998\nNizhnekamsk\nRUS\nRUS\n75\n215\nSergachev\nMikhail\nD\nMTL\n4\n0\n0\n2910\n12.13\n0\n\n\n799\n800\n31.10.1996\nYuzhno-Sakhalinsk\nRUS\nRUS\n75\n205\nSvechnikov\nEvgeny\nRW/LW\nDET\n2\n0\n0\n1577\n13.15\n0\n\n\n303\n304\n07.06.1997\nTogliatti\nRUS\nRUS\n75\n200\nGurianov\nDenis\nRW\nDAL\n1\n0\n0\n786\n13.10\n0\n\n\n386\n387\n12.08.1996\nOrsk\nRUS\nRUS\n74\n194\nKamenev\nVladislav\nLW/C\nNSH\n2\n0\n0\n1207\n10.07\n0"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2g.",
+    "href": "danl-hw/danl-210-hw-1.html#q2g.",
+    "title": "Homework Assignment 1",
+    "section": "Q2g.",
+    "text": "Q2g.\n\nHow many points (“P”) did he have?\n\n\nq2g = (\n  q2b[q2b['Nat'] == 'RUS'] \n  .sort_values(by='P', ascending=False)\n  .head(1)[['Last_Name', 'First_Name', 'P']]\n  )\n  \nq2g\n\n\n\n\n\n\n\n\nLast_Name\nFirst_Name\nP\n\n\n\n\n426\nKucherov\nNikita\n85\n\n\n\n\n\n\n\n\nThe above code creates a new DataFrame called q2g, which:\n\nFilters q2b for players whose nationality is ‘RUS’\nSorts the filtered DataFrame by the ‘P’ column in descending order\nSelects the top row of the sorted DataFrame using the .head(1) method\nFilters the columns ‘Last_Name’, ‘First_Name’, and ‘P’ from the selected row"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2h.",
+    "href": "danl-hw/danl-210-hw-1.html#q2h.",
+    "title": "Homework Assignment 1",
+    "section": "Q2h.",
+    "text": "Q2h.\n\nHow well did he perform in the entire league? Put differently, what was his rank in terms of points?\n\n\nq2h = (\n     q2b.assign(ranking = q2b['P'].rank(method = 'min', ascending=False))  # Create a new column 'ranking' based on the values in column 'P'\n        .sort_values(by='P', ascending=False)  # Sort the DataFrame by 'P' column in descending order\n        .loc[q2b['Nat'] == 'RUS']  # Filter the rows where the 'Nat' column is 'RUS'\n        .head(1)[['ranking', 'Last_Name', 'First_Name', 'P']]  # Select the top row and specific columns\n        )\n\nq2h\n\n\n\n\n\n\n\n\nranking\nLast_Name\nFirst_Name\nP\n\n\n\n\n426\n5.0\nKucherov\nNikita\n85"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2i.",
+    "href": "danl-hw/danl-210-hw-1.html#q2i.",
+    "title": "Homework Assignment 1",
+    "section": "Q2i.",
+    "text": "Q2i.\n\nFind the top ten scorers (in terms of points) and print them including their number of point and their respective team.\n\n\nq2i = ( q2b.assign( ranking = q2b['P'].rank(ascending=False) )   # add a new column 'ranking' based on the 'P' column's rank\n           .sort_values(by='P', ascending=False)                  # sort by 'P' column in descending order\n           )\n\n( q2i.loc[q2i['ranking'] &lt;= 10]                                    # select rows where 'ranking' is less than or equal to 10\n            [['ranking', 'Last_Name', 'First_Name', 'P', 'Team']]  # select specific columns\n            )\n\n\n\n\n\n\n\n\nranking\nLast_Name\nFirst_Name\nP\nTeam\n\n\n\n\n509\n1.0\nMcDavid\nConnor\n100\nEDM\n\n\n149\n2.5\nCrosby\nSidney\n89\nPIT\n\n\n389\n2.5\nKane\nPatrick\n89\nCHI\n\n\n21\n4.0\nBackstrom\nNicklas\n86\nWSH\n\n\n426\n5.5\nKucherov\nNikita\n85\nT.B\n\n\n485\n5.5\nMarchand\nBrad\n85\nBOS\n\n\n704\n7.0\nScheifele\nMark\n82\nWPG\n\n\n184\n8.0\nDraisaitl\nLeon\n77\nEDM\n\n\n91\n9.0\nBurns\nBrent\n76\nS.J\n\n\n802\n10.0\nTarasenko\nVladimir\n75\nSTL"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q2j.",
+    "href": "danl-hw/danl-210-hw-1.html#q2j.",
+    "title": "Homework Assignment 1",
+    "section": "Q2j.",
+    "text": "Q2j.\n\nWhat are the three countries with the most players originating from?\n\n\n# Create a dataframe of count of players by nationality\nq2j = q2b[['Nat']].value_counts().reset_index()\n\n# Rename the columns of the dataframe\nq2j.columns = ['Nat', 'counts']\n\n# Create a new column 'ranking' with the ranking of each nationality by count\nq2j = ( q2j.assign( ranking = q2j['counts']\n                             .rank(method = 'dense', ascending=False) )\n           \n           # Filter the dataframe to only include the top 3 nationalities by count\n           .query('ranking &lt;= 3' ) \n      )"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q3a.",
+    "href": "danl-hw/danl-210-hw-1.html#q3a.",
+    "title": "Homework Assignment 1",
+    "section": "Q3a.",
+    "text": "Q3a.\n\nFor each type of mine, calculate the total coal production for each pair of state-year.\n\n\n# Create a new column 'production' which is the sum of two other columns\ncoal['production'] = coal['production_underground'] + coal['production_surface']\n\n# Group the data by 'state' and 'year' columns and calculate the sum of 'production', 'production_underground', and 'production_surface'\nq3a = (\n       coal[ ['state', 'year', 'production',\n             'production_underground',\n             'production_surface'] ]\n       .groupby(['state', 'year'])\n       .sum()\n       )\n\nq3a\n\n\n\n\n\n\n\n\n\nproduction\nproduction_underground\nproduction_surface\n\n\nstate\nyear\n\n\n\n\n\n\n\nAlabama\n2011\n19071\n10878\n8193\n\n\n2012\n19320\n12569\n6751\n\n\n2013\n18620\n13515\n5105\n\n\n2014\n16363\n12517\n3846\n\n\n2015\n13191\n9897\n3294\n\n\n...\n...\n...\n...\n...\n\n\nWyoming\n2014\n395665\n3370\n392295\n\n\n2015\n375773\n3090\n372683\n\n\n2016\n297218\n1167\n296051\n\n\n2017\n316454\n1716\n314738\n\n\n2018\n304188\n2210\n301978\n\n\n\n\n197 rows × 3 columns"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q3b.",
+    "href": "danl-hw/danl-210-hw-1.html#q3b.",
+    "title": "Homework Assignment 1",
+    "section": "Q3b.",
+    "text": "Q3b.\n\nFind the top 5 coal-producing states for each year.\n\n\n# Creates a new dataframe q3b\nq3b = (\n       # Reset the index of q3a\n       q3a.reset_index()\n       # Sort the values of q3a by the production column in descending order\n       .sort_values(['production'], ascending = False)\n       # Group q3a by year and get the head with the largest production for each year\n       .groupby('year')\n       .head()\n       # Sort q3b first by year in ascending order and then by production in descending order\n       .sort_values(['year','production'], ascending = [True, False])\n       )\n\nq3b\n\n\n\n\n\n\n\n\nstate\nyear\nproduction\nproduction_underground\nproduction_surface\n\n\n\n\n189\nWyoming\n2011\n438673\n3043\n435630\n\n\n181\nWest Virginia\n2011\n130186\n80403\n49783\n\n\n61\nKentucky\n2011\n108768\n65250\n43518\n\n\n141\nPennsylvania\n2011\n59183\n47318\n11865\n\n\n157\nTexas\n2011\n45903\n0\n45903\n\n\n190\nWyoming\n2012\n401442\n4637\n396805\n\n\n182\nWest Virginia\n2012\n115247\n76281\n38966\n\n\n62\nKentucky\n2012\n90865\n58200\n32665\n\n\n142\nPennsylvania\n2012\n54719\n45042\n9677\n\n\n40\nIllinois\n2012\n48485\n42835\n5650\n\n\n191\nWyoming\n2013\n387924\n4443\n383481\n\n\n183\nWest Virginia\n2013\n106868\n74105\n32763\n\n\n63\nKentucky\n2013\n80379\n54621\n25758\n\n\n143\nPennsylvania\n2013\n54007\n45165\n8842\n\n\n41\nIllinois\n2013\n52148\n46447\n5701\n\n\n192\nWyoming\n2014\n395665\n3370\n392295\n\n\n184\nWest Virginia\n2014\n107566\n77074\n30492\n\n\n64\nKentucky\n2014\n77337\n52809\n24528\n\n\n144\nPennsylvania\n2014\n60913\n52913\n8000\n\n\n42\nIllinois\n2014\n57969\n52714\n5255\n\n\n193\nWyoming\n2015\n375773\n3090\n372683\n\n\n185\nWest Virginia\n2015\n91174\n71098\n20076\n\n\n65\nKentucky\n2015\n61426\n43379\n18047\n\n\n43\nIllinois\n2015\n56100\n51973\n4127\n\n\n145\nPennsylvania\n2015\n50031\n43894\n6137\n\n\n194\nWyoming\n2016\n297218\n1167\n296051\n\n\n186\nWest Virginia\n2016\n76116\n61316\n14800\n\n\n146\nPennsylvania\n2016\n45718\n41385\n4333\n\n\n44\nIllinois\n2016\n43423\n41258\n2165\n\n\n66\nKentucky\n2016\n42868\n32713\n10155\n\n\n195\nWyoming\n2017\n316454\n1716\n314738\n\n\n187\nWest Virginia\n2017\n87800\n69175\n18625\n\n\n147\nPennsylvania\n2017\n49084\n43586\n5498\n\n\n45\nIllinois\n2017\n48204\n44905\n3299\n\n\n67\nKentucky\n2017\n41786\n31512\n10274\n\n\n196\nWyoming\n2018\n304188\n2210\n301978\n\n\n188\nWest Virginia\n2018\n89876\n69366\n20510\n\n\n148\nPennsylvania\n2018\n49882\n44633\n5249\n\n\n46\nIllinois\n2018\n49564\n46073\n3491\n\n\n68\nKentucky\n2018\n39569\n30964\n8605"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-1.html#q3c.",
+    "href": "danl-hw/danl-210-hw-1.html#q3c.",
+    "title": "Homework Assignment 1",
+    "section": "Q3c.",
+    "text": "Q3c.\n\nVisualize the yearly trend of the total coal production from each type of mine.\n\n\n# selecting the columns 'year', 'production_underground', and 'production_surface' from the original DataFrame coal, grouping them by year, and summing the values of each group.\nq3c = (\n  coal[['year','production_underground', 'production_surface']]\n    .groupby(['year']).sum()\n    )\n\n\n# create a line plot for the 'production_underground' column of the q3c DataFrame.\nq3c['production_underground'].plot()\n\n&lt;Axes: xlabel='year'&gt;\n\n\n\n\n\n\n# create a line plot for the 'production_surface' column of the q3c DataFrame.\nq3c['production_surface'].plot()\n\n&lt;Axes: xlabel='year'&gt;\n\n\n\n\n\n\n# create a line plot for the 'production_underground' and 'production_surface' columns of the q3c DataFrame on the same graph.\nq3c.plot()\n\n&lt;Axes: xlabel='year'&gt;"
+  },
+  {
+    "objectID": "listing-danl-210-cw.html",
+    "href": "listing-danl-210-cw.html",
+    "title": "DANL 210 - Classwork",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nSyllabus, Course Outline, Etc.\n\n\nJanuary 9, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DANL 210-01: Data Preparation and Management, Spring 2024",
+    "section": "",
+    "text": "Welcome! 👋\n\\(-\\) Explore, Learn, and Grow with the DANL! 🌟"
+  },
+  {
+    "objectID": "index.html#bullet-lecture",
+    "href": "index.html#bullet-lecture",
+    "title": "DANL 210-01: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Lecture 🚀",
+    "text": "\\(\\bullet\\,\\) Lecture 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 14, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#bullet-q-a",
+    "href": "index.html#bullet-q-a",
+    "title": "DANL 210-01: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Q & A ❓",
+    "text": "\\(\\bullet\\,\\) Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1 - Discussion and Q & A\n\n\nJanuary 9, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#bullet-classwork",
+    "href": "index.html#bullet-classwork",
+    "title": "DANL 210-01: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Classwork ⌨️",
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nJanuary 9, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#bullet-homework",
+    "href": "index.html#bullet-homework",
+    "title": "DANL 210-01: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Homework 💻",
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework Assignment 2\n\n\nJanuary 14, 2024\n\n\n\n\nHomework Assignment 1\n\n\nJanuary 14, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#instructor-1",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#instructor-1",
+    "title": "Lecture 1",
+    "section": "Instructor",
+    "text": "Instructor\nCurrent Appointment & Education\n\nName: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics, School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea.\n\nMinor in Business Administration.\nConcentration in Finance."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#instructor-2",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#instructor-2",
+    "title": "Lecture 1",
+    "section": "Instructor",
+    "text": "Instructor\nData Science and Climate Change\n\nChoe, B.H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange/#globalwarming and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-1",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-1",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://brightspace.geneseo.edu/\nhttp://bcdanl.github.io/geneseo-danl-module-1/\n\nOffice: South Hall 301\nOffice Hours:\n\nBy appointment via email"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-2",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-2",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nCourse Description\n\nThis course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with practical case studies.\nThis course will cover topics such as (1) loading, slicing, filtering, transforming, reshaping, and merging data, (2) summarizing and visualizing data, and (3) exploratory data analysis.\nWe will cover these topics to solve real-world data analysis problems with thorough, detailed examples."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-3",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-3",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nCourse Requirements\n\nLaptop: You should bring your own laptop (Mac or Windows) to the classroom.\n\nIt is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.\n\nHomework: There will be six homework assignments.\nExams: There will be one take-home exam."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-4",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-4",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nCourse Contents\n\nThere will be tentatively 28 class sessions:\n\n7 lectures\n1 take-home exam"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-5",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-5",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nCourse Contents"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-6",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#syllabus-6",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nAssessments\n\nEach of the six homework assignments accounts for 10% of the total percentage grade.\nThe exam account for 30% of the total percentage grade.\nParticipation in discussions accounts for 10% of the total percentage grade.\n\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =\\quad\\, &0.60\\times(\\text{Total Homework Score})\\notag\\\\\n\\,+\\, &0.30\\times(\\text{Take-Home Exam Score})\\notag\\\\\n\\,+\\, &0.10\\times(\\text{Total Discussion Score})\\notag\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#what-is-github",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#what-is-github",
+    "title": "Lecture 1",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nhttps://github.com/ is a platform for storing, managing, and sharing code.\nCourse contents will be posted not only Brightspace but also our GitHub repositories (“repos”).\nOnline discussion and Q & A will be hosted on GitHub repository.\nClicking “Sign Up” or https://github.com/signup will direct you to the sign up page."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#getting-a-github-account",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#getting-a-github-account",
+    "title": "Lecture 1",
+    "section": "Getting a GitHub account",
+    "text": "Getting a GitHub account\nGithub is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.\nSharing and editing code for a large group is easy with Github\nIt also automatically maintains a history of all changes to the repo. You can see the history of committed changes, and even go into detail about what those changes entailed.\nYou can also revert to old versions of your repo, and all edits will be saved in this history."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#what-is-google-colab",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#what-is-google-colab",
+    "title": "Lecture 1",
+    "section": "What is Google Colab",
+    "text": "What is Google Colab\n\nhttps://colab.research.google.com/ is analogous to Google Drive, but specifically for writing and executing Python code in your browser.\n\nThe base Colab link listed above leads to a Python notebook introducing Colab and how to use it.\n\nThis video also helps get started with Colab if you are unfamiliar with the format!\n\nhttps://www.youtube.com/watch?v=inN8seMm7UI"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#why-use-colab",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#why-use-colab",
+    "title": "Lecture 1",
+    "section": "Why use Colab?",
+    "text": "Why use Colab?\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.\nColab notebooks don’t just contain Python code. They can contain text, images, and HTML!\nUltimately, they’re intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a laptop or PC."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#colab-has-github-integration",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#colab-has-github-integration",
+    "title": "Lecture 1",
+    "section": "Colab has GitHub integration!",
+    "text": "Colab has GitHub integration!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-1",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-1",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nAnaconda\n\nAnaconda is an all-in-one Python distribution.\n\nAnaconda includes Python 3.x and its standard modules such as pip, pandas, matplotlib, etc.\nAnaconda also includes several software applications of integrated development environment (IDE), which is a software for editing codes.\nFor the Python code, we will use Spyder IDE.\n\nDo not use RStudio from Anaconda, because RStudio from Anaconda is out-dated.\n\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-2",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-2",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nSpyder IDE\n\nIf Spyder IDE from Anaconda is lagging, consider installing it additionally.\nTo install Spyder IDE in addition to Anaconda, go to the following download page:\n\nhttps://www.spyder-ide.org.\nClick the “DOWNLOAD” menu."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-3",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-3",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nSpyder Environment\n\n\n\n\n\n\n\n\n\n\n\n\n\nRed box is Script Editor where you can create, open and edit files."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-4",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-4",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nSpyder Environment\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlue box is Console Pane that allows you to interact directly with the Python interpreter and type commands where Python will immediately execute them."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-5",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#installing-the-tools-5",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nSpyder Environment\n\n\n\n\n\n\n\n\n\n\n\n\n\nYellow box is Variable Explorer where you can see the values of variables, data frames, and other objects that are currently stored in memory.\n\nDouble-clicking a variable will open a specialized viewer, allowing you to inspect its contents."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#coding-workflow",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#coding-workflow",
+    "title": "Lecture 1",
+    "section": "Coding Workflow",
+    "text": "Coding Workflow\nCode and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is Spyder’s comment character.\n\n# indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\n\nConsider using block commenting for separating code sections.\n\n# %% defines a coding block in Spyder.\n\nBreak down long lines and long algebraic expressions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#coding-workflow-1",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#coding-workflow-1",
+    "title": "Lecture 1",
+    "section": "Coding Workflow",
+    "text": "Coding Workflow\nShortcuts\n\n\nMac\n\nF9 runs a current line (where the blinking cursor is) or selected lines.\ncommand + return runs a current block.\ncommand + 1 is the shortcut for #.\ncommand + 4 is the shortcut for block comment.\n\n\nWindows\n\nF9 runs a current line (where the blinking cursor is) or selected lines.\nCtrl + Enter runs a current block.\nCtrl + 1 is the shortcut for #.\nCtrl + 4 is the shortcut for block comment."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-1",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-1",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nValues, Variables, and Types\n\nA value is datum (literal) such as a number or text.\nThere are different types of values: 352.3 is known as a float or double, 22 is an integer, and “Hello World!” is a string.\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\n\na = 10\nprint(a)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-2",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-2",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nValues, Variables, and Types\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-3",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-3",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nAssignment\n\nIn Python, we use = to assign a value to a variable.\n\n# Here we assign the integer value 5 to the variable x.\nx = 5   \n\n# Now we can use the variable x in the next line.\ny = x + 12  \ny\n\nIn math, = means equality of both sides.\nIn programs, = means assignment: assign the value on the right side to the variable on the left side."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-4",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-4",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nAssignment\n\nIn programs, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen Python reads y = x + 12, it does the following:\n\nSees the = in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-5",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-5",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nVariables Are Names, Not Places\n\nIn Python, variables are just names.\n\n\nNames point to objects (variable a points to an integer object with value 7)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-6",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-6",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nVariables Are Names, Not Places\n\nThe most basic built-in data types that you’ll need to know about are: integers 10, floats 1.23, strings like this, booleans True, and nothing None.\nPython also has a built-in type called a list [10, 15, 20] that can contain anything, even different types\n\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-7",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-7",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nTypes\n\n\n\n\n\n\n\nPython’s basic data types\n\n\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-8",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-8",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBrackets\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\n\n[] is used to denote a list or to signify accessing a position using an index.\n\nvector = ['a', 'b']\nvector[0]\n\n\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n{'a', 'b'}\n{'first_letter': 'a', 'second_letter': 'b'}\n\n\n\n() is used to denote a tuple, or the arguments to a function, e.g., function(x) where x is the input passed to the function, or to indicate the order operations are carried out.\n\nnum_tup = (1, 2, 3)\nsum(num_tup)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-9",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-9",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries:\n\n\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nprint(list_example)\n\nWe can access earlier entries using an index, which begins at 0 and ends at one less than the length of the list.\n\nprint(list_example[0])\nprint(list_example[-1])"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-10",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-10",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nSlicing can be even more elaborate than that because we can jump entries using a second colon.\n\n# range() produces a list of integers from the value to one less than the last\nlist_of_numbers = list(range(1, 11))\nstart = 1\nstop = -1\nstep = 2\nprint(list_of_numbers[ start : stop : step ])"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-11",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-11",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\n\nAll of the basic operators you see in mathematics are available to use: + for addition, - for subtraction, * for multiplication, ** for powers, / for division, // for integer division, and % for modulo.\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\n\nWe can ‘sum’ strings (which really concatenates them):\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-12",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-12",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\n\n\n\nIt works for lists too:\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\n\nWe can multiply strings!\n\nstring = \"apples, \"\nprint(string * 3)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-13",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-13",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\n\nWe can combine the arithmetic operators with assignment by putting the operator before the =.\n\n\n\n\nx += 1 is equivalent to x = x + 1.\n\nx = 3\nx += 1\n\n\na -= 2 is equivalent to a = a - 2.\n\na = 2\na -= 2"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-14",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-14",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\nQ. Using Python operations only, what is \\[\\frac{2^5}{7 \\cdot (4 - 2^3)} \\quad\\text{?}\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-15",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-15",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nStrings\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nBoth lists and strings will allow us to use the len() command to get their length:\n\n\n\n\nx += 1 is equivalent to x = x + 1.\n\nstring = \"cheesecake\"\nprint( \"String has length:\" )\nprint( len(string) )\n\n\na -= 2 is equivalent to a = a - 2.\n\nlist_of_numbers = range(1, 20)\nprint( \"List of numbers has length:\" )\nprint( len(list_of_numbers) )"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-16",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-16",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nf-string\n\nf-string can combine a number and a string (these begin with an f for formatting):\n\nvalue = 20\nsqrt_val = 20 ** 0.5\nprint(f\"The square root of {value:d} is {sqrt_val:.2f}\")\n\nThe formatting command :d is an instruction to treat value like an integer, while :.2f is an instruction to print it like a float with 2 decimal places."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-17",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-17",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nBoolean data have either True or False value.\nThere are two types of operation that are associated with booleans: boolean operations.\n\nExisting booleans are combined, and condition operations, which create a boolean when executed.\n\n\n\n\n\n\n\nOperator\nDescription\n\n\n\n\nx and y\nAre x and y both True?\n\n\nx or y\nIs at least one of x and y True?\n\n\nnot x\nIs x False?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-18",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-18",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nConditions are expressions that evaluate as booleans.\n\n\n\n\n\nOperator\nDescription\n\n\n\n\nx == y\nIs x equal to y?\n\n\nx != y\nIs x greater than y?\n\n\nx &gt; y\nIs x greater than or equal to y?\n\n\nx &gt;= y\nIs x greater than or equal to y?\n\n\nx &lt; y\nIs x less than y?\n\n\nx &lt;= y\nIs x less than or equal to y?\n\n\nx is y\nIs x the same object as y?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-19",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-19",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\n\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\nQ. What does not (not True) evaluate to?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-20",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-20",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements.\n\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-21",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-21",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nGiven that == and != test for equality and not equal, respectively, you may be wondering what the keyword is is for.\n\nRemember that everything in Python is an object, and that values can be assigned to objects.\n== and != compare values, while is compare objects.\n\n\n\n\nname_list = [\"Ada\", \"Adam\"]\nname_list_two = [\"Ada\", \"Adam\"]\n\n# Compare values\nprint(name_list == name_list_two)\n\n# Compare objects\nprint(name_list is name_list_two)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-22",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-22",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\n\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-23",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-23",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:\n\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-24",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-24",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nQ. Create a new if-else chain that prints “well done” if a score is over 90, “good” if between 40 and 90, and “bad luck” otherwise."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-25",
+    "href": "danl-lec/danl-210-lec-01-2024-0123.html#python-basics-25",
+    "title": "Lecture 1",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\nWe can make multiple assignment or multiple boolean comparisons in a single line.\n\na, b = 3, 6\n\n1 &lt; a &lt; b &lt; 20"
+  },
+  {
+    "objectID": "listing-danl-210-lec.html",
+    "href": "listing-danl-210-lec.html",
+    "title": "DANL 210 - Lecture",
+    "section": "",
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 14, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-qa/danl-210-qa-01.html",
+    "href": "danl-qa/danl-210-qa-01.html",
+    "title": "Lecture 1 - Discussion and Q & A",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html",
+    "href": "danl-hw/danl-210-hw-2.html",
+    "title": "Homework Assignment 2",
+    "section": "",
+    "text": "Write a Python code to answer each question.\nMake at least some simple comment (# ...) in each question.\nImport Python libraries you need here.\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport numpy as np"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q1a",
+    "href": "danl-hw/danl-210-hw-2.html#q1a",
+    "title": "Homework Assignment 2",
+    "section": "Q1a",
+    "text": "Q1a\nWhat are the minimum, first quartile, median, thrid quartile, maximum, mean, and standard deviation of Close and Volume for each company?\n\n# Group stock data by company and get descriptive statistics for the Close and Volume columns\nq1a = stock.groupby('company')[['Close', 'Volume']].describe()\n\n# Rename columns to have the format 'column_name'_'statistic'\nq1a.columns = q1a.columns.get_level_values(0) + '_' +\\\n    q1a.columns.get_level_values(1)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q1b",
+    "href": "danl-hw/danl-210-hw-2.html#q1b",
+    "title": "Homework Assignment 2",
+    "section": "Q1b",
+    "text": "Q1b\nFind the 10 largest values for Volume. What are the companies and dates associated with those 10 largest values for Volume?\n\n# Calculate dense ranking of stock volumes and add it as a new column to a copy of the stock dataframe\nranking = stock['Volume'].rank(method='dense', ascending=False)\nq1b = stock.copy()\nq1b['ranking'] = ranking\n\n# Sort the dataframe by ranking and select the top 10 stocks\nq1b = (\n  q1b\n  .sort_values(by='ranking')\n  .query('ranking &lt;= 10')\n)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q1c",
+    "href": "danl-hw/danl-210-hw-2.html#q1c",
+    "title": "Homework Assignment 2",
+    "section": "Q1c",
+    "text": "Q1c\nCalculate the Z-scores of Open and Close for each company using apply().\n\nq1c = (\n  stock.set_index(['company', 'Date'])  # set company and Date as the index\n  .groupby('company', group_keys=False) #  to prevent pandas from keeping the group keys in the resulting DataFrame\n  .apply(lambda x: ( x - x.mean() ) / x.std() )  # standardize the Close and Volume for each company\n  .reset_index()                       # reset the index to default\n)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q1d",
+    "href": "danl-hw/danl-210-hw-2.html#q1d",
+    "title": "Homework Assignment 2",
+    "section": "Q1d",
+    "text": "Q1d\nUse the transform() method on the stock data to represent all the values of Open, High, Low, Close, Adj Close, and Volume in terms of the first date in the data.\nTo do so, divide all values for each company by the values of the first date in the data for that company.\n\n# Set multi-index for DataFrame using 'company' and 'Date' columns\nq1d = stock.set_index(['company', 'Date'])\n\n# Divide each element of q1d by the first element of the corresponding 'company' group\nq1d = ( q1d / q1d.groupby('company').transform('first') )"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q1e",
+    "href": "danl-hw/danl-210-hw-2.html#q1e",
+    "title": "Homework Assignment 2",
+    "section": "Q1e",
+    "text": "Q1e\nProvide both seaborn code and a simple comment to describe the daily trend of normalized values of Close for each company in one plot. The normalized values of Close are the one calculated from Q1d.\n\ng = sns.lineplot(q1d, # create a line plot using Seaborn\n             x = 'Date', y = 'Close', # specify x and y axes\n             hue = 'company') # specify color grouping by company\n\nimport matplotlib.dates as mdates # import Matplotlib date module\ng.xaxis.set_major_locator(mdates.YearLocator()) # set x-axis ticks to show year\nplt.xticks(rotation=45) # rotate x-axis labels for better readability\n\n(array([-365.,    0.,  365.,  730., 1096., 1461., 1826., 2191., 2557.]),\n [Text(-365.0, 0, ''),\n  Text(0.0, 0, '2013-01-02'),\n  Text(365.0, 0, '2014-06-16'),\n  Text(730.0, 0, '2015-11-24'),\n  Text(1096.0, 0, '2017-05-10'),\n  Text(1461.0, 0, '2018-10-19'),\n  Text(1826.0, 0, '2020-04-03'),\n  Text(2191.0, 0, '2021-09-15'),\n  Text(2557.0, 0, '2023-03-01')])"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q1f",
+    "href": "danl-hw/danl-210-hw-2.html#q1f",
+    "title": "Homework Assignment 2",
+    "section": "Q1f",
+    "text": "Q1f\nCreate a box plot of Close for each company in one plot. Make a simple comment on the plot.\n\nsns.boxplot(stock, \n             x = 'company', y = 'Close')\n\n&lt;Axes: xlabel='company', ylabel='Close'&gt;"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q2a",
+    "href": "danl-hw/danl-210-hw-2.html#q2a",
+    "title": "Homework Assignment 2",
+    "section": "Q2a",
+    "text": "Q2a\nHow many parties have provided or disbursed positive funding contributions to other countries or regions for their adaptation projects for every single year from 2011 to 2018?\n\nq2a = (\n  climate_finance\n       .query('Status == \"provided\" or Status == \"disbursed\"') # Select only the rows where status is \"provided\" or \"disbursed\"\n       .query('`Type of support` == \"adaptation\"') # Select only the rows where the type of support is \"adaptation\"\n       .groupby(['Party', 'Year']) # Group the data by party and year\n       .agg({'Contribution': 'sum'}) # Calculate the sum of contributions for each party and year\n       .reset_index() # Reset the index of the dataframe\n       .query('Contribution &gt; 0') # Select only the rows where the contribution is greater than 0\n       .groupby(['Party']) # Group the data by party\n       .size() # Count the number of rows for each party\n       .reset_index(name='n') # Reset the index of the dataframe and rename the \"size\" column to \"n\"\n       .query('n == 8') # Select only the rows where the value of \"n\" is 8\n       )\n\nq2a.shape[0] # Output the number of rows in the resulting dataframe\n      \nq2a\n\n\n\n\n\n\n\n\nParty\nn\n\n\n\n\n2\nCanada\n8\n\n\n10\nIceland\n8\n\n\n11\nIreland\n8\n\n\n15\nNetherlands\n8\n\n\n16\nNew Zealand\n8\n\n\n19\nPortugal\n8\n\n\n21\nSlovakia\n8\n\n\n24\nSwitzerland\n8"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q2b",
+    "href": "danl-hw/danl-210-hw-2.html#q2b",
+    "title": "Homework Assignment 2",
+    "section": "Q2b",
+    "text": "Q2b\nFor each party, calculate the total funding contributions that were disbursed or provided for mitigation projects for each year.\n\nq2b = (\n  climate_finance\n       .query('Status == \"provided\" or Status == \"disbursed\"')\n       .query('`Type of support` == \"mitigation\"')\n       .groupby(['Party', 'Year'])\n       .agg({'Contribution': 'sum'})\n       .reset_index()\n       )\n\nq2b\n\n\n\n\n\n\n\n\nParty\nYear\nContribution\n\n\n\n\n0\nAustralia\n2013\n3832000.00\n\n\n1\nAustria\n2015\n91424141.76\n\n\n2\nBelgium\n2013\n54096469.42\n\n\n3\nBelgium\n2014\n29152327.24\n\n\n4\nBelgium\n2015\n15182584.02\n\n\n...\n...\n...\n...\n\n\n117\nSwitzerland\n2014\n81716104.00\n\n\n118\nSwitzerland\n2015\n94186259.00\n\n\n119\nSwitzerland\n2016\n97202955.00\n\n\n120\nSwitzerland\n2017\n93447999.02\n\n\n121\nSwitzerland\n2018\n92704380.68\n\n\n\n\n122 rows × 3 columns"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q2c",
+    "href": "danl-hw/danl-210-hw-2.html#q2c",
+    "title": "Homework Assignment 2",
+    "section": "Q2c",
+    "text": "Q2c\nFor each party, calculate the ratio between adaptation contribution and mitigation contribution for each type of Status for each year.\n\n# Groupby Party, Year, Status, and Type of support and sum the contribution\nq2c_tmp = (\n    climate_finance\n    .groupby(['Party', 'Year', 'Status', 'Type of support'])\n    .agg({'Contribution': 'sum'})\n    .reset_index()    \n    ) \n\n# Filter out rows where the Contribution is 0 and keep only rows with a length of 2 groups\nq2c_tmp = q2c_tmp[ q2c_tmp['Contribution'] != 0 ]\nq2c_tmp = (\n  q2c_tmp\n  .groupby(['Party', 'Year', 'Status'])\n  .filter(lambda x: len(x) == 2)\n  )\n\n# Create a separate dataframe for adaptation and mitigation contributions\nq2ca = q2c_tmp[q2c_tmp['Type of support'] == 'adaptation']\nq2cm = q2c_tmp[q2c_tmp['Type of support'] == 'mitigation']\n\n# Drop the Type of support column, rename the Contribution column, and compute the adaptation to mitigation ratio\nq2c = (\n   q2ca\n   .drop('Type of support', axis=1)\n   .rename(columns={'Contribution': 'adaptation'})\n   .assign(mitigation = q2cm['Contribution'].values,\n           am_ratio = lambda x: x['adaptation'] / x['mitigation'])\n       )"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q2d",
+    "href": "danl-hw/danl-210-hw-2.html#q2d",
+    "title": "Homework Assignment 2",
+    "section": "Q2d",
+    "text": "Q2d\nProvide both seaborn code and a simple comment to describe the distribution of the ratio between adaptation contribution and mitigation contribution, which is calculated in Q2c.\n\n# Graph 1\nsns.histplot(q2c, x='am_ratio', bins=100)\nplt.axvline(x=1, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x177bde910&gt;\n\n\n\n\n\n\n# Graph 2\nsns.histplot(q2c, x=np.log(q2c['am_ratio']), bins=100)\nplt.axvline(x=0, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x177afd410&gt;\n\n\n\n\n\n\n# Graph 3\nsns.kdeplot(q2c, x='am_ratio')\nplt.axvline(x=1, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x174cb9690&gt;\n\n\n\n\n\n\n# Graph 4\nsns.kdeplot(q2c, x=np.log(q2c['am_ratio']))\nplt.axvline(x=0, color='red', linestyle='--')\n\n&lt;matplotlib.lines.Line2D at 0x177bb85d0&gt;"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-2.html#q2e",
+    "href": "danl-hw/danl-210-hw-2.html#q2e",
+    "title": "Homework Assignment 2",
+    "section": "Q2e",
+    "text": "Q2e\nProvide both seaborn code and a simple comment to describe how the distribution of Contribution varies by Type of support and Status.\n\n# Graph 1\ng = sns.FacetGrid(data=climate_finance, \n                  row='Status', \n                  hue='Type of support')\ng.map(sns.histplot, \n      'Contribution',\n      alpha = .25)\n\n\n\n\n\n# Log transformation\nclimate_finance['log_contribution'] = np.log(climate_finance['Contribution'])\n\n\n# Graph 2\ng = sns.FacetGrid(data=climate_finance, \n                  row='Status', \n                  hue='Type of support')\ng.map(sns.histplot, \n      'log_contribution',\n      alpha = .25)\n\n\n\n\n\n# Graph 3\ng = sns.FacetGrid(data=climate_finance, \n                  row='Status', \n                  hue='Type of support')\ng.map(sns.kdeplot, 'Contribution')\n\n\n\n\n\n# Graph 4\ng = sns.FacetGrid(data=climate_finance, \n                  row='Status', \n                  hue='Type of support')\ng.map(sns.kdeplot, 'log_contribution')"
+  },
+  {
+    "objectID": "listing-danl-210-qa.html",
+    "href": "listing-danl-210-qa.html",
+    "title": "DANL 210 - Lecture Discussion",
+    "section": "",
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 1 - Discussion and Q & A\n\n\nJanuary 9, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  }
+]
