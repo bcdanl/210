@@ -2,11 +2,15 @@
 
 
 .dropdown-menu {
-  height: 200px;
-  max-height:700px;
+  height: 85px;
+  max-height:300px;
   overflow-y: scroll;
 }
 
 .tape {
     pointer-events: none;
+}
+
+.navbar-nav .dropdown-menu {
+    min-width: 85px;
 }

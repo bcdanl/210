@@ -10,14 +10,10 @@ listing:
   page-size: 36
   
 page-layout: full
-toc: false
-toc-title: ""
-toc-location: right
 comments: false
 css: front.css
 from: markdown+emoji
 fig-align: center
-
 format: 
   html:
     include-in-header:
