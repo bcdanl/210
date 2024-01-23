@@ -1,6 +1,6 @@
 ---
 title: Lecture 1
-subtitle: Syllabus, Course Outline, Etc.
+subtitle: Syllabus, Course Outline, and Installing the Tools
 format:
   clean-revealjs:
     self-contained: true
@@ -9,19 +9,24 @@ author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
     affiliations: SUNY Geneseo
-date: last-modified
+date: 2024-02-06
+execute: 
+  eval: false
+  echo: true
 callout-icon: false
+
+from: markdown+emoji
+
 # bibliography: refs.bib
 # include-after-body: backwards.html
-
 ---
+
 
 ```{r setup}
 #| include: false
 #| eval: true
 
 library(knitr)
-library(kableExtra)
 library(tidyverse)
 # set default options
 opts_chunk$set(echo = FALSE,
@@ -53,9 +58,9 @@ knitr::knit_engines$set("markdown")
 
 
 ## Instructor
-### Data Science and Climate Change
+### Economics, Data Science, and Climate Change
 
-- Choe, B.H., 2021. "Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange/#globalwarming and Energy Lobbies."
+- Choe, B.H., 2021. "Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies."
 
 - Question: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?
 
@@ -69,6 +74,28 @@ knitr::knit_engines$set("markdown")
 
 
 
+## Instructor
+### Economics, Data Science, and Climate Change
+
+- Choe, B.H. and Ore-Monago, T., 2024. "Governance and Climate Finance in the Developing World"
+
+- **Climate finance** refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.
+  - We focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.
+  - Since the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.
+  - Poor governance can be significant barriers to emissions reductions within these countries.
+
+
+## Instructor
+### Economics, Data Science, and Climate Change
+
+- Choe, B.H. and Ore-Monago, T., 2024. "Governance and Climate Finance in the Developing World"
+
+- Data include:
+  - Global climate finance data (e.g., donors, recipients, characteristics of climate change projects)
+  - World Bank Governance Indicators over the years (e.g., government effectiveness, voice and accountability, political stability and absence of violence/terrorism, regulatory quality, rule of law, control of corruption)
+  - Various economic indicators (e.g., trade pattern of low carbon technology products, macroeconomic risks, energy)
+
+
 # Syllabus {background-color="#1c4982"}
 
 ## Syllabus
@@ -79,13 +106,13 @@ knitr::knit_engines$set("markdown")
 
 
 - Class Homepage: 
-  i. [https://brightspace.geneseo.edu/](https://brightspace.geneseo.edu/)
-  i. [http://bcdanl.github.io/geneseo-danl-module-1/](http://bcdanl.github.io/geneseo-danl-module-1/)
+  i. [https://brightspace.geneseo.edu/](https://brightspace.geneseo.edu/){target="_blank"}
+  i. [http://bcdanl.github.io/210/](http://bcdanl.github.io/210/){target="_blank"}
   
   
 - Office: South Hall 301
 - Office Hours: 
-  - By appointment via email
+  - To be determined.
 
 
 
@@ -93,50 +120,163 @@ knitr::knit_engines$set("markdown")
 
 ### Course Description
 
-- This course aims to provide overview of how one can collect, manipulate, process, clean, and crunch datasets with practical case studies.
+- This course is designed to provide a comprehensive overview of data handling techniques, focusing on practical application through case studies. 
 
-- This course will cover topics such as (1) loading, slicing, filtering, transforming, reshaping, and merging data, (2)  summarizing and visualizing data, and (3) exploratory data analysis.
+- Key topics include: 
+  1. data loading, cleaning, transformation, merging, and reshaping;
+  2. techniques for slicing, dicing, and summarizing datasets;
+  3. data collection via web scraping and APIs. 
+  
+- These areas will be explored through detailed, real-world examples to address common data analysis challenges. 
 
-- We will cover these topics to solve real-world data analysis problems with thorough, detailed examples. 
+- Throughout the course, students will gain hands-on experience with **Python** and its data analysis libraries, along with practical applications of **git** and **GitHub**.
 
 
 
 ## Syllabus
+### Required Materials
 
+- [**Python for Data Analysis** (3rd Edition)](https://wesmckinney.com/book){target="_blank"} by [Wes McKinney](https://wesmckinney.com/){target="_blank"}
+
+  - A free online version of this book is available.
+
+
+
+## Syllabus
+### Reference Materials
+
+- [Guide for Quarto](https://quarto.org/docs/guide){target="_blank"}
+
+- [Python Programming for Data Science](https://www.tomasbeuzen.com/python-programming-for-data-science){target="_blank"} by Tomas Beuzen
+
+- [Coding for Economists](https://aeturrell.github.io/coding-for-economists){target="_blank"} by Arthur Turrell 
+
+- [Python for Econometrics in Economics](https://pyecon.org/lecture/}{https://pyecon.org/lecture/){target="_blank"} by Fabian H. C. Raters
+
+- [QuantEcon DataScience - Python Fundamentals](https://datascience.quantecon.org/python_fundamentals/index.html){target="_blank"} by Chase Coleman, Spencer Lyon, and Jesse Perla
+
+- [QuantEcon DataScience - pandas](https://datascience.quantecon.org/pandas/index.html){target="_blank"} by Chase Coleman, Spencer Lyon, and Jesse Perla
+
+
+
+## Syllabus
 ### Course Requirements
 
-- Laptop: You should bring your own laptop (**Mac** or **Windows**) to the classroom. 
+
+- **Laptop**: You should bring your own laptop (**Mac** or **Windows**) to the classroom. 
   - It is recommended to have 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage in your laptop for this course.
   
-- Homework: There will be six homework assignments.
+::: {.incremental}
 
-- Exams: There will be one take-home exam. 
+- **Homework**: There will be six homework assignments.
+
+- **Team Project**: There will be one team project on a *personal website*.
+
+- **Exams**: There will be one Midterm Exam and one final exam. 
+  - The final exam is comprehensive.
+
+- **Discussions**: You are encouraged to participate in GitHub-based online discussions for each lecture, classwork, and homework.
+  - Checkout the netiquette policy in the syllabus.
+
+:::
+
+
+
+<!-- ## Syllabus -->
+<!-- ### Netiquette Policy for Online Discussions -->
+
+<!-- - Before posting your question to a discussion board, check if anyone has asked it already and received a reply. Just as you would not repeat a topic of discussion right after it happened in real life, do not do that in discussion boards either. -->
+<!-- - Stay on topic - Do not post irrelevant inks. comments, thoughts, or pictures. -->
+<!-- - Do not type in all capital letters. If you do, it will look like you are screaming. -->
+<!-- - Do not write anything that sounds angry or sarcastic, even as a joke, because without hearing your tone of voice, your peers might not realize you are joking. -->
+<!-- - Always remember to say "Please" and "Thank you" when soliciting help from your peers or an instructor. -->
+<!-- - Respect the opinions of your classmates. If you feel the need to disagree, do so respectfully and acknowledge the valid points in your peers' arguments. Acknowledge that others are entitled to have their own perspective on the issue. -->
+<!-- - If you reply to a question from a peer, make sure your answer is accurate! If you are not 100% when the homework is due, do not guess. Otherwise, you could really mess things up for your peers and they will not appreciate it. -->
+<!-- - Be brief. If you write a long dissertation in response to a simple question, it is unlikely that anyone will spend the time to read through it all. -->
+<!-- - If you ask a question and many people respond, summarize all answers and post that summary to benefit your whole class. -->
+<!-- - Do not badmouth others or call them stupid. You may disagree with their ideas, but do not mock the person. -->
+<!-- - If you refer to something your peers said earlier in the discussion, quote just a few key lines from their post so that others wont have to go back and figure out which post you re referring to. -->
+<!-- - Be forgiving. If your peer makes a mistake, do not badger him or her for it. Just let it go - it happens to the best of us. -->
+<!-- - Run a spelling and grammar check before posting anything to the discussion board. It only takes a minute, and can make the difference between sounding like a fool and sounding knowledgeable. -->
+
+
+## Syllabus
+
+### Personal Website
+
+- You will create your own website using Quarto, R Studio, and Git. 
+
+- You will publish your homework assignments and team project on your website. 
+
+- Your website will be hosted in [GitHub](https://www.github.com){target="_blank"}. 
+
+- The basics in Markdown will be discussed.
+
+- References:
+  - [Quarto Guide](https://quarto.org/docs/guide){target="_blank"}
+
+
+
+## Syllabus
+### Team Project
+
+- Team formation is scheduled for late March. 
+
+::: {.incremental}
+
+- Each team must have three to five students. 
+
+- For the team project, a team must choose data related to business or socioeconomic issues. 
+
+- The project report should include exploratory data analysis using summary statistics, visual representations, and data wrangling. 
+
+- The document for the team project must be published in each member's website. 
+
+- Any changes to team composition require approval from Byeong-Hak Choe. 
+
+::: 
+
+
+
+## Syllabus
+
+### Class Schedule and Exams
+
+- There will be tentatively 27 lecture sessions.
+
+::: {.incremental}
+
+- The Midterm Exam is scheduled on March 7, 2024, Thursday, during the class time.
+
+- The Final Exam is scheduled on May 10, 2024, Tuesday, 3:30 P.M.--5:30 P.M.
+
+- No class on 
+  - February 27, Tuesday (*Diversity Summit*)
+  - March 12, Tuesday and March 14, Thursday (*Spring Break*)
+
+- The due for the team project is scheduled on May 16, 2024, Thursday.
+
+:::
+
 
 
 ## Syllabus
 ### Course Contents
 
-- There will be tentatively 28 class sessions:
-  - 7 lectures
-  - 1 take-home exam
-
-
-
-
-## Syllabus
-### Course Contents
-
+- The first half of the course covers R basics and data visualization:
 ```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
 text_tbl <- data.frame(
   Week = c("1", "2", "3", "4", "5", "6", "7"),
-  Contents = c("Syllabus, Python & Pandas Basics",
-"The Series object and Series methods",
-"The DataFrame object and filtering DataFrame",
-"The GroupBy object",
-"Reshaping and pivoting",
-"Merging, joining, and concatenating",
-"Python data visualization and course wrap-up"),
-  `HW Exam` = c("HW 1", "HW 2", "HW 3", "HW 4", "HW 5", "HW 6", "Take-home Exam")
+  Contents = c("Course Outlines; Installing the Tools; Building a Website",
+"Python Basics with Google Colab",
+"pandas Basics",
+"Filtering, Sorting, and Ranking DataFrames",
+"Visualizing DataFrames and Group Operations",
+"Group Operations",
+"Group Operations"),
+  `HW Exam` = c("", "HW 1", "", "HW 2", "", "HW 3", "Midterm")
   )
 
 
@@ -154,10 +294,34 @@ DT::datatable(text_tbl, rownames = FALSE,
   $('thead th').css('background-color', '#1c4982');
   $('thead th').css('color', 'white');
 
-  // Change row background and text color
-  $('tbody tr').css('background-color', '#f2f2f2');
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
   $('tbody tr').css('color', 'black');
-"))
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
 
 ```
 
@@ -165,56 +329,482 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 
 ## Syllabus
-### Assessments
-- Each of the six homework assignments accounts for 10\% of the total percentage grade. 
-- The exam account for 30\% of the total percentage grade. 
-- Participation in discussions accounts for 10\% of the total percentage grade.
+### Course Contents
+
+- The second half of the course covers data wrangling:
+```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
+text_tbl <- data.frame(
+  Week = c("8", "9", "10", "11", "12", "13", "14", "15"),
+  Contents = c(
+"Reshaping and Pivoting DataFrames",
+"Merging, Joining, and Concatenating DataFrames",
+"Missing Data and Time-series Data",
+"Web Scrapping with BeautifulSoup and Selenium",
+"Web Scrapping with BeautifulSoup and Selenium",
+"Web Scrapping with BeautifulSoup and Selenium",
+"Data Collection with Application Programming Interfaces (APIs) ",
+"Data Collection with APIs"
+),
+  `HW Exam` = c("", "", "HW 4", "", "", "HW 5", "", "HW 6")
+  )
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+```
+
+
+
+
+## Syllabus
+### Grading
 
 $$
 \begin{align}
-(\text{Total Percentage Grade}) =\quad\, &0.60\times(\text{Total Homework Score})\notag\\
-\,+\, &0.30\times(\text{Take-Home Exam Score})\notag\\
-\,+\, &0.10\times(\text{Total Discussion Score})\notag
+(\text{Total Percentage Grade}) =&\quad\;\, 0.05\times(\text{Total Attendance Score})\notag\\
+&\,+\, 0.05\times(\text{Discussion Score})\notag\\ 
+&\,+\, 0.05\times(\text{Website Score})\notag\\ 
+&\,+\, 0.15\times(\text{Team Project and Website Score})\notag\\ 
+&\,+\, 0.20\times(\text{Total Homework Score})\notag\\ 
+&\,+\, 0.50\times(\text{Total Exam Score}).\notag
 \end{align}
 $$
 
 
 
-# GitHub and Google Colab {background-color="#1c4982"}
+
+
+
+## Syllabus
+### Grading
+
+- You are allowed up to 5 absences without penalty. 
+  - Send me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).
+
+
+::: {.incremental}
+
+- For each absence beyond the initial five, there will be a deduction of 1% from the Total Percentage Grade.
+
+- Participation in discussions will be evaluated by quantity and quality of discussions in the GitHub-based discussion boards. 
+
+- The single lowest homework score will be dropped when calculating the total homework score. 
+  - Each homework except for the homework with the lowest score accounts for 20% of the total homework score.
+
+::: 
+  
+
+## Syllabus
+### Grading
+
+
+- The total exam score is the maximum between 
+  1. the simple average of the midterm exam score and the final exam score and
+  2. the weighted average of them with one-fourth weight on the midterm exam score and three-third weight on the final exam score:
+
+$$
+\begin{align}
+&(\text{Total Exam Score}) \\
+=\, &\text{max}\,\left\{0.50\times(\text{Midterm Exam Score}) \,+\, 0.50\times(\text{Final Exam Score})\right.,\notag\\ 
+&\qquad\;\,\left.0.25\times(\text{Midterm Exam Score}) \,+\, 0.75\times(\text{Final Exam Score})\right\}.\notag
+\end{align}
+$$
+
+
+
+## Syllabus
+### Make-up Policy
+
+-  Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.
+
+::: {.incremental}
+
+- If you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.
+
+- A missed exam without an excused absence earns a grade of zero.
+
+- Late submissions for homework assignment will be accepted with a penalty. 
+
+- A zero will be recorded for a missed assignment.
+
+:::
+
+
+
+
+## Syllabus
+### Academic Integrity and Plagiarism
+
+-  All homework assignments and exams must be the original work by you. 
+
+- Examples of academic dishonesty include:
+  - *representing the work, thoughts, and ideas of another person as your own*
+  - *allowing others to represent your work, thoughts, or ideas as theirs*, and
+  - *being complicit in academic dishonesty by suspecting or knowing of it and not taking action*.
+
+
+- Geneseo’s Library offers frequent workshops to help you understand how to **paraphrase**, **quote**, and **cite** outside sources properly. 
+  - See [https://www.geneseo.edu/library/library-workshops](https://www.geneseo.edu/library/library-workshops){target="_blank"}.
+
+
+
+
+## Syllabus
+### Accessibility
+
+-  The Office of Accessibility will coordinate reasonable accommodations for persons with physical, emotional, or cognitive disabilities to ensure equal access to academic programs, activities, and services at Geneseo.
+
+- Please contact me and the Office of Accessibility Services for questions related to access and accommodations.
+
+
+
+
+
+## Syllabus
+### Well-being
+
+- You are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.
+
+- Liz Felski, the School of Business Student Advocate ([felski@geneseo.edu](felski@geneseo.edu), South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.
+
+- For more information, see [https://www.geneseo.edu/dean_students](https://www.geneseo.edu/dean_students){target="_blank"}.
+
+
+
+## Syllabus
+### Career Design
+
+- To get information about career development, you can visit the Career Development Events Calendar ([https://www.geneseo.edu/career_development/events/calendar](https://www.geneseo.edu/career_development/events/calendar){target="_blank"}).
+
+- You can stop by South 112 to get assistance in completing your Handshake Profile [https://app.joinhandshake.com/login](https://app.joinhandshake.com/login){target="_blank"}.
+  - Handshake is ranked #1 by students as the best place to find full-time jobs.
+  - 50% of the 2018-2020 graduates received a job or internship offer on Handshake.
+  - Handshake is trusted by all 500 of the Fortune 500.
+
+
+# Prologue {background-color="#1c4982"}
+
+
+## Why Data Analytics?
+
+::: {.incremental}
+
+- Fill in the gaps left by traditional business and economics classes.
+  - Practical skills that will benefit your future career.
+  - Neglected skills like how to actually find datasets in the wild and clean them.
+
+- Data analytics skills are largely distinct from (and complementary to) the core quantitative works familiar to business undergrads.
+  - Data visualization, cleaning and wrangling; databases; machine learning; etc.
+
+- In short, we will cover things that I wish someone had taught me when I was undergraduate.
+
+:::
+
+## You, at the end of this course
+
+<p align="center">
+  <img src="lec_figs/yes-that-s-awesome.jpeg">
+</p>
+
+
+
+
+## Why Data Analytics?
+
+- **Data analysts** use analytical tools and techniques to extract meaningful insights from data.
+  - Skills in data analytics are also useful for **business analysts** or **market analysts**.
+
+
+- [Breau of Labor Statistics](https://www.bls.gov/ooh/math/data-scientists.htm){target="_blank"} forecasts that the projected growth rate of the employment in the industry related to data analytics from 2021 to 2031 is **36%**. 
+  - The average growth rate for all occupations is **5%**.
+
+
+
+## Why Personal Website?
+### Benefits of a Personal Website in Data Analytics
+
+:::{}
+- Here are the example websites:
+  - [Byeong-Hak's Website](https://bcecon.github.io){target="_blank"}
+  - [DANL Website Template](https://bcdanl.github.io/danl-website-template){target="_blank"}
+:::
+
+:::{.incremental}
+- **Professional Showcase**: Display skills and projects
+- **Visibility and Networking**: Increase online presence
+- **Controlled Narrative**: Manage your professional brand
+- **Content Sharing and Engagement**: Publish articles, insights
+- **Job Opportunities**: Attract potential employers and clients
+- **Long-term Asset**: A growing repository of your career journey
+- **Reproducible Research**: Showcase data-driven reports
+:::
+
+
+
+## Why Python, R, and Databases?
+
+![](lec_figs/indeed-py-r-sql.png)
+
+## Why Python, R, and Databases?
+
+- [Stack Overflow](https://stackoverflow.com){target="_blank"}  is the most popular Q & A website specifically for programmers and software developers in the world.
+
+- See how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2022.
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Most Popular Languagues
+
+![](lec_figs/stackoverflow-py-r-sql.png)
+:::
+
+
+::: {.column width="50%"}
+### Data Science and Big Data
+
+![](lec_figs/stackoverflow-datascience-r-sql.png)
+
+:::
+
+:::: 
+
+
+
+
+
+## The State of the Art
+### Generative AI and ChatGPT
+
+
+:::: {.columns }
+
+::: {.column width="50%"}
+### Data Science and Big Data Trend
+
+From 2008 to 2023
+ 
+![](lec_figs/stackoverflow-datascience-r-sql-2024.png)
+
+:::
+
+
+::: {.column width="50%"}
+
+### Programmers in 2024
+
+![](lec_figs/chatgpt-stackoverflow-meme.jpg)
+:::
+
+
+::::
+
+
+
+
+
+
+
+
+## The State of the Art
+### Generative AI and ChatGPT
+
+- **Generative AI** refers to a category of artificial intelligence (AI) that is capable of generating new content, ranging from text, images, and videos to music and code. 
+
+:::{.incremental}
+
+- In the early 2020s, advances in transformer-based deep neural networks enabled a number of generative AI systems notable for accepting natural language prompts as input.
+  - These include large language model (LLM) chatbots such as ChatGPT, Copilot, Bard, and LLaMA.
+
+- **ChatGPT** (Chat Generative Pre-trained Transformer) is a chatbot developed by OpenAI and launched on November 30, 2022. 
+  - By January 2023, it had become what was then the fastest-growing consumer software application in history.
+
+:::
+
+
+
+## The State of the Art
+### Generative AI and ChatGPT
+
+  
+- Users around the world have explored how to best utilize GPT for writing essays and programming codes.
+
+
+::::{.incremental}
+
+:::{}
+- Is AI a threat to data analytics?
+  - Fundamental understanding of the subject matter is still crucial for effectively utilizing AI's capabilities.
+:::
+
+:::{}
+- If you use Generative AI such as ChatGPT, please try to understand what ChatGPT gives you.
+  - Copying and pasting it without any understanding harms your learning opportunity.
+:::
+
+::::
+
+
+# Today's Learning Objectives {background-color="#1c4982"}
+
+## Learning Objectives
+:::{}
+- Understand the concept of the tools we will use throughout the course:
+  - Git
+  - GitHub
+  - Python
+  - Google Colab
+  - R
+  - RStudio
+  - R Packages
+
+:::
+
+:::{}
+- Set up the tools in your laptop.
+  - Anaconda
+  - R, RStudio, and R Packages
+  - Git
+  - If possible, your personal website
+  
+:::
+
+
+# DANL Tools {background-color="#1c4982"}
+
+
+## What is Git?
+
+:::: {.columns}
+
+::: {.column width="45%"}
+![](lec_figs/git-version.png)
+:::
+
+::: {.column width="55%"}
+
+$\quad$
+
+- **Git** is the most popular **version control** tool for any software development.
+  - It tracks changes in a series of snapshots of the project, allowing developers to revert to previous versions, compare changes, and merge different versions. 
+  - It is the industry standard and ubiquitous for coding collaboration.
+  
+:::
+
+::::
+
+## What is Git?
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](lec_figs/git-simple.png)
+
+:::
+
+::: {.column width="60%"}
+
+```{.bash}
+git add .
+git commit -m "any message is here"
+git push -u origin main
+```
+
+$\quad$
+
+
+::: {.incremental}
+- Git operates primarily through command-line tools (e.g., **Terminal**) and is local to a user's computer.
+
+  - It has a steep learning curve.
+
+  
+- We will not do *git collaboration* but use only the 3-step git commands on Terminal to update a website.
+
+:::
+:::
+
+:::: 
+
 
 ## What is GitHub?
-- [https://github.com/](https://github.com/) is a platform for storing, managing, and sharing code. 
 
-- Course contents will be posted not only Brightspace but also our GitHub repositories ("repos").
+- [GitHub](https://github.com/){target="_blank"} is a web-based hosting platform for Git repositories to store, manage, and share code. 
 
-- Online discussion and Q & A will be hosted on GitHub repository.
+::: {.incremental}
 
-- Clicking "Sign Up" or [https://github.com/signup](https://github.com/signup) will direct you to the sign up page.
+- Your personal website will be hosted on a GitHub repository.
 
+- Course contents will be posted not only in Brightspace but also in our GitHub repositories ("repos") and websites.
 
+- Github is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.
 
-## Getting a GitHub account
-
-Github is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code.
-
-Sharing and editing code for a large group is easy with Github
-
-It also automatically maintains a history of all changes to the repo. 
-You can see the history of committed changes, and even go into detail about what those changes entailed. 
-
-You can also revert to old versions of your repo, and all edits will be saved in this history.
+:::
 
 
-## What is Google Colab
-- [https://colab.research.google.com/](https://colab.research.google.com/) is analogous to Google Drive, but specifically for writing and
-executing Python code in your browser.
+## What is Python?
+
+:::{.incremental}
+- Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
+  - It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. 
+  - Its extensive standard library and the vast ecosystem of third-party packages make it suitable for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing.
+:::
+
+
+## What is Google Colab?
+- [https://colab.research.google.com/](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python code in your browser.
   - The base Colab link listed above leads to a Python notebook introducing Colab and how to use it.
 
 - This video also helps get started with Colab if you are unfamiliar with the format!
-  - [https://www.youtube.com/watch?v=inN8seMm7UI](https://www.youtube.com/watch?v=inN8seMm7UI)
+  - [https://www.youtube.com/watch?v=inN8seMm7UI](https://www.youtube.com/watch?v=inN8seMm7UI){target="_blank"}
 
 
 ## Why use Colab?
+:::{.incremental}
 - A key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed. 
   - It allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.
   
@@ -222,680 +812,555 @@ executing Python code in your browser.
 
 - Colab notebooks don’t just contain Python code. They can contain text, images, and HTML!
 
-- Ultimately, they’re intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a laptop or PC.
+- Ultimately, they're intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer.
+:::
 
 
-## Colab has GitHub integration!
+## What is Anaconda?
+:::{.incremental}
+
+- **Anaconda** is an all-in-one Python distribution.
+  - Anaconda includes Python 3.x and its standard libraries such as `pip`, `pandas`, `matplotlib`, etc.
+  - Anaconda also includes several software applications of integrated development environment (IDE).
+  - An IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development. 
+
+- For our course, we will mainly use **Google Colab**. 
+  - If we need to use Python locally from your laptop, we can use **Jupyter** or **Spyder** IDE from Anaconda Distribution.
+
+- If you know how to set up [Visual Studio Code (**VS Code**)](https://code.visualstudio.com){target="_blank"}, go for it!
+  - VS Code is a free, open-source code editor developed by Microsoft, and is widely used by developers for programming and software development.
+
+:::
+
+## What is R?
+
+- **R** is a programming language and software environment designed for statistical computing and graphics. 
+
+- R has become a major tool in data analysis, statistical modeling, and visualization. 
+  - It is widely used among statisticians and data scientists for developing statistical software and performing data analysis. 
+  - R is open source and freely available. 
+
+
+## What is RStudio?
+
+:::{.incremental}
+- **RStudio** is an integrated development environment (IDE) mainly for R. 
+
+- RStudio is a user-friendly interface that makes using R easier and more interactive. 
+  - It provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.
+  - It integrates well with Git. 
+  
+:::
+
+
+
+
+## Python vs. R
+
+:::: {.incremental}
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Python
+
+- Python can be used for a wide range of applications, from web and game development to machine learning, making it a highly versatile language.
+
+- Python has the largest community in the programming world, providing a wealth of resources, libraries, and frameworks. 
+
+:::
+
+::: {.column width="50%"}
+### R
+- R is particularly strong in statistical analysis and visualization, with a vast number of packages for statistical methods, including machine learning.
+
+- The community around R, particularly in academia and research, is very active.
+
+
+:::
+
+::::
+
+- Both Python and R hold significant value in industry and government sectors. 
+  - However, Python is often more favored for roles in the industry, whereas R tends to be preferred for positions in the public sector.
+
+
+
+::::
+
+
 
 
 
 # Installing the Tools {background-color="#1c4982"}
 
 ## Installing the Tools
+### Getting a GitHub account
+
+:::: {.incremental}
+
+::: {}
+- Create the GitHub account with your Geneseo email.
+  1. Go to [GitHub](https://github.com){target="_blank"}.
+  2. Click "Sign up for GitHub".
+:::
+
+::: {}
+- Choose your GitHub username carefully:
+  - `https://YOUR_GITHUB_USERNAME.github.io` will be the address for your website.
+  - Byeong-Hak's GitHub username is `bcdanl`, so that Byeong-Hak owns the web address `https://bcdanl.github.io`.
+:::
+
+::: {}
+- It is better to have a username with *all lower cases*.
+:::
+
+::::
+
+## Installing the Tools
 ### Anaconda
 
-- Anaconda is an all-in-one Python distribution.
-  - Anaconda includes Python 3.x and its standard modules such as pip, pandas, matplotlib, etc.
-  - Anaconda also includes several software applications of integrated development environment (IDE), which is a software for editing codes.
-  - For the Python code, we will use **Spyder** IDE.  
-    - Do not use RStudio from Anaconda, because RStudio from Anaconda is out-dated.
-
-  
 - To install Anaconda, go to the following download page:
-  - [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution).
+  - [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution){target="_blank"}.
   - Click the "Download" button.
 
 
+## Installing the Tools
+### R programming
+
+- The R language is available as a free download from the R Project website at:
+  - Windows: [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/){target="_blank"}
+  - Mac: [https://cran.r-project.org/bin/macosx/](https://cran.r-project.org/bin/macosx/){target="_blank"}
+  - Download the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)
+
+
+
 
 ## Installing the Tools
-### Spyder IDE
+### R Studio
 
-- If Spyder IDE from Anaconda is lagging, consider installing it additionally.
+:::{}
+- The RStudio Desktop is available as a free download from the following webpage:
+    - [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"}
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- For **Mac** users, try the following steps:
+  1. Run **`RStudio-*.dmg`** file.
+  2. From the Pop-up menu, click the RStudio icon.
+  3. While clicking the RStudio icon, drag it to the **Applications** directory.
+
+:::
+
+::: {.column width="50%"}
+![](lec_figs/rstudio-mac-install.gif)
+:::
+::::
+
+
+## Installing the Tools
+### RStudio Environment
+:::: {.columns}
+::: {.column width="50%"}
+![](lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+
+
+- **Script Pane** is where you write R commands in a script file that you can save.
+
+:::{.incremental}
+  - An R script is simply a text file containing R commands. 
+  - RStudio will color-code different elements of your code to make it easier to read.
+
+:::
+
+:::
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::{.incremental}
+- To open an R script, 
+  - File $>$ New File  $>$ R Script
+
+:::
+:::
+
+::: {.column width="50%"}
+:::{.incremental}
+- To save the R script, 
+  - File $>$ Save
+
+:::
+:::
+
+::::
+
+## Installing the Tools
+### RStudio Environment
+:::: {.columns}
+::: {.column width="50%"}
+![](lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+- **Console Pane** allows you to interact directly with the R interpreter and type commands where R will immediately execute them.
+:::
+::::
+
+## Installing the Tools
+### RStudio Environment
+:::: {.columns}
+::: {.column width="50%"}
+![](lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+- **Environment Pane** is where you can see the values of variables, data frames, and other objects that are currently stored in memory.
+
+- Type below in the Console Pane, and then hit *Enter*:
+```{.r}
+a <- 1
+```
+
+:::
+::::
+
+## Installing the Tools
+### RStudio Environment
+
+:::: {.columns}
+::: {.column width="50%"}
+![](lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+- **Plots Pane** contains any graphics that you generate from your R code.
+
+:::
+::::
+
+
+
+## Installing the Tools
+### R Packages and `tidyverse`
+
+- **R packages** are collections of R functions, compiled code, and data that are combined in a structured format.
+
+
+:::{.incremental}
+
+- The `tidyverse` is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures. 
+  - The `tidyverse` packages work harmoniously together to make data manipulation, exploration, and visualization more.
+  - We will use several R packages from `tidyverse` throughout the course. (e.g., `ggplot2`, `dplyr`, `tidyr`)
+
+:::
+
+
+## Installing the Tools
+### Installing R packages with `install.packages("packageName")`
+
+- R packages can be easily installed from within R using functions  `install.packages("packageName")`. 
+  - To install the R package `tidyverse`, type and run the following from R console:
+
+:::{.incremental}
+```{.r}
+install.packages("tidyverse")
+```
+
+
+- While running the above codes, you may encounter the question below from the R Console:
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- **Mac**: *"Do you want to install from sources the packages which need compilation?"* from Console Pane.
+:::
+
+::: {.column width="50%"}
+
+- **Windows**: *"Would you like to use a personal library instead?"* from Pop-up message.
+:::
+::::
+
+- Type `no` in the R Console, and then hit *Enter*.
+
+:::
+
+## Installing the Tools
+### Loading R packages with `library(packageName)`
+
+- Once installed, a package is loaded into an R session using `library(packageName)` so that its functions and data can be used.
+  - To load the R package `tidyverse`, type and run the following command from a R script:
+
+```{.r}
+library(tidyverse)
+df_mpg <- mpg
+```
+
+:::{.incremental}
+- `mpg` is the data.frame provided by the R package `ggplot2`, one of the R pakcages in `tidyverse`.
+:::
+
+## Installing the Tools
+### RStudio Options Setting
+
+:::: {.columns}
+::: {.column width="50%"}
+![](lec_figs/RStudio_options.png)
+:::
+
+::: {.column width="50%"}
+- This option menu is found by menus as follows:
+  - Tools $>$ Global Options
+
+- Check the boxes as in the left.
+- Choose the option __*Never*__ for <u> Save workspace to .RData on exit: </u>
+:::
+
+::::
+
+
+
+
+
+
+
+## Installing the Tools
+###  Git
+
+- From the Consol Pane in RStudio, click Terminal.
+
+- In the Terminal, run the following command to check if your laptop has `git` installed.
+
+
+```{.bash}
+git --version
+```
+
+
+
+
+## Installing the Tools
+### Install `git` if you do not have it.
+
+
+::::{.columns}
+
+
+::: {.column width="50%"}
+
+#### Mac
+  - Go to [http://git-scm.com/downloads](http://git-scm.com/downloads){target="_blank"}, and download the file.
+  - Run the downloaded file.
+
+:::
+
+::: {.column width="50%"}
+
+#### Windows
+  - Go to [https://gitforwindows.org](https://gitforwindows.org){target="_blank"}, and download the file.
+  - Run the downloaded file.
+
+:::
+::::
+
+- Keep clicking "Next" to complete installation of `git`.
+
+- After the `git` installation is done, close RStudio and re-open it.
+
+
+## Installing the Tools
+###  Establishing GitHub Credential on your local Git.
+
+Step 0. In Terminal, run the following commands one by one:
+```{.bash}
+git config --global user.email "YOUR_GITHUB_EMAIL_ADDRESS"
+git config --global user.name "YOUR_GITHUB_USERNAME"
+```
+
+
+## Installing the Tools
+###  Establishing GitHub Credential on your local Git.
+
+Step 1. Obtain a personal access token (PAT) for GitHub. 
+
+  - In RStudio Console, run the followings line by line:
+```{r, echo = T, eval = F}
+install.packages("usethis")
+usethis::create_github_token()
+```
+  - Then, click “Generate token” in the pop-upped web browser. 
+  - Then, copy the generated PAT to your clipboard or R script.
+
+
+
+## Installing the Tools
+###  Establishing GitHub Credential on your local Git.
+
+
+Step 2. Set the GitHub credential using the PAT. 
+
+  - In RStudio **Console**, run the followings line by line:
+```{r, echo = T, eval = F}
+install.packages("gitcreds")
+gitcreds::gitcreds_set()
+```
+  - Then, paste your PAT to the RStudio Console
   
-- To install Spyder IDE in addition to Anaconda, go to the following download page:
-  i. [https://www.spyder-ide.org](https://www.spyder-ide.org).
-  ii. Click the "DOWNLOAD" menu.
-
-
-
-## Installing the Tools
-### Spyder Environment
-:::: {.columns}
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| out-width: "100%"
-#| fig-align: 'center'
-
-knitr::include_graphics("lec_figs/spyder_env.png")
-```
-:::
-
-::: {.column width="50%"}
-- Red box is **Script Editor** where you can create, open and edit files.
-
-
-:::
-::::
-## Installing the Tools
-### Spyder Environment
-:::: {.columns}
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| out-width: "100%"
-#| fig-align: 'center'
-
-knitr::include_graphics("lec_figs/spyder_env.png")
-```
-:::
-
-::: {.column width="50%"}
-- Blue box is **Console Pane** that allows you to interact directly with the Python interpreter and type commands where Python will immediately execute them.
-
-:::
-::::
-
-## Installing the Tools
-### Spyder Environment
-
-:::: {.columns}
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| out-width: "100%"
-#| fig-align: 'center'
-
-knitr::include_graphics("lec_figs/spyder_env.png")
-```
-:::
-
-::: {.column width="50%"}
-- Yellow box is **Variable Explorer** where you can see the values of variables, data frames, and other objects that are currently stored in memory.
-  - Double-clicking a variable will open a specialized viewer, allowing you to inspect its contents.
-
-
-:::
-::::
-
-
-
-
-
-## Coding Workflow
-### Code and comment style
-- The two main principles for coding and managing data are:
-  - Make things easier for your future self.
-  - Don't trust your future self.
-
-- The `#` mark is Spyder's comment character.
-  - `#` indicates that the rest of the line is to be ignored.
-  - Write comments before the line that you want the comment to apply to.
-
-- Consider using block commenting for separating code sections.
-  - `# %%` defines a coding block in Spyder.
-
-- Break down long lines and long algebraic expressions.
-
-
-
-## Coding Workflow
-### Shortcuts
-:::: {.columns}
-::: {.column width="50%"}
-### Mac
-- **F9** runs a current line (where the blinking cursor is) or selected lines.
-- **command + return** runs a current block.
-- **command + 1** is the shortcut for #.
-- **command + 4** is the shortcut for block comment.
-:::
-
-::: {.column width="50%"}
-### Windows
-- **F9** runs a current line (where the blinking cursor is) or selected lines.
-- **Ctrl + Enter** runs a current block.
-- **Ctrl + 1** is the shortcut for #.
-- **Ctrl + 4** is the shortcut for block comment.
-:::
-::::
-
-
-
-# Python Basics {background-color="#1c4982"}
-
-
-
-##  Python Basics
-### Values, Variables, and Types
-
-- A **value** is datum (literal) such as a number or text. 
-
-- There are different **types** of values: 352.3 is known as a *float* or *double*, 22 is an *integer*, and “Hello World!” is a *string*. 
-
-- A **variable** is a name that refers to a value.
-  - We can think of a **variable** as a box that has a value, or multiple values, packed inside it.
-
-
-```{.python}
-a = 10
-print(a)
-```
-
-
-
-##  Python Basics
-### Values, Variables, and Types
-
-- Sometimes you will hear variables referred to as **objects**.
-
-- Everything that is not a literal value, such as 10, is an *object*. 
-
-
-
-
-##  Python Basics
-### Assignment
-
-- In Python, we use `=` to assign a value to a variable.
-
-```{.python}
-# Here we assign the integer value 5 to the variable x.
-x = 5   
-
-# Now we can use the variable x in the next line.
-y = x + 12  
-y
-```
-
-- In math, `=` means *equality* of both sides.
-- In programs, `=` means **assignment**: *assign the value on the right side to the variable on the left side*.
-
-
-
-##  Python Basics
-### Assignment
-
-
-- In programs, everything on the right side needs to have a value.
-  - The right side can be a literal value, or a variable that has already been assigned a value, or a combination.
   
-- When Python reads `y = x + 12`, it does the following:
-  - Sees the `=` in the middle.
-  - Knows that this is an assignment.
-  - Calculates the right side (gets the value of the object referred to by `x` and adds it to `12`).
-  - Assigns the result to the left-side variable, `y`.
+
+## Installing the Tools
+###  Establishing the connection between GitHub repo and your local laptop
+
+Step 3. Login to your GitHib and make the repository.
+
+  - From [https://github.com](https://github.com){target="_blank"}, click the plus (+) icon in the upper right corner and select "New repository".
+
+  - Name this repo `YOUR_GITHUB_NAME.github.io`, which will be the domain for your website.
+
+  - Then, copy the web address of your GitHub repo.
 
 
 
 
 
-##  Python Basics
-### Variables Are Names, Not Places
-
-- In Python, *variables* are just names.
+## Installing the Tools
+###  Establishing the connection between GitHub repo and your local laptop
 
 
-```{r}
-#| eval: true
-#| out-width: "29%"
-#| fig-align: 'center'
-#| fig-cap: "Names point to objects (variable `a` points to an integer object with value `7`)"
+Step 4. Create a RStudio project with Version Control
 
-knitr::include_graphics("lec_figs/int-py-fig2-3.png")
-```
-
-
-##  Python Basics
-### Variables Are Names, Not Places
-
-- The most basic built-in data types that you’ll need to know about are: **integers** 10, **floats** 1.23, **strings** like this, **booleans** True, and **nothing** None.
-
-- Python also has a built-in type called a **list** [10, 15, 20] that can *contain* anything, even different **types** 
-
-```{.python}
-list_example = [10, 1.23, "like this", True, None]
-print(list_example)
-type(list_example)
-```
+  1. Click "Project (None)" at the top-right corner in RStudio.
+  
+  2. Click "New Project" > "Version Control" > "Git"
+  
+  3. Paste the web address of your GitHub repo to the Repository URL menu.
+  
+  4. Click "Browse" to select the parent directory for your local project directory (I recommend "Documents" folder.)
+  
+  5. Click "Create"
 
 
 
 
+## Installing the Tools
+###  Establishing the connection between GitHub repo and your local laptop
 
-##  Python Basics
-### Types
+- For users who can't create the R project with version control, do the following alternative Steps 4-1 and 4-2:
+
+Step 4-1. Use `git clone` to establish the connection between GitHub repo and your local laptop
+  1. Change the directory to "Documents" in Terminal.
 
 :::: {.columns}
-::: {.column width="50%"}
-```{r}
-#| eval: true
-#| out-width: "100%"
-#| fig-align: 'center'
-#| fig-cap: "Python’s basic data types"
 
-knitr::include_graphics("lec_figs/int-py-tab2-1.png")
+::: {.column width="50%"}
+```{.bash}
+cd /Users/USERNAME/Documents
 ```
 :::
 
 ::: {.column width="50%"}
-- The second column (Type) contains the Python name of that type. 
-
-- The third column (Mutable?) indicates whether the value can be changed after creation.
-:::
-::::
-
-
-
-
-##  Python Basics
-### Brackets
-
-- There are several kinds of brackets in Python, including `[]`, `{}`, and `()`. 
-
-
-::: {.panel-tabset}
-
-## `[]`
-- `[]` is used to denote a **list** or to signify accessing a *position* using an index.
-
-```{.python}
-vector = ['a', 'b']
-vector[0]
-```
-
-
-
-
-
-## `{}`
-- `{}` is used to denote a **set** or a **dictionary** (with key-value pairs).
-
-```{.python}
-{'a', 'b'}
-{'first_letter': 'a', 'second_letter': 'b'}
-```
-
-
-
-
-## `()`
-- `()` is used to denote a **tuple**, or the *arguments* to a *function*, e.g., function(x)  where x is the input passed to the function, or to indicate the order operations are carried out.
-
-```{.python}
-num_tup = (1, 2, 3)
-sum(num_tup)
-```
-
-
-
-:::
-
-
-
-##  Python Basics
-### Lists and Slicing
-
-- Lists are a really useful way to work with lots of data at once. 
-  - We can also construct them by appending entries:
-
-```{.python}
-list_example = [10, 1.23, "like this", True, None]
-list_example.append("one more entry")
-print(list_example)
-```
-
-- We can access earlier entries using an *index*, which begins at 0 and ends at one less than the length of the list.
-
-```{.python}
-print(list_example[0])
-print(list_example[-1])
-```
-
-
-
-
-##  Python Basics
-### Lists and Slicing
-
-- Slicing can be even more elaborate than that because we can jump entries using a second colon. 
-
-```{.python}
-# range() produces a list of integers from the value to one less than the last
-list_of_numbers = list(range(1, 11))
-start = 1
-stop = -1
-step = 2
-print(list_of_numbers[ start : stop : step ])
-```
-
-
-
-
-##  Python Basics
-### Operators
-
-- All of the basic operators you see in mathematics are available to use: `+` for addition, `-` for subtraction, `*` for multiplication, `**` for powers, `/` for division, `//` for integer division, and `%` for modulo.
-
-  i. These work as you’d expect on numbers. 
-  i. These operators are sometimes defined for other built-in data types too. 
-    - We can ‘sum’ strings (which really concatenates them):
-
-```{.python}
-string_one = "This is an example "
-string_two = "of string concatenation"
-string_full = string_one + string_two
-print(string_full)
-```
-
-
-
-##  Python Basics
-### Operators
-
-:::: {.columns}
-::: {.column width="50%"}
-- It works for lists too:
-
-```{.python}
-list_one = ["apples", "oranges"]
-list_two = ["pears", "satsumas"]
-list_full = list_one + list_two
-print(list_full)
-```
-
-:::
-
-::: {.column width="50%"}
-- We can multiply strings!
-
-```{.python}
-string = "apples, "
-print(string * 3)
+```{.bash}
+cd C:\Users\USERNAME\Documents
 ```
 
 :::
 ::::
 
-
-
-##  Python Basics
-### Operators
-
-- We can combine the arithmetic operators with assignment by putting the operator before the `=`.
-
-:::: {.columns}
-::: {.column width="50%"}
-- `x += 1` is equivalent to `x = x + 1`.
-```{.python}
-x = 3
-x += 1
-```
-:::
-
-::: {.column width="50%"}
-- `a -= 2` is equivalent to `a = a - 2`.
-```{.python}
-a = 2
-a -= 2
-```
-:::
-:::: 
-
-
-
-##  Python Basics
-### Operators
-
-**Q**. Using Python operations only, what is
-$$\frac{2^5}{7 \cdot (4 - 2^3)} \quad\text{?}$$ 
-
-
-
-
-
-
-##  Python Basics
-### Strings
-
-- From strings, we can access the individual characters via slicing and indexing. 
-
-
-```{.python}
-string = "cheesecake"
-print( string[-4:] )
+  2. Use `git clone` to creates a local copy of the GitHub Repository.
+```{.bash}
+git clone <repository-url>
 ```
 
+- For example,
 
-- Both lists and strings will allow us to use the `len()` command to get their length:
-
-:::: {.columns}
-::: {.column width="50%"}
-- `x += 1` is equivalent to `x = x + 1`.
-```{.python}
-string = "cheesecake"
-print( "String has length:" )
-print( len(string) )
-```
-:::
-
-::: {.column width="50%"}
-- `a -= 2` is equivalent to `a = a - 2`.
-```{.python}
-list_of_numbers = range(1, 20)
-print( "List of numbers has length:" )
-print( len(list_of_numbers) )
-```
-:::
-::::
-
-
-
-##  Python Basics
-### f-string
-
-- `f-string` can combine a number and a string (these begin with an `f` for formatting):
-```{.python}
-value = 20
-sqrt_val = 20 ** 0.5
-print(f"The square root of {value:d} is {sqrt_val:.2f}")
-```
-
-- The formatting command `:d` is an instruction to treat value like an *integer*, while `:.2f` is an instruction to print it like a *float* with 2 decimal places.
-
-
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- Boolean data have either `True` or `False` value.
-
-
-- There are two types of operation that are associated with booleans: boolean operations.
-  - Existing booleans are combined, and condition operations, which create a boolean when executed.
-
-
-
-```{r, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  Operator = c("x and y", "x or y", "not x"),
-  Description = c("Are x and y both True?",
-"Is at least one of x and y True?",
-"Is x False?")
-  )
-
-
-kable(text_tbl, format = "html") %>%
-  kable_paper(full_width = T) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  kable_styling(html_font = 'sans-serif, helvetica, arial',
-                bootstrap_options = c("hover", "condensed") )
-
-```
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-Conditions are expressions that evaluate as booleans. 
-
-```{r, out.width='100%', fig.align='center'}
-text_tbl <- data.frame(
-  Operator = c("x == y", "x != y", "x > y", "x >= y", "x < y", "x <= y", "x is y"),
-  Description = c("Is x equal to y?",
-"Is x greater than y?",
-"Is x greater than or equal to y?",
-"Is x greater than or equal to y?",
-"Is x less than y?",
-"Is x less than or equal to y?",
-"Is x the same object as y?" )
-)
-
-kable(text_tbl, format = "html") %>%
-  kable_paper(full_width = T) %>%
-  column_spec(1, bold = T, border_right = T) %>%
-  kable_styling(html_font = 'sans-serif, helvetica, arial',
-                bootstrap_options = c("hover", "condensed") )
-
-```
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- The `==` is an operator that compares the objects on either side and returns `True` if they have the same values
-
-```{.python}
-boolean_condition1 = 10 == 20
-print(boolean_condition1)
-
-boolean_condition2 = 10 == '10'
-print(boolean_condition2)
-```
-
-**Q**. What does `not (not True)` evaluate to?
-
-
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- The real power of conditions comes when we start to use them in more complex examples, such as `if` statements.
-
-
-```{.python}
-name = "Geneseo"
-score = 99
-
-if name == "Geneseo" and score > 90:
-    print("Geneseo, you achieved a high score.")
-
-if name == "Geneseo" or score > 90:
-    print("You could be called Geneseo or have a high score")
-
-if name != "Geneseo" and score > 90:
-    print("You are not called Geneseo and you have a high score")
-```
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- Given that `==` and `!=` test for equality and not equal, respectively, you may be wondering what the keyword `is`  is for.
-  - Remember that everything in Python is an object, and that values can be assigned to objects.
-  - `==` and `!=` compare values, while `is` compare objects.
-
-:::: {.columns}
-::: {.column width="50%"}
-```{.python}
-name_list = ["Ada", "Adam"]
-name_list_two = ["Ada", "Adam"]
-```
-:::
-
-::: {.column width="50%"}
-```{.python}
-# Compare values
-print(name_list == name_list_two)
-
-# Compare objects
-print(name_list is name_list_two)
-```
-:::
-::::
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- One of the most useful conditional keywords is `in`. 
-  - This one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.
-
-
-```{.python}
-name_list = ["Lovelace", "Smith", "Hopper", "Babbage"]
-
-print("Lovelace" in name_list)
-
-print("Bob" in name_list)
-```
-
-**Q**. Check if “a” is in the string “Sun Devil Arena” using `in`. Is “a” in “Anyone”?
-
-
-
-
-##  Python Basics
-### Booleans and Conditions
-
-- One conditional construct we're bound to use at some point, is the `if-else` chain:
-
-```{.python}
-score = 98
-
-if score == 100:
-    print("Top marks!")
-elif score > 90 and score < 100:
-    print("High score!")
-elif score > 10 and score <= 90:
-    pass
-else:
-    print("Better luck next time.")
+```{.bash}
+git clone https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io
 ```
 
 
 
 
-##  Python Basics
-### Booleans and Conditions
+## Installing the Tools
+###  Establishing the connection between GitHub repo and your local laptop
+
+- For users who can't create the R project with version control, do the following alternative Steps 4-1 and 4-2:
+
+Step 4-2. Create a RStudio project from Existing Directory
+
+  1. Click "Project (None)" at the top-right corner in RStudio.
+  
+  2. Click "New Project" > "Existing Directory" 
+  
+  3. Click "Browse" to select a local copy of the GitHub Repository
+  
+  4. Click "Create Project"
 
 
-**Q**. Create a new `if-else` chain that prints “well done” if a score is over 90, “good” if between 40 and 90, and “bad luck” otherwise.
+## Installing the Tools
+### Website Template Files
+
+Step 5. Download the files of website template:
+
+  1. Go to the following webpage: 
+  [https://github.com/bcdanl/danl-website-template](https://github.com/bcdanl/danl-website-template){target="_blank"}
+  2. From the webpage above, click the green icon “< > Code”, and then click “Download ZIP”
+
+  3. Extract the ZIP file you have downloaded
+  
+  4. If there are the files, `.gitignore`, `.DS_Store`, or `*.Rproj`, in the folder, delete them.
+
+  5. Move all the files that were compressed the ZIP file to your local project directory.
+  - **Ctrl/cmd + A** selects all files in a folder.
 
 
+## Installing the Tools
+### Website Template Files
+
+- All the website files should be located at the same level with the R Project file (`YOUR_USERNAME.github.io.Rproj`).
+
+<p align="center" >
+  <img src="lec_figs/website-files.png" style="width: 67%;">
+</p>
 
 
+## Installing the Tools
+### Pushing the website files to the GitHub repository
 
+Step 6. Push the files to your GitHub repository
 
-##  Python Basics
-### Booleans and Conditions
+  - On Terminal within RStudio, execute the following three git commands, which will stage, commit, and push all the files to your GitHub repository:
 
-
-- We can make multiple assignment or multiple boolean comparisons in a single line.
-
-
-```{.python}
-a, b = 3, 6
-
-1 < a < b < 20
+```{.bash}
+git add .
+git commit -m “ANY_MASSAGE”
+git push -u origin main
 ```
+
+If `git push -u origin main` gives error, try the following:
+```{.bash}
+git push -u origin master
+```
+
+
+
+## Installing the Tools
+### Pushing the website files to the GitHub repository
+
+Step 7. Check whether the files are well uploaded
+
+- Go to the webpages of your GitHub repository and your website:
+  - [https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git](https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git){target="_blank"}
+  - [https://YOUR_USERNAME.github.io](https://YOUR_USERNAME.github.io){target="_blank"}
+  - Refresh the webpage (**cmd/Ctrl + R**)
 
 
 
