@@ -1,10 +1,9 @@
-system("quarto render")
-# quarto::quarto_render("index.qmd")
+# system("quarto render")
+quarto::quarto_render("index.qmd")
 
 # Replace the values
 lec_no <- '01'
 lec_date <- '0123'
-
 
 library(stringr)
 old_content <- str_c('lec-', lec_no, '-2024-', lec_date, '.html"')
