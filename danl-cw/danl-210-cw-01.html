@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2024-01-22">
+<meta name="dcterms.date" content="2024-01-23">
 
 <title>Classwork 1 | Byeong-Hak Choe</title>
 <style>
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -76,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
 <meta property="og:title" content="Classwork 1 | Byeong-Hak Choe">
-<meta property="og:description" content="Installing the DANL Tools">
+<meta property="og:description" content="Building a Personal Website using Git, GitHub, Quarto, and RStudio">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="B.H. CHOE&amp;nbsp;&amp;nbsp;&amp;nbsp;">
 </head>
@@ -163,7 +197,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#installing-the-tools" id="toc-installing-the-tools" class="nav-link active" data-scroll-target="#installing-the-tools">Installing the Tools</a>
+  <ul>
+  <li><a href="#check-if-git-is-installed" id="toc-check-if-git-is-installed" class="nav-link" data-scroll-target="#check-if-git-is-installed">Check if Git is installed</a></li>
+  <li><a href="#install-git-if-you-do-not-have-it." id="toc-install-git-if-you-do-not-have-it." class="nav-link" data-scroll-target="#install-git-if-you-do-not-have-it.">Install <code>git</code> if you do not have it.</a></li>
+  <li><a href="#establishing-github-credential-on-your-local-git." id="toc-establishing-github-credential-on-your-local-git." class="nav-link" data-scroll-target="#establishing-github-credential-on-your-local-git.">Establishing GitHub Credential on your local Git.</a></li>
+  <li><a href="#establishing-the-connection-between-github-repo-and-your-local-laptop" id="toc-establishing-the-connection-between-github-repo-and-your-local-laptop" class="nav-link" data-scroll-target="#establishing-the-connection-between-github-repo-and-your-local-laptop">Establishing the connection between GitHub repo and your local laptop</a></li>
+  <li><a href="#website-template-files" id="toc-website-template-files" class="nav-link" data-scroll-target="#website-template-files">Website Template Files</a></li>
+  <li><a href="#pushing-the-website-files-to-the-github-repository" id="toc-pushing-the-website-files-to-the-github-repository" class="nav-link" data-scroll-target="#pushing-the-website-files-to-the-github-repository">Pushing the website files to the GitHub repository</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -171,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Classwork 1</h1>
-<p class="subtitle lead">Installing the DANL Tools</p>
+<p class="subtitle lead">Building a Personal Website using Git, GitHub, Quarto, and RStudio</p>
 </div>
 
 
@@ -188,14 +236,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 22, 2024</p>
+      <p class="date">January 23, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 22, 2024</p>
+      <p class="date-modified">January 23, 2024</p>
     </div>
   </div>
     
@@ -204,11 +252,179 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="installing-the-tools" class="level2">
+<h2 class="anchored" data-anchor-id="installing-the-tools">Installing the Tools</h2>
+<section id="check-if-git-is-installed" class="level3">
+<h3 class="anchored" data-anchor-id="check-if-git-is-installed">Check if Git is installed</h3>
+<ul>
+<li>From the Console Pane in RStudio, click Terminal.</li>
+</ul>
+<p align="center">
+<img src="rstudio-terminal.gif" style="width: 67%;">
+</p>
+<ul>
+<li>In the Terminal, run the following command to check if your laptop has <code>git</code> installed.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</section>
+<section id="install-git-if-you-do-not-have-it." class="level3">
+<h3 class="anchored" data-anchor-id="install-git-if-you-do-not-have-it.">Install <code>git</code> if you do not have it.</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="mac" class="level4">
+<h4 class="anchored" data-anchor-id="mac">Mac</h4>
+<ul>
+<li>Go to <a href="http://git-scm.com/downloads" target="_blank">http://git-scm.com/downloads</a>, and download the file.</li>
+<li>Run the downloaded file.</li>
+</ul>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="windows" class="level4">
+<h4 class="anchored" data-anchor-id="windows">Windows</h4>
+<ul>
+<li>Go to <a href="https://gitforwindows.org" target="_blank">https://gitforwindows.org</a>, and download the file.</li>
+<li>Run the downloaded file.</li>
+</ul>
+</section>
+</div>
+</div>
+<ul>
+<li><p>Keep clicking “Next” to complete installation of <code>git</code>.</p></li>
+<li><p>After the <code>git</code> installation is done, close RStudio and re-open it.</p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="establishing-github-credential-on-your-local-git." class="level3">
+<h3 class="anchored" data-anchor-id="establishing-github-credential-on-your-local-git.">Establishing GitHub Credential on your local Git.</h3>
+<p><strong>Step 0</strong>. In Terminal, run the following commands one by one:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"YOUR_GITHUB_EMAIL_ADDRESS"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"YOUR_GITHUB_USERNAME"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 1</strong>. Obtain a personal access token (PAT) for GitHub.</p>
+<ul>
+<li>In RStudio Console, run the followings line by line:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Then, click “Generate token” in the pop-upped web browser.</li>
+<li>Then, copy the generated PAT to your clipboard or R script.</li>
+</ul>
+<p><strong>Step 2</strong>. Set the GitHub credential using the PAT.</p>
+<ul>
+<li>In RStudio <strong>Console</strong>, run the followings line by line:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"gitcreds"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Then, paste your PAT to the RStudio Console</li>
+</ul>
+<p><br></p>
+</section>
+<section id="establishing-the-connection-between-github-repo-and-your-local-laptop" class="level3">
+<h3 class="anchored" data-anchor-id="establishing-the-connection-between-github-repo-and-your-local-laptop">Establishing the connection between GitHub repo and your local laptop</h3>
+<p><strong>Step 3</strong>. Login to your GitHib and make the repository.</p>
+<ul>
+<li><p>From <a href="https://github.com" target="_blank">https://github.com</a>, click the plus (+) icon in the upper right corner and select “New repository”.</p></li>
+<li><p>Name this repo <code>YOUR_GITHUB_NAME.github.io</code>, which will be the domain for your website.</p></li>
+<li><p>Then, copy the web address of your GitHub repo.</p></li>
+</ul>
+<p><strong>Step 4</strong>. Create a RStudio project with Version Control</p>
+<ol type="1">
+<li><p>Click “Project (None)” at the top-right corner in RStudio.</p></li>
+<li><p>Click “New Project” &gt; “Version Control” &gt; “Git”</p></li>
+<li><p>Paste the web address of your GitHub repo to the Repository URL menu.</p></li>
+<li><p>Click “Browse” to select the parent directory for your local project directory (I recommend “Documents” folder.)</p></li>
+<li><p>Click “Create”</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For users who can’t create the R project with version control, do the following alternative Steps 4-1 and 4-2:</p>
+</div>
+</div>
+<p><strong>Step 4-1</strong>. Use <code>git clone</code> to establish the connection between GitHub repo and your local laptop 1. Change the directory to “Documents” in Terminal.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /Users/USERNAME/Documents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:<span class="dt">\U</span>sers<span class="dt">\U</span>SERNAME<span class="dt">\D</span>ocuments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Use <code>git clone</code> to creates a local copy of the GitHub Repository.</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>repository-url<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>For example,</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 4-2</strong>. Create a RStudio project from Existing Directory</p>
+<ol type="1">
+<li><p>Click “Project (None)” at the top-right corner in RStudio.</p></li>
+<li><p>Click “New Project” &gt; “Existing Directory”</p></li>
+<li><p>Click “Browse” to select a local copy of the GitHub Repository</p></li>
+<li><p>Click “Create Project”</p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="website-template-files" class="level3">
+<h3 class="anchored" data-anchor-id="website-template-files">Website Template Files</h3>
+<p><strong>Step 5</strong>. Download the files of website template:</p>
+<ol type="1">
+<li><p>Go to the following webpage: <a href="https://github.com/bcdanl/danl-website-template" target="_blank">https://github.com/bcdanl/danl-website-template</a></p></li>
+<li><p>From the webpage above, click the green icon “&lt; &gt; Code”, and then click “Download ZIP”</p></li>
+<li><p>Extract the ZIP file you have downloaded</p></li>
+<li><p>If there are the files, <code>.gitignore</code>, <code>.DS_Store</code>, or <code>*.Rproj</code>, in the folder, delete them.</p></li>
+<li><p>Move all the files that were compressed the ZIP file to your local project directory.</p></li>
+</ol>
+<ul>
+<li><p><strong>Ctrl/cmd + A</strong> selects all files in a folder.</p></li>
+<li><p>All the website files should be located at the same level with the R Project file (<code>YOUR_USERNAME.github.io.Rproj</code>).</p></li>
+</ul>
+<p align="center">
+<img src="website-files.png" style="width: 67%;">
+</p>
+<p><br></p>
+</section>
+<section id="pushing-the-website-files-to-the-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="pushing-the-website-files-to-the-github-repository">Pushing the website files to the GitHub repository</h3>
+<p><strong>Step 6</strong>. Push the files to your GitHub repository</p>
+<ul>
+<li>On Terminal within RStudio, execute the following three git commands, which will stage, commit, and push all the files to your GitHub repository:</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> “ANY_MASSAGE”</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If <code>git push -u origin main</code> gives error, try the following:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 7</strong>. Check whether the files are well uploaded</p>
+<ul>
+<li>Go to the webpages of your GitHub repository and your website:
+<ul>
+<li><a href="https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git" target="_blank">https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git</a></li>
+<li><a href="https://YOUR_USERNAME.github.io" target="_blank">https://YOUR_USERNAME.github.io</a></li>
+<li>Refresh the webpage (<strong>cmd/Ctrl + R</strong>)</li>
+</ul></li>
+</ul>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div>© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.</div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-choe2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Choe, Byeong-Hak. 2024. <span>“Classwork 1.”</span> January 22, 2024.
+Choe, Byeong-Hak. 2024. <span>“Classwork 1.”</span> January 23, 2024.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
