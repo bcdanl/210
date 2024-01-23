@@ -336,18 +336,15 @@ DT::datatable(text_tbl, rownames = FALSE,
 #| eval: true
 #| echo: false
 text_tbl <- data.frame(
-  Week = c("8", "9", "10", "11", "12", "13", "14", "15"),
+  Week = c("8", "9", "10", "11-13", "14-15"),
   Contents = c(
 "Reshaping and Pivoting DataFrames",
 "Merging, Joining, and Concatenating DataFrames",
 "Missing Data and Time-series Data",
 "Web Scrapping with BeautifulSoup and Selenium",
-"Web Scrapping with BeautifulSoup and Selenium",
-"Web Scrapping with BeautifulSoup and Selenium",
-"Data Collection with Application Programming Interfaces (APIs) ",
-"Data Collection with APIs"
+"Data Collection with Application Programming Interfaces (APIs) "
 ),
-  `HW Exam` = c("", "", "HW 4", "", "", "HW 5", "", "HW 6")
+  `HW Exam` = c("", "", "HW 4", "HW 5", "HW 6")
   )
 
 
