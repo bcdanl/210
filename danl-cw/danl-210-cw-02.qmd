@@ -1,0 +1,84 @@
+---
+title: Classwork 2
+subtitle: Markdown
+date: last-modified
+
+comments:
+  hypothesis: 
+    theme: clean
+---
+
+
+
+# Introduction to Markdown
+
+Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.
+
+## Basic Syntax
+
+### Headings
+Headings are created by adding one or more `#` symbols before your heading text. The number of `#` symbols indicates the level of the heading.
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+```
+
+### Emphasis
+You can make text **bold** by wrapping it with two asterisks `**`, and *italic* by using one asterisk `*`.
+
+```markdown
+*italic* or _italic_
+**bold** or __bold__
+```
+
+### Lists
+Unordered lists are created using `*`, `-`, or `+`, while ordered lists are numbered.
+
+```markdown
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+```
+
+```markdown
+1. First item
+2. Second item
+```
+
+### Links and Images
+Links are created using `[Link Text](URL)`, and images with `![Alt Text](Image URL)`.
+
+```markdown
+[Quarto](https://quarto.org)
+![Quarto Logo](path/to/logo.png)
+```
+
+## Advanced Syntax
+
+### Code Blocks
+Code blocks are created by indenting lines by four spaces or by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.
+
+```markdown
+    Indented code block
+```
+
+````markdown
+```python
+# Python code block
+import numpy as np
+```
+````
+
+## Practice Problems
+
+1. **Basic Syntax**: Write a comment on here (Classwork 2) with a heading, a paragraph, a list, a link, and an image.
+2. **Advanced Syntax**: Write a comment that includes a Python code block and a blockquote
+
+
+
+## References
+- [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Start writing on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)

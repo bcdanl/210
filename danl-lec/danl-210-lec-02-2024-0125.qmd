@@ -10,7 +10,7 @@ author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
     affiliations: SUNY Geneseo
-date: 2024-02-06
+date: 2024-01-25
 execute: 
   eval: false
   echo: true
@@ -47,27 +47,61 @@ knitr::knit_engines$set("markdown")
 
 :::: {.columns}
 ::: {.column width="50%"}
-- Understand the concept of the tools we will use throughout the course:
-  - Git
-  - GitHub
-  - Python
-  - Google Colab
-  - R
-  - RStudio
-  - R Packages
 
+- Understand the concept of the tools:
+  - Git and GitHub
+  - Python and R
+  - Python libraries and R packages
+  - RStudio
+  - Data Science Process
+  - Jupyter Notebook and Quarto
+  - Google Colab
+  - Markdown
+
+:::
 
 ::: {.column width="50%"}
+:::{}
 - Set up the tools in your laptop.
   - Anaconda
   - R, RStudio, and R Packages
   - Git
-  - If possible, your personal website
-  
+  - Personal website
+:::
+
+- Practice Markdown.
+
 :::
 ::::
 
 # DANL Tools {background-color="#1c4982"}
+
+## Git vs. GitHub
+
+
+::: {.panel-tabset}
+
+### Git
+- Git is a distributed **version control** system. 
+
+- Git keeps track of changes in files and directories.
+
+- Git is optimized for the things that economists and data scientists spend a lot of time working on (e.g. code).
+
+- There is a learning curve, so we use only three commands---`add`, `commit`, and `push`!
+
+
+### GitHub
+
+- It is important to realize that Git and GitHub are distinct things.
+
+- GitHub is an online hosting platform that provides an array of services built on top of the Git system.
+
+- Just like we do not *need* Rstudio to run R code, we do not *need* GitHub to use Git... But it will make our lives so much easier.
+
+:::
+
+
 
 
 ## What is Anaconda?
@@ -81,9 +115,9 @@ knitr::knit_engines$set("markdown")
 - For our course, we will mainly use **Google Colab**. 
   - If we need to use Python locally from your laptop, we can use **Jupyter** or **Spyder** IDE from Anaconda Distribution.
 
-- If you know how to set up and use [Visual Studio Code (**VS Code**)](https://code.visualstudio.com){target="_blank"}, go for it!
-  - VS Code is a free, open-source code editor developed by Microsoft, and is widely used by developers for programming and software development.
-
+<!-- - You can use [Visual Studio Code (**VS Code**)](https://code.visualstudio.com){target="_blank"} -->
+  <!-- - VS Code is a free, open-source code editor developed by Microsoft, and is widely used by developers for programming and software development. -->
+  
 :::
 
 ## What is R?
@@ -142,42 +176,106 @@ knitr::knit_engines$set("markdown")
 
 
 
-## Communication
-
-![](https://bcdanl.github.io/lec_figs/communicate.png)
+## Data Science Process
 
 
+![](https://bcdanl.github.io/lec_figs/data-process.png){style="margin: auto; display: block"}
+
+
+<!-- ![](https://bcdanl.github.io/lec_figs/data-process.png){width=50%} -->
+
+::: {.incremental}
+
+- Communication is the final part of the data science process.
+  - If you cannot communicate your results to other humans, it does not matter how great your analysis is!
+
+
+- Jupyter Notebook (`*.ipynb`) and Quarto (`*.qmd`) are great tools for producing a document that integrates your Python/R code, its results, and your insights on the results.
+
+
+- We will use Jupyter Notebook and Quarto files to both
+  - Save and execute programming codes, and
+  - Generate high quality reports that can be shared with an audience.
+
+:::
+
+
+## What are Jupyter Notebook and Quarto?
+:::: {.incremental}
+:::{}
+- A **Jupyter Notebook** is an interactive computational environment that enables users to create and share documents that contain Python code, equations, visualizations, and narrative text. 
+
+- Jupyter Notebooks are widely used in data science, academic research, education, and machine learning projects due to their versatility and ease of use. 
+:::
+
+:::{}
+- A [Quarto](https://quarto.org) is similar to Jupyter Notebook.
+  - **Mululti-language Support**: Quarto supports not only R but also other languages such as Python, Julia, C++, SQL. 
+  - **Publishing Quality**: Quarto documents are designed with publishing in mind, offering superior customization for document layouts and high-quality outputs suitable for academic and professional publications.
+  
+:::
+:::: 
 
 ## What is Google Colab?
-- [https://colab.research.google.com/](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python code in your browser.
-  - The base Colab link listed above leads to a Python notebook introducing Colab and how to use it.
+
+:::{.incremental}
+- [Google Colab](https://colab.research.google.com/){target="_blank"} is analogous to Google Drive, but specifically for writing and executing Python Notebook (`*.ipynb`) in your web browser.
 
 - This video also helps get started with Colab if you are unfamiliar with the format!
-  - [https://www.youtube.com/watch?v=inN8seMm7UI](https://www.youtube.com/watch?v=inN8seMm7UI){target="_blank"}
 
+  - [Video: Get started with Google Colaboratory](https://www.youtube.com/watch?v=inN8seMm7UI){target="_blank"}
 
-## Why use Colab?
-:::{.incremental}
 - A key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed. 
+
   - It allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.
   
 - Using Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.
 
-- Colab notebooks don’t just contain Python code. They can contain text, images, and HTML!
+<!-- - Ultimately, they are intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Jupyter Notebooks on a personal computer. -->
 
-- Ultimately, they're intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Python notebooks on a personal computer.
 :::
-
 
 
 
 # Installing the Tools {background-color="#1c4982"}
 
 ## Installing the Tools
+### Getting a GitHub account
+
+:::: {.incremental}
+
+::: {}
+- Create the GitHub account with your Geneseo email.
+  1. Go to [GitHub](https://github.com){target="_blank"}.
+  2. Click "Sign up for GitHub".
+:::
+
+::: {}
+- Choose your GitHub username carefully:
+  - `https://USERNAME.github.io` will be the address for your website.
+  - Byeong-Hak's GitHub username is `bcdanl`, so that Byeong-Hak owns the web address `https://bcdanl.github.io`.
+:::
+
+::: {}
+- It is better to have a username with *all lower cases*.
+:::
+
+::::
+
+
+## Installing the Tools
+### Participate in the Discussions!
+
+- Go to [Lecture 2 - Q & A](https://bcdanl.github.io/210/danl-qa/danl-210-qa-02.html).
+
+- Sign in with GitHub account, and then add comments to the board.
+
+
+## Installing the Tools
 ### Anaconda
 
 - To install Anaconda, go to the following download page:
-  - [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution){target="_blank"}.
+  - [Anaconda Distribution](https://www.anaconda.com/products/distribution){target="_blank"}.
   - Click the "Download" button.
 
 
@@ -185,8 +283,8 @@ knitr::knit_engines$set("markdown")
 ### R programming
 
 - The R language is available as a free download from the R Project website at:
-  - Windows: [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/){target="_blank"}
-  - Mac: [https://cran.r-project.org/bin/macosx/](https://cran.r-project.org/bin/macosx/){target="_blank"}
+  - Windows: [R for Windows](https://cran.r-project.org/bin/windows/base/){target="_blank"}
+  - Mac: [R for Mac](https://cran.r-project.org/bin/macosx/){target="_blank"}
   - Download the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)
 
 
@@ -197,13 +295,16 @@ knitr::knit_engines$set("markdown")
 
 :::{}
 - The RStudio Desktop is available as a free download from the following webpage:
-    - [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"}
+    - [RStudio Download](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"}
+    
+- A recent version of RStudio includes Quarto, so that we do not need to install Quarto separately.
+
 :::
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- For **Mac** users, try the following steps:
+- For **Mac** users, try below steps:
   1. Run **`RStudio-*.dmg`** file.
   2. From the Pop-up menu, click the RStudio icon.
   3. While clicking the RStudio icon, drag it to the **Applications** directory.
@@ -335,6 +436,7 @@ a <- 1
 ![](https://bcdanl.github.io/lec_figs/ggplot2-part-of-tidyverse.png){width="80%"}
 :::
 ::::
+
 ## Installing the Tools
 ### Installing R packages with `install.packages("packageName")`
 
@@ -402,26 +504,44 @@ df_mpg <- mpg
 
 
 
-## Installing the Tools {.center}
+## Installing the Tools 
 ### Python in RStudio
+
+::: {.panel-tabset}
+## Python Option 
 
 - We can run Python codes within RStudio.
 
 - Select Python interpreter in RStudio from **Tools** $>$ **Global Options** $>$ **Python**:
 
-![](https://bcdanl.github.io/lec_figs/rstudio-conda.gif){style="margin: auto; display: block;"}
+![](https://bcdanl.github.io/lec_figs/rstudio-conda.gif){style="margin: auto; display: block;" width="45%"}
+
+## R package, `reticulate`
+
 - Install the R package, `reticulate`
 ```{.r}
 install.packages("reticulate")
 ```
 - This package allows `Quarto` to use Python and R objects interactively within one Quarto document.
-- We will discuss the concept of `Quarto` shortly.
 
+
+
+:::
 
 ## Installing the Tools
 ### Building a Website
 
-- Do [Classwork 1](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html).
+- Let's do [Classwork 1](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html).
+
+
+## Installing the Tools
+### Markdown
+
+- Python Notebook, Quarto, and GitHub-based Discussion Boards use **markdown** as its underlying document syntax.
+
+- Let's do [Classwork 2](https://bcdanl.github.io/210/danl-cw/danl-210-cw-02.html).
+
+
 
 
 <script>
