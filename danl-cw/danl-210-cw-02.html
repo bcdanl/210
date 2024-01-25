@@ -135,11 +135,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bcdanl/210" rel="me" target="_blank"><i class="bi bi-github" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/210" rel="me" target="_blank">
+ <span class="dropdown-text">Website</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/210/discussions" rel="me" target="_blank">
+ <span class="dropdown-text">Discussions</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -299,8 +311,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="advanced-syntax">Advanced Syntax</h2>
 <section id="code-blocks" class="level3">
 <h3 class="anchored" data-anchor-id="code-blocks">Code Blocks</h3>
-<p>Code blocks are created by indenting lines by four spaces or by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">    Indented code block</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Code blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">"string"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code block</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -318,10 +332,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="practice-problems" class="level2">
 <h2 class="anchored" data-anchor-id="practice-problems">Practice Problems</h2>
+<ul>
+<li>Do the following on this Classwork 2 Discussion Board:
 <ol type="1">
-<li><strong>Basic Syntax</strong>: Write a comment on here (Classwork 2) with a heading, a paragraph, a list, a link, and an image.</li>
-<li><strong>Advanced Syntax</strong>: Write a comment that includes a Python code block and a blockquote</li>
-</ol>
+<li><strong>Basic Syntax</strong>: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.</li>
+<li><strong>Advanced Syntax</strong>: Write a comment that includes a Python code block, a blockquote, and an emoji.</li>
+</ol></li>
+</ul>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -699,7 +716,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="bcdanl/danl-210-giscuss" data-repo-id="R_kgDOLE4Rfg" data-category="General" data-category-id="DIC_kwDOLE4Rfs4CcbL5" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+<script src="https://giscus.app/client.js" data-repo="bcdanl/210" data-repo-id="R_kgDOLE4y0w" data-category="General" data-category-id="DIC_kwDOLE4y084CcsGI" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">

@@ -59,11 +59,14 @@ Links are created using `[Link Text](URL)`, and images with `![Alt Text](Image U
 ## Advanced Syntax
 
 ### Code Blocks
-Code blocks are created by indenting lines by four spaces or by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.
+Code blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.
 
-```markdown
-    Indented code block
+
+````markdown
 ```
+"string"
+```
+````
 
 ````markdown
 ```python
@@ -80,9 +83,9 @@ import numpy as np
 
 
 ## Practice Problems
-
-1. **Basic Syntax**: Write a comment on here (Classwork 2) with a heading, a paragraph, a list, a link, and an image.
-2. **Advanced Syntax**: Write a comment that includes a Python code block and a blockquote
+- Do the following on this Classwork 2 Discussion Board:
+  1. **Basic Syntax**: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.
+  2. **Advanced Syntax**: Write a comment that includes a Python code block, a blockquote, and an emoji.
 
 
 
