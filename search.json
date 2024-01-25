@@ -46,7 +46,7 @@
     "href": "index.html#bullet-classwork",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nJanuary 24, 2024\n\n\n\n\nClasswork 1\n\n\nJanuary 24, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2024\n\n\n\n\nClasswork 1\n\n\nJanuary 24, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -60,14 +60,14 @@
     "href": "danl-cw/danl-210-cw-02.html",
     "title": "Classwork 2",
     "section": "",
-    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[Quarto](https://quarto.org)\n![Quarto Logo](path/to/logo.png)\n\n\n\n\n\n\nCode blocks are created by indenting lines by four spaces or by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n    Indented code block\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nBasic Syntax: Write a comment on here (Classwork 2) with a heading, a paragraph, a list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block and a blockquote\n\n\n\n\n\nMarkdown Basics\nStart writing on GitHub"
+    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[DANL 210](https://bcdanl.github.io/210)\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\nCode blocks are created by indenting lines by four spaces or by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n    Indented code block\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nA ton of markdown emojis are available here :smile: (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\n\nBasic Syntax: Write a comment on here (Classwork 2) with a heading, a paragraph, a list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block and a blockquote\n\n\n\n\n\nMarkdown Basics\nStart writing on GitHub"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#basic-syntax",
     "href": "danl-cw/danl-210-cw-02.html#basic-syntax",
     "title": "Classwork 2",
     "section": "",
-    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[Quarto](https://quarto.org)\n![Quarto Logo](path/to/logo.png)"
+    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[DANL 210](https://bcdanl.github.io/210)\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#advanced-syntax",
@@ -75,6 +75,13 @@
     "title": "Classwork 2",
     "section": "",
     "text": "Code blocks are created by indenting lines by four spaces or by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n    Indented code block\n```python\n# Python code block\nimport numpy as np\n```"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#emojis",
+    "href": "danl-cw/danl-210-cw-02.html#emojis",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "A ton of markdown emojis are available here :smile: (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#practice-problems",
@@ -103,13 +110,6 @@
     "title": "Lecture 2",
     "section": "Git vs. GitHub",
     "text": "Git vs. GitHub\n\nGitGitHub\n\n\n\nGit is a distributed version control system.\nGit keeps track of changes in files and directories.\nGit is optimized for the things that economists and data scientists spend a lot of time working on (e.g. code).\nThere is a learning curve, so we use only three commands—add, commit, and push!\n\n\n\n\nIt is important to realize that Git and GitHub are distinct things.\nGitHub is an online hosting platform that provides an array of services built on top of the Git system.\nJust like we do not need Rstudio to run R code, we do not need GitHub to use Git… But it will make our lives so much easier."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#github-for-scientific-research",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#github-for-scientific-research",
-    "title": "Lecture 2",
-    "section": "GitHub for scientific research",
-    "text": "GitHub for scientific research\n\nData science world has increasingly strict requirements regarding reproducibility and data access.\nGit and GitHub makes this easy."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-anaconda",
@@ -147,11 +147,11 @@
     "text": "Data Science Process\n\n\n\n\nCommunication is the final part of the data science process.\n\nIf you cannot communicate your results to other humans, it does not matter how great your analysis is!\n\nJupyter Notebook (*.ipynb) and Quarto (*.qmd) are great tools for producing a document that integrates your Python/R code, its results, and your insights on the results.\nWe will use Jupyter Notebook and Quarto files to both\n\nSave and execute programming codes, and\nGenerate high quality reports that can be shared with an audience."
   },
   {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-jupyter-notebook",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-jupyter-notebook",
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
     "title": "Lecture 2",
-    "section": "What is Jupyter Notebook?",
-    "text": "What is Jupyter Notebook?\n\nA Jupyter Notebook is an interactive computational environment that enables users to create and share documents that contain Python code, equations, visualizations, and narrative text.\nJupyter Notebooks are widely used in data science, academic research, education, and machine learning projects due to their versatility and ease of use.\nIts file uses an extension, *.ipynb."
+    "section": "What are Jupyter Notebook and Quarto?",
+    "text": "What are Jupyter Notebook and Quarto?\n\n\n\nA Jupyter Notebook is an interactive computational environment that enables users to create and share documents that contain Python code, equations, visualizations, and narrative text.\nJupyter Notebooks are widely used in data science, academic research, education, and machine learning projects due to their versatility and ease of use.\n\n\n\n\nA Quarto is similar to Jupyter Notebook.\n\nMululti-language Support: Quarto supports not only R but also other languages such as Python, Julia, C++, SQL.\nPublishing Quality: Quarto documents are designed with publishing in mind, offering superior customization for document layouts and high-quality outputs suitable for academic and professional publications."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-google-colab",
@@ -159,20 +159,6 @@
     "title": "Lecture 2",
     "section": "What is Google Colab?",
     "text": "What is Google Colab?\n\n\nGoogle Colab is analogous to Google Drive, but specifically for writing and executing Python Notebook (*.ipynb) in your web browser.\nThis video also helps get started with Colab if you are unfamiliar with the format!\n\nVideo: Get started with Google Colaboratory\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#why-use-colab",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#why-use-colab",
-    "title": "Lecture 2",
-    "section": "Why use Colab?",
-    "text": "Why use Colab?\n\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer.\nUltimately, they are intuitive to use and let you jump right into the code and data analysis without needing to worry about the more cumbersome details needed to run Jupyter Notebooks on a personal computer."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-quarto",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-quarto",
-    "title": "Lecture 2",
-    "section": "What is Quarto?",
-    "text": "What is Quarto?\n\nA Quarto is similar to Jupyter Notebook.\nMululti-language Support: Quarto supports not only R but also other languages such as Python, Julia, C++, SQL.\nPublishing Quality: Quarto documents are designed with publishing in mind, offering superior customization for document layouts and high-quality outputs suitable for academic and professional publications."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-1",
@@ -788,7 +774,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown\n\n\nJanuary 24, 2024\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio\n\n\nJanuary 24, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2024\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio\n\n\nJanuary 24, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-qa.html",
@@ -796,12 +782,5 @@
     "title": "DANL 210 - Lecture Discussion",
     "section": "",
     "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 2 - Q & A\n\n\nJanuary 24, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
-    "title": "Lecture 2",
-    "section": "What are Jupyter Notebook and Quarto?",
-    "text": "What are Jupyter Notebook and Quarto?\n\n\n\nA Jupyter Notebook is an interactive computational environment that enables users to create and share documents that contain Python code, equations, visualizations, and narrative text.\nJupyter Notebooks are widely used in data science, academic research, education, and machine learning projects due to their versatility and ease of use.\n\n\n\n\nA Quarto is similar to Jupyter Notebook.\n\nMululti-language Support: Quarto supports not only R but also other languages such as Python, Julia, C++, SQL.\nPublishing Quality: Quarto documents are designed with publishing in mind, offering superior customization for document layouts and high-quality outputs suitable for academic and professional publications."
   }
 ]
