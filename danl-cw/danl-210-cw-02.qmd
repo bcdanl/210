@@ -58,6 +58,20 @@ Links are created using `[Link Text](URL)`, and images with `![Alt Text](Image U
 
 ## Advanced Syntax
 
+### Blockquote
+
+```markdown
+> Be yourself. Everyone else is already taken. - Oscar Wilde.
+```
+
+
+### Emojis
+
+- A ton of markdown emojis are available here :smile: (`:smile:`)
+  - [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+
+
+
 ### Code Blocks
 Code blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.
 
@@ -75,13 +89,6 @@ import numpy as np
 ```
 ````
 
-## Emojis
-
-- A ton of markdown emojis are available here :smile: (`:smile:`)
-  - [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
-
-
-
 ## Practice Problems
 - Do the following on this Classwork 2 Discussion Board:
   1. **Basic Syntax**: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.
@@ -90,5 +97,5 @@ import numpy as np
 
 
 ## References
-- [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
 - [Start writing on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
