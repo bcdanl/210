@@ -67,6 +67,7 @@ knitr::knit_engines$set("markdown")
   - R, RStudio, and R Packages
   - Git
   - Personal website
+  
 :::
 
 - Practice Markdown.
@@ -88,7 +89,7 @@ knitr::knit_engines$set("markdown")
 
 - Git is optimized for the things that economists and data scientists spend a lot of time working on (e.g. code).
 
-- There is a learning curve, so we use only three commands---`add`, `commit`, and `push`!
+- Git has a learning curve, so we use only three commands---`add`, `commit`, and `push`!
 
 
 ### GitHub
@@ -552,4 +553,10 @@ document.addEventListener('wheel', function(event) {
         Reveal.prev(); // Scroll up to go to the previous slide
     }
 }, false);
+
+window.onload = function() {
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+    });
+};
 </script>

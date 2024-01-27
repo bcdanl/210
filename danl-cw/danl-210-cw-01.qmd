@@ -1,11 +1,8 @@
 ---
 title: Classwork 1
-subtitle: Building a Personal Website using Git, GitHub, and RStudio
-date: last-modified
-
-comments:
-  hypothesis: 
-    theme: clean
+subtitle: Building a Personal Website using Git, GitHub, and RStudio with Quarto
+date: 2023-01-25
+from: markdown+emoji
 ---
 
 
@@ -127,6 +124,14 @@ usethis::create_github_token()
 ```
 
   - Then, click “Generate token” in the pop-upped web browser. 
+
+  - We can think of GitHub's personal access token as a password that expires. You can decide how long it remains valid. My recommendation is to set its expiration for May 31, 2024, or later.
+
+<p align="center" >
+  <img src="https://bcdanl.github.io/lec_figs/github-token.gif" style="width: 67%;">
+</p>
+
+
   - Then, copy the generated PAT, and paste it to your clipboard or R script.
 
 
@@ -145,14 +150,33 @@ gitcreds::gitcreds_set()
 ```
 
   - You will be asked to provide your PAT.
-  - Paste your PAT to the RStudio Console, and hit *Enter*.
-  
+  - Paste your PAT to the RStudio Console, and then hit *Enter*.
 
+
+
+:::{.callout-note}
+
+- It does not harm to create multiple PAT for one GitHub account.
+- After the PAT expires, you should repeat the following if you want to update your GitHub website:
+
+1. Create a new PAT:
+```{.r}
+usethis::create_github_token()
+```
+
+2. Replace the current PAT with the new PAT:
+```{.r}
+gitcreds::gitcreds_set()
+```
+- Select the option `2: Replace these credentials` by typing `2` and hitting *Enter* on R Console.
+
+
+:::
 
 <br><br>
 
 
-###  Establishing the Connection between GitHub repo and your Git
+###  Establishing the Connection between GitHub repo and your local Git
 
 **Step 6**. Login to your GitHib and make the repository.
 
@@ -188,7 +212,7 @@ gitcreds::gitcreds_set()
   5. Click "Create"
 
 :::{.callout-note}
-Instead of Step 7 above, we can follow Steps 7-1 and 7-2. For those who have errors in Step 7, do Steps 7-1 and 7-2 instead. 
+If Step 7 does not work on your laptop, try below Steps 7-1 and 7-2 instead. If Step 7 DOES work well, skip Steps 7-1 and 7-2.
 :::
 
 **Step 7-1**. Use `git clone` to establish the connection between GitHub repo and your local laptop:
@@ -248,15 +272,18 @@ git clone https://github.com/USERNAME/USERNAME.github.io
 
   1. Go to the following webpage: 
   [https://github.com/bcdanl/danl-website-template](https://github.com/bcdanl/danl-website-template){target="_blank"}
-  2. From the webpage above, click the green icon <span style="background-color: #329932">< > Code</span>, and then click “Download ZIP”
+  2. From the webpage above, click the green icon <span style="background-color: #329932">< > Code</span>, and then click “Download Zip”
 
-  3. Extract the ZIP file you have downloaded
+  3. Extract the Zip file you have downloaded
   
   4. If there are the files, `.gitignore`, `.DS_Store`, or `*.Rproj`, in the folder, delete all of them.
 
-  5. Move all the files that were compressed in the ZIP file to your local project directory.
-  - **Ctrl/cmd + A** selects all files in a folder.
-
+  5. Move all the files that were compressed in the Zip file to your local project directory, `USERNAME.github.io`.
+  - Select all the files in the `danl-website-template` folder (Tip: **Ctrl + A** (Windows) / **command + A** (Mac)  selects all files in a directory).
+  - Then, **Ctrl + C** (Windows) / **command + C** (Mac) to copy them.
+  - Then, go to your local project directory `USERNAME.github.io`.
+  - Then, **Ctrl + V** (Windows) / **command + V** (Mac) to paste them to your local project directory `USERNAME.github.io`.
+  6. Remove the `danl-website-template` directory from your local project directory, if you have one.
 
 - All the website files should be located at the same level with the R Project file (`USERNAME.github.io.Rproj`), shown below.
 
@@ -278,7 +305,7 @@ git clone https://github.com/USERNAME/USERNAME.github.io
 
 **Step 8**. Push the files to your GitHub repository
 
-  - On Terminal within RStudio, execute the following 3-step `git` commands, which will *stage*, *commit*, and *push* all the new files in the local working directory to your GitHub repository:
+  - On Terminal within RStudio, execute the following 3-step `git` commands, which will *stage*, *commit*, and *push* all the files in the local working directory to your GitHub repository:
 
   1. `git add .` adds changes in your local working directory (e.g., edited files, new files, deleted files) to the *staging area*, which is a temporary area where you can prepare your next *commit*
 ```{.bash}
@@ -313,5 +340,5 @@ git push -u origin master
 - Go to the webpages of your GitHub repository and your website:
   - [https://github.com/USERNAME/USERNAME.github.io.git](https://github.com/USERNAME/USERNAME.github.io.git){target="_blank"}
   - [https://USERNAME.github.io](https://USERNAME.github.io){target="_blank"}
-  - Refresh the webpage (**cmd/Ctrl + R**)
+  - Refresh the webpages (**Ctrl + R** for Windows users; **cmd + R** for Mac users)
 

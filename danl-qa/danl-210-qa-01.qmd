@@ -6,10 +6,7 @@ execute:
   eval: true
   warning: false
   message: false
-
-comments:
-  hypothesis: 
-    theme: clean
+from: markdown+emoji
 ---
 ```{r setup}
 #| include: false
