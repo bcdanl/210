@@ -9,8 +9,8 @@ system(paste("rm", shQuote("index.html")))
 # Sys.sleep(2)
 
 
-lec_nos <- c('01', '02')
-lec_dates <- c('0123', '0125')
+lec_nos <- c('01', '02', '03')
+lec_dates <- c('0123', '0125', '0130')
 
 for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]
