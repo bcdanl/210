@@ -55,28 +55,27 @@ knitr::knit_engines$set("markdown")
 ## Announcement
 ### GitHub Notifications Setting
 
+::: {.panel-tabset}
 
-:::: {.columns}
-
-::: {.column width="50%"}
-- To avoid a ton of notification emails, you can de-select "Email" for notification options:
+### Steps
+- If you want to avoid a ton of notification emails,
   1. Go to [https://github.com](https://github.com), and log in.
   2. Click the mailbox icon at the top right corner next to the profile icon.
-    - This leads to the page of [GitHub Notifications](https://github.com/notifications).
+    <!-- - This leads to the page of [GitHub Notifications](https://github.com/notifications). -->
   3. Click "Manage notifications" at the bottom of the side bar.
   4. Click "Notification settings".
   5. Scroll down to the "Subscriptions" menu.
   6. Click "Notify me on ..." from the "Watching" sub-menu, uncheck "Email", and save it.
   7. Click "Notify me on ..." from the "Participating, ..." sub-menu, uncheck "Email", and save it.
 
+### gif description
+
+
+
+<p align="center" >
+  <img src="https://bcdanl.github.io/lec_figs/github-notification.gif" style="width: 50%;">
+</p>
 :::
-
-::: {.column width="50%"}
-
-![](https://bcdanl.github.io/lec_figs/github-notification.gif)
-:::
-
-::::
 
 
 
@@ -288,7 +287,7 @@ format:
 
 - The `_quarto.yml` file configures the website settings.
 
-- Indention matters!
+- Indentation matters!
 
 :::
 
@@ -433,6 +432,14 @@ left:
 
 - A ton of hex codes for colors are available here:
   - [https://www.color-hex.com](https://www.color-hex.com)
+
+
+
+
+## Website Basics
+
+- Let's do [Classwork 3](https://bcdanl.github.io/210/danl-cw/danl-200-cw-03.html).
+
 
 
 

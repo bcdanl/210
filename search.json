@@ -270,7 +270,7 @@
     "href": "danl-lec/danl-210-lec-03-2024-0130.html#announcement-1",
     "title": "Lecture 3",
     "section": "Announcement",
-    "text": "Announcement\nGitHub Notifications Setting\n\n\n\nTo avoid a ton of notification emails, you can de-select “Email” for notification options:\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon.\n\n\nThis leads to the page of GitHub Notifications.\n\n\nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
+    "text": "Announcement\nGitHub Notifications Setting\n\nStepsgif description\n\n\n\nIf you want to avoid a ton of notification emails,\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon. \nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#learning-objectives",
@@ -340,7 +340,7 @@
     "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites",
     "title": "Lecture 3",
     "section": "Quarto Websites",
-    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndention matters!"
+    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-1",
@@ -404,6 +404,13 @@
     "title": "Lecture 3",
     "section": "Quarto Websites",
     "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#website-basics",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#website-basics",
+    "title": "Lecture 3",
+    "section": "Website Basics",
+    "text": "Website Basics\n\nLet’s do Classwork 3."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#instructor-1",
