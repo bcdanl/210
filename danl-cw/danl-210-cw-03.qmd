@@ -1,7 +1,7 @@
 ---
 title: Classwork 3
 subtitle: Quarto Website Basics
-date: 2023-01-30
+date: 2023-02-01
 from: markdown+emoji
 ---
 
@@ -42,10 +42,10 @@ from: markdown+emoji
 ::::
 
 
-- A file in the working directory has its own web address.
+- A file in the working directory can have its own web address.
   - For example, if you have `resume-example.pdf` in your working directory, it has the web address, [https://USERNAME.github.io/resume-example.pdf](https://USERNAME.github.io/resume-example.pdf).
 
-- When naming a file in the website, do not have any space in a file name.
+- When naming a file in the website, do not have any space in a file name!
 
 - Be systematic when naming a series of files in the website.
   - E.g., `danl-210-cw-01.qmd`, `danl-210-cw-02.qmd`, `danl-210-cw-03.qmd`.
@@ -67,13 +67,38 @@ from: markdown+emoji
 <br><br>
 
 ## Practice Problems
-1. Add a drop-down menu of "Python Data Analysis" to the navigation bar.
+1. Decorate your website:
+  - Replace `YOUR NAME` with your name in `_quarto.yml` and `index.qmd`.
+  - Describe yourself in `index.qmd`.
+  - Add the picture (`png`) file of your profile photo to `img` directory. Then correct `img/profile.png` in `index.qmd` accordingly.
+  - Correct links for your resumé, linkedin, email, and social media.
+
+2. Add a drop-down menu of "Python Data Analysis" to the navigation bar.
   - Under the menu of "Python Data Analysis", add the following two webpages
-    a. Python Basic using `basic-python-intro.ipynb`
-    b. Python Basic with Pandas using `danl-210-quarto.qmd`
+    a. **Python Basics** using `basic-python-intro.ipynb`
+    b. **Python Basics with Pandas** using `danl-210-py-only.qmd`
+    c. **Using Python and R together!** using `danl-210-quarto-reticulate.qmd`
     
-2. Add a blog post that explains Python Basic to your blog.
-  - One way is using `qmd` file to write the blog post directly.
+3. Add a blog post that explains Python Basics to your blog.
+  - Start with creating a directory in the `posts` directory.
+  - One way is using `qmd` file to write the blog post directly with the following YAML.
+  
+```
+---
+title: Python Basics
+author: YOUR NAME
+date: last-modified
+categories: [python, code]
+image: image.png
+
+execute: 
+  warning: false
+  message: false
+  
+toc: true
+---
+```
+
   - The other way is to write a Jupyter Notebook for the blog post on Google Colab, execute it on Google Colab, download it as `*.ipynb`, use it for the blog post.
 
 

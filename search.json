@@ -14,67 +14,200 @@
     "text": "Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Homework 1.” January 26, 2024."
   },
   {
-    "objectID": "danl-qa/danl-210-qa-01.html",
-    "href": "danl-qa/danl-210-qa-01.html",
-    "title": "Lecture 1 - Q & A",
+    "objectID": "danl-qa/danl-210-qa-04.html",
+    "href": "danl-qa/danl-210-qa-04.html",
+    "title": "Lecture 4 - Q & A",
+    "section": "",
+    "text": "[REQUIRED] Please leave a comment on whether or not you can render a Quarto document with Python code.\n\nIf you could not render it, leave a comment with an error message you get when rendering the Quarto with Python.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "danl-qa/danl-210-qa-02.html",
+    "href": "danl-qa/danl-210-qa-02.html",
+    "title": "Lecture 2 - Q & A",
     "section": "",
     "text": "Back to top"
   },
   {
-    "objectID": "danl-qa/danl-210-qa-03.html",
-    "href": "danl-qa/danl-210-qa-03.html",
-    "title": "Lecture 3 - Q & A",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "",
-    "text": "Back to top"
+    "text": "Welcome! 👋\n\\(-\\) Explore, Learn, and Grow with the DANL! 🌟"
   },
   {
-    "objectID": "listing-danl-210-lec.html",
-    "href": "listing-danl-210-lec.html",
-    "title": "DANL 210 - Lecture",
-    "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "objectID": "index.html#bullet-lecture-slides",
+    "href": "index.html#bullet-lecture-slides",
+    "title": " DANL 210: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-01.html",
-    "href": "danl-cw/danl-210-cw-01.html",
-    "title": "Classwork 1",
-    "section": "",
-    "text": "Getting a GitHub account\nStep 1. Create the GitHub account with your Geneseo email.\n\nGo to GitHub.\nClick “Sign up for GitHub”.\n\n\nChoose your GitHub username carefully:\n\nhttps://USERNAME.github.io will be the address for your website.\nByeong-Hak’s GitHub username is bcdanl, so that Byeong-Hak owns the web address https://bcdanl.github.io.\n\nIt is recommended to have a username with all lower cases.\n\n\n\n\n\nInstalling git if you do not have one.\nStep 2.\n\nCheck whether git is installed in your laptop.\n\n\nFrom the Console Pane in RStudio, click Terminal tab.\n\n\n\n\n\nFrom the Terminal, run the following command to check if your laptop has git installed.\n\ngit --version\n\nIf your computer has git installed, you will see the message below and you do not need to install git:\n\ngit version 2.xx\n\nIf your computer does not have git installed, you will see the message below and you need to install git:\n\n'git' is not recognized as an internal or external command\n\n\nInstall git if you do not have one. Move to the next step if you have git installed in your laptop.\n\n\n\n\nMac\n\nGo to http://git-scm.com/downloads, and download the file.\nClick “macOS”, scroll down the webpage, and then click “installer” from the Binary installer section.\nRun the downloaded file.\n\n\n\n\nWindows\n\nGo to https://gitforwindows.org, and download the file.\nRun the downloaded file.\n\n\n\n\n\nKeep clicking “Next” to complete the installation of git.\nAfter the git installation is done, close RStudio and re-open it.\n\n\n\n\nSetting up GitHub Credential on your local Git.\nStep 3. In Terminal, run the following commands one by one:\ngit config --global user.email \"YOUR_EMAIL_ADDRESS\"\ngit config --global user.name \"YOUR_USERNAME\"\nFor example, the email address for my GitHub account is bchoe@geneseo.edu, and my GitHub username is bcdanl, so that I ran below:\ngit config --global user.email \"bchoe@geneseo.edu\"\ngit config --global user.name \"bcdanl\"\n\nStep 4. Obtain a personal access token (PAT) from GitHub.\n\nIn RStudio Console, run the followings line by line:\n\ninstall.packages(\"usethis\")\nusethis::create_github_token()\n\nThen, click “Generate token” in the pop-upped web browser.\nWe can think of GitHub’s personal access token as a password that expires. You can decide how long it remains valid. My recommendation is to set its expiration for May 31, 2024, or later.\n\n\n\n\n\nThen, copy the generated PAT, and paste it to your clipboard or R script.\n\n\nStep 5. Set the GitHub credential using the PAT.\n\nIn RStudio Console, run the followings line by line:\n\ninstall.packages(\"gitcreds\")\ngitcreds::gitcreds_set()\n\nYou will be asked to provide your PAT.\nPaste your PAT to the RStudio Console, and then hit Enter.\n\n\n\n\n\n\n\nNote\n\n\n\n\nIt does not harm to create multiple PAT for one GitHub account.\nAfter the PAT expires, you should repeat the following if you want to update your GitHub website:\n\n\nCreate a new PAT:\n\nusethis::create_github_token()\n\nReplace the current PAT with the new PAT:\n\ngitcreds::gitcreds_set()\n\nSelect the option 2: Replace these credentials by typing 2 and hitting Enter on R Console.\n\n\n\n\n\n\nEstablishing the Connection between GitHub repo and your local Git\nStep 6. Login to your GitHib and make the repository.\n\nFrom https://github.com, click the plus [+] icon in the upper right corner and select “New repository”.\nName this repo USERNAME.github.io, which will be the domain for your website.\n\n\ne.g., If your GitHub username is abc9, the name of your repo should be abc9.github.io, not abc_9.github.io.\n\n\nThen, copy the web address of your GitHub repo, https://github.com/USERNAME/USERNAME.github.io\n\n\nFor example, the web address for Byeong-Hak’s GitHub repo is https://github.com/bcdanl/bcdanl.github.io.\n\n\nStep 7. Create a RStudio project with Version Control\n\n\n\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Version Control” &gt; “Git”\nPaste the web address of your GitHub repo to the Repository URL menu.\nClick “Browse” to select the parent directory for your local project directory (I recommend “Documents” folder.)\nClick “Create”\n\n\n\n\n\n\n\nNote\n\n\n\nIf Step 7 does not work on your laptop, try below Steps 7-1 and 7-2 instead. If Step 7 DOES work well, skip Steps 7-1 and 7-2.\n\n\nStep 7-1. Use git clone to establish the connection between GitHub repo and your local laptop:\n\nChange directory to “Documents” in Terminal using cd command.\n\ncd &lt;pathname of \"Documents\" directory&gt;\n\nHere, you need to know the pathname of “Documents” directory.\nFor example, LAPTOP_USERNAME below is not your GitHub username but one for your local laptop.\n\nMac\ncd /Users/LAPTOP_USERNAME/Documents\nWindows\ncd C:/Users/LAPTOP_USERNAME/Documents\n\nUse git clone to creates a local copy of the GitHub Repository.\n\ngit clone &lt;repository-url&gt;\n\nFor example,\n\ngit clone https://github.com/USERNAME/USERNAME.github.io\n\nStep 7-2. Create a RStudio project from Existing Directory\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Existing Directory”\nClick “Browse” to select the local copy of the GitHub Repository\nClick “Create Project”\n\n\n\n\nDownloading Website Template Files\nStep 8. Download the files of website template:\n\nGo to the following webpage: https://github.com/bcdanl/danl-website-template\nFrom the webpage above, click the green icon &lt; &gt; Code, and then click “Download Zip”\nExtract the Zip file you have downloaded\nIf there are the files, .gitignore, .DS_Store, or *.Rproj, in the folder, delete all of them.\nMove all the files that were compressed in the Zip file to your local project directory, USERNAME.github.io.\n\n\nSelect all the files in the danl-website-template folder (Tip: Ctrl + A (Windows) / command + A (Mac) selects all files in a directory).\nThen, Ctrl + C (Windows) / command + C (Mac) to copy them.\nThen, go to your local project directory USERNAME.github.io.\nThen, Ctrl + V (Windows) / command + V (Mac) to paste them to your local project directory USERNAME.github.io.\n\n\nRemove the danl-website-template directory from your local project directory, if you have one.\n\n\nAll the website files should be located at the same level with the R Project file (USERNAME.github.io.Rproj), shown below.\n\n\n\n\n\n\n\nPushing the Website Files to the GitHub repository\n\n\n\nStep 8. Push the files to your GitHub repository\n\nOn Terminal within RStudio, execute the following 3-step git commands, which will stage, commit, and push all the files in the local working directory to your GitHub repository:\n\n\ngit add . adds changes in your local working directory (e.g., edited files, new files, deleted files) to the staging area, which is a temporary area where you can prepare your next commit\n\ngit add .\n\ngit commit -m \"...\" records the changes in the staging area as a new snapshot in the local working directory, along with a message describing the changes.\n\ngit commit -m \"any message to describe the changes\"\n\ngit push -u origin main uploads the local changes to the online repository in GitHub.\n\ngit push -u origin main\n\n\n\n\n\n\nNote\n\n\n\nIf git push -u origin main gives error, try the following:\ngit push -u origin master\n\nThe name of the default branch in a GitHub repo is usually main, but sometimes GitHub gives master default branch instead.\n\n\n\n\nStep 9. Check whether the files are well uploaded.\n\nGo to the webpages of your GitHub repository and your website:\n\nhttps://github.com/USERNAME/USERNAME.github.io.git\nhttps://USERNAME.github.io\nRefresh the webpages (Ctrl + R for Windows users; cmd + R for Mac users)\n\n\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2023. “Classwork 1.” January 25, 2023."
+    "objectID": "index.html#bullet-lecture-q-a",
+    "href": "index.html#bullet-lecture-q-a",
+    "title": " DANL 210: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Lecture Q & A ❓",
+    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-03.html",
-    "href": "danl-cw/danl-210-cw-03.html",
-    "title": "Classwork 3",
-    "section": "",
-    "text": "_quarto.yml configures the website:\n\nIt determines the structure of the website.\n\ne.g., Navigation bar, themes, HTML options, etc.\n\nIf _quarto.yml is edited, use quarto render to render all qmd and ipynb files.\n\nindex.qmd renders index.html, the front page of the website.\n\nDo not create Quarto files something like index2.qmd within the working directory.\n\nblog-listing.qmd configures the blog listing page.\nposts directory includes sub-directories of blog posts.\nimg directory can be used to store picture files.\n\n\n\n\nA file in the working directory has its own web address.\n\nFor example, if you have resume-example.pdf in your working directory, it has the web address, https://USERNAME.github.io/resume-example.pdf.\n\nWhen naming a file in the website, do not have any space in a file name.\nBe systematic when naming a series of files in the website.\n\nE.g., danl-210-cw-01.qmd, danl-210-cw-02.qmd, danl-210-cw-03.qmd.\n\n\n\n\n\n\n\nRules\n\nOne blog post corresponds to:\n\n\nOne sub-directory in the posts directory.\nOne *.qmd or *.ipynb file.\n\n\nPut all files for one blog post (e.g., *.qmd, *.png) in one corresponding sub-directory in the posts directory.\nWhen inserting an image file to a blog post, use a relative path, i.e., a file name of the image file.\n\n\n\n\n\n\n\nAdd a drop-down menu of “Python Data Analysis” to the navigation bar.\n\n\nUnder the menu of “Python Data Analysis”, add the following two webpages\n\nPython Basic using basic-python-intro.ipynb\nPython Basic with Pandas using danl-210-quarto.qmd\n\n\n\nAdd a blog post that explains Python Basic to your blog.\n\n\nOne way is using qmd file to write the blog post directly.\nThe other way is to write a Jupyter Notebook for the blog post on Google Colab, execute it on Google Colab, download it as *.ipynb, use it for the blog post.\n\n\n\n\n\n\nQuarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
+    "objectID": "index.html#bullet-classwork",
+    "href": "index.html#bullet-classwork",
+    "title": " DANL 210: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Classwork ⌨️",
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-03.html#website-files",
-    "href": "danl-cw/danl-210-cw-03.html#website-files",
-    "title": "Classwork 3",
-    "section": "",
-    "text": "_quarto.yml configures the website:\n\nIt determines the structure of the website.\n\ne.g., Navigation bar, themes, HTML options, etc.\n\nIf _quarto.yml is edited, use quarto render to render all qmd and ipynb files.\n\nindex.qmd renders index.html, the front page of the website.\n\nDo not create Quarto files something like index2.qmd within the working directory.\n\nblog-listing.qmd configures the blog listing page.\nposts directory includes sub-directories of blog posts.\nimg directory can be used to store picture files.\n\n\n\n\nA file in the working directory has its own web address.\n\nFor example, if you have resume-example.pdf in your working directory, it has the web address, https://USERNAME.github.io/resume-example.pdf.\n\nWhen naming a file in the website, do not have any space in a file name.\nBe systematic when naming a series of files in the website.\n\nE.g., danl-210-cw-01.qmd, danl-210-cw-02.qmd, danl-210-cw-03.qmd."
+    "objectID": "index.html#bullet-homework",
+    "href": "index.html#bullet-homework",
+    "title": " DANL 210: Data Preparation and Management, Spring 2024",
+    "section": "\\(\\bullet\\,\\) Homework 💻",
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nJanuary 26, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-03.html#blogging",
-    "href": "danl-cw/danl-210-cw-03.html#blogging",
-    "title": "Classwork 3",
+    "objectID": "danl-cw/danl-210-cw-02.html",
+    "href": "danl-cw/danl-210-cw-02.html",
+    "title": "Classwork 2",
     "section": "",
-    "text": "Rules\n\nOne blog post corresponds to:\n\n\nOne sub-directory in the posts directory.\nOne *.qmd or *.ipynb file.\n\n\nPut all files for one blog post (e.g., *.qmd, *.png) in one corresponding sub-directory in the posts directory.\nWhen inserting an image file to a blog post, use a relative path, i.e., a file name of the image file."
+    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[DANL 210](https://bcdanl.github.io/210)\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-03.html#practice-problems",
-    "href": "danl-cw/danl-210-cw-03.html#practice-problems",
-    "title": "Classwork 3",
+    "objectID": "danl-cw/danl-210-cw-02.html#basic-syntax",
+    "href": "danl-cw/danl-210-cw-02.html#basic-syntax",
+    "title": "Classwork 2",
     "section": "",
-    "text": "Add a drop-down menu of “Python Data Analysis” to the navigation bar.\n\n\nUnder the menu of “Python Data Analysis”, add the following two webpages\n\nPython Basic using basic-python-intro.ipynb\nPython Basic with Pandas using danl-210-quarto.qmd\n\n\n\nAdd a blog post that explains Python Basic to your blog.\n\n\nOne way is using qmd file to write the blog post directly.\nThe other way is to write a Jupyter Notebook for the blog post on Google Colab, execute it on Google Colab, download it as *.ipynb, use it for the blog post."
+    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[DANL 210](https://bcdanl.github.io/210)\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-03.html#references",
-    "href": "danl-cw/danl-210-cw-03.html#references",
-    "title": "Classwork 3",
+    "objectID": "danl-cw/danl-210-cw-02.html#advanced-syntax",
+    "href": "danl-cw/danl-210-cw-02.html#advanced-syntax",
+    "title": "Classwork 2",
     "section": "",
-    "text": "Quarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
+    "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#practice-problems",
+    "href": "danl-cw/danl-210-cw-02.html#practice-problems",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#references",
+    "href": "danl-cw/danl-210-cw-02.html#references",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Quarto Markdown Basics\nStart writing on GitHub"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
+    "title": "Lecture 4",
+    "section": "Announcement",
+    "text": "Announcement\nGitHub Notifications Setting\n\nStepsgif description\n\n\n\nIf you want to avoid a ton of notification emails,\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon. \nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#learning-objectives",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#learning-objectives",
+    "title": "Lecture 4",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\n\nSet up the tools in your laptop.\n\nPersonal website\n\n\n\n\n\nPractice Markdown\nUpdate Website\nPractice Quarto and Jupyter Notebook"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#building-a-website",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#building-a-website",
+    "title": "Lecture 4",
+    "section": "Building a Website",
+    "text": "Building a Website\n\nLet’s review Git and GitHub in Classwork 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#practice-markdown",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#practice-markdown",
+    "title": "Lecture 4",
+    "section": "Practice Markdown",
+    "text": "Practice Markdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s review Classwork 2."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-1",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-1",
+    "title": "Lecture 4",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nQuarto Basics\n\n\nIn RStudio, close the project USERNAME.github.io.Rporj if it is on.\n\nClick USERNAME.github.io.Rporj at the top-right corner.\nClick Close Project.\n\nDownload the Quarto files, danl-210-quarto-reticulate.qmd and danl-210-quarto-py-only.qmd, from Brightspace, and render (command/Ctrl + shift + K) them from RStudio.\nWhen rendering danl-210-quarto-reticulate.qmd and danl-210-quarto-py-only.qmd, I find that there can be some glitches in RStudio with Anaconda Python.\n\nThere could be various reasons for glitches. (e.g., Anaconda versions, incorrect pathname of Anaconda)\n[REQUIRED] Please let me know using Lecture 4 - Q & A!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-2",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-2",
+    "title": "Lecture 4",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nQuarto Basics\n\nThe following syntax is part of YAML metadata in danl-210-quarto-... .qmd.\n\nIn YAML, indentation really matters!\ntab (or four spaces) defines a level in YAML.\n\n\n---\ntitle: \nsubtitle: \nauthor: \ndate: last-modified\n\nexecute: \n  echo: true\n  eval: true\n\nformat: \n  html:\n---"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-1",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-1",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto file.\nquarto render from Terminal renders all Quarto/Jupyter Notebook files in your local working directory:\n\nquarto render\n\nWe should use quarto render when we have changes in _quarto.yml.\nMake changes only from your local laptop.\n\nDo not make any change from the GitHub repo webpage."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-2",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-2",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\n*.ipynb in Quarto websites\n\n\nBy default, quarto render doesn’t execute any Python code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf you need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, save it, and download it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-3",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-3",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate.\n\nMore details about HTML theming and code blocks are available here:\n\nHTML Theming\nHTML Code Blocks"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-4",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-4",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAbout\n\nYour index.qmd sets a page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-5",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-5",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-6",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-6",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can add a new page to the website through navbar in _quarto.yml\n\nleft:\n- text: Project\n  href: project.qmd\n- text: Blog\n  href: blog-listing.qmd\n- text: Homeowrk\n  href: hw.qmd"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-7",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-7",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can also create a dropdown menu in a navigation bar by including a menu\n\nleft:\n  - text: \"Projects\"\n    menu:\n      - project_1.qmd\n      - project_2.qmd \n\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-8",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-8",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#website-basics",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#website-basics",
+    "title": "Lecture 4",
+    "section": "Website Basics",
+    "text": "Website Basics\n\nLet’s do Classwork 3."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#learning-objectives",
@@ -882,79 +1015,65 @@
     "text": "Installing the Tools\nPushing the website files to the GitHub repository\nStep 7. Check whether the files are well uploaded\n\nGo to the webpages of your GitHub repository and your website:\n\nhttps://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git\nhttps://YOUR_USERNAME.github.io\nRefresh the webpage (cmd/Ctrl + R)"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-02.html",
-    "href": "danl-cw/danl-210-cw-02.html",
-    "title": "Classwork 2",
+    "objectID": "danl-cw/danl-210-cw-03.html",
+    "href": "danl-cw/danl-210-cw-03.html",
+    "title": "Classwork 3",
     "section": "",
-    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[DANL 210](https://bcdanl.github.io/210)\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
+    "text": "_quarto.yml configures the website:\n\nIt determines the structure of the website.\n\ne.g., Navigation bar, themes, HTML options, etc.\n\nIf _quarto.yml is edited, use quarto render to render all qmd and ipynb files.\n\nindex.qmd renders index.html, the front page of the website.\n\nDo not create Quarto files something like index2.qmd within the working directory.\n\nblog-listing.qmd configures the blog listing page.\nposts directory includes sub-directories of blog posts.\nimg directory can be used to store picture files.\n\n\n\n\nA file in the working directory can have its own web address.\n\nFor example, if you have resume-example.pdf in your working directory, it has the web address, https://USERNAME.github.io/resume-example.pdf.\n\nWhen naming a file in the website, do not have any space in a file name!\nBe systematic when naming a series of files in the website.\n\nE.g., danl-210-cw-01.qmd, danl-210-cw-02.qmd, danl-210-cw-03.qmd.\n\n\n\n\n\n\n\nRules\n\nOne blog post corresponds to:\n\n\nOne sub-directory in the posts directory.\nOne *.qmd or *.ipynb file.\n\n\nPut all files for one blog post (e.g., *.qmd, *.png) in one corresponding sub-directory in the posts directory.\nWhen inserting an image file to a blog post, use a relative path, i.e., a file name of the image file.\n\n\n\n\n\n\n\nDecorate your website:\n\n\nReplace YOUR NAME with your name in _quarto.yml and index.qmd.\nDescribe yourself in index.qmd.\nAdd the picture (png) file of your profile photo to img directory. Then correct img/profile.png in index.qmd accordingly.\nCorrect links for your resumé, linkedin, email, and social media.\n\n\nAdd a drop-down menu of “Python Data Analysis” to the navigation bar.\n\n\nUnder the menu of “Python Data Analysis”, add the following two webpages\n\nPython Basics using basic-python-intro.ipynb\nPython Basics with Pandas using danl-210-py-only.qmd\nUsing Python and R together! using danl-210-quarto-reticulate.qmd\n\n\n\nAdd a blog post that explains Python Basics to your blog.\n\n\nStart with creating a directory in the posts directory.\nOne way is using qmd file to write the blog post directly with the following YAML.\n\n---\ntitle: Python Basics\nauthor: YOUR NAME\ndate: last-modified\ncategories: [python, code]\nimage: image.png\n\nexecute: \n  warning: false\n  message: false\n  \ntoc: true\n---\n\nThe other way is to write a Jupyter Notebook for the blog post on Google Colab, execute it on Google Colab, download it as *.ipynb, use it for the blog post.\n\n\n\n\n\n\nQuarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
   },
   {
-    "objectID": "danl-cw/danl-210-cw-02.html#basic-syntax",
-    "href": "danl-cw/danl-210-cw-02.html#basic-syntax",
-    "title": "Classwork 2",
+    "objectID": "danl-cw/danl-210-cw-03.html#website-files",
+    "href": "danl-cw/danl-210-cw-03.html#website-files",
+    "title": "Classwork 3",
     "section": "",
-    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL), and images with ![Alt Text](Image URL).\n[DANL 210](https://bcdanl.github.io/210)\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
+    "text": "_quarto.yml configures the website:\n\nIt determines the structure of the website.\n\ne.g., Navigation bar, themes, HTML options, etc.\n\nIf _quarto.yml is edited, use quarto render to render all qmd and ipynb files.\n\nindex.qmd renders index.html, the front page of the website.\n\nDo not create Quarto files something like index2.qmd within the working directory.\n\nblog-listing.qmd configures the blog listing page.\nposts directory includes sub-directories of blog posts.\nimg directory can be used to store picture files.\n\n\n\n\nA file in the working directory can have its own web address.\n\nFor example, if you have resume-example.pdf in your working directory, it has the web address, https://USERNAME.github.io/resume-example.pdf.\n\nWhen naming a file in the website, do not have any space in a file name!\nBe systematic when naming a series of files in the website.\n\nE.g., danl-210-cw-01.qmd, danl-210-cw-02.qmd, danl-210-cw-03.qmd."
   },
   {
-    "objectID": "danl-cw/danl-210-cw-02.html#advanced-syntax",
-    "href": "danl-cw/danl-210-cw-02.html#advanced-syntax",
-    "title": "Classwork 2",
+    "objectID": "danl-cw/danl-210-cw-03.html#blogging",
+    "href": "danl-cw/danl-210-cw-03.html#blogging",
+    "title": "Classwork 3",
     "section": "",
-    "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
+    "text": "Rules\n\nOne blog post corresponds to:\n\n\nOne sub-directory in the posts directory.\nOne *.qmd or *.ipynb file.\n\n\nPut all files for one blog post (e.g., *.qmd, *.png) in one corresponding sub-directory in the posts directory.\nWhen inserting an image file to a blog post, use a relative path, i.e., a file name of the image file."
   },
   {
-    "objectID": "danl-cw/danl-210-cw-02.html#practice-problems",
-    "href": "danl-cw/danl-210-cw-02.html#practice-problems",
-    "title": "Classwork 2",
+    "objectID": "danl-cw/danl-210-cw-03.html#practice-problems",
+    "href": "danl-cw/danl-210-cw-03.html#practice-problems",
+    "title": "Classwork 3",
     "section": "",
-    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+    "text": "Decorate your website:\n\n\nReplace YOUR NAME with your name in _quarto.yml and index.qmd.\nDescribe yourself in index.qmd.\nAdd the picture (png) file of your profile photo to img directory. Then correct img/profile.png in index.qmd accordingly.\nCorrect links for your resumé, linkedin, email, and social media.\n\n\nAdd a drop-down menu of “Python Data Analysis” to the navigation bar.\n\n\nUnder the menu of “Python Data Analysis”, add the following two webpages\n\nPython Basics using basic-python-intro.ipynb\nPython Basics with Pandas using danl-210-py-only.qmd\nUsing Python and R together! using danl-210-quarto-reticulate.qmd\n\n\n\nAdd a blog post that explains Python Basics to your blog.\n\n\nStart with creating a directory in the posts directory.\nOne way is using qmd file to write the blog post directly with the following YAML.\n\n---\ntitle: Python Basics\nauthor: YOUR NAME\ndate: last-modified\ncategories: [python, code]\nimage: image.png\n\nexecute: \n  warning: false\n  message: false\n  \ntoc: true\n---\n\nThe other way is to write a Jupyter Notebook for the blog post on Google Colab, execute it on Google Colab, download it as *.ipynb, use it for the blog post."
   },
   {
-    "objectID": "danl-cw/danl-210-cw-02.html#references",
-    "href": "danl-cw/danl-210-cw-02.html#references",
-    "title": "Classwork 2",
+    "objectID": "danl-cw/danl-210-cw-03.html#references",
+    "href": "danl-cw/danl-210-cw-03.html#references",
+    "title": "Classwork 3",
     "section": "",
-    "text": "Quarto Markdown Basics\nStart writing on GitHub"
+    "text": "Quarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": " DANL 210: Data Preparation and Management, Spring 2024",
+    "objectID": "danl-cw/danl-210-cw-01.html",
+    "href": "danl-cw/danl-210-cw-01.html",
+    "title": "Classwork 1",
     "section": "",
-    "text": "Welcome! 👋\n\\(-\\) Explore, Learn, and Grow with the DANL! 🌟"
+    "text": "Getting a GitHub account\nStep 1. Create the GitHub account with your Geneseo email.\n\nGo to GitHub.\nClick “Sign up for GitHub”.\n\n\nChoose your GitHub username carefully:\n\nhttps://USERNAME.github.io will be the address for your website.\nByeong-Hak’s GitHub username is bcdanl, so that Byeong-Hak owns the web address https://bcdanl.github.io.\n\nIt is recommended to have a username with all lower cases.\n\n\n\n\n\nInstalling git if you do not have one.\nStep 2.\n\nCheck whether git is installed in your laptop.\n\n\nFrom the Console Pane in RStudio, click Terminal tab.\n\n\n\n\n\nFrom the Terminal, run the following command to check if your laptop has git installed.\n\ngit --version\n\nIf your computer has git installed, you will see the message below and you do not need to install git:\n\ngit version 2.xx\n\nIf your computer does not have git installed, you will see the message below and you need to install git:\n\n'git' is not recognized as an internal or external command\n\n\nInstall git if you do not have one. Move to the next step if you have git installed in your laptop.\n\n\n\n\nMac\n\nGo to http://git-scm.com/downloads, and download the file.\nClick “macOS”, scroll down the webpage, and then click “installer” from the Binary installer section.\nRun the downloaded file.\n\n\n\n\nWindows\n\nGo to https://gitforwindows.org, and download the file.\nRun the downloaded file.\n\n\n\n\n\nKeep clicking “Next” to complete the installation of git.\nAfter the git installation is done, close RStudio and re-open it.\n\n\nHow to open git installation file on Mac?\n\nRun the downloaded file.\nClick Okay\nGo to “Setting” &gt; “Privacy and Security”\nGo to “General” or scroll down\nClick “Open Anyway”\n\n\n\n\n\n\n\n\nSetting up GitHub Credential on your local Git.\nStep 3. In Terminal, run the following commands one by one:\ngit config --global user.email \"YOUR_EMAIL_ADDRESS\"\ngit config --global user.name \"YOUR_USERNAME\"\nFor example, the email address for my GitHub account is bchoe@geneseo.edu, and my GitHub username is bcdanl, so that I ran below:\ngit config --global user.email \"bchoe@geneseo.edu\"\ngit config --global user.name \"bcdanl\"\n\nStep 4. Obtain a personal access token (PAT) from GitHub.\n\nIn RStudio Console, run the followings line by line:\n\ninstall.packages(\"usethis\")\nusethis::create_github_token()\n\nThen, click “Generate token” in the pop-upped web browser.\nWe can think of GitHub’s personal access token as a password that expires. You can decide how long it remains valid. My recommendation is to set its expiration for May 31, 2024, or later.\n\n\n\n\n\nThen, copy the generated PAT, and paste it to your clipboard or R script.\n\n\nStep 5. Set the GitHub credential using the PAT.\n\nIn RStudio Console, run the followings line by line:\n\ninstall.packages(\"gitcreds\")\ngitcreds::gitcreds_set()\n\nYou will be asked to provide your PAT.\nPaste your PAT to the RStudio Console, and then hit Enter.\n\n\n\n\n\n\n\nNote\n\n\n\n\nIt does not harm to create multiple PAT for one GitHub account.\nAfter the PAT expires, you should repeat the following if you want to update your GitHub website:\n\n\nCreate a new PAT:\n\nusethis::create_github_token()\n\nReplace the current PAT with the new PAT:\n\ngitcreds::gitcreds_set()\n\nSelect the option 2: Replace these credentials by typing 2 and hitting Enter on R Console.\n\n\n\n\n\n\nEstablishing the Connection between GitHub repo and your local Git\nStep 6. Login to your GitHib and make the repository.\n\nFrom https://github.com, click the plus [+] icon in the upper right corner and select “New repository”.\nName this repo USERNAME.github.io, which will be the domain for your website.\n\n\ne.g., If your GitHub username is abc9, the name of your repo should be abc9.github.io, not abc_9.github.io.\n\n\nThen, copy the web address of your GitHub repo, https://github.com/USERNAME/USERNAME.github.io\n\n\nFor example, the web address for Byeong-Hak’s GitHub repo is https://github.com/bcdanl/bcdanl.github.io.\n\n\nStep 7. Create a RStudio project with Version Control\n\n\n\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Version Control” &gt; “Git”\nPaste the web address of your GitHub repo to the Repository URL menu.\nClick “Browse” to select the parent directory for your local project directory (I recommend “Documents” folder.)\nClick “Create”\n\n\n\n\n\n\n\nNote\n\n\n\nIf Step 7 does not work on your laptop, try below Steps 7-1 and 7-2 instead. If Step 7 DOES work well, skip Steps 7-1 and 7-2.\n\n\nStep 7-1. Use git clone to establish the connection between GitHub repo and your local laptop:\n\nChange directory to “Documents” in Terminal using cd command.\n\ncd &lt;pathname of \"Documents\" directory&gt;\n\nHere, you need to know the pathname of “Documents” directory.\nFor example, LAPTOP_USERNAME below is not your GitHub username but one for your local laptop.\n\nMac\ncd /Users/LAPTOP_USERNAME/Documents\nWindows\ncd C:/Users/LAPTOP_USERNAME/Documents\n\nUse git clone to creates a local copy of the GitHub Repository.\n\ngit clone &lt;repository-url&gt;\n\nFor example,\n\ngit clone https://github.com/USERNAME/USERNAME.github.io\n\nStep 7-2. Create a RStudio project from Existing Directory\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Existing Directory”\nClick “Browse” to select the local copy of the GitHub Repository\nClick “Create Project”\n\n\n\n\nDownloading Website Template Files\nStep 8. Download the files of website template:\n\nGo to the following webpage: https://github.com/bcdanl/danl-website-template\nFrom the webpage above, click the green icon &lt; &gt; Code, and then click “Download Zip”\nExtract the Zip file you have downloaded\nIf there are the files, .gitignore, .DS_Store, or *.Rproj, in the folder, delete all of them.\nMove all the files that were compressed in the Zip file to your local project directory, USERNAME.github.io.\n\n\nSelect all the files in the danl-website-template folder (Tip: Ctrl + A (Windows) / command + A (Mac) selects all files in a directory).\nThen, Ctrl + C (Windows) / command + C (Mac) to copy them.\nThen, go to your local project directory USERNAME.github.io.\nThen, Ctrl + V (Windows) / command + V (Mac) to paste them to your local project directory USERNAME.github.io.\n\n\nRemove the danl-website-template directory from your local project directory, if you have one.\n\n\nAll the website files should be located at the same level with the R Project file (USERNAME.github.io.Rproj), shown below.\n\n\n\n\n\n\n\nPushing the Website Files to the GitHub repository\n\n\n\nStep 8. Push the files to your GitHub repository\n\nOn Terminal within RStudio, execute the following 3-step git commands, which will stage, commit, and push all the files in the local working directory to your GitHub repository:\n\n\ngit add . adds changes in your local working directory (e.g., edited files, new files, deleted files) to the staging area, which is a temporary area where you can prepare your next commit\n\ngit add .\n\ngit commit -m \"...\" records the changes in the staging area as a new snapshot in the local working directory, along with a message describing the changes.\n\ngit commit -m \"any message to describe the changes\"\n\ngit push -u origin main uploads the local changes to the online repository in GitHub.\n\ngit push -u origin main\n\n\n\n\n\n\nNote\n\n\n\nIf git push -u origin main gives error, try the following:\ngit push -u origin master\n\nThe name of the default branch in a GitHub repo is usually main, but sometimes GitHub gives master default branch instead.\n\n\n\n\nStep 9. Check whether the files are well uploaded.\n\nGo to the webpages of your GitHub repository and your website:\n\nhttps://github.com/USERNAME/USERNAME.github.io.git\nhttps://USERNAME.github.io\nRefresh the webpages (Ctrl + R for Windows users; cmd + R for Mac users)\n\nAdd a URL for your website (https://YOUR_GITHUB_USERNAME.github.io/) in About section in your GihtHub repository webpage by clicking the setting. Below describes how to do it:\n\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2023. “Classwork 1.” January 25, 2023."
   },
   {
-    "objectID": "index.html#bullet-lecture-slides",
-    "href": "index.html#bullet-lecture-slides",
-    "title": " DANL 210: Data Preparation and Management, Spring 2024",
-    "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
+    "objectID": "listing-danl-210-lec.html",
+    "href": "listing-danl-210-lec.html",
+    "title": "DANL 210 - Lecture",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "index.html#bullet-lecture-q-a",
-    "href": "index.html#bullet-lecture-q-a",
-    "title": " DANL 210: Data Preparation and Management, Spring 2024",
-    "section": "\\(\\bullet\\,\\) Lecture Q & A ❓",
-    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\n\n\nNo matching items"
+    "objectID": "danl-qa/danl-210-qa-03.html",
+    "href": "danl-qa/danl-210-qa-03.html",
+    "title": "Lecture 3 - Q & A",
+    "section": "",
+    "text": "Back to top"
   },
   {
-    "objectID": "index.html#bullet-classwork",
-    "href": "index.html#bullet-classwork",
-    "title": " DANL 210: Data Preparation and Management, Spring 2024",
-    "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nJanuary 30, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#bullet-homework",
-    "href": "index.html#bullet-homework",
-    "title": " DANL 210: Data Preparation and Management, Spring 2024",
-    "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nJanuary 26, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "danl-qa/danl-210-qa-02.html",
-    "href": "danl-qa/danl-210-qa-02.html",
-    "title": "Lecture 2 - Q & A",
+    "objectID": "danl-qa/danl-210-qa-01.html",
+    "href": "danl-qa/danl-210-qa-01.html",
+    "title": "Lecture 1 - Q & A",
     "section": "",
     "text": "Back to top"
   },
@@ -963,13 +1082,13 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 30, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-qa.html",
     "href": "listing-danl-210-qa.html",
     "title": "DANL 210 - Lecture Discussion",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nJanuary 26, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   }
 ]

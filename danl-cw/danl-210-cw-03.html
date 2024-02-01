@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2023-01-30">
+<meta name="dcterms.date" content="2023-02-01">
 
 <title>Classwork 3 | Byeong-Hak Choe</title>
 <style>
@@ -206,14 +206,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 30, 2023</p>
+      <p class="date">February 1, 2023</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 30, 2024</p>
+      <p class="date-modified">February 1, 2024</p>
     </div>
   </div>
     
@@ -252,11 +252,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <ul>
-<li><p>A file in the working directory has its own web address.</p>
+<li><p>A file in the working directory can have its own web address.</p>
 <ul>
 <li>For example, if you have <code>resume-example.pdf</code> in your working directory, it has the web address, <a href="https://USERNAME.github.io/resume-example.pdf">https://USERNAME.github.io/resume-example.pdf</a>.</li>
 </ul></li>
-<li><p>When naming a file in the website, do not have any space in a file name.</p></li>
+<li><p>When naming a file in the website, do not have any space in a file name!</p></li>
 <li><p>Be systematic when naming a series of files in the website.</p>
 <ul>
 <li>E.g., <code>danl-210-cw-01.qmd</code>, <code>danl-210-cw-02.qmd</code>, <code>danl-210-cw-03.qmd</code>.</li>
@@ -285,20 +285,46 @@ ul.task-list li input[type="checkbox"] {
 <section id="practice-problems" class="level2">
 <h2 class="anchored" data-anchor-id="practice-problems">Practice Problems</h2>
 <ol type="1">
+<li>Decorate your website:</li>
+</ol>
+<ul>
+<li>Replace <code>YOUR NAME</code> with your name in <code>_quarto.yml</code> and <code>index.qmd</code>.</li>
+<li>Describe yourself in <code>index.qmd</code>.</li>
+<li>Add the picture (<code>png</code>) file of your profile photo to <code>img</code> directory. Then correct <code>img/profile.png</code> in <code>index.qmd</code> accordingly.</li>
+<li>Correct links for your resumé, linkedin, email, and social media.</li>
+</ul>
+<ol start="2" type="1">
 <li>Add a drop-down menu of “Python Data Analysis” to the navigation bar.</li>
 </ol>
 <ul>
 <li>Under the menu of “Python Data Analysis”, add the following two webpages
 <ol type="a">
-<li>Python Basic using <code>basic-python-intro.ipynb</code></li>
-<li>Python Basic with Pandas using <code>danl-210-quarto.qmd</code></li>
+<li><strong>Python Basics</strong> using <code>basic-python-intro.ipynb</code></li>
+<li><strong>Python Basics with Pandas</strong> using <code>danl-210-py-only.qmd</code></li>
+<li><strong>Using Python and R together!</strong> using <code>danl-210-quarto-reticulate.qmd</code></li>
 </ol></li>
 </ul>
-<ol start="2" type="1">
-<li>Add a blog post that explains Python Basic to your blog.</li>
+<ol start="3" type="1">
+<li>Add a blog post that explains Python Basics to your blog.</li>
 </ol>
 <ul>
-<li>One way is using <code>qmd</code> file to write the blog post directly.</li>
+<li>Start with creating a directory in the <code>posts</code> directory.</li>
+<li>One way is using <code>qmd</code> file to write the blog post directly with the following YAML.</li>
+</ul>
+<pre><code>---
+title: Python Basics
+author: YOUR NAME
+date: last-modified
+categories: [python, code]
+image: image.png
+
+execute: 
+  warning: false
+  message: false
+  
+toc: true
+---</code></pre>
+<ul>
 <li>The other way is to write a Jupyter Notebook for the blog post on Google Colab, execute it on Google Colab, download it as <code>*.ipynb</code>, use it for the blog post.</li>
 </ul>
 <p><br><br></p>
@@ -318,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div>© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.</div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-choe2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Choe, Byeong-Hak. 2023. <span>“Classwork 3.”</span> January 30, 2023.
+Choe, Byeong-Hak. 2023. <span>“Classwork 3.”</span> February 1, 2023.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

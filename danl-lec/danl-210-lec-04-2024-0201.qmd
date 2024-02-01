@@ -1,0 +1,365 @@
+---
+title: Lecture 4
+subtitle: Website Basics
+format:
+  clean-revealjs:
+    self-contained: true
+    css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-02-01
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+# include-after-body: backwards.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+## Announcement
+### GitHub Notifications Setting
+
+::: {.panel-tabset}
+
+### Steps
+- If you want to avoid a ton of notification emails,
+  1. Go to [https://github.com](https://github.com), and log in.
+  2. Click the mailbox icon at the top right corner next to the profile icon.
+    <!-- - This leads to the page of [GitHub Notifications](https://github.com/notifications). -->
+  3. Click "Manage notifications" at the bottom of the side bar.
+  4. Click "Notification settings".
+  5. Scroll down to the "Subscriptions" menu.
+  6. Click "Notify me on ..." from the "Watching" sub-menu, uncheck "Email", and save it.
+  7. Click "Notify me on ..." from the "Participating, ..." sub-menu, uncheck "Email", and save it.
+
+### gif description
+
+
+
+<p align="center" >
+  <img src="https://bcdanl.github.io/lec_figs/github-notification.gif" style="width: 50%;">
+</p>
+:::
+
+
+
+# Today's Learning Objectives {background-color="#1c4982"}
+
+## Learning Objectives
+
+:::: {.columns}
+::: {.column width="50%"}
+
+
+- Set up the tools in your laptop.
+  - Personal website
+
+:::
+
+::: {.column width="50%"}
+:::{}
+
+- Practice Markdown
+- Update Website
+- Practice Quarto and Jupyter Notebook
+
+:::
+
+
+:::
+::::
+
+
+# Installing the Tools {background-color="#1c4982"}
+
+## Building a Website
+
+- Let's review Git and GitHub in [Classwork 1](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html).
+
+
+## Practice Markdown
+
+- Python Notebook, Quarto, and GitHub-based Discussion Boards use **markdown** as its underlying document syntax.
+
+- Let's review [Classwork 2](https://bcdanl.github.io/210/danl-cw/danl-210-cw-02.html).
+
+
+
+# Getting Started with Quarto {background-color="#1c4982"}
+
+
+## Getting Started with Quarto
+### Quarto Basics
+
+:::{.incremental}
+- In RStudio, close the project `USERNAME.github.io.Rporj` if it is on.
+  1. Click `USERNAME.github.io.Rporj` at the top-right corner.
+  2. Click *Close Project*.
+
+
+- Download the Quarto files, `danl-210-quarto-reticulate.qmd` and  `danl-210-quarto-py-only.qmd`, from Brightspace, and render (**command/Ctrl + shift + K**) them from RStudio.
+
+- When rendering `danl-210-quarto-reticulate.qmd` and `danl-210-quarto-py-only.qmd`, I find that there can be some glitches in RStudio with Anaconda Python.
+  - There could be various reasons for glitches. (e.g., Anaconda versions, incorrect pathname of Anaconda)
+  - [REQUIRED] Please let me know using [Lecture 4 - Q & A](https://bcdanl.github.io/210/danl-qa/danl-210-qa-04.html)!
+
+
+:::
+
+
+
+
+## Getting Started with Quarto
+### Quarto Basics
+
+- The following syntax is part of YAML metadata in `danl-210-quarto-... .qmd`.
+  - In YAML, indentation really matters!
+  - **tab** (or four spaces) defines a level in YAML.
+
+```{.bash}
+---
+title: 
+subtitle: 
+author: 
+date: last-modified
+
+execute: 
+  echo: true
+  eval: true
+
+format: 
+  html:
+---
+```
+
+
+
+
+# Managing a Website with Quarto (and Jupyter Notebook) {background-color="#1c4982"}
+
+## Quarto Websites
+
+
+- In RStudio, open the project `USERNAME.github.io.Rporj`.
+  1. Click `Project: (None)` at the top-right corner.
+  2. Click `USERNAME.github.io.Rporj`.
+
+
+- Your website has a `_quarto.yml` configuration file.
+  - This file provides options for HTML documents within the website.
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.bash}
+---
+project:
+  type: website
+
+website:
+  title: "YOUR NAME"
+  navbar:
+    left:
+      - text: Project
+        href: project.qmd
+      - text: Blog
+        href: blog-listing.qmd
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{.bash}
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+---
+```
+
+- The `_quarto.yml` file configures the website settings.
+
+- Indentation matters!
+
+:::
+
+::::
+
+
+## Quarto Websites
+### Rendering
+:::{.incremental}
+- The **Render** button (**command/Ctrl + shift + K**) renders a *single* Quarto file.
+
+- `quarto render` from Terminal renders *all* Quarto/Jupyter Notebook files in your local working directory:
+
+```{.bash}
+quarto render
+```
+
+- We should use `quarto render` when we have changes in `_quarto.yml`.
+
+- Make changes only from your local laptop. 
+  - Do not make any change from the GitHub repo webpage.
+
+:::
+
+
+## Quarto Websites
+### `*.ipynb` in Quarto websites
+
+:::{.incremental}
+- By default, `quarto render` doesn’t execute any Python code in `.ipynb` notebooks. 
+
+- `quarto render` renders `.ipynb` notebooks, so that corresponding `html` files are rendered. 
+
+  - If you need to update cell outputs in `*.ipynb`, run that `*.ipynb` on Google Colab, save it, and download it.
+
+:::
+
+
+## Quarto Websites
+### Appearance and Style
+
+- `theme` specifies the Bootstrap theme to use for the page (themes are drawn from the [Bootswatch](https://bootswatch.com) theme library).
+  - Valid themes include `default`, `bootstrap`, `cerulean`, `cosmo`, `darkly`, `flatly`, `journal`, `lumen`, `paper`, `readable`, `sandstone`, `simplex`, `spacelab`, `united`, and `yeti`. 
+
+  
+- `highlight-style` specifies the code highlighting style. 
+  - Supported styles include `default`, `tango`, `pygments`, `kate`, `monochrome`, `espresso`, `zenburn`, `haddock`, `breezedark`, and `textmate`. 
+
+
+- More details about HTML theming and code blocks are available here:
+  - [HTML Theming](https://quarto.org/docs/output-formats/html-themes.html)
+  - [HTML Code Blocks](https://quarto.org/docs/output-formats/html-code.html)
+
+
+
+## Quarto Websites
+### About
+
+- Your `index.qmd` sets a page about you.
+  - Details in about pages are available here:
+  - [https://quarto.org/docs/websites/website-about.html](https://quarto.org/docs/websites/website-about.html).
+
+
+- Quarto includes 5 built in templates:
+  - `jolla`
+  - `trestles`
+  - `solana`
+  - `marquee`
+  - `broadside`
+
+
+
+## Quarto Websites
+### Icons and Emojis
+
+- A ton of Bootstrap icons are available here:
+  - [https://icons.getbootstrap.com](https://icons.getbootstrap.com).
+
+
+- A ton of markdown emojis are available here `r emo::ji('smile')`:
+  - [https://github.com/ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+  - [https://gist.github.com/rxaviers/7360908](https://gist.github.com/rxaviers/7360908)
+
+
+
+
+## Quarto Websites
+### Naviation and Adding Pages
+
+- We can add a new page to the website through `navbar` in `_quarto.yml`
+
+```{.bash}
+left:
+- text: Project
+  href: project.qmd
+- text: Blog
+  href: blog-listing.qmd
+- text: Homeowrk
+  href: hw.qmd
+```
+
+
+
+
+## Quarto Websites
+### Naviation and Adding Pages
+
+- We can also create a dropdown menu in a navigation bar by including a `menu`
+
+```{.bash}
+left:
+  - text: "Projects"
+    menu:
+      - project_1.qmd
+      - project_2.qmd 
+```
+
+
+- More details about navbar are available here:
+  - [https://quarto.org/docs/websites/website-navigation.html](https://quarto.org/docs/websites/website-navigation.html)
+
+
+
+
+## Quarto Websites  {background-color="#6497b1"}
+### Colors
+
+
+- A ton of hex codes for colors are available here:
+  - [https://www.color-hex.com](https://www.color-hex.com)
+
+
+
+
+## Website Basics
+
+- Let's do [Classwork 3](https://bcdanl.github.io/210/danl-cw/danl-210-cw-03.html).
+
+
+
+
+
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+
+window.onload = function() {
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+    });
+};
+</script>

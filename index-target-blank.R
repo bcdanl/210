@@ -8,9 +8,9 @@ html_as_text <- readLines("index.html", warn = FALSE)
 system(paste("rm", shQuote("index.html")))
 # Sys.sleep(2)
 
-
-lec_nos <- c('01', '02', '03')
-lec_dates <- c('0123', '0125', '0130')
+# Next lecture number & dates
+lec_n <- 4   ;  lec_nos <- str_c('0', as.character(1:lec_n))
+lec_dates <- c('0123', '0125', '0130', '0201')
 
 for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]

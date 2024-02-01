@@ -88,6 +88,20 @@ git version 2.xx
 - After the `git` installation is done, close RStudio and re-open it.
 
 
+#### How to open git installation file on Mac?
+
+1. Run the downloaded file.
+2. Click Okay
+3. Go to "Setting" > "Privacy and Security"
+4. Go to "General" or scroll down
+5. Click "Open Anyway"
+
+<p align="center" >
+  <img src="https://bcdanl.github.io/lec_figs/mac-git-security.gif" style="width: 67%;">
+</p>
+
+
+
 <br><br>
 
 ###  Setting up GitHub Credential on your local Git.
@@ -343,3 +357,4 @@ git push -u origin master
   - [https://USERNAME.github.io](https://USERNAME.github.io){target="_blank"}
   - Refresh the webpages (**Ctrl + R** for Windows users; **cmd + R** for Mac users)
 
+- Add a URL for your website (`https://YOUR_GITHUB_USERNAME.github.io/`) in About section in your GihtHub repository webpage by clicking the setting. Below describes how to do it:
