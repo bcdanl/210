@@ -67,6 +67,49 @@ knitr::knit_engines$set("markdown")
 
 
 
+
+## Workflow
+### Shortcuts for Quarto Document
+
+
+:::: {.columns}
+::: {.column width="50%"}
+**Mac**
+
+- **command + shift + K** renders a Quarto document.
+- **option + command + I** create a code block.
+- **command + return** runs a current line of code.
+- **command + shift + C** is the shortcut for # (commenting).
+
+:::
+
+::: {.column width="50%"}
+
+**Windows**
+
+- **Ctrl + Shift + K** renders a Quarto document.
+- **Alt + Ctrl + I** create a code block.
+- **Ctrl + Enter** runs a current line of code.
+- **Ctrl + Shift + C** is the shortcut for # (commenting).
+
+:::
+::::
+
+
+
+
+## Workflow
+### Shortcuts for Lecture Slides
+
+- **o** or **Esc** overviews lecture slides
+  - Use arrow keys to move around.
+  
+- You can also click the menu button at the top-right corner, and go to a specific slide.
+ 
+ - **Ctrl + Shift + F** to search.
+
+
+
 # Today's Learning Objectives {background-color="#1c4982"}
 
 ## Learning Objectives
