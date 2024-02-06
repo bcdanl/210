@@ -73,18 +73,6 @@ knitr::knit_engines$set("markdown")
 
 
 
-## Workflow
-### Shortcuts for Lecture Slides
-
-- **o** or **Esc** overviews lecture slides
-  - Use arrow keys to move around.
-  
-- You can also click the menu button at the top-right corner, and go to a specific slide.
- 
- - **Ctrl + Shift + F** to search.
-
-
-
 # Today's Learning Objectives {background-color="#1c4982"}
 
 ## Learning Objectives
@@ -118,22 +106,31 @@ knitr::knit_engines$set("markdown")
 ## Quarto Websites
 ### Rendering
 :::{}
-- The **Render** button (**command/Ctrl + shift + K**) renders a *single* Quarto file.
-
-- `quarto render` from Terminal renders *all* Quarto/Jupyter Notebook files in your local working directory:
 
 ```{.bash}
 quarto render
 ```
 
+- `quarto render` from Terminal renders *all* Quarto/Jupyter Notebook files in your local working directory:
+
 - We should use `quarto render` when we have changes in `_quarto.yml`.
 
-- Make changes only from your local laptop. 
-  - Do not make any change from the GitHub repo webpage.
+- The **Render** button (**command/Ctrl + shift + K**) renders (1) a single Quarto/Jupyter Notebook file or (2) Quarto files that have changes but have not rendered yet.
+
 
 :::
 
 
+## Quarto Websites
+### Updating a Website
+
+
+- Make changes only from your local laptop. 
+
+  - Do not make any change from the GitHub repo webpage.
+  
+  
+  
 ## Quarto Websites
 ### `*.ipynb` in Quarto Webpages and Blog posts
 
