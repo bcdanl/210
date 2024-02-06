@@ -1,0 +1,117 @@
+---
+title: Classwork 1
+subtitle: Python Basics
+date: 2024-02-06
+  
+from: markdown+emoji
+---
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+# Question 1
+Using Python operations only, calculate below:
+$$\frac{2^5}{7 \cdot (4 - 2^3)}$$
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+
+# Question 2
+
+For each expression below, what is the value of the expression? Explain thoroughly.
+
+```{python}
+#| echo: true
+20 == '20'
+```
+
+
+
+```{python}
+#| echo: true
+x = 4.0
+y = .5
+z = 3*y - x
+
+x < y or 3*y < x
+```
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+
+
+# Question 3
+
+
+```{python}
+#| echo: true
+fare = "$10.00"
+tip = "2.00$"
+tax = "$ 0.80"
+```
+
+
+Write a Python code that uses *slicing* and the `print()` function to print out the following message: 
+
+<div style="font-family:courier">The total trip cost is: $12.80</div>
+
+<br>
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+# Question 4
+
+```{python}
+#| echo: true
+list_variable = [100, 144, 169, 1000, 8]
+```
+
+
+Write a Python code that uses `print()` and `max()` functions to print out the largest value in the list, `list_variable`, as follows:
+
+<div style="font-family:courier">The largest value in the list is: 1000</div>
+
+<br>
+
+*Answer*
+```{python}
+
+```
+
+
+    
+<br><br><br>
+
+
+# Question 5
+
+Import the `pandas` library as `pd`
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+

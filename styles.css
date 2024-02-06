@@ -14,3 +14,16 @@
 .navbar-nav .dropdown-menu {
     min-width: 85px;
 }
+
+
+/* to fix the width of body and navbar with invisible scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+/*.navbar {
+/*    background-color: white; 
+/*    height: 100px; /* Adjust the height as needed */
+/*}
+

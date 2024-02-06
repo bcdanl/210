@@ -39,7 +39,7 @@
     "href": "index.html#bullet-lecture-slides",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 5\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-lecture-q-a",
@@ -53,7 +53,7 @@
     "href": "index.html#bullet-classwork",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -98,466 +98,11 @@
     "text": "Quarto Markdown Basics\nStart writing on GitHub"
   },
   {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
-    "title": "Lecture 4",
-    "section": "Announcement",
-    "text": "Announcement\nGitHub Notifications Setting\n\nStepsgif description\n\n\n\nIf you want to avoid a ton of notification emails,\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon. \nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#workflow",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#workflow",
-    "title": "Lecture 4",
-    "section": "Workflow",
-    "text": "Workflow\nShortcuts for Quarto Document\n\n\nMac\n\ncommand + shift + K renders a Quarto document.\noption + command + I create a code block.\ncommand + return runs a current line of code.\ncommand + shift + C is the shortcut for # (commenting).\n\n\nWindows\n\nCtrl + Shift + K renders a Quarto document.\nAlt + Ctrl + I create a code block.\nCtrl + Enter runs a current line of code.\nCtrl + Shift + C is the shortcut for # (commenting)."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#workflow-1",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#workflow-1",
-    "title": "Lecture 4",
-    "section": "Workflow",
-    "text": "Workflow\nShortcuts for Lecture Slides\n\no or Esc overviews lecture slides\n\nUse arrow keys to move around.\n\nYou can also click the menu button at the top-right corner, and go to a specific slide.\nCtrl + Shift + F to search."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#learning-objectives",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#learning-objectives",
-    "title": "Lecture 4",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\n\n\nSet up the tools in your laptop.\n\nPersonal website\n\n\n\n\n\nPractice Markdown\nUpdate Website\nPractice Quarto and Jupyter Notebook"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#building-a-website",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#building-a-website",
-    "title": "Lecture 4",
-    "section": "Building a Website",
-    "text": "Building a Website\n\nLet’s review Git and GitHub in Classwork 1."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#practice-markdown",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#practice-markdown",
-    "title": "Lecture 4",
-    "section": "Practice Markdown",
-    "text": "Practice Markdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s review Classwork 2."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-1",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-1",
-    "title": "Lecture 4",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nQuarto Basics\n\n\nIn RStudio, close the project USERNAME.github.io.Rporj if it is on.\n\nClick USERNAME.github.io.Rporj at the top-right corner.\nClick Close Project.\n\nDownload the Quarto files, danl-210-quarto-reticulate.qmd and danl-210-quarto-py-only.qmd, from Brightspace, and render (command/Ctrl + shift + K) them from RStudio.\nWhen rendering danl-210-quarto-reticulate.qmd and danl-210-quarto-py-only.qmd, I find that there can be some glitches in RStudio with Anaconda Python.\n\nThere could be various reasons for glitches. (e.g., Anaconda versions, incorrect pathname of Anaconda)\n[REQUIRED] Please let me know using Lecture 4 - Q & A!"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-2",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-2",
-    "title": "Lecture 4",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nQuarto Basics\n\nThe following syntax is part of YAML metadata in danl-210-quarto-... .qmd.\n\nIn YAML, indentation really matters!\ntab (or four spaces) defines a level in YAML.\n\n\n---\ntitle: \nsubtitle: \nauthor: \ndate: last-modified\n\nexecute: \n  echo: true\n  eval: true\n\nformat: \n  html:\n---"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-1",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-1",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto file.\nquarto render from Terminal renders all Quarto/Jupyter Notebook files in your local working directory:\n\nquarto render\n\nWe should use quarto render when we have changes in _quarto.yml.\nMake changes only from your local laptop.\n\nDo not make any change from the GitHub repo webpage."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-2",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-2",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\n*.ipynb in Quarto websites\n\n\nBy default, quarto render doesn’t execute any Python code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf you need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, save it, and download it."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-3",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-3",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate.\n\nMore details about HTML theming and code blocks are available here:\n\nHTML Theming\nHTML Code Blocks"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-4",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-4",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nAbout\n\nYour index.qmd sets a page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-5",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-5",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-6",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-6",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can add a new page to the website through navbar in _quarto.yml\n\nleft:\n- text: Project\n  href: project.qmd\n- text: Blog\n  href: blog-listing.qmd\n- text: Homeowrk\n  href: hw.qmd"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-7",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-7",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can also create a dropdown menu in a navigation bar by including a menu\n\nleft:\n  - text: \"Projects\"\n    menu:\n      - project_1.qmd\n      - project_2.qmd \n\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-8",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-8",
-    "title": "Lecture 4",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#website-basics",
-    "href": "danl-lec/danl-210-lec-04-2024-0201.html#website-basics",
-    "title": "Lecture 4",
-    "section": "Website Basics",
-    "text": "Website Basics\n\nLet’s do Classwork 3."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#learning-objectives",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#learning-objectives",
-    "title": "Lecture 2",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\n\n\nUnderstand the concept of the tools:\n\nGit and GitHub\nPython and R\nPython libraries and R packages\nRStudio\nData Science Process\nJupyter Notebook and Quarto\nGoogle Colab\nMarkdown\n\n\n\n\n\nSet up the tools in your laptop.\n\nAnaconda\nR, RStudio, and R Packages\nGit\nPersonal website\n\n\n\n\nPractice Markdown."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#git-vs.-github",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#git-vs.-github",
-    "title": "Lecture 2",
-    "section": "Git vs. GitHub",
-    "text": "Git vs. GitHub\n\nGitGitHub\n\n\n\nGit is a distributed version control system.\nGit keeps track of changes in files and directories.\nGit is optimized for the things that economists and data scientists spend a lot of time working on (e.g. code).\nGit has a learning curve, so we use only three commands—add, commit, and push!\n\n\n\n\nIt is important to realize that Git and GitHub are distinct things.\nGitHub is an online hosting platform that provides an array of services built on top of the Git system.\nJust like we do not need Rstudio to run R code, we do not need GitHub to use Git… But it will make our lives so much easier."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-anaconda",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-anaconda",
-    "title": "Lecture 2",
-    "section": "What is Anaconda?",
-    "text": "What is Anaconda?\n\n\nAnaconda is an all-in-one Python distribution.\n\nAnaconda includes Python 3.x and its standard libraries such as pip, pandas, matplotlib, etc.\nAnaconda also includes several software applications of integrated development environment (IDE).\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.\n\nFor our course, we will mainly use Google Colab.\n\nIf we need to use Python locally from your laptop, we can use Jupyter or Spyder IDE from Anaconda Distribution."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-r",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-r",
-    "title": "Lecture 2",
-    "section": "What is R?",
-    "text": "What is R?\n\nR is a programming language and software environment designed for statistical computing and graphics.\nR has become a major tool in data analysis, statistical modeling, and visualization.\n\nIt is widely used among statisticians and data scientists for developing statistical software and performing data analysis.\nR is open source and freely available."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-rstudio",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-rstudio",
-    "title": "Lecture 2",
-    "section": "What is RStudio?",
-    "text": "What is RStudio?\n\n\nRStudio is an integrated development environment (IDE) mainly for R.\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\nIt integrates well with Git."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#python-vs.-r",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#python-vs.-r",
-    "title": "Lecture 2",
-    "section": "Python vs. R",
-    "text": "Python vs. R\n\n\n\nPython\n\nPython can be used for a wide range of applications, from web and game development to machine learning, making it a highly versatile language.\nPython has the largest community in the programming world, providing a wealth of resources, libraries, and frameworks.\n\n\nR\n\nR is particularly strong in statistical analysis and visualization, with a vast number of packages for statistical methods, including machine learning.\nThe community around R, particularly in academia and research, is very active.\n\n\n\n\nBoth Python and R hold significant value in industry and government sectors.\n\nHowever, Python is often more favored for roles in the industry, whereas R tends to be preferred for positions in the public sector."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#data-science-process",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#data-science-process",
-    "title": "Lecture 2",
-    "section": "Data Science Process",
-    "text": "Data Science Process\n\n\n\n\nCommunication is the final part of the data science process.\n\nIf you cannot communicate your results to other humans, it does not matter how great your analysis is!\n\nJupyter Notebook (*.ipynb) and Quarto (*.qmd) are great tools for producing a document that integrates your Python/R code, its results, and your insights on the results.\nWe will use Jupyter Notebook and Quarto files to both\n\nSave and execute programming codes, and\nGenerate high quality reports that can be shared with an audience."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
-    "title": "Lecture 2",
-    "section": "What are Jupyter Notebook and Quarto?",
-    "text": "What are Jupyter Notebook and Quarto?\n\n\n\nA Jupyter Notebook is an interactive computational environment that enables users to create and share documents that contain Python code, equations, visualizations, and narrative text.\nJupyter Notebooks are widely used in data science, academic research, education, and machine learning projects due to their versatility and ease of use.\n\n\n\n\nA Quarto is similar to Jupyter Notebook.\n\nMululti-language Support: Quarto supports not only R but also other languages such as Python, Julia, C++, SQL.\nPublishing Quality: Quarto documents are designed with publishing in mind, offering superior customization for document layouts and high-quality outputs suitable for academic and professional publications."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-google-colab",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-google-colab",
-    "title": "Lecture 2",
-    "section": "What is Google Colab?",
-    "text": "What is Google Colab?\n\n\nGoogle Colab is analogous to Google Drive, but specifically for writing and executing Python Notebook (*.ipynb) in your web browser.\nThis video also helps get started with Colab if you are unfamiliar with the format!\n\nVideo: Get started with Google Colaboratory\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-1",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-1",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nGetting a GitHub account\n\n\n\nCreate the GitHub account with your Geneseo email.\n\nGo to GitHub.\nClick “Sign up for GitHub”.\n\n\n\n\n\nChoose your GitHub username carefully:\n\nhttps://USERNAME.github.io will be the address for your website.\nByeong-Hak’s GitHub username is bcdanl, so that Byeong-Hak owns the web address https://bcdanl.github.io.\n\n\n\n\n\nIt is better to have a username with all lower cases."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-2",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-2",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nParticipate in the Discussions!\n\nGo to Lecture 2 - Q & A.\nSign in with GitHub account, and then add comments to the board."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-3",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-3",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nAnaconda Distribution.\nClick the “Download” button."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-4",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-4",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: R for Windows\nMac: R for Mac\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-5",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-5",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nRStudio Download\n\nA recent version of RStudio includes Quarto, so that we do not need to install Quarto separately.\n\n\n\n\n\nFor Mac users, try below steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-6",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-6",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\n\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-7",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-7",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-8",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-8",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\na &lt;- 1"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-9",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-9",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-10",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-10",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-11",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-11",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\ntidyverse\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\n\n\ntidyverse includes a lot of R packages, including ggplot2, dplyr, and tidyr.\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-12",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-12",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-13",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-13",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- mpg\n\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse.\n\nSince tidyverse is installed, ggplot2 package is already installed."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-14",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-14",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-15",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-15",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nPython in RStudio\n\nPython OptionR package, reticulate\n\n\n\nWe can run Python codes within RStudio.\nSelect Python interpreter in RStudio from Tools \\(&gt;\\) Global Options \\(&gt;\\) Python:\n\n\n\n\n\nInstall the R package, reticulate\n\ninstall.packages(\"reticulate\")\n\nThis package allows Quarto to use Python and R objects interactively within one Quarto document."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-16",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-16",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nBuilding a Website\n\nLet’s do Classwork 1."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-17",
-    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-17",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nMarkdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#announcement",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#announcement",
-    "title": "Lecture 3",
-    "section": "Announcement",
-    "text": "Announcement\n\nCarbegie Mellon University - Summer Undergraduate Research Experience in Statistics and Data Science is accepting applications.\n\nIt will discuss data science methods with the theme of sports analytics.\nStudents receive $4,000 stipend with housing included!\nApplication deadline is Friday March 1st."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#announcement-1",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#announcement-1",
-    "title": "Lecture 3",
-    "section": "Announcement",
-    "text": "Announcement\nGitHub Notifications Setting\n\nStepsgif description\n\n\n\nIf you want to avoid a ton of notification emails,\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon. \nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#learning-objectives",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#learning-objectives",
-    "title": "Lecture 3",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\n\n\nSet up the tools in your laptop.\n\nPersonal website\n\n\n\n\n\nPractice Markdown.\nPractice Quarto and Jupyter Notebook"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#building-a-website",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#building-a-website",
-    "title": "Lecture 3",
-    "section": "Building a Website",
-    "text": "Building a Website\n\nLet’s review Classwork 1."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#practice-markdown",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#practice-markdown",
-    "title": "Lecture 3",
-    "section": "Practice Markdown",
-    "text": "Practice Markdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s review Classwork 2."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-1",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-1",
-    "title": "Lecture 3",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nYAML\n\n\n\n\n\n\nAn YAML (yet another markup language) header surrounded by ---.\n\nIt is commonly used for document configuration (e.g., title, author, date, style, …).\n\nChunks of Python/R code surrounded by three backticks, \\(\\text{```}\\)."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-2",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-2",
-    "title": "Lecture 3",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nKnitting / Rendering\n\nWhen we knit the document, Quarto sends the .qmd file to jupyter/knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.\nThe markdown file (*.md) generated by jupyter/knitr is then processed by pandoc, which is responsible for creating the output file."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-3",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-3",
-    "title": "Lecture 3",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nMarkdown, Quarto, and HTML\n\n\nThe very original version of Markdown was invented mainly to write HTML content more easily.\n\nFor example, - SOME_TEXT in “.md” is equivalent to &lt;ul&gt;&lt;li&gt; SOME_TEXT &lt;/li&gt; in ”.html”\n\nPandoc makes it possible to convert a Markdown document to a large variety of output formats, such as HTML."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-and-html",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-and-html",
-    "title": "Lecture 3",
-    "section": "Getting Started with Quarto and HTML",
-    "text": "Getting Started with Quarto and HTML\nMarkdown, Quarto, and HTML\n\n\nTo create an HTML document from Quarto, we specify the html output format in the YAML metadata of our document.\n\nBy default, format: html is set.\n\nIn RStudio, we can create a new Quarto file from the menu, File -&gt; New File -&gt; Quarto Document.\nOpen an empty Quarto file.\n\nType the following YAML metadata to the empty Quarto file.\n\n\n\n---\ntitle: \"Habits\"\nauthor: YOUR_NAME\ndate: January 30, 2024\nformat: \n  html\n---"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-4",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-4",
-    "title": "Lecture 3",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nQuarto Basics\n\n\nIn RStudio, close the project USERNAME.github.io.Rporj if it is on.\n\nClick USERNAME.github.io.Rporj at the top-right corner.\nClick Close Project.\n\nDownload the Quarto file, danl-210-quarto.qmd from Brightspace, and open it from RStudio."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-5",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-5",
-    "title": "Lecture 3",
-    "section": "Getting Started with Quarto",
-    "text": "Getting Started with Quarto\nQuarto Basics\n\nThe following syntax is part of YAML metadata in danl-210-quarto.qmd.\n\nIn YAML, indentation really matters!\ntab (or four spaces) defines a level in YAML.\n\n\n---\ntitle: \nsubtitle: \nauthor: \ndate: last-modified\n\nformat: \n  html:\n  \nexecute: \n  echo: true\n  eval: true\n---"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-1",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-1",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nCustom CSS\n\n\nCascading Style Sheets (CSS) is used to format the layout of a webpage (color, font, text size, background, display, etc.).\n\nHTML will format the architecture of the house.\nCSS will be the carpet and walls to decorate the house.\nJavaScript adds interactive elements in the house, such as opening doors and lighting.\n\nWe are not front-end web developers.\n\nWe will not cover discuss the use of CSS and JavaScript."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-2",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-2",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto file.\nquarto render from Terminal renders all Quarto/Jupyter Notebook files in your local working directory:\n\nquarto render\n\nWe should use quarto render when we have changes in _quarto.yml.\nMake changes only from your local laptop.\n\nDo not make any change from the GitHub repo webpage."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-3",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-3",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nAdding *.ipynb to Quarto websites\n\n\nBy default, quarto render doesn’t execute any code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf we need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, and save the notebook."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-4",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-4",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-5",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-5",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nAbout\n\nYour index.qmd sets a page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-6",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-6",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-7",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-7",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can add a new page to the website through navbar in _quarto.yml\n\nleft:\n- text: Project\n  href: project.qmd\n- text: Blog\n  href: blog-listing.qmd\n- text: Homeowrk\n  href: hw.qmd"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-8",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-8",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can also create a navigation bar menu by including a menu\n\nleft:\n  - text: \"Projects\"\n    menu:\n      - project_1.qmd\n      - project_2.qmd \n\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-9",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-9",
-    "title": "Lecture 3",
-    "section": "Quarto Websites",
-    "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#website-basics",
-    "href": "danl-lec/danl-210-lec-03-2024-0130.html#website-basics",
-    "title": "Lecture 3",
-    "section": "Website Basics",
-    "text": "Website Basics\n\nLet’s do Classwork 3."
+    "objectID": "danl-cw/danl-210-cw-04.html",
+    "href": "danl-cw/danl-210-cw-04.html",
+    "title": "Classwork 1",
+    "section": "",
+    "text": "Question 1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\nAnswer\n\n\n\nQuestion 2\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\n\nFalse\n\n\n\nx = 4.0\ny = .5\nz = 3*y - x\n\nx &lt; y or 3*y &lt; x\n\nTrue\n\n\nAnswer\n\n\n\nQuestion 3\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer\n\n\n\nQuestion 4\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nAnswer\n\n\n\nQuestion 5\nImport the pandas library as pd\nAnswer\n\n\n\n\n\n Back to topReuse© 2024 Byeong-Hak Choe | This post is licensed under &lt;a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'&gt;CC BY-NC-SA 4.0&lt;/a&gt;.CitationFor attribution, please cite this work as:\nChoe, Byeong-Hak. 2024. “Classwork 1.” February 6, 2024."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2024-0123.html#instructor-1",
@@ -1029,6 +574,853 @@
     "text": "Installing the Tools\nPushing the website files to the GitHub repository\nStep 7. Check whether the files are well uploaded\n\nGo to the webpages of your GitHub repository and your website:\n\nhttps://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git\nhttps://YOUR_USERNAME.github.io\nRefresh the webpage (cmd/Ctrl + R)"
   },
   {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#announcement",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#announcement",
+    "title": "Lecture 3",
+    "section": "Announcement",
+    "text": "Announcement\n\nCarbegie Mellon University - Summer Undergraduate Research Experience in Statistics and Data Science is accepting applications.\n\nIt will discuss data science methods with the theme of sports analytics.\nStudents receive $4,000 stipend with housing included!\nApplication deadline is Friday March 1st."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#announcement-1",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#announcement-1",
+    "title": "Lecture 3",
+    "section": "Announcement",
+    "text": "Announcement\nGitHub Notifications Setting\n\nStepsgif description\n\n\n\nIf you want to avoid a ton of notification emails,\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon. \nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#learning-objectives",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#learning-objectives",
+    "title": "Lecture 3",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\n\nSet up the tools in your laptop.\n\nPersonal website\n\n\n\n\n\nPractice Markdown.\nPractice Quarto and Jupyter Notebook"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#building-a-website",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#building-a-website",
+    "title": "Lecture 3",
+    "section": "Building a Website",
+    "text": "Building a Website\n\nLet’s review Classwork 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#practice-markdown",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#practice-markdown",
+    "title": "Lecture 3",
+    "section": "Practice Markdown",
+    "text": "Practice Markdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s review Classwork 2."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-1",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-1",
+    "title": "Lecture 3",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nYAML\n\n\n\n\n\n\nAn YAML (yet another markup language) header surrounded by ---.\n\nIt is commonly used for document configuration (e.g., title, author, date, style, …).\n\nChunks of Python/R code surrounded by three backticks, \\(\\text{```}\\)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-2",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-2",
+    "title": "Lecture 3",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nKnitting / Rendering\n\nWhen we knit the document, Quarto sends the .qmd file to jupyter/knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.\nThe markdown file (*.md) generated by jupyter/knitr is then processed by pandoc, which is responsible for creating the output file."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-3",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-3",
+    "title": "Lecture 3",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nMarkdown, Quarto, and HTML\n\n\nThe very original version of Markdown was invented mainly to write HTML content more easily.\n\nFor example, - SOME_TEXT in “.md” is equivalent to &lt;ul&gt;&lt;li&gt; SOME_TEXT &lt;/li&gt; in ”.html”\n\nPandoc makes it possible to convert a Markdown document to a large variety of output formats, such as HTML."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-and-html",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-and-html",
+    "title": "Lecture 3",
+    "section": "Getting Started with Quarto and HTML",
+    "text": "Getting Started with Quarto and HTML\nMarkdown, Quarto, and HTML\n\n\nTo create an HTML document from Quarto, we specify the html output format in the YAML metadata of our document.\n\nBy default, format: html is set.\n\nIn RStudio, we can create a new Quarto file from the menu, File -&gt; New File -&gt; Quarto Document.\nOpen an empty Quarto file.\n\nType the following YAML metadata to the empty Quarto file.\n\n\n\n---\ntitle: \"Habits\"\nauthor: YOUR_NAME\ndate: January 30, 2024\nformat: \n  html\n---"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-4",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-4",
+    "title": "Lecture 3",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nQuarto Basics\n\n\nIn RStudio, close the project USERNAME.github.io.Rporj if it is on.\n\nClick USERNAME.github.io.Rporj at the top-right corner.\nClick Close Project.\n\nDownload the Quarto file, danl-210-quarto.qmd from Brightspace, and open it from RStudio."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-5",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#getting-started-with-quarto-5",
+    "title": "Lecture 3",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nQuarto Basics\n\nThe following syntax is part of YAML metadata in danl-210-quarto.qmd.\n\nIn YAML, indentation really matters!\ntab (or four spaces) defines a level in YAML.\n\n\n---\ntitle: \nsubtitle: \nauthor: \ndate: last-modified\n\nformat: \n  html:\n  \nexecute: \n  echo: true\n  eval: true\n---"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-1",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-1",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nCustom CSS\n\n\nCascading Style Sheets (CSS) is used to format the layout of a webpage (color, font, text size, background, display, etc.).\n\nHTML will format the architecture of the house.\nCSS will be the carpet and walls to decorate the house.\nJavaScript adds interactive elements in the house, such as opening doors and lighting.\n\nWe are not front-end web developers.\n\nWe will not cover discuss the use of CSS and JavaScript."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-2",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-2",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto file.\nquarto render from Terminal renders all Quarto/Jupyter Notebook files in your local working directory:\n\nquarto render\n\nWe should use quarto render when we have changes in _quarto.yml.\nMake changes only from your local laptop.\n\nDo not make any change from the GitHub repo webpage."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-3",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-3",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAdding *.ipynb to Quarto websites\n\n\nBy default, quarto render doesn’t execute any code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf we need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, and save the notebook."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-4",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-4",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-5",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-5",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAbout\n\nYour index.qmd sets a page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-6",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-6",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-7",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-7",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can add a new page to the website through navbar in _quarto.yml\n\nleft:\n- text: Project\n  href: project.qmd\n- text: Blog\n  href: blog-listing.qmd\n- text: Homeowrk\n  href: hw.qmd"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-8",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-8",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can also create a navigation bar menu by including a menu\n\nleft:\n  - text: \"Projects\"\n    menu:\n      - project_1.qmd\n      - project_2.qmd \n\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-9",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#quarto-websites-9",
+    "title": "Lecture 3",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2024-0130.html#website-basics",
+    "href": "danl-lec/danl-210-lec-03-2024-0130.html#website-basics",
+    "title": "Lecture 3",
+    "section": "Website Basics",
+    "text": "Website Basics\n\nLet’s do Classwork 3."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#workflow",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#workflow",
+    "title": "Lecture 5",
+    "section": "Workflow",
+    "text": "Workflow\nShortcuts for Quarto Document\n\n\nMac\n\ncommand + shift + K renders a Quarto document.\noption + command + I create a code block.\ncommand + return runs a current line of code.\ncommand + shift + C is the shortcut for # (commenting).\n\n\nWindows\n\nCtrl + Shift + K renders a Quarto document.\nAlt + Ctrl + I create a code block.\nCtrl + Enter runs a current line of code.\nCtrl + Shift + C is the shortcut for # (commenting)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#workflow-1",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#workflow-1",
+    "title": "Lecture 5",
+    "section": "Workflow",
+    "text": "Workflow\nShortcuts for Lecture Slides\n\no or Esc overviews lecture slides\n\nUse arrow keys to move around.\n\nYou can also click the menu button at the top-right corner, and go to a specific slide.\nCtrl + Shift + F to search."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#learning-objectives",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#learning-objectives",
+    "title": "Lecture 5",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\n\nUpdate Website\nPractice Quarto and Jupyter Notebook\n\n\n\n\nPython Basics"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto file.\nquarto render from Terminal renders all Quarto/Jupyter Notebook files in your local working directory:\n\nquarto render\n\nWe should use quarto render when we have changes in _quarto.yml.\nMake changes only from your local laptop.\n\nDo not make any change from the GitHub repo webpage."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-1",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-1",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\n*.ipynb in Quarto Webpages and Blog posts\n\n\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\nIf a .ipynb notebook is in posts to be used for a blog post, Quarto executes code cells in the .ipynb notebook.\nIf a .ipynb notebook is NOT in posts, Quarto does NOT execute code cells in the .ipynb notebook.\nIf you need to update cell outputs in *.ipynb that is used for a non-blog webpage,\n\nRun that *.ipynb on Google Colab, save it, and then download it.\nRender that *.ipynb as a blog post, and then move that *.ipynb to outside of posts directory."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-2",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-2",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate.\n\nMore details about HTML theming and code blocks are available here:\n\nHTML Theming\nHTML Code Blocks"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-3",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-3",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAbout\n\nYour index.qmd sets a page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-4",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-4",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-5",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-5",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can add a new page to the website through navbar in _quarto.yml\n\nleft:\n- text: Project\n  href: project.qmd\n- text: Blog\n  href: blog-listing.qmd\n- text: Homeowrk\n  href: hw.qmd"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-6",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-6",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can also create a dropdown menu in a navigation bar by including a menu\n\nleft:\n  - text: \"Projects\"\n    menu:\n      - project_1.qmd\n      - project_2.qmd \n\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-7",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#quarto-websites-7",
+    "title": "Lecture 5",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#website-basics",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#website-basics",
+    "title": "Lecture 5",
+    "section": "Website Basics",
+    "text": "Website Basics\n\nLet’s do Classwork 3."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-1",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-1",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nVariables Are Names, Not Places\n\n\n\n\nA value is datum (literal) such as a number or text."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-2",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-2",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nValues, Variables, and Types\na = 10\nprint(a)\n\nThere are different types of values: 352.3 is known as a float or double, 22 is an integer, and \"Hello World!\" is a string.\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-3",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-3",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nValues, Variables, and Types\n\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-4",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-4",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nAssignment\n# Here we assign the integer value 5 to the variable x.\nx = 5   \n\n# Now we can use the variable x in the next line.\ny = x + 12  \ny\n\nIn Python, we use = to assign a value to a variable.\nIn math, = means equality of both sides.\nIn programs, = means assignment: assign the value on the right side to the variable on the left side."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-5",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-5",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nCode and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is Google Colab’s comment character.\n\nThe # character has many names: hash, sharp, pound, or octothorpe.\n# indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\n\nConsider adding more comments on code cells and their results using text cells."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-6",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-6",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nAssignment\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen Python reads y = x + 12, it does the following:\n\nSees the = in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-7",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-7",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nVariables Are Names, Not Places\n\n\n\n\nIn Python, variables are just names."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-8",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-8",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nVariables Are Names, Not Places\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)\n\nThe most basic built-in data types that you’ll need to know about are:\n\nintegers 10\nfloats 1.23\nstrings \"like this\"\nbooleans True\nnothing None\n\nPython also has a built-in type called a list (e.g., [10, 15, 20]) that can contain anything, even different types"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-9",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-9",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nTypes\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-10",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-10",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBrackets\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\nvector = ['a', 'b']\nvector[0]\n\n[] is used to denote a list or to signify accessing a position using an index.\n\n\n\n{'a', 'b'}\n{'first_letter': 'a', 'second_letter': 'b'}\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n\n\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n() is used to denote a tuple, or the arguments to a function, e.g., function(x) where x is the input passed to the function, or to indicate the order operations are carried out."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-11",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-11",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nlist_example\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-12",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-12",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example[0]\nlist_example[-1]\n\nWe can access earlier entries using an index, which begins at 0 and ends at one less than the length of the list."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-13",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-13",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n# range() produces a list of integers from the value to one less than the last\nlist_of_numbers = list(range(1, 11))\nstart = 1\nstop = -1\nstep = 2\nprint(list_of_numbers[ start : stop : step ])\n\nSlicing can be even more elaborate than that because we can jump entries using a second colon."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-14",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-14",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nAll of the basic operators you see in mathematics are available to use:\n\n\n\n\n+ for addition\n- for subtraction\n\n\n\n* for multiplication\n** for powers\n\n\n\n/ for division\n// for integer division\n\n\n\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\nWe can ‘sum’ strings (which really concatenates them):"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-15",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-15",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-16",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-16",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nOperators\nQ. Classwork 4.1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-17",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-17",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nStrings\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-18",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-18",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\n\n\n\n\n\n\n\n\nBoolean data have either True or False value.\nExisting booleans can be combined, which create a boolean when executed."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-19",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-19",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nConditions are expressions that evaluate as booleans."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-20",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-20",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 4.2"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-21",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-21",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-22",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-22",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\n\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-23",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-23",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nBooleans and Conditions\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-24",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-24",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nCasting Variables\n\n\norig_number = 4.39898498\ntype(orig_number)\n\nmod_number = int(orig_number)\nmod_number\ntype(mod_number)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like str(), int(), and float().\nIf we try these, Python will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw a great big error."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-25",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-25",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nTuples and (im)mutability\n\n\nA tuple is an object that is defined by parentheses and entries that are separated by commas, for example (15, 20, 32). (They are of type tuple.)\nTuples are immutable, while lists are mutable.\nImmutable objects, such as tuples and strings, can’t have their elements changed, appended, extended, or removed.\n\nMutable objects, such as lists, can do all of these things.\n\nIn everyday programming, we use lists and dictionaries more than tuples."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-26",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-26",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nIndentation\n\nWe have seen that certain parts of the code examples are indented.\nCode that is part of a function, a conditional clause, or loop is indented.\nIndention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-27",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-27",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nIndentation\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\nHere’s a basic example of indentation as part of an if statement.\nThe standard practice for indentation is that each sub-statement should be indented by 4 spaces."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-28",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-28",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nfor Loops\nname_list = [\"Ben\", \"Chris\", \"Kate\", \"Mary\"]\n\nfor name in name_list:\n    print(name)\n\nA loop is a way of executing a similar piece of code over and over in a similar way.\n\nThe most useful loop is for loops.\n\nAs long as our object is an iterable, then it can be used in this way in a for loop.\nLists, tuples, strings, and dictionaries are iterable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-29",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-29",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nDictionaries\ncities_to_temps = {\"Paris\": 28, \"London\": 22, \"Seville\": 36, \"Wellesley\": 29}\n\ncities_to_temps.keys()\ncities_to_temps.values()\ncities_to_temps.items()\n\nAnother built-in Python type that is enormously useful is the dictionary.\n\nThis provides a mapping one set of variables to another (either one-to-one or many-to-one).\nIf you need to create associations between objects, use a dictionary.\n\nWe can obtain keys, values, or key-value paris from dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-30",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-30",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nRunning on Empty\n\nBeing able to create empty containers is sometimes useful, especially when using loops.\nThe commands to create empty lists, tuples, dictionaries, and sets are lst = [], tup=(), dic={}, and st = set() respectively.\nQ. What is the type of an empty list?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-31",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-31",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nSlicing Methods\n\n\n\n\nWith slicing methods, we can get subset of the data object.\nSlicing methods can apply for strings, lists, arrays, and DataFrames.\nThe above example describes indexing in Python"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-32",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-32",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nStrings and Slicing\n\nWe can extract a substring (a part of a string) from a string by using a slice.\nWe define a slice by using square brackets ([]), a start index, an end index, and an optional step count between them.\n\nWe can omit some of these.\n\nThe slice will include characters from index start to one before end:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-33",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-33",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nGet a Substring with a Slice\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-34",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-34",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-35",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-35",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-36",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-36",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\n[index]slice\n\n\nGet an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\nWe can extract a single value from a list by specifying its index:\n\n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\n\nGet an Item with a Slice\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-37",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-37",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nQ Classwork 4.3"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-38",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-38",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions.\n\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-39",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-39",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-40",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-40",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 4.4"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-41",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-41",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nThe core libraries that enable Python to store and analyze data efficiently are:\n\npandas\nnumpy\nmatplotlib and seaborn"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-42",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-42",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\npandasnumpymatplotlib and seaborn\n\n\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format.\n\n\n\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;\n\n\n\n\n\n\n\nmatplotlib provides graphics. The most important submodule would be matplotlib.pyplot.\nseaborn provides a general improvement in the default appearance of matplotlib-produced plots."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-43",
+    "href": "danl-lec/danl-210-lec-05-2024-0206.html#python-basics-43",
+    "title": "Lecture 5",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 4.5"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#learning-objectives",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#learning-objectives",
+    "title": "Lecture 2",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\n\nUnderstand the concept of the tools:\n\nGit and GitHub\nPython and R\nPython libraries and R packages\nRStudio\nData Science Process\nJupyter Notebook and Quarto\nGoogle Colab\nMarkdown\n\n\n\n\n\nSet up the tools in your laptop.\n\nAnaconda\nR, RStudio, and R Packages\nGit\nPersonal website\n\n\n\n\nPractice Markdown."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#git-vs.-github",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#git-vs.-github",
+    "title": "Lecture 2",
+    "section": "Git vs. GitHub",
+    "text": "Git vs. GitHub\n\nGitGitHub\n\n\n\nGit is a distributed version control system.\nGit keeps track of changes in files and directories.\nGit is optimized for the things that economists and data scientists spend a lot of time working on (e.g. code).\nGit has a learning curve, so we use only three commands—add, commit, and push!\n\n\n\n\nIt is important to realize that Git and GitHub are distinct things.\nGitHub is an online hosting platform that provides an array of services built on top of the Git system.\nJust like we do not need Rstudio to run R code, we do not need GitHub to use Git… But it will make our lives so much easier."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-anaconda",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-anaconda",
+    "title": "Lecture 2",
+    "section": "What is Anaconda?",
+    "text": "What is Anaconda?\n\n\nAnaconda is an all-in-one Python distribution.\n\nAnaconda includes Python 3.x and its standard libraries such as pip, pandas, matplotlib, etc.\nAnaconda also includes several software applications of integrated development environment (IDE).\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.\n\nFor our course, we will mainly use Google Colab.\n\nIf we need to use Python locally from your laptop, we can use Jupyter or Spyder IDE from Anaconda Distribution."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-r",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-r",
+    "title": "Lecture 2",
+    "section": "What is R?",
+    "text": "What is R?\n\nR is a programming language and software environment designed for statistical computing and graphics.\nR has become a major tool in data analysis, statistical modeling, and visualization.\n\nIt is widely used among statisticians and data scientists for developing statistical software and performing data analysis.\nR is open source and freely available."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-rstudio",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-rstudio",
+    "title": "Lecture 2",
+    "section": "What is RStudio?",
+    "text": "What is RStudio?\n\n\nRStudio is an integrated development environment (IDE) mainly for R.\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\nIt integrates well with Git."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#python-vs.-r",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#python-vs.-r",
+    "title": "Lecture 2",
+    "section": "Python vs. R",
+    "text": "Python vs. R\n\n\n\nPython\n\nPython can be used for a wide range of applications, from web and game development to machine learning, making it a highly versatile language.\nPython has the largest community in the programming world, providing a wealth of resources, libraries, and frameworks.\n\n\nR\n\nR is particularly strong in statistical analysis and visualization, with a vast number of packages for statistical methods, including machine learning.\nThe community around R, particularly in academia and research, is very active.\n\n\n\n\nBoth Python and R hold significant value in industry and government sectors.\n\nHowever, Python is often more favored for roles in the industry, whereas R tends to be preferred for positions in the public sector."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#data-science-process",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#data-science-process",
+    "title": "Lecture 2",
+    "section": "Data Science Process",
+    "text": "Data Science Process\n\n\n\n\nCommunication is the final part of the data science process.\n\nIf you cannot communicate your results to other humans, it does not matter how great your analysis is!\n\nJupyter Notebook (*.ipynb) and Quarto (*.qmd) are great tools for producing a document that integrates your Python/R code, its results, and your insights on the results.\nWe will use Jupyter Notebook and Quarto files to both\n\nSave and execute programming codes, and\nGenerate high quality reports that can be shared with an audience."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-are-jupyter-notebook-and-quarto",
+    "title": "Lecture 2",
+    "section": "What are Jupyter Notebook and Quarto?",
+    "text": "What are Jupyter Notebook and Quarto?\n\n\n\nA Jupyter Notebook is an interactive computational environment that enables users to create and share documents that contain Python code, equations, visualizations, and narrative text.\nJupyter Notebooks are widely used in data science, academic research, education, and machine learning projects due to their versatility and ease of use.\n\n\n\n\nA Quarto is similar to Jupyter Notebook.\n\nMululti-language Support: Quarto supports not only R but also other languages such as Python, Julia, C++, SQL.\nPublishing Quality: Quarto documents are designed with publishing in mind, offering superior customization for document layouts and high-quality outputs suitable for academic and professional publications."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-google-colab",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#what-is-google-colab",
+    "title": "Lecture 2",
+    "section": "What is Google Colab?",
+    "text": "What is Google Colab?\n\n\nGoogle Colab is analogous to Google Drive, but specifically for writing and executing Python Notebook (*.ipynb) in your web browser.\nThis video also helps get started with Colab if you are unfamiliar with the format!\n\nVideo: Get started with Google Colaboratory\n\nA key benefit of Colab is that it is entirely free to use and has many of the standard Python modules pre installed.\n\nIt allows for CPU or GPU usage, even for free users, and stores the files in Google’s servers so you can access your files from anywhere you can connect to the Internet.\n\nUsing Colab also means you can entirely avoid the process of installing Python and any dependencies onto your computer."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-1",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-1",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nGetting a GitHub account\n\n\n\nCreate the GitHub account with your Geneseo email.\n\nGo to GitHub.\nClick “Sign up for GitHub”.\n\n\n\n\n\nChoose your GitHub username carefully:\n\nhttps://USERNAME.github.io will be the address for your website.\nByeong-Hak’s GitHub username is bcdanl, so that Byeong-Hak owns the web address https://bcdanl.github.io.\n\n\n\n\n\nIt is better to have a username with all lower cases."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-2",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-2",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nParticipate in the Discussions!\n\nGo to Lecture 2 - Q & A.\nSign in with GitHub account, and then add comments to the board."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-3",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-3",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nAnaconda Distribution.\nClick the “Download” button."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-4",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-4",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: R for Windows\nMac: R for Mac\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-5",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-5",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nRStudio Download\n\nA recent version of RStudio includes Quarto, so that we do not need to install Quarto separately.\n\n\n\n\n\nFor Mac users, try below steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-6",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-6",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\n\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-7",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-7",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-8",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-8",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\na &lt;- 1"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-9",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-9",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-10",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-10",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-11",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-11",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\ntidyverse\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\n\n\ntidyverse includes a lot of R packages, including ggplot2, dplyr, and tidyr.\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-12",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-12",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-13",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-13",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- mpg\n\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse.\n\nSince tidyverse is installed, ggplot2 package is already installed."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-14",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-14",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-15",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-15",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nPython in RStudio\n\nPython OptionR package, reticulate\n\n\n\nWe can run Python codes within RStudio.\nSelect Python interpreter in RStudio from Tools \\(&gt;\\) Global Options \\(&gt;\\) Python:\n\n\n\n\n\nInstall the R package, reticulate\n\ninstall.packages(\"reticulate\")\n\nThis package allows Quarto to use Python and R objects interactively within one Quarto document."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-16",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-16",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nBuilding a Website\n\nLet’s do Classwork 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-17",
+    "href": "danl-lec/danl-210-lec-02-2024-0125.html#installing-the-tools-17",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nMarkdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
+    "title": "Lecture 4",
+    "section": "Announcement",
+    "text": "Announcement\nGitHub Notifications Setting\n\nStepsgif description\n\n\n\nIf you want to avoid a ton of notification emails,\n\nGo to https://github.com, and log in.\nClick the mailbox icon at the top right corner next to the profile icon. \nClick “Manage notifications” at the bottom of the side bar.\nClick “Notification settings”.\nScroll down to the “Subscriptions” menu.\nClick “Notify me on …” from the “Watching” sub-menu, uncheck “Email”, and save it.\nClick “Notify me on …” from the “Participating, …” sub-menu, uncheck “Email”, and save it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#workflow",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#workflow",
+    "title": "Lecture 4",
+    "section": "Workflow",
+    "text": "Workflow\nShortcuts for Quarto Document\n\n\nMac\n\ncommand + shift + K renders a Quarto document.\noption + command + I create a code block.\ncommand + return runs a current line of code.\ncommand + shift + C is the shortcut for # (commenting).\n\n\nWindows\n\nCtrl + Shift + K renders a Quarto document.\nAlt + Ctrl + I create a code block.\nCtrl + Enter runs a current line of code.\nCtrl + Shift + C is the shortcut for # (commenting)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#workflow-1",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#workflow-1",
+    "title": "Lecture 4",
+    "section": "Workflow",
+    "text": "Workflow\nShortcuts for Lecture Slides\n\no or Esc overviews lecture slides\n\nUse arrow keys to move around.\n\nYou can also click the menu button at the top-right corner, and go to a specific slide.\nCtrl + Shift + F to search."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#learning-objectives",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#learning-objectives",
+    "title": "Lecture 4",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\n\nSet up the tools in your laptop.\n\nPersonal website\n\n\n\n\n\nPractice Markdown\nUpdate Website\nPractice Quarto and Jupyter Notebook"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#building-a-website",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#building-a-website",
+    "title": "Lecture 4",
+    "section": "Building a Website",
+    "text": "Building a Website\n\nLet’s review Git and GitHub in Classwork 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#practice-markdown",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#practice-markdown",
+    "title": "Lecture 4",
+    "section": "Practice Markdown",
+    "text": "Practice Markdown\n\nPython Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s review Classwork 2."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-1",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-1",
+    "title": "Lecture 4",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nQuarto Basics\n\n\nIn RStudio, close the project USERNAME.github.io.Rporj if it is on.\n\nClick USERNAME.github.io.Rporj at the top-right corner.\nClick Close Project.\n\nDownload the Quarto files, danl-210-quarto-reticulate.qmd and danl-210-quarto-py-only.qmd, from Brightspace, and render (command/Ctrl + shift + K) them from RStudio.\nWhen rendering danl-210-quarto-reticulate.qmd and danl-210-quarto-py-only.qmd, I find that there can be some glitches in RStudio with Anaconda Python.\n\nThere could be various reasons for glitches. (e.g., Anaconda versions, incorrect pathname of Anaconda)\n[REQUIRED] Please let me know using Lecture 4 - Q & A!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-2",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#getting-started-with-quarto-2",
+    "title": "Lecture 4",
+    "section": "Getting Started with Quarto",
+    "text": "Getting Started with Quarto\nQuarto Basics\n\nThe following syntax is part of YAML metadata in danl-210-quarto-... .qmd.\n\nIn YAML, indentation really matters!\ntab (or four spaces) defines a level in YAML.\n\n\n---\ntitle: \nsubtitle: \nauthor: \ndate: last-modified\n\nexecute: \n  echo: true\n  eval: true\n\nformat: \n  html:\n---"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rporj.\n\nYour website has a _quarto.yml configuration file.\n\nThis file provides options for HTML documents within the website.\n\n\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: project.qmd\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-1",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-1",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto file.\nquarto render from Terminal renders all Quarto/Jupyter Notebook files in your local working directory:\n\nquarto render\n\nWe should use quarto render when we have changes in _quarto.yml.\nMake changes only from your local laptop.\n\nDo not make any change from the GitHub repo webpage."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-2",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-2",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\n*.ipynb in Quarto websites\n\n\nBy default, quarto render doesn’t execute any Python code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf you need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, save it, and download it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-3",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-3",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate.\n\nMore details about HTML theming and code blocks are available here:\n\nHTML Theming\nHTML Code Blocks"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-4",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-4",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nAbout\n\nYour index.qmd sets a page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-5",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-5",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-6",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-6",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can add a new page to the website through navbar in _quarto.yml\n\nleft:\n- text: Project\n  href: project.qmd\n- text: Blog\n  href: blog-listing.qmd\n- text: Homeowrk\n  href: hw.qmd"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-7",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-7",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nNaviation and Adding Pages\n\nWe can also create a dropdown menu in a navigation bar by including a menu\n\nleft:\n  - text: \"Projects\"\n    menu:\n      - project_1.qmd\n      - project_2.qmd \n\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-8",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#quarto-websites-8",
+    "title": "Lecture 4",
+    "section": "Quarto Websites",
+    "text": "Quarto Websites\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#website-basics",
+    "href": "danl-lec/danl-210-lec-04-2024-0201.html#website-basics",
+    "title": "Lecture 4",
+    "section": "Website Basics",
+    "text": "Website Basics\n\nLet’s do Classwork 3."
+  },
+  {
     "objectID": "danl-cw/danl-210-cw-03.html",
     "href": "danl-cw/danl-210-cw-03.html",
     "title": "Classwork 3",
@@ -1075,7 +1467,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 5\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-210-qa-03.html",
@@ -1096,7 +1488,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-qa.html",
