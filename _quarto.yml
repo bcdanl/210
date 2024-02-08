@@ -14,8 +14,8 @@ website:
     # logo: img/geneseo-logo-squared.png
     pinned: true
     right:
-      - text: Blog
-        href: blog-listing.qmd
+      # - text: Blog
+      #   href: blog-listing.qmd
       - icon: github
         menu: 
         - text: Website
