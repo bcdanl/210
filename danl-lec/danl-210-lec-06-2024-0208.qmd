@@ -42,6 +42,7 @@ knitr::knit_engines$set("markdown")
 
 
 
+
 # Today's Learning Objectives {background-color="#1c4982"}
 
 ## Learning Objectives
@@ -77,6 +78,7 @@ knitr::knit_engines$set("markdown")
 
 - If you need to update cell outputs in `*.ipynb` that is used for a webpage, 
   - Run that `*.ipynb` on Google Colab, save it, and then download it.
+  - It is recommended to add the YAML header at the begining of your `ipynb`
 
 :::
 

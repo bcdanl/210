@@ -1152,7 +1152,7 @@
     "href": "danl-lec/danl-210-lec-06-2024-0208.html#quarto-websites",
     "title": "Lecture 6",
     "section": "Quarto Websites",
-    "text": "Quarto Websites\n*.ipynb for Webpages and Blog posts in Quarto Websites\n\n\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\nIf you need to update cell outputs in *.ipynb that is used for a webpage,\n\nRun that *.ipynb on Google Colab, save it, and then download it."
+    "text": "Quarto Websites\n*.ipynb for Webpages and Blog posts in Quarto Websites\n\n\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\nIf you need to update cell outputs in *.ipynb that is used for a webpage,\n\nRun that *.ipynb on Google Colab, save it, and then download it.\nIt is recommended to add the YAML header at the begining of your ipynb"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-1",
