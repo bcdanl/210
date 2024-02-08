@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -121,6 +121,10 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./blog-listing.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Blog</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
       <i class="bi bi-github" role="img">
@@ -201,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="beer">beer <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-analysis">data-analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ipynb">ipynb <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -259,7 +263,90 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="python" data-listing-date-sort="1707282000000" data-listing-file-modified-sort="1707342342842" data-listing-date-modified-sort="1707342342000" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./posts/py-basic/blog-python-basics.html"> <img src="./posts/py-basic/py-basic.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/py-basic/blog-python-basics.html">
+<h3 class="no-anchor listing-title">
+Python Basics
+</h3>
+<div class="listing-subtitle">
 
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/py-basic/blog-python-basics.html">
+<div class="listing-date">
+February 7, 2024
+</div>
+<div class="listing-author">
+Byeong-Hak Choe
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="python,ipynb,data-analysis,beer" data-listing-date-sort="1698897600000" data-listing-file-modified-sort="1707343082978" data-listing-date-modified-sort="1707343082000" data-listing-reading-time-sort="4">
+<div class="thumbnail">
+<p><a href="./posts/beer-markets/beer-markets.html"> <img src="./posts/beer-markets/image.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/beer-markets/beer-markets.html">
+<h3 class="no-anchor listing-title">
+Beer Markets
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/beer-markets/beer-markets.html">
+<div class="listing-date">
+November 2, 2023
+</div>
+<div class="listing-author">
+Byeong-Hak Choe
+</div>
+<div class="listing-reading-time">
+4 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="news" data-listing-date-sort="1698379200000" data-listing-file-modified-sort="1707017838591" data-listing-date-modified-sort="1707017838000" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html"> <p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+</div>
+<div class="body">
+<a href="./posts/welcome/index.html">
+<h3 class="no-anchor listing-title">
+Welcome To My Blog
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html">
+<div class="listing-date">
+October 27, 2023
+</div>
+<div class="listing-author">
+Byeong-Hak Choe
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
