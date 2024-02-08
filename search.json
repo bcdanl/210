@@ -1236,7 +1236,7 @@
     "href": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-12",
     "title": "Lecture 6",
     "section": "Python Basics",
-    "text": "Python Basics\nOperators\nQ. Classwork 1.1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
+    "text": "Python Basics\nOperators\nQ. Classwork 4.1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-13",
@@ -1264,7 +1264,7 @@
     "href": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-16",
     "title": "Lecture 6",
     "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 1.2"
+    "text": "Python Basics\nBooleans and Conditions\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 4.2"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-17",
@@ -1397,7 +1397,7 @@
     "href": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-35",
     "title": "Lecture 6",
     "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\nQ. Classwork 1.3"
+    "text": "Python Basics\nLists and Slicing\n\nQ. Classwork 4.3"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-36",
@@ -1418,7 +1418,7 @@
     "href": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-38",
     "title": "Lecture 6",
     "section": "Python Basics",
-    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 1.4"
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 4.4"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-39",
@@ -1446,7 +1446,7 @@
     "href": "danl-lec/danl-210-lec-06-2024-0208.html#python-basics-42",
     "title": "Lecture 6",
     "section": "Python Basics",
-    "text": "Python Basics\nInstalling Modules, Packages, and Libraries\nTo install a module module_name on your Anaconda Python, open your Anaconda Prompt or Terminal and run:\npip install module_name\nTo install a module module_name on your Google Colab, run:\n!pip install module_name\n\nQ. Classwork 1.5"
+    "text": "Python Basics\nInstalling Modules, Packages, and Libraries\nTo install a module module_name on your Anaconda Python, open your Anaconda Prompt or Terminal and run:\npip install module_name\nTo install a module module_name on your Google Colab, run:\n!pip install module_name\n\nQ. Classwork 4.5"
   },
   {
     "objectID": "posts/py-basic/blog-python-basics.html",
