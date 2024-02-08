@@ -1,8 +1,9 @@
 ---
 title: Classwork 4
 subtitle: Python Basics
-date: 2024-02-06
-  
+date: 2024-02-08
+execute: 
+  eval: false
 from: markdown+emoji
 ---
 
@@ -105,13 +106,30 @@ Write a Python code that uses `print()` and `max()` functions to print out the l
 
 # Question 5
 
-Import the `pandas` library as `pd`
-
+- Import the `pandas` library as `pd`.
+- Install the `itables` package.
+- From `itables`, import the functions `init_notebook_mode` and `show`.
 
 *Answer*
 ```{python}
 
 ```
 
-<br><br><br>
+<br>
 
+
+<br>
+
+# Discussion
+
+
+<font size = "5">Welcome to our Classwork 4 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 4.
+
+Whether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 4 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!

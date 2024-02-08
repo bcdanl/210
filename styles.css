@@ -1,8 +1,9 @@
 /* css styles */
 
 
+
 .dropdown-menu {
-  height: 85px;
+  height: 120px;
   max-height:300px;
   overflow-y: scroll;
 }

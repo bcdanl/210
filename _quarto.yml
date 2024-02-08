@@ -3,17 +3,19 @@ project:
   output-dir: "."
   
 website:
-  title: "B.H. CHOE&nbsp;&nbsp;&nbsp;"
-  favicon: img/favicon.ico
+  title: "B.H. CHOE&nbsp;"
+  # favicon: img/favicon.ico
   description: 'SUNY Geneseo DANL 210-01, Spring 2024'
   reader-mode: false
   back-to-top-navigation: true
 
   navbar:
     background: "#1c4982" #194493 
-    logo: img/geneseo-logo-squared.png
+    # logo: img/geneseo-logo-squared.png
     pinned: true
     right:
+      - text: Blog
+        href: blog-listing.qmd
       - icon: github
         menu: 
         - text: Website
@@ -26,8 +28,9 @@ website:
           rel: me
 
   sidebar:
-    title: "Welcome!"
+    # title: "Welcome!"
     style: docked
+    logo: img/geneseo-logo-squared.png
     search: false
     collapse-level: 0
     pinned: true
