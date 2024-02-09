@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2024-01-26">
+<meta name="dcterms.date" content="2024-02-09">
 
 <title>Homework 1 | Byeong-Hak Choe</title>
 <style>
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
 <meta property="og:title" content="Homework 1 | Byeong-Hak Choe">
-<meta property="og:description" content="Python Basics and Personal Website">
+<meta property="og:description" content="Survey, Personal Website, and Python Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="B.H. CHOE&amp;nbsp;">
 </head>
@@ -178,7 +212,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#direction" id="toc-direction" class="nav-link active" data-scroll-target="#direction">Direction</a></li>
+  <li><a href="#part-1." id="toc-part-1." class="nav-link" data-scroll-target="#part-1.">Part 1.</a></li>
+  <li><a href="#part-2.-quarto-website" id="toc-part-2.-quarto-website" class="nav-link" data-scroll-target="#part-2.-quarto-website">Part 2. Quarto Website</a></li>
+  <li><a href="#part-3." id="toc-part-3." class="nav-link" data-scroll-target="#part-3.">Part 3.</a>
+  <ul>
+  <li><a href="#question-0." id="toc-question-0." class="nav-link" data-scroll-target="#question-0.">Question 0.</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -186,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Homework 1</h1>
-<p class="subtitle lead">Python Basics and Personal Website</p>
+<p class="subtitle lead">Survey, Personal Website, and Python Basics</p>
 </div>
 
 
@@ -203,14 +256,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 26, 2024</p>
+      <p class="date">February 9, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 26, 2024</p>
+      <p class="date-modified">February 9, 2024</p>
     </div>
   </div>
     
@@ -219,18 +272,127 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="direction" class="level1">
+<h1>Direction</h1>
+<ul>
+<li><p>Please submit your <strong>Jupyter Notebook for Part 3 in Homework 1</strong> to the Brightspace with the name below:</p>
+<ul>
+<li><code>danl-210-hw1-LASTNAME-FIRSTNAME.ipynb</code><br>
+( e.g., <code>danl-210-hw1-choe-byeonghak.ipynb</code> )</li>
+</ul></li>
+<li><p>The due is February 20, 2024, 3:30 P.M.</p></li>
+<li><p>Please send Byeong-Hak an email (<code>bchoe@geneseo.edu</code>) if you have any questions.</p></li>
+</ul>
+<p><br><br><br></p>
+</section>
+<section id="part-1." class="level1">
+<h1>Part 1.</h1>
+<p>Please complete the following survey:</p>
+<ul>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBQnhFlaCBhYujtkpUrjJ4O9ODK__kpYYH7cF-8mIKxaA9-Q/viewform?usp=sf_link">Link to Google Form Survey</a></li>
+</ul>
+<p><br><br><br></p>
+</section>
+<section id="part-2.-quarto-website" class="level1">
+<h1>Part 2. Quarto Website</h1>
+<ol type="1">
+<li>Decorate your website:</li>
+</ol>
+<ul>
+<li>Replace <code>YOUR NAME</code> with your name in <code>_quarto.yml</code> and <code>index.qmd</code>.</li>
+<li>Describe yourself in <code>index.qmd</code>.</li>
+<li>Add the picture file (e.g., <code>png</code>) of your profile photo to <code>img</code> directory. Then correct <code>img/profile.png</code> in <code>index.qmd</code> accordingly.</li>
+<li>Add the PDF file of your resumé to the website working directory in your laptop (or Posit Cloud).</li>
+<li>Correct links for your resumé, LinkedIn, email, and optionally social media.</li>
+<li>Make sure that you do not have any broken links in your website.</li>
+</ul>
+<ol start="2" type="1">
+<li>Add a “Python Basics” blog post to your blog using Jupyter Notebook.</li>
+</ol>
+<ul>
+<li>In your “Python Basics” blog post, briefly explain Python Basics we discussed in <a href="https://bcdanl.github.io/210/danl-lec/danl-210-lec-06-2024-0208.html">Lecture 6</a> and <a href="https://bcdanl.github.io/210/danl-lec/danl-210-lec-07-2024-0213.html">Lecture 7</a> and in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html">Classwork 4</a></li>
+</ul>
+<ol start="3" type="1">
+<li>Use the 3-step git commands (<code>git add</code>, <code>git commit</code>, and <code>git push</code>) to update your online website.</li>
+</ol>
+<p><br><br><br></p>
+</section>
+<section id="part-3." class="level1">
+<h1>Part 3.</h1>
+<section id="question-0." class="level2">
+<h2 class="anchored" data-anchor-id="question-0.">Question 0.</h2>
+<p>Provide your GitHub username.</p>
+<p><em>Answer</em>:</p>
+<p><br><br></p>
+</section>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Given <code>lst = [1, 2, 3, 4, 5]</code>, what does <code>lst[1:4]</code> return?</p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<ul>
+<li><p>How do you create a dictionary with keys <code>"apple"</code>, <code>"banana"</code>, and <code>"cherry"</code>, each with the corresponding values <code>5</code>, <code>3</code>, and <code>7</code>?</p></li>
+<li><p>How do you access the value associated with the key <code>"banana"</code> in the dictionary created above?</p></li>
+</ul>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>For the expressions below, what is the value of the expression? Explain thoroughly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">True</span> <span class="kw">and</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">True</span> <span class="kw">or</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> (<span class="dv">100</span> <span class="op">==</span> <span class="st">'100'</span> <span class="kw">and</span> <span class="dv">25</span> <span class="op">&lt;</span> <span class="dv">36</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<ul>
+<li>Create a new <code>if-elif-else</code> chain that prints <code>"well done"</code> if a score is over <code>90</code>, “good” if between <code>40</code> and <code>90</code>, and <code>"bad luck"</code> otherwise.</li>
+</ul>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>Write a for loop that prints out <code>"coding for data analysts"</code> so that each word is printed in a successive iteration.</p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>This Python code creates a tuple with seven different ages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>respondent_ages <span class="op">=</span> (<span class="dv">65</span>, <span class="dv">29</span>, <span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">58</span>, <span class="dv">23</span>, <span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a Python code that uses a <code>for</code>-loop statement and an <code>if</code>-<code>else</code> chain to assign the list, <code>under40_list</code>, to <code>[29, 25, 35, 23, 19]</code> and the list, <code>over40_list</code>, to <code>[65, 58]</code>.</p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<ul>
+<li>Write a Python code to import the <code>sqrt()</code> function from the <code>math</code> module.</li>
+<li>After importing <code>sqrt()</code>, how do you use it to find the square root of <code>16</code>?</li>
+</ul>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
 
 
+</section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{choe2024,
-  author = {Choe, Byeong-Hak},
-  title = {Homework 1},
-  date = {2024-01-26},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-choe2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Choe, Byeong-Hak. 2024. <span>“Homework 1.”</span> January 26, 2024.
-</div></div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

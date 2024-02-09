@@ -1,7 +1,167 @@
 ---
 title: Homework 1
-subtitle: Python Basics and Personal Website
+subtitle: Survey, Personal Website, and Python Basics
 date: last-modified
 from: markdown+emoji
+execute: 
+  eval: false
 ---
 
+# Direction
+
+- Please submit your **Jupyter Notebook for Part 3 in Homework 1** to the Brightspace with the name below:
+
+  - `danl-210-hw1-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-210-hw1-choe-byeonghak.ipynb` )
+
+- The due is February 20, 2024, 3:30 P.M.
+
+- Please send Byeong-Hak an email (`bchoe@geneseo.edu`) if you have any questions.
+
+<br><br><br>
+
+# Part 1.
+
+Please complete the following survey:
+
+- [Link to Google Form Survey](https://docs.google.com/forms/d/e/1FAIpQLSfBQnhFlaCBhYujtkpUrjJ4O9ODK__kpYYH7cF-8mIKxaA9-Q/viewform?usp=sf_link)
+
+<br><br><br>
+
+# Part 2. Quarto Website
+
+1. Decorate your website:
+  - Replace `YOUR NAME` with your name in `_quarto.yml` and `index.qmd`.
+  - Describe yourself in `index.qmd`.
+  - Add the picture file (e.g., `png`) of your profile photo to `img` directory. Then correct `img/profile.png` in `index.qmd` accordingly.
+  - Add the PDF file of your resumé to the website working directory in your laptop (or Posit Cloud).
+  - Correct links for your resumé, LinkedIn, email, and optionally social media.
+  - Make sure that you do not have any broken links in your website.
+
+2. Add a "Python Basics" blog post to your blog using Jupyter Notebook.
+  - In your "Python Basics" blog post, briefly explain Python Basics we discussed in [Lecture 6](https://bcdanl.github.io/210/danl-lec/danl-210-lec-06-2024-0208.html) and [Lecture 7](https://bcdanl.github.io/210/danl-lec/danl-210-lec-07-2024-0213.html) and in [Classwork 4](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)
+
+3. Use the 3-step git commands (`git add`, `git commit`, and `git push`) to update your online website.
+
+
+<br><br><br>
+
+
+# Part 3.
+
+
+## Question 0.
+Provide your GitHub username.
+
+*Answer*:
+```{r}
+
+```
+
+<br><br>
+
+
+## Question 1
+
+Given `lst = [1, 2, 3, 4, 5]`, what does `lst[1:4]` return?
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+## Question 2
+
+- How do you create a dictionary with keys `"apple"`, `"banana"`, and `"cherry"`, each with the corresponding values `5`, `3`, and `7`?
+
+- How do you access the value associated with the key `"banana"` in the dictionary created above?
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+## Question 3
+
+For the expressions below, what is the value of the expression? Explain thoroughly.
+
+```{python}
+True and False
+```
+
+
+```{python}
+True or False
+```
+
+```{python}
+not (100 == '100' and 25 < 36)
+```
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+
+## Question 4
+
+- Create a new `if-elif-else` chain that prints `"well done"` if a score is over `90`, "good" if between `40` and `90`, and `"bad luck"` otherwise.
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+
+## Question 5
+
+Write a for loop that prints out `"coding for data analysts"` so that each word is printed in a successive iteration.
+
+*Answer*
+```{python}
+
+```
+
+
+<br><br><br>
+
+## Question 6
+
+This Python code creates a tuple with seven different ages:
+
+```{python}
+respondent_ages = (65, 29, 25, 35, 58, 23, 19)
+```
+
+
+Write a Python code that uses a `for`-loop statement and an `if`-`else` chain to assign the list, `under40_list`, to `[29, 25, 35, 23, 19]` and the list, `over40_list`, to `[65, 58]`.
+
+*Answer*
+```{python}
+
+```
+
+
+<br><br><br>
+
+## Question 7
+
+- Write a Python code to import the `sqrt()` function from the `math` module.
+- After importing `sqrt()`, how do you use it to find the square root of `16`?
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
