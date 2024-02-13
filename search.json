@@ -74,7 +74,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 5\n\n\nPandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-210-qa-06.html",
@@ -1551,7 +1551,7 @@
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-2",
     "title": "Lecture 7",
     "section": "Python Basics",
-    "text": "Python Basics\nTuples and (im)mutability\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries:\n\n\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nprint(list_example)"
+    "text": "Python Basics\nTuples and (im)mutability\nlist_example = [10, 1.23, \"like this\", True, None]\nid(list_example) # memory address of list_example\n \n\n\nlist_example[0] = 1000\nlist_example\nid(list_example)\n \n\nlist_example.append(2)  \nlist_example\nid(list_example)\n \n\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 0\n \n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-3",
@@ -1600,7 +1600,7 @@
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-9",
     "title": "Lecture 7",
     "section": "Python Basics",
-    "text": "Python Basics\nStrings\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length:"
+    "text": "Python Basics\nStrings\nstring = \"cheesecake\"\nprint( string[-4:] )\n\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-10",
@@ -1614,7 +1614,7 @@
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-11",
     "title": "Lecture 7",
     "section": "Python Basics",
-    "text": "Python Basics\nGet a Substring with a Slice\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step."
+    "text": "Python Basics\nGet a Substring with a Slice\n\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-12",
@@ -1635,7 +1635,7 @@
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-14",
     "title": "Lecture 7",
     "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\n[index]slice\n\n\nGet an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\nWe can extract a single value from a list by specifying its index:\n\n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\n\nGet an Item with a Slice\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
+    "text": "Python Basics\nLists and Slicing\n\n[index]slice\n\n\nGet an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n  \n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\nWe can extract a single value from a list by specifying its index\n\n\n\nGet an Item with a Slice\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-15",
@@ -1656,7 +1656,7 @@
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-17",
     "title": "Lecture 7",
     "section": "Python Basics",
-    "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nA function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-18",
@@ -1733,263 +1733,270 @@
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-6",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDataFrame Terminologies: Variables, Observations, and Values\n\n\n\n\nEach variable is a column.\nEach observation is a row.\nEach value is a cell."
+    "text": "Pandas Basics\nAnother Interactive DataFrame Display\n# !pip install itables\nfrom itables import init_notebook_mode, show\ninit_notebook_mode(all_interactive=False)\nshow(nba)\n\nitables provides similar interactive displays for DataFrames.\n\nFor a blog post, itables‘s interactive displays may work better than google.colab’ ones."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-7",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-7",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nDataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.method()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.attribute) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
+    "text": "Pandas Basics\nDataFrame Terminologies: Variables, Observations, and Values\n\n\n\n\nEach variable is a column.\nEach observation is a row.\nEach value is a cell."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-8",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-8",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .info()\n\n\nnba.info()    # method\n\nnba.shape     # attribute\nnba.dtypes    # attribute\nnba.columns   # attribute\nnba.count()   # method\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nData type of each variable (.dtypes)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
+    "text": "Pandas Basics\nDataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.method()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.attribute) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-9",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-9",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .describe()\nnba.describe()\nnba.describe(include='all')\n\n.describe() method generates descriptive statistics that summarize the central tendency, dispersion, and distribution of each variable.\n\nIt can also process string-type variables if specified explicitly (include='all')."
+    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .info()\n\n\nnba.info()    # method\n\nnba.shape     # attribute\nnba.dtypes    # attribute\nnba.columns   # attribute\nnba.count()   # method\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nData type of each variable (.dtypes)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-10",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-10",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSelecting a Variable by its Name\nnba_player_name_1 = nba['Name']   # Series\nnba_player_name_1\n\nnba_player_name_2 = nba[ ['Name'] ]   # DataFrame\nnba_player_name_2\n\nIf we want only a specific variable from a DataFrame, we can access the variable with its name using squared brackets, [ ].\n\nDataFrame[ 'var_1' ]\nDataFrame[ ['var_1'] ]"
+    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .describe()\nnba.describe()\nnba.describe(include='all')\n\n.describe() method generates descriptive statistics that summarize the central tendency, dispersion, and distribution of each variable.\n\nIt can also process string-type variables if specified explicitly (include='all')."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-11",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-11",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSelecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]"
+    "text": "Pandas Basics\nSelecting a Variable by its Name\nnba_player_name_1 = nba['Name']   # Series\nnba_player_name_1\n\nnba_player_name_2 = nba[ ['Name'] ]   # DataFrame\nnba_player_name_2\n\nIf we want only a specific variable from a DataFrame, we can access the variable with its name using squared brackets, [ ].\n\nDataFrame[ 'var_1' ]\nDataFrame[ ['var_1'] ]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-12",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-12",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSelecting Multiple Variables with select_dtypes()\n# To include only string variables\nnba.select_dtypes(include = \"object\")\n\n# To exclude string and integer variables\nnba.select_dtypes(exclude = [\"object\", \"int\"])\n\nWe can use the select_dtypes() method to select columns based on their data types.\n\nThe method accepts two parameters, include and exclude."
+    "text": "Pandas Basics\nSelecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-13",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-13",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nCounting with .count()\n\n\nnba['Salary'].count()\nnba[['Salary']].count()\n\n\n\nThe .count() counts the number of non-missing values in a Series/DataFrame."
+    "text": "Pandas Basics\nSelecting Multiple Variables with select_dtypes()\n# To include only string variables\nnba.select_dtypes(include = \"object\")\n\n# To exclude string and integer variables\nnba.select_dtypes(exclude = [\"object\", \"int\"])\n\nWe can use the select_dtypes() method to select columns based on their data types.\n\nThe method accepts two parameters, include and exclude."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-14",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-14",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nCounting with .value_counts()\n\n\nnba['Team'].value_counts()\n\nnba[['Team']].value_counts()\n\n\n\nThe .value_counts() counts the number of occurrences of each unique value in a Series/DataFrame."
+    "text": "Pandas Basics\nCounting with .count()\n\n\nnba['Salary'].count()\nnba[['Salary']].count()\n\n\n\nThe .count() counts the number of non-missing values in a Series/DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-15",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-15",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nCounting with .nunique()\n\n\nnba[['Team']].nunique()\n\nnba.nunique()\n\n\n\nThe .nunique() counts the number of unique values in each variable in a DataFrame."
+    "text": "Pandas Basics\nCounting with .value_counts()\n\n\nnba['Team'].value_counts()\n\nnba[['Team']].value_counts()\n\n\n\nThe .value_counts() counts the number of occurrences of each unique value in a Series/DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-16",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-16",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 1-4 in Classwork 5!"
+    "text": "Pandas Basics\nCounting with .nunique()\n\n\nnba[['Team']].nunique()\n\nnba.nunique()\n\n\n\nThe .nunique() counts the number of unique values in each variable in a DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-17",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-17",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSelecting the first/last n observations with .head() & .tail()\n\n\nnba.head()\nnba.head(10)\n\nnba.tail()\nnba.tail(10)\n\n\n\nWe can use the .head()/.tail() method of a DataFrame to keep only the first/last n observations.\n\nThis can be useful with sorting methods."
+    "text": "Pandas Basics\nLet’s do Questions 1-4 in Classwork 5!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-18",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-18",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
+    "text": "Pandas Basics\nSelecting the first/last n observations with .head() & .tail()\n\n\nnba.head()\nnba.head(10)\n\nnba.tail()\nnba.tail(10)\n\n\n\nWe can use the .head()/.tail() method of a DataFrame to keep only the first/last n observations.\n\nThis can be useful with sorting methods."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-19",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-19",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nIt has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-20",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-20",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with sort_values() and head() & tail()\n\n\ndf = nba.sort_values([\"Salary\"])\ndf.head(5)\n\ndf = nba.sort_values([\"Salary\"])\ndf.tail(5)\n\n\n\nsort_values() with .head() or .tail() can be useful to find the observations with the n smallest/largest values in a variable."
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nIt has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-21",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-21",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values() and head() & tail()\n\n\ndf = nba.sort_values([\"Salary\"])\ndf.head(5)\n\ndf = nba.sort_values([\"Salary\"])\ndf.tail(5)\n\n\n\nsort_values() with .head() or .tail() can be useful to find the observations with the n smallest/largest values in a variable."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-22",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-22",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(5, 'Salary')\nnba.nlargest(5, 'Salary')\n\nnsmallest() are useful to get the first n observations ordered by a variable in ascending order.\nnlargest() are useful to get the first n observations ordered by a variable in descending order."
+    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-23",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-23",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(4, 'Salary', keep = \"all\")\nnba.nlargest(4, 'Salary', keep = \"all\")\n\nkeep = \"all\" keeps all duplicates, even it means selecting more than n observations."
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(5, 'Salary')\nnba.nlargest(5, 'Salary')\n\nnsmallest() are useful to get the first n observations ordered by a variable in ascending order.\nnlargest() are useful to get the first n observations ordered by a variable in descending order."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-24",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-24",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values([\"Team\", \"Name\"])\nnba.sort_values(by = [\"Team\", \"Name\"])\n\nWe can sort a DataFrame by multiple columns by passing a list to the by parameter."
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(4, 'Salary', keep = \"all\")\nnba.nlargest(4, 'Salary', keep = \"all\")\n\nkeep = \"all\" keeps all duplicates, even it means selecting more than n observations."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-25",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-25",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = False)\n\nWe can pass a single Boolean to the ascending parameter to apply the same sort order to each column."
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values([\"Team\", \"Name\"])\nnba.sort_values(by = [\"Team\", \"Name\"])\n\nWe can sort a DataFrame by multiple columns by passing a list to the by parameter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-26",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-26",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = [False, True])\n\nIf we want to sort each variable in a different order, we can pass a Boolean list to the ascending parameter."
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = False)\n\nWe can pass a single Boolean to the ascending parameter to apply the same sort order to each column."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-27",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-27",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nQ. Which players on each team are paid the most?"
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = [False, True])\n\nIf we want to sort each variable in a different order, we can pass a Boolean list to the ascending parameter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-28",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-28",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# The two lines below are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True).\n\nnba.sort_index(ascending = False).\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index.\nIf we could sort the data set by index positions rather than by column values, we could return it to its original shape."
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nQ. Which players on each team are paid the most?"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-29",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-29",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nChanging the Order of Variables with sort_index()\n# The two lines below are equivalent\nnba.sort_index(axis = \"columns\")\nnba.sort_index(axis = 1)\n\nThe sort_index() method can also be used to change the order of variables in an alphabetical order.\n\nWe need to add an axis parameter and pass it an argument of \"columns\" or 1."
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# The two lines below are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True).\n\nnba.sort_index(ascending = False).\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index.\nIf we could sort the data set by index positions rather than by column values, we could return it to its original shape."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-30",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-30",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observations (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
+    "text": "Pandas Basics\nChanging the Order of Variables with sort_index()\n# The two lines below are equivalent\nnba.sort_index(axis = \"columns\")\nnba.sort_index(axis = 1)\n\nThe sort_index() method can also be used to change the order of variables in an alphabetical order.\n\nWe need to add an axis parameter and pass it an argument of \"columns\" or 1."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-31",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-31",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nSetting a New Index with set_index()\n# The two lines below are equivalent\nnba.set_index(keys = \"Name\")\nnba.set_index(\"Name\")\n\nThe set_index() method returns a new DataFrame with a given column set as the index.\n\nIts first parameter, keys, accepts the column name."
+    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observations (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-32",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-32",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the chain of method operations\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
+    "text": "Pandas Basics\nSetting a New Index with set_index()\n# The two lines below are equivalent\nnba.set_index(keys = \"Name\")\nnba.set_index(\"Name\")\n\nThe set_index() method returns a new DataFrame with a given column set as the index.\n\nIts first parameter, keys, accepts the column name."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-33",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-33",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Questions 5-7 in Classwork 5!"
+    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the chain of method operations\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-34",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-34",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+    "text": "Pandas Basics\nLet’s do Questions 5-7 in Classwork 5!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-35",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-35",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-36",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-36",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-37",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-37",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-38",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-38",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-39",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-39",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-40",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-40",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-41",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-41",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
+    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-42",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-42",
     "title": "Lecture 7",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-43",
     "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-43",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-44",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-44",
     "title": "Lecture 7",
     "section": "Pandas Basics",
     "text": "Pandas Basics\nLet’s do Classwork 5!"

@@ -87,15 +87,43 @@ knitr::knit_engines$set("markdown")
 ## Python Basics
 ###  Tuples and (im)mutability
 
-
-- Lists are a really useful way to work with lots of data at once. 
-  - We can also construct them by appending entries:
-
 ```{.python}
 list_example = [10, 1.23, "like this", True, None]
-list_example.append("one more entry")
-print(list_example)
+id(list_example) # memory address of list_example
+ 
 ```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+list_example[0] = 1000
+list_example
+id(list_example)
+ 
+```
+:::
+
+
+::: {.column width="50%"}
+```{.python}
+list_example.append(2)  
+list_example
+id(list_example)
+ 
+```
+:::
+
+::::
+
+```{.python}
+my_tuple = (1, 2, 3)
+my_tuple[0] = 0
+ 
+```
+
+- Lists are a really useful way to work with lots of data at once. 
+  - We can also construct them by appending entries.
 
 
 ## Python Basics
@@ -131,7 +159,6 @@ if x > 2:
 
 ## Python Basics
 ###  `for` Loops
-
 
 
 ```{.python}
@@ -215,8 +242,10 @@ string = "cheesecake"
 print( string[-4:] )
 ```
 
+:::{.nonincremental}
 - From strings, we can access the individual characters via slicing and indexing. 
 
+:::
 
 
 :::: {.columns}
@@ -237,7 +266,7 @@ print( len(list_of_numbers) )
 :::
 ::::
 
-- Both lists and strings will allow us to use the `len()` command to get their length:
+- Both *lists* and *strings* will allow us to use the `len()` command to get their length.
 
 
 
@@ -260,7 +289,7 @@ print( len(list_of_numbers) )
 ## Python Basics
 ### Get a Substring with a Slice
 
-
+::::{.nonincremental}
 ::: {.panel-tabset}
 ## `[:]`
 ```{.python}
@@ -317,7 +346,7 @@ letters[: : -1 ]
 
 :::
 
-
+::::
 
 
 ## Python Basics
@@ -359,9 +388,9 @@ list_example[ 1 : 3 ]
 ```{.python}
 suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
         'Stony Brook', 'New Paltz'] 
+  
 ```
 
-- We can extract a single value from a list by specifying its index:
 
 
 :::: {.columns}
@@ -384,6 +413,8 @@ suny[-7]
 :::
 
 ::::
+
+- We can extract a single value from a list by specifying its index
 
 
 
@@ -455,15 +486,15 @@ int("xyz")
 ```{.python}
 print("Cherry", "Strawberry", "Key Lime")
 print("Cherry", "Strawberry", "Key Lime", sep = "!")
-print("Cherry", "Strawberry", "Key Lime", sep=" ")
+print("Cherry", "Strawberry", "Key Lime", sep = " ")
 ```
 
 
 - We invoke a function by entering its name and a pair of opening and closing parentheses. 
 
-- Much as a cooking recipe can accept ingredients, a function invocation can accept inputs called **arguments**. 
+- A function invocation can accept inputs called **arguments**. 
 
-- We pass arguments sequentially inside the parentheses (, separated by commas).
+- We pass arguments sequentially inside the parentheses (separated by commas).
 
 - A **parameter** is a name given to an expected function argument.
 
@@ -644,6 +675,22 @@ nba
 - Colab includes an extension that renders pandas `DataFrames` into interactive displays.
 
 
+## Pandas Basics
+### Another Interactive DataFrame Display
+
+
+```{.python}
+# !pip install itables
+from itables import init_notebook_mode, show
+init_notebook_mode(all_interactive=False)
+show(nba)
+```
+
+- `itables` provides similar interactive displays for `DataFrames`.
+  - For a blog post, `itables`'s interactive displays may work better than `google.colab`' ones.
+
+
+
 # Getting a Summary of Data {background-color="#1c4982"}
 
 ## Pandas Basics
@@ -663,8 +710,6 @@ nba
 <!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
 
 <!-- - When we work with `DataFrame`, we mean a variable a column. -->
-
-
 
 
 
