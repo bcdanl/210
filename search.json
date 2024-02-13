@@ -74,7 +74,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 5\n\n\nPandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-210-qa-04.html",
@@ -102,7 +102,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 6\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nWebsite Basics; Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nPython Basics; Pandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nWebsite Basics; Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
@@ -147,39 +147,515 @@
     "text": "Quarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
   },
   {
-    "objectID": "posts/beer-markets/beer-markets.html",
-    "href": "posts/beer-markets/beer-markets.html",
-    "title": "Beer Markets",
+    "objectID": "danl-cw/danl-210-cw-05.html",
+    "href": "danl-cw/danl-210-cw-05.html",
+    "title": "Classwork 5",
     "section": "",
-    "text": "Diving into the complex world of what people like in their beer, the beer_markets.csv dataset comes across as a goldmine of data, showing us the detailed interactions between buyers and their favorite beers. This dataset covers everything from how much and at what price people are buying beer to how deals and brand loyalty influence their decisions, across different types of people and places. As we start digging into this dataset, we aim to uncover the patterns that show what really influences the modern beer drinker’s choices, offering up valuable insights for marketers, industry watchers, and beer lovers. By breaking down the data, our exploration will shine a light on the factors that drive consumer behavior in the beer market, giving us a full picture of the trends that shape this lively industry.\nCode\n# Creating an interactive table\n!pip install itables\nfrom itables import init_notebook_mode\nfrom itables import show\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# Reading the CSV file\nbeer_data = pd.read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\nshow(beer_data)\n\n\n\n\n\n\n\n    \n      \n      hh\n      _purchase_desc\n      quantity\n      brand\n      dollar_spent\n      beer_floz\n      price_per_floz\n      container\n      promo\n      market\n      buyertype\n      income\n      childrenUnder6\n      children6to17\n      age\n      employment\n      degree\n      cow\n      race\n      microwave\n      dishwasher\n      tvcable\n      singlefamilyhome\n      npeople\n    \n  Loading... (need help?)\nCode\n# Setting up the visualization settings\nsns.set(style=\"whitegrid\")\n\n# Calculate total quantity and spending for each brand\nbrand_summary = beer_data.groupby('brand').agg({'quantity':'sum', 'dollar_spent':'sum'}).reset_index()\n\n# Sort by total quantity and spending\nbrand_summary_sorted_quantity = brand_summary.sort_values('quantity', ascending=False)\nbrand_summary_sorted_spent = brand_summary.sort_values('dollar_spent', ascending=False)\nCode\n# Plotting total quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=brand_summary_sorted_quantity, palette='viridis')\nplt.title('Total Quantity of Beer Purchased by Brand')\nplt.xlabel('Total Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe bar charts above display the total quantity of beer purchased and the total spending by brand. From the looks of it, certain brands dominate in terms of quantity sold and total spending, indicating their popularity.\nNow, let’s calculate the average quantity purchased and average spending per purchase. For this, we’ll consider each row in the dataset as a separate purchase and compute the averages accordingly.\nCode\n# Calculate average quantity purchased and average spending per purchase\naverage_purchase = beer_data.groupby('brand').agg({\n    'quantity': 'mean',\n    'dollar_spent': 'mean'\n}).reset_index()\n\n# Sort by average quantity and average spending\naverage_purchase_sorted_quantity = average_purchase.sort_values('quantity', ascending=False)\naverage_purchase_sorted_spent = average_purchase.sort_values('dollar_spent', ascending=False)\n\n# Plotting average quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=average_purchase_sorted_quantity, palette='viridis')\nplt.title('Average Quantity of Beer Purchased by Brand')\nplt.xlabel('Average Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe visualizations above depict the average quantity of beer purchased per brand and the average spending per brand. This shows which brands tend to be bought in larger quantities on average and which brands tend to have higher spending per purchase, which could be indicative of their price point or the purchase of premium products.\nNext, we’ll look at the total spending across different markets to see if there are any notable differences in spending habits geographically. To do this, we’ll sum up the spending in each market and visualize it.\nCode\n# Calculate total spending in each market\nmarket_spending_summary = beer_data.groupby('market').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nmarket_spending_summary_sorted = market_spending_summary.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending in each market\nplt.figure(figsize=(12, 18))\nsns.barplot(x='dollar_spent', y='market', data=market_spending_summary_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Market')\nplt.xlabel('Total Spending')\nplt.ylabel('Market')\nplt.show()\nThe bar chart illustrates the total spending on beer by market, showcasing the differences in spending habits across various regions. Some markets have significantly higher spending, which could be due to a variety of factors including market size, consumer preferences, or economic factors.\nNow, let’s move on to the second analysis:"
+    "text": "Direction\n\n\n\nThe nfl.csv file contains a list of players in the National Football League with similar Name, Team, Position, Birthday, and Salary variables in the nba.csv file.\n\nimport pandas as pd\nnfl = pd.read_csv(\"https://bcdanl.github.io/data/nfl.csv\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1\n\nHow can we read the nfl.csv file, and assign it to a DataFrame object, nfl?\nWhat is an effective way to convert the values in its Birthday variable to datetimes?\n\nAnswer:\n\n\n\nQuestion 2\nHow can we set the DataFrame index to store the player names?\nAnswer:\n\n\n\nQuestion 3\n\nHow many observations are in nfl?\nWhat are the mean, median, standard deviation, minimum, and maximum of Salary in nfl?\n\nAnswer:\n\n\n\nQuestion 4\n\nHow can we count the number of players per team in nfl?\nHow many unique teams are in nfl?\n\nAnswer:\n\n\n\nQuestion 5\n\nWho are the five highest-paid players?\nWho is the oldest player?\n\nAnswer:\n\n\n\nQuestion 6\nHow can we sort the DataFrame first by Team in alphabetical order and then by Salary in descending order?\nAnswer:\n\n\n\nQuestion 7\nWho is the oldest player on the Kansas City Chiefs roster, and what is his birthday?\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 5 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 5.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 5 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/beer-markets/beer-markets.html#demographic-analysis",
-    "href": "posts/beer-markets/beer-markets.html#demographic-analysis",
-    "title": "Beer Markets",
-    "section": "Demographic Analysis",
-    "text": "Demographic Analysis\nWe will examine which demographics are buying what kind of beer and whether spending habits vary by demographics such as age, employment, and race. For this, we could look at:\n\nSpending by age group\nSpending by employment status\nSpending by race\n\nI’ll start by analyzing spending by age group.\n\n\nCode\n# Calculate total spending by age group\nage_group_spending = beer_data.groupby('age').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nage_group_spending_sorted = age_group_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by age group\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='age', data=age_group_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Age Group')\nplt.xlabel('Total Spending')\nplt.ylabel('Age Group')\nplt.show()\n\n\n\n\n\nThe bar chart demonstrates the total spending on beer segmented by age group, highlighting which age groups spend the most on beer. It appears that certain age groups are more dominant in beer spending, which may align with the purchasing power or preferences of those groups.\nNext, we will examine spending by employment status.\n\n\nCode\n# Calculate total spending by employment status\nemployment_spending = beer_data.groupby('employment').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nemployment_spending_sorted = employment_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by employment status\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='employment', data=employment_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Employment Status')\nplt.xlabel('Total Spending')\nplt.ylabel('Employment Status')\nplt.show()\n\n\n\n\n\nThe visualization shows the total spending on beer by employment status. We can see that certain employment groups, such as full-time workers, are spending more on beer, which might be related to their disposable income.\nFinally, let’s look at spending by race to complete the demographic analysis.\n\n\nCode\n# Calculate total spending by race\nrace_spending = beer_data.groupby('race').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nrace_spending_sorted = race_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by race\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='race', data=race_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Race')\nplt.xlabel('Total Spending')\nplt.ylabel('Race')\nplt.show()\n\n\n\n\n\nThe bar chart above indicates the total spending on beer broken down by race, highlighting which racial groups account for the most beer spending within the dataset. This could reflect both the demographics of the regions where the data was collected and cultural preferences regarding beer.\nNow, let’s proceed to the third analysis:"
-  },
-  {
-    "objectID": "posts/beer-markets/beer-markets.html#price-sensitivity",
-    "href": "posts/beer-markets/beer-markets.html#price-sensitivity",
-    "title": "Beer Markets",
-    "section": "Price Sensitivity",
-    "text": "Price Sensitivity\nWe’ll look at the price per fluid ounce and see if there are any trends or correlations with the quantity purchased or the brand popularity. To do this, we’ll visualize how the price is sensitive to the quantity purchased by brand.\n\n\nCode\n# Ensure there's no entries with 0 for 'price_per_floz' or 'quantity' to avoid log(0) issues\nfiltered_data = beer_data[(beer_data['price_per_floz'] &gt; 0) & (beer_data['quantity'] &gt; 0)]\n\n# Calculate log values for both 'price_per_floz' and 'quantity'\nfiltered_data['log_price_per_floz'] = np.log(filtered_data['price_per_floz'])\nfiltered_data['log_quantity'] = np.log(filtered_data['quantity'])\n\n# Use seaborn to create a scatterplot with fitted lines, facetted by 'brand'\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', col='brand', col_wrap=4, height=3, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5}, aspect = .75)\n\n# Adjusting plot aesthetics\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nHere’s the scatterplot with fitted straight lines for the log of price_per_floz versus the log of quantity, facetted by brands. Each subplot represents a different brand, showing the relationship between these two logarithmic variables along with a fitted line to illustrate the trend within each brand’s data.\n\n\nCode\n# Adjust the facetting to split rows by 'brand' and columns by 'promo' for a more detailed comparative analysis\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', row='brand', col='promo', height=3, aspect=.75, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5})\n\n# Adjusting plot aesthetics\ng.set_titles(\"Brand: {row_name}\\n Promo: {col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9, wspace = .4, hspace = .4)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nThe scatterplot has been reorganized to split rows by brand and columns by promo status, offering a comprehensive view across different brands and their promotional status. Each subplot now provides a clear comparison of the log of price_per_floz versus the log of quantity for purchases made on promotion versus those that were not, across various beer brands.\nThis layout facilitates an easier comparison across brands and how promotion impacts the relationship between quantity and price per fluid ounce within each brand.\nLastly, let’s move to the fourth analysis:"
-  },
-  {
-    "objectID": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
-    "href": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
-    "title": "Beer Markets",
-    "section": "Promotional Impact on Quantity Purchased",
-    "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\nFutureWarning: \n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.\n\n  sns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/py-basic/blog-python-basics.html",
+    "href": "posts/py-basic/blog-python-basics.html",
+    "title": "Python Basics",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\n Back to top"
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#what-is-python",
+    "href": "posts/py-basic/blog-python-basics.html#what-is-python",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
+    "href": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
+    "title": "Python Basics",
+    "section": "",
+    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#control-structures",
+    "href": "posts/py-basic/blog-python-basics.html#control-structures",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#functions",
+    "href": "posts/py-basic/blog-python-basics.html#functions",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
+    "href": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#learning-objectives",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#learning-objectives",
+    "title": "Lecture 7",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\n\nPython Basics\n\n\n\nPandas Basics"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-1",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-1",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nTuples and (im)mutability\n\n\nA tuple is an object that is defined by parentheses and entries that are separated by commas, for example (15, 20, 32). (They are of type tuple.)\nTuples are immutable, while lists are mutable.\nImmutable objects, such as tuples and strings, can’t have their elements changed, appended, extended, or removed.\n\nMutable objects, such as lists, can do all of these things.\n\nIn everyday programming, we use lists and dictionaries more than tuples."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-2",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-2",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nTuples and (im)mutability\n\nLists are a really useful way to work with lots of data at once.\n\nWe can also construct them by appending entries:\n\n\nlist_example = [10, 1.23, \"like this\", True, None]\nlist_example.append(\"one more entry\")\nprint(list_example)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-3",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-3",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nIndentation\n\nWe have seen that certain parts of the code examples are indented.\nCode that is part of a function, a conditional clause, or loop is indented.\nIndention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-4",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-4",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nIndentation\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\nHere’s a basic example of indentation as part of an if statement.\nThe standard practice for indentation is that each sub-statement should be indented by 4 spaces."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-5",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-5",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nfor Loops\nname_list = [\"Ben\", \"Chris\", \"Kate\", \"Mary\"]\n\nfor name in name_list:\n    print(name)\n\nA loop is a way of executing a similar piece of code over and over in a similar way.\n\nThe most useful loop is for loops.\n\nAs long as our object is an iterable, then it can be used in this way in a for loop.\nLists, tuples, strings, and dictionaries are iterable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-6",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-6",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nDictionaries\ncities_to_temps = {\"Paris\": 28, \"London\": 22, \"Seville\": 36, \"Wellesley\": 29}\n\ncities_to_temps.keys()\ncities_to_temps.values()\ncities_to_temps.items()\n\nAnother built-in Python type that is enormously useful is the dictionary.\n\nThis provides a mapping one set of variables to another (either one-to-one or many-to-one).\nIf you need to create associations between objects, use a dictionary.\n\nWe can obtain keys, values, or key-value paris from dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-7",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-7",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nRunning on Empty\n\nBeing able to create empty containers is sometimes useful, especially when using loops.\nThe commands to create empty lists, tuples, dictionaries, and sets are lst = [], tup=(), dic={}, and st = set() respectively.\nQ. What is the type of an empty list?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-8",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-8",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nSlicing Methods\n\n\n\n\nWith slicing methods, we can get subset of the data object.\nSlicing methods can apply for strings, lists, arrays, and DataFrames.\nThe above example describes indexing in Python"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-9",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-9",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nStrings\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-10",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-10",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nStrings and Slicing\n\nWe can extract a substring (a part of a string) from a string by using a slice.\nWe define a slice by using square brackets ([]), a start index, an end index, and an optional step count between them.\n\nWe can omit some of these.\n\nThe slice will include characters from index start to one before end:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-11",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-11",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nGet a Substring with a Slice\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-12",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-12",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-13",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-13",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-14",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-14",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\n[index]slice\n\n\nGet an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\nWe can extract a single value from a list by specifying its index:\n\n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\n\nGet an Item with a Slice\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-15",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-15",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nLists and Slicing\n\nQ. Classwork 4.3"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-16",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-16",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-17",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-17",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-18",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-18",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 4.4"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-19",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-19",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nThe core libraries that enable Python to store and analyze data efficiently are:\n\npandas\nnumpy\nmatplotlib and seaborn"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-20",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-20",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\n\npandasnumpymatplotlib and seaborn\n\n\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format.\n\n\n\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;\n\n\n\n\n\n\n\nmatplotlib provides graphics. The most important submodule would be matplotlib.pyplot.\nseaborn provides a general improvement in the default appearance of matplotlib-produced plots."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-21",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-21",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nImporting Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other module/package/library by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the module/package/library using its canonical names.\nWe can use the from keyword when specifying Python module/package/library from which we want to import something."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-22",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#python-basics-22",
+    "title": "Lecture 7",
+    "section": "Python Basics",
+    "text": "Python Basics\nInstalling Modules, Packages, and Libraries\nTo install a module module_name on your Anaconda Python, open your Anaconda Prompt or Terminal and run:\npip install module_name\nTo install a module module_name on your Google Colab, run:\n!pip install module_name\n\nQ. Classwork 4.5"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-1",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-1",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Variables in a DataFrame\nCounting Values in a DataFrame\nSorting DataFrame\nIndexing and Renaming DataFrame\nLocating Data in a DataFrame"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-2",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-2",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSeries and DataFrame\n\n\n\n\nSeries: a collection of a one-dimensional object containing a sequence of values.\nDataFrame: a collection of Series columns with an index."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-3",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-3",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nImporting a data set with read_csv()\n\n\nA CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., nba.csv).\nThe CSV is widely used for storing data, and we will use this throughout the module.\nWe use the read_csv() function to load a CSV data file.\n\nimport pandas as pd\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\")\ntype(nba)\nnba\n\n\nThe DataFrame is the workhorse of the pandas library and the data structure."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-4",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-4",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nImporting a data set with read_csv()\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\nnba\n\nWe can use the parse_dates parameter to coerce the values into datetimes."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-5",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-5",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nColab’s Interactive DataFrame Display\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()  # Enabling an interactive DataFrame display\nnba\n\nColab includes an extension that renders pandas DataFrames into interactive displays."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-6",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-6",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDataFrame Terminologies: Variables, Observations, and Values\n\n\n\n\nEach variable is a column.\nEach observation is a row.\nEach value is a cell."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-7",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-7",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nDataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.method()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.attribute) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-8",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-8",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .info()\n\n\nnba.info()    # method\n\nnba.shape     # attribute\nnba.dtypes    # attribute\nnba.columns   # attribute\nnba.count()   # method\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nData type of each variable (.dtypes)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-9",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-9",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nGetting a Summary of a DataFrame with .describe()\nnba.describe()\nnba.describe(include='all')\n\n.describe() method generates descriptive statistics that summarize the central tendency, dispersion, and distribution of each variable.\n\nIt can also process string-type variables if specified explicitly (include='all')."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-10",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-10",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting a Variable by its Name\nnba_player_name_1 = nba['Name']   # Series\nnba_player_name_1\n\nnba_player_name_2 = nba[ ['Name'] ]   # DataFrame\nnba_player_name_2\n\nIf we want only a specific variable from a DataFrame, we can access the variable with its name using squared brackets, [ ].\n\nDataFrame[ 'var_1' ]\nDataFrame[ ['var_1'] ]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-11",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-11",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-12",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-12",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting Multiple Variables with select_dtypes()\n# To include only string variables\nnba.select_dtypes(include = \"object\")\n\n# To exclude string and integer variables\nnba.select_dtypes(exclude = [\"object\", \"int\"])\n\nWe can use the select_dtypes() method to select columns based on their data types.\n\nThe method accepts two parameters, include and exclude."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-13",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-13",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nCounting with .count()\n\n\nnba['Salary'].count()\nnba[['Salary']].count()\n\n\n\nThe .count() counts the number of non-missing values in a Series/DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-14",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-14",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nCounting with .value_counts()\n\n\nnba['Team'].value_counts()\n\nnba[['Team']].value_counts()\n\n\n\nThe .value_counts() counts the number of occurrences of each unique value in a Series/DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-15",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-15",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nCounting with .nunique()\n\n\nnba[['Team']].nunique()\n\nnba.nunique()\n\n\n\nThe .nunique() counts the number of unique values in each variable in a DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-16",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-16",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 1-4 in Classwork 5!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-17",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-17",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSelecting the first/last n observations with .head() & .tail()\n\n\nnba.head()\nnba.head(10)\n\nnba.tail()\nnba.tail(10)\n\n\n\nWe can use the .head()/.tail() method of a DataFrame to keep only the first/last n observations.\n\nThis can be useful with sorting methods."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-18",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-18",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-19",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-19",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"], ascending = False)\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nIt has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-20",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-20",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values() and head() & tail()\n\n\ndf = nba.sort_values([\"Salary\"])\ndf.head(5)\n\ndf = nba.sort_values([\"Salary\"])\ndf.tail(5)\n\n\n\nsort_values() with .head() or .tail() can be useful to find the observations with the n smallest/largest values in a variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-21",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-21",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-22",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-22",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(5, 'Salary')\nnba.nlargest(5, 'Salary')\n\nnsmallest() are useful to get the first n observations ordered by a variable in ascending order.\nnlargest() are useful to get the first n observations ordered by a variable in descending order."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-23",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-23",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(4, 'Salary', keep = \"all\")\nnba.nlargest(4, 'Salary', keep = \"all\")\n\nkeep = \"all\" keeps all duplicates, even it means selecting more than n observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-24",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-24",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values([\"Team\", \"Name\"])\nnba.sort_values(by = [\"Team\", \"Name\"])\n\nWe can sort a DataFrame by multiple columns by passing a list to the by parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-25",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-25",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = False)\n\nWe can pass a single Boolean to the ascending parameter to apply the same sort order to each column."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-26",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-26",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = [False, True])\n\nIf we want to sort each variable in a different order, we can pass a Boolean list to the ascending parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-27",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-27",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nQ. Which players on each team are paid the most?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-28",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-28",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_index()\n\n\n# The two lines below are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True).\n\nnba.sort_index(ascending = False).\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index.\nIf we could sort the data set by index positions rather than by column values, we could return it to its original shape."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-29",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-29",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nChanging the Order of Variables with sort_index()\n# The two lines below are equivalent\nnba.sort_index(axis = \"columns\")\nnba.sort_index(axis = 1)\n\nThe sort_index() method can also be used to change the order of variables in an alphabetical order.\n\nWe need to add an axis parameter and pass it an argument of \"columns\" or 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-30",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-30",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observations (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-31",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-31",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSetting a New Index with set_index()\n# The two lines below are equivalent\nnba.set_index(keys = \"Name\")\nnba.set_index(\"Name\")\n\nThe set_index() method returns a new DataFrame with a given column set as the index.\n\nIts first parameter, keys, accepts the column name."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-32",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-32",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the chain of method operations\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-33",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-33",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 5-7 in Classwork 5!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-34",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-34",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-35",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-35",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-36",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-36",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-37",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-37",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-38",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-38",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nBoth the starting value and the ending value are inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-39",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-39",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-40",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-40",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-41",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-41",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-42",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-42",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-43",
+    "href": "danl-lec/danl-210-lec-07-2024-0213.html#pandas-basics-43",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Classwork 5!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2024-0201.html#announcement",
@@ -1505,46 +1981,39 @@
     "text": "Python Basics\nInstalling Modules, Packages, and Libraries\nTo install a module module_name on your Anaconda Python, open your Anaconda Prompt or Terminal and run:\npip install module_name\nTo install a module module_name on your Google Colab, run:\n!pip install module_name\n\nQ. Classwork 4.5"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html",
-    "href": "posts/py-basic/blog-python-basics.html",
-    "title": "Python Basics",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#what-is-python",
-    "href": "posts/py-basic/blog-python-basics.html#what-is-python",
-    "title": "Python Basics",
+    "objectID": "posts/beer-markets/beer-markets.html",
+    "href": "posts/beer-markets/beer-markets.html",
+    "title": "Beer Markets",
     "section": "",
-    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')"
+    "text": "Diving into the complex world of what people like in their beer, the beer_markets.csv dataset comes across as a goldmine of data, showing us the detailed interactions between buyers and their favorite beers. This dataset covers everything from how much and at what price people are buying beer to how deals and brand loyalty influence their decisions, across different types of people and places. As we start digging into this dataset, we aim to uncover the patterns that show what really influences the modern beer drinker’s choices, offering up valuable insights for marketers, industry watchers, and beer lovers. By breaking down the data, our exploration will shine a light on the factors that drive consumer behavior in the beer market, giving us a full picture of the trends that shape this lively industry.\nCode\n# Creating an interactive table\n!pip install itables\nfrom itables import init_notebook_mode\nfrom itables import show\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# Reading the CSV file\nbeer_data = pd.read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\nshow(beer_data)\n\n\n\n\n\n\n\n    \n      \n      hh\n      _purchase_desc\n      quantity\n      brand\n      dollar_spent\n      beer_floz\n      price_per_floz\n      container\n      promo\n      market\n      buyertype\n      income\n      childrenUnder6\n      children6to17\n      age\n      employment\n      degree\n      cow\n      race\n      microwave\n      dishwasher\n      tvcable\n      singlefamilyhome\n      npeople\n    \n  Loading... (need help?)\nCode\n# Setting up the visualization settings\nsns.set(style=\"whitegrid\")\n\n# Calculate total quantity and spending for each brand\nbrand_summary = beer_data.groupby('brand').agg({'quantity':'sum', 'dollar_spent':'sum'}).reset_index()\n\n# Sort by total quantity and spending\nbrand_summary_sorted_quantity = brand_summary.sort_values('quantity', ascending=False)\nbrand_summary_sorted_spent = brand_summary.sort_values('dollar_spent', ascending=False)\nCode\n# Plotting total quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=brand_summary_sorted_quantity, palette='viridis')\nplt.title('Total Quantity of Beer Purchased by Brand')\nplt.xlabel('Total Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe bar charts above display the total quantity of beer purchased and the total spending by brand. From the looks of it, certain brands dominate in terms of quantity sold and total spending, indicating their popularity.\nNow, let’s calculate the average quantity purchased and average spending per purchase. For this, we’ll consider each row in the dataset as a separate purchase and compute the averages accordingly.\nCode\n# Calculate average quantity purchased and average spending per purchase\naverage_purchase = beer_data.groupby('brand').agg({\n    'quantity': 'mean',\n    'dollar_spent': 'mean'\n}).reset_index()\n\n# Sort by average quantity and average spending\naverage_purchase_sorted_quantity = average_purchase.sort_values('quantity', ascending=False)\naverage_purchase_sorted_spent = average_purchase.sort_values('dollar_spent', ascending=False)\n\n# Plotting average quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=average_purchase_sorted_quantity, palette='viridis')\nplt.title('Average Quantity of Beer Purchased by Brand')\nplt.xlabel('Average Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe visualizations above depict the average quantity of beer purchased per brand and the average spending per brand. This shows which brands tend to be bought in larger quantities on average and which brands tend to have higher spending per purchase, which could be indicative of their price point or the purchase of premium products.\nNext, we’ll look at the total spending across different markets to see if there are any notable differences in spending habits geographically. To do this, we’ll sum up the spending in each market and visualize it.\nCode\n# Calculate total spending in each market\nmarket_spending_summary = beer_data.groupby('market').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nmarket_spending_summary_sorted = market_spending_summary.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending in each market\nplt.figure(figsize=(12, 18))\nsns.barplot(x='dollar_spent', y='market', data=market_spending_summary_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Market')\nplt.xlabel('Total Spending')\nplt.ylabel('Market')\nplt.show()\nThe bar chart illustrates the total spending on beer by market, showcasing the differences in spending habits across various regions. Some markets have significantly higher spending, which could be due to a variety of factors including market size, consumer preferences, or economic factors.\nNow, let’s move on to the second analysis:"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
-    "href": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
-    "title": "Python Basics",
-    "section": "",
-    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
+    "objectID": "posts/beer-markets/beer-markets.html#demographic-analysis",
+    "href": "posts/beer-markets/beer-markets.html#demographic-analysis",
+    "title": "Beer Markets",
+    "section": "Demographic Analysis",
+    "text": "Demographic Analysis\nWe will examine which demographics are buying what kind of beer and whether spending habits vary by demographics such as age, employment, and race. For this, we could look at:\n\nSpending by age group\nSpending by employment status\nSpending by race\n\nI’ll start by analyzing spending by age group.\n\n\nCode\n# Calculate total spending by age group\nage_group_spending = beer_data.groupby('age').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nage_group_spending_sorted = age_group_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by age group\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='age', data=age_group_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Age Group')\nplt.xlabel('Total Spending')\nplt.ylabel('Age Group')\nplt.show()\n\n\n\n\n\nThe bar chart demonstrates the total spending on beer segmented by age group, highlighting which age groups spend the most on beer. It appears that certain age groups are more dominant in beer spending, which may align with the purchasing power or preferences of those groups.\nNext, we will examine spending by employment status.\n\n\nCode\n# Calculate total spending by employment status\nemployment_spending = beer_data.groupby('employment').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nemployment_spending_sorted = employment_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by employment status\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='employment', data=employment_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Employment Status')\nplt.xlabel('Total Spending')\nplt.ylabel('Employment Status')\nplt.show()\n\n\n\n\n\nThe visualization shows the total spending on beer by employment status. We can see that certain employment groups, such as full-time workers, are spending more on beer, which might be related to their disposable income.\nFinally, let’s look at spending by race to complete the demographic analysis.\n\n\nCode\n# Calculate total spending by race\nrace_spending = beer_data.groupby('race').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nrace_spending_sorted = race_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by race\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='race', data=race_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Race')\nplt.xlabel('Total Spending')\nplt.ylabel('Race')\nplt.show()\n\n\n\n\n\nThe bar chart above indicates the total spending on beer broken down by race, highlighting which racial groups account for the most beer spending within the dataset. This could reflect both the demographics of the regions where the data was collected and cultural preferences regarding beer.\nNow, let’s proceed to the third analysis:"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#control-structures",
-    "href": "posts/py-basic/blog-python-basics.html#control-structures",
-    "title": "Python Basics",
-    "section": "",
-    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
+    "objectID": "posts/beer-markets/beer-markets.html#price-sensitivity",
+    "href": "posts/beer-markets/beer-markets.html#price-sensitivity",
+    "title": "Beer Markets",
+    "section": "Price Sensitivity",
+    "text": "Price Sensitivity\nWe’ll look at the price per fluid ounce and see if there are any trends or correlations with the quantity purchased or the brand popularity. To do this, we’ll visualize how the price is sensitive to the quantity purchased by brand.\n\n\nCode\n# Ensure there's no entries with 0 for 'price_per_floz' or 'quantity' to avoid log(0) issues\nfiltered_data = beer_data[(beer_data['price_per_floz'] &gt; 0) & (beer_data['quantity'] &gt; 0)]\n\n# Calculate log values for both 'price_per_floz' and 'quantity'\nfiltered_data['log_price_per_floz'] = np.log(filtered_data['price_per_floz'])\nfiltered_data['log_quantity'] = np.log(filtered_data['quantity'])\n\n# Use seaborn to create a scatterplot with fitted lines, facetted by 'brand'\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', col='brand', col_wrap=4, height=3, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5}, aspect = .75)\n\n# Adjusting plot aesthetics\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nHere’s the scatterplot with fitted straight lines for the log of price_per_floz versus the log of quantity, facetted by brands. Each subplot represents a different brand, showing the relationship between these two logarithmic variables along with a fitted line to illustrate the trend within each brand’s data.\n\n\nCode\n# Adjust the facetting to split rows by 'brand' and columns by 'promo' for a more detailed comparative analysis\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', row='brand', col='promo', height=3, aspect=.75, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5})\n\n# Adjusting plot aesthetics\ng.set_titles(\"Brand: {row_name}\\n Promo: {col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9, wspace = .4, hspace = .4)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nThe scatterplot has been reorganized to split rows by brand and columns by promo status, offering a comprehensive view across different brands and their promotional status. Each subplot now provides a clear comparison of the log of price_per_floz versus the log of quantity for purchases made on promotion versus those that were not, across various beer brands.\nThis layout facilitates an easier comparison across brands and how promotion impacts the relationship between quantity and price per fluid ounce within each brand.\nLastly, let’s move to the fourth analysis:"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#functions",
-    "href": "posts/py-basic/blog-python-basics.html#functions",
-    "title": "Python Basics",
-    "section": "",
-    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
-    "href": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
-    "title": "Python Basics",
-    "section": "",
-    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+    "objectID": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
+    "href": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
+    "title": "Beer Markets",
+    "section": "Promotional Impact on Quantity Purchased",
+    "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\nFutureWarning: \n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.\n\n  sns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
   },
   {
     "objectID": "danl-cw/danl-210-cw-04.html",
@@ -1600,21 +2069,21 @@
     "href": "index.html#bullet-lecture-slides",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 6\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-lecture-q-a",
     "href": "index.html#bullet-lecture-q-a",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Lecture Q & A ❓",
-    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 4\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 5\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -1656,6 +2125,13 @@
     "href": "listing-danl-210-qa.html",
     "title": "DANL 210 - Lecture Discussion",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-qa/danl-210-qa-07.html",
+    "href": "danl-qa/danl-210-qa-07.html",
+    "title": "Lecture 7 - Q & A",
+    "section": "",
+    "text": "Welcome to our Lecture 7 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 7 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Lecture 7 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
   }
 ]

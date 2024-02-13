@@ -1,0 +1,1384 @@
+---
+title: Lecture 7
+subtitle: Python Basics; Pandas Basics
+format:
+  clean-revealjs:
+    self-contained: true
+    incremental: true   
+    css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-02-13
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+# include-after-body: backwards.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+
+
+# Today's Learning Objectives {background-color="#1c4982"}
+
+## Learning Objectives
+
+:::: {.columns}
+::: {.column width="50%"}
+
+
+- Python Basics
+
+:::
+
+::: {.column width="50%"}
+
+
+- Pandas Basics
+
+:::
+::::
+
+
+
+
+# Python Basics {background-color="#1c4982"}
+
+## Python Basics
+###  Tuples and (im)mutability
+::: {}
+
+- A tuple is an object that is defined by parentheses and entries that are separated by commas, for example `(15, 20, 32)`. (They are of type tuple.) 
+
+- Tuples are immutable, while lists are mutable.
+
+- Immutable objects, such as tuples and strings, can't have their elements changed, appended, extended, or removed. 
+  - Mutable objects, such as lists, can do all of these things. 
+
+- In everyday programming, we use **lists** and **dictionaries** more than *tuples*.
+
+:::
+
+
+## Python Basics
+###  Tuples and (im)mutability
+
+
+- Lists are a really useful way to work with lots of data at once. 
+  - We can also construct them by appending entries:
+
+```{.python}
+list_example = [10, 1.23, "like this", True, None]
+list_example.append("one more entry")
+print(list_example)
+```
+
+
+## Python Basics
+###  Indentation
+
+- We have seen that certain parts of the code examples are indented. 
+
+- Code that is part of a function, a conditional clause, or loop is indented. 
+
+- Indention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.
+
+
+
+
+## Python Basics
+###  Indentation
+
+
+```{.python}
+x = 10
+
+if x > 2:
+    print("x is greater than 2")
+```
+
+- Here's a basic example of indentation as part of an `if` statement.
+
+- The standard practice for indentation is that each sub-statement should be indented by 4 spaces.
+
+
+
+
+
+## Python Basics
+###  `for` Loops
+
+
+
+```{.python}
+name_list = ["Ben", "Chris", "Kate", "Mary"]
+
+for name in name_list:
+    print(name)
+```
+
+
+- A loop is a way of executing a similar piece of code over and over in a similar way. 
+  - The most useful loop is **for loops**.
+  
+- As long as our object is an iterable, then it can be used in this way in a *for loop*.
+
+- Lists, tuples, strings, and dictionaries are iterable.
+
+
+
+
+
+## Python Basics
+###  Dictionaries
+
+
+
+```{.python}
+cities_to_temps = {"Paris": 28, "London": 22, "Seville": 36, "Wellesley": 29}
+
+cities_to_temps.keys()
+cities_to_temps.values()
+cities_to_temps.items()
+```
+
+- Another built-in Python type that is enormously useful is the dictionary. 
+  - This provides a mapping one set of variables to another (either one-to-one or many-to-one). 
+  - If you need to create associations between objects, use a dictionary.
+  
+  
+- We can obtain keys, values, or key-value paris from dictionaries.
+
+
+
+
+## Python Basics
+###  Running on Empty
+
+- Being able to create empty containers is sometimes useful, especially when using loops. 
+
+- The commands to create empty lists, tuples, dictionaries, and sets are `lst = []`, `tup=()`, `dic={}`, and `st = set()` respectively.
+
+- **Q.** What is the type of an empty list?
+
+
+## Python Basics
+### Slicing Methods
+
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/python_string_index.png">
+</p>
+
+
+- With slicing methods, we can get subset of the data object.
+
+- Slicing methods can apply for strings, lists, arrays, and DataFrames.
+
+- The above example describes indexing in Python
+
+
+
+
+## Python Basics
+###  Strings
+
+
+
+```{.python}
+string = "cheesecake"
+print( string[-4:] )
+```
+
+- From strings, we can access the individual characters via slicing and indexing. 
+
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+string = "cheesecake"
+print("String has length:")
+print( len(string) )
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+list_of_numbers = range(1, 20)
+print("List of numbers has length:")
+print( len(list_of_numbers) )
+```
+:::
+::::
+
+- Both lists and strings will allow us to use the `len()` command to get their length:
+
+
+
+
+## Python Basics
+### Strings and Slicing
+
+- We can extract a substring (a part of a string) from a string by using a **slice**. 
+
+- We define a slice by using square brackets (`[]`), a *start* index, an *end* index, and an optional *step* count between them. 
+
+  - We can omit some of these. 
+
+- The slice will include characters from index *start* to one before *end*:
+
+
+
+
+
+## Python Basics
+### Get a Substring with a Slice
+
+
+::: {.panel-tabset}
+## `[:]`
+```{.python}
+letters = 'abcdefghij'
+letters[:]
+```
+- `[:]` extracts the entire sequence from start to end.
+
+
+## `[ start :]`
+```{.python}
+letters = 'abcdefghij'
+letters[4:]
+letters[2:]
+letters[-3:]
+letters[-50:]
+```
+- `[ start :]` specifies from the *start* index to the end.
+
+
+## `[: end ]`
+```{.python}
+letters = 'abcdefghij'
+letters[:3]
+letters[:-3]
+letters[:70]
+```
+- `[: end ]` specifies from the beginning to the *end* index minus 1.
+
+
+
+## `[ start : end ]`
+```{.python}
+letters = 'abcdefghij'
+letters[2:5]
+letters[-26:-24]
+letters[35:37]
+```
+- `[ start : end ]` indicates from the *start* index to the *end* index minus 1.
+
+
+## `[ start : end : step ]`
+```{.python}
+letters = 'abcdefghij'
+letters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters
+letters[ : : 3]     # From the start to the end, in steps of 3 characters
+letters[ 6 : : 4 ]    # From index 19 to the end, by 4
+letters[ : 7 : 5 ]    # From the start to index 6 by 5:
+letters[-1 : : -1 ]   # Starts at the end and ends at the start
+letters[: : -1 ]
+```
+- `[ start : end : step ]` extracts from the *start* index to the *end* index minus 1, skipping characters by *step*.
+
+
+:::
+
+
+
+
+## Python Basics
+### Lists and Slicing
+
+- Python is 
+  - a zero-indexed language (things start counting from zero);
+  - left inclusive;
+  - right exclusive when we are specifying a range of values.
+
+
+
+
+## Python Basics
+### Lists and Slicing
+
+  
+```{.python}
+list_example = ['one', 'two', 'three']
+list_example[ 0 : 1 ]
+list_example[ 1 : 3 ]
+```
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/python-slicing-fence.png">
+</p>
+
+
+- We can think of items in a list-like object as being fenced in. 
+  - The index represents the fence post.
+
+## Python Basics
+### Lists and Slicing
+
+::: {.panel-tabset}
+## `[index]`
+### Get an Item by `[index]`
+```{.python}
+suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
+        'Stony Brook', 'New Paltz'] 
+```
+
+- We can extract a single value from a list by specifying its index:
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+suny[0]
+suny[1]
+suny[2]
+suny[7]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+suny[-1]
+suny[-2]
+suny[-3]
+suny[-7]
+```
+:::
+
+::::
+
+
+
+## slice
+### Get an Item with a Slice
+- We can extract a subsequence of a list by using a *slice*:
+```{.python}
+suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
+        'Stony Brook', 'New Paltz'] 
+suny[0:2]    # A slice of a list is also a list.
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+suny[ : : 2]
+suny[ : : -2]
+suny[ : : -1]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+suny[4 : ]
+suny[-6 : ]
+suny[-6 : -2]
+suny[-6 : -4]
+```
+:::
+
+
+::::
+
+:::
+
+
+
+
+## Python Basics
+### Lists and Slicing
+
+- **Q**. [Classwork 4.3](https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html)
+
+
+## Python Basics
+### Functions
+
+```{.python}
+int("20") 
+float("14.3")
+str(5)
+int("xyz")
+```
+
+
+- A function can take any number and type of input *parameters* and **return** any number and type of output *results*.
+
+- Python ships with more than 65 built-in functions. 
+
+- Python also allows a user to define a new function.
+
+- We will mostly use built-in functions. 
+
+
+
+## Python Basics
+### Functions, Arguments, and Parameters
+
+```{.python}
+print("Cherry", "Strawberry", "Key Lime")
+print("Cherry", "Strawberry", "Key Lime", sep = "!")
+print("Cherry", "Strawberry", "Key Lime", sep=" ")
+```
+
+
+- We invoke a function by entering its name and a pair of opening and closing parentheses. 
+
+- Much as a cooking recipe can accept ingredients, a function invocation can accept inputs called **arguments**. 
+
+- We pass arguments sequentially inside the parentheses (, separated by commas).
+
+- A **parameter** is a name given to an expected function argument.
+
+- A *default argument* is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one.
+
+
+## Python Basics
+### Functions, Arguments, and Parameters
+
+- **Q**. [Classwork 4.4](https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html)
+
+
+
+
+
+
+## Python Basics
+### Importing Modules, Packages, and Libraries
+
+- Python is a general-purpose programming language and is not specialized for numerical or statistical computation.
+
+- The core libraries that enable Python to store and analyze data efficiently are:
+  - `pandas`
+  - `numpy`
+  - `matplotlib` and `seaborn`
+
+
+
+## Python Basics
+### Importing Modules, Packages, and Libraries
+
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## `pandas`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-logo.png">
+</p>
+
+- `pandas` provides `Series` and `DataFrames` which are used to store data in an easy-to-use format.
+
+
+## `numpy`
+  
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/numpy-logo.png">
+</p>
+
+- `numpy`, numerical Python, provides the array block (`np.array()`) for doing fast and efficient computations;
+
+## `matplotlib` and `seaborn`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/matplotlib-logo.png"><img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png">
+</p>
+
+- `matplotlib` provides graphics. The most important submodule would be `matplotlib.pyplot`.
+- `seaborn` provides a general improvement in the default appearance of `matplotlib`-produced plots.
+
+
+:::
+:::
+
+## Python Basics
+### Importing Modules, Packages, and Libraries
+
+- A **module** is basically a bunch of related codes saved in a file with the extension `.py`.
+
+- A **package** is basically a directory of a collection of modules. 
+
+- A **library** is a collection of packages
+
+
+- We refer to code of other module/package/library by using the Python `import` statement. 
+  - This makes the code and variables in the imported module available to our programming codes.
+  - We can use the `as` *keyword* when importing the module/package/library using its canonical names.
+  - We can use the `from` *keyword* when specifying Python module/package/library from which we want to `import` something.
+
+
+## Python Basics
+### Installing Modules, Packages, and Libraries
+
+To install a module `module_name` on your Anaconda Python, open your Anaconda Prompt or Terminal and run:
+
+```{.python}
+pip install module_name
+```
+
+
+To install a module `module_name` on your Google Colab, run:
+
+```{.python}
+!pip install module_name
+```
+
+
+- **Q**. [Classwork 4.5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html)
+
+
+
+# Pandas Basics {background-color="#1c4982"}
+
+## Pandas Basics
+### Learning Objectives
+
+- Loading `DataFrame`
+- Getting a Summary of `DataFrame`
+- Selecting Variables in a `DataFrame` 
+- Counting Values in a `DataFrame` 
+- Sorting `DataFrame`
+- Indexing and Renaming `DataFrame`
+- Locating Data in a `DataFrame`
+
+
+# Loading Data {background-color="#1c4982"}
+
+
+## Pandas Basics
+###  `Series` and `DataFrame`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
+</p>
+
+- `Series`:	a collection of a one-dimensional object containing a sequence of values.
+  
+- `DataFrame`: a collection of `Series` columns with an *index*.
+
+
+## Pandas Basics
+### Importing a data set with `read_csv()`
+
+:::{.nonincremental}
+- A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba_show_na.csv)).
+
+- The CSV is widely used for storing data, and we will use this throughout the module.
+
+- We use the `read_csv()` function to load a CSV data file.
+
+```{.python}
+import pandas as pd
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+type(nba)
+nba
+```
+
+
+:::
+
+- The `DataFrame` is the workhorse of the pandas library and the data structure.
+
+
+
+## Pandas Basics
+### Importing a data set with `read_csv()`
+
+
+```{.python}
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+nba
+```
+
+- We can use the `parse_dates` parameter to coerce the values into `datetimes`.
+
+
+## Pandas Basics
+### Colab's Interactive DataFrame Display
+
+
+```{.python}
+from google.colab import data_table
+data_table.enable_dataframe_formatter()  # Enabling an interactive DataFrame display
+nba
+```
+
+- Colab includes an extension that renders pandas `DataFrames` into interactive displays.
+
+
+# Getting a Summary of Data {background-color="#1c4982"}
+
+## Pandas Basics
+### DataFrame Terminologies: Variables, Observations, and Values
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
+</p>
+
+
+1. Each **variable** is a *column*.
+2. Each **observation** is a *row*.
+3. Each **value** is a *cell*.
+
+
+<!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
+
+<!-- - When we work with `DataFrame`, we mean a variable a column. -->
+
+
+
+
+
+## Pandas Basics
+### DataFrame Terminologies: Dot Operators, Methods and Attributes
+
+- The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
+
+- A method (`DataFrame.method()`) is a function that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
+  - e.g., `nba.info()`
+
+- An attribute (`DataFrame.attribute`) is a property that provides information about the `DataFrame`'s structure or content without modifying it. 
+  - e.g., `nba.dtype`
+
+
+## Pandas Basics
+### Getting a Summary of a `DataFrame` with `.info()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.info()    # method
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.shape     # attribute
+nba.dtypes    # attribute
+nba.columns   # attribute
+nba.count()   # method
+```
+:::
+
+::::
+
+- Every `DataFrame` object has a `.info()` method that provides a summary of a DataFrame:
+  - Variable names (`.columns`)
+  - Number of variables/observations (`.shape`)
+  - Data type of each variable (`.dtypes`)
+  - Number of non-missing values in each variable (`.count()`)
+    - Pandas often displays missing values as `NaN`.
+
+
+
+<!-- -  Since `.shape` is an **attribute** of the `DataFrame` object, and not a **function** or **method** of the `DataFrame` object, it does not have round parentheses after the period. -->
+
+
+
+## Pandas Basics
+### Getting a Summary of a `DataFrame` with `.describe()`
+
+```{.python}
+nba.describe()
+nba.describe(include='all')
+```
+
+
+- `.describe()` method generates **descriptive statistics** that summarize the central tendency, dispersion, and distribution of each variable. 
+  - It can also process `string`-type variables if specified explicitly (`include='all'`).
+
+
+
+
+# Selecting Variables {background-color="#1c4982"}
+
+## Pandas Basics
+### Selecting a Variable by its Name
+
+```{.python}
+nba_player_name_1 = nba['Name']   # Series
+nba_player_name_1
+
+nba_player_name_2 = nba[ ['Name'] ]   # DataFrame
+nba_player_name_2
+```
+
+- If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.
+  - `DataFrame[ 'var_1' ]` 
+  - `DataFrame[ ['var_1'] ]`
+
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables by their Names
+
+```{.python}
+nba_player_name_team = nba[ ['Name', 'Team'] ]
+nba_player_name_team
+```
+
+- In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
+  - `DataFrame[ ['var_1', 'var_2', ... ] ]`
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables with `select_dtypes()`
+
+
+```{.python}
+# To include only string variables
+nba.select_dtypes(include = "object")
+
+# To exclude string and integer variables
+nba.select_dtypes(exclude = ["object", "int"])
+```
+
+- We can use the `select_dtypes()` method to select columns based on their data types.
+  - The method accepts two parameters, `include` and `exclude`.
+
+
+# Counting Methods {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Counting with `.count()` 
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba['Salary'].count()
+nba[['Salary']].count()
+```
+:::
+
+::::
+
+- The `.count()` counts <u>the number of non-missing values</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.value_counts()` 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba['Team'].value_counts()
+```
+:::
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].value_counts()
+```
+:::
+
+::::
+
+- The `.value_counts()` counts <u>the number of occurrences of each unique value</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.nunique()` 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].nunique()
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.nunique()
+```
+:::
+
+::::
+
+
+- The `.nunique()` counts <u>the number of unique values</u> in each variable in a `DataFrame`. 
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-4 in [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+# Sorting Methods {background-color="#1c4982"}
+
+## Pandas Basics
+### Selecting the first/last `n` observations with `.head()` & `.tail()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.head()
+nba.head(10)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.tail()
+nba.tail(10)
+```
+
+:::
+
+::::
+
+- We can use the `.head()`/`.tail()` method of a `DataFrame` to keep only the first/last `n` observations.
+  - This can be useful with **sorting** methods.
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"])
+nba.sort_values(by = ["Name"])
+```
+
+
+- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort the `DataFrame`.
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"], ascending = False)
+```
+
+
+- The `sort_values()` method’s `ascending` parameter determines the sort order.
+  - It has a default argument of `True`.
+  - By default, pandas will sort:
+    - A variable of numbers in *increasing* order;
+    - A variable of strings in *alphabetical* order;
+    - A variable of datetimes in *chronological* order.
+
+
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()` and `head()` & `tail()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+df = nba.sort_values(["Salary"])
+df.head(5)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+df = nba.sort_values(["Salary"])
+df.tail(5)
+```
+
+:::
+
+::::
+
+
+- `sort_values()` with `.head()` or `.tail()` can be useful to find the observations with the `n` smallest/largest values in a variable.
+
+
+## Pandas Basics
+### Method Chaining
+
+```{.python}
+(
+    nba
+    .sort_values(['Salary'])
+    .head(5)
+)
+```
+
+
+-  `DataFrame` has various methods that modify the existing `DataFrame`. 
+  - **Method Chaining**: We can call methods sequentially without the need to store intermediate results.
+  
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(5, 'Salary')
+nba.nlargest(5, 'Salary')
+```
+
+- `nsmallest()` are useful to get the first `n` observations ordered by a variable in <u>*ascending*</u> order.
+
+- `nlargest()` are useful to get the first `n` observations ordered by a variable in <u>*descending*</u> order.
+
+
+
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(4, 'Salary', keep = "all")
+nba.nlargest(4, 'Salary', keep = "all")
+```
+
+- `keep = "all"` keeps all duplicates, even it means selecting more than `n` observations.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(["Team", "Name"])
+nba.sort_values(by = ["Team", "Name"])
+```
+
+- We can sort a `DataFrame` by multiple columns by passing a *list* to the `by` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = False)
+```
+
+- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each column.
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = [False, True])
+```
+
+- If we want to sort each variable in a different order, we can pass a Boolean *list* to the `ascending` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+**Q**. Which players on each team are paid the most?
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_index()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+# The two lines below are equivalent
+nba.sort_index()
+nba.sort_index(ascending = True).
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.sort_index(ascending = False).
+```
+:::
+
+::::
+
+- How can we return it to its original form of `DataFrame`?
+
+- Our `nba` `DataFrame` still has its numeric index.
+
+- If we could sort the data set by index positions rather than by column values, we could return it to its original shape.
+
+
+
+
+## Pandas Basics
+### Changing the Order of Variables with `sort_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_index(axis = "columns")
+nba.sort_index(axis = 1)
+```
+
+- The `sort_index()` method can also be used to change the order of variables in an alphabetical order. 
+  - We need to add an `axis` parameter and pass it an argument of `"columns"` or `1`.
+
+
+
+
+# Setting a New Index {background-color="#1c4982"}
+
+## Pandas Basics
+### Setting a New Index
+
+- We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
+  - This is particularly useful when:
+    - We have a column that *uniquely identifies* each observations (e.g., ID);
+    - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
+    
+
+## Pandas Basics
+### Setting a New Index with `set_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.set_index(keys = "Name")
+nba.set_index("Name")
+```
+
+- The `set_index()` method returns a new `DataFrame` with a given column set as the index. 
+  - Its first parameter, `keys`, accepts the column name.
+  
+  
+
+
+## Pandas Basics
+### Re-setting an Index with `reset_index()`
+
+```{.python}
+nba2 = nba.set_index("Name")
+nba2.reset_index(inplace=True)    # Useful for the chain of method operations
+```
+
+  
+- We use the `reset_index()` method: 
+  - When we want to convert the index back into a `DataFrame` column;
+  - When we need to reset the index to the default integer index. 
+
+- Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
+
+
+
+## Pandas Basics
+
+Let's do Questions 5-7 in [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+# Renaming columns or rows  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming columns with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
+
+# Locating Observations {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by index label (row name).
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+
+
+
+## Pandas Basics
+### Locating Observations by `.iloc[ Index Positions ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the slicing syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+# Locating Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="42%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="58%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
+
+
+## Pandas Basics
+
+Let's do [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+
+window.onload = function() {
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+    });
+};
+</script>
