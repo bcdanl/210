@@ -1532,7 +1532,7 @@ Byeong-Hak Choe
 <h2>Python Basics</h2>
 <h3 id="lists-and-slicing-3">Lists and Slicing</h3>
 <ul>
-<li class="fragment"><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html">Classwork 4.3</a></li>
+<li class="fragment"><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html">Classwork 4.3</a></li>
 </ul>
 </section>
 <section id="python-basics-16" class="slide level2">
@@ -1567,7 +1567,7 @@ Byeong-Hak Choe
 <h2>Python Basics</h2>
 <h3 id="functions-arguments-and-parameters-1">Functions, Arguments, and Parameters</h3>
 <ul>
-<li class="fragment"><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html">Classwork 4.4</a></li>
+<li class="fragment"><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html">Classwork 4.4</a></li>
 </ul>
 </section>
 <section id="python-basics-19" class="slide level2">
@@ -1642,7 +1642,7 @@ Byeong-Hak Choe
 <p>To install a module <code>module_name</code> on your Google Colab, run:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="op">!</span>pip install module_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html">Classwork 4.5</a></li>
+<li class="fragment"><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html">Classwork 4.5</a></li>
 </ul>
 </section></section>
 <section>
@@ -2310,6 +2310,33 @@ window.onload = function() {
         link.setAttribute('target', '_blank');
     });
 };
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Query all anchor tags within code blocks (adjust the selector as needed)
+  document.querySelectorAll('pre code a').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent the default anchor action
+      e.stopPropagation(); // Stop the event from bubbling up
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Target all span elements within code blocks that have IDs starting with 'cb'
+    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            // Apply yellow background color to the hovered span element
+            this.style.backgroundColor = '#FFFF99';
+        });
+        element.addEventListener('mouseleave', function() {
+            // Revert the background color when the mouse leaves the span element
+            this.style.backgroundColor = '';
+        });
+    });
+});
+
 </script>
 
 <div class="footer footer-default">

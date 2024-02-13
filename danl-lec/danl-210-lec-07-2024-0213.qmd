@@ -425,7 +425,7 @@ suny[-6 : -4]
 ## Python Basics
 ### Lists and Slicing
 
-- **Q**. [Classwork 4.3](https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html)
+- **Q**. [Classwork 4.3](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)
 
 
 ## Python Basics
@@ -473,7 +473,7 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 ## Python Basics
 ### Functions, Arguments, and Parameters
 
-- **Q**. [Classwork 4.4](https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html)
+- **Q**. [Classwork 4.4](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)
 
 
 
@@ -561,7 +561,7 @@ To install a module `module_name` on your Google Colab, run:
 ```
 
 
-- **Q**. [Classwork 4.5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-4.html)
+- **Q**. [Classwork 4.5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)
 
 
 
@@ -1381,4 +1381,31 @@ window.onload = function() {
         link.setAttribute('target', '_blank');
     });
 };
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Query all anchor tags within code blocks (adjust the selector as needed)
+  document.querySelectorAll('pre code a').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent the default anchor action
+      e.stopPropagation(); // Stop the event from bubbling up
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Target all span elements within code blocks that have IDs starting with 'cb'
+    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            // Apply yellow background color to the hovered span element
+            this.style.backgroundColor = '#FFFF99';
+        });
+        element.addEventListener('mouseleave', function() {
+            // Revert the background color when the mouse leaves the span element
+            this.style.backgroundColor = '';
+        });
+    });
+});
+
 </script>
