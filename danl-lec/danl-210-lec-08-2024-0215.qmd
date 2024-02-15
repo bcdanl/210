@@ -1,0 +1,945 @@
+---
+title: Lecture 8
+subtitle: Pandas Basics - Loading, Summarizing, Selecting, Sorting, Indexing, and Locating Data
+format:
+  clean-revealjs:
+    self-contained: true
+    incremental: true   
+    css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-02-15
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+# include-after-body: backwards.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+
+
+## Workflow for the Course
+
+- Save your Jupyter Notebook for each class to a dedicated directory in Google Drive, local laptop, or a GitHub repo.
+  - Go to **File** and select **Save ...**/
+  ( e.g., `danl-210-lec-08-2024-0215.ipynb`)
+
+
+
+
+## Workflow for Your Personal Website
+### File management
+
+- Your website project directory should include files specifically dedicated to your website.
+
+- In your website project directory, avoid having 
+  - Any file that exceeds 30 MB in size;
+  - `.qmd`/`.ipynb` files you do not use for your website.
+
+
+## Workflow for Your Personal Website
+### Jupyter Notebooks
+
+1. Run Python code cells in a Jupyter Notebook on Google Colab.
+2. Download the Jupyter Notebook from Google Colab.
+3. Use the Finder/File Explorer to move the Jupyter Notebook file to your website project directory.
+  - If it is for a blog post, move it to `posts` directory.
+4. Edit `_quarto.yml` properly.
+5. On Terminal, run `quarto render`.
+6. Once `quarto render` completes, view the `index.html` in your website working directory to see the updates from a web browser.
+7. After confirming your local website files are well updated, use the 3-step git commands (`add`-`commit`-`push`) to update your online website.
+
+
+## Workflow for Your Personal Website
+### Quarto Documents and `_quarto.yml`
+
+1. Ensure all Quarto documents are rendered well without any errors.
+
+2. After making edits to `_quarto.yml`, save the changes by clicking the floppy disk icon (💾).
+
+3. Run `quarto render` in Terminal, whenever you have some changes in `_quarto.yml`.
+
+4. Once `quarto render` completes, view the `index.html` in your website working directory to see the updates from a web browser.
+
+- After confirming your local website files are well updated, use the 3-step git commands (`add`-`commit`-`push`) to update your online website.
+
+
+
+# Pandas Basics {background-color="#1c4982"}
+
+## Pandas Basics
+### Learning Objectives
+
+- Loading `DataFrame`
+- Getting a Summary of `DataFrame`
+- Selecting Variables in a `DataFrame` 
+- Counting Values in a `DataFrame` 
+- Sorting `DataFrame`
+- Indexing and Renaming `DataFrame`
+- Locating Data in a `DataFrame`
+
+
+# Loading Data {background-color="#1c4982"}
+
+
+## Pandas Basics
+###  `Series` and `DataFrame`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
+</p>
+
+- `Series`:	a collection of a one-dimensional object containing a sequence of values.
+  
+- `DataFrame`: a collection of `Series` columns with an *index*.
+
+
+## Pandas Basics
+### Importing a data set with `read_csv()`
+
+:::{.nonincremental}
+- A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba.csv)).
+
+- The CSV is widely used for storing data, and we will use this throughout the module.
+
+- We use the `read_csv()` function to load a CSV data file.
+
+```{.python}
+import pandas as pd
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+type(nba)
+nba
+```
+
+
+:::
+
+- The `DataFrame` is the workhorse of the pandas library and the data structure.
+
+
+
+## Pandas Basics
+### Importing a data set with `read_csv()`
+
+
+```{.python}
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+nba
+```
+
+- We can use the `parse_dates` parameter to coerce the values into `datetimes`.
+
+
+## Pandas Basics
+### Colab's Interactive DataFrame Display
+
+
+```{.python}
+from google.colab import data_table
+data_table.enable_dataframe_formatter()  # Enabling an interactive DataFrame display
+nba
+```
+
+- Colab includes an extension that renders pandas `DataFrames` into interactive displays.
+
+
+## Pandas Basics
+### Another Interactive DataFrame Display
+
+
+```{.python}
+# !pip install itables
+from itables import init_notebook_mode, show
+init_notebook_mode(all_interactive=False)
+show(nba)
+```
+
+- `itables` provides similar interactive displays for `DataFrames`.
+  - For a blog post, `itables`'s interactive displays may work better than `google.colab`' ones.
+
+
+
+# Getting a Summary of Data {background-color="#1c4982"}
+
+## Pandas Basics
+### DataFrame Terminologies: Variables, Observations, and Values
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
+</p>
+
+
+1. Each **variable** is a *column*.
+2. Each **observation** is a *row*.
+3. Each **value** is a *cell*.
+
+
+<!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
+
+<!-- - When we work with `DataFrame`, we mean a variable a column. -->
+
+
+
+## Pandas Basics
+### DataFrame Terminologies: Dot Operators, Methods and Attributes
+
+- The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
+
+- A method (`DataFrame.method()`) is a function that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
+  - e.g., `nba.info()`
+
+- An attribute (`DataFrame.attribute`) is a property that provides information about the `DataFrame`'s structure or content without modifying it. 
+  - e.g., `nba.dtype`
+
+
+## Pandas Basics
+### Getting a Summary of a `DataFrame` with `.info()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.info()    # method
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.shape     # attribute
+nba.dtypes    # attribute
+nba.columns   # attribute
+nba.count()   # method
+```
+:::
+
+::::
+
+- Every `DataFrame` object has a `.info()` method that provides a summary of a DataFrame:
+  - Variable names (`.columns`)
+  - Number of variables/observations (`.shape`)
+  - Data type of each variable (`.dtypes`)
+  - Number of non-missing values in each variable (`.count()`)
+    - Pandas often displays missing values as `NaN`.
+
+
+
+<!-- -  Since `.shape` is an **attribute** of the `DataFrame` object, and not a **function** or **method** of the `DataFrame` object, it does not have round parentheses after the period. -->
+
+
+
+## Pandas Basics
+### Getting a Summary of a `DataFrame` with `.describe()`
+
+```{.python}
+nba.describe()
+nba.describe(include='all')
+```
+
+
+- `.describe()` method generates **descriptive statistics** that summarize the central tendency, dispersion, and distribution of each variable. 
+  - It can also process `string`-type variables if specified explicitly (`include='all'`).
+
+
+
+
+# Selecting Variables {background-color="#1c4982"}
+
+## Pandas Basics
+### Selecting a Variable by its Name
+
+```{.python}
+nba_player_name_1 = nba['Name']   # Series
+nba_player_name_1
+
+nba_player_name_2 = nba[ ['Name'] ]   # DataFrame
+nba_player_name_2
+```
+
+- If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.
+  - `DataFrame[ 'var_1' ]` 
+  - `DataFrame[ ['var_1'] ]`
+
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables by their Names
+
+```{.python}
+nba_player_name_team = nba[ ['Name', 'Team'] ]
+nba_player_name_team
+```
+
+- In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
+  - `DataFrame[ ['var_1', 'var_2', ... ] ]`
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables with `select_dtypes()`
+
+
+```{.python}
+# To include only string variables
+nba.select_dtypes(include = "object")
+
+# To exclude string and integer variables
+nba.select_dtypes(exclude = ["object", "int"])
+```
+
+- We can use the `select_dtypes()` method to select columns based on their data types.
+  - The method accepts two parameters, `include` and `exclude`.
+
+
+# Counting Methods {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Counting with `.count()` 
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba['Salary'].count()
+nba[['Salary']].count()
+```
+:::
+
+::::
+
+- The `.count()` counts <u>the number of non-missing values</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.value_counts()` 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba['Team'].value_counts()
+```
+:::
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].value_counts()
+```
+:::
+
+::::
+
+- The `.value_counts()` counts <u>the number of occurrences of each unique value</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.nunique()` 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].nunique()
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.nunique()
+```
+:::
+
+::::
+
+
+- The `.nunique()` counts <u>the number of unique values</u> in each variable in a `DataFrame`. 
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-3 in [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+# Sorting Methods {background-color="#1c4982"}
+
+## Pandas Basics
+### Selecting the first/last `n` observations with `.head()` & `.tail()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.head()
+nba.head(10)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.tail()
+nba.tail(10)
+```
+
+:::
+
+::::
+
+- We can use the `.head()`/`.tail()` method of a `DataFrame` to keep only the first/last `n` observations.
+  - This can be useful with **sorting** methods.
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"])
+nba.sort_values(by = ["Name"])
+```
+
+
+- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort the `DataFrame`.
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"], ascending = False)
+```
+
+
+- The `sort_values()` method’s `ascending` parameter determines the sort order.
+  - It has a default argument of `True`.
+  - By default, pandas will sort:
+    - A variable of numbers in *increasing* order;
+    - A variable of strings in *alphabetical* order;
+    - A variable of datetimes in *chronological* order.
+
+
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()` and `head()` & `tail()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+df = nba.sort_values(["Salary"])
+df.head(5)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+df = nba.sort_values(["Salary"])
+df.tail(5)
+```
+
+:::
+
+::::
+
+
+- `sort_values()` with `.head()` or `.tail()` can be useful to find the observations with the `n` smallest/largest values in a variable.
+
+
+## Pandas Basics
+### Method Chaining
+
+```{.python}
+(
+    nba
+    .sort_values(['Salary'])
+    .head(5)
+)
+```
+
+
+-  `DataFrame` has various methods that modify the existing `DataFrame`. 
+  - **Method Chaining**: We can call methods sequentially without the need to store intermediate results.
+  
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(5, 'Salary')
+nba.nlargest(5, 'Salary')
+```
+
+- `nsmallest()` are useful to get the first `n` observations ordered by a variable in <u>*ascending*</u> order.
+
+- `nlargest()` are useful to get the first `n` observations ordered by a variable in <u>*descending*</u> order.
+
+
+
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(4, 'Salary', keep = "all")
+nba.nlargest(4, 'Salary', keep = "all")
+```
+
+- `keep = "all"` keeps all duplicates, even it means selecting more than `n` observations.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(["Team", "Name"])
+nba.sort_values(by = ["Team", "Name"])
+```
+
+- We can sort a `DataFrame` by multiple columns by passing a *list* to the `by` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = False)
+```
+
+- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each column.
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = [False, True])
+```
+
+- If we want to sort each variable in a different order, we can pass a Boolean *list* to the `ascending` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+**Q**. Which players on each team are paid the most?
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_index()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+# The two lines below are equivalent
+nba.sort_index()
+nba.sort_index(ascending = True).
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.sort_index(ascending = False).
+```
+:::
+
+::::
+
+- How can we return it to its original form of `DataFrame`?
+
+- Our `nba` `DataFrame` still has its numeric index.
+
+- If we could sort the data set by index positions rather than by column values, we could return it to its original shape.
+
+
+
+
+## Pandas Basics
+### Changing the Order of Variables with `sort_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_index(axis = "columns")
+nba.sort_index(axis = 1)
+```
+
+- The `sort_index()` method can also be used to change the order of variables in an alphabetical order. 
+  - We need to add an `axis` parameter and pass it an argument of `"columns"` or `1`.
+
+
+
+
+# Setting a New Index {background-color="#1c4982"}
+
+## Pandas Basics
+### Setting a New Index
+
+- We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
+  - This is particularly useful when:
+    - We have a column that *uniquely identifies* each observations (e.g., ID);
+    - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
+    
+
+## Pandas Basics
+### Setting a New Index with `set_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.set_index(keys = "Name")
+nba.set_index("Name")
+```
+
+- The `set_index()` method returns a new `DataFrame` with a given column set as the index. 
+  - Its first parameter, `keys`, accepts the column name.
+  
+  
+
+
+## Pandas Basics
+### Re-setting an Index with `reset_index()`
+
+```{.python}
+nba2 = nba.set_index("Name")
+nba2.reset_index(inplace=True)    # Useful for the chain of method operations
+```
+
+  
+- We use the `reset_index()` method: 
+  - When we want to convert the index back into a `DataFrame` column;
+  - When we need to reset the index to the default integer index. 
+
+- Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
+
+
+
+## Pandas Basics
+
+Let's do Questions 4-7 in [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+# Renaming columns or rows  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming columns with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
+
+# Locating Observations {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by index label (row name).
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+
+
+
+## Pandas Basics
+### Locating Observations by `.iloc[ Index Positions ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the slicing syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+# Locating Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="42%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="58%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
+
+
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+
+window.onload = function() {
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+    });
+};
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Query all anchor tags within code blocks (adjust the selector as needed)
+  document.querySelectorAll('pre code a').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent the default anchor action
+      e.stopPropagation(); // Stop the event from bubbling up
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Target all span elements within code blocks that have IDs starting with 'cb'
+    document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            // Apply yellow background color to the hovered span element
+            this.style.backgroundColor = '#FFFF99';
+        });
+        element.addEventListener('mouseleave', function() {
+            // Revert the background color when the mouse leaves the span element
+            this.style.backgroundColor = '';
+        });
+    });
+});
+
+</script>
