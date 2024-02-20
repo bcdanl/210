@@ -1,0 +1,60 @@
+<script>
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+        Reveal.next(); // Scroll down to go to the next slide
+    } else {
+        Reveal.prev(); // Scroll up to go to the previous slide
+    }
+}, false);
+
+window.onload = function() {
+    document.querySelectorAll('a').forEach(function(link) {
+        link.setAttribute('target', '_blank');
+    });
+};
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Query all anchor tags within code blocks (adjust the selector as needed)
+  document.querySelectorAll('pre code a').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent the default anchor action
+      e.stopPropagation(); // Stop the event from bubbling up
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Enhance selector to ensure it captures all code blocks accurately
+    document.querySelectorAll('.reveal pre code').forEach(function(codeBlock) {
+        // Adjust this to account for any additional nesting or layout structures
+        const codeLines = codeBlock.querySelectorAll('span[id^="cb"]');
+
+        codeBlock.addEventListener('mousemove', function(e) {
+            const relativeY = e.clientY - codeBlock.getBoundingClientRect().top;
+
+            // Reset highlight for all lines in this code block
+            codeLines.forEach(line => line.style.backgroundColor = '');
+
+            // Apply highlight to the line that matches the hover position
+            codeLines.forEach(line => {
+                const lineTop = line.offsetTop - codeBlock.offsetTop;
+                const lineBottom = lineTop + line.offsetHeight;
+
+                if (relativeY >= lineTop && relativeY <= lineBottom) {
+                    line.style.backgroundColor = '#FFFF99'; // Highlight color
+                }
+            });
+        });
+
+        codeBlock.addEventListener('mouseleave', function() {
+            // Clear the highlight when the mouse leaves the code block
+            codeLines.forEach(line => line.style.backgroundColor = '');
+        });
+    });
+});
+
+
+
+</script>
