@@ -74,7 +74,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Sorting, Indexing, and Filtering Data\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Sorting, Indexing, and Filtering Data\n\n\nFebruary 22, 2024\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-210-qa-07.html",
@@ -109,7 +109,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Filtering Data\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 8\n\n\nPandas Basics - Loading, Summarizing, Selecting, Sorting, Indexing, and Locating Data\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7\n\n\nPython Basics; Pandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nWebsite Basics; Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Converting Data Types\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 8\n\n\nPandas Basics - Loading, Summarizing, Selecting, Sorting, Indexing, and Locating Data\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7\n\n\nPython Basics; Pandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nWebsite Basics; Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
@@ -2769,14 +2769,14 @@
     "href": "danl-cw/danl-210-cw-06.html",
     "title": "Classwork 6",
     "section": "",
-    "text": "The netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category).\n\n\n\n\n\n\n\n\n\nRows: 5837 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): title, director, date_added, type\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "The netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category)."
   },
   {
     "objectID": "danl-cw/danl-210-cw-06.html#direction",
     "href": "danl-cw/danl-210-cw-06.html#direction",
     "title": "Classwork 6",
     "section": "",
-    "text": "The netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category).\n\n\n\n\n\n\n\n\n\nRows: 5837 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): title, director, date_added, type\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "The netflix-2019.csv file (with its pathname https://bcdanl.github.io/data/netflix-2019.csv) contains a list of 6,000 titles that were available to watch in November 2019 on the video streaming service Netflix. It includes four variables: the video’s title, director, the date Netflix added it (date_added), and its type (category)."
   },
   {
     "objectID": "danl-cw/danl-210-cw-06.html#question-1",
@@ -2867,21 +2867,21 @@
     "href": "index.html#bullet-lecture-slides",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 8\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 9\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 8\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 5\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 1\n\n\nJanuary 23, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-lecture-q-a",
     "href": "index.html#bullet-lecture-q-a",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Lecture Q & A ❓",
-    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 9 - Q & A\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 8 - Q & A\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Q & A ❓\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 9 - Q & A\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 8 - Q & A\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 6\n\n\nFebruary 20, 2024\n\n\n\n\nClasswork 5\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 6\n\n\nFebruary 22, 2024\n\n\n\n\nClasswork 5\n\n\nFebruary 13, 2024\n\n\n\n\nClasswork 4\n\n\nFebruary 8, 2024\n\n\n\n\nClasswork 3\n\n\nFebruary 1, 2023\n\n\n\n\nClasswork 2\n\n\nJanuary 25, 2023\n\n\n\n\nClasswork 1\n\n\nJanuary 25, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -2930,7 +2930,7 @@
     "href": "listing-danl-210-qa.html",
     "title": "DANL 210 - Lecture Discussion",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 9 - Q & A\n\n\nFebruary 20, 2024\n\n\n\n\nLecture 8 - Q & A\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 9 - Q & A\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 8 - Q & A\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-qa/danl-210-qa-09.html",
@@ -2938,5 +2938,411 @@
     "title": "Lecture 9 - Q & A",
     "section": "",
     "text": "Welcome to our Lecture 9 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 9 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Lecture 9 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-your-personal-website",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-your-personal-website",
+    "title": "Lecture 9",
+    "section": "Workflow for Your Personal Website",
+    "text": "Workflow for Your Personal Website\nJupyter Notebooks\n\nRun Python code cells in a Jupyter Notebook on Google Colab.\nDownload the Jupyter Notebook from Google Colab.\nUse the Finder/File Explorer to move the Jupyter Notebook file to your website project directory.\n\n\nIf it is for a blog post, move it to posts directory.\n\n\nEdit _quarto.yml properly.\nOn Terminal, run quarto render.\nOnce quarto render completes, view the index.html in your website working directory to see the updates from a web browser.\nAfter confirming your local website files are well updated, use the 3-step git commands (add-commit-push) to update your online website."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-your-personal-website-1",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-your-personal-website-1",
+    "title": "Lecture 9",
+    "section": "Workflow for Your Personal Website",
+    "text": "Workflow for Your Personal Website\nJupyter Notebooks when _quarto.yml doesn’t need to be edited\n\nRun Python code cells in a Jupyter Notebook on Google Colab.\nDownload the Jupyter Notebook from Google Colab.\nUse the Finder/File Explorer to move the Jupyter Notebook file to your website project directory.\n\n\nIf it is for a blog post, move it to posts directory.\n\n\nOn Terminal, run quarto render posts/DIRECTORY/BLOG.ipynb\nOn Terminal, run quarto render blog-listing.qmd\nOnce the above quarto render complete, view the index.html in your website working directory to see the updates from a web browser.\nAfter confirming your local website files are well updated, use the 3-step git commands (add-commit-push) to update your online website."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-google-colab",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-google-colab",
+    "title": "Lecture 9",
+    "section": "Workflow for Google Colab",
+    "text": "Workflow for Google Colab\nLoading a CSV File from a Local Computer"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-google-colab-1",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#workflow-for-google-colab-1",
+    "title": "Lecture 9",
+    "section": "Workflow for Google Colab",
+    "text": "Workflow for Google Colab\nLoading a CSV File from a Local Computer"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-1",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-1",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLearning Objectives\n\n\n\n\nLoading DataFrame\nGetting a Summary of DataFrame\nSelecting Variables in DataFrame\nCounting Values in DataFrame\n\n\n\n\nSorting DataFrame\nIndexing DataFrame\nLocating Observations and Values in DataFrame\nRenaming Variables in DataFrame\nMathematical & Vectorized Operations with DataFrame\nConverting Data Types in DataFrame\nFiltering Observations in DataFrame"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-2",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-2",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\n\n\nLet’s read nba.csv as nba.\n\n# Below is to import the pandas library as pd\nimport pandas as pd \n\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table  \ndata_table.enable_dataframe_formatter()\n\n# Below is to read nba.csv as nba DataFrame\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\n                  \n# Below is to view the nba DataFrame and to get a summary of it\nnba\nnba.info()\nnba.describe( include=\"all\" )"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-3",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-3",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-4",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-4",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with sort_values()\nnba.sort_values([\"Name\"], ascending = False)\n\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nascending has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-5",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-5",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-6",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-6",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(5, 'Salary')\nnba.nlargest(5, 'Salary')\n\nnsmallest() are useful to get the first n observations ordered by a variable in ascending order.\nnlargest() are useful to get the first n observations ordered by a variable in descending order."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-7",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-7",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(4, 'Salary', keep = \"all\")\nnba.nlargest(4, 'Salary', keep = \"all\")\n\nkeep = \"all\" keeps all duplicates, even it means selecting more than n observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-8",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-8",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values([\"Team\", \"Name\"])\nnba.sort_values(by = [\"Team\", \"Name\"])\n\nWe can sort a DataFrame by multiple columns by passing a list to the by parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-9",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-9",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = False)\n\nWe can pass a single Boolean to the ascending parameter to apply the same sort order to each variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-10",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-10",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = [False, True])\n\nIf we want to sort each variable in a different order, we can pass a Boolean list to the ascending parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-11",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-11",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Multiple Variables with sort_values()\nQ. Which players on each team are paid the most?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-12",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-12",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSorting by Row Index with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-13",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-13",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nChanging the Order of Variables with sort_index()\n# The two lines below are equivalent\nnba.sort_index(axis = \"columns\")\nnba.sort_index(axis = 1)\n\nThe sort_index() method can also be used to change the order of variables in an alphabetical order.\n\nWe need to add an axis parameter and pass it an argument of \"columns\" or 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-14",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-14",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSetting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observation (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-15",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-15",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nSetting a New Index with set_index()\n# The two lines below are equivalent\nnba.set_index(keys = \"Name\")\nnba.set_index(\"Name\")\n\nThe set_index() method returns a new DataFrame with a given column set as the index.\n\nIts first parameter, keys, accepts the column name."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-16",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-16",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRe-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the method chaining\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-17",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-17",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations/Values\n\nWe can extract observations, variables, and values from a DataFrame by using the loc[] and iloc[] accessors.\n\nThese accessors work well when we know the index labels and positions of the observations/variables we want to target."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-18",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-18",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\nLet’s consider the nba with the Name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-19",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-19",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nNote: Both the starting value and the ending value are inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-20",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-20",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .loc[ Index Labels ]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-21",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-21",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Observations by .iloc[ Index Positions ]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-22",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-22",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Classwork 5!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-23",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-23",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-24",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-24",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLocating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-25",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-25",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-26",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-26",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-27",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-27",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-28",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-28",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-29",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-29",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-30",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-30",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Name_w_Position\"] = nba[\"Name\"] + \" (\" + nba[\"Position\"] + \")\"\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-31",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-31",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\n\n\nLet’s read employment.csv as emp.\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\n\nWhat values are in the Mgmt variable?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-32",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-32",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"].astype(bool)\n\nThe astype() method converts a Series’ values to a different data type.\n\nIt accepts a single argument: the new data type.\nWe can pass either the data type or a string with its name."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-33",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-33",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Mgmt\"] = emp[\"Mgmt\"].astype(bool)\n\nThe above code overwrites the Mgmt variable with our new Series of Booleans."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-34",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-34",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Salary\"].astype(int)\n\nThe above code tries to coerce the Salary variable’s values to integers with the astype() method.\n\nPandas is unable to convert the NaN values to integers."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-35",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-35",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"].fillna(0)\n\nThe fillna() method replaces a Series’ missing values with the argument we pass in.\nThe above example provides a fill value of 0.\n\nNote that your choice of value can distort the data; 0 is passed solely for the sake of example."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-36",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-36",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFill Missing Values with the fillna() method\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0).astype(int)\n\nThe above code overwrites the Salary variable with our new Series of integers."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-37",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-37",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nConverting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\nPandas includes a special data type called a category, - It is ideal for a variable consisting of a small number of unique values relative to its total size. - E.g., gender, weekdays, blood types, planets, and income groups."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-38",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-38",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nConverting Data Types with the pd.to_datetime() method\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-39",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-39",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Question 1 in Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-40",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-40",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\n\nWe may often not know the index labels and positions of the observations we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-41",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-41",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\n\nSeries == value\n\nThe above example compares each First Name value with “Donna”."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-42",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-42",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\nemp[ emp[\"First Name\"] == \"Donna\" ]\n\nTo filter observations, we provide the Boolean Series between square brackets following the DataFrame.\n\nDataFrame[ Boolean_Series ]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-43",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-43",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[donnas]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to an object and then pass it into the square brackets instead."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-44",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-44",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\nnon_marketing = emp[\"Team\"] != \"Marketing\"  # != means \"not equal to\"\nemp[ non_marketing ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-45",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-45",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\nWhat if we want to retrieve all the managers in the company? Managers have a value of True in the Mgmt variable.\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-46",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-46",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Single Condition\nhigh_earners = emp[\"Salary\"] &gt; 100000\nemp[ high_earners ]\n\nWe can also use arithmetic operands to filter observations based on mathematical conditions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-47",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-47",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ]\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-48",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-48",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[on_star_teams]\n\nWhat if our next report asked for employees from 15 teams instead of three?\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, Series) and returns a Boolean Series."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-49",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-49",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-50",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-50",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ]\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-51",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-51",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[between_90k_and_100k]\n\nA slightly cleaner solution is to use a method called between()\n\nIt returns a Boolean Series where True denotes that a row’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-52",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-52",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[name_starts_with_t]\n\nWe can also apply the between() method to string variables."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-53",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-53",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nFiltering by a Condition with the query() method\n# Below two are equivalent\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 and Team == 'Finance'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\nThe query() method is often more readable and more concise, especially for complex conditions, compared to traditional Boolean filtering."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-54",
+    "href": "danl-lec/danl-210-lec-09-2024-0222.html#pandas-basics-54",
+    "title": "Lecture 9",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 2-6 in Part 2 of Classwork 6!"
   }
 ]
