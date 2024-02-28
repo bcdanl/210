@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 14, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nPython Basics - Counting, Sorting, Indexing, and Filtering Data\n\n\nFebruary 28, 2024\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 14, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-210-hw-01.html",
@@ -137,7 +137,7 @@
     "href": "index.html#bullet-homework",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nFebruary 14, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nFebruary 28, 2024\n\n\n\n\nHomework 1\n\n\nFebruary 14, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html",
@@ -2973,5 +2973,110 @@
     "title": "DANL 210 - Lecture Discussion",
     "section": "",
     "text": "Title\n\n\nDate\n\n\n\n\n\n\nLecture 9 - Q & A\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 8 - Q & A\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 7 - Q & A\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 6 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 5 - Q & A\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 4 - Q & A\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 3 - Q & A\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 2 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\nLecture 1 - Q & A\n\n\nFebruary 8, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html",
+    "href": "danl-hw/danl-210-hw-02.html",
+    "title": "Homework 2",
+    "section": "",
+    "text": "Please submit your Jupyter Notebook for Part 1 in Homework 2 to the Brightspace with the name below:\n\ndanl-210-hw2-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-210-hw2-choe-byeonghak.ipynb )\n\nThe due is March 8, 2024, 11:59 P.M.\nPlease send an email to Byeong-Hak (bchoe@geneseo.edu) if you have any questions or clarifications."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#variable-description",
+    "href": "danl-hw/danl-210-hw-02.html#variable-description",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal Year: Fiscal Year;\nPayroll Number: Payroll Number;\nAgency Name: The Payroll agency that the employee works for;\nLast Name: Last name of employee;\nFirst Name: First name of employee;\nMid Init: Middle initial of employee;\nAgency Start Date: Date which employee began working for their current agency;\nWork Location Borough: Borough of employee’s primary work location;\nTitle Description: Civil service title description of the employee;\nLeave Status as of June 30: Status of employee as of the close of the relevant fiscal year;\nBase Salary: Base Salary assigned to the employee;\nPay Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular Hours: Number of regular hours employee worked in the fiscal year;\nRegular Gross Paid: The amount paid to the employee for base salary during the fiscal year;\nOT Hours: Overtime Hours worked by employee in the fiscal year;\nTotal OT Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal Other Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-1",
+    "href": "danl-hw/danl-210-hw-02.html#question-1",
+    "title": "Homework 2",
+    "section": "Question 1",
+    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-2",
+    "href": "danl-hw/danl-210-hw-02.html#question-2",
+    "title": "Homework 2",
+    "section": "Question 2",
+    "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-3",
+    "href": "danl-hw/danl-210-hw-02.html#question-3",
+    "title": "Homework 2",
+    "section": "Question 3",
+    "text": "Question 3\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-4",
+    "href": "danl-hw/danl-210-hw-02.html#question-4",
+    "title": "Homework 2",
+    "section": "Question 4",
+    "text": "Question 4\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-5",
+    "href": "danl-hw/danl-210-hw-02.html#question-5",
+    "title": "Homework 2",
+    "section": "Question 5",
+    "text": "Question 5\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-6",
+    "href": "danl-hw/danl-210-hw-02.html#question-6",
+    "title": "Homework 2",
+    "section": "Question 6",
+    "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-7",
+    "href": "danl-hw/danl-210-hw-02.html#question-7",
+    "title": "Homework 2",
+    "section": "Question 7",
+    "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-8",
+    "href": "danl-hw/danl-210-hw-02.html#question-8",
+    "title": "Homework 2",
+    "section": "Question 8",
+    "text": "Question 8\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nHint: The .quantile() method can be useful.\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-9",
+    "href": "danl-hw/danl-210-hw-02.html#question-9",
+    "title": "Homework 2",
+    "section": "Question 9",
+    "text": "Question 9\nFilter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-10",
+    "href": "danl-hw/danl-210-hw-02.html#question-10",
+    "title": "Homework 2",
+    "section": "Question 10",
+    "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-11",
+    "href": "danl-hw/danl-210-hw-02.html#question-11",
+    "title": "Homework 2",
+    "section": "Question 11",
+    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total OT Paid” in the DataFrame.\n\nInclude their “First Name”, “Last Name”, and “Total OT Paid”.\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#variable-description-1",
+    "href": "danl-hw/danl-210-hw-02.html#variable-description-1",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#question-12.",
+    "href": "danl-hw/danl-210-hw-02.html#question-12.",
+    "title": "Homework 2",
+    "section": "Question 12.",
+    "text": "Question 12.\n\nWrite a blog post about your favorite artist(s) in spotify DataFrame using Jupyter Notebook, and add it to your online blog.\n\nIn your blog post, utilize counting, sorting, indexing, and filtering methods."
   }
 ]

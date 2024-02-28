@@ -1,0 +1,266 @@
+---
+title: Homework 2
+subtitle: Python Basics - Counting, Sorting, Indexing, and Filtering Data
+date: last-modified
+from: markdown+emoji
+execute: 
+  eval: false
+---
+
+# Direction
+
+- Please submit your **Jupyter Notebook for Part 1 in Homework 2** to the Brightspace with the name below:
+
+  - `danl-210-hw2-LASTNAME-FIRSTNAME.ipynb`\
+  ( e.g., `danl-210-hw2-choe-byeonghak.ipynb` )
+
+- The due is March 8, 2024, 11:59 P.M.
+
+- Please send an email to Byeong-Hak (`bchoe@geneseo.edu`) if you have any questions or clarifications.
+
+<br><br><br>
+
+# Part 1.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/nyc-payroll.png" width="600px">
+</p>
+
+<br>
+
+Below is `nyc_payroll` `DataFrame` that reads the file `nyc_payroll.csv` containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: [NYC OpenData](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)).
+
+```{python}
+#| echo: true
+nyc_payroll = pd.read_csv('https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv')
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/nyc_payroll_2022_2023.csv'),
+                       options = list(rows.print = 25))
+```
+
+
+## Variable Description
+- `Fiscal Year`: Fiscal Year;
+- `Payroll Number`:	Payroll Number;
+- `Agency Name`: The Payroll agency that the employee works for;
+- `Last Name`: Last name of employee;
+- `First Name`: First name of employee;
+- `Mid Init`: Middle initial of employee;
+- `Agency Start Date`: Date which employee began working for their current agency;
+- `Work Location Borough`: Borough of employee's primary work location;
+- `Title Description`: Civil service title description of the employee;
+- `Leave Status as of June 30`: Status of employee as of the close of the relevant fiscal year;
+- `Base Salary`: Base Salary assigned to the employee;
+- `Pay Basis`: Lists whether the employee is paid on an hourly, per diem or annual basis;
+- `Regular Hours`: Number of regular hours employee worked in the fiscal year;
+- `Regular Gross Paid`: The amount paid to the employee for base salary during the fiscal year;
+- `OT Hours`: Overtime Hours worked by employee in the fiscal year;
+- `Total OT Paid`: Total overtime pay paid to the employee in the fiscal year;
+- `Total Other Pay`: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable.
+<br><br>
+
+## Question 1
+Select "First Name", "Last Name", "Base Salary", and "Total OT Paid", then sort these selected variables by "Base Salary" in descending order and display the top 10 entries.
+
+
+
+*Answer*
+
+```{python}
+
+```
+
+
+<br><br>
+
+
+## Question 2
+Using `set_index()`, change the DataFrame's index to "Last Name", then locate the data for a specific last name, say "BROWN", and display their "Agency Name", "Base Salary", and "Total OT Paid".
+
+
+
+*Answer*
+```{python}
+
+```
+
+
+<br><br>
+
+
+## Question 3
+Find the 5 employees with the highest "Regular Gross Paid" and calculate their average "OT Hours". Also, reset the index if you have changed it previously.
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 4
+Sort the DataFrame by "Fiscal Year" and "Total Other Pay" in descending order, then set "First Name" as the index and use the loc accessor to retrieve the "Total Other Pay" for a specific first name, say "MICHAEL".
+
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 5
+Sort the DataFrame first by "Work Location Borough" alphabetically, and then by "Total Compensation" (sum of "Base Salary" and "Total OT Paid") in descending order within each borough.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 6
+- Select employees who have "OT Hours" greater than 0, calculate their "OT Rate" (Total OT Paid / OT Hours), and then find the employee with the highest "OT Rate". Display their full name and OT Rate.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 7
+Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION ADMIN" agency where the variables are "First Name", "Last Name", "Title Description", "Base Salary", and "Total OT Paid". Additionally, include a new variable "Total Compensation" which is the sum of "Base Salary" and "Total OT Paid".
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+## Question 8
+
+- How many employees have a "Base Salary" within the top 10% of the DataFrame?
+  - Hint: The `.quantile()` method can be useful.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+<br><br>
+
+
+## Question 9
+Filter the DataFrame for employees who have "OT Hours" greater than 0 but less than 100, and their "Leave Status as of June 30" is "ACTIVE".
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 10
+Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and count how many there are.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 11
+- Identify the employee(s) with the highest "Total OT Paid" in the DataFrame. 
+  - Include their "First Name", "Last Name", and "Total OT Paid".
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+
+# Part 2.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/spotify.png" width="400px">
+</p>
+
+<br>
+
+Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
+
+```{python}
+#| echo: true
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),
+                       options = list(rows.print = 25))
+```
+
+<br>
+
+## Variable Description
+
+- `pid`: playlist ID; unique ID for playlist
+- `playlist_name`: a name of playlist
+- `pos`: a position of the track within a playlist (starting from 0)
+- `artist_name`: name of the track’s primary artist
+- `track_name`: name of the track
+- `duration_ms`: duration of the track in milliseconds
+- `album_name`: name of the track’s album
+
+<br>
+
+## Question 12.
+
+- Write a blog post about your favorite artist(s) in `spotify` DataFrame using Jupyter Notebook, and add it to your online blog.
+  - In your blog post, utilize counting, sorting, indexing, and filtering methods.
+  
+<br>
+
