@@ -9,11 +9,13 @@ system(paste("rm", shQuote("index.html")))
 # Sys.sleep(2)
 
 # Next lecture number & dates
-lec_n <- 10
-lec_dates <- c('0123', '0125', '0130', '0201', '0206', '0208',
-               '0213', '0215', '0222', '0229')
+lec_dates <- c('0123', '0125', '0130', '0201', 
+               '0206', '0208', '0213', '0215', 
+               '0222', '0229')
+lec_n <- length(lec_dates)
 
-lec_nos <- str_c('0', as.character(1:lec_n))
+lec_nos <- 1:lec_n
+lec_nos <- sprintf("%02d", lec_nos)
 
 for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]
