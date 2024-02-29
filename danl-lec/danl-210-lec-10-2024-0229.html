@@ -1227,6 +1227,38 @@ Byeong-Hak Choe
 
   <p class="date">February 29, 2024</p>
 </section>
+<section id="documenting-workflow" class="slide level2">
+<h2>Documenting Workflow</h2>
+<h3 id="must-know-shortcuts">Must-know Shortcuts</h3>
+<div>
+<ul>
+<li>Use the shortcuts below whenever you edit a document, including Jupyter Notebook and Quarto:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="mac">Mac</h3>
+<ul>
+<li><p><strong>command + <span class="emoji" data-emoji="arrow_up">⬆️</span>/<span class="emoji" data-emoji="arrow_down">⬇️</span>/<span class="emoji" data-emoji="arrow_left">⬅️</span>/<span class="emoji" data-emoji="arrow_right">➡️</span></strong></p></li>
+<li><p><strong>shift + <span class="emoji" data-emoji="arrow_up">⬆️</span>/<span class="emoji" data-emoji="arrow_down">⬇️</span>/<span class="emoji" data-emoji="arrow_left">⬅️</span>/<span class="emoji" data-emoji="arrow_right">➡️</span></strong></p></li>
+<li><p><strong>command + shift + <span class="emoji" data-emoji="arrow_up">⬆️</span>/<span class="emoji" data-emoji="arrow_down">⬇️</span>/<span class="emoji" data-emoji="arrow_left">⬅️</span>/<span class="emoji" data-emoji="arrow_right">➡️</span></strong>:</p></li>
+<li><p><strong>command + PgUp/PgDn</strong></p></li>
+<li><p><strong>shift + PgUp/PgDn</strong></p></li>
+<li><p><strong>command + shift + PgUp/PgDn</strong>:</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="windows">Windows</h3>
+<ul>
+<li><p><strong>Ctrl + <span class="emoji" data-emoji="arrow_up">⬆️</span>/<span class="emoji" data-emoji="arrow_down">⬇️</span>/<span class="emoji" data-emoji="arrow_left">⬅️</span>/<span class="emoji" data-emoji="arrow_right">➡️</span></strong></p></li>
+<li><p><strong>Shift + <span class="emoji" data-emoji="arrow_up">⬆️</span>/<span class="emoji" data-emoji="arrow_down">⬇️</span>/<span class="emoji" data-emoji="arrow_left">⬅️</span>/<span class="emoji" data-emoji="arrow_right">➡️</span></strong></p></li>
+<li><p><strong>Ctrl + shift + <span class="emoji" data-emoji="arrow_up">⬆️</span>/<span class="emoji" data-emoji="arrow_down">⬇️</span>/<span class="emoji" data-emoji="arrow_left">⬅️</span>/<span class="emoji" data-emoji="arrow_right">➡️</span></strong>:</p></li>
+<li><p><strong>Ctrl + PgUp/PgDn</strong></p></li>
+<li><p><strong>Shift + PgUp/PgDn</strong></p></li>
+<li><p><strong>Ctrl + Shift + PgUp/PgDn</strong>:</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section>
 <section id="pandas-basics" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Pandas Basics</h1>
@@ -1249,9 +1281,8 @@ Byeong-Hak Choe
 <h3 id="learning-objectives">Learning Objectives</h3>
 <ul>
 <li class="fragment">Locating Observations and Values with <code>loc[]</code> and <code>iloc[]</code></li>
-<li class="fragment">Renaming Variables</li>
 <li class="fragment">Mathematical &amp; Vectorized Operations</li>
-<li class="fragment">Removing and Relocating Variables</li>
+<li class="fragment">Renaming, Removing, and Relocating Variables</li>
 <li class="fragment">Converting Data Types</li>
 <li class="fragment">Filtering Observations</li>
 <li class="fragment">Dealing with Missing Values</li>
@@ -1441,73 +1472,36 @@ Byeong-Hak Choe
 </ul>
 </section></section>
 <section>
-<section id="renaming-columns-or-rows" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1>Renaming columns or rows</h1>
-
-</section>
-<section id="pandas-basics-12" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="renaming-columns-with-nba.columns">Renaming columns with <code>nba.columns</code></h3>
-<div>
-<ul>
-<li>Do you recall the <code>.columns</code> attribute?</li>
-</ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>nba.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>We can rename any or all of a DataFrame’s columns by assigning a <em>list</em> of new names to the attribute:</li>
-</ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>nba.columns <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Date of Birth&quot;</span>, <span class="st">&quot;Income&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="pandas-basics-13" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="renaming-columns-with-rename-columns-existing-one-new-one">Renaming columns with <code>rename( columns = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>nba.rename( columns <span class="op">=</span> { <span class="st">&quot;Date of Birth&quot;</span>: <span class="st">&quot;Birthday&quot;</span> } )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The above <code>rename()</code> method renames the variable <em>Date of Birth</em> to <em>Birthday</em>.</li>
-</ul>
-</section>
-<section id="pandas-basics-14" class="slide level2">
-<h2>Pandas Basics</h2>
-<h3 id="renaming-rows-with-rename-index-existing-one-new-one">Renaming rows with <code>rename( index = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>nba <span class="op">=</span> nba.rename(</span>
-<span id="cb15-2"><a href="#cb15-2"></a>    index <span class="op">=</span> { <span class="st">&quot;LeBron James&quot;</span>: <span class="st">&quot;LeBron Raymone James&quot;</span> }</span>
-<span id="cb15-3"><a href="#cb15-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The above <code>rename()</code> method renames the observation <em>LeBron James</em> to <em>LeBron Raymone James</em>.</li>
-</ul>
-</section></section>
-<section>
 <section id="mathematical-vectorized-operations" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Mathematical &amp; Vectorized Operations</h1>
 
 </section>
-<section id="pandas-basics-15" class="slide level2">
+<section id="pandas-basics-12" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="mathematical-operations">Mathematical Operations</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>nba.<span class="bu">max</span>()</span>
-<span id="cb16-2"><a href="#cb16-2"></a>nba.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>nba.<span class="bu">max</span>()</span>
+<span id="cb12-2"><a href="#cb12-2"></a>nba.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>max()</code> method returns a <code>Series</code> with the maximum value from each variable.</li>
 <li class="fragment">The <code>min()</code> method returns a <code>Series</code> with the minimum value from each variable.</li>
 </ul>
 </section>
-<section id="pandas-basics-16" class="slide level2">
+<section id="pandas-basics-13" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="mathematical-operations-1">Mathematical Operations</h3>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>nba.<span class="bu">sum</span>()</span>
-<span id="cb17-2"><a href="#cb17-2"></a>nba.mean()</span>
-<span id="cb17-3"><a href="#cb17-3"></a>nba.median()</span>
-<span id="cb17-4"><a href="#cb17-4"></a>nba.quantile(<span class="fl">0.75</span>) <span class="co"># 0 to 1</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>nba.std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>nba.<span class="bu">sum</span>()</span>
+<span id="cb13-2"><a href="#cb13-2"></a>nba.mean()</span>
+<span id="cb13-3"><a href="#cb13-3"></a>nba.median()</span>
+<span id="cb13-4"><a href="#cb13-4"></a>nba.quantile(<span class="fl">0.75</span>) <span class="co"># 0 to 1</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>nba.std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:55%;">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>nba.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a>nba.mean(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a>nba.median(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb18-4"><a href="#cb18-4"></a>nba.quantile(<span class="fl">0.75</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a>nba.std(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>nba.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>nba.mean(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a>nba.median(numeric_only <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>nba.quantile(<span class="fl">0.75</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-5"><a href="#cb14-5"></a>nba.std(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1517,12 +1511,12 @@ Byeong-Hak Choe
 <li class="fragment">To limit the operation to numeric volumes, we can pass <code>True</code> to the <code>sum()</code>/<code>mean()</code>/<code>median()</code>/<code>std()</code> method’s <code>numeric_only</code> parameter.</li>
 </ul>
 </section>
-<section id="pandas-basics-17" class="slide level2">
+<section id="pandas-basics-14" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="vectorized-operations">Vectorized Operations</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>nba[<span class="st">&quot;Salary_2x&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">+</span> nba[<span class="st">&quot;Salary&quot;</span>]</span>
-<span id="cb19-2"><a href="#cb19-2"></a>nba[<span class="st">&quot;Name_w_Position&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Name&quot;</span>] <span class="op">+</span> <span class="st">&quot; (&quot;</span> <span class="op">+</span> nba[<span class="st">&quot;Position&quot;</span>] <span class="op">+</span> <span class="st">&quot;)&quot;</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>nba[<span class="st">&quot;Salary_minus_Mean&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">-</span> nba[<span class="st">&quot;Salary&quot;</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>nba[<span class="st">&quot;Salary_2x&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">+</span> nba[<span class="st">&quot;Salary&quot;</span>]</span>
+<span id="cb15-2"><a href="#cb15-2"></a>nba[<span class="st">&quot;Name_w_Position&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Name&quot;</span>] <span class="op">+</span> <span class="st">&quot; (&quot;</span> <span class="op">+</span> nba[<span class="st">&quot;Position&quot;</span>] <span class="op">+</span> <span class="st">&quot;)&quot;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>nba[<span class="st">&quot;Salary_minus_Mean&quot;</span>] <span class="op">=</span> nba[<span class="st">&quot;Salary&quot;</span>] <span class="op">-</span> nba[<span class="st">&quot;Salary&quot;</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>pandas</code> performs a <em>vectorized operation</em> on <code>Series</code> or a variable in <code>DataFrame</code>.
 <ul>
@@ -1532,53 +1526,76 @@ Byeong-Hak Choe
 </ul>
 </section></section>
 <section>
+<section id="renaming-variables" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Renaming Variables</h1>
+
+</section>
+<section id="pandas-basics-15" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="renaming-variables-with-nba.columns">Renaming Variables with <code>nba.columns</code></h3>
+<div>
+<ul>
+<li>Do you recall the <code>.columns</code> attribute?</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>nba.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>We can rename any or all of a DataFrame’s columns by assigning a <em>list</em> of new names to the attribute:</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>nba.columns <span class="op">=</span> [<span class="st">&quot;Team&quot;</span>, <span class="st">&quot;Position&quot;</span>, <span class="st">&quot;Date of Birth&quot;</span>, <span class="st">&quot;Income&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pandas-basics-16" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="renaming-variables-with-rename-columns-existing-one-new-one">Renaming Variables with <code>rename( columns = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>nba.rename( columns <span class="op">=</span> { <span class="st">&quot;Date of Birth&quot;</span>: <span class="st">&quot;Birthday&quot;</span> } )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above <code>rename()</code> method renames the variable <em>Date of Birth</em> to <em>Birthday</em>.</li>
+</ul>
+</section>
+<section id="pandas-basics-17" class="slide level2">
+<h2>Pandas Basics</h2>
+<h3 id="renaming-rows-with-rename-index-existing-one-new-one">Renaming rows with <code>rename( index = { &quot;Existing One&quot; : &quot;New One&quot; } )</code></h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>nba <span class="op">=</span> nba.rename(</span>
+<span id="cb19-2"><a href="#cb19-2"></a>    index <span class="op">=</span> { <span class="st">&quot;LeBron James&quot;</span>: <span class="st">&quot;LeBron Raymone James&quot;</span> }</span>
+<span id="cb19-3"><a href="#cb19-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above <code>rename()</code> method renames the observation <em>LeBron James</em> to <em>LeBron Raymone James</em>.</li>
+</ul>
+</section></section>
+<section>
 <section id="removing-and-relocating-variables" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Removing and Relocating Variables</h1>
 
 </section>
 <section id="pandas-basics-18" class="slide level2">
 <h2>Pandas Basics</h2>
-<div>
-<ul>
-<li>Let’s read <code>employment.csv</code> as <code>emp</code>.</li>
-</ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
-<span id="cb20-4"><a href="#cb20-4"></a>data_table.enable_dataframe_formatter()</span>
-<span id="cb20-5"><a href="#cb20-5"></a></span>
-<span id="cb20-6"><a href="#cb20-6"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="pandas-basics-19" class="slide level2">
-<h2>Pandas Basics</h2>
 <h3 id="adding-and-removing-variables">Adding and Removing Variables</h3>
 <div>
 <ul>
 <li>Here we use <code>[]</code> to add variables:</li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>emp[<span class="st">&#39;Salary_k&#39;</span>] <span class="op">=</span> emp[<span class="st">&#39;Salary&#39;</span>] <span class="op">/</span> <span class="dv">1000</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>emp[<span class="st">&#39;Salary_2x&#39;</span>] <span class="op">=</span> emp[<span class="st">&#39;Salary&#39;</span>] <span class="op">+</span> emp[<span class="st">&#39;Salary&#39;</span>]</span>
-<span id="cb21-3"><a href="#cb21-3"></a>emp[<span class="st">&#39;Salary_3x&#39;</span>] <span class="op">=</span> emp[<span class="st">&#39;Salary&#39;</span>] <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>nba[<span class="st">&#39;Salary_k&#39;</span>] <span class="op">=</span> nba[<span class="st">&#39;Salary&#39;</span>] <span class="op">/</span> <span class="dv">1000</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>nba[<span class="st">&#39;Salary_2x&#39;</span>] <span class="op">=</span> nba[<span class="st">&#39;Salary&#39;</span>] <span class="op">+</span> nba[<span class="st">&#39;Salary&#39;</span>]</span>
+<span id="cb20-3"><a href="#cb20-3"></a>nba[<span class="st">&#39;Salary_3x&#39;</span>] <span class="op">=</span> nba[<span class="st">&#39;Salary&#39;</span>] <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="pandas-basics-20" class="slide level2">
+<section id="pandas-basics-19" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="removing-variables-with-dropcolumns-...">Removing Variables with <code>drop(columns = ... )</code></h3>
 <div>
 <ul>
 <li>We can use <code>.drop(columns = ...)</code> to drop variables:</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>emp.drop(columns <span class="op">=</span> <span class="st">&quot;Salary_k&quot;</span>)</span>
-<span id="cb22-2"><a href="#cb22-2"></a>emp.drop(columns <span class="op">=</span> [<span class="st">&quot;Salary_2x&quot;</span>, <span class="st">&quot;Salary_3x&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>nba.drop(columns <span class="op">=</span> <span class="st">&quot;Salary_k&quot;</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a>nba.drop(columns <span class="op">=</span> [<span class="st">&quot;Salary_2x&quot;</span>, <span class="st">&quot;Salary_3x&quot;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="pandas-basics-21" class="slide level2">
+<section id="pandas-basics-20" class="slide level2">
 <h2>Pandas Basics</h2>
 <h3 id="relocating-variables-with-.columns.get_loc-.pop-and-.insert">Relocating Variables with <code>.columns.get_loc()</code>, <code>.pop()</code>, and <code>.insert()</code></h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>ref_var <span class="op">=</span> emp.columns.get_loc(<span class="st">&#39;Salary&#39;</span>) </span>
-<span id="cb23-2"><a href="#cb23-2"></a>var_to_move <span class="op">=</span> emp.pop(<span class="st">&#39;Mgmt&#39;</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a>emp.insert(ref_var, <span class="st">&#39;Mgmt&#39;</span>, var_to_move) <span class="co"># insert() directly alters &#39;emp&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>ref_var <span class="op">=</span> nba.columns.get_loc(<span class="st">&#39;Team&#39;</span>) </span>
+<span id="cb22-2"><a href="#cb22-2"></a>var_to_move <span class="op">=</span> nba.pop(<span class="st">&#39;Salary&#39;</span>)</span>
+<span id="cb22-3"><a href="#cb22-3"></a>nba.insert(ref_var, <span class="st">&#39;Salary&#39;</span>, var_to_move) <span class="co"># insert() directly alters &#39;nba&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><strong>Step 1</strong>. <code>DataFrame.columns.get_loc(&#39;Reference_Var&#39;)</code>
 <ul>
@@ -1598,6 +1615,20 @@ Byeong-Hak Choe
 <section id="converting-data-types-with-the-astype-method" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Converting Data Types with the <code>astype()</code> Method</h1>
 
+</section>
+<section id="pandas-basics-21" class="slide level2">
+<h2>Pandas Basics</h2>
+<div>
+<ul>
+<li>Let’s read <code>employment.csv</code> as <code>emp</code>.</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb23-4"><a href="#cb23-4"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://bcdanl.github.io/data/employment.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="pandas-basics-22" class="slide level2">
 <h2>Pandas Basics</h2>

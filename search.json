@@ -3119,7 +3119,7 @@
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-2",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLearning Objectives\n\nLocating Observations and Values with loc[] and iloc[]\nRenaming Variables\nMathematical & Vectorized Operations\nRemoving and Relocating Variables\nConverting Data Types\nFiltering Observations\nDealing with Missing Values\nDealing wit Duplicates"
+    "text": "Pandas Basics\nLearning Objectives\n\nLocating Observations and Values with loc[] and iloc[]\nMathematical & Vectorized Operations\nRenaming, Removing, and Relocating Variables\nConverting Data Types\nFiltering Observations\nDealing with Missing Values\nDealing wit Duplicates"
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-3",
@@ -3189,70 +3189,70 @@
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-12",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-13",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-13",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming columns with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-14",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-14",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Name_w_Position\"] = nba[\"Name\"] + \" (\" + nba[\"Position\"] + \")\"\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-15",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-15",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
+    "text": "Pandas Basics\nRenaming Variables with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-16",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-16",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nMathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
+    "text": "Pandas Basics\nRenaming Variables with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-17",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-17",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nVectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Name_w_Position\"] = nba[\"Name\"] + \" (\" + nba[\"Position\"] + \")\"\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
+    "text": "Pandas Basics\nRenaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-18",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-18",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\n\n\nLet’s read employment.csv as emp.\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")"
+    "text": "Pandas Basics\nAdding and Removing Variables\n\n\nHere we use [] to add variables:\n\nnba['Salary_k'] = nba['Salary'] / 1000\nnba['Salary_2x'] = nba['Salary'] + nba['Salary']\nnba['Salary_3x'] = nba['Salary'] * 3"
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-19",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-19",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nAdding and Removing Variables\n\n\nHere we use [] to add variables:\n\nemp['Salary_k'] = emp['Salary'] / 1000\nemp['Salary_2x'] = emp['Salary'] + emp['Salary']\nemp['Salary_3x'] = emp['Salary'] * 3"
+    "text": "Pandas Basics\nRemoving Variables with drop(columns = ... )\n\n\nWe can use .drop(columns = ...) to drop variables:\n\nnba.drop(columns = \"Salary_k\")\nnba.drop(columns = [\"Salary_2x\", \"Salary_3x\"])"
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-20",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-20",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRemoving Variables with drop(columns = ... )\n\n\nWe can use .drop(columns = ...) to drop variables:\n\nemp.drop(columns = \"Salary_k\")\nemp.drop(columns = [\"Salary_2x\", \"Salary_3x\"])"
+    "text": "Pandas Basics\nRelocating Variables with .columns.get_loc(), .pop(), and .insert()\nref_var = nba.columns.get_loc('Team') \nvar_to_move = nba.pop('Salary')\nnba.insert(ref_var, 'Salary', var_to_move) # insert() directly alters 'nba'\n\nStep 1. DataFrame.columns.get_loc('Reference_Var')\n\nGet the integer position (right before the reference variable, ‘Reference_Var’)\n\nStep 2. DataFrame.pop('Some_Var_To_Move')\n\nRemove the variable we want to relocate from the DataFrame and store it in a Series\n\nStep 3. DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)\n\nInsert the variable back into the DataFrame right after the reference variable."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-21",
     "href": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-21",
     "title": "Lecture 10",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nRelocating Variables with .columns.get_loc(), .pop(), and .insert()\nref_var = emp.columns.get_loc('Salary') \nvar_to_move = emp.pop('Mgmt')\nemp.insert(ref_var, 'Mgmt', var_to_move) # insert() directly alters 'emp'\n\nStep 1. DataFrame.columns.get_loc('Reference_Var')\n\nGet the integer position (right before the reference variable, ‘Reference_Var’)\n\nStep 2. DataFrame.pop('Some_Var_To_Move')\n\nRemove the variable we want to relocate from the DataFrame and store it in a Series\n\nStep 3. DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)\n\nInsert the variable back into the DataFrame right after the reference variable."
+    "text": "Pandas Basics\n\n\nLet’s read employment.csv as emp.\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")"
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#pandas-basics-22",
@@ -3547,5 +3547,12 @@
     "title": "Classwork 6",
     "section": "Question 8",
     "text": "Question 8\nIdentify the days when Netflix added only one movie to its catalog.\nAnswer:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-10-2024-0229.html#documenting-workflow",
+    "href": "danl-lec/danl-210-lec-10-2024-0229.html#documenting-workflow",
+    "title": "Lecture 10",
+    "section": "Documenting Workflow",
+    "text": "Documenting Workflow\nMust-know Shortcuts\n\n\nUse the shortcuts below whenever you edit a document, including Jupyter Notebook and Quarto:\n\n\n\nMac\n\ncommand + ⬆️/⬇️/⬅️/➡️\nshift + ⬆️/⬇️/⬅️/➡️\ncommand + shift + ⬆️/⬇️/⬅️/➡️:\ncommand + PgUp/PgDn\nshift + PgUp/PgDn\ncommand + shift + PgUp/PgDn:\n\n\nWindows\n\nCtrl + ⬆️/⬇️/⬅️/➡️\nShift + ⬆️/⬇️/⬅️/➡️\nCtrl + shift + ⬆️/⬇️/⬅️/➡️:\nCtrl + PgUp/PgDn\nShift + PgUp/PgDn\nCtrl + Shift + PgUp/PgDn:"
   }
 ]

@@ -43,6 +43,52 @@ knitr::knit_engines$set("markdown")
 
 
 
+## Documenting Workflow
+### Must-know Shortcuts
+
+
+::: {.nonincremental}
+
+- Use the shortcuts below whenever you edit a document, including Jupyter Notebook and Quarto:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Mac
+
+  - **command + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:** 
+  - **shift + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:** 
+  - **command + shift + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:**: 
+
+  - **command + PgUp/PgDn** 
+  - **shift + PgUp/PgDn** 
+  - **command + shift + PgUp/PgDn**: 
+
+
+
+:::
+
+::: {.column width="50%"}
+### Windows
+
+  - **Ctrl + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:** 
+  - **Shift + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:** 
+  - **Ctrl + shift + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:**: 
+
+  - **Ctrl + PgUp/PgDn** 
+  - **Shift + PgUp/PgDn** 
+  - **Ctrl + Shift + PgUp/PgDn**: 
+
+
+:::
+
+::::
+
+:::
+
+
+
+
 
 # Pandas Basics {background-color="#1c4982"}
 
@@ -62,9 +108,8 @@ knitr::knit_engines$set("markdown")
 
 
 - Locating Observations and Values  with `loc[]` and `iloc[]`
-- Renaming Variables
 - Mathematical & Vectorized Operations
-- Removing and Relocating Variables
+- Renaming, Removing, and Relocating Variables
 - Converting Data Types
 - Filtering Observations
 - Dealing with Missing Values
@@ -297,53 +342,6 @@ nba.iloc[
 
 
 
-# Renaming columns or rows  {background-color="#1c4982"}
-
-## Pandas Basics
-### Renaming columns with `nba.columns`
-
-
-:::{.nonincremental}
-
-- Do you recall the `.columns` attribute? 
-
-```{.python}
-nba.columns
-```
-
-- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
-
-```{.python}
-nba.columns = ["Team", "Position", "Date of Birth", "Income"]
-```
-
-:::
-
-
-## Pandas Basics
-### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
-
-
-```{.python}
-nba.rename( columns = { "Date of Birth": "Birthday" } )
-```
-
-- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
-
-
-
-## Pandas Basics
-### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
-
-```{.python}
-nba = nba.rename(
-    index = { "LeBron James": "LeBron Raymone James" }
-)
-```
-
-- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
-
-
 # Mathematical & Vectorized Operations  {background-color="#1c4982"}
 
 
@@ -409,7 +407,108 @@ nba["Salary_minus_Mean"] = nba["Salary"] - nba["Salary"].mean()
 
 
 
+
+# Renaming Variables  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming Variables with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming Variables with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
 # Removing and Relocating Variables {background-color="#1c4982"}
+
+
+
+## Pandas Basics
+### Adding and Removing Variables
+
+::: {.nonincremental}
+
+- Here we use `[]` to add variables:
+
+
+```{.python}
+nba['Salary_k'] = nba['Salary'] / 1000
+nba['Salary_2x'] = nba['Salary'] + nba['Salary']
+nba['Salary_3x'] = nba['Salary'] * 3
+```
+
+:::
+
+## Pandas Basics
+### Removing Variables with `drop(columns = ... )`
+
+::: {.nonincremental}
+
+- We can use `.drop(columns = ...)` to drop variables:
+
+
+```{.python}
+nba.drop(columns = "Salary_k")
+nba.drop(columns = ["Salary_2x", "Salary_3x"])
+```
+
+:::
+
+## Pandas Basics
+### Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
+
+```{.python}
+ref_var = nba.columns.get_loc('Team') 
+var_to_move = nba.pop('Salary')
+nba.insert(ref_var, 'Salary', var_to_move) # insert() directly alters 'nba'
+```
+
+- **Step 1**. `DataFrame.columns.get_loc('Reference_Var')`
+  - Get the integer position (right before the reference variable, 'Reference_Var')
+- **Step 2**. `DataFrame.pop('Some_Var_To_Move')`
+  - Remove the variable we want to relocate from the DataFrame and store it in a `Series`
+- **Step 3**. `DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)`
+  - Insert the variable back into the DataFrame right after the reference variable.
+
+
+
+# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
 
 
 ## Pandas Basics
@@ -427,58 +526,6 @@ emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
 
 
 :::
-
-## Pandas Basics
-### Adding and Removing Variables
-
-::: {.nonincremental}
-
-- Here we use `[]` to add variables:
-
-
-```{.python}
-emp['Salary_k'] = emp['Salary'] / 1000
-emp['Salary_2x'] = emp['Salary'] + emp['Salary']
-emp['Salary_3x'] = emp['Salary'] * 3
-```
-
-:::
-
-## Pandas Basics
-### Removing Variables with `drop(columns = ... )`
-
-::: {.nonincremental}
-
-- We can use `.drop(columns = ...)` to drop variables:
-
-
-```{.python}
-emp.drop(columns = "Salary_k")
-emp.drop(columns = ["Salary_2x", "Salary_3x"])
-```
-
-:::
-
-## Pandas Basics
-### Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
-
-```{.python}
-ref_var = emp.columns.get_loc('Salary') 
-var_to_move = emp.pop('Mgmt')
-emp.insert(ref_var, 'Mgmt', var_to_move) # insert() directly alters 'emp'
-```
-
-- **Step 1**. `DataFrame.columns.get_loc('Reference_Var')`
-  - Get the integer position (right before the reference variable, 'Reference_Var')
-- **Step 2**. `DataFrame.pop('Some_Var_To_Move')`
-  - Remove the variable we want to relocate from the DataFrame and store it in a `Series`
-- **Step 3**. `DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)`
-  - Insert the variable back into the DataFrame right after the reference variable.
-
-
-
-# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
-
 
 ## Pandas Basics
 ### Converting Data Types with the `astype()` method
