@@ -1,20 +1,24 @@
 ---
 title: Classwork 6
-subtitle: Pandas Basics - Sorting, Indexing, and Filtering Data
-date: 2024-02-22
+subtitle: Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates
+date: 2024-02-29
 execute: 
   eval: false
+  echo: false
   warning: false
   message: false
+  
 from: markdown+emoji
+comments: false
 ---
 
 ```{r}
 #| echo: false
-#| eval: true
 
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
+
+
 
 ## Direction
 
@@ -73,7 +77,7 @@ Optimize the DataFrame for limited memory use and maximum utility by using the `
 
 
 ## Question 2
-Find all observations with a title of "`Limitless`".
+Find all observations with a director of "`Martin Scorsese`".
 
 *Answer:*
 ```{python}
@@ -85,7 +89,7 @@ Find all observations with a title of "`Limitless`".
 
 
 ## Question 3
-Find all observations with a director of "`Robert Rodriguez`" and a type of "`Movie`".
+Find all observations with a title of "`Limitless`" and a type of "`Movie`".
 
 *Answer:*
 ```{python}
@@ -97,7 +101,7 @@ Find all observations with a director of "`Robert Rodriguez`" and a type of "`Mo
 
 
 ## Question 4
-Find all observations with either a date_added of "`2019-07-31`" or a director of "`Robert Altman`".
+Find all observations with either a `date_added` of "`2018-06-15`" or a director of "`Bong Joon Ho`".
 
 *Answer:*
 ```{python}
@@ -109,7 +113,7 @@ Find all observations with either a date_added of "`2019-07-31`" or a director o
 
 
 ## Question 5
-Find all observations with a director of "`Orson Welles`", "`Aditya Kripalani`", or "`Sam Raimi`".
+Find all observations with a director of "`Ethan Coen`, "`Joel Coen`", and "`Quentin Tarantino`".
 
 *Answer:*
 ```{python}
@@ -121,7 +125,7 @@ Find all observations with a director of "`Orson Welles`", "`Aditya Kripalani`",
 
 
 ## Question 6
-Find all observations with a `date_added` value between May 1, 2019 and June 1, 2019.
+Find all observations with a `date_added` value between January 1, 2019 and February 1, 2019.
 
 *Answer:*
 ```{python}
@@ -132,29 +136,27 @@ Find all observations with a `date_added` value between May 1, 2019 and June 1, 
 
 
 
-<!-- ## Question 7 -->
-<!-- Drop all rows with a `NaN` value in the `director` variable. -->
+## Question 7
+Drop all observations with a `NaN` value in the `director` variable.
 
-<!-- *Answer:* -->
-<!-- ```{python} -->
+*Answer:*
+```{python}
 
-<!-- ``` -->
+```
 
-<!-- <br> -->
-
-
-
-<!-- ## Question 8 -->
-<!-- Identify the days when Netflix added only one movie to its catalog. -->
-
-<!-- *Answer:* -->
-<!-- ```{python} -->
-
-<!-- ``` -->
-
-<!-- <br><br> -->
+<br><br>
 
 
+
+## Question 8
+Identify the days when Netflix added only one movie to its catalog.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
 
 
 

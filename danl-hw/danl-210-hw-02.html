@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2024-02-28">
+<meta name="dcterms.date" content="2024-02-29">
 
 <title>Homework 2 | Byeong-Hak Choe</title>
 <style>
@@ -266,14 +266,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 28, 2024</p>
+      <p class="date">February 29, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 28, 2024</p>
+      <p class="date-modified">February 29, 2024</p>
     </div>
   </div>
     
@@ -285,6 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="direction" class="level1">
 <h1>Direction</h1>
 <ul>
+<li><p>Please use the Homework 2 Jupyter Notebook, <code>danl-210-hw-02-q.ipynb</code>, available from Brightspace.</p></li>
 <li><p>Please submit your <strong>Jupyter Notebook for Part 1 in Homework 2</strong> to the Brightspace with the name below:</p>
 <ul>
 <li><code>danl-210-hw2-LASTNAME-FIRSTNAME.ipynb</code><br>
@@ -384,10 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <ul>
-<li>How many employees have a “Base Salary” within the top 10% of the DataFrame?
-<ul>
-<li>Hint: The <code>.quantile()</code> method can be useful.</li>
-</ul></li>
+<li>How many employees have a “Base Salary” within the top 10% of the DataFrame?</li>
 </ul>
 <p><em>Answer</em></p>
 <p><br><br></p>
@@ -428,6 +426,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>spotify <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/spotify_all.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">paged_table</span>(readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://bcdanl.github.io/data/spotify_all.csv'</span>),</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">options =</span> <span class="fu">list</span>(<span class="at">rows.print =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">

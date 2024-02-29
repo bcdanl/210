@@ -9,6 +9,8 @@ execute:
 
 # Direction
 
+- Please use the Homework 2 Jupyter Notebook, `danl-210-hw-02-q.ipynb`, available from Brightspace.
+
 - Please submit your **Jupyter Notebook for Part 1 in Homework 2** to the Brightspace with the name below:
 
   - `danl-210-hw2-LASTNAME-FIRSTNAME.ipynb`\
@@ -166,7 +168,6 @@ Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION
 ## Question 8
 
 - How many employees have a "Base Salary" within the top 10% of the DataFrame?
-  - Hint: The `.quantile()` method can be useful.
 
 
 *Answer*
@@ -236,7 +237,7 @@ spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
 
 ```{r}
 #| eval: true
-#| echo: false
+#| echo: true
 #| warning: false
 
 rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),

@@ -1,0 +1,1023 @@
+---
+title: Lecture 10
+subtitle: Pandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Converting Data Types
+format:
+  clean-revealjs:
+    self-contained: true
+    incremental: true   
+    # css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-02-29
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+include-after-body: target-hover.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+
+
+
+# Pandas Basics {background-color="#1c4982"}
+
+## Pandas Basics
+### Review
+
+- Loading `DataFrame` with `read_csv()`
+- Getting a Summary with `info()` and `describe()`
+- Selecting Variables with `[]`
+- Counting Values with `value_counts()`, `nunique()`, and `count()`
+- Sorting with `sort_values()` and `sort_index()`
+- Indexing with `set_index()` and `reset_index()`
+
+
+## Pandas Basics
+### Learning Objectives
+
+
+- Locating Observations and Values  with `loc[]` and `iloc[]`
+- Renaming Variables
+- Mathematical & Vectorized Operations
+- Removing and Relocating Variables
+- Converting Data Types
+- Filtering Observations
+- Dealing with Missing Values
+- Dealing wit Duplicates
+
+
+
+
+# Locating Observations {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `nba.csv` as `nba`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+```
+
+
+:::
+
+
+## Pandas Basics
+### Locating Observations/Values
+
+- We can extract observations, variables, and values from a `DataFrame` by using the `loc[]` and `iloc[]` accessors. 
+
+  - These accessors work well when we know the **index labels and positions** of the observations/variables we want to target.
+  
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `Name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by **index label** (row name).
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Note: Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+
+
+
+## Pandas Basics
+### Locating Observations by `.iloc[ Index Positions ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the **slicing** syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+
+## Pandas Basics
+
+Let's do [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+
+# Locating Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="38%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="62%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
+
+
+# Renaming columns or rows  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming columns with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming columns with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
+# Mathematical & Vectorized Operations  {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Mathematical Operations
+
+```{.python}
+nba.max()
+nba.min()
+```
+- The `max()` method returns a `Series` with the maximum value from each variable.
+- The `min()` method returns a `Series` with the minimum value from each variable.
+
+
+## Pandas Basics
+### Mathematical Operations
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{.python}
+nba.sum()
+nba.mean()
+nba.median()
+nba.quantile(0.75) # 0 to 1
+nba.std()
+```
+:::
+
+::: {.column width="55%"}
+```{.python}
+nba.sum(numeric_only = True)
+nba.mean(numeric_only = True)
+nba.median(numeric_only = True)
+nba.quantile(0.75, numeric_only=True)
+nba.std(numeric_only = True)
+```
+:::
+
+::::
+
+- The `sum()`/`mean()`/`median()` method returns a `Series` with the sum/mean/median of the values in each variable.
+- The `quantile()` method returns a `Series` with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).
+- The `std()` method returns a `Series` with the standard deviation of the values in each variable.
+- To limit the operation to numeric volumes, we can pass `True` to the `sum()`/`mean()`/`median()`/`std()` method’s `numeric_only` parameter.
+
+
+
+
+## Pandas Basics
+### Vectorized Operations
+
+```{.python}
+nba["Salary_2x"] = nba["Salary"] + nba["Salary"]
+nba["Name_w_Position"] = nba["Name"] + " (" + nba["Position"] + ")"
+nba["Salary_minus_Mean"] = nba["Salary"] - nba["Salary"].mean()
+```
+
+- `pandas` performs a *vectorized operation* on `Series` or a variable in `DataFrame`.
+  - This means an element-by-element operation.
+  - This enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops.
+
+
+
+
+# Removing and Relocating Variables {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+
+:::
+
+## Pandas Basics
+### Adding and Removing Variables
+
+::: {.nonincremental}
+
+- Here we use `[]` to add variables:
+
+
+```{.python}
+emp['Salary_k'] = emp['Salary'] / 1000
+emp['Salary_2x'] = emp['Salary'] + emp['Salary']
+emp['Salary_3x'] = emp['Salary'] * 3
+```
+
+:::
+
+## Pandas Basics
+### Removing Variables with `drop(columns = ... )`
+
+::: {.nonincremental}
+
+- We can use `.drop(columns = ...)` to drop variables:
+
+
+```{.python}
+emp.drop(columns = "Salary_k")
+emp.drop(columns = ["Salary_2x", "Salary_3x"])
+```
+
+:::
+
+## Pandas Basics
+### Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
+
+```{.python}
+ref_var = emp.columns.get_loc('Salary') 
+var_to_move = emp.pop('Mgmt')
+emp.insert(ref_var, 'Mgmt', var_to_move) # insert() directly alters 'emp'
+```
+
+- **Step 1**. `DataFrame.columns.get_loc('Reference_Var')`
+  - Get the integer position (right before the reference variable, 'Reference_Var')
+- **Step 2**. `DataFrame.pop('Some_Var_To_Move')`
+  - Remove the variable we want to relocate from the DataFrame and store it in a `Series`
+- **Step 3**. `DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)`
+  - Insert the variable back into the DataFrame right after the reference variable.
+
+
+
+# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+::: {.nonincremental}
+
+- What values are in the `Mgmt` variable?
+
+:::
+
+```{.python}
+emp["Mgmt"].astype(bool)
+```
+
+
+- The `astype()` method converts a `Series`' values to a different data type. 
+  - It can accept a single argument: the new data type. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Mgmt"] = emp["Mgmt"].astype(bool)
+```
+
+- The above code overwrites the `Mgmt` variable with our new `Series` of Booleans.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Salary"].astype(int)
+```
+
+- The above code tries to coerce the `Salary` variable's values to integers with the `astype()` method.
+  - Pandas is unable to convert the `NaN` values to integers.
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"].fillna(0)
+```
+
+- The `fillna()` method replaces a `Series`' missing values with the argument we pass in. 
+- The above example provides a fill value of `0`. 
+  - Note that our choice of value can distort the data; `0` is passed solely for the sake of example.
+
+
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"] = emp["Salary"].fillna(0).astype(int)
+```
+
+- The above code overwrites the `Salary` variable with our new `Series` of integers.
+
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Gender"] = emp["Gender"].astype("category")
+```
+
+- Pandas includes a special data type called a `category`, 
+  - It is ideal for a variable consisting of a small number of unique values relative
+to its total size. 
+  - E.g., gender, weekdays, blood types, planets, and income groups. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `pd.to_datetime()` method
+
+```{.python}
+# Below two are equivalent:
+emp["Start Date"] = pd.to_datetime(emp["Start Date"])
+emp["Start Date"] = emp["Start Date"].astype('datetime64')
+```
+
+- The `pd.to_datetime()` function is used to convert a `Series`, `DataFrame`, or a single variable of a `DataFrame` from its current data type into `datetime` format. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+
+emp["Salary"] = emp["Salary"].fillna(0)
+emp = emp.astype({'Mgmt': 'bool', 
+                  'Salary': 'int',
+                  'Gender': 'category',
+                  'Start Date': 'datetime64'})
+```
+
+- We can provide a dictionary of variable-type pairs to `astype()`.
+
+
+## Pandas Basics
+
+Let's do Question 1 in [Classwork 6](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+
+# Filtering by a Single Condition {background-color="#1c4982"}
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+- We may often not know the **index labels and positions** of the observations we want to target.
+
+- We may want to target observations not by an index label but by a **Boolean condition**.
+
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp["First Name"] == "Donna"
+```
+
+
+- To compare every value in `Series` with a constant value, we place the `Series` on one side of the equality operator (`==`) and the value on the other.
+  - `Series == value`
+
+- The above example compares each `First Name` value with "Donna".
+  - pandas performs a vectorized operation (element-by-element operation) on `Series`.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp[ emp["First Name"] == "Donna" ]
+```
+
+- To filter observations, we provide the Boolean `Series` between square brackets following the `DataFrame`.
+  - `DataFrame[ Boolean_Series ]`
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+donnas = emp["First Name"] == "Donna"
+emp[ donnas ]
+```
+
+
+- If the use of multiple square brackets is confusing, we can assign the Boolean
+`Series` to an object and then pass it into the square brackets instead.
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+::: {.nonincremental}
+- What if we want to extract a subset of employees who are not on the "`Marketing`" team?
+
+:::
+
+```{.python}
+non_marketing = emp["Team"] != "Marketing"  # != means "not equal to"
+emp[ non_marketing ]
+```
+
+- `True` denotes that the `Team` value for a given index is not "`Marketing`", and `False` indicates the `Team` value is "`Marketing`"
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+::: {.nonincremental}
+
+- What if we want to retrieve all the managers in the company? 
+  - Managers have a value of `True` in the `Mgmt` variable.
+
+:::
+
+```{.python}
+emp[ emp["Mgmt"] ]
+```
+
+- We could execute `emp["Mgmt"] == True`, but we do not need to.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+high_earners = emp["Salary"] > 100000
+emp[ high_earners ]
+```
+
+- We can also use arithmetic operands to filter observations based on mathematical conditions.
+
+
+# Filtering by a Condition {background-color="#1c4982"}
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+sales = emp["Team"] == "Sales"
+legal = emp["Team"] == "Legal"
+fnce = emp["Team"] == "Finance"
+emp[ sales | legal | fnce ] # '|' is 'or' opeartor
+```
+
+- We could provide three separate Boolean `Series` inside the square brackets and add the `|` symbol to declare `OR` criteria.
+
+- What if our next report asked for employees from 30 teams instead of three? 
+
+
+
+## Pandas Basics
+### Filtering with the `isin()` method
+
+```{.python}
+star_teams = ["Sales", "Legal", "Finance"]
+on_star_teams = emp["Team"].isin(star_teams)
+emp[ on_star_teams ]
+```
+
+
+- A better solution is the `isin()` method, which accepts an iterable (e.g., `list`, `tuple`, `array`, `Series`) and returns a Boolean `Series`. 
+
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+:::{.nonincremental}
+- When working with numbers or dates, we often want to extract values that fall within a range. 
+  - E.g., Identify all employees with a salary between $90,000 and $100,000. 
+
+:::
+
+```{.python}
+higher_than_90k = emp["Salary"] >= 90000
+lower_than_100k = emp["Salary"] < 100000
+emp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor
+```
+
+- We can create two Boolean `Series`, one to declare the lower bound and one to declare the upper bound. 
+
+- Then we can use the `&` operator to mandate that both conditions are `True`.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+
+```{.python}
+between_90k_and_100k = emp["Salary"].between(90000, 100000)
+emp[ between_90k_and_100k ]
+```
+
+- A slightly cleaner solution is to use a method called `between()`.
+  - It returns a Boolean Series where `True` denotes that an observation's value falls between the specified interval.
+  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is **exclusive**.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+```{.python}
+name_starts_with_t = emp["First Name"].between("T", "U")
+emp[ name_starts_with_t ]
+```
+
+- We can also apply the `between()` method to *string* variables.
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition with the `query()` method!
+
+```{.python}
+emp.query("Salary >= 100000 & Team == 'Finance'")
+emp.query("Salary >= 100000 & `First Name` == 'Douglas'")
+```
+
+- The `query()` method filters observations using a concise, **string**-based query syntax. 
+  - `query()` accepts a string value that describes filtering conditions.
+
+- When using the `query()` method, if we have variable names with spaces, we can wrap the variable names in backtick (`)
+  
+## Pandas Basics
+
+Let's do Questions 2-6 in [Classwork 6](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+
+# Dealing with Missing Values {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Missing Values
+
+- Pandas often marks (1) missing text values and (2) missing numeric values with a `NaN` (not a number); 
+  - It also marks missing datetime values with a `NaT` (not a time).
+
+<!-- - We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable. -->
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+emp["Team"].isna()
+emp["Start Date"].isna()
+```
+
+- The `isna()` method returns a Boolean `Series` in which `True` denotes that an observation's value is missing.
+  - Is a value of a variable "XYZ" missing?
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+# Below two are equivalent.
+emp["Team"].notna()
+~emp["Team"].isna()
+```
+
+- The `notna()` method returns the inverse `Series`, one in which `True` indicates that an observation's value is present.
+
+- We use the tilde symbol (`~`) to invert a Boolean `Series`.
+
+- **Q**. How can we pull out employees with non-missing `Team` values?
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv",
+                  parse_dates = ["Start Date"])
+emp.dropna()
+```
+
+- The `dropna()` method removes observations that hold any `NaN` or `NaT` values.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `how`
+
+```{.python}
+emp.dropna(how = "all")
+```
+- We can pass the `how` parameter an argument of `"all"` to remove observations in which all values are missing.
+
+- Note that the `how` parameter’s default argument is `"any"`. 
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Gender"])
+```
+
+- We can use the `subset` parameter to target observations with a missing value in a specific variable.
+  - The above example removes observations that have a missing value in the `Gender` variable.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Start Date", "Salary"])
+```
+
+- We can also pass the `subset` parameter a list of variables.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `thresh`
+
+```{.python}
+emp.dropna(thresh = 4)
+```
+
+- The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.
+
+
+
+
+# Dealing with Duplicates {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+::: {.nonincremental}
+- Missing values are a common occurrence in messy data sets, and so are duplicate values.
+
+:::
+
+```{.python}
+emp["Team"].duplicated()
+```
+
+- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a
+variable.
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+```{.python}
+emp["Team"].duplicated(keep = "first")
+emp["Team"].duplicated(keep = "last")
+~emp["Team"].duplicated()
+```
+
+- The `duplicated()` method’s `keep` parameter informs pandas which duplicate occurrence to keep. 
+  - Its default argument, `"first"`, keeps the first occurrence of each duplicate value.
+  - Its argument, `"last"`, keeps the last occurrence of each duplicate value.
+
+- **Q**. How can we keep observations with the first occurrences of a value in the Team variable?
+
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates()
+```
+
+
+- The `drop_duplicates()` method removes observations in which all values are equal to those in a previously encountered observations.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+
+::: {.nonincremental}
+- Below is an example of the `drop_duplicates()` method:
+
+:::
+
+```{.python}
+# Sample DataFrame with duplicate observations
+data = {
+    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],
+    'Age': [28, 23, 28, 32, 23],
+    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']
+}
+
+# pd.DataFrame( Series, List, or Dict ) creates a DataFrame
+df = pd.DataFrame(data)  
+df_unique = df.drop_duplicates()
+```
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"])
+```
+
+- We can pass the `drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+
+  - The above example finds the first occurrence of each unique value in the Team variable.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Gender", "Team"])
+```
+
+- The above example uses a combination of values across the `Gender` and `Team` variables to identify duplicates.
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"], keep = "last")
+emp.drop_duplicates(subset = ["Team"], keep = False)
+```
+
+- The `drop_duplicates()` method also accepts a `keep` parameter. 
+  - We can pass it an argument of `"last"` to keep the observations with each duplicate value’s last occurrence.
+  - We can pass it an argument of `False` to exclude all observations with duplicate values.
+  
+- **Q**. What does `emp.drop_duplicates(subset = ["First Name"], keep = False)` do?
+
+- **Q**. Find a subset of all employees with a First Name of "Douglas" and a Gender of "Male". Then check which "Douglas" is in the DataFrame `emp.drop_duplicates(subset = ["Gender", "Team"])`.
+
+
+
+
+
+
+## Pandas Basics
+
+Let's do Questions 7-8 in [Classwork 6](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+

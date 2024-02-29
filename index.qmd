@@ -19,6 +19,7 @@ listing:
     type: table
     fields: [title, date]
     sort: 
+      - "date desc"
       - "title desc"
     sort-ui: false
     filter-ui: false
@@ -29,6 +30,7 @@ listing:
     type: table
     fields: [title, date]
     sort: 
+      - "date desc"
       - "title desc"
     sort-ui: false
     filter-ui: false
@@ -39,6 +41,7 @@ listing:
     type: table
     fields: [title, date]
     sort: 
+      - "date desc"
       - "title desc"
     sort-ui: false
     filter-ui: false
@@ -48,6 +51,7 @@ listing:
     type: table
     fields: [title, date]
     sort: 
+      - "date desc"
       - "title desc"
     sort-ui: false
     filter-ui: false
