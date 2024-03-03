@@ -68,7 +68,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/nyc_payrol
 <br><br>
 
 ## Question 1
-Select "First Name", "Last Name", "Base Salary", and "Total OT Paid", then sort these selected variables by "Base Salary" in descending order and display the top 10 entries.
+Select "First Name", "Last Name", "Base Salary", and "Total OT Paid", then sort the DataFrame with these selected variables by "Base Salary" in descending order and display the top 10 entries.
 
 
 
