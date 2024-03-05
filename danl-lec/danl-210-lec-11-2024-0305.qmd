@@ -1,0 +1,1269 @@
+---
+title: Lecture 11
+subtitle: Pandas Basics - Converting Data Types; Filtering Methods
+format:
+  clean-revealjs:
+    self-contained: true
+    incremental: true   
+    # css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-03-05
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+include-after-body: target-hover.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+
+# Pandas Basics {background-color="#1c4982"}
+
+## Pandas Basics
+### Review
+
+- Loading `DataFrame` with `read_csv()`
+- Getting a Summary with `info()` and `describe()`
+- Selecting Variables with `[]`
+- Counting Values with `value_counts()`, `nunique()`, and `count()`
+- Sorting with `sort_values()` and `sort_index()`
+- Indexing with `set_index()` and `reset_index()`
+- Locating Observations and Values  with `loc[]` and `iloc[]`
+- Mathematical & Vectorized Operations
+- Renaming, Removing, and Relocating Variables
+
+
+## Pandas Basics
+### Learning Objectives
+
+
+- Converting Data Types
+- Filtering Observations
+- Dealing with Missing Values
+- Dealing wit Duplicates
+
+
+
+
+# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+
+:::
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+::: {.nonincremental}
+
+- What values are in the `Mgmt` variable?
+
+:::
+
+```{.python}
+emp["Mgmt"].astype(bool)
+```
+
+
+- The `astype()` method converts a `Series`' values to a different data type. 
+  - It can accept a single argument: the new data type. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Mgmt"] = emp["Mgmt"].astype(bool)
+```
+
+- The above code overwrites the `Mgmt` variable with our new `Series` of Booleans.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Salary"].astype(int)
+```
+
+- The above code tries to coerce the `Salary` variable's values to integers with the `astype()` method.
+  - Pandas is unable to convert the `NaN` values to integers.
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"].fillna(0)
+```
+
+- The `fillna()` method replaces a `Series`' missing values with the argument we pass in. 
+- The above example provides a fill value of `0`. 
+  - Note that our choice of value can distort the data; `0` is passed solely for the sake of example.
+
+
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"] = emp["Salary"].fillna(0).astype(int)
+```
+
+- The above code overwrites the `Salary` variable with our new `Series` of integers.
+
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Gender"] = emp["Gender"].astype("category")
+```
+
+- Pandas includes a special data type called a `category`, 
+  - It is ideal for a variable consisting of a small number of unique values relative
+to its total size. 
+  - E.g., gender, weekdays, blood types, planets, and income groups. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `pd.to_datetime()` method
+
+```{.python}
+# Below two are equivalent:
+emp["Start Date"] = pd.to_datetime(emp["Start Date"])
+emp["Start Date"] = emp["Start Date"].astype('datetime64')
+```
+
+- The `pd.to_datetime()` function is used to convert a `Series`, `DataFrame`, or a single variable of a `DataFrame` from its current data type into `datetime` format. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+
+emp["Salary"] = emp["Salary"].fillna(0)
+emp = emp.astype({'Mgmt': 'bool', 
+                  'Salary': 'int',
+                  'Gender': 'category',
+                  'Start Date': 'datetime64'})
+```
+
+- We can provide a dictionary of variable-type pairs to `astype()`.
+
+
+## Pandas Basics
+
+Let's do Question 1 in [Classwork 6](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+
+# Filtering by a Single Condition {background-color="#1c4982"}
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+- We may often not know the **index labels and positions** of the observations we want to target.
+
+- We may want to target observations not by an index label but by a **Boolean condition**.
+
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp["First Name"] == "Donna"
+```
+
+
+- To compare every value in `Series` with a constant value, we place the `Series` on one side of the equality operator (`==`) and the value on the other.
+  - `Series == value`
+
+- The above example compares each `First Name` value with "Donna".
+  - pandas performs a vectorized operation (element-by-element operation) on `Series`.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp[ emp["First Name"] == "Donna" ]
+```
+
+- To filter observations, we provide the Boolean `Series` between square brackets following the `DataFrame`.
+  - `DataFrame[ Boolean_Series ]`
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+donnas = emp["First Name"] == "Donna"
+emp[ donnas ]
+```
+
+
+- If the use of multiple square brackets is confusing, we can assign the Boolean
+`Series` to an object and then pass it into the square brackets instead.
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+::: {.nonincremental}
+- What if we want to extract a subset of employees who are not on the "`Marketing`" team?
+
+:::
+
+```{.python}
+non_marketing = emp["Team"] != "Marketing"  # != means "not equal to"
+emp[ non_marketing ]
+```
+
+- `True` denotes that the `Team` value for a given index is not "`Marketing`", and `False` indicates the `Team` value is "`Marketing`"
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+::: {.nonincremental}
+
+- What if we want to retrieve all the managers in the company? 
+  - Managers have a value of `True` in the `Mgmt` variable.
+
+:::
+
+```{.python}
+emp[ emp["Mgmt"] ]
+```
+
+- We could execute `emp["Mgmt"] == True`, but we do not need to.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+high_earners = emp["Salary"] > 100000
+emp[ high_earners ]
+```
+
+- We can also use arithmetic operands to filter observations based on mathematical conditions.
+
+
+# Filtering by a Condition {background-color="#1c4982"}
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+sales = emp["Team"] == "Sales"
+legal = emp["Team"] == "Legal"
+fnce = emp["Team"] == "Finance"
+emp[ sales | legal | fnce ] # '|' is 'or' opeartor
+```
+
+- We could provide three separate Boolean `Series` inside the square brackets and add the `|` symbol to declare `OR` criteria.
+
+- What if our next report asked for employees from 30 teams instead of three? 
+
+
+
+## Pandas Basics
+### Filtering with the `isin()` method
+
+```{.python}
+star_teams = ["Sales", "Legal", "Finance"]
+on_star_teams = emp["Team"].isin(star_teams)
+emp[ on_star_teams ]
+```
+
+
+- A better solution is the `isin()` method, which accepts an iterable (e.g., `list`, `tuple`, `array`, `Series`) and returns a Boolean `Series`. 
+
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+:::{.nonincremental}
+- When working with numbers or dates, we often want to extract values that fall within a range. 
+  - E.g., Identify all employees with a salary between $90,000 and $100,000. 
+
+:::
+
+```{.python}
+higher_than_90k = emp["Salary"] >= 90000
+lower_than_100k = emp["Salary"] < 100000
+emp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor
+```
+
+- We can create two Boolean `Series`, one to declare the lower bound and one to declare the upper bound. 
+
+- Then we can use the `&` operator to mandate that both conditions are `True`.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+
+```{.python}
+between_90k_and_100k = emp["Salary"].between(90000, 100000)
+emp[ between_90k_and_100k ]
+```
+
+- A slightly cleaner solution is to use a method called `between()`.
+  - It returns a Boolean Series where `True` denotes that an observation's value falls between the specified interval.
+  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is **exclusive**.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+```{.python}
+name_starts_with_t = emp["First Name"].between("T", "U")
+emp[ name_starts_with_t ]
+```
+
+- We can also apply the `between()` method to *string* variables.
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition with the `query()` method!
+
+```{.python}
+emp.query("Salary >= 100000 & Team == 'Finance'")
+emp.query("Salary >= 100000 & `First Name` == 'Douglas'")
+```
+
+- The `query()` method filters observations using a concise, **string**-based query syntax. 
+  - `query()` accepts a string value that describes filtering conditions.
+
+- When using the `query()` method, if we have variable names with spaces, we can wrap the variable names in backtick (`)
+  
+## Pandas Basics
+
+Let's do Questions 2-6 in [Classwork 6](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+
+# Dealing with Missing Values {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Missing Values
+
+- Pandas often marks (1) missing text values and (2) missing numeric values with a `NaN` (not a number); 
+  - It also marks missing datetime values with a `NaT` (not a time).
+
+<!-- - We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable. -->
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+emp["Team"].isna()
+emp["Start Date"].isna()
+```
+
+- The `isna()` method returns a Boolean `Series` in which `True` denotes that an observation's value is missing.
+  - Is a value of a variable "XYZ" missing?
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+# Below two are equivalent.
+emp["Team"].notna()
+~emp["Team"].isna()
+```
+
+- The `notna()` method returns the inverse `Series`, one in which `True` indicates that an observation's value is present.
+
+- We use the tilde symbol (`~`) to invert a Boolean `Series`.
+
+- **Q**. How can we pull out employees with non-missing `Team` values?
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `value_counts(dropna = False)` method
+
+```{.python}
+emp["Mgmt"].isna().sum()
+emp["Mgmt"].value_counts()
+emp["Mgmt"].value_counts(dropna = False)
+```
+
+- One way to missing data counts is to use the `isna().sum()` on a `Series`.
+  - `True` is 1 and `False` is 0.
+
+- Another way to get missing data counts is to use the `.value_counts()` method on a `Series`. 
+  - If we use the `dropna = False` option, we can also get a missing value count.
+
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv",
+                  parse_dates = ["Start Date"])
+emp.dropna()
+```
+
+- The `dropna()` method removes observations that hold any `NaN` or `NaT` values.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `how`
+
+```{.python}
+emp.dropna(how = "all")
+```
+- We can pass the `how` parameter an argument of `"all"` to remove observations in which all values are missing.
+
+- Note that the `how` parameter’s default argument is `"any"`. 
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Gender"])
+```
+
+- We can use the `subset` parameter to target observations with a missing value in a specific variable.
+  - The above example removes observations that have a missing value in the `Gender` variable.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Start Date", "Salary"])
+```
+
+- We can also pass the `subset` parameter a list of variables.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `thresh`
+
+```{.python}
+emp.dropna(thresh = 4)
+```
+
+- The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.
+
+
+
+
+# Dealing with Duplicates {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+::: {.nonincremental}
+- Missing values are a common occurrence in messy data sets, and so are duplicate values.
+
+:::
+
+```{.python}
+emp["Team"].duplicated()
+```
+
+- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a
+variable.
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+```{.python}
+emp["Team"].duplicated(keep = "first")
+emp["Team"].duplicated(keep = "last")
+~emp["Team"].duplicated()
+```
+
+- The `duplicated()` method’s `keep` parameter informs pandas which duplicate occurrence to keep. 
+  - Its default argument, `"first"`, keeps the first occurrence of each duplicate value.
+  - Its argument, `"last"`, keeps the last occurrence of each duplicate value.
+
+- **Q**. How can we keep observations with the first occurrences of a value in the Team variable?
+
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates()
+```
+
+
+- The `drop_duplicates()` method removes observations in which all values are equal to those in a previously encountered observations.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+
+::: {.nonincremental}
+- Below is an example of the `drop_duplicates()` method:
+
+:::
+
+```{.python}
+# Sample DataFrame with duplicate observations
+data = {
+    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],
+    'Age': [28, 23, 28, 32, 23],
+    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']
+}
+
+# pd.DataFrame( Series, List, or Dict ) creates a DataFrame
+df = pd.DataFrame(data)  
+df_unique = df.drop_duplicates()
+```
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"])
+```
+
+- We can pass the `drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+
+  - The above example finds the first occurrence of each unique value in the Team variable.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Gender", "Team"])
+```
+
+- The above example uses a combination of values across the `Gender` and `Team` variables to identify duplicates.
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"], keep = "last")
+emp.drop_duplicates(subset = ["Team"], keep = False)
+```
+
+- The `drop_duplicates()` method also accepts a `keep` parameter. 
+  - We can pass it an argument of `"last"` to keep the observations with each duplicate value’s last occurrence.
+  - We can pass it an argument of `False` to exclude all observations with duplicate values.
+  
+- **Q**. What does `emp.drop_duplicates(subset = ["First Name"], keep = False)` do?
+
+- **Q**. Find a subset of all employees with a First Name of "Douglas" and a Gender of "Male". Then check which "Douglas" is in the DataFrame `emp.drop_duplicates(subset = ["Gender", "Team"])`.
+
+
+
+
+
+
+## Pandas Basics
+
+Let's do Questions 7-8 in [Classwork 6](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+
+
+# Group Operations {background-color="#1c4982"}
+
+## Group Operations
+
+- The pandas library’s `GroupBy` object is a storage container for grouping observations into buckets. 
+
+- It provides a set of methods to aggregate and analyze each independent group in the collection. 
+
+- It allows us to extract observations at specific index positions within each group. 
+
+- It also offers a convenient way to iterate over the groups of observations. 
+
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+
+:::{.nonincremental}
+- `pd.DataFrame()` converts a `List`/`Dictionary`/`Series` into a `DataFrame` ojbect
+
+:::
+
+```{.python}
+# Creating a dictionary
+food_data = {
+"Item": ["Apple", "Onion", "Orange", "Tomato", "Watermelon"],
+"Type": ["Fruit", "Vegie", "Fruit", "Vegie", "Fruit"],
+"Price": [1.05, 1.00, 1.25, 0.85, 4.15]
+}
+
+# Converting a dictionary into a DataFrame
+supermarket = pd.DataFrame(data = food_data)
+```
+
+
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+
+
+```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
+text_tbl <- data.frame(
+  Index = 0:4,
+  Item = c("Apple", "Onion", "Orange", "Tomato", "Watermelon"),
+  Type = c("Fruit", "Vegie", "Fruit", "Vegie", "Fruit"),
+  Price = c(1.05, 1.00, 1.25, 0.85, 4.15)
+  )
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+```
+
+
+- The `Type` variable identifies the group to which an `Item` belongs. 
+  - There are two groups of items in the supermarket data set: "Fruit" and "Vegie".
+  - We can use terms such as groups, buckets, and clusters interchangeably to describe the same idea. 
+  - Multiple observations fall into the same category.
+  
+
+
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+
+
+```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
+text_tbl <- data.frame(
+  Index = c(0, 2, 4, 1, 3),
+  Item = c("Apple", "Orange", "Watermelon", "Onion", "Tomato"),
+  Type = c("Fruit", "Fruit", "Fruit", "Vegie", "Vegie"),
+  Price = c(1.05, 1.25, 4.15, 1.00, 0.85)
+  )
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+```
+
+
+- The `GroupBy` object implicitly organizes observations into buckets based on shared values in a categorical variable. 
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+- Suppose that we are interested in the *average price* of a fruit and the *average price* of a vegie. 
+  - If we could isolate the "Fruit" observations and "Vegie" observations into separate groups, it would be easier to perform the calculations.
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+
+:::{.nonincremental}
+- Let's begin by invoking the `groupby()` method on the supermarket `DataFrame`.
+  - We need to pass `groupby()` a categorical variable whose values will be used to create the groups.
+  
+:::
+
+```{.python}
+groups = supermarket.groupby("Type")
+groups
+```
+
+
+- The `DataFrameGroupBy` object is separate and distinct from a `DataFrame`
+
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+
+:::{.nonincremental}
+
+- The "Type" variable has two unique values, so the `GroupBy` object will store two groups.
+
+:::
+
+```{.python}
+groups.get_group("Fruit")
+groups.get_group("Vegie")
+```
+
+
+- The `get_group()` method accepts a group name and returns a `DataFrame` with the corresponding observations.
+
+
+## Group Operations
+### Creating a `GroupBy` Object
+
+:::{.nonincremental}
+
+- Our original goal was to calculate the average price of the fruits and vegetables in supermarket.
+
+:::
+
+```{.python}
+groups.mean()
+```
+
+- With a few lines of code, we have successfully split, aggregated, and analyzed a data set
+
+
+## Group Operations
+### Fortune 1000 dataset
+
+:::{.nonincremental}
+
+- The Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.
+  - The list is updated annually by the business magazine *Fortune*.
+  - The `fortune_2023.csv` file is a collection of Fortune 1000 companies from 2023 (*Source*: [*Kaggle*](https://www.kaggle.com/datasets/jeannicolasduval/2023-fortune-1000-companies-info)).
+
+:::
+
+```{.python}
+fortune1000 = pd.read_csv("https://bcdanl.github.io/data/fortune_2023.csv")
+
+varlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']
+fortune = fortune1000[varlist]
+```
+
+- A sector can have many companies; An industry is a subcategory within a sector.
+- Let's explore the `fortune` `DataFrame`.
+  - How many unique sectors are in `fortune`?
+
+
+## Group Operations
+### Creating a `GroupBy` object from a dataset
+
+:::{.nonincremental}
+
+- Let's pull out all companies with a `Sector` value of `"Retailing"`.
+  - Then, calculate the Retailing sector’s average revenue:
+  
+:::
+
+```{.python}
+in_retailing = ( fortune["Sector"] == "Retailing" )
+retail_companies = fortune[ in_retailing ]
+retail_companies["Revenues"].mean()
+
+```
+
+- Without a group operation, we may need to write a lot of additional code to apply the same logic to the other 20 sectors in `fortune`.
+  - Pandas' `GroupBy` object offers the best solution out of the box.
+
+
+## Group Operations
+### Creating a `GroupBy` object from a dataset
+
+
+```{.python}
+sectors = fortune.groupby("Sector")
+len(sectors)    # fortune["Sector"].nunique()
+sectors.size()
+```
+
+- We can count the number of groups in sectors by passing the `GroupBy` object into the Python's built-in `len()` function
+
+- The `size()` method on the `GroupBy` object returns a `Series` with an alphabetical list of the groups and their observation counts.
+
+## Group Operations
+### Attributes and methods of a `GroupBy` object
+
+
+```{.python}
+sectors.groups
+```
+
+- The `groups` attribute stores a dictionary with associations of group-to-observations.
+
+
+
+## Group Operations
+### Attributes and methods of a `GroupBy` object
+
+:::{.nonincremental}
+
+- What if we want to find the highest-performing company (by revenue) within each sector? 
+
+:::
+
+```{.python}
+sectors.first()
+sectors.last()
+```
+
+- The `GroupBy` object’s `first()/last()` method extracts the first/last observation listed for each group in a `DataFrame`. 
+  - Since our `fortune` `DataFrame` is sorted by `Revenue_M`, the first company pulled out for each sector will be the highest-performing company within that sector.
+  
+
+## Group Operations
+### Attributes and methods of a `GroupBy` object
+
+
+```{.python}
+sectors.nth(0)
+sectors.nth(1)
+fortune[fortune["Sector"] == "Apparel"]
+```
+
+- The `nth()` method is used with a `GroupBy` object to select the nth observation from each group. 
+  - Here we can confirm the output is correct by filtering for the "Apparel" observations in `fortune`.
+
+## Group Operations
+### Attributes and methods of a `GroupBy` object
+
+
+```{.python}
+sectors.head(2)
+sectors.tail(2)
+```
+
+- The `head(n)/tail(n)` method extracts the first/last n observations from each group.
+
+## Group Operations
+### Attributes and methods of a `GroupBy` object
+
+
+```{.python}
+sectors.get_group("Energy")
+type( sectors.get_group("Energy") )
+```
+
+- We can use the `get_group()` method to extract all observations in a given group. 
+  - The method returns a `DataFrame` containing the observations.
+
+## Group Operations
+### Aggregation
+
+:::{.nonincremental}
+- We can invoke methods on the `GroupBy` object to apply aggregate operations to every group.
+  -  Aggregation is the process of taking multiple values and returning a single value.
+
+:::
+
+```{.python}
+sectors.sum()
+sectors.mean()
+```
+
+
+
+## Group Operations
+### Aggregation
+
+
+```{.python}
+sectors["Revenues_M"]
+sectors["Revenues"].sum()
+sectors["Revenues"].mean()
+sectors["Revenues"].max()
+sectors["Revenues"].min()
+```
+
+- We can target a single variable by passing its name inside square brackets after the `GroupBy` object. 
+  - Pandas returns a new object, a `SeriesGroupBy`.
+
+
+
+## Group Operations
+### Aggregation
+
+
+```{.python}
+sectors.agg(
+  Revenues_M_min = ("Revenues_M", "min"),
+  Profits_M_max = ("Profits_M", "max"),
+  Number_of_employees_mean = ("Revenues_M", "mean")
+)
+```
+
+- The `agg` method applies multiple aggregate operations to different variables and can accept a tuple as its argument.
+
+
+
+## Group Operations
+### Aggregation
+
+
+```{.python}
+sectors["Revenues_M"].agg("mean")
+```
+
+- The `agg()` method can also be used on a `Series`.
+
+## Group Operations
+### Aggregation
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-agg-methods.png" width="550">
+</p>
+
+- We pass in whatever aggregation we want. 
+  - Some common options are in the table above.
+
+
+
+## Group Operations
+### Applying a Custom Operation to All Groups
+
+:::{.nonincremental}
+- Suppose that we want to apply a custom operation to each group in a `GroupBy` object.
+  - For practice, let’s now shuffle observations in `fortune`.
+:::
+
+```{.python}
+fortune = (
+    fortune
+    .sample( frac = 1 )
+    .reset_index( drop = True )
+)
+```
+
+- `sample(frac=1)`: This samples 100% of the observations from the `DataFrame`, effectively shuffling it. 
+  - The `frac` parameter specifies the fraction of observations to return in the random sample, so `frac=1` means "return all observations".
+
+
+
+## Group Operations
+### Applying a Custom Operation to All Groups
+
+:::{.nonincremental}
+- Suppose that we want to apply a custom operation to each group in a `GroupBy` object.
+  - For practice, let’s now shuffle observations in `fortune`.
+  
+:::
+
+```{.python}
+fortune_shuffled = (
+    fortune
+    .sample( frac = 1 )
+    .reset_index( drop = True )
+)
+```
+
+- `reset_index()`: This resets the index of the `DataFrame`. 
+  - The `drop = True` option is used to prevent the old index from being added as a variable in the new `DataFrame`.
+
+
+
+
+
+## Group Operations
+
+Let's do Questions 1-6 in [Classwork 7](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
+
+## Group Operations
+### Applying a Custom Operation to All Groups
+
+- How can we identify top 5 companies in each sector?
+  1. `sort_values()` with `groupby()`
+  2. `nlargest()` with `groupby()`
+
+- However, `DataFrameGroupBy` has no methods `sort_values()` or `nlargest()`.
+
+## Primer on Custom Functions
+
+
+- A function can take any number and type of input *parameters* and return any number and type of output *results*.
+
+- We can do two things with a function:
+  - *Define* it
+  - *Call* it
+
+
+## Primer on Custom Functions
+
+:::{.nonincremental}
+
+- To define a Python function, we type `def`, the function name, parentheses enclosing any input *parameters* to the function, and then finally, a colon (`:`). 
+
+- Let's define a very simple function `my_half()` that has a parameter `x` and returns a value `x / 2`.
+
+:::
+
+```{.python}
+def my_half(x):
+    return x / 2
+```
+
+- The values we pass into the function when we call it are known as *arguments*. 
+
+- When we call a function with arguments, the values of those arguments are copied to their corresponding *parameters* inside the function.
+
+
+
+
+## Group Operations
+### Applying a Custom Operation to All Groups
+
+:::{.nonincremental}
+- How can we apply the `nlargest()` method to each group?
+  - First, define a *custom function* that accepts a single argument: a `DataFrame`.
+  - Second, pass the `apply()` method the custom function.
+  
+:::
+
+```{.python}
+def get_largest_obs(df):
+    return df.nlargest(1, "Revenues_M", keep="all")
+    
+sectors.apply(get_largest_obs)
+```
+
+
+- We can use the `apply()` method when pandas does not support a custom aggregation we would like to apply to each group.
+
+
+## Group Operations
+### Applying a Custom Operation to All Groups
+
+
+```{.python}
+def get_nlargest_obs(df, n, var):
+  return df.nlargest(n, var, keep = "all")
+
+sectors.apply(get_nlargest_obs, 2, "Revenues_M").reset_index(drop=True)
+```
+
+- A custom function can take a multiple parameters.
+  - When applying a custom function with multiple parameters to a `GroupBy` object, we need to provide the rest of arguments to the `apply()` method.
+
+
+## Group Operations
+### Grouping by Multiple Variables
+
+
+```{.python}
+sector_and_industry = fortune.groupby(["Sector", "Industry"])
+```
+
+- We can create a `GroupBy` object with values from multiple variables. 
+  - This operation is optimal when a combination of variables serves as the best identifier for a group.
+
+## Group Operations
+### Grouping by Multiple Variables
+
+
+```{.python}
+(
+    sector_and_industry
+    .size()
+    .reset_index(name = "n")
+)
+```
+
+- The `GroupBy` object’s `size()` method now returns a `MultiIndex Series` with a count of observations for each internal group.
+
+- The `reset_index()` method can be used to convert a `Series` into a `DataFrame`.
+  - The `name` option renames a variable of index when resetting index.
+
+## Group Operations
+### Grouping by Multiple Variables
+
+
+```{.python}
+sector_and_industry.get_group(("Business Services", "Financial Data Services"))
+```
+
+- The `get_group()` method requires a *tuple* of values to extract a nested `DataFrame` from the `GroupBy` collection.
+
+
+
+## Group Operations
+### Grouping by Multiple Variables
+
+```{.python}
+sector_and_industry.sum()
+sector_and_industry["Revenues_M"].mean()
+
+(
+    sector_and_industry["Revenues_M"]
+    .mean()
+    .reset_index(name = "Revenues_mean")
+)
+```
+
+- For all aggregations, pandas returns a `MultiIndex DataFrame` with the calculations.
+
+
+
+## Group Operations
+
+Let's do Question 7 of [Classwork 7](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
