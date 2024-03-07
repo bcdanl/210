@@ -32,6 +32,13 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 The dataset ,`cereals_oatmeal.csv`,(with its pathname `https://bcdanl.github.io/data/cereals_oatmeal.csv`) is a listing of 76 popular breakfast cereals and oatmeal.
 
 
+```{python}
+#| echo: true
+#| eval: false
+cereal = pd.read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')
+```
+
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -101,6 +108,24 @@ Find the minimum value in the `Fiber` variable for each manufacturer.
 <br><br>
 
 ## Question 7 
+- Calculate a '`Normalized_Sugars`' variable for each product by `Manufacturer`, where the normalization formula is 
+
+$$
+\text{Normalized_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
+$$
+
+for each `Manufacturer` group. This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+## Question 8 
 Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.
 
 *Answer:*
