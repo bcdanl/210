@@ -46,6 +46,8 @@ stock = pd.read_csv(path)
 ```{r}
 #| echo: false
 #| eval: true
+#| warning: false
+#| message: false
 #| results: asis
 rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/stocks2013_2023.csv'))
                        
@@ -148,6 +150,8 @@ paidsearch = pd.read_csv('https://bcdanl.github.io/data/paidsearch.csv')
 ```{r}
 #| echo: false
 #| eval: true
+#| warning: false
+#| message: false
 #| results: asis
 rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/paidsearch.csv'))
                        
@@ -235,6 +239,8 @@ NFL2023_stuffs <- pd.read_csv('https://bcdanl.github.io/data/NFL2023_stuffs.csv'
 ```{r}
 #| echo: false
 #| eval: true
+#| warning: false
+#| message: false
 rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2023_stuffs.csv'))
 ```
 
