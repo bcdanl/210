@@ -1,7 +1,7 @@
 ---
 title: Classwork 7
-subtitle: Group Operations I
-date: 2024-03-07
+subtitle: Group Operations
+date: 2024-03-19
 execute: 
   eval: false
   echo: false
@@ -111,7 +111,7 @@ Find the minimum value in the `Fiber` variable for each manufacturer.
 - Calculate a '`Normalized_Sugars`' variable for each product by `Manufacturer`, where the normalization formula is 
 
 $$
-\text{Normalized_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
+\text{Normalized\_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
 $$
 
 for each `Manufacturer` group. This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.
