@@ -291,45 +291,45 @@ In DataFrame, `NFL2023_stuffs`, remove observations for which values of `posteam
 <br>
 
 
-## Question 10
-- Consider the following DataFrame, `NFL2023_epa`:
+<!-- ## Question 10 -->
+<!-- - Consider the following DataFrame, `NFL2023_epa`: -->
 
-```{python}
-#| echo: true
-NFL2023_epa <- pd.read_csv('https://bcdanl.github.io/data/NFL2023_epa.csv')
-```
+<!-- ```{python} -->
+<!-- #| echo: true -->
+<!-- NFL2023_epa <- pd.read_csv('https://bcdanl.github.io/data/NFL2023_epa.csv') -->
+<!-- ``` -->
 
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2023_epa.csv'))
-```
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| eval: true -->
+<!-- #| warning: false -->
+<!-- #| message: false -->
+<!-- rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2023_epa.csv')) -->
+<!-- ``` -->
 
-### Variable Description for `NFL2023_epa`
+<!-- ### Variable Description for `NFL2023_epa` -->
 
-  - `play_id`: Numeric play identifier that when used with `game_id` and `drive` provides the unique identifier for a single play
-  - `game_id`: Ten digit identifier for NFL game.
-  - `drive`: Numeric drive number in the game.
-  - `posteam`: String abbreviation for the team with possession.
-  - `passer`: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)
-  - `receiver`: Name of the receiver.
-  - `epa`: Expected points added (EPA) by the `posteam` for the given play.
+<!--   - `play_id`: Numeric play identifier that when used with `game_id` and `drive` provides the unique identifier for a single play -->
+<!--   - `game_id`: Ten digit identifier for NFL game. -->
+<!--   - `drive`: Numeric drive number in the game. -->
+<!--   - `posteam`: String abbreviation for the team with possession. -->
+<!--   - `passer`: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks) -->
+<!--   - `receiver`: Name of the receiver. -->
+<!--   - `epa`: Expected points added (EPA) by the `posteam` for the given play. -->
 
-<br>
+<!-- <br> -->
 
-- Create the DataFrame, `NFL2023_stuffs_EPA`, that includes 
-  1. All the variables in the DataFrame, `NFL2023_stuffs`;
-  2. The variables, `passer`, `receiver`, and `epa`, from the DataFrame, `NFL2023_epa`.
-by joining the two DataFrames.
+<!-- - Create the DataFrame, `NFL2023_stuffs_EPA`, that includes  -->
+<!--   1. All the variables in the DataFrame, `NFL2023_stuffs`; -->
+<!--   2. The variables, `passer`, `receiver`, and `epa`, from the DataFrame, `NFL2023_epa`. -->
+<!-- by joining the two DataFrames. -->
 
-- In the resulting DataFrame, `NFL2023_stuffs_EPA`, remove observations with `NA` in `passer`.
+<!-- - In the resulting DataFrame, `NFL2023_stuffs_EPA`, remove observations with `NA` in `passer`. -->
 
-*Answer*: 
+<!-- *Answer*:  -->
 
-```{python}
+<!-- ```{python} -->
 
-```
+<!-- ``` -->
 
 <br>
