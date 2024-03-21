@@ -5276,5 +5276,243 @@
     "title": "Lecture 14",
     "section": "Group Operations",
     "text": "Group Operations\nLet’s do Question 8 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html",
+    "href": "danl-hw/danl-210-hw-02-a.html",
+    "title": "Homework 2 - Example Answers",
+    "section": "",
+    "text": "Please use the Homework 2 Jupyter Notebook, danl-210-hw-02-q.ipynb, available from Brightspace.\nPlease submit your Jupyter Notebook for Part 1 in Homework 2 to the Brightspace with the name below:\n\ndanl-210-hw2-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-210-hw2-choe-byeonghak.ipynb )\n\nThe due is March 8, 2024, 11:59 P.M.\nPlease send an email to Byeong-Hak (bchoe@geneseo.edu) if you have any questions or clarifications."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#variable-description",
+    "href": "danl-hw/danl-210-hw-02-a.html#variable-description",
+    "title": "Homework 2 - Example Answers",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal Year: Fiscal Year;\nPayroll Number: Payroll Number;\nAgency Name: The Payroll agency that the employee works for;\nLast Name: Last name of employee;\nFirst Name: First name of employee;\nMid Init: Middle initial of employee;\nAgency Start Date: Date which employee began working for their current agency;\nWork Location Borough: Borough of employee’s primary work location;\nTitle Description: Civil service title description of the employee;\nLeave Status as of June 30: Status of employee as of the close of the relevant fiscal year;\nBase Salary: Base Salary assigned to the employee;\nPay Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular Hours: Number of regular hours employee worked in the fiscal year;\nRegular Gross Paid: The amount paid to the employee for base salary during the fiscal year;\nOT Hours: Overtime Hours worked by employee in the fiscal year;\nTotal OT Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal Other Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-1",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-1",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 1",
+    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort the DataFrame with these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer\n\ndf = (\n  nyc_payroll[[\"First Name\", \"Last Name\", \"Base Salary\", \"Total OT Paid\"]]\n  .nlargest(10, \"Base Salary\", keep = \"all\")\n)\n\ntabulate(df, showindex=False, headers=df.columns)\n\n'First Name    Last Name      Base Salary    Total OT Paid\\n------------  -----------  -------------  ---------------\\nMICHAEL       BIMONTE             233094                0\\nBEDROS        BOODANIAN           215861                0\\nARVIND        SOHONI              215000                0\\nANDREW        KAPLAN              195000                0\\nVICTORIA      RICE                187530                0\\nJOSEPH        PILEWSKI            180450                0\\nSAMUEL        DAVID               180000                0\\nKARINA        JIMENEZ             178000                0\\nJOYCELYN      NEDD                177113                0\\nJEANETTE      VARGAS              176947                0'"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-2",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-2",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 2",
+    "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer\n\n(\n  nyc_payroll\n  .set_index(\"Last Name\")\n  .loc[\"BROWN\"]\n)\n\n           Fiscal Year  Payroll Number  ... Total OT Paid Total Other Pay\nLast Name                               ...                              \nBROWN             2022             846  ...          0.00          877.85\nBROWN             2022              67  ...       4909.12         5160.59\nBROWN             2022             747  ...          0.00          473.78\nBROWN             2022             747  ...          0.00            0.00\nBROWN             2022              25  ...          0.00            0.00\nBROWN             2022             745  ...          0.00         1652.09\nBROWN             2022             300  ...          0.00            0.00\nBROWN             2022             747  ...          0.00            5.56\nBROWN             2023             747  ...          0.00           14.47\nBROWN             2023             846  ...        415.00         2244.40\n\n[10 rows x 16 columns]"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-3",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-3",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 3",
+    "text": "Question 3\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-4",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-4",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 4",
+    "text": "Question 4\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-5",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-5",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 5",
+    "text": "Question 5\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-6",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-6",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 6",
+    "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-7",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-7",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 7",
+    "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-8",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-8",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 8",
+    "text": "Question 8\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-9",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-9",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 9",
+    "text": "Question 9\nFilter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-10",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-10",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 10",
+    "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-11",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-11",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 11",
+    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total OT Paid” in the DataFrame.\n\nInclude their “First Name”, “Last Name”, and “Total OT Paid”.\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#variable-description-1",
+    "href": "danl-hw/danl-210-hw-02-a.html#variable-description-1",
+    "title": "Homework 2 - Example Answers",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02-a.html#question-12.",
+    "href": "danl-hw/danl-210-hw-02-a.html#question-12.",
+    "title": "Homework 2 - Example Answers",
+    "section": "Question 12.",
+    "text": "Question 12.\n\nWrite a blog post about your favorite artist(s) in spotify DataFrame using Jupyter Notebook, and add it to your online blog.\n\nIn your blog post, utilize counting, sorting, indexing, and filtering methods."
+  },
+  {
+    "objectID": "listing-danl-210-hw-a.html",
+    "href": "listing-danl-210-hw-a.html",
+    "title": "DANL 210 - Homework Answers",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html",
+    "href": "danl-hw-a/danl_210_hw_01_a.html",
+    "title": "Homework 1 - Example Answers",
+    "section": "",
+    "text": "Please submit your Jupyter Notebook for Part 3 in Homework 1 to the Brightspace with the name below:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-210-hw1-choe-byeonghak.ipynb )\n\nThe due is February 20, 2024, 3:30 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions."
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-0.",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-0.",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 0.",
+    "text": "Question 0.\nProvide your GitHub username.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-1",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-1",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 1",
+    "text": "Question 1\nGiven lst = [1, 2, 3, 4, 5], what does lst[1:4] return?\nAnswer\n\nlst = [1, 2, 3, 4, 5]\nlst[1:4]\n\n[2, 3, 4]"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-2",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-2",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 2",
+    "text": "Question 2\n\nHow do you create a dictionary with keys \"apple\", \"banana\", and \"cherry\", each with the corresponding values 5, 3, and 7?\nHow do you access the value associated with the key \"banana\" in the dictionary created above?\n\nAnswer\n\nfruit = {\"apple\":5, \"banana\":3, \"cherry\":7}\nfruit[\"banana\"]\n\n3"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-3",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-3",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 3",
+    "text": "Question 3\nFor the expressions below, what is the value of the expression? Explain thoroughly.\n\nTrue and False\n\n\nTrue or False\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nAnswer\n\nTrue and False\n\nFalse\n\n\n\nTrue or False\n\nTrue\n\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nTrue"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-4",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-4",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 4",
+    "text": "Question 4\n\nCreate a new if-elif-else chain that prints \"well done\" if a score is over 90, “good” if between 40 and 90, and \"bad luck\" otherwise.\n\nAnswer\n\nscore = 90\n\nif score &gt;90:\n  print(\"well done\")\nelif score &gt; 40 and score &lt;= 90:\n  print(\"good\")\nelse:\n  print(\"bad luck\")\n\ngood"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-5",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-5",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 5",
+    "text": "Question 5\nWrite a for loop that prints out \"coding for data analysts\" so that each word is printed in a successive iteration.\nAnswer\n\ndanl_coding = [\"coding\", \"for\", \"data\", \"analysts\"]\n\nfor item in danl_coding:\n  print(item)\n\ncoding\nfor\ndata\nanalysts"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-6",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-6",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 6",
+    "text": "Question 6\nThis Python code creates a tuple with seven different ages:\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\nWrite a Python code that uses a for-loop statement and an if-else chain to assign the list, under40_list, to [29, 25, 35, 23, 19] and the list, over40_list, to [65, 58].\nAnswer\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\n# Initialize the lists\nunder40_list = []\nover40_list = []\n\n# Iterate through the tuple\nfor age in respondent_ages:\n    if age &lt; 40:\n        under40_list.append(age)\n    else:\n        over40_list.append(age)\n\nunder40_list, over40_list\n\n([29, 25, 35, 23, 19], [65, 58])"
+  },
+  {
+    "objectID": "danl-hw-a/danl_210_hw_01_a.html#question-7",
+    "href": "danl-hw-a/danl_210_hw_01_a.html#question-7",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 7",
+    "text": "Question 7\n\nWrite a Python code to import the sqrt() function from the math module.\nAfter importing sqrt(), how do you use it to find the square root of 16?\n\nAnswer\n\nfrom math import sqrt\nsqrt(16)\n\n4.0"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html",
+    "href": "danl-hw/danl_210_hw_01_a.html",
+    "title": "Homework 1 - Example Answers",
+    "section": "",
+    "text": "Please submit your Jupyter Notebook for Part 3 in Homework 1 to the Brightspace with the name below:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-210-hw1-choe-byeonghak.ipynb )\n\nThe due is February 20, 2024, 3:30 P.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions."
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-0.",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-0.",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 0.",
+    "text": "Question 0.\nProvide your GitHub username.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-1",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-1",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 1",
+    "text": "Question 1\nGiven lst = [1, 2, 3, 4, 5], what does lst[1:4] return?\nAnswer\n\nlst = [1, 2, 3, 4, 5]\nlst[1:4]\n\n[2, 3, 4]"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-2",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-2",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 2",
+    "text": "Question 2\n\nHow do you create a dictionary with keys \"apple\", \"banana\", and \"cherry\", each with the corresponding values 5, 3, and 7?\nHow do you access the value associated with the key \"banana\" in the dictionary created above?\n\nAnswer\n\nfruit = {\"apple\":5, \"banana\":3, \"cherry\":7}\nfruit[\"banana\"]\n\n3"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-3",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-3",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 3",
+    "text": "Question 3\nFor the expressions below, what is the value of the expression? Explain thoroughly.\n\nTrue and False\n\n\nTrue or False\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nAnswer\n\nTrue and False\n\nFalse\n\n\n\nTrue or False\n\nTrue\n\n\n\nnot (100 == '100' and 25 &lt; 36)\n\nTrue"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-4",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-4",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 4",
+    "text": "Question 4\n\nCreate a new if-elif-else chain that prints \"well done\" if a score is over 90, “good” if between 40 and 90, and \"bad luck\" otherwise.\n\nAnswer\n\nscore = 90\n\nif score &gt;90:\n  print(\"well done\")\nelif score &gt; 40 and score &lt;= 90:\n  print(\"good\")\nelse:\n  print(\"bad luck\")\n\ngood"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-5",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-5",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 5",
+    "text": "Question 5\nWrite a for loop that prints out \"coding for data analysts\" so that each word is printed in a successive iteration.\nAnswer\n\ndanl_coding = [\"coding\", \"for\", \"data\", \"analysts\"]\n\nfor item in danl_coding:\n  print(item)\n\ncoding\nfor\ndata\nanalysts"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-6",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-6",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 6",
+    "text": "Question 6\nThis Python code creates a tuple with seven different ages:\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\nWrite a Python code that uses a for-loop statement and an if-else chain to assign the list, under40_list, to [29, 25, 35, 23, 19] and the list, over40_list, to [65, 58].\nAnswer\n\nrespondent_ages = (65, 29, 25, 35, 58, 23, 19)\n\n# Initialize the lists\nunder40_list = []\nover40_list = []\n\n# Iterate through the tuple\nfor age in respondent_ages:\n    if age &lt; 40:\n        under40_list.append(age)\n    else:\n        over40_list.append(age)\n\nunder40_list, over40_list\n\n([29, 25, 35, 23, 19], [65, 58])"
+  },
+  {
+    "objectID": "danl-hw/danl_210_hw_01_a.html#question-7",
+    "href": "danl-hw/danl_210_hw_01_a.html#question-7",
+    "title": "Homework 1 - Example Answers",
+    "section": "Question 7",
+    "text": "Question 7\n\nWrite a Python code to import the sqrt() function from the math module.\nAfter importing sqrt(), how do you use it to find the square root of 16?\n\nAnswer\n\nfrom math import sqrt\nsqrt(16)\n\n4.0"
   }
 ]
