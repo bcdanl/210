@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Efficient Data Collection</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Byeong-Hak Choe" />
+    <meta name="date" content="2023-03-22" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/xaringanExtra-webcam-0.0.1/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/js-cookie-3.0.0/js.cookie.js"></script>
+    <script src="libs/peerjs-1.3.1/peerjs.min.js"></script>
+    <script src="libs/tiny.toast-1.0.0/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast-0.2.6/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast-0.2.6/broadcast.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <link href="libs/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nhsr.css" type="text/css" />
+    <link rel="stylesheet" href="css/nhsr-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, bottom
+
+# Efficient Data Collection
+----
+## **Leveraging Web-scrapping and APIs**
+### Byeong-Hak Choe
+### March 22, 2023
+
+
+---
+class: inverse, center, middle
+
+# Prologue
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+# Presentation Outline
+.pull-left[
+
+- Web-scraping
+  - Scrapping Tables
+  - Downloading Excel/CSV files
+  - Automating the Use of a Web-browser
+]
+
+--
+
+.pull-right[
+
+- API (Application Programming Interface)
+  - Open NYC
+  - FRED
+  - US Census
+  - Yahoo! Finance
+
+]
+
+
+
+---
+class: inverse, center, middle
+
+# Collecting Table Data with Python `pandas`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Scrapping Tables with `pandas` &lt;/p&gt;
+
+&lt;p align="center"&gt;
+  &lt;img src="https://bcdanl.github.io/lec_figs/pandas-logo.png"&gt;
+&lt;/p&gt;
+
+- `pandas` provides `Series` and `DataFrames` which are used to store data in an easy-to-use format.
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Scrapping Tables with `pandas` &lt;/p&gt;
+
+- Let's scrap the two tables in the following webpage:
+  - [National Park Visitation Sets New Record as Economic Engines](https://www.nps.gov/orgs/1207/national-park-visitation-sets-new-record-as-economic-engines.htm)
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Scrapping Tables with `pandas` &lt;/p&gt;
+
+
+```python
+import pandas as pd
+url = "https://www.nps.gov/orgs/1207/national-park-visitation-sets-new-record-as-economic-engines.htm"
+
+tables = pd.read_html(url)
+len(tables)
+tables[0]
+tables[1]
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Scrapping Tables with `pandas` &lt;/p&gt;
+
+
+```python
+import pandas as pd
+url = "https://www.nps.gov/orgs/1207/national-park-visitation-sets-new-record-as-economic-engines.htm"
+
+*tables = pd.read_html(url)
+len(tables)
+tables[0]
+tables[1]
+```
+
+- `read_html()` read HTML tables into a list of `DataFrame` objects.
+
+
+---
+class: inverse, center, middle
+
+# Collecting Data with Python `selenium`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Ethical Considerations &lt;/p&gt;
+
+&gt; *"If you can see things in your web browser, you can scrape 
+them."*
+
+--
+
+Just because you can scrape them, doesn't mean you should.
+
+
+It is currently legal to scrape data from the web using **automated** tools, as long as the data are **publicly available**.
+  - [hiQ Labs vs. LinkedIn Corp. court ruling](https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn).
+
+
+--
+
+
+Be cautious! Web scrapping tools are extremely powerful!
+  - It is pretty easy to write up a program that can overwhelm a host server.
+  - The host server tends to have built-in safeguards that will block you in case of a suspected malicious attack.
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Clients and Servers &lt;/p&gt;
+
+Computers connected to the web are called **clients** and **servers**.
+
+
+&lt;img src="https://bcdanl.github.io/lec_figs/client_server_2.png" width="31%" style="display: block; margin: auto;" /&gt;
+
+--
+
+**Clients** are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) with web-browsers (e.g., Firefox, Chrome).
+
+
+**Servers** are computers that store webpages, sites, or apps.
+
+--
+
+  - When a client device wants to access a webpage, **a copy of the webpage is downloaded from the server onto the client machine** to be displayed in the user’s web browser.
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Ethical Considerations &lt;/p&gt;
+
+- Respect for website owners' terms of service.
+- Respect for copyright and intellectual property.
+- Respect for client servers.
+- Respect for privacy.
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Hyper Text Markup Language (HTML) &lt;/p&gt;
+
+.pull-left[
+
+&lt;img src="https://bcdanl.github.io/lec_figs/html-code.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+&lt;img src="https://bcdanl.github.io/lec_figs/html-web.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+---
+# Web-scrapping Approaches
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+&lt;!-- There are many commonly used web scraping approaches. This decision tree will help us to decide upon the best approach to use for a particular web site. --&gt;
+
+
+&lt;img src="https://bcdanl.github.io/lec_figs/decision_tree.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+
+&lt;!-- **Using the Chrome browser, we can view the original HTML via `View page source`. We can view the revised HTML in our browser if it executes JavaScript in the `Elements` window via `Inspect` the web page.** --&gt;
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; WebDriver and Driver &lt;/p&gt;
+
+.pull-left[
+
+&lt;img src="https://bcdanl.github.io/lec_figs/driver.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+- **WebDriver** is an wire protocol that controls the behavior of a web browser.
+
+- **Driver** handles communications between **WebDriver** and a web browser.
+
+]
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; WebDriver and Driver &lt;/p&gt;
+
+.pull-left[
+
+&lt;img src="https://bcdanl.github.io/lec_figs/driver.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right[
+- **WebDriver** is an wire protocol that controls the behavior of a web browser.
+
+
+- **Driver** handles communications between **WebDriver** and a web browser.
+
+
+- We can use programming to join this communication.
+
+]
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; WebDriver and Driver &lt;/p&gt;
+
+.pull-left[
+
+&lt;img src="https://bcdanl.github.io/lec_figs/driver.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right[
+- **WebDriver** is an wire protocol that controls the behavior of a web browser.
+
+
+- **Driver** handles communications between **WebDriver** and a web browser.
+
+
+- We can use programming to join this communication.
+  - Automating the use of keyboards and mouses! 🙄
+]
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Prepare the `selenium` software &lt;/p&gt;
+
+- [Download](https://chromedriver.chromium.org/downloads) the `ChromeDriver` file that is compatible with your Chrome Browser. 
+
+- Install the Python library, `selenium`:
+  - On Terminal, type `pip install selenium`.
+
+
+
+
+---
+class: inverse, center, middle
+# Scrapping Book Data with Python `selenium`
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Let's scrape all the books in [http://books.toscrape.com](http://books.toscrape.com)!
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 1. Load `pandas`, `selenium`, and other libraries.
+
+
+```python
+# Import the pandas, os, and time library
+import pandas as pd
+import os
+import time
+
+# Import the webdriver module and the By and Options class from the selenium library
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+```
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 2. Create a new webdriver object using `webdriver.Chrome()` with regular `options`
+
+
+```python
+options = Options()
+options.add_experimental_option("detach", True)
+options.add_argument("window-size=1400,1200")
+options.add_argument('--disable-blink-features=AutomationControlled')
+
+driver = webdriver.Chrome(options = options)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 2. Create a new webdriver object using `webdriver.Chrome()` with regular `options`
+
+
+```python
+options = Options()
+options.add_argument("window-size=1400,1200") 
+options.add_argument('--disable-blink-features=AutomationControlled')
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 2. Create a new webdriver object using `webdriver.Chrome()`
+
+
+```python
+*driver = webdriver.Chrome(
+# Set the `options` parameter 
+  # to options to use the options we set
+  options = options
+  )
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 3. Use the `.get()` method to get to the website.
+
+
+```python
+# Navigate to the URL using the get() method of the webdriver 
+URL = "http://books.toscrape.com/"
+driver.get(URL)
+```
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements.
+
+
+```python
+# Find the element that contains categories using an XPATH
+n_categories = driver.find_element(
+    By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul')
+
+# Get all the 'li' elements within the n_categories element 
+# to count the number of categories
+n_categories = n_categories.find_elements(
+    By.TAG_NAME, 'li')  # number of categories
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+*# Find the element that contains categories using an XPATH
+*n_categories = driver.find_element(
+*    By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul')
+
+# Get all the 'li' elements within the n_categories element 
+# to count the number of categories
+n_categories = n_categories.find_elements(
+    By.TAG_NAME, 'li')  # number of categories
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+# Find the element that contains categories using an XPATH
+n_categories = driver.find_element(
+    By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul')
+
+*# Get all the 'li' elements within the n_categories element 
+*# to count the number of categories
+*n_categories = n_categories.find_elements(
+*    By.TAG_NAME, 'li')  # number of categories
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+# Initialize an empty DataFrame to store collected data
+df = pd.DataFrame()
+
+# Loop through each category based on the number of categories available
+for i in range(1, len(n_categories) + 1):  
+    # Find and select a category based on its XPath, which changes dynamically with 'i'
+    category = driver.find_element(
+        By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul/li['+str(i)+']/a')
+    # Create a DataFrame with the text of the category for later concatenation
+    cat = pd.DataFrame([category.text])
+    # Click the category to navigate to the page with the books listed under this category
+    category.click()
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+*# Initialize an empty DataFrame to store collected data
+*df = pd.DataFrame()
+
+# Loop through each category based on the number of categories available
+for i in range(1, len(n_categories) + 1):  
+    # Find and select a category based on its XPath, which changes dynamically with 'i'
+    category = driver.find_element(
+        By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul/li['+str(i)+']/a')
+    # Create a DataFrame with the text of the category for later concatenation
+    cat = pd.DataFrame([category.text])
+    # Click the category to navigate to the page with the books listed under this category
+    category.click()
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+# Initialize an empty DataFrame to store collected data
+df = pd.DataFrame()
+
+*# Loop through each category based on the number of categories available
+*for i in range(1, len(n_categories) + 1):  
+    # Find and select a category based on its XPath, which changes dynamically with 'i'
+    category = driver.find_element(
+        By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul/li['+str(i)+']/a')
+    # Create a DataFrame with the text of the category for later concatenation
+    cat = pd.DataFrame([category.text])
+    # Click the category to navigate to the page with the books listed under this category
+    category.click()
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+# Initialize an empty DataFrame to store collected data
+df = pd.DataFrame()
+
+# Loop through each category based on the number of categories available
+for i in range(1, len(n_categories) + 1):  
+*    # Find and select a category based on its XPath, which changes dynamically with 'i'
+*    category = driver.find_element(
+*        By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul/li['+str(i)+']/a')
+    # Create a DataFrame with the text of the category for later concatenation
+    cat = pd.DataFrame([category.text])
+    # Click the category to navigate to the page with the books listed under this category
+    category.click()
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+# Initialize an empty DataFrame to store collected data
+df = pd.DataFrame()
+
+# Loop through each category based on the number of categories available
+for i in range(1, len(n_categories) + 1):  
+    # Find and select a category based on its XPath, which changes dynamically with 'i'
+    category = driver.find_element(
+        By.XPATH, '/html/body/div/div/div/aside/div[2]/ul/li/ul/li['+str(i)+']/a')
+*    # Create a DataFrame with the text of the category for later concatenation
+*    cat = pd.DataFrame([category.text])
+*    # Click the category to navigate to the page with the books listed under this category
+*    category.click()
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    # Use a while loop to paginate through all books in the category
+    while True:
+        # Find elements that represent book rows, identifying the correct one among them
+        n_books = driver.find_elements(By.CLASS_NAME, 'row')
+        n_books = n_books[2].find_elements(By.TAG_NAME, 'li')
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+*    # Use a while loop to paginate through all books in the category
+*    while True:
+        # Find elements that represent book rows, identifying the correct one among them
+        n_books = driver.find_elements(By.CLASS_NAME, 'row')
+        n_books = n_books[2].find_elements(By.TAG_NAME, 'li')
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    # Use a while loop to paginate through all books in the category
+    while True:
+*        # Find elements that represent book rows, identifying the correct one among them
+*        n_books = driver.find_elements(By.CLASS_NAME, 'row')
+*        n_books = n_books[2].find_elements(By.TAG_NAME, 'li')
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+        # Loop through each book in the current page
+        for j in range(1, len(n_books)+1):
+            # Find and store the title of the book using its XPath, which changes dynamically with 'j'
+            title = driver.find_element(
+                By.XPATH, '/html/body/div/div/div/div/section/div[2]/ol/li['+str(j)+']/article/h3/a').get_attribute('title')
+            title = pd.DataFrame([title])
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+*        # Loop through each book in the current page
+*        for j in range(1, len(n_books)+1):
+            # Find and store the title of the book using its XPath, which changes dynamically with 'j'
+            title = driver.find_element(
+                By.XPATH, '/html/body/div/div/div/div/section/div[2]/ol/li['+str(j)+']/article/h3/a').get_attribute('title')
+            title = pd.DataFrame([title])
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+        # Loop through each book in the current page
+        for j in range(1, len(n_books)+1):
+*            # Find and store the title of the book using its XPath, which changes dynamically with 'j'
+*            title = driver.find_element(
+*                By.XPATH, '/html/body/div/div/div/div/section/div[2]/ol/li['+str(j)+']/article/h3/a').get_attribute('title')
+*            title = pd.DataFrame([title])
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+        # Loop through each book in the current page
+        for j in range(1, len(n_books)+1):
+          ...
+*            # Find and store the price of the book using its XPath, which changes dynamically with 'j'
+*            price = driver.find_element(
+*                By.XPATH, '/html/body/div/div/div/div/section/div[2]/ol/li['+str(j)+']/article/div[2]/p[1]')
+*            price = pd.DataFrame([price.text])
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+        # Loop through each book in the current page
+        for j in range(1, len(n_books)+1):
+          ...
+*            # Concatenate the category, title, and price data into a single DataFrame
+*            data = pd.concat([cat, title, price], axis=1)
+*            # Add the collected book data to the main DataFrame
+*            df = pd.concat([df, data])  # df = df.append(data)
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+    while True: ...
+        for j in range(1, len(n_books)+1):
+            ...
+        # Attempt to find the 'next' button to navigate to the next page of books
+        try:
+            next_btn = driver.find_element(
+                By.PARTIAL_LINK_TEXT, 'next')
+            # Pause for a second to ensure the page loads properly before attempting further actions
+            time.sleep(1)
+        except:
+            # If the 'next' button is not found, prepare to exit the loop by setting next_btn to an empty list
+            next_btn = []
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+    while True: ...
+        for j in range(1, len(n_books)+1):
+            ...
+*        # Attempt to find the 'next' button to navigate to the next page of books
+*        try:
+*            next_btn = driver.find_element(
+*                By.PARTIAL_LINK_TEXT, 'next')
+*            # Pause for a second to ensure the page loads properly before attempting further actions
+*            time.sleep(1)
+        except:
+            # If the 'next' button is not found, prepare to exit the loop by setting next_btn to an empty list
+            next_btn = []
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+```python
+    while True: ...
+        for j in range(1, len(n_books)+1):
+            ...
+        # Attempt to find the 'next' button to navigate to the next page of books
+        try:
+            next_btn = driver.find_element(
+                By.PARTIAL_LINK_TEXT, 'next')
+            # Pause for a second to ensure the page loads properly before attempting further actions
+            time.sleep(1)
+*        except:
+*            # If the 'next' button is not found, prepare to exit the loop by setting next_btn to an empty list
+*            next_btn = []
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+        # Check if the 'next' button was found and is not an empty list
+        if next_btn != []:
+            # If the 'next' button exists, click it to move to the next page of books
+            next_btn.click()
+        else:
+            # If there is no 'next' button, break the loop to stop pagination
+            break
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (cont.)
+
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+*        # Check if the 'next' button was found and is not an empty list
+*        if next_btn != []:
+*            # If the 'next' button exists, click it to move to the next page of books
+*            next_btn.click()
+        else:
+            # If there is no 'next' button, break the loop to stop pagination
+            break
+```
+
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 4. Loop over finding web elements. (End of the `While`-loop)
+
+
+
+```python
+for i in range(1, len(n_categories) + 1):  
+  ...
+    while True:
+      ...
+        # Check if the 'next' button was found and is not an empty list
+        if next_btn != []:
+            # If the 'next' button exists, click it to move to the next page of books
+            next_btn.click()
+*        else:
+*            # If there is no 'next' button, break the loop to stop pagination
+*            break
+```
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 5. Export the DataFrame to the CSV/Excel file.
+
+
+```python
+# Rename the columns of the DataFrame
+df.columns = ['category', 'title', 'price']
+
+# Write the DataFrame to a CSV file at the specified path
+df.to_csv("PATH_NAME_TO_STORE_DATAFRAME_FOR_BOOKS.csv",
+          index=False, encoding='utf-8-sig')
+```
+
+
+
+---
+class: inverse, center, middle
+# Downloading Files with Python `selenium`
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Let's download all the CSV/Excel files of US Population data from [the US Census page](https://www2.census.gov/programs-surveys/popest/tables/2010-2019/state/detail/)!
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt; Downloading Files with `selenium` &lt;/p&gt;
+
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+### Step 1. After setting `options` and loading the `driver`, use the `.get()` method to get to the website.
+
+
+```python
+# Navigate to the URL using the get() method of the webdriver 
+URL = "https://www2.census.gov/programs-surveys/popest/tables/2010-2019/state/detail/"
+driver.get(URL)
+```
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 2.  Locate the table element, and count the number of rows.
+
+
+```python
+# Find the first 'tbody' element on the page to identify the table of interest
+table = driver.find_elements(By.TAG_NAME, "tbody")[0]
+
+# Find all 'tr' elements within the identified 'tbody' to get all rows of the table
+row = table.find_elements(By.TAG_NAME, "tr")
+# Get the length of 'row' to know how many rows are in the table
+len(row)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 2.  Locate the table element, and count the number of rows.
+
+
+```python
+*# Find the first 'tbody' element on the page to identify the table of interest
+*table = driver.find_elements(By.TAG_NAME, "tbody")[0]
+
+# Find all 'tr' elements within the identified 'tbody' to get all rows of the table
+row = table.find_elements(By.TAG_NAME, "tr")
+# Get the length of 'row' to know how many rows are in the table
+len(row)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 2.  Locate the table element, and count the number of rows.
+
+
+```python
+# Find the first 'tbody' element on the page to identify the table of interest
+table = driver.find_elements(By.TAG_NAME, "tbody")[0]
+
+*# Find all 'tr' elements within the identified 'tbody' to get all rows of the table
+*row = table.find_elements(By.TAG_NAME, "tr")
+*# Get the length of 'row' to know how many rows are in the table
+*len(row)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 3. Loop over finding web elements, and clicking them. (cont.)
+
+
+```python
+# Loop from the 4th row to the last row in the table
+for i in range(4, len(row) + 1):
+    # Find the link in the 2nd column ('td[2]') of the current row and assign it to 'file_link'
+    file_link = driver.find_element(By.XPATH,
+                                    "/html/body/table/tbody/tr["+str(i)+"]/td[2]/a")
+    # Click the found file link to initiate a download or navigate to the link
+    file_link.click()
+    # Pause for half a second to ensure the action completes before continuing
+    time.sleep(.5)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 3. Loop over finding web elements, and clicking them. (cont.)
+
+
+```python
+*# Loop from the 4th row to the last row in the table
+*for i in range(4, len(row) + 1):
+    # Find the link in the 2nd column ('td[2]') of the current row and assign it to 'file_link'
+    file_link = driver.find_element(By.XPATH,
+                                    "/html/body/table/tbody/tr["+str(i)+"]/td[2]/a")
+    # Click the found file link to initiate a download or navigate to the link
+    file_link.click()
+    # Pause for half a second to ensure the action completes before continuing
+    time.sleep(.5)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 3. Loop over finding web elements, and clicking them. (cont.)
+
+
+```python
+# Loop from the 4th row to the last row in the table
+for i in range(4, len(row) + 1):
+*    # Find the link in the 2nd column ('td[2]') of the current row and assign it to 'file_link'
+*    file_link = driver.find_element(By.XPATH,
+*                                    "/html/body/table/tbody/tr["+str(i)+"]/td[2]/a")
+    # Click the found file link to initiate a download or navigate to the link
+    file_link.click()
+    # Pause for half a second to ensure the action completes before continuing
+    time.sleep(.5)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 3. Loop over finding web elements, and clicking them. (cont.)
+
+
+```python
+# Loop from the 4th row to the last row in the table
+for i in range(4, len(row) + 1):
+    # Find the link in the 2nd column ('td[2]') of the current row and assign it to 'file_link'
+    file_link = driver.find_element(By.XPATH,
+                                    "/html/body/table/tbody/tr["+str(i)+"]/td[2]/a")
+*    # Click the found file link to initiate a download or navigate to the link
+*    file_link.click()
+    # Pause for half a second to ensure the action completes before continuing
+    time.sleep(.5)
+```
+
+
+---
+# Web-scrapping
+### &lt;p style="color:#00449E"&gt;  &lt;/p&gt;
+
+Here is the step-by-step Python code with the `selenium` library.
+
+### Step 3. Loop over finding web elements, and clicking them. (cont.)
+
+
+```python
+# Loop from the 4th row to the last row in the table
+for i in range(4, len(row) + 1):
+    # Find the link in the 2nd column ('td[2]') of the current row and assign it to 'file_link'
+    file_link = driver.find_element(By.XPATH,
+                                    "/html/body/table/tbody/tr["+str(i)+"]/td[2]/a")
+    # Click the found file link to initiate a download or navigate to the link
+    file_link.click()
+*    # Pause for half a second to ensure the action completes before continuing
+*    time.sleep(.5)
+```
+
+
+
+
+
+---
+class: inverse, center, middle
+
+# API
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+
+---
+# API
+### &lt;p style="color:#00449E"&gt; Key Concepts
+
+- API stands for Application Programming Interface.
+  - It enables data transmission between **client** and **server**.
+
+
+- **Methods**: The “verbs” that clients use to talk with a server.
+  - The main one that we’ll be using is `GET` (i.e. ask a server to retrieve information). Other common methods are `POST`, `PUT` and `DELETE`.
+  
+  
+- **Requests**: What the client asks of the server.
+- **Response**: The server’s response, which includes 
+  - Status Code (e.g. “404” if not found, or “200” if successful);
+  - Header (i.e. meta-information about the reponse); 
+  - Body (i.e the actual content that we’re interested in.
+
+
+
+---
+# API
+### &lt;p style="color:#00449E"&gt; API endpoints
+- In the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).
+  - These URLs are known as an **API endpoints**.
+
+- Navigate your browser to an API endpoint and you’ll just see a load of the following format of texts:
+  - JSON (JavaScript Object Notation) or 
+  - XML (Extensible Markup Language).
+
+- We can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.
+  - [https://jsonview.com/](https://jsonview.com/)
+
+
+---
+# NYC Open Data
+### &lt;p style="color:#00449E"&gt; 
+
+
+.panelset[
+.panel[.panel-name[(1)]
+
+- NYC Open Data ([https://opendata.cityofnewyork.us](https://opendata.cityofnewyork.us)) is free
+public data published by NYC agencies and other partners.
+
+
+- Los Angeles has the open data website too:
+  - [https://data.lacity.org](https://data.lacity.org)
+
+
+]
+
+.panel[.panel-name[(2)]
+- Let’s get the NYC's Payroll Data.
+  1. Open the web page
+[https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e) in your
+browser.
+  2. Click the API tab.
+  3. Copy the API endpoint that appears in the popup box.
+
+
+]
+
+.panel[.panel-name[(3)]
+
+```python
+import requests
+import pandas as pd
+endpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  # API endpoint
+response_API = requests.get(endpoint)
+df = pd.read_json(response_API.text)
+```
+
+- The `request.get()` method sends a `GET` request to the specified url.
+
+- `pd.read_json()` automatically convert JSON data into DataFrame. 
+  - JSON objects have the same format as Python dictionaries.
+
+
+]
+
+
+
+]
+
+
+---
+# Federal Reserve Economic Data (FRED) API
+### &lt;p style="color:#00449E"&gt; 
+
+
+.panelset[
+.panel[.panel-name[(1)]
+- Most API interfaces will only let you access and download data after you have registered an API key with them.
+
+- Let’s download economic data from the FRED [https://fred.stlouisfed.org](https://fred.stlouisfed.org) using its API.
+
+- You need to create an account [https://fredaccount.stlouisfed.org/login/](https://fredaccount.stlouisfed.org/login/) to get an API key for your FRED account.
+
+]
+
+.panel[.panel-name[(2)]
+- As with all APIs, a good place to start is the FRED API developer docs [https://fred.stlouisfed.org/docs/api/fred/](https://fred.stlouisfed.org/docs/api/fred/).
+  - We are interested in *series/observations* [https://fred.stlouisfed.org/docs/api/fred/series_observations.html](https://fred.stlouisfed.org/docs/api/fred/series_observations.html)
+  
+  - The parameters that we will use are `api_key`, `file_type`, and `series_id`.
+  - Replace “YOUR_API_KEY” with your actual API key in the following web address: [https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&amp;api_key=YOUR_API_KEY&amp;file_type=json](https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&amp;api_key=YOUR_API_KEY&amp;file_type=json)
+]
+
+
+
+.panel[.panel-name[(3)]
+- We’re going to go through the `requests`, `json`, and `pandas` libraries.
+  - `requests` comes with a variety of features that allow us to interact more flexibly and securely with web APIs.
+  
+
+```python
+import requests
+import json
+import pandas as pd
+
+params = {
+'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key
+'file_type': 'json',
+'series_id': 'GDPC1'   ## ID for US real GDP
+}
+
+endpoint = "series/observations"
+url = "https://api.stlouisfed.org/"
+response = requests.get(url + "fred/" + endpoint, params = params)
+```
+  
+  
+]
+
+
+
+.panel[.panel-name[(4)]
+- To actually extract the content (i.e. data) from of the response, we’ll use the `.content.decode('utf-8')`.
+- We can convert JSON into a Python dictionary object using then `json.loads()` function.
+  
+
+```python
+content = response.content.decode('utf-8') ## Extract the response content (i.e. text)
+fred = json.loads(content) ## Convert JSON response to Python dictionary
+observations = pd.DataFrame( fred['observations'] ) ## Extract the "observations" list element
+observations = observations.astype({'value': float}) ## Convert the "value" column to float type.
+```
+  
+]
+
+]
+
+
+
+---
+# US Census API
+### &lt;p style="color:#00449E"&gt; 
+
+The US Census Application Programming Interface (API) allows developers to access Census data resources programmatically.
+
+  - Python: `cenpy`
+  - R: `tidycensus`
+
+Visit [https://api.census.gov/data/key_signup.html](https://api.census.gov/data/key_signup.html) to request an API key, then activate the key from the link in your email.
+
+[Analyzing US Census Data: Methods, Maps, and Models in R](https://walker-data.com/census-r/index.html) is the book that explains how to use `tidycensus`.
+
+
+
+
+---
+class: inverse, center, middle
+
+# Unofficial API: `yfinance`
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+
+
+
+---
+# Unofficial API
+
+- Some developers build their own version of API, and make it open-source.
+- Here is one example of an unofficial API, `yfinance`:
+  - `yfinance` is an unofficial API for [Yahoo! Finance](https://finance.yahoo.com/)
+    - [https://pypi.org/project/yfinance](https://pypi.org/project/yfinance)
+    - It offers a threaded and Pythonic way to download stock market data from **Yahoo Finance**.
+    
+
+
+```python
+pip install yfinance
+```
+
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; 
+
+- One of the most critical use cases of `yfinance` is the possibility to access stocks (and some crypto currencies’) historical data. 
+  - These include `Open`, `High`, `Low`, `Close`, `Volume`, and also `Dividends` payments, and `Stock Splits`.
+
+
+```python
+import yfinance as yf
+from datetime import datetime
+# CREATE TICKER INSTANCE FOR AMAZON
+nvda = yf.Ticker("NVDA")
+
+# GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)
+end_date = datetime.now().strftime('%Y-%m-%d')
+nvda_hist = nvda.history(start='2024-01-01', end=end_date)
+```
+
+
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; 
+
+By default, `yfinance` returns daily data, but we can also set the time `interval`. 
+  - Different time interval have different limitations regarding how far back we can go in time.
+  - Requesting an interval (start – end) greater than the limitations will result in an error.
+  - We can avoid this error by only asking for the maximum allowed days of data. This is done by setting the parameter “period” to ‘max’, in addition to either “end” or “start” (but not both)
+
+
+```python
+nvda_hist_min = nvda.history(period = 'max', end = end_date, interval = '1m')
+```
+
+
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; 
+
+- It is also possible to retrieve historical data of more than one company's stock with a single request. 
+  - This can be done by instantiating a `Tickers` object (plural instead of singular).
+
+
+```python
+companies = ['AMZN', 'APPL', 'GOOG', 'MSFT', 'NVDA', 'TSLA', 'META'] 
+tickers = yf.Tickers(companies)
+tickers_hist = tickers.history(period='max',end=end_date,interval='1m',)
+```
+
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; 
+
+- Notice that the returned DataFrame has a `MultiLevel Index`, which is an undesired structure for most purposes.
+
+
+```python
+tickers_hist_long = (
+    tickers_hist
+    .stack() # stacking, similar to DataFrame.melt()
+    .rename_axis(['Date', 'Ticker']) # rename row index
+    .reset_index()
+)
+```
+
+
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; 
+
+- The `.history()` method includes several parameters, and knowing them is important in order to make most out of `yfinance`.
+
+.panelset[
+.panel[.panel-name[(1)]
+- `period`: Especially useful is the value `“max”`. 
+  - The following are the valid values: `1d`, `5d`, `1mo`, `3mo`, `6mo`, `1y`, `2y`, `5y`, `10y`, `ytd`, `max`.
+  
+
+]
+
+
+.panel[.panel-name[(2)]
+- `interval`: Defines the size of each interval. 
+  - Smaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.
+  - The following are the valid values: `1m`, `2m`, `5m`, `15m`, `30m`, `60m`, `90m`, `1h`, `1d`, `5d`, `1wk`, `1mo`, `3mo`
+
+]
+
+.panel[.panel-name[(3)]
+  - `start`: Start date. The server expects a string formatted as YYYY-MM-DD.
+  - `end`: End date. The server expects a string formatted as YYYY-MM-DD.
+
+]
+
+.panel[.panel-name[(4)]
+  - `repost`: Defines whether to include or not data not corresponding to regular trading hours. Default value is `False`
+  - `auto_adjust`: whether to adjust prices to stock splits and dividend payments. The default value is `True`.
+  
+
+]
+
+]
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; Fetch financial information
+
+- Yahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios. 
+
+- However, `yfinance` does not currently work well with fetching these information.
+
+  - Let's work with [Microsoft page in Yahoo! Finance](https://finance.yahoo.com/quote/MSFT/sustainability?p=MSFT).
+
+
+---
+# Yahoo! Finance with `yfinance`
+### &lt;p style="color:#00449E"&gt; Fetch financial information about Microsoft
+
+  
+.panelset[
+
+.panel[.panel-name[(1)]
+
+```python
+msft = yf.Ticker("MSFT")
+msft.info # get all stock info
+# show meta information about the history (requires history() to be called first)
+msft.history_metadata
+```
+]
+
+
+.panel[.panel-name[(2)]
+
+```python
+# show share count
+# - accurate time-series count:
+msft.get_shares_full(start="2022-01-01", end=None)
+```
+]
+
+.panel[.panel-name[(3)]
+
+```python
+# show financials:
+# - income statement
+msft.income_stmt
+msft.quarterly_income_stmt
+```
+]
+
+.panel[.panel-name[(4)]
+
+```python
+# - balance sheet
+msft.balance_sheet
+msft.quarterly_balance_sheet
+```
+]
+
+
+.panel[.panel-name[(5)]
+
+```python
+# - cash flow statement
+msft.cashflow
+msft.quarterly_cashflow
+# see `Ticker.get_income_stmt()` for more options
+```
+]
+
+
+
+.panel[.panel-name[(6)]
+
+```python
+# show holders
+msft.major_holders
+msft.institutional_holders
+msft.mutualfund_holders
+```
+]
+
+
+.panel[.panel-name[(7)]
+
+```python
+# show next event (earnings, etc)
+msft.calendar
+```
+]
+
+.panel[.panel-name[(8)]
+
+```python
+# Show future and historic earnings dates, 
+# returns at most next 4 quarters and last 8 quarters by default. 
+# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.
+msft.earnings_dates
+msft.get_earnings_dates()
+```
+]
+
+
+.panel[.panel-name[(9)]
+
+```python
+# show options expirations
+msft.options
+```
+]
+
+.panel[.panel-name[(10)]
+
+```python
+# show news
+msft.news
+```
+]
+
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo-blue.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 55px;
+  height: 66px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

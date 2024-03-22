@@ -1,0 +1,1418 @@
+---
+title: Efficient Data Collection
+subtitle: Leveraging Web Scrapping and API
+format:
+  clean-revealjs:
+    self-contained: true
+    incremental: true   
+    # css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-03-22
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+include-after-body: target-hover.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+
+# Web-scrapping  {background-color="#1c4982"}
+
+
+
+## Web Scrapping
+### Ethical considerations
+
+> *"If you can see things in your web browser, you can scrape 
+them."*
+
+- Just because you can scrape them doesn't mean you should.
+  - It is currently legal to scrape data from the web using automated tools, as long as the data are publicly available.
+    - hiQ Labs vs. LinkedIn Corp. court ruling.
+ 
+ 
+- It’s important to realize that the web scrapping tools are very powerful.
+  - It’s pretty easy to write up a program that can overwhelm a host server.
+  - The host server tends to have built-in safeguards that will block you in case of a suspected malicious attack.
+
+
+
+
+## Web Scrapping
+### Ethical considerations
+
+- Respect for website owners' terms of service.
+- Respect for copyright and intellectual property.
+- Respect for client servers.
+- Respect for privacy.
+
+
+
+## Web Scrapping
+### Clients and servers
+
+- Computers connected to the web are called **clients** and **servers**.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/client_server_2.png" width="400px">
+</p>
+
+
+
+- **Clients** are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).
+- **Servers** are computers that store webpages, sites, or apps.
+
+
+- When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user’s web browser.
+
+
+
+
+
+# Selenium Web-scrapping  {background-color="#1c4982"}
+
+
+
+## Web Scrapping
+### WebDriver
+:::: {.nonincremental}
+::: {.panel-tabset}
+## WebDriver
+
+- **WebDriver** is an wire protocol that defines a language-neutral interface for controlling the behaviour of web browsers. 
+
+
+- Selenium WebDriver refers to both the language bindings and the implementations of the individual browser controlling code and commonly referred as WebDriver.
+
+
+- Each browser is backed by a specific WebDriver implementation, called a driver (or a browser driver). 
+
+
+
+## Driver
+
+- The **driver** is the component responsible for delegating down to the browser, and handles communication to and from Selenium WebDriver and the browser. 
+
+
+- The driver is browser-specific:
+  - ChromeDriver for Chrome;
+  - GeckoDriver for FireFox.
+
+
+
+## Interaction
+
+- A simplified diagram of how WebDriver interacts with browser might look like this:
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/driver.png" width="400px">
+</p>
+
+
+
+
+- WebDriver talks to a browser through a driver and the communication is two way:
+  - WebDriver sends commands to the browser through the driver, and receives information back via the same route.
+
+
+::: 
+:::: 
+
+
+## Web Scrapping
+### Setting up
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- Selenium works by automating browsers to load the website, retrieve the required data, and even take certain actions on the website. 
+
+
+*1*. Downloads the appropriate version of the ChromeDriver file ([https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)) or the gecokdriver file ([https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases)) for your operating system (Windows or MacOS).
+
+
+
+## (2)
+
+*2*. It is recommended that we place the web driver file on the main folder containing the Python codes.
+
+  - Install Chrome or FireFox if you do not have either of them.
+  - Install Selenium using `pip`:
+    -  `pip install selenium`
+
+
+
+
+## Mac
+
+
+- Mac users should allow the web driver to be opened.
+
+1. Open (or double click) the web driver file (`chromedriver` or `geckodriver`) from the Finder.
+2. Click Apple logo on the left top corner.
+3. Click "System Preferences ...".
+4. Click "Security & Privacy".
+5. Click "General".
+6. Click "Open Anyway".
+
+
+
+::: 
+::::
+
+## Web Scrapping
+### Setting up
+:::: {.nonincremental}
+::: {.panel-tabset}
+## working directory
+- We can use `os.chdir()` to set the working directory 
+  - `os.chdir()` changes the current working directory to the specified path. 
+```{.python}
+import os
+wd_path = 'YOUR_PATH_TO_WORKING_DIRECTORY'
+os.chdir(wd_path)  
+os.getcwd()
+```
+
+
+
+## webdriver.Chrome()
+
+- To begin with, we import `WebDriver` from Selenium, and set a path to `chromedriver`.
+
+  - The `webdriver.Chrome()` with the path of `chromedriver` creates an object of the `selenium.webdriver.chrome.webdriver.WebDriver`.
+  
+
+
+
+## webdriver.Chrome()
+
+```{.python}
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("window-size=1400,1200")
+
+driver_path = "YOUR_PATH_TO_chromedriver"
+driver = [?](chrome_options = options, 
+             executable_path = driver_path)
+```
+
+
+
+
+## get()
+- `get()` from `WebDriver` with a URL opens Google Chrome. 
+  - In your browser, you may the message, "Chrome is being controlled by automated test software."
+- `close()` terminates the loaded browser window. 
+- `quit()` ends the `WebDriver` application.
+```{.python}
+url = "https://qavbox.github.io/demo/webtable/"
+driver.[?](form_url)
+driver.close()
+driver.quit()
+```
+
+
+::: 
+:::: 
+
+
+
+## Web Scrapping
+### Locating Web Elements by `Inspect`-`find_element()`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- After the new Google Chrome window is loaded with the URL provided, we can find the elements that we need to act on. 
+
+  - The easiest way to identify the information is to `Inspect` pages using developer tools.
+
+
+
+
+## (2)
+- Place the cursor anywhere on the webpage, right-click to open a pop-up menu, then select the `Inspect` option.
+
+
+  -  In the `Elements` window, move the cursor over the DOM structure of the page until it reaches the desired element. 
+  
+  
+  - We then need to find information such as what HTML tag is used for the element, the defined attribute, and the values for the attributes and the structure of the page.
+
+
+
+::: 
+:::: 
+
+
+
+
+
+
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.ID, "")`
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- `find_element(By.ID, "")` & `find_elements(By.ID, "")`:
+  - Return element(s) that have matching ID attribute values.
+
+
+- Here is the HTML code for main part of the web-page with an ID attribute value defined as `form1`:
+
+```{.html}
+<form id="form1">...</form>
+```
+
+
+
+
+## (2)
+- Here is an example that uses the `find_element(By.ID, "")` method to find the form table.
+
+
+```{.python}
+form = driver.find_element(By.ID, "form1")
+form.text  # text attribute if there is any
+```
+
+
+
+::: 
+:::: 
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.CLASS_NAME, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- `find_element(By.CLASS_NAME, "")` & `find_elements(By.CLASS_NAME, "")`:
+  - Return element(s) that have matching class attribute value(s).
+
+
+- Here is the HTML code for the home button with a class attribute value defined as `homebtn`:
+
+```{.html}
+<div class="homebtn" align="center">...</div>
+```
+
+
+
+## (2)
+- Here is an example that uses the `find_element(By.CLASS_NAME, "")` method to find the home button.
+
+
+```{.python}
+home_button = driver.find_element(By.CLASS_NAME, "homebtn")
+home_button.click() # click the home_button object
+driver.back() # back to the previous page
+```
+
+::: 
+::::  
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.NAME, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.NAME, "")` & `find_elements(By.NAME, "")`:
+  - Return element(s) that have matching name attribute value(s).
+
+
+
+- Here is the HTML code for the home button with a name attribute value defined as `home`:
+
+
+```{.html}
+<input type="button" class="btn" name="home" value="Home" />
+```
+
+
+
+
+## (2)
+- Here is an example that uses the `find_element(By.NAME, "")` method to find the home button.
+
+
+```{.python}
+home_button2 = driver.find_element(By.NAME, "home")
+home_button2.click()
+driver.back()
+```
+
+::: 
+:::: 
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.CSS_SELECTOR, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- `find_element(By.CSS_SELECTOR, "")` & `find_elements(By.CSS_SELECTOR, "")`:
+  - Return element(s) that are found by the specified CSS selector. 
+  
+  
+## (2)
+
+- To find the CSS selector of the search button, we `Inspect` the example site, in the *Elements* window, move the cursor over its DOM structure and find the search element. 
+  - We then right-click and choose *Copy Selector* from the pop-up menu. 
+  - We obtain the following CSS selector of this element:
+  
+```{.python}
+home_button3 = driver.find_element(By.CSS_SELECTOR, "body > div > a > input")
+home_button3.click()
+driver.back()
+```
+
+
+::: 
+::::
+
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.TAG_NAME, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.TAG_NAME, "")` & `find_elements(By.TAG_NAME, "")`:
+  - Return element(s) that are found by the specified tag. 
+
+
+## (2)
+
+:::: {.columns}
+::: {.column width="50%"}
+- The following example page displays a table which has several form fields to fill in.
+  -  Each form field name is implemented using an `<th>` or table header cell tag inside a `<tr>` or table row tag:
+
+:::
+
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/find_tag1.png" width="400px">
+</p>
+
+:::
+::::
+
+
+
+## (3)
+- Here is an example that uses the `find_element(By.TAG_NAME, "")` method to find the head of the table.
+
+
+```{.python}
+table01 = driver.find_element(By.ID, "table01")
+thead = table01.find_element(By.TAG_NAME, "thead")
+thead.text
+```
+
+
+
+
+::: 
+:::: 
+
+
+
+
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.LINK_TEXT, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.LINK_TEXT, "")` & `find_elements(By.LINK_TEXT, "")`:
+  - Find link(s) using the text displayed for the link. 
+
+
+
+## (2)
+- For example, we may want to get the **Selenium** displayed on the example site. 
+  - Here is the HTML code for the **Selenium** implemented as the `<a>`, or anchor tag, with text **"Selenium"**:
+
+
+```{.html}
+<a href="http://www.selenium.dev/">Selenium</a>
+```
+
+
+
+
+## (3)
+-  Here is an example that uses the `find_element(By.LINK_TEXT, "")` method to find **Selenium**.
+
+
+```{.python}
+selenium_link = driver.find_element(By.LINK_TEXT, "Selenium")
+selenium_link.click()
+```
+
+
+::: 
+::::
+
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.PARTIAL_LINK_TEXT, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- Sometimes, there can be several link texts that contain a common word in the webpage.
+
+
+- `find_element(By.PARTIAL_LINK_TEXT, "")` & `find_elements(By.PARTIAL_LINK_TEXT, "")`:
+  - Find link(s) using partial text. 
+
+
+
+
+## (2)
+- Let us use this method to find these links using the `"qav"` text and check whether we have two of these links available on the page.
+
+```{.python}
+Selen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, "qav")
+print(len(Selen_links))
+Selen_links[0].click()
+driver.back()
+```
+
+
+
+::: 
+::::
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.XPATH, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.XPATH, "")` & `find_element(By.XPATH, "")`:
+  - Return element(s) that are found by the specified XPath query. 
+
+
+- XPath is a query language used to search and locate nodes in a XML document.
+  - All major web browsers support XPath. 
+  - Selenium can leverage and use powerful XPath queries to find elements on a web page. 
+  - One of the advantages of using XPath is when we can’t find a suitable ID, name, or class attribute value for the element. 
+
+
+
+## (2)
+- We can use *XPath* to either find the element in absolute terms or relative to an element that does have an ID or name attribute.
+
+
+- We can also use defined attributes other than the ID, name, or class with *XPath* queries. 
+
+
+
+
+
+## (3)
+
+- For example, we want to get the second table. 
+
+  - The body of this table consists of a series of `<tr>` tags, but does not have the ID, name, or class attributes defined.
+  
+  - Also, we cannot use the `find_element(By.TAG_NAME, "")` method as there are multiple `<tr>` and `<th>` tags defined on the page.
+
+
+
+## (4)
+
+- To find the XPath of this element, we `Inspect` the example site, in the Elements window, move the cursor over its DOM structure and find the desired element. 
+
+  - We then right-click and choose copy XPath from the pop-up menu. 
+  
+  - We obtain the following XPath of the first row and the first column of the table body:
+
+
+```{.html}
+//*[@id="table02"]/tbody/tr[1]/td[1]
+```
+
+
+
+
+## (5)
+- We then pass this XPath to the `find_element(By.XPATH, "")` method as an argument:
+  - Find the XPath for "Tiger Nixon" in the second table.
+
+```{.python}
+elt = driver.find_element(By.XPATH, '//*[@id="table02"]/tbody/tr[1]/td[1]')
+elt.text
+```
+
+
+
+## (6)
+- We typically use the XPath method when there exists an element with a unique id on the path to the desired element. 
+  - Otherwise, this method is not reliable.
+
+
+
+
+::: 
+::::
+
+
+
+
+
+# Filling in Web Forms  {background-color="#1c4982"}
+
+
+
+## Filling in Web Forms
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- Web forms are ubiquitous when surfing the internet. 
+
+
+- A web form comprises web elements such as input boxes, check boxes, radio buttons, links, drop down menus, and submit buttons to collect user data. 
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/webform.png" width="400px">
+</p>
+
+
+
+
+
+## (2)
+-  To process web forms, we need to first find these web elements and then take subsequent actions on them like selecting a value or entering some text. 
+
+
+- Selenium performs actions on the web form and interacts with the form.
+
+::: 
+::::
+
+
+## Filling in web forms
+### Input box
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- To handle any input box, we must be able to enter information, clear information or get information from the box. 
+  -  To enter text into an input box we can use the `send_keys()` method. 
+
+```{.python}
+url = "https://qavbox.github.io/demo/signup/"
+driver.get(url)
+
+driver.find_element(By.ID, 'username').send_keys("YOUR_NAME")
+```
+
+
+
+## (2)
+- If we need to validate some existing text, we can fetch text already in a text box using the `get_attribute()` method:
+
+```{.python}
+nameText = driver.find_element(By.ID, 'username').get_attribute("value")
+```
+
+
+## (3)
+- To clear pre-entered text, we can use the `clear()` method. 
+
+```{.python}
+driver.find_element(By.ID, 'username').clear()
+```
+
+::: 
+::::
+
+
+## Filling in web forms
+### Dropdown
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- A dropdown provides a list of options to the user, thereby giving access to one or multiple values as per the requirement.
+
+-  The Selenium Python API provides the `Select` class, which allows us to select the element of our choice from a dropdown menu. 
+
+- Note that the `Select` class only works with tags that have `<select>` tags. 
+
+
+## (2)
+- We can select a sub-element of the dropdown using:
+  1. `index`; 
+  2. `value`;
+  3. `text`.
+
+
+```{.python}
+from selenium.webdriver.support.ui import Select
+gender_dropdown = Select(driver.find_element(By.NAME, "sgender"))
+gender_dropdown.select_by_index(2)
+gender_dropdown.select_by_value("female")
+gender_dropdown.select_by_visible_text("Male")
+```
+
+
+## (3)
+
+- In a similar way, we can deselect any selected value from the dropdown using any of the following options: 
+  1. `deselect_by_index()` 
+  2. `deselect_by_value`
+  3. `deselect_by_visible_text` 
+
+
+::: 
+::::
+
+
+## Filling in web forms
+### Radio button
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- A radio button is a circular element on the screen that we can select.
+  - It is only possible to select one radio button out of several choices by the `click()` method.
+
+
+
+## is_selected()
+- To get the current state of the radio button we can use one of two methods: `is_selected()` or `get_attribute("checked")`
+
+```{.python}
+driver.find_element(By.XPATH, '//*[@id="container"]/div[8]/input[1]').click()
+yr_exp_boolean = driver.find_element(By.XPATH, '//*[@id="container"]/div[8]/input[1]').is_selected()
+print(yr_exp_boolean)
+print(type(yr_exp_boolean))
+```
+
+
+## get_attribute("checked")
+
+```{.python}
+yr_exp_boolean2 = driver.find_element(By.XPATH, '//*[@id="container"]/div[8]/input[1]').get_attribute("checked")
+print(yr_exp_boolean2)
+print(type(yr_exp_boolean2))
+```
+
+
+::: 
+::::
+
+## Filling in web forms
+### Check box
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- To select or check a value in a check box we use the `click()` method. 
+  - To get the current state of the check box we can use one of two methods: `is_selected()` or `get_attribute("checked")`
+  - It is also possible to de-select check boxes.
+
+
+## is_selected()
+
+```{.python}
+driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').click()
+skills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').is_selected()
+print(skills_boolean)
+print(type(skills_boolean))
+```
+
+
+
+## get_attribute("checked")
+
+```{.python}
+skills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[4]').get_attribute("checked")
+print(skills_boolean)
+print(type(skills_boolean))
+```
+
+::: 
+::::
+
+
+## Filling in web forms
+### Button
+
+
+- Buttons are simply used to submit whatever information we have filled in our forms to the server. 
+  - This can be done through click actions on the button, mostly using the `click()` method:
+
+```{.python}
+driver.find_element(By.ID, "submit").click()
+```
+
+
+
+
+# `NoSuchElementException` and `WebDriverWait` {background-color="#1c4982"}
+
+
+
+
+## `NoSuchElementException`
+
+- When a web element is not found, it throws the `NoSuchElementException`.
+  - `try-except` can be used to avoid the termination of the selenium code.
+
+
+```{.python}
+from selenium.common.exceptions import NoSuchElementException
+try:
+    elem = driver.find_element(By.XPATH, "element_xpath")
+    elem.click()
+except NoSuchElementException:
+    pass
+```
+
+
+- This solution is to address the **inconsistency** in the DOM among the seemingly same pages.
+
+
+
+
+## `NoSuchElementException`
+### `execute_script()`
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- When the page loads, for some reason we may be taken to the bottom of the page, but the element we need to scrape is on the top of the page and thus is out of view.
+
+- In this situation, we can locate the element in the DOM first, then use the `execute_script()` method to scroll the element into view:
+
+
+
+```{.python}
+elem = driver.find_element(By.XPATH, "element_xpath")
+driver.execute_script("arguments[0].scrollIntoView();", elem)
+```
+
+
+
+## (2)
+
+- In case the element has the attribute `style="display: none;"`, remove the attribute through `execute_script()` method:
+
+
+```{.python}
+elem = driver.find_element(By.XPATH, "element_xpath")
+driver.execute_script("arguments[0].removeAttribute('style')", elem)
+elem.send_keys("text_to_send")
+```
+
+
+
+
+## (3)
+
+- We can also simply scroll the webpage:
+
+```{.python}
+# example website
+url = "https://www.ncsl.org/research/energy/energy-legislation-tracking-database.aspx"
+driver.get(url)
+
+driver.execute_script("window.scrollTo(0, 5000)") 
+driver.execute_script("window.scrollTo(0, 1000)") 
+```
+
+
+
+
+::: 
+::::
+
+## `WebDriverWait`
+### `WebDriverWait` with `expected_conditions`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- If the element is not present/visible in the HTML DOM immediately, induce `WebDriverWait` with `expected_conditions` set to the proper method as follows:
+
+- To wait for `presence_of_element_located`:
+
+```{.python}
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# example webpage
+url = "https://qavbox.github.io/demo/delay/"
+driver.get(url)
+```
+
+
+
+
+
+## (2)
+- If the element is not present/visible in the HTML DOM immediately, induce `WebDriverWait` with `expected_conditions` set to the proper method as follows:
+
+- To wait for `presence_of_element_located`:
+
+```{.python}
+element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "element_xpath"))) # 10 is timeout in seconds when an expectation is called
+```
+
+
+## (3)
+- To wait for `visibility_of_element_located`:
+
+```{.python}
+element = WebDriverWait(driver, 20).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "element_css")))
+```
+
+
+
+
+
+## (4)
+- To wait for `element_to_be_clickable`:
+
+```{.python}
+element = WebDriverWait(driver, 20).until(expected_conditions.element_to_be_clickable((By.LINK_TEXT, "element_link_text")))
+```
+
+
+
+
+
+## (5)
+1. Click the button with "Click me!"
+2. Locate the text element that will be displayed after 5 seconds using `WebDriverWait` with `expected_conditions.presence_of_element_located`.
+  - Its XPath is '//*[@id="two"]'
+
+::: 
+::::
+
+## `WebDriverWait`
+### `WebDriverWait` with `expected_conditions`
+
+-  The `time.sleep()` method is an explicit wait to set the condition to be an exact time period to wait:
+
+```{.python}
+import time
+
+driver.find_element(By.XPATH, '//*[@id="one"]/input').click()
+time.sleep(5)
+element = driver.find_element(By.XPATH, '//*[@id="two"]')
+element.text
+```
+
+- A more efficient solution than `time.sleep()` would be to make `WebDriver()` wait only as long as required. 
+
+
+
+
+## `WebDriverWait`
+### `WebDriverWait` with `expected_conditions`
+
+- Implicit wait with `implicitly_wait()` directs the `WebDriver` to wait for a certain measure of time before throwing an exception. 
+
+- Once this time is set, `WebDriver` will wait for the element before the exception occurs.
+
+
+```{.python}
+driver.find_element(By.XPATH, '//*[@id="oneMore"]/input[1]').click()
+driver.implicitly_wait(5)
+element2 = driver.find_element(By.ID, 'delay')
+```
+
+
+
+
+# API  {background-color="#1c4982"}
+
+
+
+
+## API
+### Key Concepts
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- API stands for Application Programming Interface.
+  - It enables data transmission between client and server.
+
+
+- Server: A powerful computer that runs an API.
+
+
+- Client: A program that exchanges data with a server through an API.
+
+
+- Protocol: The “etiquette” underlying how computers talk to each other (e.g. HTTP).
+
+
+## (2)
+
+
+- Methods: The “verbs” that clients use to talk with a server.
+  - The main one that we’ll be using is `GET` (i.e. ask a server to retrieve information), but other common methods are `POST`, `PUT` and `DELETE`.
+  
+  
+- Requests: What the client asks of the server.
+
+
+- Response: The server’s response, which includes 
+  - Status Code (e.g. “404” if not found, or “200” if successful);
+  - Header (i.e. meta-information about the reponse); 
+  - Body (i.e the actual content that we’re interested in.
+
+
+
+::: 
+::::
+
+
+
+## API
+#### API endpoints
+- In the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).
+  - These URLs are known as an **API endpoints**.
+
+- Navigate your browser to an API endpoint and you’ll just see a load of the following format of texts:
+  - JSON (JavaScript Object Notation) or 
+  - XML (Extensible Markup Language).
+
+- We can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.
+  - [https://jsonview.com/](https://jsonview.com/)
+
+
+
+## NYC Open Data
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- NYC Open Data ([https://opendata.cityofnewyork.us](https://opendata.cityofnewyork.us)) is free
+public data published by NYC agencies and other partners.
+
+
+- Los Angeles has the open data website too:
+  - [https://data.lacity.org](https://data.lacity.org)
+
+
+
+
+## (2)
+- Let’s get the NYC's Payroll Data.
+  1. Open the web page
+[https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e) in your
+browser.
+  2. Click the API tab.
+  3. Copy the API endpoint that appears in the popup box.
+
+
+
+
+## (3)
+```{.python}
+import requests
+import pandas as pd
+endpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint
+response_API = requests.get(endpoint)
+df = pd.read_json(response_API.text)
+```
+
+- The `request.get()` method sends a `GET` request to the specified url.
+
+- `pd.read_json()` automatically convert JSON data into DataFrame. 
+  - JSON objects have the same format as Python dictionaries.
+
+::: 
+::::
+
+
+## Federal Reserve Economic Data (FRED) API
+ 
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- Most API interfaces will only let you access and download data after you have registered an API key with them.
+
+- Let’s download economic data from the FRED [https://fred.stlouisfed.org](https://fred.stlouisfed.org) using its API.
+
+- You need to create an account [https://fredaccount.stlouisfed.org/login/](https://fredaccount.stlouisfed.org/login/) to get an API key
+for your FRED account.
+
+
+
+## (2)
+- As with all APIs, a good place to start is the FRED API developer docs [https://fred.stlouisfed.org/docs/api/fred/](https://fred.stlouisfed.org/docs/api/fred/).
+  - We are interested in *series/observations* [https://fred.stlouisfed.org/docs/api/fred/series_observations.html](https://fred.stlouisfed.org/docs/api/fred/series_observations.html)
+  
+  - The parameters that we will use are `api_key`, `file_type`, and `series_id`.
+  - Replace “YOUR_API_KEY” with your actual API key in the following web address: [https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json](https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json)
+
+
+
+
+## (3)
+- We’re going to go through the `requests`, `json`, and `pandas` libraries.
+  - `requests` comes with a variety of features that allow us to interact more flexibly and securely with web APIs.
+  
+```{.python}
+import requests
+import json
+import pandas as pd
+
+params = {
+'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key
+'file_type': 'json',
+'series_id': 'GDPC1'   ## ID for US real GDP
+}
+
+endpoint = "series/observations"
+url = "https://api.stlouisfed.org/"
+response = requests.get(url + "fred/" + endpoint, params = params)
+
+```
+  
+
+## (4)
+- To actually extract the content (i.e. data) from of the response, we’ll use the `.content.decode('utf-8')`.
+- We can convert JSON into a Python dictionary object using then `json.loads()` function.
+  
+```{.python}
+content = response.content.decode('utf-8') ## Extract the response content (i.e. text)
+fred = json.loads(content) ## Convert JSON response to Python dictionary
+observations = pd.DataFrame( fred['observations'] ) ## Extract the "observations" list element
+observations = observations.astype({'value': float}) ## Convert the "value" column to float type.
+```
+  
+
+
+::: 
+::::
+
+
+
+
+
+
+# Unofficial API  {background-color="#1c4982"}
+
+
+## Unofficial API
+
+- Some developers build their own version of API, and make it open-source.
+- Here is one example of unofficial APIs:
+  - `yfinance` is unofficial API for [Yahoo! Finance](https://finance.yahoo.com/)
+    - [https://pypi.org/project/yfinance](https://pypi.org/project/yfinance)
+    - It offers a threaded and Pythonic way to download market data from **Yahoo Finance**.
+
+
+```{.python}
+pip install yfinance
+```
+
+
+
+## Yahoo! Finance with `yfinance`
+
+- One of the most critical use cases of `yfinance` is the possibility to access stocks (and some cryptocurrencies’) historical data. 
+  - These include Open, High, Low, Close, Volume, and also dividend payments, and stock splits.
+
+```{.python}
+import yfinance as yf
+from datetime import datetime
+# CREATE TICKER INSTANCE FOR AMAZON
+amzn = yf.Ticker("AMZN")
+
+# GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)
+end_date = datetime.now().strftime('%Y-%m-%d')
+amzn_hist = amzn.history(start='2023-01-01', end=end_date)
+```
+
+
+
+
+## Yahoo! Finance with `yfinance`
+
+- By default, `yfinance` returns daily data, but we can also set the time `interval`. 
+  - Different time interval have different limitations regarding how far back we can go in time.
+  - Requesting an interval (start – end) greater than the limitations will result in an error.
+  - We can avoid this error by only asking for the maximum allowed days of data. This is done by setting the parameter “period” to ‘max’, in addition to either “end” or “start” (but not both)
+
+```{.python}
+amzn_hist_min = amzn.history(period = 'max', end = end_date, interval = '1m')
+```
+
+
+
+
+## Yahoo! Finance with `yfinance`
+
+- It is also possible to retrieve historical data of more than one company's stock with a single request. 
+  - This can be done by instantiating a `Tickers` object (plural instead of singular).
+
+```{.python}
+companies = ['AMZN','GOOG','WMT','TSLA','META'] 
+tickers = yf.Tickers(companies)
+tickers_hist = tickers.history(period='max',end=end_date,interval='1m',)
+tickers_hist
+```
+
+
+
+## Yahoo! Finance with `yfinance`
+
+- Notice that the returned DataFrame has a `MultiLevel Index`, which is an undesired structure for most purposes.
+
+```{.python}
+tickers_hist_long = (
+    tickers_hist
+    .stack() # stacking, similar to DataFrame.melt()
+    .rename_axis(['Date', 'Ticker']) # rename row index
+    .reset_index()
+)
+```
+
+
+
+
+## Yahoo! Finance with `yfinance`
+
+- The `.history()` method includes several parameters, and knowing them is important in order to make most out of `yfinance`.
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `period`: Especially useful is the value “max”. 
+  - The following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.
+  
+
+## (2)
+- `interval`: Defines the size of each interval. 
+  - Smaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.
+  - The following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo
+
+
+
+## (3)
+  - `start`: Start date. The server expects a string formatted as YYYY-MM-DD.
+  - `end`: End date. The server expects a string formatted as YYYY-MM-DD.
+
+
+
+## (4)
+  - `repost`: Defines whether to include or not data not corresponding to regular trading hours. Default value is `False`
+  - `auto_adjust`: whether to adjust prices to stock splits and dividend payments. The default value is `True`.
+
+
+::: 
+::::
+
+  
+  
+
+
+## Yahoo! Finance with `yfinance`
+### Fetch financial information
+
+- Yahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios. 
+
+- However, `yfinance` does not currently work well with fetching these information.
+
+  - Let's work with [Microsoft page in Yahoo! Finance](https://finance.yahoo.com/quote/MSFT/sustainability?p=MSFT).
+
+
+
+## Yahoo! Finance with `yfinance`
+### Fetch financial information about Microsoft
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+
+## (1)
+```{.python}
+msft = yf.Ticker("MSFT")
+msft.info # get all stock info
+# show meta information about the history (requires history() to be called first)
+msft.history_metadata
+```
+
+
+## (2)
+```{.python}
+# show actions (dividends, splits, capital gains)
+msft.actions
+msft.dividends
+msft.splits
+msft.capital_gains  # only for mutual funds & etfs
+```
+
+
+## (3)
+```{.python}
+# show share count
+# - yearly summary:
+msft.shares
+
+# - accurate time-series count:
+msft.get_shares_full(start="2022-01-01", end=None)
+```
+
+
+## (4)
+- These do not work currently.
+```{.python}
+# show financials:
+# - income statement
+msft.income_stmt
+msft.quarterly_income_stmt
+```
+
+
+## (5)
+- These do not work currently.
+```{.python}
+# - balance sheet
+msft.balance_sheet
+msft.quarterly_balance_sheet
+
+```
+
+
+
+## (6)
+- These do not work currently.
+```{.python}
+# - cash flow statement
+msft.cashflow
+msft.quarterly_cashflow
+# see `Ticker.get_income_stmt()` for more options
+```
+
+
+
+
+## (7)
+```{.python}
+# show holders
+msft.major_holders
+msft.institutional_holders
+msft.mutualfund_holders
+```
+
+## (8)
+- These do not work currently.
+```{.python}
+# show earnings
+msft.earnings
+msft.quarterly_earnings
+```
+
+## (9)
+- These do not work currently.
+```{.python}
+# show sustainability
+msft.sustainability
+```
+
+## (10)
+- These do not work currently.
+```{.python}
+msft.recommendations # show analysts recommendations
+msft.recommendations_summary
+msft.analyst_price_target # show analysts other work
+msft.revenue_forecasts
+msft.earnings_forecasts
+msft.earnings_trend
+```
+
+
+## (11)
+```{.python}
+# show next event (earnings, etc)
+msft.calendar
+
+# Show future and historic earnings dates, 
+# returns at most next 4 quarters and last 8 quarters by default. 
+# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.
+msft.earnings_dates
+msft.get_earnings_dates()
+```
+
+
+
+## (12)
+```{.python}
+# show ISIN code - *experimental*
+# ISIN = International Securities Identification Number
+msft.isin
+
+# show options expirations
+msft.options
+```
+
+
+## (13)
+```{.python}
+# show news
+msft.news
+```
+
+
+::: 
+::::

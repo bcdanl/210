@@ -165,7 +165,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 5\n\n\nWebsite Basics; Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 6\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 7\n\n\nPython Basics; Pandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 8\n\n\nPandas Basics - Loading, Summarizing, Selecting, Sorting, Indexing, and Locating Data\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 9\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Converting Data Types\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 10\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Converting Data Types\n\n\nFebruary 29, 2024\n\n\n\n\nLecture 11\n\n\nPandas Basics - Converting Data Types; Filtering Methods\n\n\nMarch 5, 2024\n\n\n\n\nLecture 12\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 7, 2024\n\n\n\n\nLecture 13\n\n\nGroup Operations\n\n\nMarch 19, 2024\n\n\n\n\nLecture 14\n\n\nGroup Operations\n\n\nMarch 21, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Installing the Tools\n\n\nJanuary 23, 2024\n\n\n\n\nLecture 2\n\n\nInstalling the Tools\n\n\nJanuary 25, 2024\n\n\n\n\nLecture 3\n\n\nInstalling the Tools\n\n\nJanuary 30, 2024\n\n\n\n\nLecture 4\n\n\nWebsite Basics\n\n\nFebruary 1, 2024\n\n\n\n\nLecture 5\n\n\nWebsite Basics; Python Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 6\n\n\nPython Basics\n\n\nFebruary 6, 2024\n\n\n\n\nLecture 7\n\n\nPython Basics; Pandas Basics\n\n\nFebruary 13, 2024\n\n\n\n\nLecture 8\n\n\nPandas Basics - Loading, Summarizing, Selecting, Sorting, Indexing, and Locating Data\n\n\nFebruary 15, 2024\n\n\n\n\nLecture 9\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Converting Data Types\n\n\nFebruary 22, 2024\n\n\n\n\nLecture 10\n\n\nPandas Basics - Sorting & Indexing Data; Mathematical & Vectorized Operations; and Converting Data Types\n\n\nFebruary 29, 2024\n\n\n\n\nLecture 11\n\n\nPandas Basics - Converting Data Types; Filtering Methods\n\n\nMarch 5, 2024\n\n\n\n\nLecture 12\n\n\nDealing with Missing Values and Duplicates; Group Operations\n\n\nMarch 7, 2024\n\n\n\n\nLecture 13\n\n\nGroup Operations\n\n\nMarch 19, 2024\n\n\n\n\nLecture 14\n\n\nGroup Operations\n\n\nMarch 21, 2024\n\n\n\n\nEfficient Data Collection\n\n\nLeveraging Web Scrapping and API\n\n\nMarch 22, 2024\n\n\n\n\nEfficient Data Collection\n\n\nLeveraging Web Scrapping and API\n\n\nMarch 22, 2024\n\n\n\n\nEfficient Data Collection\n\n\nLeveraging Web Scrapping and API\n\n\nMarch 22, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
@@ -5514,5 +5514,1188 @@
     "title": "Homework 1 - Example Answers",
     "section": "Question 7",
     "text": "Question 7\n\nWrite a Python code to import the sqrt() function from the math module.\nAfter importing sqrt(), how do you use it to find the square root of 16?\n\nAnswer\n\nfrom math import sqrt\nsqrt(16)\n\n4.0"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#advanced-pandas",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#advanced-pandas",
+    "title": "Efficient Data Collection",
+    "section": "Advanced Pandas",
+    "text": "Advanced Pandas\nLearning Objectives\n\nGroup Operations"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\n\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-1",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-1",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nReview - Attributes and methods of a GroupBy object\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)  # fortune[\"Sector\"].nunique()\nsectors.groups\nsectors.get_group(\"Energy\")\nsectors.size()\nsectors.first()\nsectors.last()\nsectors.nth(0)  # sectors.nth(1)\nsectors.head(2)\nsectors.tail(2)"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-2",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-2",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\n\n\nWe can invoke methods on the GroupBy object to apply aggregate operations to every group.\n\nAggregation is the process of taking multiple values and returning a single value.\n\n\n\nsectors.sum()\nsectors.mean()"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-3",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-3",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors[\"Revenues_M\"]\nsectors[\"Revenues_M\"].sum()\nsectors[\"Revenues_M\"].mean()\nsectors[\"Revenues_M\"].max()\nsectors[\"Revenues_M\"].min()\n\nWe can target a single variable by passing its name inside square brackets after the GroupBy object.\n\nPandas returns a new object, a SeriesGroupBy."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-4",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-4",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors[\"Revenues_M\"]  # this is a SeriesGroupBy object\nsectors[\"Revenues_M\"].agg('sum')\nsectors[\"Revenues_M\"].agg('mean')\nsectors[\"Revenues_M\"].agg('max')\nsectors[\"Revenues_M\"].agg('min')\n\nThe agg() method can also be used on a SeriesGroupBy.\nInstead of directly calling the aggregation method, we can call the agg() method, and pass the aggregation method we want in there."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-5",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-5",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors.agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Revenues_M\", \"mean\")\n)\n\nThe agg() method can apply multiple aggregate operations to different variables and can accept a tuple as its argument."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-6",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-6",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\n\n\n\n\nWe pass in whatever aggregation we want.\n\nSome common options are in the table above."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-7",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-7",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Questions 1-6 in Classwork 7!"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-8",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-8",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd a New Variable with GroupBy.transform()\n\n\nJust like the agg() method, the transform() method can accept the aggregation method (e.g., 'sum', 'mean').\nUnlike the agg() method, the transform() method does not collapse DataFrame and goes back to the original index.\n\n\nsectors['Revenues_M'].transform('min')\nsectors['Profits_M'].transform('max')\nsectors['Number_of_employees'].transform('mean')"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-9",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-9",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd a New Variable with GroupBy.transform()\nfortune['Revenues_M_min'] = sectors['Revenues_M'].transform('min')\nfortune['Profits_M_max'] = sectors['Profits_M'].transform('max')\nfortune['Number_of_employees_mean'] = sectors['Number_of_employees'].transform('mean')\n\nSince the transform() method returns a Series with the index label that is the same as in the original DataFrame, it can be used to add a new variable to the original DataFrame."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-10",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-10",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd New Variables with assign() and GroupBy.transform()\nsectors = fortune.groupby(\"Sector\")\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-11",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-11",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nagg() vs. transform()\n\nUse .agg() with .groupby() when you want to take multiple values and return a single (aggregated) value for each group.\n\nGroups become the new index labels.\n\nUse .transform() with .groupby() when you want to perform computations on your groups but you want to return a single (aggregated) value for each observation.\n\nThat is, .transform() does not collapse the DataFrame."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-12",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-12",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 7 of Classwork 7!"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-13",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-13",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nsample(frac=1): This samples 100% of the observations from the DataFrame, effectively shuffling it.\n\nThe frac parameter specifies the fraction of observations to return in the random sample, so frac=1 means “return all observations”."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-14",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-14",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-15",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-15",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\nHow can we identify top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-16",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-16",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a custom function that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the custom function.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\n# labmda function\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-17",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-17",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite the get_largest_obs function as a lambda function, we would define it as follows:\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-18",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-18",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-19",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-19",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply a custom function with multiple parameters to a GroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a custom function with multiple parameters to a GroupBy object, we need to provide the rest of arguments to the apply() method."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-20",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-20",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nCan we apply a lambda function with multiple parameters to a GroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-21",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-21",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry = fortune.groupby([\"Sector\", \"Industry\"])\n\nWe can create a GroupBy object with values from multiple variables.\n\nThis operation is optimal when a combination of variables serves as the best identifier for a group."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-22",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-22",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\n(\n    sector_and_industry\n    .size()\n    .reset_index(name = \"n\")\n)\n\nThe GroupBy object’s size() method now returns a MultiIndex Series with a count of observations for each internal group.\nThe reset_index() method can be used to convert a Series into a DataFrame.\n\nThe name option renames a variable of index when resetting index."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-23",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-23",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.get_group((\"Business Services\", \"Financial Data Services\"))\n\nThe get_group() method requires a tuple of values to extract a nested DataFrame from the GroupBy collection."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-24",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-24",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.sum()\nsector_and_industry[\"Revenues_M\"].mean()\n\n(\n    sector_and_industry[\"Revenues_M\"]\n    .mean()\n    .reset_index(name = \"Revenues_mean\")\n)\n\nFor all aggregations, pandas returns a MultiIndex DataFrame with the calculations."
+  },
+  {
+    "objectID": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-25",
+    "href": "choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-25",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 8 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#advanced-pandas",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#advanced-pandas",
+    "title": "Efficient Data Collection",
+    "section": "Advanced Pandas",
+    "text": "Advanced Pandas\nLearning Objectives\n\nGroup Operations"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\n\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-1",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nReview - Attributes and methods of a GroupBy object\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)  # fortune[\"Sector\"].nunique()\nsectors.groups\nsectors.get_group(\"Energy\")\nsectors.size()\nsectors.first()\nsectors.last()\nsectors.nth(0)  # sectors.nth(1)\nsectors.head(2)\nsectors.tail(2)"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-2",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\n\n\nWe can invoke methods on the GroupBy object to apply aggregate operations to every group.\n\nAggregation is the process of taking multiple values and returning a single value.\n\n\n\nsectors.sum()\nsectors.mean()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-3",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors[\"Revenues_M\"]\nsectors[\"Revenues_M\"].sum()\nsectors[\"Revenues_M\"].mean()\nsectors[\"Revenues_M\"].max()\nsectors[\"Revenues_M\"].min()\n\nWe can target a single variable by passing its name inside square brackets after the GroupBy object.\n\nPandas returns a new object, a SeriesGroupBy."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-4",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors[\"Revenues_M\"]  # this is a SeriesGroupBy object\nsectors[\"Revenues_M\"].agg('sum')\nsectors[\"Revenues_M\"].agg('mean')\nsectors[\"Revenues_M\"].agg('max')\nsectors[\"Revenues_M\"].agg('min')\n\nThe agg() method can also be used on a SeriesGroupBy.\nInstead of directly calling the aggregation method, we can call the agg() method, and pass the aggregation method we want in there."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-5",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\nsectors.agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Revenues_M\", \"mean\")\n)\n\nThe agg() method can apply multiple aggregate operations to different variables and can accept a tuple as its argument."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-6",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAggregation\n\n\n\n\nWe pass in whatever aggregation we want.\n\nSome common options are in the table above."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-7",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-7",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Questions 1-6 in Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-8",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-8",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd a New Variable with GroupBy.transform()\n\n\nJust like the agg() method, the transform() method can accept the aggregation method (e.g., 'sum', 'mean').\nUnlike the agg() method, the transform() method does not collapse DataFrame and goes back to the original index.\n\n\nsectors['Revenues_M'].transform('min')\nsectors['Profits_M'].transform('max')\nsectors['Number_of_employees'].transform('mean')"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-9",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-9",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd a New Variable with GroupBy.transform()\nfortune['Revenues_M_min'] = sectors['Revenues_M'].transform('min')\nfortune['Profits_M_max'] = sectors['Profits_M'].transform('max')\nfortune['Number_of_employees_mean'] = sectors['Number_of_employees'].transform('mean')\n\nSince the transform() method returns a Series with the index label that is the same as in the original DataFrame, it can be used to add a new variable to the original DataFrame."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-10",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-10",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nAdd New Variables with assign() and GroupBy.transform()\nsectors = fortune.groupby(\"Sector\")\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-11",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-11",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nagg() vs. transform()\n\nUse .agg() with .groupby() when you want to take multiple values and return a single (aggregated) value for each group.\n\nGroups become the new index labels.\n\nUse .transform() with .groupby() when you want to perform computations on your groups but you want to return a single (aggregated) value for each observation.\n\nThat is, .transform() does not collapse the DataFrame."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-12",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-12",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 7 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-13",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-13",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nsample(frac=1): This samples 100% of the observations from the DataFrame, effectively shuffling it.\n\nThe frac parameter specifies the fraction of observations to return in the random sample, so frac=1 means “return all observations”."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-14",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-14",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-15",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-15",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\nHow can we identify top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-16",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-16",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a custom function that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the custom function.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\n# labmda function\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-17",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-17",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite the get_largest_obs function as a lambda function, we would define it as follows:\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-18",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-18",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-19",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-19",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply a custom function with multiple parameters to a GroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a custom function with multiple parameters to a GroupBy object, we need to provide the rest of arguments to the apply() method."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-20",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-20",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nCan we apply a lambda function with multiple parameters to a GroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-21",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-21",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry = fortune.groupby([\"Sector\", \"Industry\"])\n\nWe can create a GroupBy object with values from multiple variables.\n\nThis operation is optimal when a combination of variables serves as the best identifier for a group."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-22",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-22",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\n(\n    sector_and_industry\n    .size()\n    .reset_index(name = \"n\")\n)\n\nThe GroupBy object’s size() method now returns a MultiIndex Series with a count of observations for each internal group.\nThe reset_index() method can be used to convert a Series into a DataFrame.\n\nThe name option renames a variable of index when resetting index."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-23",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-23",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.get_group((\"Business Services\", \"Financial Data Services\"))\n\nThe get_group() method requires a tuple of values to extract a nested DataFrame from the GroupBy collection."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-24",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-24",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.sum()\nsector_and_industry[\"Revenues_M\"].mean()\n\n(\n    sector_and_industry[\"Revenues_M\"]\n    .mean()\n    .reset_index(name = \"Revenues_mean\")\n)\n\nFor all aggregations, pandas returns a MultiIndex DataFrame with the calculations."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-25",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#group-operations-25",
+    "title": "Efficient Data Collection",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 8 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-1",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nEthical considerations\n\n“If you can see things in your web browser, you can scrape them.”\n\n\nJust because you can scrape them doesn’t mean you should.\n\nIt is currently legal to scrape data from the web using automated tools, as long as the data are publicly available.\n\nhiQ Labs vs. LinkedIn Corp. court ruling.\n\n\nIt’s important to realize that the web scrapping tools are very powerful.\n\nIt’s pretty easy to write up a program that can overwhelm a host server.\nThe host server tends to have built-in safeguards that will block you in case of a suspected malicious attack."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-2",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nEthical considerations\n\nRespect for website owners’ terms of service.\nRespect for copyright and intellectual property.\nRespect for client servers.\nRespect for privacy."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-3",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nClients and servers\n\nComputers connected to the web are called clients and servers.\n\n\n\n\n\nClients are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).\nServers are computers that store webpages, sites, or apps.\nWhen a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user’s web browser."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-4",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nWebDriver\n\nWebDriverDriverInteraction\n\n\n\nWebDriver is an wire protocol that defines a language-neutral interface for controlling the behaviour of web browsers.\nSelenium WebDriver refers to both the language bindings and the implementations of the individual browser controlling code and commonly referred as WebDriver.\nEach browser is backed by a specific WebDriver implementation, called a driver (or a browser driver).\n\n\n\n\nThe driver is the component responsible for delegating down to the browser, and handles communication to and from Selenium WebDriver and the browser.\nThe driver is browser-specific:\n\nChromeDriver for Chrome;\nGeckoDriver for FireFox.\n\n\n\n\n\nA simplified diagram of how WebDriver interacts with browser might look like this:\n\n\n\n\n\nWebDriver talks to a browser through a driver and the communication is two way:\n\nWebDriver sends commands to the browser through the driver, and receives information back via the same route."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-5",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nSetting up\n\n(1)(2)Mac\n\n\n\nSelenium works by automating browsers to load the website, retrieve the required data, and even take certain actions on the website.\n\n1. Downloads the appropriate version of the ChromeDriver file (https://chromedriver.chromium.org/downloads) or the gecokdriver file (https://github.com/mozilla/geckodriver/releases) for your operating system (Windows or MacOS).\n\n\n2. It is recommended that we place the web driver file on the main folder containing the Python codes.\n\nInstall Chrome or FireFox if you do not have either of them.\nInstall Selenium using pip:\n\npip install selenium\n\n\n\n\n\nMac users should allow the web driver to be opened.\n\n\nOpen (or double click) the web driver file (chromedriver or geckodriver) from the Finder.\nClick Apple logo on the left top corner.\nClick “System Preferences …”.\nClick “Security & Privacy”.\nClick “General”.\nClick “Open Anyway”."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-6",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nSetting up\n\nworking directorywebdriver.Chrome()webdriver.Chrome()get()\n\n\n\nWe can use os.chdir() to set the working directory\n\nos.chdir() changes the current working directory to the specified path.\n\nimport os\nwd_path = 'YOUR_PATH_TO_WORKING_DIRECTORY'\nos.chdir(wd_path)  \nos.getcwd()\n\n\n\n\nTo begin with, we import WebDriver from Selenium, and set a path to chromedriver.\n\nThe webdriver.Chrome() with the path of chromedriver creates an object of the selenium.webdriver.chrome.webdriver.WebDriver.\n\n\n\n\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.chrome.options import Options\n\noptions = Options()\noptions.add_argument(\"window-size=1400,1200\")\n\ndriver_path = \"YOUR_PATH_TO_chromedriver\"\ndriver = [?](chrome_options = options, \n             executable_path = driver_path)\n\n\n\nget() from WebDriver with a URL opens Google Chrome.\n\nIn your browser, you may the message, “Chrome is being controlled by automated test software.”\n\nclose() terminates the loaded browser window.\nquit() ends the WebDriver application.\n\nurl = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](form_url)\ndriver.close()\ndriver.quit()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-7",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#web-scrapping-7",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nLocating Web Elements by Inspect-find_element()\n\n(1)(2)\n\n\n\nAfter the new Google Chrome window is loaded with the URL provided, we can find the elements that we need to act on.\n\nThe easiest way to identify the information is to Inspect pages using developer tools.\n\n\n\n\n\nPlace the cursor anywhere on the webpage, right-click to open a pop-up menu, then select the Inspect option.\n\nIn the Elements window, move the cursor over the DOM structure of the page until it reaches the desired element.\nWe then need to find information such as what HTML tag is used for the element, the defined attribute, and the values for the attributes and the structure of the page."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.ID, \"\")\n\n(1)(2)\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that have matching ID attribute values.\n\nHere is the HTML code for main part of the web-page with an ID attribute value defined as form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\nHere is an example that uses the find_element(By.ID, \"\") method to find the form table.\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # text attribute if there is any"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-1",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.CLASS_NAME, \"\")\n\n(1)(2)\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) that have matching class attribute value(s).\n\nHere is the HTML code for the home button with a class attribute value defined as homebtn:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\n\nHere is an example that uses the find_element(By.CLASS_NAME, \"\") method to find the home button.\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click() # click the home_button object\ndriver.back() # back to the previous page"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-2",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.NAME, \"\")\n\n(1)(2)\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) that have matching name attribute value(s).\n\nHere is the HTML code for the home button with a name attribute value defined as home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\n\nHere is an example that uses the find_element(By.NAME, \"\") method to find the home button.\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-3",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.CSS_SELECTOR, \"\")\n\n(1)(2)\n\n\n\nfind_element(By.CSS_SELECTOR, \"\") & find_elements(By.CSS_SELECTOR, \"\"):\n\nReturn element(s) that are found by the specified CSS selector.\n\n\n\n\n\nTo find the CSS selector of the search button, we Inspect the example site, in the Elements window, move the cursor over its DOM structure and find the search element.\n\nWe then right-click and choose Copy Selector from the pop-up menu.\nWe obtain the following CSS selector of this element:\n\n\nhome_button3 = driver.find_element(By.CSS_SELECTOR, \"body &gt; div &gt; a &gt; input\")\nhome_button3.click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-4",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.TAG_NAME, \"\")\n\n(1)(2)(3)\n\n\n\nfind_element(By.TAG_NAME, \"\") & find_elements(By.TAG_NAME, \"\"):\n\nReturn element(s) that are found by the specified tag.\n\n\n\n\n\n\n\nThe following example page displays a table which has several form fields to fill in.\n\nEach form field name is implemented using an &lt;th&gt; or table header cell tag inside a &lt;tr&gt; or table row tag:\n\n\n\n\n\n\n\n\n\n\n\nHere is an example that uses the find_element(By.TAG_NAME, \"\") method to find the head of the table.\n\ntable01 = driver.find_element(By.ID, \"table01\")\nthead = table01.find_element(By.TAG_NAME, \"thead\")\nthead.text"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-5",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.LINK_TEXT, \"\")\n\n(1)(2)(3)\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nFind link(s) using the text displayed for the link.\n\n\n\n\n\nFor example, we may want to get the Selenium displayed on the example site.\n\nHere is the HTML code for the Selenium implemented as the &lt;a&gt;, or anchor tag, with text “Selenium”:\n\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\n\nHere is an example that uses the find_element(By.LINK_TEXT, \"\") method to find Selenium.\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-6",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.PARTIAL_LINK_TEXT, \"\")\n\n(1)(2)\n\n\n\nSometimes, there can be several link texts that contain a common word in the webpage.\nfind_element(By.PARTIAL_LINK_TEXT, \"\") & find_elements(By.PARTIAL_LINK_TEXT, \"\"):\n\nFind link(s) using partial text.\n\n\n\n\n\nLet us use this method to find these links using the \"qav\" text and check whether we have two of these links available on the page.\n\nSelen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, \"qav\")\nprint(len(Selen_links))\nSelen_links[0].click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-7",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#locating-web-elements-by-find_element-7",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.XPATH, \"\")\n\n(1)(2)(3)(4)(5)(6)\n\n\n\nfind_element(By.XPATH, \"\") & find_element(By.XPATH, \"\"):\n\nReturn element(s) that are found by the specified XPath query.\n\nXPath is a query language used to search and locate nodes in a XML document.\n\nAll major web browsers support XPath.\nSelenium can leverage and use powerful XPath queries to find elements on a web page.\nOne of the advantages of using XPath is when we can’t find a suitable ID, name, or class attribute value for the element.\n\n\n\n\n\nWe can use XPath to either find the element in absolute terms or relative to an element that does have an ID or name attribute.\nWe can also use defined attributes other than the ID, name, or class with XPath queries.\n\n\n\n\nFor example, we want to get the second table.\n\nThe body of this table consists of a series of &lt;tr&gt; tags, but does not have the ID, name, or class attributes defined.\nAlso, we cannot use the find_element(By.TAG_NAME, \"\") method as there are multiple &lt;tr&gt; and &lt;th&gt; tags defined on the page.\n\n\n\n\n\nTo find the XPath of this element, we Inspect the example site, in the Elements window, move the cursor over its DOM structure and find the desired element.\n\nWe then right-click and choose copy XPath from the pop-up menu.\nWe obtain the following XPath of the first row and the first column of the table body:\n\n\n//*[@id=\"table02\"]/tbody/tr[1]/td[1]\n\n\n\nWe then pass this XPath to the find_element(By.XPATH, \"\") method as an argument:\n\nFind the XPath for “Tiger Nixon” in the second table.\n\n\nelt = driver.find_element(By.XPATH, '//*[@id=\"table02\"]/tbody/tr[1]/td[1]')\nelt.text\n\n\n\nWe typically use the XPath method when there exists an element with a unique id on the path to the desired element.\n\nOtherwise, this method is not reliable."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-1",
+    "title": "Efficient Data Collection",
+    "section": "Filling in Web Forms",
+    "text": "Filling in Web Forms\n\n(1)(2)\n\n\n\nWeb forms are ubiquitous when surfing the internet.\nA web form comprises web elements such as input boxes, check boxes, radio buttons, links, drop down menus, and submit buttons to collect user data.\n\n\n\n\n\n\n\nTo process web forms, we need to first find these web elements and then take subsequent actions on them like selecting a value or entering some text.\nSelenium performs actions on the web form and interacts with the form."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-2",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nInput box\n\n(1)(2)(3)\n\n\n\nTo handle any input box, we must be able to enter information, clear information or get information from the box.\n\nTo enter text into an input box we can use the send_keys() method.\n\n\nurl = \"https://qavbox.github.io/demo/signup/\"\ndriver.get(url)\n\ndriver.find_element(By.ID, 'username').send_keys(\"YOUR_NAME\")\n\n\n\nIf we need to validate some existing text, we can fetch text already in a text box using the get_attribute() method:\n\nnameText = driver.find_element(By.ID, 'username').get_attribute(\"value\")\n\n\n\nTo clear pre-entered text, we can use the clear() method.\n\ndriver.find_element(By.ID, 'username').clear()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-3",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nDropdown\n\n(1)(2)(3)\n\n\n\nA dropdown provides a list of options to the user, thereby giving access to one or multiple values as per the requirement.\nThe Selenium Python API provides the Select class, which allows us to select the element of our choice from a dropdown menu.\nNote that the Select class only works with tags that have &lt;select&gt; tags.\n\n\n\n\nWe can select a sub-element of the dropdown using:\n\nindex;\nvalue;\ntext.\n\n\nfrom selenium.webdriver.support.ui import Select\ngender_dropdown = Select(driver.find_element(By.NAME, \"sgender\"))\ngender_dropdown.select_by_index(2)\ngender_dropdown.select_by_value(\"female\")\ngender_dropdown.select_by_visible_text(\"Male\")\n\n\n\nIn a similar way, we can deselect any selected value from the dropdown using any of the following options:\n\ndeselect_by_index()\ndeselect_by_value\ndeselect_by_visible_text"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-4",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nRadio button\n\n(1)is_selected()get_attribute(“checked”)\n\n\n\nA radio button is a circular element on the screen that we can select.\n\nIt is only possible to select one radio button out of several choices by the click() method.\n\n\n\n\n\nTo get the current state of the radio button we can use one of two methods: is_selected() or get_attribute(\"checked\")\n\ndriver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').click()\nyr_exp_boolean = driver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').is_selected()\nprint(yr_exp_boolean)\nprint(type(yr_exp_boolean))\n\n\nyr_exp_boolean2 = driver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').get_attribute(\"checked\")\nprint(yr_exp_boolean2)\nprint(type(yr_exp_boolean2))"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-5",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nCheck box\n\n(1)is_selected()get_attribute(“checked”)\n\n\n\nTo select or check a value in a check box we use the click() method.\n\nTo get the current state of the check box we can use one of two methods: is_selected() or get_attribute(\"checked\")\nIt is also possible to de-select check boxes.\n\n\n\n\ndriver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').click()\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').is_selected()\nprint(skills_boolean)\nprint(type(skills_boolean))\n\n\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[4]').get_attribute(\"checked\")\nprint(skills_boolean)\nprint(type(skills_boolean))"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#filling-in-web-forms-6",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nButton\n\nButtons are simply used to submit whatever information we have filled in our forms to the server.\n\nThis can be done through click actions on the button, mostly using the click() method:\n\n\ndriver.find_element(By.ID, \"submit\").click()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#nosuchelementexception",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#nosuchelementexception",
+    "title": "Efficient Data Collection",
+    "section": "NoSuchElementException",
+    "text": "NoSuchElementException\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\n\nfrom selenium.common.exceptions import NoSuchElementException\ntry:\n    elem = driver.find_element(By.XPATH, \"element_xpath\")\n    elem.click()\nexcept NoSuchElementException:\n    pass\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#nosuchelementexception-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#nosuchelementexception-1",
+    "title": "Efficient Data Collection",
+    "section": "NoSuchElementException",
+    "text": "NoSuchElementException\nexecute_script()\n\n(1)(2)(3)\n\n\n\nWhen the page loads, for some reason we may be taken to the bottom of the page, but the element we need to scrape is on the top of the page and thus is out of view.\nIn this situation, we can locate the element in the DOM first, then use the execute_script() method to scroll the element into view:\n\nelem = driver.find_element(By.XPATH, \"element_xpath\")\ndriver.execute_script(\"arguments[0].scrollIntoView();\", elem)\n\n\n\nIn case the element has the attribute style=\"display: none;\", remove the attribute through execute_script() method:\n\nelem = driver.find_element(By.XPATH, \"element_xpath\")\ndriver.execute_script(\"arguments[0].removeAttribute('style')\", elem)\nelem.send_keys(\"text_to_send\")\n\n\n\nWe can also simply scroll the webpage:\n\n# example website\nurl = \"https://www.ncsl.org/research/energy/energy-legislation-tracking-database.aspx\"\ndriver.get(url)\n\ndriver.execute_script(\"window.scrollTo(0, 5000)\") \ndriver.execute_script(\"window.scrollTo(0, 1000)\")"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#webdriverwait",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#webdriverwait",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\n(1)(2)(3)(4)(5)\n\n\n\nIf the element is not present/visible in the HTML DOM immediately, induce WebDriverWait with expected_conditions set to the proper method as follows:\nTo wait for presence_of_element_located:\n\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# example webpage\nurl = \"https://qavbox.github.io/demo/delay/\"\ndriver.get(url)\n\n\n\nIf the element is not present/visible in the HTML DOM immediately, induce WebDriverWait with expected_conditions set to the proper method as follows:\nTo wait for presence_of_element_located:\n\nelement = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, \"element_xpath\"))) # 10 is timeout in seconds when an expectation is called\n\n\n\nTo wait for visibility_of_element_located:\n\nelement = WebDriverWait(driver, 20).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, \"element_css\")))\n\n\n\nTo wait for element_to_be_clickable:\n\nelement = WebDriverWait(driver, 20).until(expected_conditions.element_to_be_clickable((By.LINK_TEXT, \"element_link_text\")))\n\n\n\nClick the button with “Click me!”\nLocate the text element that will be displayed after 5 seconds using WebDriverWait with expected_conditions.presence_of_element_located.\n\n\nIts XPath is ’//*[@id=\"two\"]’"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#webdriverwait-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#webdriverwait-1",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\nThe time.sleep() method is an explicit wait to set the condition to be an exact time period to wait:\n\nimport time\n\ndriver.find_element(By.XPATH, '//*[@id=\"one\"]/input').click()\ntime.sleep(5)\nelement = driver.find_element(By.XPATH, '//*[@id=\"two\"]')\nelement.text\n\nA more efficient solution than time.sleep() would be to make WebDriver() wait only as long as required."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#webdriverwait-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#webdriverwait-2",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\nImplicit wait with implicitly_wait() directs the WebDriver to wait for a certain measure of time before throwing an exception.\nOnce this time is set, WebDriver will wait for the element before the exception occurs.\n\ndriver.find_element(By.XPATH, '//*[@id=\"oneMore\"]/input[1]').click()\ndriver.implicitly_wait(5)\nelement2 = driver.find_element(By.ID, 'delay')"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#api-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#api-1",
+    "title": "Efficient Data Collection",
+    "section": "API",
+    "text": "API\nKey Concepts\n\n(1)(2)\n\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between client and server.\n\nServer: A powerful computer that runs an API.\nClient: A program that exchanges data with a server through an API.\nProtocol: The “etiquette” underlying how computers talk to each other (e.g. HTTP).\n\n\n\n\nMethods: The “verbs” that clients use to talk with a server.\n\nThe main one that we’ll be using is GET (i.e. ask a server to retrieve information), but other common methods are POST, PUT and DELETE.\n\nRequests: What the client asks of the server.\nResponse: The server’s response, which includes\n\nStatus Code (e.g. “404” if not found, or “200” if successful);\nHeader (i.e. meta-information about the reponse);\nBody (i.e the actual content that we’re interested in."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#api-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#api-2",
+    "title": "Efficient Data Collection",
+    "section": "API",
+    "text": "API\nAPI endpoints\n\nIn the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).\n\nThese URLs are known as an API endpoints.\n\nNavigate your browser to an API endpoint and you’ll just see a load of the following format of texts:\n\nJSON (JavaScript Object Notation) or\nXML (Extensible Markup Language).\n\nWe can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#nyc-open-data",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#nyc-open-data",
+    "title": "Efficient Data Collection",
+    "section": "NYC Open Data",
+    "text": "NYC Open Data\n\n(1)(2)(3)\n\n\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nLos Angeles has the open data website too:\n\nhttps://data.lacity.org\n\n\n\n\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the API tab.\nCopy the API endpoint that appears in the popup box.\n\n\n\n\nimport requests\nimport pandas as pd\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse_API = requests.get(endpoint)\ndf = pd.read_json(response_API.text)\n\nThe request.get() method sends a GET request to the specified url.\npd.read_json() automatically convert JSON data into DataFrame.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#federal-reserve-economic-data-fred-api",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#federal-reserve-economic-data-fred-api",
+    "title": "Efficient Data Collection",
+    "section": "Federal Reserve Economic Data (FRED) API",
+    "text": "Federal Reserve Economic Data (FRED) API\n\n(1)(2)(3)(4)\n\n\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account.\n\n\n\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\n\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json\n\n\n\n\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs.\n\n\nimport requests\nimport json\nimport pandas as pd\n\nparams = {\n'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n'file_type': 'json',\n'series_id': 'GDPC1'   ## ID for US real GDP\n}\n\nendpoint = \"series/observations\"\nurl = \"https://api.stlouisfed.org/\"\nresponse = requests.get(url + \"fred/\" + endpoint, params = params)\n\n\n\nTo actually extract the content (i.e. data) from of the response, we’ll use the .content.decode('utf-8').\nWe can convert JSON into a Python dictionary object using then json.loads() function.\n\ncontent = response.content.decode('utf-8') ## Extract the response content (i.e. text)\nfred = json.loads(content) ## Convert JSON response to Python dictionary\nobservations = pd.DataFrame( fred['observations'] ) ## Extract the \"observations\" list element\nobservations = observations.astype({'value': float}) ## Convert the \"value\" column to float type."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nOne of the most critical use cases of yfinance is the possibility to access stocks (and some cryptocurrencies’) historical data.\n\nThese include Open, High, Low, Close, Volume, and also dividend payments, and stock splits.\n\n\nimport yfinance as yf\nfrom datetime import datetime\n# CREATE TICKER INSTANCE FOR AMAZON\namzn = yf.Ticker(\"AMZN\")\n\n# GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)\nend_date = datetime.now().strftime('%Y-%m-%d')\namzn_hist = amzn.history(start='2023-01-01', end=end_date)"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-1",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nBy default, yfinance returns daily data, but we can also set the time interval.\n\nDifferent time interval have different limitations regarding how far back we can go in time.\nRequesting an interval (start – end) greater than the limitations will result in an error.\nWe can avoid this error by only asking for the maximum allowed days of data. This is done by setting the parameter “period” to ‘max’, in addition to either “end” or “start” (but not both)\n\n\namzn_hist_min = amzn.history(period = 'max', end = end_date, interval = '1m')"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-2",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nIt is also possible to retrieve historical data of more than one company’s stock with a single request.\n\nThis can be done by instantiating a Tickers object (plural instead of singular).\n\n\ncompanies = ['AMZN','GOOG','WMT','TSLA','META'] \ntickers = yf.Tickers(companies)\ntickers_hist = tickers.history(period='max',end=end_date,interval='1m',)\ntickers_hist"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-3",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nNotice that the returned DataFrame has a MultiLevel Index, which is an undesired structure for most purposes.\n\ntickers_hist_long = (\n    tickers_hist\n    .stack() # stacking, similar to DataFrame.melt()\n    .rename_axis(['Date', 'Ticker']) # rename row index\n    .reset_index()\n)"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-4",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nThe .history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n(1)(2)(3)(4)\n\n\n\nperiod: Especially useful is the value “max”.\n\nThe following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.\n\n\n\n\n\ninterval: Defines the size of each interval.\n\nSmaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.\nThe following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo\n\n\n\n\n\nstart: Start date. The server expects a string formatted as YYYY-MM-DD.\nend: End date. The server expects a string formatted as YYYY-MM-DD.\n\n\n\n\nrepost: Defines whether to include or not data not corresponding to regular trading hours. Default value is False\nauto_adjust: whether to adjust prices to stock splits and dividend payments. The default value is True."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-5",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information\n\nYahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios.\nHowever, yfinance does not currently work well with fetching these information.\n\nLet’s work with Microsoft page in Yahoo! Finance."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-2024-0322.html#yahoo-finance-with-yfinance-6",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)\n\n\nmsft = yf.Ticker(\"MSFT\")\nmsft.info # get all stock info\n# show meta information about the history (requires history() to be called first)\nmsft.history_metadata\n\n\n# show actions (dividends, splits, capital gains)\nmsft.actions\nmsft.dividends\nmsft.splits\nmsft.capital_gains  # only for mutual funds & etfs\n\n\n# show share count\n# - yearly summary:\nmsft.shares\n\n# - accurate time-series count:\nmsft.get_shares_full(start=\"2022-01-01\", end=None)\n\n\n\nThese do not work currently.\n\n# show financials:\n# - income statement\nmsft.income_stmt\nmsft.quarterly_income_stmt\n\n\n\nThese do not work currently.\n\n# - balance sheet\nmsft.balance_sheet\nmsft.quarterly_balance_sheet\n\n\n\nThese do not work currently.\n\n# - cash flow statement\nmsft.cashflow\nmsft.quarterly_cashflow\n# see `Ticker.get_income_stmt()` for more options\n\n\n# show holders\nmsft.major_holders\nmsft.institutional_holders\nmsft.mutualfund_holders\n\n\n\nThese do not work currently.\n\n# show earnings\nmsft.earnings\nmsft.quarterly_earnings\n\n\n\nThese do not work currently.\n\n# show sustainability\nmsft.sustainability\n\n\n\nThese do not work currently.\n\nmsft.recommendations # show analysts recommendations\nmsft.recommendations_summary\nmsft.analyst_price_target # show analysts other work\nmsft.revenue_forecasts\nmsft.earnings_forecasts\nmsft.earnings_trend\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show ISIN code - *experimental*\n# ISIN = International Securities Identification Number\nmsft.isin\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-1",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nEthical considerations\n\n“If you can see things in your web browser, you can scrape them.”\n\n\nJust because you can scrape them doesn’t mean you should.\n\nIt is currently legal to scrape data from the web using automated tools, as long as the data are publicly available.\n\nhiQ Labs vs. LinkedIn Corp. court ruling.\n\n\nIt’s important to realize that the web scrapping tools are very powerful.\n\nIt’s pretty easy to write up a program that can overwhelm a host server.\nThe host server tends to have built-in safeguards that will block you in case of a suspected malicious attack."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-2",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nEthical considerations\n\nRespect for website owners’ terms of service.\nRespect for copyright and intellectual property.\nRespect for client servers.\nRespect for privacy."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-3",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nClients and servers\n\nComputers connected to the web are called clients and servers.\n\n\n\n\n\nClients are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).\nServers are computers that store webpages, sites, or apps.\nWhen a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user’s web browser."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-4",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nWebDriver\n\n\nWebDriverDriverInteraction\n\n\n\nWebDriver is an wire protocol that defines a language-neutral interface for controlling the behaviour of web browsers.\nSelenium WebDriver refers to both the language bindings and the implementations of the individual browser controlling code and commonly referred as WebDriver.\nEach browser is backed by a specific WebDriver implementation, called a driver (or a browser driver).\n\n\n\n\nThe driver is the component responsible for delegating down to the browser, and handles communication to and from Selenium WebDriver and the browser.\nThe driver is browser-specific:\n\nChromeDriver for Chrome;\nGeckoDriver for FireFox.\n\n\n\n\n\nA simplified diagram of how WebDriver interacts with browser might look like this:\n\n\n\n\n\nWebDriver talks to a browser through a driver and the communication is two way:\n\nWebDriver sends commands to the browser through the driver, and receives information back via the same route."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-5",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nSetting up\n\n\n(1)(2)Mac\n\n\n\nSelenium works by automating browsers to load the website, retrieve the required data, and even take certain actions on the website.\n\n1. Downloads the appropriate version of the ChromeDriver file (https://chromedriver.chromium.org/downloads) or the gecokdriver file (https://github.com/mozilla/geckodriver/releases) for your operating system (Windows or MacOS).\n\n\n2. It is recommended that we place the web driver file on the main folder containing the Python codes.\n\nInstall Chrome or FireFox if you do not have either of them.\nInstall Selenium using pip:\n\npip install selenium\n\n\n\n\n\nMac users should allow the web driver to be opened.\n\n\nOpen (or double click) the web driver file (chromedriver or geckodriver) from the Finder.\nClick Apple logo on the left top corner.\nClick “System Preferences …”.\nClick “Security & Privacy”.\nClick “General”.\nClick “Open Anyway”."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-6",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nSetting up\n\n\nworking directorywebdriver.Chrome()webdriver.Chrome()get()\n\n\n\nWe can use os.chdir() to set the working directory\n\nos.chdir() changes the current working directory to the specified path.\n\nimport os\nwd_path = 'YOUR_PATH_TO_WORKING_DIRECTORY'\nos.chdir(wd_path)  \nos.getcwd()\n\n\n\n\nTo begin with, we import WebDriver from Selenium, and set a path to chromedriver.\n\nThe webdriver.Chrome() with the path of chromedriver creates an object of the selenium.webdriver.chrome.webdriver.WebDriver.\n\n\n\n\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.chrome.options import Options\n\noptions = Options()\noptions.add_argument(\"window-size=1400,1200\")\n\ndriver_path = \"YOUR_PATH_TO_chromedriver\"\ndriver = [?](chrome_options = options, \n             executable_path = driver_path)\n\n\n\nget() from WebDriver with a URL opens Google Chrome.\n\nIn your browser, you may the message, “Chrome is being controlled by automated test software.”\n\nclose() terminates the loaded browser window.\nquit() ends the WebDriver application.\n\nurl = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](form_url)\ndriver.close()\ndriver.quit()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-7",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#web-scrapping-7",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nLocating Web Elements by Inspect-find_element()\n\n\n(1)(2)\n\n\n\nAfter the new Google Chrome window is loaded with the URL provided, we can find the elements that we need to act on.\n\nThe easiest way to identify the information is to Inspect pages using developer tools.\n\n\n\n\n\nPlace the cursor anywhere on the webpage, right-click to open a pop-up menu, then select the Inspect option.\n\nIn the Elements window, move the cursor over the DOM structure of the page until it reaches the desired element.\nWe then need to find information such as what HTML tag is used for the element, the defined attribute, and the values for the attributes and the structure of the page."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.ID, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that have matching ID attribute values.\n\nHere is the HTML code for main part of the web-page with an ID attribute value defined as form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\nHere is an example that uses the find_element(By.ID, \"\") method to find the form table.\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # text attribute if there is any"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-1",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.CLASS_NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) that have matching class attribute value(s).\n\nHere is the HTML code for the home button with a class attribute value defined as homebtn:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\n\nHere is an example that uses the find_element(By.CLASS_NAME, \"\") method to find the home button.\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click() # click the home_button object\ndriver.back() # back to the previous page"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-2",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) that have matching name attribute value(s).\n\nHere is the HTML code for the home button with a name attribute value defined as home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\n\nHere is an example that uses the find_element(By.NAME, \"\") method to find the home button.\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-3",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.CSS_SELECTOR, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.CSS_SELECTOR, \"\") & find_elements(By.CSS_SELECTOR, \"\"):\n\nReturn element(s) that are found by the specified CSS selector.\n\n\n\n\n\nTo find the CSS selector of the search button, we Inspect the example site, in the Elements window, move the cursor over its DOM structure and find the search element.\n\nWe then right-click and choose Copy Selector from the pop-up menu.\nWe obtain the following CSS selector of this element:\n\n\nhome_button3 = driver.find_element(By.CSS_SELECTOR, \"body &gt; div &gt; a &gt; input\")\nhome_button3.click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-4",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.TAG_NAME, \"\")\n\n\n(1)(2)(3)\n\n\n\nfind_element(By.TAG_NAME, \"\") & find_elements(By.TAG_NAME, \"\"):\n\nReturn element(s) that are found by the specified tag.\n\n\n\n\n\n\n\nThe following example page displays a table which has several form fields to fill in.\n\nEach form field name is implemented using an &lt;th&gt; or table header cell tag inside a &lt;tr&gt; or table row tag:\n\n\n\n\n\n\n\n\n\n\n\nHere is an example that uses the find_element(By.TAG_NAME, \"\") method to find the head of the table.\n\ntable01 = driver.find_element(By.ID, \"table01\")\nthead = table01.find_element(By.TAG_NAME, \"thead\")\nthead.text"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-5",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.LINK_TEXT, \"\")\n\n\n(1)(2)(3)\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nFind link(s) using the text displayed for the link.\n\n\n\n\n\nFor example, we may want to get the Selenium displayed on the example site.\n\nHere is the HTML code for the Selenium implemented as the &lt;a&gt;, or anchor tag, with text “Selenium”:\n\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\n\nHere is an example that uses the find_element(By.LINK_TEXT, \"\") method to find Selenium.\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-6",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.PARTIAL_LINK_TEXT, \"\")\n\n\n(1)(2)\n\n\n\nSometimes, there can be several link texts that contain a common word in the webpage.\nfind_element(By.PARTIAL_LINK_TEXT, \"\") & find_elements(By.PARTIAL_LINK_TEXT, \"\"):\n\nFind link(s) using partial text.\n\n\n\n\n\nLet us use this method to find these links using the \"qav\" text and check whether we have two of these links available on the page.\n\nSelen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, \"qav\")\nprint(len(Selen_links))\nSelen_links[0].click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-7",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#locating-web-elements-by-find_element-7",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.XPATH, \"\")\n\n\n(1)(2)(3)(4)(5)(6)\n\n\n\nfind_element(By.XPATH, \"\") & find_element(By.XPATH, \"\"):\n\nReturn element(s) that are found by the specified XPath query.\n\nXPath is a query language used to search and locate nodes in a XML document.\n\nAll major web browsers support XPath.\nSelenium can leverage and use powerful XPath queries to find elements on a web page.\nOne of the advantages of using XPath is when we can’t find a suitable ID, name, or class attribute value for the element.\n\n\n\n\n\nWe can use XPath to either find the element in absolute terms or relative to an element that does have an ID or name attribute.\nWe can also use defined attributes other than the ID, name, or class with XPath queries.\n\n\n\n\nFor example, we want to get the second table.\n\nThe body of this table consists of a series of &lt;tr&gt; tags, but does not have the ID, name, or class attributes defined.\nAlso, we cannot use the find_element(By.TAG_NAME, \"\") method as there are multiple &lt;tr&gt; and &lt;th&gt; tags defined on the page.\n\n\n\n\n\nTo find the XPath of this element, we Inspect the example site, in the Elements window, move the cursor over its DOM structure and find the desired element.\n\nWe then right-click and choose copy XPath from the pop-up menu.\nWe obtain the following XPath of the first row and the first column of the table body:\n\n\n//*[@id=\"table02\"]/tbody/tr[1]/td[1]\n\n\n\nWe then pass this XPath to the find_element(By.XPATH, \"\") method as an argument:\n\nFind the XPath for “Tiger Nixon” in the second table.\n\n\nelt = driver.find_element(By.XPATH, '//*[@id=\"table02\"]/tbody/tr[1]/td[1]')\nelt.text\n\n\n\nWe typically use the XPath method when there exists an element with a unique id on the path to the desired element.\n\nOtherwise, this method is not reliable."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-1",
+    "title": "Efficient Data Collection",
+    "section": "Filling in Web Forms",
+    "text": "Filling in Web Forms\n\n\n(1)(2)\n\n\n\nWeb forms are ubiquitous when surfing the internet.\nA web form comprises web elements such as input boxes, check boxes, radio buttons, links, drop down menus, and submit buttons to collect user data.\n\n\n\n\n\n\n\nTo process web forms, we need to first find these web elements and then take subsequent actions on them like selecting a value or entering some text.\nSelenium performs actions on the web form and interacts with the form."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-2",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nInput box\n\n\n(1)(2)(3)\n\n\n\nTo handle any input box, we must be able to enter information, clear information or get information from the box.\n\nTo enter text into an input box we can use the send_keys() method.\n\n\nurl = \"https://qavbox.github.io/demo/signup/\"\ndriver.get(url)\n\ndriver.find_element(By.ID, 'username').send_keys(\"YOUR_NAME\")\n\n\n\nIf we need to validate some existing text, we can fetch text already in a text box using the get_attribute() method:\n\nnameText = driver.find_element(By.ID, 'username').get_attribute(\"value\")\n\n\n\nTo clear pre-entered text, we can use the clear() method.\n\ndriver.find_element(By.ID, 'username').clear()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-3",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nDropdown\n\n\n(1)(2)(3)\n\n\n\nA dropdown provides a list of options to the user, thereby giving access to one or multiple values as per the requirement.\nThe Selenium Python API provides the Select class, which allows us to select the element of our choice from a dropdown menu.\nNote that the Select class only works with tags that have &lt;select&gt; tags.\n\n\n\n\nWe can select a sub-element of the dropdown using:\n\nindex;\nvalue;\ntext.\n\n\nfrom selenium.webdriver.support.ui import Select\ngender_dropdown = Select(driver.find_element(By.NAME, \"sgender\"))\ngender_dropdown.select_by_index(2)\ngender_dropdown.select_by_value(\"female\")\ngender_dropdown.select_by_visible_text(\"Male\")\n\n\n\nIn a similar way, we can deselect any selected value from the dropdown using any of the following options:\n\ndeselect_by_index()\ndeselect_by_value\ndeselect_by_visible_text"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-4",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nRadio button\n\n\n(1)is_selected()get_attribute(“checked”)\n\n\n\nA radio button is a circular element on the screen that we can select.\n\nIt is only possible to select one radio button out of several choices by the click() method.\n\n\n\n\n\nTo get the current state of the radio button we can use one of two methods: is_selected() or get_attribute(\"checked\")\n\ndriver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').click()\nyr_exp_boolean = driver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').is_selected()\nprint(yr_exp_boolean)\nprint(type(yr_exp_boolean))\n\n\nyr_exp_boolean2 = driver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').get_attribute(\"checked\")\nprint(yr_exp_boolean2)\nprint(type(yr_exp_boolean2))"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-5",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nCheck box\n\n\n(1)is_selected()get_attribute(“checked”)\n\n\n\nTo select or check a value in a check box we use the click() method.\n\nTo get the current state of the check box we can use one of two methods: is_selected() or get_attribute(\"checked\")\nIt is also possible to de-select check boxes.\n\n\n\n\ndriver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').click()\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').is_selected()\nprint(skills_boolean)\nprint(type(skills_boolean))\n\n\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[4]').get_attribute(\"checked\")\nprint(skills_boolean)\nprint(type(skills_boolean))"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#is_selected-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#is_selected-1",
+    "title": "Efficient Data Collection",
+    "section": "is_selected()",
+    "text": "is_selected()\ndriver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').click()\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').is_selected()\nprint(skills_boolean)\nprint(type(skills_boolean))"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#get_attributechecked-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#get_attributechecked-1",
+    "title": "Efficient Data Collection",
+    "section": "get_attribute(“checked”)",
+    "text": "get_attribute(“checked”)\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[4]').get_attribute(\"checked\")\nprint(skills_boolean)\nprint(type(skills_boolean))\n::: :::: {.nonincremental}"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#filling-in-web-forms-6",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nButton\n\nButtons are simply used to submit whatever information we have filled in our forms to the server.\n\nThis can be done through click actions on the button, mostly using the click() method:\n\n\ndriver.find_element(By.ID, \"submit\").click()"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#nosuchelementexception",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#nosuchelementexception",
+    "title": "Efficient Data Collection",
+    "section": "NoSuchElementException",
+    "text": "NoSuchElementException\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\n\nfrom selenium.common.exceptions import NoSuchElementException\ntry:\n    elem = driver.find_element(By.XPATH, \"element_xpath\")\n    elem.click()\nexcept NoSuchElementException:\n    pass\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#nosuchelementexception-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#nosuchelementexception-1",
+    "title": "Efficient Data Collection",
+    "section": "NoSuchElementException",
+    "text": "NoSuchElementException\nexecute_script()\n\n\n(1)(2)(3)\n\n\n\nWhen the page loads, for some reason we may be taken to the bottom of the page, but the element we need to scrape is on the top of the page and thus is out of view.\nIn this situation, we can locate the element in the DOM first, then use the execute_script() method to scroll the element into view:\n\nelem = driver.find_element(By.XPATH, \"element_xpath\")\ndriver.execute_script(\"arguments[0].scrollIntoView();\", elem)\n\n\n\nIn case the element has the attribute style=\"display: none;\", remove the attribute through execute_script() method:\n\nelem = driver.find_element(By.XPATH, \"element_xpath\")\ndriver.execute_script(\"arguments[0].removeAttribute('style')\", elem)\nelem.send_keys(\"text_to_send\")\n\n\n\nWe can also simply scroll the webpage:\n\n# example website\nurl = \"https://www.ncsl.org/research/energy/energy-legislation-tracking-database.aspx\"\ndriver.get(url)\n\ndriver.execute_script(\"window.scrollTo(0, 5000)\") \ndriver.execute_script(\"window.scrollTo(0, 1000)\")"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#webdriverwait",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#webdriverwait",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\n\n(1)(2)(3)(4)(5)\n\n\n\nIf the element is not present/visible in the HTML DOM immediately, induce WebDriverWait with expected_conditions set to the proper method as follows:\nTo wait for presence_of_element_located:\n\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# example webpage\nurl = \"https://qavbox.github.io/demo/delay/\"\ndriver.get(url)\n\n\n\nIf the element is not present/visible in the HTML DOM immediately, induce WebDriverWait with expected_conditions set to the proper method as follows:\nTo wait for presence_of_element_located:\n\nelement = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, \"element_xpath\"))) # 10 is timeout in seconds when an expectation is called\n\n\n\nTo wait for visibility_of_element_located:\n\nelement = WebDriverWait(driver, 20).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, \"element_css\")))\n\n\n\nTo wait for element_to_be_clickable:\n\nelement = WebDriverWait(driver, 20).until(expected_conditions.element_to_be_clickable((By.LINK_TEXT, \"element_link_text\")))\n\n\n\nClick the button with “Click me!”\nLocate the text element that will be displayed after 5 seconds using WebDriverWait with expected_conditions.presence_of_element_located.\n\n\nIts XPath is ’//*[@id=\"two\"]’"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#webdriverwait-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#webdriverwait-1",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\nThe time.sleep() method is an explicit wait to set the condition to be an exact time period to wait:\n\nimport time\n\ndriver.find_element(By.XPATH, '//*[@id=\"one\"]/input').click()\ntime.sleep(5)\nelement = driver.find_element(By.XPATH, '//*[@id=\"two\"]')\nelement.text\n\nA more efficient solution than time.sleep() would be to make WebDriver() wait only as long as required."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#webdriverwait-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#webdriverwait-2",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\nImplicit wait with implicitly_wait() directs the WebDriver to wait for a certain measure of time before throwing an exception.\nOnce this time is set, WebDriver will wait for the element before the exception occurs.\n\ndriver.find_element(By.XPATH, '//*[@id=\"oneMore\"]/input[1]').click()\ndriver.implicitly_wait(5)\nelement2 = driver.find_element(By.ID, 'delay')"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#api-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#api-1",
+    "title": "Efficient Data Collection",
+    "section": "API",
+    "text": "API\nKey Concepts\n\n\n(1)(2)\n\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between client and server.\n\nServer: A powerful computer that runs an API.\nClient: A program that exchanges data with a server through an API.\nProtocol: The “etiquette” underlying how computers talk to each other (e.g. HTTP).\n\n\n\n\nMethods: The “verbs” that clients use to talk with a server.\n\nThe main one that we’ll be using is GET (i.e. ask a server to retrieve information), but other common methods are POST, PUT and DELETE.\n\nRequests: What the client asks of the server.\nResponse: The server’s response, which includes\n\nStatus Code (e.g. “404” if not found, or “200” if successful);\nHeader (i.e. meta-information about the reponse);\nBody (i.e the actual content that we’re interested in."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#api-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#api-2",
+    "title": "Efficient Data Collection",
+    "section": "API",
+    "text": "API\nAPI endpoints\n\nIn the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).\n\nThese URLs are known as an API endpoints.\n\nNavigate your browser to an API endpoint and you’ll just see a load of the following format of texts:\n\nJSON (JavaScript Object Notation) or\nXML (Extensible Markup Language).\n\nWe can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#nyc-open-data",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#nyc-open-data",
+    "title": "Efficient Data Collection",
+    "section": "NYC Open Data",
+    "text": "NYC Open Data\n\n\n(1)(2)(3)\n\n\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nLos Angeles has the open data website too:\n\nhttps://data.lacity.org\n\n\n\n\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the API tab.\nCopy the API endpoint that appears in the popup box.\n\n\n\n\nimport requests\nimport pandas as pd\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse_API = requests.get(endpoint)\ndf = pd.read_json(response_API.text)\n\nThe request.get() method sends a GET request to the specified url.\npd.read_json() automatically convert JSON data into DataFrame.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#federal-reserve-economic-data-fred-api",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#federal-reserve-economic-data-fred-api",
+    "title": "Efficient Data Collection",
+    "section": "Federal Reserve Economic Data (FRED) API",
+    "text": "Federal Reserve Economic Data (FRED) API\n\n\n(1)(2)(3)(4)\n\n\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account.\n\n\n\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\n\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json\n\n\n\n\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs.\n\n\nimport requests\nimport json\nimport pandas as pd\n\nparams = {\n'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n'file_type': 'json',\n'series_id': 'GDPC1'   ## ID for US real GDP\n}\n\nendpoint = \"series/observations\"\nurl = \"https://api.stlouisfed.org/\"\nresponse = requests.get(url + \"fred/\" + endpoint, params = params)\n\n\n\nTo actually extract the content (i.e. data) from of the response, we’ll use the .content.decode('utf-8').\nWe can convert JSON into a Python dictionary object using then json.loads() function.\n\ncontent = response.content.decode('utf-8') ## Extract the response content (i.e. text)\nfred = json.loads(content) ## Convert JSON response to Python dictionary\nobservations = pd.DataFrame( fred['observations'] ) ## Extract the \"observations\" list element\nobservations = observations.astype({'value': float}) ## Convert the \"value\" column to float type."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#unofficial-api-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#unofficial-api-1",
+    "title": "Efficient Data Collection",
+    "section": "Unofficial API",
+    "text": "Unofficial API\n\nSome developers build their own version of API, and make it open-source.\nHere is one example of unofficial APIs:\n\nyfinance is unofficial API for Yahoo! Finance\n\nhttps://pypi.org/project/yfinance\nIt offers a threaded and Pythonic way to download market data from Yahoo Finance.\n\n\n\npip install yfinance"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nOne of the most critical use cases of yfinance is the possibility to access stocks (and some cryptocurrencies’) historical data.\n\nThese include Open, High, Low, Close, Volume, and also dividend payments, and stock splits.\n\n\nimport yfinance as yf\nfrom datetime import datetime\n# CREATE TICKER INSTANCE FOR AMAZON\namzn = yf.Ticker(\"AMZN\")\n\n# GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)\nend_date = datetime.now().strftime('%Y-%m-%d')\namzn_hist = amzn.history(start='2023-01-01', end=end_date)"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-1",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-1",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nBy default, yfinance returns daily data, but we can also set the time interval.\n\nDifferent time interval have different limitations regarding how far back we can go in time.\nRequesting an interval (start – end) greater than the limitations will result in an error.\nWe can avoid this error by only asking for the maximum allowed days of data. This is done by setting the parameter “period” to ‘max’, in addition to either “end” or “start” (but not both)\n\n\namzn_hist_min = amzn.history(period = 'max', end = end_date, interval = '1m')"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-2",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-2",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nIt is also possible to retrieve historical data of more than one company’s stock with a single request.\n\nThis can be done by instantiating a Tickers object (plural instead of singular).\n\n\ncompanies = ['AMZN','GOOG','WMT','TSLA','META'] \ntickers = yf.Tickers(companies)\ntickers_hist = tickers.history(period='max',end=end_date,interval='1m',)\ntickers_hist"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-3",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-3",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nNotice that the returned DataFrame has a MultiLevel Index, which is an undesired structure for most purposes.\n\ntickers_hist_long = (\n    tickers_hist\n    .stack() # stacking, similar to DataFrame.melt()\n    .rename_axis(['Date', 'Ticker']) # rename row index\n    .reset_index()\n)"
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-4",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-4",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nThe .history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\n(1)(2)(3)(4)\n\n\n\nperiod: Especially useful is the value “max”.\n\nThe following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.\n\n\n\n\n\ninterval: Defines the size of each interval.\n\nSmaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.\nThe following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo\n\n\n\n\n\nstart: Start date. The server expects a string formatted as YYYY-MM-DD.\nend: End date. The server expects a string formatted as YYYY-MM-DD.\n\n\n\n\nrepost: Defines whether to include or not data not corresponding to regular trading hours. Default value is False\nauto_adjust: whether to adjust prices to stock splits and dividend payments. The default value is True."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-5",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-5",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information\n\nYahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios.\nHowever, yfinance does not currently work well with fetching these information.\n\nLet’s work with Microsoft page in Yahoo! Finance."
+  },
+  {
+    "objectID": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-6",
+    "href": "danl-lec/choe-research-cluster-webscrapping-api-all.html#yahoo-finance-with-yfinance-6",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\n(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)\n\n\nmsft = yf.Ticker(\"MSFT\")\nmsft.info # get all stock info\n# show meta information about the history (requires history() to be called first)\nmsft.history_metadata\n\n\n# show actions (dividends, splits, capital gains)\nmsft.actions\nmsft.dividends\nmsft.splits\nmsft.capital_gains  # only for mutual funds & etfs\n\n\n# show share count\n# - yearly summary:\nmsft.shares\n\n# - accurate time-series count:\nmsft.get_shares_full(start=\"2022-01-01\", end=None)\n\n\n\nThese do not work currently.\n\n# show financials:\n# - income statement\nmsft.income_stmt\nmsft.quarterly_income_stmt\n\n\n\nThese do not work currently.\n\n# - balance sheet\nmsft.balance_sheet\nmsft.quarterly_balance_sheet\n\n\n\nThese do not work currently.\n\n# - cash flow statement\nmsft.cashflow\nmsft.quarterly_cashflow\n# see `Ticker.get_income_stmt()` for more options\n\n\n# show holders\nmsft.major_holders\nmsft.institutional_holders\nmsft.mutualfund_holders\n\n\n\nThese do not work currently.\n\n# show earnings\nmsft.earnings\nmsft.quarterly_earnings\n\n\n\nThese do not work currently.\n\n# show sustainability\nmsft.sustainability\n\n\n\nThese do not work currently.\n\nmsft.recommendations # show analysts recommendations\nmsft.recommendations_summary\nmsft.analyst_price_target # show analysts other work\nmsft.revenue_forecasts\nmsft.earnings_forecasts\nmsft.earnings_trend\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show ISIN code - *experimental*\n# ISIN = International Securities Identification Number\nmsft.isin\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-1",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nEthical considerations\n\n“If you can see things in your web browser, you can scrape them.”\n\n\nJust because you can scrape them doesn’t mean you should.\n\nIt is currently legal to scrape data from the web using automated tools, as long as the data are publicly available.\n\nhiQ Labs vs. LinkedIn Corp. court ruling.\n\n\nIt’s important to realize that the web scrapping tools are very powerful.\n\nIt’s pretty easy to write up a program that can overwhelm a host server.\nThe host server tends to have built-in safeguards that will block you in case of a suspected malicious attack."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-2",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-2",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nEthical considerations\n\nRespect for website owners’ terms of service.\nRespect for copyright and intellectual property.\nRespect for client servers.\nRespect for privacy."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-3",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-3",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nClients and servers\n\nComputers connected to the web are called clients and servers.\n\n\n\n\n\nClients are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).\nServers are computers that store webpages, sites, or apps.\nWhen a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user’s web browser."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-4",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-4",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nWebDriver\n\n\nWebDriverDriverInteraction\n\n\n\nWebDriver is an wire protocol that defines a language-neutral interface for controlling the behaviour of web browsers.\nSelenium WebDriver refers to both the language bindings and the implementations of the individual browser controlling code and commonly referred as WebDriver.\nEach browser is backed by a specific WebDriver implementation, called a driver (or a browser driver).\n\n\n\n\nThe driver is the component responsible for delegating down to the browser, and handles communication to and from Selenium WebDriver and the browser.\nThe driver is browser-specific:\n\nChromeDriver for Chrome;\nGeckoDriver for FireFox.\n\n\n\n\n\nA simplified diagram of how WebDriver interacts with browser might look like this:\n\n\n\n\n\nWebDriver talks to a browser through a driver and the communication is two way:\n\nWebDriver sends commands to the browser through the driver, and receives information back via the same route."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-5",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-5",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nSetting up\n\n\n(1)(2)Mac\n\n\n\nSelenium works by automating browsers to load the website, retrieve the required data, and even take certain actions on the website.\n\n1. Downloads the appropriate version of the ChromeDriver file (https://chromedriver.chromium.org/downloads) or the gecokdriver file (https://github.com/mozilla/geckodriver/releases) for your operating system (Windows or MacOS).\n\n\n2. It is recommended that we place the web driver file on the main folder containing the Python codes.\n\nInstall Chrome or FireFox if you do not have either of them.\nInstall Selenium using pip:\n\npip install selenium\n\n\n\n\n\nMac users should allow the web driver to be opened.\n\n\nOpen (or double click) the web driver file (chromedriver or geckodriver) from the Finder.\nClick Apple logo on the left top corner.\nClick “System Preferences …”.\nClick “Security & Privacy”.\nClick “General”.\nClick “Open Anyway”."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-6",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-6",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nSetting up\n\n\nworking directorywebdriver.Chrome()webdriver.Chrome()get()\n\n\n\nWe can use os.chdir() to set the working directory\n\nos.chdir() changes the current working directory to the specified path.\n\nimport os\nwd_path = 'YOUR_PATH_TO_WORKING_DIRECTORY'\nos.chdir(wd_path)  \nos.getcwd()\n\n\n\n\nTo begin with, we import WebDriver from Selenium, and set a path to chromedriver.\n\nThe webdriver.Chrome() with the path of chromedriver creates an object of the selenium.webdriver.chrome.webdriver.WebDriver.\n\n\n\n\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.chrome.options import Options\n\noptions = Options()\noptions.add_argument(\"window-size=1400,1200\")\n\ndriver_path = \"YOUR_PATH_TO_chromedriver\"\ndriver = [?](chrome_options = options, \n             executable_path = driver_path)\n\n\n\nget() from WebDriver with a URL opens Google Chrome.\n\nIn your browser, you may the message, “Chrome is being controlled by automated test software.”\n\nclose() terminates the loaded browser window.\nquit() ends the WebDriver application.\n\nurl = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](form_url)\ndriver.close()\ndriver.quit()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-7",
+    "href": "danl-lec/choe-webscrapping-api-all.html#web-scrapping-7",
+    "title": "Efficient Data Collection",
+    "section": "Web Scrapping",
+    "text": "Web Scrapping\nLocating Web Elements by Inspect-find_element()\n\n\n(1)(2)\n\n\n\nAfter the new Google Chrome window is loaded with the URL provided, we can find the elements that we need to act on.\n\nThe easiest way to identify the information is to Inspect pages using developer tools.\n\n\n\n\n\nPlace the cursor anywhere on the webpage, right-click to open a pop-up menu, then select the Inspect option.\n\nIn the Elements window, move the cursor over the DOM structure of the page until it reaches the desired element.\nWe then need to find information such as what HTML tag is used for the element, the defined attribute, and the values for the attributes and the structure of the page."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.ID, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that have matching ID attribute values.\n\nHere is the HTML code for main part of the web-page with an ID attribute value defined as form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\nHere is an example that uses the find_element(By.ID, \"\") method to find the form table.\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # text attribute if there is any"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-1",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.CLASS_NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) that have matching class attribute value(s).\n\nHere is the HTML code for the home button with a class attribute value defined as homebtn:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\n\nHere is an example that uses the find_element(By.CLASS_NAME, \"\") method to find the home button.\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click() # click the home_button object\ndriver.back() # back to the previous page"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-2",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-2",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) that have matching name attribute value(s).\n\nHere is the HTML code for the home button with a name attribute value defined as home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\n\nHere is an example that uses the find_element(By.NAME, \"\") method to find the home button.\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-3",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-3",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.CSS_SELECTOR, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.CSS_SELECTOR, \"\") & find_elements(By.CSS_SELECTOR, \"\"):\n\nReturn element(s) that are found by the specified CSS selector.\n\n\n\n\n\nTo find the CSS selector of the search button, we Inspect the example site, in the Elements window, move the cursor over its DOM structure and find the search element.\n\nWe then right-click and choose Copy Selector from the pop-up menu.\nWe obtain the following CSS selector of this element:\n\n\nhome_button3 = driver.find_element(By.CSS_SELECTOR, \"body &gt; div &gt; a &gt; input\")\nhome_button3.click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-4",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-4",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.TAG_NAME, \"\")\n\n\n(1)(2)(3)\n\n\n\nfind_element(By.TAG_NAME, \"\") & find_elements(By.TAG_NAME, \"\"):\n\nReturn element(s) that are found by the specified tag.\n\n\n\n\n\n\n\nThe following example page displays a table which has several form fields to fill in.\n\nEach form field name is implemented using an &lt;th&gt; or table header cell tag inside a &lt;tr&gt; or table row tag:\n\n\n\n\n\n\n\n\n\n\n\nHere is an example that uses the find_element(By.TAG_NAME, \"\") method to find the head of the table.\n\ntable01 = driver.find_element(By.ID, \"table01\")\nthead = table01.find_element(By.TAG_NAME, \"thead\")\nthead.text"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-5",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-5",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.LINK_TEXT, \"\")\n\n\n(1)(2)(3)\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nFind link(s) using the text displayed for the link.\n\n\n\n\n\nFor example, we may want to get the Selenium displayed on the example site.\n\nHere is the HTML code for the Selenium implemented as the &lt;a&gt;, or anchor tag, with text “Selenium”:\n\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\n\nHere is an example that uses the find_element(By.LINK_TEXT, \"\") method to find Selenium.\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-6",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-6",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.PARTIAL_LINK_TEXT, \"\")\n\n\n(1)(2)\n\n\n\nSometimes, there can be several link texts that contain a common word in the webpage.\nfind_element(By.PARTIAL_LINK_TEXT, \"\") & find_elements(By.PARTIAL_LINK_TEXT, \"\"):\n\nFind link(s) using partial text.\n\n\n\n\n\nLet us use this method to find these links using the \"qav\" text and check whether we have two of these links available on the page.\n\nSelen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, \"qav\")\nprint(len(Selen_links))\nSelen_links[0].click()\ndriver.back()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-7",
+    "href": "danl-lec/choe-webscrapping-api-all.html#locating-web-elements-by-find_element-7",
+    "title": "Efficient Data Collection",
+    "section": "Locating Web Elements by find_element()",
+    "text": "Locating Web Elements by find_element()\nfind_element(By.XPATH, \"\")\n\n\n(1)(2)(3)(4)(5)(6)\n\n\n\nfind_element(By.XPATH, \"\") & find_element(By.XPATH, \"\"):\n\nReturn element(s) that are found by the specified XPath query.\n\nXPath is a query language used to search and locate nodes in a XML document.\n\nAll major web browsers support XPath.\nSelenium can leverage and use powerful XPath queries to find elements on a web page.\nOne of the advantages of using XPath is when we can’t find a suitable ID, name, or class attribute value for the element.\n\n\n\n\n\nWe can use XPath to either find the element in absolute terms or relative to an element that does have an ID or name attribute.\nWe can also use defined attributes other than the ID, name, or class with XPath queries.\n\n\n\n\nFor example, we want to get the second table.\n\nThe body of this table consists of a series of &lt;tr&gt; tags, but does not have the ID, name, or class attributes defined.\nAlso, we cannot use the find_element(By.TAG_NAME, \"\") method as there are multiple &lt;tr&gt; and &lt;th&gt; tags defined on the page.\n\n\n\n\n\nTo find the XPath of this element, we Inspect the example site, in the Elements window, move the cursor over its DOM structure and find the desired element.\n\nWe then right-click and choose copy XPath from the pop-up menu.\nWe obtain the following XPath of the first row and the first column of the table body:\n\n\n//*[@id=\"table02\"]/tbody/tr[1]/td[1]\n\n\n\nWe then pass this XPath to the find_element(By.XPATH, \"\") method as an argument:\n\nFind the XPath for “Tiger Nixon” in the second table.\n\n\nelt = driver.find_element(By.XPATH, '//*[@id=\"table02\"]/tbody/tr[1]/td[1]')\nelt.text\n\n\n\nWe typically use the XPath method when there exists an element with a unique id on the path to the desired element.\n\nOtherwise, this method is not reliable."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-1",
+    "title": "Efficient Data Collection",
+    "section": "Filling in Web Forms",
+    "text": "Filling in Web Forms\n\n\n(1)(2)\n\n\n\nWeb forms are ubiquitous when surfing the internet.\nA web form comprises web elements such as input boxes, check boxes, radio buttons, links, drop down menus, and submit buttons to collect user data.\n\n\n\n\n\n\n\nTo process web forms, we need to first find these web elements and then take subsequent actions on them like selecting a value or entering some text.\nSelenium performs actions on the web form and interacts with the form."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-2",
+    "href": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-2",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nInput box\n\n\n(1)(2)(3)\n\n\n\nTo handle any input box, we must be able to enter information, clear information or get information from the box.\n\nTo enter text into an input box we can use the send_keys() method.\n\n\nurl = \"https://qavbox.github.io/demo/signup/\"\ndriver.get(url)\n\ndriver.find_element(By.ID, 'username').send_keys(\"YOUR_NAME\")\n\n\n\nIf we need to validate some existing text, we can fetch text already in a text box using the get_attribute() method:\n\nnameText = driver.find_element(By.ID, 'username').get_attribute(\"value\")\n\n\n\nTo clear pre-entered text, we can use the clear() method.\n\ndriver.find_element(By.ID, 'username').clear()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-3",
+    "href": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-3",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nDropdown\n\n\n(1)(2)(3)\n\n\n\nA dropdown provides a list of options to the user, thereby giving access to one or multiple values as per the requirement.\nThe Selenium Python API provides the Select class, which allows us to select the element of our choice from a dropdown menu.\nNote that the Select class only works with tags that have &lt;select&gt; tags.\n\n\n\n\nWe can select a sub-element of the dropdown using:\n\nindex;\nvalue;\ntext.\n\n\nfrom selenium.webdriver.support.ui import Select\ngender_dropdown = Select(driver.find_element(By.NAME, \"sgender\"))\ngender_dropdown.select_by_index(2)\ngender_dropdown.select_by_value(\"female\")\ngender_dropdown.select_by_visible_text(\"Male\")\n\n\n\nIn a similar way, we can deselect any selected value from the dropdown using any of the following options:\n\ndeselect_by_index()\ndeselect_by_value\ndeselect_by_visible_text"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-4",
+    "href": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-4",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nRadio button\n\n\n(1)is_selected()get_attribute(“checked”)\n\n\n\nA radio button is a circular element on the screen that we can select.\n\nIt is only possible to select one radio button out of several choices by the click() method.\n\n\n\n\n\nTo get the current state of the radio button we can use one of two methods: is_selected() or get_attribute(\"checked\")\n\ndriver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').click()\nyr_exp_boolean = driver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').is_selected()\nprint(yr_exp_boolean)\nprint(type(yr_exp_boolean))\n\n\nyr_exp_boolean2 = driver.find_element(By.XPATH, '//*[@id=\"container\"]/div[8]/input[1]').get_attribute(\"checked\")\nprint(yr_exp_boolean2)\nprint(type(yr_exp_boolean2))"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-5",
+    "href": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-5",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nCheck box\n\n\n(1)is_selected()get_attribute(“checked”)\n\n\n\nTo select or check a value in a check box we use the click() method.\n\nTo get the current state of the check box we can use one of two methods: is_selected() or get_attribute(\"checked\")\nIt is also possible to de-select check boxes.\n\n\n\n\ndriver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').click()\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[1]').is_selected()\nprint(skills_boolean)\nprint(type(skills_boolean))\n\n\nskills_boolean = driver.find_element(By.XPATH, '/html/body/form/fieldset/div/div/div[9]/input[4]').get_attribute(\"checked\")\nprint(skills_boolean)\nprint(type(skills_boolean))"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-6",
+    "href": "danl-lec/choe-webscrapping-api-all.html#filling-in-web-forms-6",
+    "title": "Efficient Data Collection",
+    "section": "Filling in web forms",
+    "text": "Filling in web forms\nButton\n\nButtons are simply used to submit whatever information we have filled in our forms to the server.\n\nThis can be done through click actions on the button, mostly using the click() method:\n\n\ndriver.find_element(By.ID, \"submit\").click()"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#nosuchelementexception",
+    "href": "danl-lec/choe-webscrapping-api-all.html#nosuchelementexception",
+    "title": "Efficient Data Collection",
+    "section": "NoSuchElementException",
+    "text": "NoSuchElementException\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\n\nfrom selenium.common.exceptions import NoSuchElementException\ntry:\n    elem = driver.find_element(By.XPATH, \"element_xpath\")\n    elem.click()\nexcept NoSuchElementException:\n    pass\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#nosuchelementexception-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#nosuchelementexception-1",
+    "title": "Efficient Data Collection",
+    "section": "NoSuchElementException",
+    "text": "NoSuchElementException\nexecute_script()\n\n\n(1)(2)(3)\n\n\n\nWhen the page loads, for some reason we may be taken to the bottom of the page, but the element we need to scrape is on the top of the page and thus is out of view.\nIn this situation, we can locate the element in the DOM first, then use the execute_script() method to scroll the element into view:\n\nelem = driver.find_element(By.XPATH, \"element_xpath\")\ndriver.execute_script(\"arguments[0].scrollIntoView();\", elem)\n\n\n\nIn case the element has the attribute style=\"display: none;\", remove the attribute through execute_script() method:\n\nelem = driver.find_element(By.XPATH, \"element_xpath\")\ndriver.execute_script(\"arguments[0].removeAttribute('style')\", elem)\nelem.send_keys(\"text_to_send\")\n\n\n\nWe can also simply scroll the webpage:\n\n# example website\nurl = \"https://www.ncsl.org/research/energy/energy-legislation-tracking-database.aspx\"\ndriver.get(url)\n\ndriver.execute_script(\"window.scrollTo(0, 5000)\") \ndriver.execute_script(\"window.scrollTo(0, 1000)\")"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#webdriverwait",
+    "href": "danl-lec/choe-webscrapping-api-all.html#webdriverwait",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\n\n(1)(2)(3)(4)(5)\n\n\n\nIf the element is not present/visible in the HTML DOM immediately, induce WebDriverWait with expected_conditions set to the proper method as follows:\nTo wait for presence_of_element_located:\n\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# example webpage\nurl = \"https://qavbox.github.io/demo/delay/\"\ndriver.get(url)\n\n\n\nIf the element is not present/visible in the HTML DOM immediately, induce WebDriverWait with expected_conditions set to the proper method as follows:\nTo wait for presence_of_element_located:\n\nelement = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, \"element_xpath\"))) # 10 is timeout in seconds when an expectation is called\n\n\n\nTo wait for visibility_of_element_located:\n\nelement = WebDriverWait(driver, 20).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, \"element_css\")))\n\n\n\nTo wait for element_to_be_clickable:\n\nelement = WebDriverWait(driver, 20).until(expected_conditions.element_to_be_clickable((By.LINK_TEXT, \"element_link_text\")))\n\n\n\nClick the button with “Click me!”\nLocate the text element that will be displayed after 5 seconds using WebDriverWait with expected_conditions.presence_of_element_located.\n\n\nIts XPath is ’//*[@id=\"two\"]’"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#webdriverwait-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#webdriverwait-1",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\nThe time.sleep() method is an explicit wait to set the condition to be an exact time period to wait:\n\nimport time\n\ndriver.find_element(By.XPATH, '//*[@id=\"one\"]/input').click()\ntime.sleep(5)\nelement = driver.find_element(By.XPATH, '//*[@id=\"two\"]')\nelement.text\n\nA more efficient solution than time.sleep() would be to make WebDriver() wait only as long as required."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#webdriverwait-2",
+    "href": "danl-lec/choe-webscrapping-api-all.html#webdriverwait-2",
+    "title": "Efficient Data Collection",
+    "section": "WebDriverWait",
+    "text": "WebDriverWait\nWebDriverWait with expected_conditions\n\nImplicit wait with implicitly_wait() directs the WebDriver to wait for a certain measure of time before throwing an exception.\nOnce this time is set, WebDriver will wait for the element before the exception occurs.\n\ndriver.find_element(By.XPATH, '//*[@id=\"oneMore\"]/input[1]').click()\ndriver.implicitly_wait(5)\nelement2 = driver.find_element(By.ID, 'delay')"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#api-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#api-1",
+    "title": "Efficient Data Collection",
+    "section": "API",
+    "text": "API\nKey Concepts\n\n\n(1)(2)\n\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between client and server.\n\nServer: A powerful computer that runs an API.\nClient: A program that exchanges data with a server through an API.\nProtocol: The “etiquette” underlying how computers talk to each other (e.g. HTTP).\n\n\n\n\nMethods: The “verbs” that clients use to talk with a server.\n\nThe main one that we’ll be using is GET (i.e. ask a server to retrieve information), but other common methods are POST, PUT and DELETE.\n\nRequests: What the client asks of the server.\nResponse: The server’s response, which includes\n\nStatus Code (e.g. “404” if not found, or “200” if successful);\nHeader (i.e. meta-information about the reponse);\nBody (i.e the actual content that we’re interested in."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#api-2",
+    "href": "danl-lec/choe-webscrapping-api-all.html#api-2",
+    "title": "Efficient Data Collection",
+    "section": "API",
+    "text": "API\nAPI endpoints\n\nIn the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).\n\nThese URLs are known as an API endpoints.\n\nNavigate your browser to an API endpoint and you’ll just see a load of the following format of texts:\n\nJSON (JavaScript Object Notation) or\nXML (Extensible Markup Language).\n\nWe can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#nyc-open-data",
+    "href": "danl-lec/choe-webscrapping-api-all.html#nyc-open-data",
+    "title": "Efficient Data Collection",
+    "section": "NYC Open Data",
+    "text": "NYC Open Data\n\n\n(1)(2)(3)\n\n\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nLos Angeles has the open data website too:\n\nhttps://data.lacity.org\n\n\n\n\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the API tab.\nCopy the API endpoint that appears in the popup box.\n\n\n\n\nimport requests\nimport pandas as pd\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse_API = requests.get(endpoint)\ndf = pd.read_json(response_API.text)\n\nThe request.get() method sends a GET request to the specified url.\npd.read_json() automatically convert JSON data into DataFrame.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#federal-reserve-economic-data-fred-api",
+    "href": "danl-lec/choe-webscrapping-api-all.html#federal-reserve-economic-data-fred-api",
+    "title": "Efficient Data Collection",
+    "section": "Federal Reserve Economic Data (FRED) API",
+    "text": "Federal Reserve Economic Data (FRED) API\n\n\n(1)(2)(3)(4)\n\n\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account.\n\n\n\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\n\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json\n\n\n\n\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs.\n\n\nimport requests\nimport json\nimport pandas as pd\n\nparams = {\n'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n'file_type': 'json',\n'series_id': 'GDPC1'   ## ID for US real GDP\n}\n\nendpoint = \"series/observations\"\nurl = \"https://api.stlouisfed.org/\"\nresponse = requests.get(url + \"fred/\" + endpoint, params = params)\n\n\n\nTo actually extract the content (i.e. data) from of the response, we’ll use the .content.decode('utf-8').\nWe can convert JSON into a Python dictionary object using then json.loads() function.\n\ncontent = response.content.decode('utf-8') ## Extract the response content (i.e. text)\nfred = json.loads(content) ## Convert JSON response to Python dictionary\nobservations = pd.DataFrame( fred['observations'] ) ## Extract the \"observations\" list element\nobservations = observations.astype({'value': float}) ## Convert the \"value\" column to float type."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#unofficial-api-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#unofficial-api-1",
+    "title": "Efficient Data Collection",
+    "section": "Unofficial API",
+    "text": "Unofficial API\n\nSome developers build their own version of API, and make it open-source.\nHere is one example of unofficial APIs:\n\nyfinance is unofficial API for Yahoo! Finance\n\nhttps://pypi.org/project/yfinance\nIt offers a threaded and Pythonic way to download market data from Yahoo Finance.\n\n\n\npip install yfinance"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nOne of the most critical use cases of yfinance is the possibility to access stocks (and some cryptocurrencies’) historical data.\n\nThese include Open, High, Low, Close, Volume, and also dividend payments, and stock splits.\n\n\nimport yfinance as yf\nfrom datetime import datetime\n# CREATE TICKER INSTANCE FOR AMAZON\namzn = yf.Ticker(\"AMZN\")\n\n# GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)\nend_date = datetime.now().strftime('%Y-%m-%d')\namzn_hist = amzn.history(start='2023-01-01', end=end_date)"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-1",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-1",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nBy default, yfinance returns daily data, but we can also set the time interval.\n\nDifferent time interval have different limitations regarding how far back we can go in time.\nRequesting an interval (start – end) greater than the limitations will result in an error.\nWe can avoid this error by only asking for the maximum allowed days of data. This is done by setting the parameter “period” to ‘max’, in addition to either “end” or “start” (but not both)\n\n\namzn_hist_min = amzn.history(period = 'max', end = end_date, interval = '1m')"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-2",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-2",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nIt is also possible to retrieve historical data of more than one company’s stock with a single request.\n\nThis can be done by instantiating a Tickers object (plural instead of singular).\n\n\ncompanies = ['AMZN','GOOG','WMT','TSLA','META'] \ntickers = yf.Tickers(companies)\ntickers_hist = tickers.history(period='max',end=end_date,interval='1m',)\ntickers_hist"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-3",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-3",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nNotice that the returned DataFrame has a MultiLevel Index, which is an undesired structure for most purposes.\n\ntickers_hist_long = (\n    tickers_hist\n    .stack() # stacking, similar to DataFrame.melt()\n    .rename_axis(['Date', 'Ticker']) # rename row index\n    .reset_index()\n)"
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-4",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-4",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\n\nThe .history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\n(1)(2)(3)(4)\n\n\n\nperiod: Especially useful is the value “max”.\n\nThe following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.\n\n\n\n\n\ninterval: Defines the size of each interval.\n\nSmaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.\nThe following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo\n\n\n\n\n\nstart: Start date. The server expects a string formatted as YYYY-MM-DD.\nend: End date. The server expects a string formatted as YYYY-MM-DD.\n\n\n\n\nrepost: Defines whether to include or not data not corresponding to regular trading hours. Default value is False\nauto_adjust: whether to adjust prices to stock splits and dividend payments. The default value is True."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-5",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-5",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information\n\nYahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios.\nHowever, yfinance does not currently work well with fetching these information.\n\nLet’s work with Microsoft page in Yahoo! Finance."
+  },
+  {
+    "objectID": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-6",
+    "href": "danl-lec/choe-webscrapping-api-all.html#yahoo-finance-with-yfinance-6",
+    "title": "Efficient Data Collection",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\n(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)\n\n\nmsft = yf.Ticker(\"MSFT\")\nmsft.info # get all stock info\n# show meta information about the history (requires history() to be called first)\nmsft.history_metadata\n\n\n# show actions (dividends, splits, capital gains)\nmsft.actions\nmsft.dividends\nmsft.splits\nmsft.capital_gains  # only for mutual funds & etfs\n\n\n# show share count\n# - yearly summary:\nmsft.shares\n\n# - accurate time-series count:\nmsft.get_shares_full(start=\"2022-01-01\", end=None)\n\n\n\nThese do not work currently.\n\n# show financials:\n# - income statement\nmsft.income_stmt\nmsft.quarterly_income_stmt\n\n\n\nThese do not work currently.\n\n# - balance sheet\nmsft.balance_sheet\nmsft.quarterly_balance_sheet\n\n\n\nThese do not work currently.\n\n# - cash flow statement\nmsft.cashflow\nmsft.quarterly_cashflow\n# see `Ticker.get_income_stmt()` for more options\n\n\n# show holders\nmsft.major_holders\nmsft.institutional_holders\nmsft.mutualfund_holders\n\n\n\nThese do not work currently.\n\n# show earnings\nmsft.earnings\nmsft.quarterly_earnings\n\n\n\nThese do not work currently.\n\n# show sustainability\nmsft.sustainability\n\n\n\nThese do not work currently.\n\nmsft.recommendations # show analysts recommendations\nmsft.recommendations_summary\nmsft.analyst_price_target # show analysts other work\nmsft.revenue_forecasts\nmsft.earnings_forecasts\nmsft.earnings_trend\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show ISIN code - *experimental*\n# ISIN = International Securities Identification Number\nmsft.isin\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
   }
 ]
