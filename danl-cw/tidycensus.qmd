@@ -6,6 +6,7 @@ execute:
   warning: false
   message: false
 from: markdown+emoji
+
 ---
 
 ```{r}
@@ -75,3 +76,10 @@ orange %>%
   theme_map()
 ```
 
+
+# Discussion
+
+
+<font size = "5">Welcome to `tidycensus` Discussion Board! 👋 </font>
+
+Let's collaborate and learn from each other!
