@@ -5296,7 +5296,7 @@
     "href": "danl-hw/danl-210-hw-02-a.html#question-1",
     "title": "Homework 2 - Example Answers",
     "section": "Question 1",
-    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer\n\nq1 = (\n    nyc_payroll[[\"First Name\", \"Last Name\", \"Base Salary\", \"Total OT Paid\"]]\n    .sort_values(\"Base Salary\", ascending = False)\n)\n\nshow(q1)\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      Base Salary\n      Total OT Paid\n    \n  Loading... (need help?)"
+    "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer\n\nq1 = (\n    nyc_payroll[[\"First Name\", \"Last Name\", \"Base Salary\", \"Total OT Paid\"]]\n    .nlargest(10, \"Base Salary\", keep = 'all')\n)\n\nshow(q1)\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      Base Salary\n      Total OT Paid\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-2",
