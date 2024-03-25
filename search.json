@@ -5280,91 +5280,91 @@
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html",
     "href": "danl-hw/danl-210-hw-02-a.html",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "",
     "text": "Please submit your Jupyter Notebook for Part 1 in Homework 2 to the Brightspace with the name below:\n\ndanl-210-hw2-LASTNAME-FIRSTNAME.ipynb\n( e.g., danl-210-hw2-choe-byeonghak.ipynb )\n\nThe due is March 8, 2024, 11:59 P.M.\nPlease send an email to Byeong-Hak (bchoe@geneseo.edu) if you have any questions or clarifications."
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#variable-description",
     "href": "danl-hw/danl-210-hw-02-a.html#variable-description",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Variable Description",
     "text": "Variable Description\n\nFiscal Year: Fiscal Year;\nPayroll Number: Payroll Number;\nAgency Name: The Payroll agency that the employee works for;\nLast Name: Last name of employee;\nFirst Name: First name of employee;\nMid Init: Middle initial of employee;\nAgency Start Date: Date which employee began working for their current agency;\nWork Location Borough: Borough of employee’s primary work location;\nTitle Description: Civil service title description of the employee;\nLeave Status as of June 30: Status of employee as of the close of the relevant fiscal year;\nBase Salary: Base Salary assigned to the employee;\nPay Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular Hours: Number of regular hours employee worked in the fiscal year;\nRegular Gross Paid: The amount paid to the employee for base salary during the fiscal year;\nOT Hours: Overtime Hours worked by employee in the fiscal year;\nTotal OT Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal Other Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-1",
     "href": "danl-hw/danl-210-hw-02-a.html#question-1",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 1",
     "text": "Question 1\nSelect “First Name”, “Last Name”, “Base Salary”, and “Total OT Paid”, then sort these selected variables by “Base Salary” in descending order and display the top 10 entries.\nAnswer\n\nq1 = (\n    nyc_payroll[[\"First Name\", \"Last Name\", \"Base Salary\", \"Total OT Paid\"]]\n    .sort_values(\"Base Salary\", ascending = False)\n)\n\nshow(q1)\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      Base Salary\n      Total OT Paid\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-2",
     "href": "danl-hw/danl-210-hw-02-a.html#question-2",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 2",
     "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency Name”, “Base Salary”, and “Total OT Paid”.\nAnswer\n\nq2 = (\n    nyc_payroll\n    .set_index(\"Last Name\")\n    .loc[\"BROWN\", [\"Agency Name\", \"Base Salary\", \"Total OT Paid\"]]\n)\n\nshow(q2)\n\n\n\n\n    \n      \n      Agency Name\n      Base Salary\n      Total OT Paid\n    \n    \n      Last Name\n      \n      \n      \n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-3",
     "href": "danl-hw/danl-210-hw-02-a.html#question-3",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 3",
     "text": "Question 3\nFind the 5 employees with the highest “Regular Gross Paid” and calculate their average “OT Hours”. Also, reset the index if you have changed it previously.\nAnswer\n\nq3 = (\n    nyc_payroll\n    .nlargest(5, \"Regular Gross Paid\", keep = 'all')[[\"OT Hours\"]]\n    .mean()\n)\n\nshow(q3)\n\n\n\n\n    \n      \n      0\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-4",
     "href": "danl-hw/danl-210-hw-02-a.html#question-4",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 4",
     "text": "Question 4\nSort the DataFrame by “Fiscal Year” and “Total Other Pay” in descending order, then set “First Name” as the index and use the loc accessor to retrieve the “Total Other Pay” for a specific first name, say “MICHAEL”.\nAnswer\n\nq4 = (\n    nyc_payroll\n    .sort_values([\"Fiscal Year\", \"Total Other Pay\"], ascending = False)\n    .set_index(\"First Name\")\n    .loc[\"MICHAEL\", ['Total Other Pay']]\n)\n\nshow(q4)\n\n\n\n\n    \n      \n      Total Other Pay\n    \n    \n      First Name\n      \n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-5",
     "href": "danl-hw/danl-210-hw-02-a.html#question-5",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 5",
     "text": "Question 5\nSort the DataFrame first by “Work Location Borough” alphabetically, and then by “Total Compensation” (sum of “Base Salary” and “Total OT Paid”) in descending order within each borough.\nAnswer\n\nq5 = (\n    nyc_payroll\n    .assign(Total_Compensation = lambda x: x[\"Base Salary\"] + x[\"Total OT Paid\"])\n    .sort_values([\"Work Location Borough\", \"Work Location Borough\", \"Total_Compensation\"],\n                 ascending = [True, True, False])\n)\n\nshow(q5)\n\n\n\n\n    \n      \n      Fiscal Year\n      Payroll Number\n      Agency Name\n      Last Name\n      First Name\n      Mid Init\n      Agency Start Date\n      Work Location Borough\n      Title Description\n      Leave Status as of June 30\n      Base Salary\n      Pay Basis\n      Regular Hours\n      Regular Gross Paid\n      OT Hours\n      Total OT Paid\n      Total Other Pay\n      Total_Compensation\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-6",
     "href": "danl-hw/danl-210-hw-02-a.html#question-6",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 6",
     "text": "Question 6\n\nSelect employees who have “OT Hours” greater than 0, calculate their “OT Rate” (Total OT Paid / OT Hours), and then find the employee with the highest “OT Rate”. Display their full name and OT Rate.\n\nAnswer\n\nq6 = (\n    nyc_payroll\n    .query('`OT Hours` &gt; 0')\n    .assign(OT_Rate = lambda x: x['Total OT Paid'] / x['OT Hours'])\n    .nlargest(1, \"OT_Rate\", keep = 'all')\n    [['First Name', 'Last Name', 'OT_Rate']]\n)\n\nshow(q6)\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      OT_Rate\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-7",
     "href": "danl-hw/danl-210-hw-02-a.html#question-7",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 7",
     "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First Name”, “Last Name”, “Title Description”, “Base Salary”, and “Total OT Paid”. Additionally, include a new variable “Total Compensation” which is the sum of “Base Salary” and “Total OT Paid”.\nAnswer\n\nq7 = (\n    nyc_payroll\n    .query('`Agency Name` == \"DEPARTMENT OF EDUCATION ADMIN\"')\n    [[\"First Name\", \"Last Name\", \"Title Description\", \"Base Salary\", \"Total OT Paid\"]]\n    .assign(Total_Compensation = lambda x: x[\"Base Salary\"] + x[\"Total OT Paid\"])\n)\n\nshow(q7)\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      Title Description\n      Base Salary\n      Total OT Paid\n      Total_Compensation\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-8",
     "href": "danl-hw/danl-210-hw-02-a.html#question-8",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 8",
     "text": "Question 8\n\nHow many employees have a “Base Salary” within the top 10% of the DataFrame?\n\nAnswer\n\n(\n    nyc_payroll\n    [ nyc_payroll['Base Salary'] &gt;= nyc_payroll['Base Salary'].quantile(.9) ]\n    .shape[0]\n)\n\n200"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-9",
     "href": "danl-hw/danl-210-hw-02-a.html#question-9",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 9",
     "text": "Question 9\nFilter the DataFrame for employees who have “OT Hours” greater than 0 but less than 100, and their “Leave Status as of June 30” is “ACTIVE”.\nAnswer\n\nq9 = (\n    nyc_payroll\n    .query('`OT Hours` &gt; 0 & `OT Hours` &lt; 100 & `Leave Status as of June 30` == \"ACTIVE\"')\n)\n\nshow(q9)\n\n\n\n\n    \n      \n      Fiscal Year\n      Payroll Number\n      Agency Name\n      Last Name\n      First Name\n      Mid Init\n      Agency Start Date\n      Work Location Borough\n      Title Description\n      Leave Status as of June 30\n      Base Salary\n      Pay Basis\n      Regular Hours\n      Regular Gross Paid\n      OT Hours\n      Total OT Paid\n      Total Other Pay\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-10",
     "href": "danl-hw/danl-210-hw-02-a.html#question-10",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 10",
     "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer\n\nq10 = (\n    nyc_payroll\n    .query('`Agency Name` == \"DEPARTMENT OF EDUCATION ADMIN\"')\n    .drop_duplicates(subset = ['Title Description'])[['Agency Name', 'Title Description']]\n)\n\nshow(q10)\n\n\n\n\n    \n      \n      Agency Name\n      Title Description\n    \n  Loading... (need help?)\n\n\n\n\n\n\n\nq10.shape[0]\n\n26"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02-a.html#question-11",
     "href": "danl-hw/danl-210-hw-02-a.html#question-11",
-    "title": "Direction",
+    "title": "Homework 2 - Example Answers",
     "section": "Question 11",
     "text": "Question 11\n\nIdentify the employee(s) with the highest “Total OT Paid” in the DataFrame.\n\nInclude their “First Name”, “Last Name”, and “Total OT Paid”.\n\n\nAnswer\n\nq11 = (\n    nyc_payroll\n    .nlargest(1, \"Total OT Paid\", keep = 'all')\n    [[\"First Name\", \"Last Name\", \"Total OT Paid\"]]\n)\n\nshow(q11)\n\n\n\n\n    \n      \n      First Name\n      Last Name\n      Total OT Paid\n    \n  Loading... (need help?)"
   },
