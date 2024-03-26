@@ -6996,127 +6996,127 @@
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#advanced-pandas",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#advanced-pandas",
     "title": "Lecture 15",
-    "section": "",
-    "text": "Group Operations"
+    "section": "Advanced Pandas",
+    "text": "Advanced Pandas\nLearning Objectives\n\nGroup Operations"
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\n\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]"
+    "text": "Group Operations\nFortune 1000 dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune_2023.csv file is a collection of Fortune 1000 companies from 2023 (Source: Kaggle).\n\n\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune_2023.csv\")\n\nvarlist = ['Company', 'Revenues_M', 'Profits_M', 'Number_of_employees', 'Sector', 'Industry']\nfortune = fortune1000[varlist]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-1",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-1",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nReview - Attributes and methods of a GroupBy object\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)  # fortune[\"Sector\"].nunique()\nsectors.groups\nsectors.get_group(\"Energy\")\nsectors.size()\nsectors.first()\nsectors.last()\nsectors.nth(0)  # sectors.nth(1)\nsectors.head(2)\nsectors.tail(2)"
+    "text": "Group Operations\nReview - Attributes and methods of a GroupBy object\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)  # fortune[\"Sector\"].nunique()\nsectors.groups\nsectors.get_group(\"Energy\")\nsectors.size()\nsectors.first()\nsectors.last()\nsectors.nth(0)  # sectors.nth(1)\nsectors.head(2)\nsectors.tail(2)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-2",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-2",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nReview - Aggregation\n\n\nsectors[\"Revenues_M\"].sum()\nsectors[\"Revenues_M\"].mean()\nsectors[\"Revenues_M\"].max()\nsectors[\"Revenues_M\"].min()\n\n\n\nsectors[\"Revenues_M\"].agg('sum')\nsectors[\"Revenues_M\"].agg('mean')\nsectors[\"Revenues_M\"].agg('max')\nsectors[\"Revenues_M\"].agg('min')\n\n\n\nsectors.agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Revenues_M\", \"mean\")\n)"
+    "text": "Group Operations\nReview - Aggregation\n\n\nsectors[\"Revenues_M\"].sum()\nsectors[\"Revenues_M\"].mean()\nsectors[\"Revenues_M\"].max()\nsectors[\"Revenues_M\"].min()\n\n\n\nsectors[\"Revenues_M\"].agg('sum')\nsectors[\"Revenues_M\"].agg('mean')\nsectors[\"Revenues_M\"].agg('max')\nsectors[\"Revenues_M\"].agg('min')\n\n\n\nsectors.agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Revenues_M\", \"mean\")\n)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-3",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-3",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nAggregation\n\n\n\n\nWe pass in whatever aggregation we want.\n\nSome common options are in the table above."
+    "text": "Group Operations\nAggregation\n\n\n\n\nWe pass in whatever aggregation we want.\n\nSome common options are in the table above."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-4",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-4",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nReview - GroupBy.transform()\nfortune['Revenues_M_min'] = sectors['Revenues_M'].transform('min')\nfortune['Profits_M_max'] = sectors['Profits_M'].transform('max')\nfortune['Number_of_employees_mean'] = sectors['Number_of_employees'].transform('mean')\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
+    "text": "Group Operations\nReview - GroupBy.transform()\nfortune['Revenues_M_min'] = sectors['Revenues_M'].transform('min')\nfortune['Profits_M_max'] = sectors['Profits_M'].transform('max')\nfortune['Number_of_employees_mean'] = sectors['Number_of_employees'].transform('mean')\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-5",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-5",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nsample(frac=1): This samples 100% of the observations from the DataFrame, effectively shuffling it.\n\nThe frac parameter specifies the fraction of observations to return in the random sample, so frac=1 means “return all observations”."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nsample(frac=1): This samples 100% of the observations from the DataFrame, effectively shuffling it.\n\nThe frac parameter specifies the fraction of observations to return in the random sample, so frac=1 means “return all observations”."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-6",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-6",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-7",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-7",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\nHow can we identify top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\nHow can we identify top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-8",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-8",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a custom function that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the custom function.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\n# labmda function\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a custom function that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the custom function.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\n# labmda function\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-9",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-9",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nTo rewrite the get_largest_obs function as a lambda function, we would define it as follows:\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite the get_largest_obs function as a lambda function, we would define it as follows:\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-10",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-10",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-11",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-11",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nHow can we apply a custom function with multiple parameters to a GroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a custom function with multiple parameters to a GroupBy object, we need to provide the rest of arguments to the apply() method."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nHow can we apply a custom function with multiple parameters to a GroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a custom function with multiple parameters to a GroupBy object, we need to provide the rest of arguments to the apply() method."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-12",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-12",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nApplying a Custom Operation to All Groups\n\n\nCan we apply a lambda function with multiple parameters to a GroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
+    "text": "Group Operations\nApplying a Custom Operation to All Groups\n\n\nCan we apply a lambda function with multiple parameters to a GroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-13",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-13",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nGrouping by Multiple Variables\nsector_and_industry = fortune.groupby([\"Sector\", \"Industry\"])\n\nWe can create a GroupBy object with values from multiple variables.\n\nThis operation is optimal when a combination of variables serves as the best identifier for a group."
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry = fortune.groupby([\"Sector\", \"Industry\"])\n\nWe can create a GroupBy object with values from multiple variables.\n\nThis operation is optimal when a combination of variables serves as the best identifier for a group."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-14",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-14",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nGrouping by Multiple Variables\n(\n    sector_and_industry\n    .size()\n    .reset_index(name = \"n\")\n)\n\nThe GroupBy object’s size() method now returns a MultiIndex Series with a count of observations for each internal group.\nThe reset_index() method can be used to convert a Series into a DataFrame.\n\nThe name option renames a variable of index when resetting index."
+    "text": "Group Operations\nGrouping by Multiple Variables\n(\n    sector_and_industry\n    .size()\n    .reset_index(name = \"n\")\n)\n\nThe GroupBy object’s size() method now returns a MultiIndex Series with a count of observations for each internal group.\nThe reset_index() method can be used to convert a Series into a DataFrame.\n\nThe name option renames a variable of index when resetting index."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-15",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-15",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nGrouping by Multiple Variables\nsector_and_industry.get_group((\"Business Services\", \"Financial Data Services\"))\n\nThe get_group() method requires a tuple of values to extract a nested DataFrame from the GroupBy collection."
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.get_group((\"Business Services\", \"Financial Data Services\"))\n\nThe get_group() method requires a tuple of values to extract a nested DataFrame from the GroupBy collection."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-16",
     "href": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-16",
     "title": "Lecture 15",
     "section": "Group Operations",
-    "text": "Group Operations\n\nGrouping by Multiple Variables\nsector_and_industry.sum()\nsector_and_industry[\"Revenues_M\"].mean()\n\n(\n    sector_and_industry[\"Revenues_M\"]\n    .mean()\n    .reset_index(name = \"Revenues_mean\")\n)\n\nFor all aggregations, pandas returns a MultiIndex DataFrame with the calculations."
+    "text": "Group Operations\nGrouping by Multiple Variables\nsector_and_industry.sum()\nsector_and_industry[\"Revenues_M\"].mean()\n\n(\n    sector_and_industry[\"Revenues_M\"]\n    .mean()\n    .reset_index(name = \"Revenues_mean\")\n)\n\nFor all aggregations, pandas returns a MultiIndex DataFrame with the calculations."
   },
   {
     "objectID": "danl-lec/danl-210-lec-15-2024-0326.html#group-operations-17",
