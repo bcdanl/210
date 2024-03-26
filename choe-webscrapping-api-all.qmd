@@ -2,7 +2,8 @@
 title: Efficient Data Collection
 subtitle: Leveraging Web Scrapping and API
 format:
-  clean-revealjs:
+  revealjs:
+  # clean-revealjs:
     self-contained: true
     incremental: true   
     # css: clean-revealjs.css
