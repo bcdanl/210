@@ -121,6 +121,9 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 
 - For example, let's consider the following example DataFrame with the four households:
 ```{r}
+#| echo: false
+#| eval: true
+#| results: asis
 rmarkdown::paged_table(data.frame(hh = c(1,1,1,1,
                                          2,2,2,2,
                                          3,3,3,
@@ -128,7 +131,8 @@ rmarkdown::paged_table(data.frame(hh = c(1,1,1,1,
                                   brand = c(rep('BUD',4),
                                             'COORS', 'BUD','MILLER', 'NATURAL',
                                             'BUD', 'BUD', 'BUD',
-                                            'COORS', 'BUSCH'))
+                                            'COORS', 'BUSCH')),
+                       options = list(rows.print = 15)
                        )
 ```
 
