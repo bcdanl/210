@@ -127,6 +127,8 @@ q2 = (
     dollar_spent_total = ('dollar_spent', 'sum'),
     beer_floz_total = ('beer_floz', 'sum')
   )
+  .reset_index()
+  .sort_values('price_per_floz_mean', ascending = False)
 )
 ```
 
@@ -135,8 +137,26 @@ q2 = (
 #| eval: true
 #| results: asis
 
-DT::datatable(py$q2)
+DT::datatable(py$q2, rownames = F)
 ```
+
+<br>
+
+Below is the `market` with the highest average `price_per_floz`:
+```{python}
+#| code-fold: true
+q2_max = q2.nlargest(1, 'price_per_floz_mean', keep = 'all')[['market', 'price_per_floz_mean']]
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| results: asis
+
+DT::datatable(py$q2_max, rownames = F)
+```
+
+
 
 <br><br>
 
@@ -184,6 +204,7 @@ DT::datatable(py$q3, rownames = F)
 
 *Answer:*
 ```{python}
+#| code-fold: true
 q4 = (
   beer
   .groupby('market')
@@ -236,6 +257,8 @@ In this example, households `1`, `2` and `3` purchased `BUD` at least once, and 
 
 *Answer:*
 
+Below calculates the number of households that have purchased BUD LIGHT at least once:
+
 ```{python}
 #| code-fold: true
 hh_bud = (
@@ -247,6 +270,9 @@ hh_bud = (
 # number of households that have purchased BUD LIGHT at least once
 len(hh_bud) 
 ```
+
+
+Below calculates the number of households that have purchased only BUD LIGHT:
 
 ```{python}
 #| code-fold: true
@@ -270,6 +296,8 @@ Therefore, among households that have purchased BUD LIGHT at least once, the pro
 #| code-fold: true
 len(n_hh_loyal_bud) / len(hh_bud)
 ```
+
+<br>
 
 Since we should repeat this over brands, let's define a custom function and use for-loop:
 
@@ -301,7 +329,9 @@ for i in beer['brand'].unique():
   print(i, loyal_consumer_pct(beer, i))
 ```
 
-Therefore, `BUD LIGHT`'s consumers tend to be most loyal.
+Therefore, `BUD LIGHT`'s consumers tend to be most loyal. 
+
+Note that more than 50% of households stick to only one beer brand they prefer!
 
 <br><br>
 
