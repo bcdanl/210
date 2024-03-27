@@ -3,8 +3,8 @@ title: Classwork 8
 subtitle: Advanced Group Operations
 date: 2024-03-26
 execute: 
-  eval: false
-  echo: false
+  eval: true
+  echo: true
   warning: false
   message: false
   
@@ -12,8 +12,10 @@ from: markdown+emoji
 ---
 
 ```{r}
-#| echo: false
+#| include: false
 
+library(DT)
+library(reticulate)
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
@@ -34,7 +36,10 @@ The dataset ,`beer_markets.csv`, (with its pathname `https://bcdanl.github.io/da
 
 ```{python}
 #| echo: true
-#| eval: false
+#| eval: true
+#| code-fold: false
+
+import pandas as pd
 beer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 ```
 
@@ -45,10 +50,10 @@ beer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 #| eval: true
 #| results: asis
 
-rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/beer_markets.csv'))
+DT::datatable(readr::read_csv('https://bcdanl.github.io/data/beer_markets.csv'))
 ```
 
-- Each observation in `beer_mkts` is a household-level transaction record for a purchase of beer.
+- Each observation in `beer` is a household-level transaction record for a purchase of beer.
 
 ## Variable Description
 
@@ -71,7 +76,38 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 
 *Answer:*
 ```{python}
+#| code-fold: true
+q1_a = (
+  beer
+  .groupby("brand")[['dollar_spent']]
+  .describe()
+)
+```
 
+```{r}
+#| echo: false
+#| eval: true
+#| results: asis
+
+DT::datatable(py$q1_a)
+```
+
+
+```{python}
+#| code-fold: true
+q1_b = (
+  beer
+  .groupby("brand")[['beer_floz']]
+  .describe()
+)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| results: asis
+
+DT::datatable(py$q1_b)
 ```
 
 <br><br>
@@ -82,7 +118,24 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 
 *Answer:*
 ```{python}
+#| code-fold: true
+q2 = (
+  beer
+  .groupby('market')
+  .agg(
+    price_per_floz_mean = ('price_per_floz', 'mean'),
+    dollar_spent_total = ('dollar_spent', 'sum'),
+    beer_floz_total = ('beer_floz', 'sum')
+  )
+)
+```
 
+```{r}
+#| echo: false
+#| eval: true
+#| results: asis
+
+DT::datatable(py$q2)
 ```
 
 <br><br>
@@ -94,18 +147,60 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 
 
 *Answer:*
-```{python}
 
+- Below I use method chaining including the `assign()` method with the `lambda` function and the `transform()` method.
+  - However, it is completely okay NOT to do a lengthy method chaining.
+
+```{python}
+#| code-fold: true
+
+q3 = (
+  beer
+  .groupby(['hh', 'brand'])[['dollar_spent']]
+  .agg(
+    dollar_spent_by_brand = ('dollar_spent', 'sum')
+  )
+  .assign(
+    pct = lambda df: 100 * df['dollar_spent_by_brand'] / 
+                           df.groupby('hh')['dollar_spent_by_brand'].transform('sum') )
+  .reset_index() # optional
+)
+```
+
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| results: asis
+
+DT::datatable(py$q3, rownames = F)
 ```
 
 <br><br>
 
 ## Question 4 
-- Identify the `brand` with the highest `price_per_floz` in each market using a custom function with `apply()`. 
+- Identify the `brand` with the highest `price_per_floz` in each `market` using a custom function with `apply()`. 
 
 *Answer:*
 ```{python}
+q4 = (
+  beer
+  .groupby('market')
+  .apply(lambda df: df.nlargest(1, 'price_per_floz', keep = 'all'))
+  [['market', 'brand', 'price_per_floz']]
+  .assign(
+    price_per_bottle = lambda df: 12 * df['price_per_floz']   # optional
+  )
+)
+```
 
+```{r}
+#| echo: false
+#| eval: true
+#| results: asis
+
+DT::datatable(py$q4, rownames = F)
 ```
 
 <br><br>
@@ -124,7 +219,7 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 #| echo: false
 #| eval: true
 #| results: asis
-rmarkdown::paged_table(data.frame(hh = c(1,1,1,1,
+DT::datatable(data.frame(hh = c(1,1,1,1,
                                          2,2,2,2,
                                          3,3,3,
                                          4,4),
@@ -140,9 +235,73 @@ In this example, households `1`, `2` and `3` purchased `BUD` at least once, and 
 
 
 *Answer:*
-```{python}
 
+```{python}
+#| code-fold: true
+hh_bud = (
+    beer
+    .query('brand == "BUD LIGHT"')['hh']
+    .unique()
+)
+
+# number of households that have purchased BUD LIGHT at least once
+len(hh_bud) 
 ```
+
+```{python}
+#| code-fold: true
+
+n_hh_loyal_bud = (
+    beer[ beer['hh'].isin(hh_bud) ][['hh','brand']]
+    .value_counts()
+    .reset_index(name = 'n_purchases')
+    .groupby('hh')
+    .size()
+    .reset_index(name = 'n_brands')
+    .query('n_brands == 1')
+)
+
+# number of households that only bought `BUD`
+len(n_hh_loyal_bud)
+```
+
+Therefore, among households that have purchased BUD LIGHT at least once, the proportion only bought `BUD` is:
+```{python}
+#| code-fold: true
+len(n_hh_loyal_bud) / len(hh_bud)
+```
+
+Since we should repeat this over brands, let's define a custom function and use for-loop:
+
+```{python}
+#| code-fold: true
+def loyal_consumer_pct(df, item):
+  hh_item = (
+    df[ df['brand'] == item ]['hh']
+    .unique()
+    )
+  
+  n_hh_tot = len(hh_item)
+
+  n_hh_loyal_item = (
+    df[ df['hh'].isin(hh_item) ][['hh','brand']]
+    .value_counts()
+    .reset_index(name = 'n_purchases')
+    .groupby('hh')
+    .size()
+    .reset_index(name = 'n')
+    .query('n == 1')
+    )
+  
+  n_hh_loyal = len(n_hh_loyal_item)
+  
+  return 100 * n_hh_loyal / n_hh_tot
+
+for i in beer['brand'].unique():
+  print(i, loyal_consumer_pct(beer, i))
+```
+
+Therefore, `BUD LIGHT`'s consumers tend to be most loyal.
 
 <br><br>
 
