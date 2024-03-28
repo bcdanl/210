@@ -7277,7 +7277,7 @@
     "href": "danl-hw/danl-210-hw-03-a.html#question-2",
     "title": "Homework 3 - Example Answers",
     "section": "Question 2",
-    "text": "Question 2\nFind the 10 largest values for Volume for each company using a lambda function.\nAnswer:\n\nq2 = (\n    stock_company\n    .apply(lambda df: df.nlargest(10, 'Volume', keep = \"all\"))\n)\n\nshow(q2)\n\n\n\n\n    \n      \n      \n      company\n      Date\n      Open\n      High\n      Low\n      Close\n      Adj Close\n      Volume\n    \n    \n      company\n      \n      \n      \n      \n      \n      \n      \n      \n      \n    \n  Loading... (need help?)"
+    "text": "Question 2\nFind the 10 largest values for Volume for each company using a lambda function.\nAnswer:\n\nq2 = (\n    stock_company\n    .apply(lambda df: df.nlargest(10, 'Volume', keep = \"all\"))\n    .reset_index(drop = True)[['company', 'Date', 'Volume']]\n)\n\nshow(q2)\n\n\n\n\n    \n      \n      company\n      Date\n      Volume\n    \n  Loading... (need help?)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-03-a.html#question-3",
