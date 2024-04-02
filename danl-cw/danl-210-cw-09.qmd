@@ -1,0 +1,179 @@
+---
+title: Classwork 9
+subtitle: Reshaping `DataFrames`; Joining `DataFrames`
+date: 2024-04-02
+execute: 
+  eval: false
+  echo: false
+  warning: false
+  message: false
+  
+from: markdown+emoji
+---
+
+```{r}
+#| include: false
+
+library(DT)
+library(reticulate)
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+
+# Part 1 - Pivoting `DataFrames`
+
+## Question 1
+
+-  Make `ny_pincp` longer.
+
+
+```{python}
+#| echo: true
+ny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+          )
+```
+
+*Answer:*
+```{python}
+
+```
+
+<br>
+
+## Question 2
+
+- Make a wide-form DataFrame of `covid` whose variable names are from `countriesAndTerritories` and values are from `cases`.
+
+
+```{python}
+#| echo: true
+covid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
+          )
+```
+
+
+*Answer:*
+```{python}
+
+```
+
+
+<br><br>
+
+
+# Part 2 - Joining `DataFrames`
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/relational-nycflights.png" width="600px">
+</p>
+
+<br>
+
+
+- The CSV files are related each other, as described above.
+
+```{python}
+#| echo: true
+flights = pd.read_csv("https://bcdanl.github.io/data/flights.zip")
+airlines = pd.read_csv("https://bcdanl.github.io/data/airlines.csv")
+airports = pd.read_csv("https://bcdanl.github.io/data/airports.csv")
+planes = pd.read_csv("https://bcdanl.github.io/data/planes.csv")
+weather = pd.read_csv("https://bcdanl.github.io/data/weather.csv")
+```
+
+## Variables in `flights` DataFrame
+
+- `year`, `month`, `day`
+  - Date of departure.
+
+- `dep_time`, `arr_time`
+  - Actual departure and arrival times (format HHMM or HMM), local tz.
+
+- `sched_dep_time`, `sched_arr_time`
+  - Scheduled departure and arrival times (format HHMM or HMM), local tz.
+
+- `dep_delay`, `arr_delay`
+  - Departure and arrival delays, in minutes. Negative times represent early departures/arrivals.
+
+- `carrier`
+  - Two letter carrier abbreviation. See `airlines` DataFrame to get full names.
+
+- `flight`
+  Flight number.
+
+- `tailnum`
+  - Plane tail number. See `planes` DataFrame for additional metadata.
+
+- `origin`, `dest`
+  - Origin and destination. See `airports` DataFrame for additional metadata.
+
+- `air_time`
+  - Amount of time spent in the air, in minutes.
+
+- `distance`
+  - Distance between airports, in miles.
+
+- `hour`, `minute`
+  - Time of scheduled departure broken into hour and minutes.
+
+- `time_hour`
+  - Scheduled date and hour of the flight as a `datetime64`. Along with origin, can be used to join flights data to `weather` DataFrame
+
+
+
+<br>
+
+## Question 3
+
+Merge `flights` with `weather`.
+
+*Answer:*
+```{python}
+
+```
+
+<br>
+
+## Question 4
+
+Identify the full name of the airline with the highest average `dep_delay`, considering only positive delays.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+# Discussion
+
+<font size = "5">Welcome to our Classwork 9 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 9.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 9 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!
+
