@@ -54,6 +54,9 @@ website:
       - text: &nbsp;
       - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
         href: listing-danl-210-hw.qmd
+      - text: &nbsp;
+      - text: <font size ="5" ><b>- Midterm Exam </b></font><font size ="5" color="#194493">{{< fa solid bookmark >}}</font>
+        href: danl-hw/danl-210-midterm-a.ipynb
 
   page-footer: 
     border: false
