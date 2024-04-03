@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 2, 2024</p>
+      <p class="date-modified">April 3, 2024</p>
     </div>
   </div>
     
@@ -280,25 +280,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_table.enable_dataframe_formatter()</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itables <span class="im">import</span> init_notebook_mode</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itables <span class="im">import</span> show</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="part-i" class="level1">
 <h1>Part I</h1>
-<div class="cell" data-outputid="398c78e5-b5e8-4b6b-dbde-d3ec6f49d90f" data-execution_count="4">
-<details>
-<summary>Code</summary>
+<div class="cell" data-outputid="398c78e5-b5e8-4b6b-dbde-d3ec6f49d90f">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>trashwheel <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/trashwheel_all.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>show(trashwheel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 
 <table id="itables_9807a9df_f943_4ceb_ae37_30f7349810eb" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
@@ -341,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="5bed165a-285e-41a0-d528-3a1a86200fc5" data-execution_count="4">
+<div class="cell" data-outputid="5bed165a-285e-41a0-d528-3a1a86200fc5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>trashwheel.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -378,7 +372,7 @@ memory usage: 108.7+ KB</code></pre>
 <li>Count the number of observations in each vaule in the <code>Name</code> variable.</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="d5a00f78-b95b-4009-fa57-a5d6f044beb8" data-execution_count="10">
+<div class="cell" data-outputid="d5a00f78-b95b-4009-fa57-a5d6f044beb8">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>q1 <span class="op">=</span> trashwheel[<span class="st">'Name'</span>].value_counts()</span>
@@ -417,7 +411,7 @@ memory usage: 108.7+ KB</code></pre>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Convert - Data type of <code>Name</code> variable to <code>category</code>; - Data type of <code>Month</code> variable to <code>category</code>; - Data type of <code>Date</code> variable to <code>datetimes</code> in the <code>trashwheel</code> DataFrame.</p>
-<div class="cell" data-outputid="c5220e0a-e501-4de2-c199-d8afc793bd25" data-execution_count="5">
+<div class="cell" data-outputid="c5220e0a-e501-4de2-c199-d8afc793bd25">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trashwheel <span class="op">=</span> (</span>
@@ -479,7 +473,7 @@ memory usage: 108.7+ KB</code></pre>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>How can you replace <code>NaN</code> values in the <code>GlassBottles</code> variable with the mean value specific to each <code>Year</code> group?</p>
-<div class="cell" data-outputid="c92ad0e5-9747-4633-92ea-19cbfe647683" data-execution_count="6">
+<div class="cell" data-outputid="c92ad0e5-9747-4633-92ea-19cbfe647683">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>trashwheel[<span class="st">'GlassBottles'</span>] <span class="op">=</span> (</span>
@@ -490,7 +484,7 @@ memory usage: 108.7+ KB</code></pre>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="14">
+<div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>trashwheel[<span class="st">'GlassBottles'</span>] <span class="op">=</span> (</span>
@@ -538,7 +532,7 @@ memory usage: 96.0 KB</code></pre>
 <li>In your Python code, please handle ties when filtering the observations with the multiple highest values of <code>HomesPowered</code>.</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="d26597d3-cc08-4f52-8588-9649588a9cdb" data-execution_count="7">
+<div class="cell" data-outputid="d26597d3-cc08-4f52-8588-9649588a9cdb">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>q4 <span class="op">=</span> (</span>
@@ -592,7 +586,7 @@ memory usage: 96.0 KB</code></pre>
 <li><p>Each ton of trash equates to 500 kilowatts of electricity.</p></li>
 <li><p>Write a Python code to determine the average monthly electricity supplied to homes by each Trash Wheel.</p></li>
 </ul>
-<div class="cell" data-outputid="a1cc64c3-a236-4082-dc93-a727a0c2a3b1" data-execution_count="11">
+<div class="cell" data-outputid="a1cc64c3-a236-4082-dc93-a727a0c2a3b1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>q5 <span class="op">=</span> (</span>
@@ -655,12 +649,9 @@ memory usage: 96.0 KB</code></pre>
 </section>
 <section id="part-ii" class="level1">
 <h1>Part II</h1>
-<div class="cell" data-outputid="c56fe5c3-f58a-4b0c-b38d-49052f07f26c" data-execution_count="13">
-<details>
-<summary>Code</summary>
+<div class="cell" data-outputid="c56fe5c3-f58a-4b0c-b38d-49052f07f26c">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>spotify <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/spotify_all.csv'</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>show(spotify)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 
 <table id="itables_d6a73368_a366_4c0f_ad6d_c4c6ade2ff58" class="display nowrap" data-quarto-disable-processing="true" style="table-layout:auto;width:auto;margin:auto;caption-side:bottom">
@@ -702,7 +693,7 @@ memory usage: 96.0 KB</code></pre>
 <ul>
 <li>Write a Python code to identify the top five songs with the highest frequency of appearances in the <code>spotify</code> DataFrame.</li>
 </ul>
-<div class="cell" data-outputid="38112089-27b2-49de-f729-3aba46e5c886" data-execution_count="30">
+<div class="cell" data-outputid="38112089-27b2-49de-f729-3aba46e5c886">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>songs <span class="op">=</span> (</span>
@@ -744,7 +735,7 @@ memory usage: 96.0 KB</code></pre>
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="ec640659-ee88-488d-98e1-1bbb13b8a42c" data-execution_count="31">
+<div class="cell" data-outputid="ec640659-ee88-488d-98e1-1bbb13b8a42c">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>q6 <span class="op">=</span> songs.nlargest(<span class="dv">5</span>, <span class="st">'n'</span>, keep <span class="op">=</span> <span class="st">'all'</span>)</span>
@@ -792,7 +783,7 @@ memory usage: 96.0 KB</code></pre>
 </ul></li>
 <li>Then, write a Python code to identify top 5% songs based on their frequency of appearances.</li>
 </ul>
-<div class="cell" data-outputid="8c2b0b99-f0f6-4536-8fb8-ddf1f7ce3765" data-execution_count="28">
+<div class="cell" data-outputid="8c2b0b99-f0f6-4536-8fb8-ddf1f7ce3765">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>q7 <span class="op">=</span> songs[ songs[<span class="st">'n'</span>] <span class="op">&gt;=</span> songs[<span class="st">'n'</span>].quantile(<span class="fl">.95</span>) ]</span>
@@ -836,7 +827,7 @@ memory usage: 96.0 KB</code></pre>
 <ul>
 <li>Write a Python code to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.</li>
 </ul>
-<div class="cell" data-outputid="81e01089-b167-4454-ccc1-d72eb31878c0" data-execution_count="15">
+<div class="cell" data-outputid="81e01089-b167-4454-ccc1-d72eb31878c0">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
@@ -878,7 +869,7 @@ memory usage: 96.0 KB</code></pre>
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="afc96baf-25ab-48a9-8f20-ad39f58075d7" data-execution_count="16">
+<div class="cell" data-outputid="afc96baf-25ab-48a9-8f20-ad39f58075d7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>drake_one_dance_pl_isin <span class="op">=</span> spotify[<span class="st">'pid'</span>].isin(drake_one_dance_pl)</span>
@@ -927,7 +918,7 @@ memory usage: 96.0 KB</code></pre>
 <ul>
 <li>Next, write a Python code to identify the song with the highest frequency of appearances after Drake’s “One Dance” in the newly created DataFrame.</li>
 </ul>
-<div class="cell" data-outputid="7fc300a1-a718-42e3-b489-446c0cb420e8" data-execution_count="17">
+<div class="cell" data-outputid="7fc300a1-a718-42e3-b489-446c0cb420e8">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>q8_after_drake <span class="op">=</span> (</span>

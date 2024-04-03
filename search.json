@@ -7347,7 +7347,7 @@
     "href": "danl-hw/danl-210-midterm-a.html",
     "title": "Spring 2024, DANL 210-01: Data Preparation and Management",
     "section": "",
-    "text": "Code\nimport pandas as pd\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfrom itables import init_notebook_mode\nfrom itables import show"
+    "text": "import pandas as pd\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nfrom itables import init_notebook_mode\nfrom itables import show"
   },
   {
     "objectID": "danl-hw/danl-210-midterm-a.html#question-1",
@@ -7747,5 +7747,12 @@
     "title": "Lecture 16 - Q & A",
     "section": "",
     "text": "Welcome to our Lecture 16 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 16 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Lecture 12 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html#midterm-exam",
+    "href": "index.html#midterm-exam",
+    "title": " DANL 210: Data Preparation and Management, Spring 2024",
+    "section": "Midterm Exam",
+    "text": "Midterm Exam"
   }
 ]
