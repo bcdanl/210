@@ -3,14 +3,11 @@
 // Custom colours and variables
 
 $jet: #131516;
-$accent: #107895; //#107895 #1c4982
+$accent: #107895;
 $accent2: #9a2515;
 // $accent2: #e64173;
 $right-arrow: "\2192"; // Unicode character for right arrow
 
-$circle: "•"; // Unicode character for disc
-$square: "▪"; // Unicode character for disc
-$diamond: "▻"; // Unicode character for disc
 // fonts
 
 /*
@@ -47,7 +44,6 @@ $selection-bg: #26351c !default;
 /*-- scss:rules --*/
 
 .reveal a {
-  color: #0066cc;  // #0066cc;  #0000EE // #49821c
   line-height: 1.5em;
 }
 
@@ -65,18 +61,15 @@ $selection-bg: #26351c !default;
   .title {
     color: $body-color;
     font-size: 1.4em;
-    font-weight: 400;
-    //font-weight: lighter;
-    
+    // font-weight: 350;
+    font-weight: lighter;
   }
 
   .subtitle {
     color: $accent;
     font-style: italic;
     margin-top: 0em;
-    font-weight: 400;
-    //font-weight: lighter;
-    
+    font-weight: lighter;
   }
 
   .institute,
@@ -105,20 +98,19 @@ $selection-bg: #26351c !default;
 
 }
 
+
 .reveal h2 {
-  // font-weight: bold;
-  font-weight: 400;
+  // font-weight: 350;
+  font-weight: lighter;
   font-size: 1.4em;
 }
-
 
 .reveal h3 {
   color: $accent;
   font-style: italic;
-  // font-weight: lighter;
-  font-weight: 400;
+  // font-weight: 350;
+  font-weight: lighter;
   font-size: 0.95em;
-  
 }
 
 .reveal h4 {
@@ -146,10 +138,6 @@ $selection-bg: #26351c !default;
 }
 
 // lists
-// Ordered lists
-.reveal ol {
-  line-height: 1.33;
-}
 
 // Unordered lists
 
@@ -157,7 +145,6 @@ $selection-bg: #26351c !default;
   // font-weight: 300;
   font-weight: lighter;
   padding-left: 16px;
-  line-height: 1.33;
 
   li::marker {
     color: mix($accent, white, 70%);
@@ -168,21 +155,7 @@ $selection-bg: #26351c !default;
   list-style: none;
 
   li:before {
-    content: $square;
-    color: mix($accent, white, 60%);
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    margin-right: 0.5em;
-  }
-}
-
-
-.reveal ul ul ul{
-  list-style: none;
-
-  li:before {
-    content: $diamond;
+    content: $right-arrow;
     color: mix($accent, white, 60%);
     display: inline-block;
     width: 1em;
@@ -286,21 +259,3 @@ $selection-bg: #26351c !default;
   height: auto;
   object-fit: contain;
 }
-
-
-.reveal pre code {
-  //  font-family: 'Fira Code', monospace; /* Example: Using 'Fira Code' font */
-    font-size: 20px; /* Adjust as needed */
-  //  /* Add any other styling you wish to apply to code blocks */
-}
-
-/*.reveal pre code:hover { */
-/*  background-color: #f0f0f0; /* Light grey background */
-/*  cursor: pointer; /* Change cursor to indicate interactivity */
-  /* Add more styles as needed */
-/*} */
-
-/* Assuming each line of code is wrapped in an anchor tag */
-
-
-
