@@ -3112,7 +3112,7 @@
     "href": "danl-lec/danl-210-lec-16-2024-0402.html#reshaping-dataframes-3",
     "title": "Lecture 16",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
+    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding a DataFrame into the shape we desire."
   },
   {
     "objectID": "danl-lec/danl-210-lec-16-2024-0402.html#reshaping-dataframes-4",
@@ -5968,7 +5968,7 @@
     "href": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-2",
     "title": "Lecture 17",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding DataFrame into the shapes we desire."
+    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding a DataFrame into the shape we desire."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-3",
@@ -6017,7 +6017,7 @@
     "href": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-9",
     "title": "Lecture 17",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the new column name for the variable.\nvalue_name is a string for the new column name that represents the values for the var_name."
+    "text": "Reshaping DataFrames\nMake DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the name of the variable whose values are taken from column names in a given wide-form DataFrame.\nvalue_name is a string for the name of the variable whose values are taken from the values in a given wide-form DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-10",
@@ -6031,14 +6031,14 @@
     "href": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-11",
     "title": "Lecture 17",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  # To avoid having MultiIndex\n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
+    "text": "Reshaping DataFrames\nMake DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  \n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-12",
     "href": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-12",
     "title": "Lecture 17",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot_table() method can take both a string and a list of variables for the index parameter.\n\nThe pivot() can take only a string for index."
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot() method can also take a list of variable names for the index parameter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2024-0404.html#reshaping-dataframes-13",

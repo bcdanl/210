@@ -81,7 +81,7 @@ data_table.enable_dataframe_formatter()
 
 - *Reshaping* a `DataFrame` means manipulating it into a different shape.
 
-- In this section, we will discuss pandas techniques for molding `DataFrame` into the shapes we desire.
+- In this section, we will discuss pandas techniques for molding a `DataFrame` into the shape we desire.
 
 
 
@@ -189,8 +189,8 @@ df_wide_to_long = (
 :::{.nonincremental}
 
 - `melt()` can take a few parameters:
-  - `var_name` is a `string` for the *new column name* for the *variable*.
-  - `value_name` is a `string` for the *new column name* that represents the *values* for the `var_name`. 
+  - `var_name` is a `string` for the *name* of the variable whose values are taken from *column names* in a given wide-form DataFrame.
+  - `value_name` is a `string` for the *name* of the variable whose values are taken from the *values* in a given wide-form DataFrame.
 
 :::
 
@@ -222,7 +222,7 @@ df_long_to_wide = (
     df_long
     .pivot(index = "Weekday",
            columns = "City",
-           values = "Temperature"  # To avoid having MultiIndex
+           values = "Temperature"  
         )
     .reset_index()
     )
@@ -253,9 +253,7 @@ df_longer = df.melt(id_vars=["Name", "Department"],
                     value_name="Number of Courses")
 ```
 
-- The `pivot_table()` method can take both a `string` and a `list` of variables for the `index` parameter.
-  - The `pivot()` can take only a `string` for `index`.
-
+- The `pivot()` method can also take a `list` of variable names for the `index` parameter.
 
 
 ## Reshaping `DataFrames`
