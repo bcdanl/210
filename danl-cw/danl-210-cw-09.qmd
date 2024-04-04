@@ -163,6 +163,33 @@ Identify the full name of the airline with the highest average `dep_delay`, cons
 <br><br>
 
 
+## Question 5
+
+Find the airline that has the largest proportion of flights with longer than 30-minute `dep_delay`.
+
+*Hint*: `numpy.where()` is like an if-else statement, which can be very useful:
+```{python}
+#| echo: true
+import pandas as pd
+import numpy as np
+
+# Sample DataFrame with temperatures
+df = pd.DataFrame({
+    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],
+    'Temperature (C)': [12, 22, 7, 25, 30]
+})
+
+# Categorize temperatures using numpy.where
+df['Category'] = np.where(df['Temperature (C)'] < 10, 'Cold', 'Not Cold'))
+```
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
 
 # Discussion
 
