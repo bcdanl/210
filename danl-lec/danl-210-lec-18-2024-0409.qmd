@@ -1,6 +1,6 @@
 ---
 title: Lecture 18
-subtitle: Joining `DataFrames`; Data Assembly; Data Visualization with `seaborn()`
+subtitle: Joining `DataFrames`; Data Assembly; Data Visualization with `seaborn`/`ggplot`
 format:
   clean-revealjs:
     self-contained: true
@@ -382,8 +382,9 @@ Let's do Part 2 of [Classwork 9](https://bcdanl.github.io/210/danl-cw/danl-210-c
 
 ## Data Concatenation
 :::{.nonincremental}
-Concatenation can be thought of as appending a row or column to our data. 
+- Concatenation can be thought of as appending a row or column to our data. 
   - This approach is possible if our data was split into parts or if we performed a calculation that we want to append to our existing data set.
+
 - Let's consider the following example DataFrames:
 
 ```{.python}
@@ -406,14 +407,15 @@ df1.columns
 
 :::{.nonincremental}
 
-- Concatenating the DataFrames on top of each other uses the `concat()` function. 
-  - All of the DataFrames to be concatenated are passed in a `list`.
+- Concatenating the `DataFrames` on top of each other uses the `concat()` method. 
+  - All of the `DataFrames` to be concatenated are passed in a `list`.
   
 ```{.python}
 row_concat = pd.concat([df1, df2, df3])
 row_concat
 ```
 
+:::
 
 ## Data Concatenation
 ###  Add Rows  
@@ -461,8 +463,8 @@ df = pd.concat([df1, new_row_df])
 
 :::{.nonincremental}
 
-- Concatenating columns is very similar to concatenating rows. 
-  - The main difference is the `axis` parameter in the `concat` function. 
+- Concatenating *columns* is very similar to concatenating *rows*. 
+  - The main difference is the `axis` parameter in the `concat()` method. 
   - The default value of `axis` is `0` (or `axis = "index"`), so it will concatenate data in a row-wise fashion. 
   - If we pass `axis = 1` (or `axis = "columns"`) to the function, it will concatenate data in a column-wise manner.
   
@@ -490,7 +492,7 @@ pd.concat([df1, df2, df3], axis="columns", ignore_index=True)
 ###  Concatenate with Different Indices  
 :::{.nonincremental}
 
-What would happen when the row and column indices are not aligned?
+- What would happen when the row and column indices are not aligned?
 
 - Let’s modify our DataFrames for the next few examples.
 ```{.python}
@@ -519,7 +521,7 @@ pd.concat([df1, df2, df3], join ='inner')
 ```
 
 
-- If we use the DataFrames that have columns in common, only the columns that all of them share will be returned.
+- If we use the `DataFrames` that have columns in common, only the columns that all of them share will be returned.
 ```{.python}
 pd.concat([df1, df3], join ='inner',  ignore_index =False)
 ```
@@ -570,10 +572,10 @@ Let's do Part 3 of [Classwork 9](https://bcdanl.github.io/210/danl-cw/danl-210-c
 
 
 
-# Visualizing `DataFrames` with `seaborn`   {background-color="#1c4982"}
+# Visualizing `DataFrames` with `seaborn`/`letsplot`   {background-color="#1c4982"}
 
 
-## Visualizing `DataFrames` with `seaborn` 
+## Visualizing `DataFrames` with `seaborn`/`letsplot`
 
 :::: {.columns} 
 ::: {.column width="50%"}
@@ -631,6 +633,27 @@ Let's do Part 3 of [Classwork 9](https://bcdanl.github.io/210/danl-cw/danl-210-c
 import seaborn as sns
 sns.set_theme(rc={'figure.dpi': 600, 
                   'figure.figsize': (5, 3.75)})   # better quality
+```
+
+
+## Visualizing `DataFrames` with `seaborn`/`letsplot`
+### Getting started with `letsplot`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" width="300px">
+</p>
+
+:::{.nonincremental}
+- [`letsplot`](https://lets-plot.org) is a Python data visualization library based on the Grammar of Graphics. 
+  - It is pretty much the same as R's `ggplot`.
+
+:::
+
+```{.python}
+!pip install lets-plot
+
+from lets_plot import *
+LetsPlot.setup_html()
 ```
 
 
