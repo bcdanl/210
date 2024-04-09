@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
 <meta property="og:title" content="Classwork 9 | Byeong-Hak Choe">
-<meta property="og:description" content="Reshaping DataFrames; Joining DataFrames">
+<meta property="og:description" content="Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="B.H. CHOE&amp;nbsp;">
 </head>
@@ -237,6 +237,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   </ul></li>
+  <li><a href="#part-3---concatenating-rows-and-columns" id="toc-part-3---concatenating-rows-and-columns" class="nav-link" data-scroll-target="#part-3---concatenating-rows-and-columns">Part 3 - Concatenating Rows and Columns</a>
+  <ul>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
@@ -247,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Classwork 9</h1>
-<p class="subtitle lead">Reshaping <code>DataFrames</code>; Joining <code>DataFrames</code></p>
+<p class="subtitle lead">Reshaping <code>DataFrames</code>; Joining <code>DataFrames</code>; Concatenating Rows and Columns</p>
 </div>
 
 
@@ -271,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 4, 2024</p>
+      <p class="date-modified">April 9, 2024</p>
     </div>
   </div>
     
@@ -422,6 +428,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Categorize temperatures using numpy.where</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Category'</span>] <span class="op">=</span> np.where(df[<span class="st">'Temperature (C)'</span>] <span class="op">&lt;</span> <span class="dv">10</span>, <span class="st">'Cold'</span>, <span class="st">'Not Cold'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><em>Answer:</em></p>
+<p><br><br><br></p>
+</section>
+</section>
+<section id="part-3---concatenating-rows-and-columns" class="level1">
+<h1>Part 3 - Concatenating Rows and Columns</h1>
+<p>Consider the following example DataFrames.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>student_data1 <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'student_id'</span>: [<span class="st">'S1'</span>, <span class="st">'S2'</span>, <span class="st">'S3'</span>, <span class="st">'S4'</span>, <span class="st">'S5'</span>],</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">'name'</span>: [<span class="st">'Danniella Fenton'</span>, <span class="st">'Ryder Storey'</span>, <span class="st">'Bryce Jensen'</span>, <span class="st">'Ed Bernal'</span>, <span class="st">'Kwame Morin'</span>], </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'marks'</span>: [<span class="dv">200</span>, <span class="dv">210</span>, <span class="dv">190</span>, <span class="dv">222</span>, <span class="dv">199</span>]})</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>student_data2 <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'student_id'</span>: [<span class="st">'S4'</span>, <span class="st">'S5'</span>, <span class="st">'S6'</span>, <span class="st">'S7'</span>, <span class="st">'S8'</span>],</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'name'</span>: [<span class="st">'Scarlette Fisher'</span>, <span class="st">'Carla Williamson'</span>, <span class="st">'Dante Morse'</span>, <span class="st">'Kaiser William'</span>, <span class="st">'Madeeha Preston'</span>], </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'marks'</span>: [<span class="dv">201</span>, <span class="dv">200</span>, <span class="dv">198</span>, <span class="dv">219</span>, <span class="dv">201</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>Write a Pandas code to join the two given DataFrames along <strong>rows</strong> and assign all data.</p>
+<p><em>Answer:</em></p>
+<p><br><br></p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>Write a Pandas code to join the two given DataFrames along <strong>columns</strong> and assign all data.</p>
+<p><em>Answer:</em></p>
+<p><br><br></p>
+</section>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>Consider the following Pandas <code>Series</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>s6 <span class="op">=</span> pd.Series([<span class="st">'S6'</span>, <span class="st">'Scarlette Fisher'</span>, <span class="dv">205</span>], index<span class="op">=</span>[<span class="st">'student_id'</span>, <span class="st">'name'</span>, <span class="st">'marks'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a Pandas code to append rows to the DataFrame <code>student_data1</code>.</p>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>

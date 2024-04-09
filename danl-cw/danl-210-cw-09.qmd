@@ -1,6 +1,6 @@
 ---
 title: Classwork 9
-subtitle: Reshaping `DataFrames`; Joining `DataFrames`
+subtitle: Reshaping `DataFrames`; Joining `DataFrames`; Concatenating Rows and Columns
 date: 2024-04-02
 execute: 
   eval: false
@@ -188,7 +188,69 @@ df['Category'] = np.where(df['Temperature (C)'] < 10, 'Cold', 'Not Cold'))
 
 ```
 
+<br><br><br>
+
+
+
+# Part 3 - Concatenating Rows and Columns
+
+Consider the following example DataFrames.
+```{python}
+#| echo: true
+student_data1 = pd.DataFrame({
+        'student_id': ['S1', 'S2', 'S3', 'S4', 'S5'],
+         'name': ['Danniella Fenton', 'Ryder Storey', 'Bryce Jensen', 'Ed Bernal', 'Kwame Morin'], 
+        'marks': [200, 210, 190, 222, 199]})
+
+student_data2 = pd.DataFrame({
+        'student_id': ['S4', 'S5', 'S6', 'S7', 'S8'],
+        'name': ['Scarlette Fisher', 'Carla Williamson', 'Dante Morse', 'Kaiser William', 'Madeeha Preston'], 
+        'marks': [201, 200, 198, 219, 201]})
+```
+
+<br>
+
+## Question 6
+Write a Pandas code to join the two given DataFrames along **rows** and assign all data.
+
+*Answer:*
+```{python}
+
+```
+
 <br><br>
+
+
+
+## Question 7
+Write a Pandas code to join the two given DataFrames along **columns** and assign all data.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 8
+Consider the following Pandas `Series`:
+```{python}
+#| echo: true
+s6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'marks'])
+```
+
+
+Write a Pandas code to append rows to the DataFrame `student_data1`.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
 
 
 # Discussion
