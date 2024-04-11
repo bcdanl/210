@@ -64,7 +64,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/beer_marke
 
 ```{python}
 #| echo: true
-nvda = pd.read_csv('https://bcdanl.github.io/data/stock_2019_2024.csv')
+stock = pd.read_csv('https://bcdanl.github.io/data/stock_2019_2024.csv')
 ```
 
 
