@@ -1,6 +1,6 @@
 ---
 title: Lecture 19
-subtitle: Data Visualization with `seaborn`/`letsplot` (`ggplot`)
+subtitle: Data Visualization with `seaborn` (`ggplot`)
 format:
   clean-revealjs:
     self-contained: true
@@ -43,10 +43,10 @@ knitr::knit_engines$set("markdown")
 
 
 
-# Visualizing `DataFrames` with `seaborn`/`letsplot`   {background-color="#1c4982"}
+# Visualizing `DataFrames` with `seaborn`   {background-color="#1c4982"}
 
 
-## Visualizing `DataFrames` with `seaborn`/`letsplot`
+## Visualizing `DataFrames` with `seaborn`
 
 :::: {.columns} 
 ::: {.column width="50%"}
@@ -106,8 +106,8 @@ import matplotlib.pyplot as plt
 ```
 
 
-## Visualizing `DataFrames` with `seaborn`/`letsplot`
-### Getting started with `letsplot`
+## Visualizing `DataFrames`
+### Python version of R's ggplot - `letsplot`
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" width="300px">
@@ -277,8 +277,13 @@ LetsPlot.setup_html()
 - Let's get the names of `DataFrame`s provided by the `seaborn` library:
 
 ```{.python}
-import seaborn as sns
 sns.get_dataset_names() 
+```
+
+- Matplotlib provides plot [styles](https://matplotlib.org/2.0.2/examples/style_sheets/style_sheets_reference.html):
+```{.python}
+plt.style.available
+plt.style.use('STYLE_YOU_WANT_TO_USE')
 ```
 
 
