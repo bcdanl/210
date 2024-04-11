@@ -102,8 +102,7 @@ knitr::knit_engines$set("markdown")
 
 ```{.python}
 import seaborn as sns
-sns.set_theme(rc={'figure.dpi': 600, 
-                  'figure.figsize': (5, 3.75)})   # better quality
+import matplotlib.pyplot as plt
 ```
 
 

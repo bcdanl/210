@@ -6605,7 +6605,7 @@
     "href": "danl-lec/danl-210-lec-19-2024-0411.html#visualizing-dataframes-with-seaborn-1",
     "title": "Lecture 19",
     "section": "Visualizing DataFrames with seaborn",
-    "text": "Visualizing DataFrames with seaborn\nGetting started with seaborn\n\n\n\n\n\nseaborn is a Python data visualization library based on matplotlib.\n\nIt allows us to easily create beautiful but complex graphics using a simple interface.\n\n\n\nimport seaborn as sns\nsns.set_theme(rc={'figure.dpi': 600, \n                  'figure.figsize': (5, 3.75)})   # better quality"
+    "text": "Visualizing DataFrames with seaborn\nGetting started with seaborn\n\n\n\n\n\nseaborn is a Python data visualization library based on matplotlib.\n\nIt allows us to easily create beautiful but complex graphics using a simple interface.\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2024-0411.html#visualizing-dataframes-with-seabornletsplot-2",
