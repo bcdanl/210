@@ -59,20 +59,11 @@ knitr::knit_engines$set("markdown")
 
 
 
-## Announcement
-### Team Project
-
-- A team can be composed of one or two members.
-
-- If your team consists of more than one member, one representative for the team must send Byeong-Hak an email at *bchoe@geneseo* with the following details by April 23, Tuesday, 11:59 P.M:
-  - Subject Line: DANL-210-team
-  - Email Body:
-    - Member 1: Last Name, First Name
-    - Member 2: Last Name, First Name
-
 
 ## Announcement
 ### Project
+
+- The project will be done individually. Each student must work alone.
 
 - Details of the project will be announced next week.
   - The project is about (1) collecting data via web scraping via Python `selenium` and APIs and (2) presenting your findings through descriptive statistics, data visualizations, and `pandas` data analysis on your personal website.
