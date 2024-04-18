@@ -628,3 +628,11 @@ sns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',
 :::
 :::
 
+
+
+## Visualizing `DataFrames` with `seaborn`
+
+
+Let's do [Classwork 10](https://bcdanl.github.io/210/danl-cw/danl-210-cw-10.html)!
+
+
