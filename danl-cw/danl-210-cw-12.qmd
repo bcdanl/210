@@ -20,6 +20,11 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
 
+```{r, echo=FALSE, eval = T, out.width='100%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif")
+```
+
+
 # Question 1.
 
 - Use Python Selenium to scrap the table in the following webpage as a `pandas`' `DataFrame`:
