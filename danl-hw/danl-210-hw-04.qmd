@@ -257,16 +257,15 @@ by joining the two DataFrames.
 
 - Provide your Python Selenium codes to scrape the table for Top 200 Family Movies and TV Shows. 
   - You should create the following variables in the data frame:
-    - `ranking`	
-    - `title`	
-    - `years`	
-    - `certificate`	
-    - `runtime`	
-    - `rating`	
-    - `metascore`	
-    - `plot`	
-    - `director_stars`	     
-    - `votes`
+    - `ranking`	(e.g., 1, 2, 3)
+    - `title`	(e.g., Wish, Harry Potter and the Sorcerer's Stone)
+    - `year`	(e.g., 2023, 2024-)
+    - `runtime`	(e.g., 1h 56m, 1h 40m)
+    - `rating` (e.g., PG, TV-G, G)
+    - `imdb_score` (e.g., 7.6, 6.5)
+    - `votes` (e.g., 1.4k, 70k)
+    - `metascore`	(e.g., 56, 74)
+    - `plot` (e.g., A young girl named Asha wishes on a star and gets a more direct answer than she bargained for when a trouble-making star comes down from the sky to join her.)
 
 
 - Save the DataFrame in the CSV file.
