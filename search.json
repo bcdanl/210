@@ -7662,7 +7662,7 @@
     "href": "danl-hw/danl-210-hw-04.html#question-1",
     "title": "Homework 4",
     "section": "Question 1",
-    "text": "Question 1\n\nProvide both seaborn code and a comment to describe how the distribution of the standardized daily Close price by company.\n\nThe formula for the standardized daily Close price is as follows:\n\n\n\\[\nz_{t} = \\frac{\\text{Close}_{t} - \\text{mean}(\\text{Close}_{t})}{\\text{std}(\\text{Close}_{t})},\n\\] where - \\(\\text{Close}_{t}\\) is a company’s Close price on date t; - \\(\\text{mean}(\\text{Close}_{t})\\) is the mean value of Close for a company; - \\(\\text{std}(\\text{Close}_{t})\\) is the standard deviation of Close for a company.\nAnswer:"
+    "text": "Question 1\n\nProvide both seaborn code and a comment to describe how the distribution of the standardized daily Close price by company.\n\nThe formula for the standardized daily Close price is as follows:\n\n\n\\[\nz_{t} = \\frac{\\text{Close}_{t} - \\text{mean}(\\text{Close}_{t})}{\\text{std}(\\text{Close}_{t})},\n\\] where\n\n\\(\\text{Close}_{t}\\) is a company’s Close price on date t;\n\\(\\text{mean}(\\text{Close}_{t})\\) is the mean value of Close for a company;\n\\(\\text{std}(\\text{Close}_{t})\\) is the standard deviation of Close for a company.\n\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-210-hw-04.html#question-2",

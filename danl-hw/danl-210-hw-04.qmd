@@ -63,9 +63,10 @@ $$
 z_{t} = \frac{\text{Close}_{t} - \text{mean}(\text{Close}_{t})}{\text{std}(\text{Close}_{t})},
 $$
 where
-  - $\text{Close}_{t}$ is a company's `Close` price on date `t`;
-  - $\text{mean}(\text{Close}_{t})$ is the mean value of `Close` for a company;
-  - $\text{std}(\text{Close}_{t})$ is the standard deviation of `Close` for a company.
+
+- $\text{Close}_{t}$ is a company's `Close` price on date `t`;
+- $\text{mean}(\text{Close}_{t})$ is the mean value of `Close` for a company;
+- $\text{std}(\text{Close}_{t})$ is the standard deviation of `Close` for a company.
 
 
 *Answer*:
@@ -248,9 +249,8 @@ by joining the two DataFrames.
 
 # Part 4 - Web Scrapping with `selenium`
 
-- Go to the following IMDB website for 
-  - Top Family Movies and TV Shows (sorted by popularity).
-[https://www.imdb.com/search/title/?genres=family](https://www.imdb.com/search/title/?genres=family)
+- Go to the following IMDB webpage for 
+  - [Top Family Movies and TV Shows (sorted by popularity)](https://www.imdb.com/search/title/?genres=family)
  
 
 ## Question 5
