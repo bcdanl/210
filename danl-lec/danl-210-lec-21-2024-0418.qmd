@@ -41,6 +41,22 @@ knitr::knit_engines$set("markdown")
 ```
 
 
+## Announcement
+### Two Upcoming Teaching Presentations
+
+- April 19, 2024 (Friday): 
+  - 1:45 P.M. - 2:45 P.M. 
+  - South Hall 338
+
+- April 22, 2024 (Monday): 
+  - 2:30 P.M. - 3:30 P.M. 
+  - South Hall 338
+
+- Please attend these presentations and share your feedback with the job search committee. 
+
+- Your participation will be rewarded with bonus credit towards your grade in our DANL course.
+
+
 
 ## Coding Workflow on Spyder IDE
 ### Code and comment style
@@ -562,10 +578,9 @@ find_element(By.XPATH, "xpath")
 ```
 
 
-- Selenium provides the following method to locate elements in a page:
-  - `find_element()`
+- Selenium provides the `find_element()` method to locate elements in a page.
 
-- To find multiple elements (these methods will return a list):
+- To find multiple elements (these methods will return a **list**):
   - `find_elements()`
 
 
