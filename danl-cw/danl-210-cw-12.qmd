@@ -44,7 +44,8 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 
 - Provide your Python Selenium code to scrape all the quotes.
 
-  - You should create the two DataFrames with the following variables: 
+  - You should create the two DataFrames with the following variables:
+  
   1. DataFrame about each quote with the following variables:
     - `quote`
     - `author`
@@ -55,9 +56,10 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
     - `born_date`
     - `born_location`
     - `author_description`
-  
-  - Find the top 15 most frequently occurred tags.
-  - Save the two DataFrames in the CSV files.
+
+
+- Find the top 15 most frequently occurred tags.
+- Save the two DataFrames in the CSV files.
 
 *Answer*:
 ```{python}
