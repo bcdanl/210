@@ -1,0 +1,53 @@
+---
+title: Classwork 13
+subtitle: Web-scrapping with Python `selenium`
+date: 2024-04-25
+execute: 
+  eval: false
+  echo: false
+  warning: false
+  message: false
+  
+from: markdown+emoji
+---
+
+```{r}
+#| include: false
+
+library(DT)
+library(reticulate)
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+```{r, echo=FALSE, eval = T, out.width='100%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif")
+```
+
+
+# Question 1.
+- Use selenium to get to [https://qavbox.github.io/demo/delay/](https://qavbox.github.io/demo/delay/).
+  1. Use selenium to click the button with "Click me!"
+  2. Use selenium to locate the text element that will be displayed after 5 seconds using `WebDriverWait` with `EC.presence_of_element_located`.
+    - Its XPath is `'//*[@id="two"]'`
+
+*Answer*:
+```{python}
+
+```
+
+
+
+# Discussion
+
+<font size = "5">Welcome to our Classwork 13 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 13.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 13 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!
+

@@ -1,7 +1,7 @@
 ---
 title: Classwork 12
-subtitle: Web-scrapping with Python `selenium`
-date: 2024-04-18
+subtitle: Scrapping a Table with Python `selenium`
+date: 2024-04-23
 execute: 
   eval: false
   echo: false
@@ -39,6 +39,33 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 
 
 <br><br>
+
+# Question 2.
+
+- Provide your Python Selenium code to scrape all the quotes.
+
+  - You should create the two DataFrames with the following variables: 
+  1. DataFrame about each quote with the following variables:
+    - `quote`
+    - `author`
+    - `tags`
+    - `about`, URL for description about each author.
+  2. DataFrame about each author with the following variables:
+    - `about`, URL for description about each author.
+    - `born_date`
+    - `born_location`
+    - `author_description`
+  
+  - Find the top 15 most frequently occurred tags.
+  - Save the two DataFrames in the CSV files.
+
+*Answer*:
+```{python}
+
+```
+
+<br><br>
+
 
 # Discussion
 
