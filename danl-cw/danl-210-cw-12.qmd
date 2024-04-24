@@ -42,7 +42,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 
 # Question 2.
 
-- Provide your Python Selenium code to scrape all the quotes.
+- Provide your Python Selenium code to scrape all the quotes in [this website](http://quotes.toscrape.com).
 
   - You should create the two DataFrames with the following variables:
   
