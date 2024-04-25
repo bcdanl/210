@@ -25,6 +25,24 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 ```
 
 
+Below is to set up the web scrapping environment with Python `selenium`:
+
+```{python}
+#| echo: true
+#| eval: false
+import pandas as pd
+import os
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+wd_path = '/Users/bchoe/Documents/websites/210-class-notes'   # 'YOUR_WORKING_DIRECTORY'
+os.chdir(wd_path)
+```
+
+<br>
+
 # Question 1.
 
 - Use Python Selenium to scrap the table in the following webpage as a `pandas`' `DataFrame`:
