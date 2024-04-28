@@ -368,6 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Ensure robust error and exception handling during data collection from the Sustainability Section on <a href="https://finance.yahoo.com">Yahoo! Finance</a>:
 <ol type="1">
 <li>To avoid being blocked by <a href="https://finance.yahoo.com">Yahoo! Finance</a> for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies’ Sustainability Sections.</li>
+<li>Use <code>time.sleep()</code> for each visit of the Sustainability Section webpage.</li>
 <li>Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.</li>
 <li><a href="https://finance.yahoo.com">Yahoo! Finance</a> intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.</li>
 </ol>

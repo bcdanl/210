@@ -91,8 +91,9 @@ rmarkdown::paged_table(esg_proj)
   
 - Ensure robust error and exception handling during data collection from the Sustainability Section on [Yahoo! Finance](https://finance.yahoo.com):
   1. To avoid being blocked by [Yahoo! Finance](https://finance.yahoo.com) for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies' Sustainability Sections.
-  2. Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.
-  3. [Yahoo! Finance](https://finance.yahoo.com) intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.
+  2. Use `time.sleep()` for each visit of the Sustainability Section webpage.
+  3. Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.
+  4. [Yahoo! Finance](https://finance.yahoo.com) intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.
   - You can check the new and classic layouts of [Yahoo! Finance](https://finance.yahoo.com) by selecting the corresponding options from the navigation bar on their website.
   
 ::::{.columns}
