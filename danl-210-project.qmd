@@ -149,7 +149,7 @@ rmarkdown::paged_table(esg_proj)
      - **Statement of the Problem**: Clearly articulate the specific problem or issue the project will address.
 
   3. **Data Collection**: Use a Python script (`*.py`) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python `yfinance` and `selenium`.
-     - Do NOT provide your code for data collection in your webpage. You should submit your Python script for data data collection to Brightspace.
+     - Do NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.
 
   4. **Descriptive Statistics**
     - Provide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data
