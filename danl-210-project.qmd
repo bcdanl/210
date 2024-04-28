@@ -148,8 +148,8 @@ rmarkdown::paged_table(esg_proj)
      - **Background**: Provide context for the research questions, explaining why they are significant, relevant, or interesting.
      - **Statement of the Problem**: Clearly articulate the specific problem or issue the project will address.
 
-  3. **Data Collection**: Provide the code and the comment on how to retrieve financial, accounting, and ESG data using Python `yfinance` and `selenium`.
-     - When providing the code for data collection in your webpage, do not execute the code but to display them only. You can do this by adding `#| echo: true` and `#| eval: false` at the first and the second line in the code chunk for data collection.
+  3. **Data Collection**: Use a Python script (`*.py`) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python `yfinance` and `selenium`.
+     - Do NOT provide your code for data collection in your webpage. You should submit your Python script for data data collection to Brightspace.
 
   4. **Descriptive Statistics**
     - Provide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data
