@@ -60,7 +60,7 @@ esg_proj = pd.read_csv("https://bcdanl.github.io/data/esg_proj.csv")
 #| results: asis
 
 esg_proj <- read_csv("https://bcdanl.github.io/data/esg_proj.csv")
-DT::datatable(esg_proj)
+DT::datatable(esg_proj, rownames = F)
 ```
 
 #### Variable Description
