@@ -49,15 +49,18 @@ theme_set(theme_ipsum() +
 ## Project Data
 - Below is the `esg_proj` DataFrame, which provides a list of companies and associated information
 
-```{r}
-esg_proj <- read_csv("https://bcdanl.github.io/data/esg_proj.csv")
+```{python}
+#| eval: false
+import pandas as pd
+esg_proj = pd.read_csv("https://bcdanl.github.io/data/esg_proj.csv")
 ```
 
 ```{r}
 #| echo: false
 #| results: asis
 
-rmarkdown::paged_table(esg_proj)
+esg_proj <- read_csv("https://bcdanl.github.io/data/esg_proj.csv")
+DT::datatable(esg_proj)
 ```
 
 #### Variable Description

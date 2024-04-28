@@ -347,7 +347,7 @@
     "href": "danl-210-project.html#project-data",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "Project Data",
-    "text": "Project Data\n\nBelow is the esg_proj DataFrame, which provides a list of companies and associated information\n\n\nesg_proj &lt;- read_csv(\"https://bcdanl.github.io/data/esg_proj.csv\")\n\n\n\n\n  \n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price."
+    "text": "Project Data\n\nBelow is the esg_proj DataFrame, which provides a list of companies and associated information\n\n\nimport pandas as pd\nesg_proj = pd.read_csv(\"https://bcdanl.github.io/data/esg_proj.csv\")\n\n\n\n\n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price."
   },
   {
     "objectID": "danl-210-project.html#project-tasks",
