@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2024-04-27">
+
+<title>Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis | Byeong-Hak Choe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/css/font.css">
+<meta property="og:title" content="Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis | Byeong-Hak Choe">
+<meta property="og:description" content="DANL 210 Project">
+<meta property="og:image" content="/assets/img/posts.png">
+<meta property="og:site-name" content="B.H. CHOE&amp;nbsp;">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">B.H. CHOE&nbsp;</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./blog-listing.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-github">    
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/210" rel="me" target="_blank">
+ <span class="dropdown-text">Website</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/210/discussions" rel="me" target="_blank">
+ <span class="dropdown-text">Discussions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/bcdanl/210-class-notes" rel="me" target="_blank">
+ <span class="dropdown-text">Class Notes</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./danl-210-project.html"><font size="5"><b>- Project </b></font><font size="5" color="#194493">{{&lt; fa solid pen-to-square &gt;}}</font></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/geneseo-logo-squared.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text"><a href="./index.html"><font size="6"><b>Welcome! </b></font><font size="5" color="#194493"><i class="fa fa-user-circle" aria-hidden="true"></i> <i class="fa fa-sun" aria-hidden="true"></i></font></a></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Lecture </b></font><font size="5" color="#194493"><i class="fa-solid fa-laptop" aria-label="laptop"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-210-qa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Q &amp; A </b></font><font size="5" color="#194493"><i class="fa-solid fa-commenting" aria-label="commenting"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Classwork </b></font><font size="5" color="#194493"><i class="fa-solid fa-keyboard" aria-label="keyboard"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Homework </b></font><font size="5" color="#194493"><i class="fa-solid fa-level-up" aria-label="level-up"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./danl-hw/danl-210-midterm-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Midterm Exam </b></font><font size="5" color="#194493"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i></font></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./danl-210-project.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><font size="5"><b>- Project </b></font><font size="5" color="#194493"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i></font></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project" id="toc-project" class="nav-link active" data-scroll-target="#project">Project</a></li>
+  <li><a href="#project-data" id="toc-project-data" class="nav-link" data-scroll-target="#project-data">Project Data</a>
+  <ul>
+  <li><a href="#variable-description" id="toc-variable-description" class="nav-link" data-scroll-target="#variable-description">Variable Description</a></li>
+  </ul></li>
+  <li><a href="#project-tasks" id="toc-project-tasks" class="nav-link" data-scroll-target="#project-tasks">Project Tasks</a>
+  <ul>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a></li>
+  <li><a href="#yfinance" id="toc-yfinance" class="nav-link" data-scroll-target="#yfinance"><code>yfinance</code></a></li>
+  <li><a href="#selenium" id="toc-selenium" class="nav-link" data-scroll-target="#selenium"><code>selenium</code></a></li>
+  <li><a href="#key-components-in-data-analysis" id="toc-key-components-in-data-analysis" class="nav-link" data-scroll-target="#key-components-in-data-analysis">Key Components in Data Analysis</a></li>
+  </ul></li>
+  <li><a href="#rubric-for-the-project" id="toc-rubric-for-the-project" class="nav-link" data-scroll-target="#rubric-for-the-project">Rubric for the Project</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis</h1>
+<p class="subtitle lead">DANL 210 Project</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Byeong-Hak Choe </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            SUNY Geneseo
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 27, 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">April 27, 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p><br></p>
+<section id="project" class="level2">
+<h2 class="anchored" data-anchor-id="project">Project</h2>
+<ul>
+<li>Publish the webpage of your data analysis project on your website, hosted on GitHub.
+<ul>
+<li>Your data analysis should focus on the agenda, <strong>“Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis”</strong>.</li>
+<li>Use either a Jupyter Notebook or a Quarto document to present your work.</li>
+<li>The due for the project is May 16, 2024, Thursday, 11:59 P.M.</li>
+</ul></li>
+</ul>
+<p><br></p>
+</section>
+<section id="project-data" class="level2">
+<h2 class="anchored" data-anchor-id="project-data">Project Data</h2>
+<ul>
+<li>Below is the <code>esg_proj</code> DataFrame, which provides a list of companies and associated information</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>esg_proj <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bcdanl.github.io/data/esg_proj.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Symbol"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Company Name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Sector"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Industry"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Country"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Market Cap"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"A","2":"Agilent Technologies, Inc.","3":"Industrials","4":"Diagnostics & Research","5":"United States","6":"4.036543e+10"},{"1":"AA","2":"Alcoa Corporation","3":"Industrials","4":"Aluminum","5":"United States","6":"6.622136e+09"},{"1":"AAL","2":"American Airlines Group Inc.","3":"Consumer Discretionary","4":"Airlines","5":"United States","6":"9.088025e+09"},{"1":"AAP","2":"Advance Auto Parts, Inc.","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"4.474665e+09"},{"1":"AAPL","2":"Apple Inc","3":"Technology","4":"Consumer Electronics","5":"United States","6":"2.614310e+12"},{"1":"ABBV","2":"AbbVie Inc.","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"2.819645e+11"},{"1":"ABT","2":"Abbott Laboratories","3":"Health Care","4":"Medical Devices","5":"United States","6":"1.865844e+11"},{"1":"ACGL","2":"Arch Capital Group Ltd.","3":"Financial Services","4":"Insurance - Diversified","5":"Bermuda","6":"3.401035e+10"},{"1":"ACM","2":"AECOM","3":"Consumer Discretionary","4":"Engineering & Construction","5":"United States","6":"1.279301e+10"},{"1":"ACN","2":"Accenture plc","3":"Consumer Discretionary","4":"Information Technology Services","5":"Ireland","6":"1.937517e+11"},{"1":"ADBE","2":"Adobe Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"2.139469e+11"},{"1":"ADI","2":"Analog Devices, Inc.","3":"Technology","4":"Semiconductors","5":"United States","6":"1.001586e+11"},{"1":"ADM","2":"Archer-Daniels-Midland Company","3":"Consumer Staples","4":"Farm Products","5":"United States","6":"3.064193e+10"},{"1":"ADP","2":"Automatic Data Processing, Inc.","3":"Technology","4":"Staffing & Employment Services","5":"United States","6":"9.985086e+10"},{"1":"ADSK","2":"Autodesk, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"4.661857e+10"},{"1":"AEE","2":"Ameren Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"1.961484e+10"},{"1":"AEM","2":"Agnico Eagle Mines Limited","3":"Basic Materials","4":"Gold","5":"Canada","6":"3.269059e+10"},{"1":"AEP","2":"American Electric Power Company, Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"4.486250e+10"},{"1":"AER","2":"AerCap Holdings N.V.","3":"Consumer Discretionary","4":"Rental & Leasing Services","5":"Netherlands","6":"1.731114e+10"},{"1":"AES","2":"The AES Corporation","3":"Utilities","4":"Utilities - Diversified","5":"United States","6":"1.222404e+10"},{"1":"AFG","2":"American Financial Group, Inc.","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.065348e+10"},{"1":"AFL","2":"Aflac Incorporated","3":"Financial Services","4":"Insurance - Life","5":"United States","6":"4.824367e+10"},{"1":"AGNC","2":"AGNC Investment Corp.","3":"Real Estate","4":"REIT - Mortgage","5":"United States","6":"6.484491e+09"},{"1":"AIG","2":"American International Group, Inc.","3":"Financial Services","4":"Insurance - Diversified","5":"United States","6":"5.075148e+10"},{"1":"AIV","2":"Apartment Investment and Management Company","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"1.165734e+09"},{"1":"AIZ","2":"Assurant, Inc.","3":"Financial Services","4":"Insurance - Specialty","5":"United States","6":"8.985893e+09"},{"1":"AJG","2":"Arthur J. Gallagher & Co.","3":"Financial Services","4":"Insurance Brokers","5":"United States","6":"5.075505e+10"},{"1":"AKAM","2":"Akamai Technologies, Inc.","3":"Consumer Discretionary","4":"Software - Infrastructure","5":"United States","6":"1.540760e+10"},{"1":"ALB","2":"Albemarle Corporation","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"1.372206e+10"},{"1":"ALKS","2":"Alkermes plc","3":"Health Care","4":"Drug Manufacturers - Specialty & Generic","5":"Ireland","6":"4.123439e+09"},{"1":"ALL","2":"The Allstate Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"4.473988e+10"},{"1":"ALLE","2":"Allegion plc","3":"Consumer Discretionary","4":"Security & Protection Services","5":"United States","6":"1.084361e+10"},{"1":"ALLY","2":"Ally Financial Inc.","3":"Financial Services","4":"Credit Services","5":"United States","6":"1.194561e+10"},{"1":"ALV","2":"Autoliv, Inc.","3":"Consumer Discretionary","4":"Auto Parts","5":"Sweden","6":"1.010679e+10"},{"1":"AMAT","2":"Applied Materials, Inc.","3":"Technology","4":"Semiconductor Equipment & Materials","5":"United States","6":"1.689879e+11"},{"1":"AME","2":"AMETEK, Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"4.100706e+10"},{"1":"AMG","2":"Affiliated Managers Group, Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"5.253619e+09"},{"1":"AMGN","2":"Amgen Inc.","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"1.446874e+11"},{"1":"AMP","2":"Ameriprise Financial, Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"4.112015e+10"},{"1":"AMT","2":"American Tower Corporation","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"8.006801e+10"},{"1":"AMZN","2":"Amazon.com, Inc.","3":"Consumer Discretionary","4":"Internet Retail","5":"United States","6":"1.865781e+12"},{"1":"ANET","2":"Arista Networks, Inc.","3":"Technology","4":"Computer Hardware","5":"United States","6":"8.275412e+10"},{"1":"ANSS","2":"ANSYS, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"2.904219e+10"},{"1":"AOS","2":"A. O. Smith Corporation","3":"Consumer Discretionary","4":"Specialty Industrial Machinery","5":"United States","6":"1.224810e+10"},{"1":"APA","2":"APA Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"9.806093e+09"},{"1":"APD","2":"Air Products and Chemicals, Inc.","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"5.248083e+10"},{"1":"APH","2":"Amphenol Corporation","3":"Technology","4":"Electronic Components","5":"United States","6":"7.227651e+10"},{"1":"APTV","2":"Aptiv PLC","3":"Consumer Discretionary","4":"Auto Parts","5":"United Kingdom","6":"1.987016e+10"},{"1":"AR","2":"Antero Resources Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"1.026060e+10"},{"1":"ARE","2":"Alexandria Real Estate Equities, Inc.","3":"Real Estate","4":"REIT - Office","5":"United States","6":"2.032842e+10"},{"1":"ARMK","2":"Aramark","3":"Consumer Discretionary","4":"Specialty Business Services","5":"United States","6":"8.490380e+09"},{"1":"ARW","2":"Arrow Electronics, Inc.","3":"Technology","4":"Electronics & Computer Distribution","5":"United States","6":"6.919395e+09"},{"1":"ASH","2":"Ashland Inc.","3":"Consumer Discretionary","4":"Specialty Chemicals","5":"United States","6":"4.812124e+09"},{"1":"ATO","2":"Atmos Energy Corporation","3":"Utilities","4":"Utilities - Regulated Gas","5":"United States","6":"1.763769e+10"},{"1":"AVB","2":"AvalonBay Communities, Inc.","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"2.719075e+10"},{"1":"AVGO","2":"Broadcom Inc.","3":"Technology","4":"Semiconductors","5":"United States","6":"6.228706e+11"},{"1":"AVT","2":"Avnet, Inc.","3":"Technology","4":"Electronics & Computer Distribution","5":"United States","6":"4.527219e+09"},{"1":"AVY","2":"Avery Dennison Corporation","3":"Consumer Discretionary","4":"Packaging & Containers","5":"United States","6":"1.763381e+10"},{"1":"AWK","2":"American Water Works Company, Inc.","3":"Utilities","4":"Utilities - Regulated Water","5":"United States","6":"2.352255e+10"},{"1":"AXP","2":"American Express Company","3":"Financial Services","4":"Credit Services","5":"United States","6":"1.694966e+11"},{"1":"AXS","2":"AXIS Capital Holdings Limited","3":"Financial Services","4":"Insurance - Specialty","5":"Bermuda","6":"5.120867e+09"},{"1":"AXTA","2":"Axalta Coating Systems Ltd.","3":"Consumer Discretionary","4":"Specialty Chemicals","5":"United States","6":"6.872774e+09"},{"1":"AYI","2":"Acuity Brands, Inc.","3":"Consumer Discretionary","4":"Electrical Equipment & Parts","5":"United States","6":"7.765991e+09"},{"1":"AZO","2":"AutoZone, Inc.","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"5.097399e+10"},{"1":"BA","2":"The Boeing Company","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"1.020268e+11"},{"1":"BAC","2":"Bank of America Corporation","3":"Financial Services","4":"Banks - Diversified","5":"United States","6":"2.978226e+11"},{"1":"BAH","2":"Booz Allen Hamilton Holding Corporation","3":"Consumer Discretionary","4":"Consulting Services","5":"United States","6":"1.883002e+10"},{"1":"BALL","2":"Ball Corporation","3":"Industrials","4":"Packaging & Containers","5":"United States","6":"2.203185e+10"},{"1":"BAM","2":"Brookfield Asset Management Inc.","3":"Consumer Discretionary","4":"Asset Management","5":"NA","6":"1.548557e+10"},{"1":"BAP","2":"Credicorp Ltd.","3":"Financial Services","4":"Banks - Regional","5":"Peru","6":"1.328628e+10"},{"1":"BAX","2":"Baxter International Inc.","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"2.037912e+10"},{"1":"BBWI","2":"Bath & Body Works, Inc.","3":"Miscellaneous","4":"Specialty Retail","5":"United States","6":"1.035424e+10"},{"1":"BBY","2":"Best Buy Co., Inc.","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"1.616437e+10"},{"1":"BCE","2":"BCE Inc.","3":"Communication Services","4":"Telecom Services","5":"Canada","6":"2.975840e+10"},{"1":"BDX","2":"Becton, Dickinson and Company","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"6.689531e+10"},{"1":"BEN","2":"Franklin Resources, Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"1.315868e+10"},{"1":"BEP","2":"Brookfield Renewable Partners L.P.","3":"Utilities","4":"Utilities - Renewable","5":"Canada","6":"1.004673e+10"},{"1":"BFH","2":"Bread Financial Holdings, Inc.","3":"Consumer Discretionary","4":"Credit Services","5":"United States","6":"1.827214e+09"},{"1":"BG","2":"Bunge Limited","3":"Consumer Staples","4":"Farm Products","5":"United States","6":"1.473335e+10"},{"1":"BHC","2":"Bausch Health Companies Inc.","3":"Health Care","4":"Drug Manufacturers - Specialty & Generic","5":"Canada","6":"3.182738e+09"},{"1":"BIDU","2":"Baidu, Inc.","3":"Technology","4":"Internet Content & Information","5":"China","6":"3.524723e+10"},{"1":"BIIB","2":"Biogen Inc.","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"3.036587e+10"},{"1":"BIO","2":"Bio-Rad Laboratories, Inc.","3":"Industrials","4":"Medical Devices","5":"United States","6":"7.869377e+09"},{"1":"BK","2":"The Bank of New York Mellon Corporation","3":"Financial Services","4":"Asset Management","5":"United States","6":"4.324435e+10"},{"1":"BKNG","2":"Booking Holdings Inc.","3":"Consumer Discretionary","4":"Travel Services","5":"United States","6":"1.203189e+11"},{"1":"BLK","2":"BlackRock, Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"1.136252e+11"},{"1":"BMO","2":"Bank of Montreal","3":"Financial Services","4":"Banks - Diversified","5":"Canada","6":"6.594277e+10"},{"1":"BMRN","2":"BioMarin Pharmaceutical Inc.","3":"Health Care","4":"Biotechnology","5":"United States","6":"1.526574e+10"},{"1":"BMY","2":"Bristol-Myers Squibb Company","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"9.069537e+10"},{"1":"BN","2":"Brookfield Corporation","3":"Consumer Discretionary","4":"Asset Management","5":"Canada","6":"6.202272e+10"},{"1":"BNS","2":"The Bank of Nova Scotia","3":"Financial Services","4":"Banks - Diversified","5":"Canada","6":"5.652591e+10"},{"1":"BOKF","2":"BOK Financial Corporation","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"5.909790e+09"},{"1":"BR","2":"Broadridge Financial Solutions, Inc.","3":"Consumer Discretionary","4":"Information Technology Services","5":"United States","6":"2.286548e+10"},{"1":"BRO","2":"Brown & Brown, Inc.","3":"Financial Services","4":"Insurance Brokers","5":"United States","6":"2.328142e+10"},{"1":"BRX","2":"Brixmor Property Group Inc.","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"6.544075e+09"},{"1":"BSX","2":"Boston Scientific Corporation","3":"Health Care","4":"Medical Devices","5":"United States","6":"1.073474e+11"},{"1":"BWA","2":"BorgWarner Inc.","3":"Consumer Discretionary","4":"Auto Parts","5":"United States","6":"7.626400e+09"},{"1":"BX","2":"Blackstone Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"8.753680e+10"},{"1":"BXP","2":"Boston Properties, Inc.","3":"Real Estate","4":"REIT - Office","5":"United States","6":"9.657745e+09"},{"1":"C","2":"Citigroup Inc.","3":"Financial Services","4":"Banks - Diversified","5":"United States","6":"1.197662e+11"},{"1":"CAG","2":"Conagra Brands, Inc.","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"1.485819e+10"},{"1":"CAH","2":"Cardinal Health, Inc.","3":"Health Care","4":"Medical Distribution","5":"United States","6":"2.510409e+10"},{"1":"CAT","2":"Caterpillar Inc.","3":"Industrials","4":"Farm & Heavy Construction Machinery","5":"United States","6":"1.714762e+11"},{"1":"CB","2":"Chubb Limited","3":"Financial Services","4":"Insurance - Property & Casualty","5":"Switzerland","6":"9.959350e+10"},{"1":"CBOE","2":"Cboe Global Markets, Inc.","3":"Financial Services","4":"Financial Data & Stock Exchanges","5":"NA","6":"1.994846e+10"},{"1":"CBRE","2":"CBRE Group, Inc.","3":"Financial Services","4":"Real Estate Services","5":"United States","6":"2.669642e+10"},{"1":"CBSH","2":"Commerce Bancshares, Inc.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"7.196493e+09"},{"1":"CCI","2":"Crown Castle Inc.","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"4.063386e+10"},{"1":"CCK","2":"Crown Holdings, Inc.","3":"Industrials","4":"Packaging & Containers","5":"United States","6":"9.733921e+09"},{"1":"CCL","2":"Carnival Corporation & plc","3":"Consumer Discretionary","4":"Travel Services","5":"United States","6":"1.975474e+10"},{"1":"CDNS","2":"Cadence Design Systems, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"7.688302e+10"},{"1":"CDW","2":"CDW Corporation","3":"Consumer Discretionary","4":"Information Technology Services","5":"United States","6":"3.251495e+10"},{"1":"CE","2":"Celanese Corporation","3":"Industrials","4":"Chemicals","5":"United States","6":"1.682495e+10"},{"1":"CERS","2":"Cerus Corporation","3":"Technology","4":"Medical Devices","5":"United States","6":"3.099935e+08"},{"1":"CET","2":"Central Securities Corp.","3":"Financial Services","4":"Asset Management","5":"United States","6":"9.954496e+09"},{"1":"CF","2":"CF Industries Holdings, Inc.","3":"Industrials","4":"Agricultural Inputs","5":"United States","6":"1.506703e+10"},{"1":"CFG","2":"Citizens Financial Group, Inc.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"1.612530e+10"},{"1":"CFR","2":"Cullen Frost Bankers Inc.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"6.874846e+09"},{"1":"CHD","2":"Church & Dwight Co., Inc.","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"2.591836e+10"},{"1":"CHK","2":"Chesapeake Energy Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"1.204097e+10"},{"1":"CHKP","2":"Check Point Software Technologies Ltd.","3":"Technology","4":"Software - Infrastructure","5":"Israel","6":"1.707145e+10"},{"1":"CHRW","2":"C.H. Robinson Worldwide, Inc.","3":"Consumer Discretionary","4":"Integrated Freight & Logistics","5":"United States","6":"8.208069e+09"},{"1":"CHTR","2":"Charter Communications, Inc.","3":"Communication Services","4":"Telecom Services","5":"United States","6":"3.697585e+10"},{"1":"CI","2":"Cigna Corporation","3":"Health Care","4":"Healthcare Plans","5":"United States","6":"1.036311e+11"},{"1":"CINF","2":"Cincinnati Financial Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.737102e+10"},{"1":"CL","2":"Colgate-Palmolive Company","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"7.491497e+10"},{"1":"CLX","2":"The Clorox Company","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"1.817910e+10"},{"1":"CM","2":"Canadian Imperial Bank of Commerce","3":"Financial Services","4":"Banks - Diversified","5":"Canada","6":"4.453210e+10"},{"1":"CMA","2":"Comerica Incorporated","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"6.898737e+09"},{"1":"CMCSA","2":"Comcast Corporation","3":"Communication Services","4":"Telecom Services","5":"United States","6":"1.531945e+11"},{"1":"CME","2":"CME Group Inc.","3":"Financial Services","4":"Financial Data & Stock Exchanges","5":"United States","6":"7.593734e+10"},{"1":"CMG","2":"Chipotle Mexican Grill, Inc.","3":"Consumer Discretionary","4":"Restaurants","5":"United States","6":"8.739044e+10"},{"1":"CMI","2":"Cummins Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"4.130020e+10"},{"1":"CMS","2":"CMS Energy Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"1.747228e+10"},{"1":"CNA","2":"CNA Financial Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.171358e+10"},{"1":"CNC","2":"Centene Corporation","3":"Health Care","4":"Healthcare Plans","5":"United States","6":"3.957986e+10"},{"1":"CNHI","2":"CNH Industrial N.V.","3":"Industrials","4":"Farm & Heavy Construction Machinery","5":"United Kingdom","6":"1.433389e+10"},{"1":"CNI","2":"Canadian National Railway Company","3":"Industrials","4":"Railroads","5":"Canada","6":"8.062724e+10"},{"1":"CNP","2":"CenterPoint Energy, Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"1.822151e+10"},{"1":"CNQ","2":"Canadian Natural Resources Limited","3":"Energy","4":"Oil & Gas Exploration & Production","5":"Canada","6":"8.361565e+10"},{"1":"COF","2":"Capital One Financial Corporation","3":"Financial Services","4":"Credit Services","5":"United States","6":"5.559083e+10"},{"1":"COMM","2":"CommScope Holding Company, Inc.","3":"Technology","4":"Communication Equipment","5":"United States","6":"1.986640e+08"},{"1":"COO","2":"The Cooper Companies, Inc.","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"1.765751e+10"},{"1":"COP","2":"Conoco Phillips","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"1.532154e+11"},{"1":"COR","2":"Cencora","3":"Health Care","4":"Medical Distribution","5":"United States","6":"4.805122e+10"},{"1":"COST","2":"Costco Wholesale Corporation","3":"Consumer Discretionary","4":"Discount Stores","5":"United States","6":"3.233943e+11"},{"1":"COTY","2":"Coty Inc.","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"1.025864e+10"},{"1":"CP","2":"Canadian Pacific Railway Limited","3":"Industrials","4":"Railroads","5":"Canada","6":"7.610126e+10"},{"1":"CPB","2":"Campbell Soup Company","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"1.336990e+10"},{"1":"CPG","2":"Veren Inc.","3":"Energy","4":"Oil & Gas Exploration & Production","5":"Canada","6":"5.622942e+09"},{"1":"CPRI","2":"Capri Holdings Limited","3":"Consumer Discretionary","4":"Luxury Goods","5":"Hong Kong","6":"4.142779e+09"},{"1":"CPRT","2":"Copart, Inc.","3":"Consumer Discretionary","4":"Specialty Business Services","5":"United States","6":"5.358227e+10"},{"1":"CPT","2":"Camden Property Trust","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"1.065625e+10"},{"1":"CRM","2":"Salesforce, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"2.660613e+11"},{"1":"CSCO","2":"Cisco Systems, Inc.","3":"Communication Services","4":"Communication Equipment","5":"United States","6":"1.937941e+11"},{"1":"CSGP","2":"CoStar Group, Inc.","3":"Financial Services","4":"Real Estate Services","5":"United States","6":"3.783912e+10"},{"1":"CSL","2":"Carlisle Companies Incorporated","3":"Industrials","4":"Building Products & Equipment","5":"United States","6":"1.912645e+10"},{"1":"CSX","2":"CSX Corporation","3":"Industrials","4":"Railroads","5":"United States","6":"6.644797e+10"},{"1":"CTAS","2":"Cintas Corporation","3":"Consumer Discretionary","4":"Specialty Business Services","5":"United States","6":"6.759786e+10"},{"1":"CTRA","2":"Coterra Energy Inc.","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"2.126976e+10"},{"1":"CTSH","2":"Cognizant Technology Solutions Corporation","3":"Technology","4":"Information Technology Services","5":"United States","6":"3.332555e+10"},{"1":"CVE","2":"Cenovus Energy Inc.","3":"Energy","4":"Oil & Gas Integrated","5":"Canada","6":"4.005487e+10"},{"1":"CVS","2":"CVS Health Corporation","3":"Consumer Staples","4":"Healthcare Plans","5":"United States","6":"8.454264e+10"},{"1":"CVX","2":"Chevron Corporation","3":"Energy","4":"Oil & Gas Integrated","5":"United States","6":"3.081024e+11"},{"1":"D","2":"Dominion Energy, Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"4.224901e+10"},{"1":"DAL","2":"Delta Air Lines, Inc.","3":"Consumer Discretionary","4":"Airlines","5":"United States","6":"3.221399e+10"},{"1":"DB","2":"Deutsche Bank Aktiengesellschaft","3":"Financial Services","4":"Banks - Regional","5":"Germany","6":"3.625080e+10"},{"1":"DCI","2":"Donaldson Company, Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"8.699077e+09"},{"1":"DD","2":"DuPont de Nemours, Inc.","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"3.078003e+10"},{"1":"DE","2":"Deere & Company","3":"Industrials","4":"Farm & Heavy Construction Machinery","5":"United States","6":"1.094866e+11"},{"1":"DEI","2":"Douglas Emmett, Inc.","3":"Real Estate","4":"REIT - Office","5":"United States","6":"2.237495e+09"},{"1":"DELL","2":"Dell Technologies Inc.","3":"Technology","4":"Computer Hardware","5":"United States","6":"8.926662e+10"},{"1":"DFS","2":"Discover Financial Services","3":"Financial Services","4":"Credit Services","5":"United States","6":"3.199591e+10"},{"1":"DG","2":"Dollar General Corporation","3":"Consumer Discretionary","4":"Discount Stores","5":"United States","6":"3.120870e+10"},{"1":"DGX","2":"Quest Diagnostics Incorporated","3":"Health Care","4":"Diagnostics & Research","5":"United States","6":"1.486356e+10"},{"1":"DHI","2":"D.R. Horton, Inc.","3":"Consumer Discretionary","4":"Residential Construction","5":"United States","6":"4.785895e+10"},{"1":"DHR","2":"Danaher Corporation","3":"Industrials","4":"Diagnostics & Research","5":"United States","6":"1.826385e+11"},{"1":"DIS","2":"The Walt Disney Company","3":"Consumer Discretionary","4":"Entertainment","5":"United States","6":"2.067809e+11"},{"1":"DKS","2":"DICK'S Sporting Goods, Inc.","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"1.707670e+10"},{"1":"DLR","2":"Digital Realty Trust, Inc.","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"4.460489e+10"},{"1":"DLTR","2":"Dollar Tree, Inc.","3":"Consumer Discretionary","4":"Discount Stores","5":"United States","6":"2.653725e+10"},{"1":"DOV","2":"Dover Corporation","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"2.520518e+10"},{"1":"DOX","2":"Amdocs Limited","3":"Technology","4":"Software - Infrastructure","5":"Guernsey","6":"9.972218e+09"},{"1":"DPZ","2":"Domino's Pizza, Inc.","3":"Consumer Discretionary","4":"Restaurants","5":"United States","6":"1.737399e+10"},{"1":"DRI","2":"Darden Restaurants, Inc.","3":"Consumer Discretionary","4":"Restaurants","5":"United States","6":"1.863193e+10"},{"1":"DTE","2":"DTE Energy Company","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.261073e+10"},{"1":"DUK","2":"Duke Energy Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"7.531599e+10"},{"1":"DVA","2":"DaVita Inc.","3":"Health Care","4":"Medical Care Facilities","5":"United States","6":"1.170883e+10"},{"1":"DVN","2":"Devon Energy Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"3.347085e+10"},{"1":"DXC","2":"DXC Technology Company","3":"Technology","4":"Information Technology Services","5":"United States","6":"3.672043e+09"},{"1":"DXCM","2":"DexCom, Inc.","3":"Health Care","4":"Medical Devices","5":"United States","6":"4.793499e+10"},{"1":"EA","2":"Electronic Arts Inc.","3":"Technology","4":"Electronic Gaming & Multimedia","5":"United States","6":"3.419412e+10"},{"1":"EBAY","2":"eBay Inc.","3":"Consumer Discretionary","4":"Internet Retail","5":"United States","6":"2.694636e+10"},{"1":"ECL","2":"Ecolab Inc.","3":"Consumer Discretionary","4":"Specialty Chemicals","5":"United States","6":"6.312696e+10"},{"1":"ED","2":"Consolidated Edison, Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"3.210825e+10"},{"1":"EDU","2":"New Oriental Education & Technology Group Inc.","3":"Real Estate","4":"Education & Training Services","5":"China","6":"1.378056e+10"},{"1":"EFX","2":"Equifax Inc.","3":"Financial Services","4":"Consulting Services","5":"United States","6":"2.761724e+10"},{"1":"EG","2":"Everest Group, Ltd.","3":"Financial Services","4":"Insurance - Reinsurance","5":"Bermuda","6":"1.582126e+10"},{"1":"EIX","2":"Edison International","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.697053e+10"},{"1":"EL","2":"The Estée Lauder Companies Inc.","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"5.285690e+10"},{"1":"ELV","2":"Elevance Health Inc.","3":"Health Care","4":"Healthcare Plans","5":"United States","6":"1.248688e+11"},{"1":"EMN","2":"Eastman Chemical Company","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"1.121337e+10"},{"1":"EMR","2":"Emerson Electric Co.","3":"Technology","4":"Specialty Industrial Machinery","5":"United States","6":"6.282411e+10"},{"1":"ENB","2":"Enbridge Inc.","3":"Energy","4":"Oil & Gas Midstream","5":"Canada","6":"7.613850e+10"},{"1":"EOG","2":"EOG Resources, Inc.","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"7.870625e+10"},{"1":"EQIX","2":"Equinix, Inc.","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"6.922600e+10"},{"1":"EQR","2":"Equity Residential","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"2.472412e+10"},{"1":"EQT","2":"EQT Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"1.788574e+10"},{"1":"ERIE","2":"Erie Indemnity Company","3":"Financial Services","4":"Insurance Brokers","5":"United States","6":"1.763319e+10"},{"1":"ES","2":"Eversource Energy","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.079240e+10"},{"1":"ESS","2":"Essex Property Trust, Inc.","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"1.585313e+10"},{"1":"ET","2":"Energy Transfer LP","3":"Utilities","4":"Oil & Gas Midstream","5":"United States","6":"5.374941e+10"},{"1":"ETN","2":"Eaton Corporation plc","3":"Industrials","4":"Specialty Industrial Machinery","5":"Ireland","6":"1.295578e+11"},{"1":"ETR","2":"Entergy Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.270980e+10"},{"1":"EW","2":"Edwards Lifesciences Corporation","3":"Health Care","4":"Medical Devices","5":"United States","6":"5.197036e+10"},{"1":"EWBC","2":"East West Bancorp, Inc.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"1.063948e+10"},{"1":"EXC","2":"Exelon Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"3.730278e+10"},{"1":"EXP","2":"Eagle Materials Inc.","3":"Industrials","4":"Building Materials","5":"United States","6":"8.843378e+09"},{"1":"EXPD","2":"Expeditors International of Washington, Inc.","3":"Consumer Discretionary","4":"Integrated Freight & Logistics","5":"United States","6":"1.630379e+10"},{"1":"EXPE","2":"Expedia Group, Inc.","3":"Consumer Discretionary","4":"Travel Services","5":"United States","6":"1.849434e+10"},{"1":"EXR","2":"Extra Space Storage Inc.","3":"Real Estate","4":"REIT - Industrial","5":"United States","6":"2.823886e+10"},{"1":"F","2":"Ford Motor Company","3":"Consumer Discretionary","4":"Auto Manufacturers","5":"United States","6":"5.118603e+10"},{"1":"FAST","2":"Fastenal Company","3":"Consumer Discretionary","4":"Industrial Distribution","5":"United States","6":"3.903056e+10"},{"1":"FBIN","2":"Fortune Brands Innovations, Inc.","3":"Consumer Discretionary","4":"Building Products & Equipment","5":"United States","6":"9.356223e+09"},{"1":"FCX","2":"Freeport-McMoRan Inc.","3":"Basic Materials","4":"Copper","5":"United States","6":"7.243766e+10"},{"1":"FDS","2":"FactSet Research Systems Inc.","3":"Technology","4":"Financial Data & Stock Exchanges","5":"United States","6":"1.606468e+10"},{"1":"FDX","2":"FedEx Corporation","3":"Consumer Discretionary","4":"Integrated Freight & Logistics","5":"United States","6":"6.541811e+10"},{"1":"FE","2":"FirstEnergy Corp.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.190343e+10"},{"1":"FFIV","2":"F5, Inc.","3":"Communication Services","4":"Software - Infrastructure","5":"United States","6":"1.069921e+10"},{"1":"FI","2":"Fiserv, Inc.","3":"Consumer Discretionary","4":"Information Technology Services","5":"United States","6":"9.203785e+10"},{"1":"FIS","2":"Fidelity National Information Services, Inc.","3":"Consumer Discretionary","4":"Information Technology Services","5":"United States","6":"4.012202e+10"},{"1":"FITB","2":"Fifth Third Bancorp","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"2.513709e+10"},{"1":"FL","2":"Foot Locker, Inc.","3":"Consumer Discretionary","4":"Apparel Retail","5":"United States","6":"2.076991e+09"},{"1":"FLEX","2":"Flex Ltd.","3":"Technology","4":"Electronic Components","5":"Singapore","6":"1.220110e+10"},{"1":"FLR","2":"Fluor Corporation","3":"Industrials","4":"Engineering & Construction","5":"United States","6":"6.978106e+09"},{"1":"FLS","2":"Flowserve Corporation","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"6.136170e+09"},{"1":"FMC","2":"FMC Corporation","3":"Industrials","4":"Agricultural Inputs","5":"United States","6":"7.293514e+09"},{"1":"FNF","2":"Fidelity National Financial, Inc.","3":"Financial Services","4":"Insurance - Specialty","5":"United States","6":"1.376688e+10"},{"1":"FNV","2":"Franco-Nevada Corporation","3":"Basic Materials","4":"Gold","5":"Canada","6":"2.362408e+10"},{"1":"FRT","2":"Federal Realty Investment Trust","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"8.480736e+09"},{"1":"FTNT","2":"Fortinet, Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"4.897133e+10"},{"1":"FTS","2":"Fortis Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"1.916284e+10"},{"1":"FTV","2":"Fortive Corporation","3":"Industrials","4":"Scientific & Technical Instruments","5":"United States","6":"2.669432e+10"},{"1":"GD","2":"General Dynamics Corporation","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"7.792271e+10"},{"1":"GE","2":"GE Aerospace","3":"Technology","4":"Aerospace & Defense","5":"United States","6":"1.777094e+11"},{"1":"GEN","2":"Gen Digital Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"1.313945e+10"},{"1":"GGG","2":"Graco Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"1.388483e+10"},{"1":"GIB","2":"CGI Inc.","3":"Technology","4":"Information Technology Services","5":"Canada","6":"2.401068e+10"},{"1":"GIL","2":"Gildan Activewear Inc.","3":"Consumer Discretionary","4":"Apparel Manufacturing","5":"Canada","6":"5.953747e+09"},{"1":"GILD","2":"Gilead Sciences, Inc.","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"8.149858e+10"},{"1":"GIS","2":"General Mills, Inc.","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"3.998699e+10"},{"1":"GL","2":"Globe Life Inc.","3":"Financial Services","4":"Insurance - Life","5":"United States","6":"7.098369e+09"},{"1":"GLPI","2":"Gaming and Leisure Properties, Inc.","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"1.152789e+10"},{"1":"GLW","2":"Corning Incorporated","3":"Industrials","4":"Electronic Components","5":"United States","6":"2.673935e+10"},{"1":"GM","2":"General Motors Company","3":"Consumer Discretionary","4":"Auto Manufacturers","5":"United States","6":"5.230152e+10"},{"1":"GNTX","2":"Gentex Corporation","3":"Consumer Discretionary","4":"Auto Parts","5":"United States","6":"8.035084e+09"},{"1":"GOLD","2":"Barrick Gold Corporation","3":"Basic Materials","4":"Gold","5":"Canada","6":"3.000268e+10"},{"1":"GOOGL","2":"Alphabet Inc.","3":"Technology","4":"Internet Content & Information","5":"United States","6":"2.137854e+12"},{"1":"GPC","2":"Genuine Parts Company","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"2.227803e+10"},{"1":"GPN","2":"Global Payments Inc.","3":"Consumer Discretionary","4":"Specialty Business Services","5":"United States","6":"3.213719e+10"},{"1":"GPS","2":"The Gap, Inc.","3":"Consumer Discretionary","4":"Apparel Retail","5":"United States","6":"7.974492e+09"},{"1":"GRMN","2":"Garmin Ltd.","3":"Industrials","4":"Scientific & Technical Instruments","5":"Switzerland","6":"2.751047e+10"},{"1":"GS","2":"The Goldman Sachs Group, Inc.","3":"Financial Services","4":"Capital Markets","5":"United States","6":"1.392009e+11"},{"1":"GT","2":"The Goodyear Tire & Rubber Company","3":"Consumer Discretionary","4":"Auto Parts","5":"United States","6":"3.362027e+09"},{"1":"GWW","2":"W.W. Grainger, Inc.","3":"Industrials","4":"Industrial Distribution","5":"United States","6":"4.569483e+10"},{"1":"H","2":"Hyatt Hotels Corporation","3":"Consumer Discretionary","4":"Lodging","5":"United States","6":"1.557102e+10"},{"1":"HAL","2":"Halliburton Company","3":"Energy","4":"Oil & Gas Equipment & Services","5":"United States","6":"3.430452e+10"},{"1":"HAS","2":"Hasbro, Inc.","3":"Consumer Discretionary","4":"Leisure","5":"United States","6":"8.947887e+09"},{"1":"HBAN","2":"Huntington Bancshares Incorporated","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"1.962509e+10"},{"1":"HBI","2":"Hanesbrands Inc.","3":"Consumer Discretionary","4":"Apparel Manufacturing","5":"United States","6":"1.572902e+09"},{"1":"HCA","2":"HCA Healthcare, Inc.","3":"Health Care","4":"Medical Care Facilities","5":"United States","6":"8.111911e+10"},{"1":"HD","2":"The Home Depot, Inc.","3":"Consumer Discretionary","4":"Home Improvement Retail","5":"United States","6":"3.320795e+11"},{"1":"HES","2":"Hess Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"4.992142e+10"},{"1":"HIG","2":"The Hartford Financial Services Group, Inc.","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"2.833746e+10"},{"1":"HLF","2":"Herbalife Nutrition Ltd.","3":"Health Care","4":"Packaged Foods","5":"Cayman Islands","6":"8.744965e+08"},{"1":"HLT","2":"Hilton Worldwide Holdings Inc.","3":"Consumer Discretionary","4":"Lodging","5":"United States","6":"5.096668e+10"},{"1":"HOG","2":"Harley-Davidson, Inc.","3":"Consumer Discretionary","4":"Recreational Vehicles","5":"United States","6":"4.745559e+09"},{"1":"HOLX","2":"Hologic, Inc.","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"1.783490e+10"},{"1":"HON","2":"Honeywell International Inc.","3":"Industrials","4":"Conglomerates","5":"United States","6":"1.261646e+11"},{"1":"HP","2":"Helmerich & Payne, Inc.","3":"Energy","4":"Oil & Gas Drilling","5":"United States","6":"3.991605e+09"},{"1":"HPE","2":"Hewlett Packard Enterprise Company","3":"Technology","4":"Communication Equipment","5":"United States","6":"2.231797e+10"},{"1":"HPQ","2":"HP Inc.","3":"Technology","4":"Computer Hardware","5":"United States","6":"2.746049e+10"},{"1":"HRL","2":"Hormel Foods Corporation","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"1.934433e+10"},{"1":"HSIC","2":"Henry Schein, Inc.","3":"Health Care","4":"Medical Distribution","5":"United States","6":"9.397623e+09"},{"1":"HST","2":"Host Hotels & Resorts, Inc.","3":"Real Estate","4":"REIT - Hotel & Motel","5":"United States","6":"1.317039e+10"},{"1":"HSY","2":"The Hershey Company","3":"Consumer Staples","4":"Confectioners","5":"United States","6":"3.796732e+10"},{"1":"HUBB","2":"Hubbell Incorporated","3":"Technology","4":"Electrical Equipment & Parts","5":"United States","6":"2.185459e+10"},{"1":"HUM","2":"Humana Inc.","3":"Health Care","4":"Healthcare Plans","5":"United States","6":"3.690785e+10"},{"1":"HUN","2":"Huntsman Corporation","3":"Industrials","4":"Chemicals","5":"United States","6":"4.132995e+09"},{"1":"IAC","2":"IAC Inc.","3":"Technology","4":"Internet Content & Information","5":"United States","6":"4.179648e+09"},{"1":"IBM","2":"International Business Machines Corporation","3":"Technology","4":"Information Technology Services","5":"United States","6":"1.532156e+11"},{"1":"ICE","2":"Intercontinental Exchange, Inc.","3":"Financial Services","4":"Financial Data & Stock Exchanges","5":"United States","6":"7.541358e+10"},{"1":"ICL","2":"ICL Group Ltd","3":"Industrials","4":"Agricultural Inputs","5":"Israel","6":"6.083937e+09"},{"1":"IDXX","2":"IDEXX Laboratories, Inc.","3":"Health Care","4":"Diagnostics & Research","5":"United States","6":"4.148653e+10"},{"1":"IEX","2":"IDEX Corporation","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"1.669175e+10"},{"1":"IFF","2":"International Flavors & Fragrances Inc.","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"2.160219e+10"},{"1":"IGT","2":"International Game Technology PLC","3":"Consumer Discretionary","4":"Gambling","5":"United States","6":"4.069790e+09"},{"1":"ILMN","2":"Illumina, Inc.","3":"Health Care","4":"Diagnostics & Research","5":"United States","6":"1.943029e+10"},{"1":"IMO","2":"Imperial Oil Limited","3":"Energy","4":"Oil & Gas Integrated","5":"Canada","6":"3.788366e+10"},{"1":"INCY","2":"Incyte Corporation","3":"Health Care","4":"Biotechnology","5":"United States","6":"1.160351e+10"},{"1":"INGR","2":"Ingredion Incorporated","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"7.427706e+09"},{"1":"INTC","2":"Intel Corporation","3":"Technology","4":"Semiconductors","5":"United States","6":"1.347886e+11"},{"1":"INTU","2":"Intuit Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"1.782206e+11"},{"1":"IONS","2":"Ionis Pharmaceuticals, Inc.","3":"Health Care","4":"Biotechnology","5":"United States","6":"6.061817e+09"},{"1":"IQV","2":"IQVIA Holdings Inc.","3":"Health Care","4":"Diagnostics & Research","5":"United States","6":"4.263072e+10"},{"1":"IRM","2":"Iron Mountain Incorporated","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"2.265721e+10"},{"1":"ISRG","2":"Intuitive Surgical, Inc.","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"1.331317e+11"},{"1":"IT","2":"Gartner, Inc.","3":"Consumer Discretionary","4":"Information Technology Services","5":"United States","6":"3.499043e+10"},{"1":"ITW","2":"Illinois Tool Works Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"7.418606e+10"},{"1":"IVZ","2":"Invesco Ltd.","3":"Financial Services","4":"Asset Management","5":"United States","6":"6.589827e+09"},{"1":"J","2":"Jacobs Engineering Group Inc.","3":"Industrials","4":"Engineering & Construction","5":"United States","6":"1.820808e+10"},{"1":"JBHT","2":"J.B. Hunt Transport Services, Inc.","3":"Industrials","4":"Integrated Freight & Logistics","5":"United States","6":"1.673538e+10"},{"1":"JCI","2":"Johnson Controls International plc","3":"Industrials","4":"Building Products & Equipment","5":"Switzerland","6":"4.437097e+10"},{"1":"JEF","2":"Jefferies Financial Group Inc.","3":"Financial Services","4":"Capital Markets","5":"United States","6":"9.236617e+09"},{"1":"JKHY","2":"Jack Henry & Associates, Inc.","3":"Technology","4":"Information Technology Services","5":"United States","6":"1.201442e+10"},{"1":"JLL","2":"Jones Lang LaSalle Incorporated","3":"Financial Services","4":"Real Estate Services","5":"United States","6":"8.658277e+09"},{"1":"JNJ","2":"Johnson & Johnson","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"3.520172e+11"},{"1":"JNPR","2":"Juniper Networks, Inc.","3":"Technology","4":"Communication Equipment","5":"United States","6":"1.117340e+10"},{"1":"JPM","2":"JPMorgan Chase & Co.","3":"Financial Services","4":"Banks - Diversified","5":"United States","6":"5.573231e+11"},{"1":"JWN","2":"Nordstrom, Inc.","3":"Consumer Discretionary","4":"Department Stores","5":"United States","6":"3.123130e+09"},{"1":"K","2":"Kellanova Co","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"1.966736e+10"},{"1":"KAR","2":"Openlane Inc.","3":"Consumer Discretionary","4":"Auto & Truck Dealerships","5":"United States","6":"1.882154e+09"},{"1":"KEY","2":"KeyCorp","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"1.372747e+10"},{"1":"KEYS","2":"Keysight Technologies, Inc.","3":"Industrials","4":"Scientific & Technical Instruments","5":"United States","6":"2.593027e+10"},{"1":"KHC","2":"The Kraft Heinz Company","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"4.629189e+10"},{"1":"KIM","2":"Kimco Realty Corporation","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"1.236798e+10"},{"1":"KLAC","2":"KLA Corporation","3":"Technology","4":"Semiconductor Equipment & Materials","5":"United States","6":"9.551012e+10"},{"1":"KMB","2":"Kimberly-Clark Corporation","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"4.553654e+10"},{"1":"KMI","2":"Kinder Morgan, Inc.","3":"Utilities","4":"Oil & Gas Midstream","5":"United States","6":"4.145810e+10"},{"1":"KMX","2":"CarMax, Inc.","3":"Consumer Discretionary","4":"Auto & Truck Dealerships","5":"United States","6":"1.095260e+10"},{"1":"KO","2":"The Coca-Cola Company","3":"Consumer Staples","4":"Beverages - Non-Alcoholic","5":"United States","6":"2.662510e+11"},{"1":"KR","2":"The Kroger Co.","3":"Consumer Staples","4":"Grocery Stores","5":"United States","6":"4.004646e+10"},{"1":"KSS","2":"Kohl's Corporation","3":"Consumer Discretionary","4":"Department Stores","5":"United States","6":"2.720543e+09"},{"1":"L","2":"Loews Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.676730e+10"},{"1":"LAZ","2":"Lazard Ltd","3":"Financial Services","4":"Capital Markets","5":"Bermuda","6":"4.396750e+09"},{"1":"LBRDK","2":"Liberty Broadband Corporation","3":"Communication Services","4":"Telecom Services","5":"United States","6":"7.039129e+09"},{"1":"LBTYA","2":"Liberty Global plc","3":"Communication Services","4":"Telecom Services","5":"United Kingdom","6":"6.172887e+09"},{"1":"LDOS","2":"Leidos Holdings, Inc.","3":"Technology","4":"Information Technology Services","5":"United States","6":"1.770019e+10"},{"1":"LEA","2":"Lear Corporation","3":"Consumer Discretionary","4":"Auto Parts","5":"United States","6":"7.783430e+09"},{"1":"LECO","2":"Lincoln Electric Holdings, Inc.","3":"Industrials","4":"Tools & Accessories","5":"United States","6":"1.306584e+10"},{"1":"LEG","2":"Leggett & Platt, Incorporated","3":"Consumer Discretionary","4":"Furnishings, Fixtures & Appliances","5":"United States","6":"2.405804e+09"},{"1":"LEN","2":"Lennar Corporation","3":"Consumer Discretionary","4":"Residential Construction","5":"United States","6":"4.294563e+10"},{"1":"LH","2":"Laboratory Corporation of America Holdings","3":"Health Care","4":"Diagnostics & Research","5":"United States","6":"1.668544e+10"},{"1":"LII","2":"Lennox International Inc.","3":"Industrials","4":"Building Products & Equipment","5":"United States","6":"1.697876e+10"},{"1":"LKQ","2":"LKQ Corporation","3":"Consumer Discretionary","4":"Auto Parts","5":"United States","6":"1.164210e+10"},{"1":"LLY","2":"Eli Lilly and Company","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"6.969551e+11"},{"1":"LMT","2":"Lockheed Martin Corporation","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"1.106811e+11"},{"1":"LNC","2":"Lincoln National Corporation","3":"Financial Services","4":"Insurance - Life","5":"United States","6":"4.718489e+09"},{"1":"LNG","2":"Cheniere Energy, Inc.","3":"Utilities","4":"Oil & Gas Midstream","5":"United States","6":"3.734893e+10"},{"1":"LNT","2":"Alliant Energy Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"1.270001e+10"},{"1":"LOW","2":"Lowe's Companies, Inc.","3":"Consumer Discretionary","4":"Home Improvement Retail","5":"United States","6":"1.315280e+11"},{"1":"LRCX","2":"Lam Research Corporation","3":"Technology","4":"Semiconductor Equipment & Materials","5":"United States","6":"1.213188e+11"},{"1":"LULU","2":"Lululemon Athletica Inc.","3":"Consumer Discretionary","4":"Apparel Retail","5":"Canada","6":"4.408936e+10"},{"1":"LUMN","2":"Lumen Technologies, Inc.","3":"Communication Services","4":"Telecom Services","5":"United States","6":"1.221805e+09"},{"1":"LUV","2":"Southwest Airlines Co.","3":"Consumer Discretionary","4":"Airlines","5":"United States","6":"1.612784e+10"},{"1":"LVS","2":"Las Vegas Sands Corp.","3":"Consumer Discretionary","4":"Resorts & Casinos","5":"United States","6":"3.386239e+10"},{"1":"LYB","2":"LyondellBasell Industries N.V.","3":"Industrials","4":"Specialty Chemicals","5":"Netherlands","6":"3.314355e+10"},{"1":"M","2":"Macy's, Inc.","3":"Consumer Discretionary","4":"Department Stores","5":"United States","6":"5.054824e+09"},{"1":"MA","2":"Mastercard Incorporated","3":"Consumer Discretionary","4":"Credit Services","5":"United States","6":"4.313877e+11"},{"1":"MAA","2":"Mid-America Apartment Communities, Inc.","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"1.508316e+10"},{"1":"MAC","2":"The Macerich Company","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"3.380334e+09"},{"1":"MAN","2":"ManpowerGroup Inc.","3":"Consumer Discretionary","4":"Staffing & Employment Services","5":"United States","6":"3.659045e+09"},{"1":"MAR","2":"Marriott International, Inc.","3":"Consumer Discretionary","4":"Lodging","5":"United States","6":"6.971965e+10"},{"1":"MAS","2":"Masco Corporation","3":"Consumer Discretionary","4":"Building Products & Equipment","5":"United States","6":"1.535058e+10"},{"1":"MAT","2":"Mattel, Inc.","3":"Consumer Discretionary","4":"Leisure","5":"United States","6":"6.315840e+09"},{"1":"MCD","2":"McDonald's Corporation","3":"Consumer Discretionary","4":"Restaurants","5":"United States","6":"1.971850e+11"},{"1":"MCHP","2":"Microchip Technology Incorporated","3":"Technology","4":"Semiconductors","5":"United States","6":"5.058031e+10"},{"1":"MCK","2":"McKesson Corporation","3":"Health Care","4":"Medical Distribution","5":"United States","6":"7.139412e+10"},{"1":"MCO","2":"Moody's Corporation","3":"Financial Services","4":"Financial Data & Stock Exchanges","5":"United States","6":"6.864372e+10"},{"1":"MD","2":"Pediatrix Medical Group, Inc.","3":"Health Care","4":"Medical Care Facilities","5":"United States","6":"7.604717e+08"},{"1":"MDLZ","2":"Mondelez International, Inc.","3":"Consumer Staples","4":"Confectioners","5":"United States","6":"9.507477e+10"},{"1":"MDT","2":"Medtronic plc","3":"Health Care","4":"Medical Devices","5":"United States","6":"1.058806e+11"},{"1":"MDU","2":"MDU Resources Group, Inc.","3":"Industrials","4":"Conglomerates","5":"United States","6":"5.025010e+09"},{"1":"MET","2":"MetLife, Inc.","3":"Financial Services","4":"Insurance - Life","5":"United States","6":"5.091509e+10"},{"1":"META","2":"Meta Platforms, Inc.","3":"Technology","4":"Internet Content & Information","5":"United States","6":"1.130126e+12"},{"1":"MFC","2":"Manulife Financial Corporation","3":"Financial Services","4":"Insurance - Life","5":"Canada","6":"4.238959e+10"},{"1":"MGA","2":"Magna International Inc.","3":"Consumer Discretionary","4":"Auto Parts","5":"Canada","6":"1.409088e+10"},{"1":"MGM","2":"MGM Resorts International","3":"Consumer Discretionary","4":"Resorts & Casinos","5":"United States","6":"1.313558e+10"},{"1":"MHK","2":"Mohawk Industries, Inc.","3":"Consumer Discretionary","4":"Furnishings, Fixtures & Appliances","5":"United States","6":"7.353755e+09"},{"1":"MIDD","2":"The Middleby Corporation","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"7.571483e+09"},{"1":"MKC","2":"McCormick & Company, Incorporated","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"2.032689e+10"},{"1":"MKL","2":"Markel Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.883283e+10"},{"1":"MLCO","2":"Melco Resorts & Entertainment Limited","3":"Consumer Discretionary","4":"Resorts & Casinos","5":"Hong Kong","6":"2.810055e+09"},{"1":"MLM","2":"Martin Marietta Materials, Inc.","3":"Industrials","4":"Building Materials","5":"United States","6":"3.740197e+10"},{"1":"MMC","2":"Marsh & McLennan Companies, Inc.","3":"Financial Services","4":"Insurance Brokers","5":"United States","6":"9.753472e+10"},{"1":"MMM","2":"3M Company","3":"Health Care","4":"Conglomerates","5":"United States","6":"5.081516e+10"},{"1":"MNST","2":"Monster Beverage Corporation","3":"Consumer Staples","4":"Beverages - Non-Alcoholic","5":"United States","6":"5.553876e+10"},{"1":"MO","2":"Altria Group, Inc.","3":"Health Care","4":"Tobacco","5":"United States","6":"7.649897e+10"},{"1":"MOS","2":"The Mosaic Company","3":"Industrials","4":"Agricultural Inputs","5":"United States","6":"9.731090e+09"},{"1":"MPC","2":"Marathon Petroleum Corporation","3":"Energy","4":"Oil & Gas Refining & Marketing","5":"United States","6":"7.168996e+10"},{"1":"MRK","2":"Merck & Co., Inc.","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"3.322829e+11"},{"1":"MRVL","2":"Marvell Technology, Inc.","3":"Technology","4":"Semiconductors","5":"United States","6":"6.029092e+10"},{"1":"MS","2":"Morgan Stanley","3":"Financial Services","4":"Capital Markets","5":"United States","6":"1.518020e+11"},{"1":"MSCI","2":"MSCI Inc.","3":"Consumer Discretionary","4":"Financial Data & Stock Exchanges","5":"United States","6":"3.785174e+10"},{"1":"MSFT","2":"Microsoft Corporation","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"3.019135e+12"},{"1":"MSI","2":"Motorola Solutions, Inc.","3":"Technology","4":"Communication Equipment","5":"United States","6":"5.756176e+10"},{"1":"MSM","2":"MSC Industrial Direct Co., Inc.","3":"Industrials","4":"Industrial Distribution","5":"United States","6":"5.248343e+09"},{"1":"MTB","2":"M&T Bank Corporation","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"2.439046e+10"},{"1":"MTD","2":"Mettler-Toledo International Inc.","3":"Industrials","4":"Diagnostics & Research","5":"Switzerland","6":"2.659257e+10"},{"1":"MU","2":"Micron Technology, Inc.","3":"Technology","4":"Semiconductors","5":"United States","6":"1.271702e+11"},{"1":"NCLH","2":"Norwegian Cruise Line Holdings Ltd.","3":"Consumer Discretionary","4":"Travel Services","5":"United States","6":"8.104518e+09"},{"1":"NDAQ","2":"Nasdaq, Inc.","3":"Financial Services","4":"Financial Data & Stock Exchanges","5":"United States","6":"3.458142e+10"},{"1":"NDSN","2":"Nordson Corporation","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"1.489286e+10"},{"1":"NEE","2":"NextEra Energy, Inc.","3":"Technology","4":"Utilities - Regulated Electric","5":"United States","6":"1.355786e+11"},{"1":"NEM","2":"Newmont Corporation","3":"Basic Materials","4":"Gold","5":"United States","6":"4.924853e+10"},{"1":"NEU","2":"NewMarket Corporation","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"5.077067e+09"},{"1":"NFLX","2":"Netflix, Inc.","3":"Consumer Discretionary","4":"Entertainment","5":"United States","6":"2.418705e+11"},{"1":"NI","2":"NiSource Inc.","3":"Utilities","4":"Utilities - Regulated Gas","5":"United States","6":"1.250384e+10"},{"1":"NKE","2":"NIKE, Inc.","3":"Consumer Discretionary","4":"Footwear & Accessories","5":"United States","6":"1.420609e+11"},{"1":"NLY","2":"Annaly Capital Management, Inc.","3":"Real Estate","4":"REIT - Mortgage","5":"United States","6":"9.441516e+09"},{"1":"NOC","2":"Northrop Grumman Corporation","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"7.208465e+10"},{"1":"NOV","2":"NOV Inc.","3":"Industrials","4":"Oil & Gas Equipment & Services","5":"United States","6":"7.434847e+09"},{"1":"NOW","2":"ServiceNow, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"1.483278e+11"},{"1":"NRG","2":"NRG Energy, Inc.","3":"Utilities","4":"Utilities - Independent Power Producers","5":"United States","6":"1.514601e+10"},{"1":"NSC","2":"Norfolk Southern Corporation","3":"Industrials","4":"Railroads","5":"United States","6":"5.419801e+10"},{"1":"NTAP","2":"NetApp, Inc.","3":"Technology","4":"Computer Hardware","5":"United States","6":"2.091215e+09"},{"1":"NTR","2":"Nutrien Ltd.","3":"Industrials","4":"Agricultural Inputs","5":"Canada","6":"2.598930e+10"},{"1":"NTRS","2":"Northern Trust Corporation","3":"Financial Services","4":"Asset Management","5":"United States","6":"1.705886e+10"},{"1":"NUE","2":"Nucor Corporation","3":"Industrials","4":"Steel","5":"United States","6":"4.223149e+10"},{"1":"NVDA","2":"NVIDIA Corporation","3":"Technology","4":"Semiconductors","5":"United States","6":"2.193375e+12"},{"1":"NVR","2":"NVR, Inc.","3":"Consumer Discretionary","4":"Residential Construction","5":"United States","6":"2.436459e+10"},{"1":"NWL","2":"Newell Brands Inc.","3":"Industrials","4":"Household & Personal Products","5":"United States","6":"3.227397e+09"},{"1":"NWSA","2":"News Corporation","3":"Consumer Discretionary","4":"Entertainment","5":"United States","6":"1.383251e+10"},{"1":"NXPI","2":"NXP Semiconductors N.V.","3":"Technology","4":"Semiconductors","5":"Netherlands","6":"6.224266e+10"},{"1":"NYCB","2":"New York Community Bancorp, Inc.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"2.369826e+09"},{"1":"O","2":"Realty Income Corporation","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"4.625096e+10"},{"1":"OC","2":"Owens Corning","3":"Industrials","4":"Building Products & Equipment","5":"United States","6":"1.466053e+10"},{"1":"OGE","2":"OGE Energy Corp.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"6.775172e+09"},{"1":"OHI","2":"Omega Healthcare Investors, Inc.","3":"Real Estate","4":"REIT - Healthcare Facilities","5":"United States","6":"7.626458e+09"},{"1":"OKE","2":"ONEOK, Inc.","3":"Utilities","4":"Oil & Gas Midstream","5":"United States","6":"4.727090e+10"},{"1":"OMC","2":"Omnicom Group Inc.","3":"Consumer Discretionary","4":"Advertising Agencies","5":"United States","6":"1.877849e+10"},{"1":"ON","2":"ON Semiconductor Corporation","3":"Technology","4":"Semiconductors","5":"United States","6":"2.908399e+10"},{"1":"ORCL","2":"Oracle Corporation","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"3.221533e+11"},{"1":"ORI","2":"Old Republic International Corporation","3":"Financial Services","4":"Insurance - Diversified","5":"United States","6":"8.381672e+09"},{"1":"ORLY","2":"O'Reilly Automotive, Inc.","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"6.163006e+10"},{"1":"OTEX","2":"Open Text Corporation","3":"Technology","4":"Software - Application","5":"Canada","6":"9.706549e+09"},{"1":"OXY","2":"Occidental Petroleum Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"5.961247e+10"},{"1":"PANW","2":"Palo Alto Networks, Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"9.415780e+10"},{"1":"PARA","2":"Paramount Global","3":"Industrials","4":"Entertainment","5":"United States","6":"7.771097e+09"},{"1":"PARAA","2":"Paramount Global","3":"Industrials","4":"Entertainment","5":"United States","6":"1.459609e+10"},{"1":"PAYX","2":"Paychex, Inc.","3":"Consumer Discretionary","4":"Staffing & Employment Services","5":"United States","6":"4.318480e+10"},{"1":"PBA","2":"Pembina Pipeline Corporation","3":"Energy","4":"Oil & Gas Midstream","5":"Canada","6":"1.968216e+10"},{"1":"PCAR","2":"PACCAR Inc","3":"Consumer Discretionary","4":"Farm & Heavy Construction Machinery","5":"United States","6":"5.865402e+10"},{"1":"PCG","2":"PG&E Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"4.897388e+10"},{"1":"PEG","2":"Public Service Enterprise Group Incorporated","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"3.381414e+10"},{"1":"PEP","2":"PepsiCo, Inc.","3":"Consumer Staples","4":"Beverages - Non-Alcoholic","5":"United States","6":"2.413849e+11"},{"1":"PFE","2":"Pfizer Inc.","3":"Health Care","4":"Drug Manufacturers - General","5":"United States","6":"1.434282e+11"},{"1":"PFG","2":"Principal Financial Group, Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"1.866191e+10"},{"1":"PG","2":"The Procter & Gamble Company","3":"Consumer Discretionary","4":"Household & Personal Products","5":"United States","6":"3.806662e+11"},{"1":"PGR","2":"The Progressive Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.218385e+11"},{"1":"PH","2":"Parker-Hannifin Corporation","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"7.109339e+10"},{"1":"PHM","2":"PulteGroup, Inc.","3":"Consumer Discretionary","4":"Residential Construction","5":"United States","6":"2.393693e+10"},{"1":"PII","2":"Polaris Inc.","3":"Consumer Discretionary","4":"Recreational Vehicles","5":"United States","6":"4.736398e+09"},{"1":"PKG","2":"Packaging Corporation of America","3":"Consumer Discretionary","4":"Packaging & Containers","5":"United States","6":"1.549153e+10"},{"1":"PLD","2":"Prologis, Inc.","3":"Real Estate","4":"REIT - Industrial","5":"United States","6":"9.624312e+10"},{"1":"PM","2":"Philip Morris International Inc.","3":"Health Care","4":"Tobacco","5":"United States","6":"1.475144e+11"},{"1":"PNC","2":"The PNC Financial Services Group, Inc.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"6.210182e+10"},{"1":"PNR","2":"Pentair plc","3":"Industrials","4":"Specialty Industrial Machinery","5":"Switzerland","6":"1.327533e+10"},{"1":"PNW","2":"Pinnacle West Capital Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"8.358463e+09"},{"1":"PPG","2":"PPG Industries, Inc.","3":"Consumer Discretionary","4":"Specialty Chemicals","5":"United States","6":"3.052252e+10"},{"1":"PPL","2":"PPL Corporation","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"1.993004e+10"},{"1":"PRGO","2":"Perrigo Company plc","3":"Health Care","4":"Drug Manufacturers - Specialty & Generic","5":"United States","6":"4.328379e+09"},{"1":"PRU","2":"Prudential Financial, Inc.","3":"Financial Services","4":"Insurance - Life","5":"United States","6":"3.966950e+10"},{"1":"PSA","2":"Public Storage","3":"Real Estate","4":"REIT - Industrial","5":"United States","6":"4.528095e+10"},{"1":"PSX","2":"Phillips 66","3":"Energy","4":"Oil & Gas Refining & Marketing","5":"United States","6":"6.477690e+10"},{"1":"PTC","2":"PTC Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"2.163779e+10"},{"1":"PVH","2":"PVH Corp.","3":"Consumer Discretionary","4":"Apparel Manufacturing","5":"United States","6":"6.405199e+09"},{"1":"PWR","2":"Quanta Services, Inc.","3":"Industrials","4":"Engineering & Construction","5":"United States","6":"3.813668e+10"},{"1":"PXD","2":"Pioneer Natural Resources Company","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"6.281425e+10"},{"1":"PYPL","2":"PayPal Holdings, Inc.","3":"Consumer Discretionary","4":"Credit Services","5":"United States","6":"7.069209e+10"},{"1":"QCOM","2":"QUALCOMM Incorporated","3":"Technology","4":"Semiconductors","5":"United States","6":"1.848766e+11"},{"1":"QGEN","2":"Qiagen N.V.","3":"Health Care","4":"Diagnostics & Research","5":"Netherlands","6":"9.504645e+09"},{"1":"QRVO","2":"Qorvo, Inc.","3":"Technology","4":"Semiconductors","5":"United States","6":"1.127203e+10"},{"1":"QSR","2":"Restaurant Brands International Inc.","3":"Consumer Discretionary","4":"Restaurants","5":"Canada","6":"2.305276e+10"},{"1":"RACE","2":"Ferrari N.V.","3":"Consumer Discretionary","4":"Auto Manufacturers","5":"Italy","6":"7.621943e+10"},{"1":"RCI","2":"Rogers Communications Inc.","3":"Communication Services","4":"Telecom Services","5":"Canada","6":"2.016680e+10"},{"1":"RCL","2":"Royal Caribbean Cruises Ltd.","3":"Consumer Discretionary","4":"Travel Services","5":"United States","6":"3.608244e+10"},{"1":"REG","2":"Regency Centers Corporation","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"1.075724e+10"},{"1":"REGN","2":"Regeneron Pharmaceuticals, Inc.","3":"Health Care","4":"Biotechnology","5":"United States","6":"9.694171e+10"},{"1":"RF","2":"Regions Financial Corporation","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"1.802811e+10"},{"1":"RGA","2":"Reinsurance Group of America, Incorporated","3":"Financial Services","4":"Insurance - Reinsurance","5":"United States","6":"1.241362e+10"},{"1":"RHI","2":"Robert Half International Inc.","3":"Consumer Discretionary","4":"Staffing & Employment Services","5":"United States","6":"7.296211e+09"},{"1":"RIG","2":"Transocean Ltd.","3":"Energy","4":"Oil & Gas Drilling","5":"Switzerland","6":"4.749011e+09"},{"1":"RJF","2":"Raymond James Financial, Inc.","3":"Financial Services","4":"Capital Markets","5":"United States","6":"2.547211e+10"},{"1":"RL","2":"Ralph Lauren Corporation","3":"Consumer Discretionary","4":"Apparel Manufacturing","5":"United States","6":"1.064233e+10"},{"1":"RMD","2":"ResMed Inc.","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"3.207420e+10"},{"1":"RNR","2":"RenaissanceRe Holdings Ltd.","3":"Financial Services","4":"Insurance - Reinsurance","5":"Bermuda","6":"1.154429e+10"},{"1":"ROK","2":"Rockwell Automation, Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"3.209952e+10"},{"1":"ROL","2":"Rollins, Inc.","3":"Financial Services","4":"Personal Services","5":"United States","6":"2.172644e+10"},{"1":"ROP","2":"Roper Technologies, Inc.","3":"Industrials","4":"Software - Application","5":"United States","6":"5.637722e+10"},{"1":"ROST","2":"Ross Stores, Inc.","3":"Consumer Discretionary","4":"Apparel Retail","5":"United States","6":"4.478262e+10"},{"1":"RPM","2":"RPM International Inc.","3":"Consumer Discretionary","4":"Specialty Chemicals","5":"United States","6":"1.382657e+10"},{"1":"RRC","2":"Range Resources Corporation","3":"Energy","4":"Oil & Gas Exploration & Production","5":"United States","6":"9.052411e+09"},{"1":"RS","2":"Reliance Steel & Aluminum Co.","3":"Industrials","4":"Steel","5":"United States","6":"1.668898e+10"},{"1":"RSG","2":"Republic Services, Inc.","3":"Utilities","4":"Waste Management","5":"United States","6":"6.038006e+10"},{"1":"RVTY","2":"Revvity, Inc.","3":"Industrials","4":"Diagnostics & Research","5":"United States","6":"1.253951e+10"},{"1":"RY","2":"Royal Bank of Canada","3":"Financial Services","4":"Banks - Diversified","5":"Canada","6":"1.387870e+11"},{"1":"SABR","2":"Sabre Corporation","3":"Technology","4":"Travel Services","5":"United States","6":"1.062546e+09"},{"1":"SATS","2":"EchoStar Corporation","3":"Technology","4":"Communication Equipment","5":"United States","6":"4.344296e+09"},{"1":"SBAC","2":"SBA Communications Corporation","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"2.121417e+10"},{"1":"SBUX","2":"Starbucks Corporation","3":"Consumer Discretionary","4":"Restaurants","5":"United States","6":"9.991665e+10"},{"1":"SCCO","2":"Southern Copper Corporation","3":"Basic Materials","4":"Copper","5":"United States","6":"9.040787e+10"},{"1":"SCHW","2":"The Charles Schwab Corporation","3":"Financial Services","4":"Capital Markets","5":"United States","6":"1.368094e+11"},{"1":"SCI","2":"Service Corporation International","3":"Consumer Discretionary","4":"Personal Services","5":"United States","6":"1.047668e+10"},{"1":"SEE","2":"Sealed Air Corporation","3":"Industrials","4":"Packaging & Containers","5":"United States","6":"4.586231e+09"},{"1":"SEIC","2":"SEI Investments Company","3":"Financial Services","4":"Asset Management","5":"United States","6":"8.744123e+09"},{"1":"SHW","2":"The Sherwin-Williams Company","3":"Consumer Discretionary","4":"Specialty Chemicals","5":"United States","6":"7.798065e+10"},{"1":"SIG","2":"Signet Jewelers Limited","3":"Consumer Discretionary","4":"Luxury Goods","5":"Bermuda","6":"4.530435e+09"},{"1":"SIRI","2":"Sirius XM Holdings Inc.","3":"Consumer Discretionary","4":"Entertainment","5":"United States","6":"1.160424e+10"},{"1":"SITC","2":"SITE Centers Corp.","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"2.822137e+09"},{"1":"SIX","2":"Six Flags Entertainment Corporation","3":"Consumer Discretionary","4":"Leisure","5":"United States","6":"1.996348e+09"},{"1":"SJM","2":"The J. M. Smucker Company","3":"Consumer Staples","4":"Packaged Foods","5":"United States","6":"1.206154e+10"},{"1":"SLB","2":"Schlumberger Limited","3":"Energy","4":"Oil & Gas Equipment & Services","5":"France","6":"7.049091e+10"},{"1":"SLF","2":"Sun Life Financial Inc.","3":"Financial Services","4":"Insurance - Diversified","5":"Canada","6":"3.020790e+10"},{"1":"SLG","2":"SL Green Realty Corp.","3":"Real Estate","4":"REIT - Office","5":"United States","6":"3.279478e+09"},{"1":"SLM","2":"SLM Corporation","3":"Financial Services","4":"Credit Services","5":"United States","6":"4.825659e+09"},{"1":"SMG","2":"The Scotts Miracle-Gro Company","3":"Industrials","4":"Agricultural Inputs","5":"United States","6":"3.840904e+09"},{"1":"SNA","2":"Snap-on Incorporated","3":"Consumer Discretionary","4":"Tools & Accessories","5":"United States","6":"1.427091e+10"},{"1":"SNPS","2":"Synopsys, Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"8.293190e+10"},{"1":"SNV","2":"Synovus Financial Corp.","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"5.394815e+09"},{"1":"SO","2":"The Southern Company","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"7.987322e+10"},{"1":"SON","2":"Sonoco Products Company","3":"Consumer Discretionary","4":"Packaging & Containers","5":"United States","6":"5.545206e+09"},{"1":"SPG","2":"Simon Property Group, Inc.","3":"Real Estate","4":"REIT - Retail","5":"United States","6":"4.639498e+10"},{"1":"SPGI","2":"S&P Global Inc.","3":"Financial Services","4":"Financial Data & Stock Exchanges","5":"United States","6":"1.305965e+11"},{"1":"SPR","2":"Spirit AeroSystems Holdings, Inc.","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"3.770577e+09"},{"1":"SQ","2":"Block, Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"4.585681e+10"},{"1":"SRCL","2":"Stericycle, Inc.","3":"Industrials","4":"Waste Management","5":"United States","6":"4.286783e+09"},{"1":"SRE","2":"Sempra","3":"Utilities","4":"Utilities - Diversified","5":"United States","6":"4.508493e+10"},{"1":"SSNC","2":"SS&C Technologies Holdings, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"1.513371e+10"},{"1":"ST","2":"Sensata Technologies Holding plc","3":"Industrials","4":"Scientific & Technical Instruments","5":"Netherlands","6":"5.263436e+09"},{"1":"STLD","2":"Steel Dynamics, Inc.","3":"Industrials","4":"Steel","5":"United States","6":"2.119904e+10"},{"1":"STT","2":"State Street Corporation","3":"Financial Services","4":"Asset Management","5":"United States","6":"2.215964e+10"},{"1":"STX","2":"Seagate Technology Holdings plc","3":"Technology","4":"Computer Hardware","5":"Ireland","6":"1.802630e+10"},{"1":"STZ","2":"Constellation Brands, Inc.","3":"Consumer Staples","4":"Beverages - Wineries & Distilleries","5":"United States","6":"4.758117e+10"},{"1":"SU","2":"Suncor Energy Inc.","3":"Energy","4":"Oil & Gas Integrated","5":"Canada","6":"5.114622e+10"},{"1":"SVC","2":"Service Properties Trust","3":"Real Estate","4":"REIT - Hotel & Motel","5":"United States","6":"1.031906e+09"},{"1":"SWK","2":"Stanley Black & Decker, Inc.","3":"Consumer Discretionary","4":"Tools & Accessories","5":"United States","6":"1.379758e+10"},{"1":"SWKS","2":"Skyworks Solutions, Inc.","3":"Technology","4":"Semiconductors","5":"United States","6":"1.671156e+10"},{"1":"SYF","2":"Synchrony Financial","3":"Financial Services","4":"Credit Services","5":"United States","6":"1.817370e+10"},{"1":"SYK","2":"Stryker Corporation","3":"Health Care","4":"Medical Devices","5":"United States","6":"1.276204e+11"},{"1":"SYY","2":"Sysco Corporation","3":"Consumer Discretionary","4":"Food Distribution","5":"United States","6":"3.836774e+10"},{"1":"T","2":"AT&T Inc.","3":"Communication Services","4":"Telecom Services","5":"United States","6":"1.198093e+11"},{"1":"TAL","2":"TAL Education Group","3":"Real Estate","4":"Education & Training Services","5":"China","6":"8.541488e+09"},{"1":"TAP","2":"Molson Coors Beverage Company","3":"Consumer Staples","4":"Beverages - Brewers","5":"Canada","6":"1.254334e+10"},{"1":"TCOM","2":"Trip.com Group Limited","3":"Consumer Discretionary","4":"Travel Services","5":"China","6":"3.269098e+10"},{"1":"TD","2":"The Toronto-Dominion Bank","3":"Financial Services","4":"Banks - Diversified","5":"Canada","6":"1.052273e+11"},{"1":"TDG","2":"TransDigm Group Incorporated","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"7.001662e+10"},{"1":"TECK","2":"Teck Resources Limited","3":"Basic Materials","4":"Other Industrial Metals & Mining","5":"Canada","6":"2.608676e+10"},{"1":"TEF","2":"Telefónica, S.A.","3":"Communication Services","4":"Telecom Services","5":"Spain","6":"2.587706e+10"},{"1":"TEL","2":"TE Connectivity Ltd.","3":"Technology","4":"Electronic Components","5":"Switzerland","6":"4.329671e+10"},{"1":"TER","2":"Teradyne, Inc.","3":"Industrials","4":"Semiconductor Equipment & Materials","5":"United States","6":"1.747109e+10"},{"1":"TFX","2":"Teleflex Incorporated","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"9.727045e+09"},{"1":"TGNA","2":"TEGNA Inc.","3":"Industrials","4":"Broadcasting","5":"United States","6":"2.384482e+09"},{"1":"TGT","2":"Target Corporation","3":"Consumer Discretionary","4":"Discount Stores","5":"United States","6":"7.605884e+10"},{"1":"THO","2":"Thor Industries, Inc.","3":"Industrials","4":"Recreational Vehicles","5":"United States","6":"5.363916e+09"},{"1":"TJX","2":"The TJX Companies, Inc.","3":"Consumer Discretionary","4":"Apparel Retail","5":"United States","6":"1.091734e+11"},{"1":"TMO","2":"Thermo Fisher Scientific Inc.","3":"Industrials","4":"Diagnostics & Research","5":"United States","6":"2.187207e+11"},{"1":"TMUS","2":"T-Mobile US, Inc.","3":"Communication Services","4":"Telecom Services","5":"United States","6":"1.945988e+11"},{"1":"TNL","2":"Travel + Leisure Co.","3":"Consumer Discretionary","4":"Travel Services","5":"United States","6":"3.253957e+09"},{"1":"TOL","2":"Toll Brothers, Inc.","3":"Consumer Discretionary","4":"Residential Construction","5":"United States","6":"1.252332e+10"},{"1":"TPR","2":"Tapestry, Inc.","3":"Consumer Discretionary","4":"Luxury Goods","5":"United States","6":"9.186114e+09"},{"1":"TRGP","2":"Targa Resources Corp.","3":"Utilities","4":"Oil & Gas Midstream","5":"United States","6":"2.607794e+10"},{"1":"TRI","2":"Thomson Reuters Corporation","3":"Industrials","4":"Specialty Business Services","5":"United States","6":"7.304688e+10"},{"1":"TRIP","2":"Tripadvisor, Inc.","3":"Technology","4":"Travel Services","5":"United States","6":"3.785347e+09"},{"1":"TRMB","2":"Trimble Inc.","3":"Industrials","4":"Scientific & Technical Instruments","5":"United States","6":"1.477808e+10"},{"1":"TROW","2":"T. Rowe Price Group, Inc.","3":"Financial Services","4":"Asset Management","5":"United States","6":"2.550132e+10"},{"1":"TRP","2":"TC Energy Corporation","3":"Energy","4":"Oil & Gas Midstream","5":"Canada","6":"3.743570e+10"},{"1":"TRV","2":"The Travelers Companies, Inc.","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"4.887864e+10"},{"1":"TSCO","2":"Tractor Supply Company","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"2.955834e+10"},{"1":"TSLA","2":"Tesla, Inc.","3":"Consumer Discretionary","4":"Auto Manufacturers","5":"United States","6":"5.359684e+11"},{"1":"TSN","2":"Tyson Foods, Inc.","3":"Consumer Staples","4":"Farm Products","5":"United States","6":"2.160540e+10"},{"1":"TT","2":"Trane Technologies plc","3":"Industrials","4":"Building Products & Equipment","5":"Ireland","6":"6.915030e+10"},{"1":"TTC","2":"The Toro Company","3":"Consumer Discretionary","4":"Tools & Accessories","5":"United States","6":"9.135595e+09"},{"1":"TU","2":"TELUS Corporation","3":"Communication Services","4":"Telecom Services","5":"Canada","6":"2.371932e+10"},{"1":"TXN","2":"Texas Instruments Incorporated","3":"Technology","4":"Semiconductors","5":"United States","6":"1.613804e+11"},{"1":"TXT","2":"Textron Inc.","3":"Industrials","4":"Aerospace & Defense","5":"United States","6":"1.668380e+10"},{"1":"TYG","2":"Tortoise Energy Infrastructure Corporation","3":"Financial Services","4":"Asset Management","5":"United States","6":"3.777567e+08"},{"1":"UAA","2":"Under Armour, Inc.","3":"Consumer Discretionary","4":"Apparel Manufacturing","5":"United States","6":"2.959912e+09"},{"1":"UAL","2":"United Airlines Holdings, Inc.","3":"Consumer Discretionary","4":"Airlines","5":"United States","6":"1.737397e+10"},{"1":"UBS","2":"UBS Group AG","3":"Financial Services","4":"Banks - Diversified","5":"Switzerland","6":"9.473480e+10"},{"1":"UDR","2":"UDR, Inc.","3":"Real Estate","4":"REIT - Residential","5":"United States","6":"1.248089e+10"},{"1":"UGI","2":"UGI Corporation","3":"Utilities","4":"Utilities - Regulated Gas","5":"United States","6":"5.318415e+09"},{"1":"UHAL","2":"U-Haul Holding Company","3":"Consumer Discretionary","4":"Rental & Leasing Services","5":"United States","6":"1.272938e+10"},{"1":"UHS","2":"Universal Health Services, Inc.","3":"Health Care","4":"Medical Care Facilities","5":"United States","6":"1.116278e+10"},{"1":"ULTA","2":"Ulta Beauty, Inc.","3":"Consumer Discretionary","4":"Specialty Retail","5":"United States","6":"1.961593e+10"},{"1":"UNH","2":"UnitedHealth Group Incorporated","3":"Health Care","4":"Healthcare Plans","5":"United States","6":"4.566801e+11"},{"1":"UNM","2":"Unum Group","3":"Financial Services","4":"Insurance - Life","5":"United States","6":"9.719539e+09"},{"1":"UNP","2":"Union Pacific Corporation","3":"Industrials","4":"Railroads","5":"United States","6":"1.480480e+11"},{"1":"UPS","2":"United Parcel Service, Inc.","3":"Industrials","4":"Integrated Freight & Logistics","5":"United States","6":"1.258431e+11"},{"1":"URI","2":"United Rentals, Inc.","3":"Industrials","4":"Rental & Leasing Services","5":"United States","6":"4.641598e+10"},{"1":"USB","2":"U.S. Bancorp","3":"Financial Services","4":"Banks - Regional","5":"United States","6":"6.407045e+10"},{"1":"UTHR","2":"United Therapeutics Corporation","3":"Health Care","4":"Biotechnology","5":"United States","6":"1.100464e+10"},{"1":"V","2":"Visa Inc.","3":"Consumer Discretionary","4":"Credit Services","5":"United States","6":"5.041586e+11"},{"1":"VFC","2":"V.F. Corporation","3":"Consumer Discretionary","4":"Apparel Manufacturing","5":"United States","6":"4.914634e+09"},{"1":"VIPS","2":"Vipshop Holdings Limited","3":"Consumer Discretionary","4":"Internet Retail","5":"China","6":"9.216340e+09"},{"1":"VLO","2":"Valero Energy Corporation","3":"Energy","4":"Oil & Gas Refining & Marketing","5":"United States","6":"5.512550e+10"},{"1":"VMC","2":"Vulcan Materials Company","3":"Industrials","4":"Building Materials","5":"United States","6":"3.454301e+10"},{"1":"VNO","2":"Vornado Realty Trust","3":"Real Estate","4":"REIT - Office","5":"United States","6":"4.999660e+09"},{"1":"VOYA","2":"Voya Financial, Inc.","3":"Financial Services","4":"Financial Conglomerates","5":"United States","6":"6.944935e+09"},{"1":"VRSK","2":"Verisk Analytics, Inc.","3":"Technology","4":"Consulting Services","5":"United States","6":"3.170924e+10"},{"1":"VRSN","2":"VeriSign, Inc.","3":"Technology","4":"Software - Infrastructure","5":"United States","6":"1.770593e+10"},{"1":"VRTX","2":"Vertex Pharmaceuticals Incorporated","3":"Health Care","4":"Biotechnology","5":"United States","6":"1.026722e+11"},{"1":"VTR","2":"Ventas, Inc.","3":"Real Estate","4":"REIT - Healthcare Facilities","5":"United States","6":"1.770831e+10"},{"1":"VZ","2":"Verizon Communications Inc.","3":"Communication Services","4":"Telecom Services","5":"United States","6":"1.668255e+11"},{"1":"WAB","2":"Westinghouse Air Brake Technologies Corporation","3":"Industrials","4":"Railroads","5":"United States","6":"2.909645e+10"},{"1":"WAT","2":"Waters Corporation","3":"Industrials","4":"Diagnostics & Research","5":"United States","6":"1.842978e+10"},{"1":"WBA","2":"Walgreens Boots Alliance, Inc.","3":"Consumer Staples","4":"Pharmaceutical Retailers","5":"United States","6":"1.527003e+10"},{"1":"WCN","2":"Waste Connections, Inc.","3":"Utilities","4":"Waste Management","5":"Canada","6":"4.218101e+10"},{"1":"WDAY","2":"Workday, Inc.","3":"Technology","4":"Software - Application","5":"United States","6":"6.627456e+10"},{"1":"WDC","2":"Western Digital Corporation","3":"Technology","4":"Computer Hardware","5":"United States","6":"2.325335e+10"},{"1":"WEC","2":"WEC Energy Group, Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.571511e+10"},{"1":"WELL","2":"Welltower Inc.","3":"Real Estate","4":"REIT - Healthcare Facilities","5":"United States","6":"5.366796e+10"},{"1":"WFC","2":"Wells Fargo & Company","3":"Financial Services","4":"Banks - Diversified","5":"United States","6":"2.143246e+11"},{"1":"WFRD","2":"Weatherford International plc","3":"Industrials","4":"Oil & Gas Equipment & Services","5":"United States","6":"9.254333e+09"},{"1":"WHR","2":"Whirlpool Corporation","3":"Consumer Discretionary","4":"Furnishings, Fixtures & Appliances","5":"United States","6":"5.169299e+09"},{"1":"WLK","2":"Westlake Corporation","3":"Industrials","4":"Specialty Chemicals","5":"United States","6":"1.917473e+10"},{"1":"WM","2":"Waste Management, Inc.","3":"Utilities","4":"Waste Management","5":"United States","6":"8.437576e+10"},{"1":"WMB","2":"The Williams Companies, Inc.","3":"Utilities","4":"Oil & Gas Midstream","5":"United States","6":"4.776961e+10"},{"1":"WMT","2":"Walmart Inc.","3":"Consumer Discretionary","4":"Discount Stores","5":"United States","6":"4.847722e+11"},{"1":"WPC","2":"W. P. Carey Inc.","3":"Real Estate","4":"REIT - Diversified","5":"United States","6":"1.203354e+10"},{"1":"WPM","2":"Wheaton Precious Metals Corp.","3":"Basic Materials","4":"Gold","5":"Canada","6":"2.446574e+10"},{"1":"WRB","2":"W. R. Berkley Corporation","3":"Financial Services","4":"Insurance - Property & Casualty","5":"United States","6":"1.966446e+10"},{"1":"WTRG","2":"Essential Utilities, Inc.","3":"Utilities","4":"Utilities - Regulated Water","5":"United States","6":"9.863340e+09"},{"1":"WTW","2":"Willis Towers Watson PLC","3":"Financial Services","4":"Insurance Brokers","5":"United Kingdom","6":"2.571772e+10"},{"1":"WU","2":"The Western Union Company","3":"Consumer Discretionary","4":"Credit Services","5":"United States","6":"4.609393e+09"},{"1":"WY","2":"Weyerhaeuser Company","3":"Real Estate","4":"REIT - Specialty","5":"United States","6":"2.265163e+10"},{"1":"WYNN","2":"Wynn Resorts, Limited","3":"Consumer Discretionary","4":"Resorts & Casinos","5":"United States","6":"1.074606e+10"},{"1":"X","2":"United States Steel Corporation","3":"Industrials","4":"Steel","5":"United States","6":"8.371993e+09"},{"1":"XEL","2":"Xcel Energy Inc.","3":"Utilities","4":"Utilities - Regulated Electric","5":"United States","6":"2.995621e+10"},{"1":"XOM","2":"Exxon Mobil Corporation","3":"Energy","4":"Oil & Gas Integrated","5":"United States","6":"4.680469e+11"},{"1":"XRAY","2":"DENTSPLY SIRONA Inc.","3":"Health Care","4":"Medical Instruments & Supplies","5":"United States","6":"6.339095e+09"},{"1":"XYL","2":"Xylem Inc.","3":"Industrials","4":"Specialty Industrial Machinery","5":"United States","6":"3.201040e+10"},{"1":"YUM","2":"Yum! Brands, Inc.","3":"Consumer Discretionary","4":"Restaurants","5":"United States","6":"3.988504e+10"},{"1":"Z","2":"Zillow Group, Inc.","3":"Consumer Discretionary","4":"Internet Content & Information","5":"United States","6":"1.019547e+10"},{"1":"ZBH","2":"Zimmer Biomet Holdings, Inc.","3":"Health Care","4":"Medical Devices","5":"United States","6":"2.447678e+10"},{"1":"ZTS","2":"Zoetis Inc.","3":"Health Care","4":"Drug Manufacturers - Specialty & Generic","5":"United States","6":"7.253531e+10"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<section id="variable-description" class="level4">
+<h4 class="anchored" data-anchor-id="variable-description">Variable Description</h4>
+<ul>
+<li><code>Symbol</code>: a company’s ticker;</li>
+<li><code>Company Name</code>: a company name;</li>
+<li><code>Sector</code>: a sector a company belongs to;</li>
+<li><code>Industry</code>: an industry a company belongs to;</li>
+<li><code>Country</code>: a country a company belongs to;</li>
+<li><code>Market Cap</code>: a company’s market capitalization as of December 20, 2024 (Source: <a href="https://www.nasdaq.com/market-activity/stocks/screener">Nasdaq’s Stock Screener</a>).
+<ul>
+<li>A company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.</li>
+</ul></li>
+</ul>
+<p><br><br></p>
+</section>
+</section>
+<section id="project-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="project-tasks">Project Tasks</h2>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
+</section>
+<section id="yfinance" class="level3">
+<h3 class="anchored" data-anchor-id="yfinance"><code>yfinance</code></h3>
+<ul>
+<li>Utilize the <code>yfinance</code> library, an unofficial API for accessing <a href="https://finance.yahoo.com">Yahoo! Finance</a> data.
+<ul>
+<li>For each company listed in the <code>esg_proj</code> DataFrame, you should retrieve the following:
+<ul>
+<li>Daily historical stock data spanning from January 1, 2023, to March 31, 2024.</li>
+<li>Quarterly income statements covering the period from March 31, 2023, to March 31, 2024 (encompassing five quarters).</li>
+<li>Quarterly balance sheets for the same period as the income statements.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="selenium" class="level3">
+<h3 class="anchored" data-anchor-id="selenium"><code>selenium</code></h3>
+<ul>
+<li>Employ the Python <code>selenium</code> library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company’s webpage on <a href="https://finance.yahoo.com">Yahoo! Finance</a>, such as:
+<ul>
+<li><a href="https://finance.yahoo.com/quote/A/sustainability">Agilent Technologies (A)</a></li>
+<li><a href="https://finance.yahoo.com/quote/AA/sustainability">Alcoa Corporation (AA)</a></li>
+</ul></li>
+<li>Ensure robust error and exception handling during data collection from the Sustainability Section on <a href="https://finance.yahoo.com">Yahoo! Finance</a>:
+<ol type="1">
+<li>To avoid being blocked by <a href="https://finance.yahoo.com">Yahoo! Finance</a> for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies’ Sustainability Sections.</li>
+<li>Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.</li>
+<li><a href="https://finance.yahoo.com">Yahoo! Finance</a> intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.</li>
+</ol>
+<ul>
+<li>You can check the new and classic layouts of <a href="https://finance.yahoo.com">Yahoo! Finance</a> by selecting the corresponding options from the navigation bar on their website.</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:15%;">
+
+</div><div class="column" style="width:31%;">
+<p><img src="https://bcdanl.github.io/lec_figs/yf-old.png" class="img-fluid"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:34%;">
+<p><img src="https://bcdanl.github.io/lec_figs/yf-new.png" class="img-fluid"></p>
+</div><div class="column" style="width:15%;">
+
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:46%;">
+<p><img src="https://bcdanl.github.io/lec_figs/yf-old-layout.png" class="img-fluid"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:49%;">
+<p><img src="https://bcdanl.github.io/lec_figs/yf-new-layout.png" class="img-fluid"></p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="key-components-in-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="key-components-in-data-analysis">Key Components in Data Analysis</h3>
+<ul>
+<li><p>Below are the key components in the data analysis</p>
+<ol type="1">
+<li><p><strong>Title</strong>: A clear and concise title that gives an idea of the project topics.</p></li>
+<li><p><strong>Introduction</strong>:</p>
+<ul>
+<li><strong>Background</strong>: Provide context for the research questions, explaining why they are significant, relevant, or interesting.</li>
+<li><strong>Statement of the Problem</strong>: Clearly articulate the specific problem or issue the project will address.</li>
+</ul></li>
+<li><p><strong>Data Collection</strong>: Provide the code and the comment on how to retrieve financial, accounting, and ESG data using Python <code>yfinance</code> and <code>selenium</code>.</p>
+<ul>
+<li>When providing the code for data collection in your webpage, do not execute the code but to display them only. You can do this by adding <code>#| echo: true</code> and <code>#| eval: false</code> at the first and the second line in the code chunk for data collection.</li>
+</ul></li>
+<li><p><strong>Descriptive Statistics</strong></p></li>
+</ol>
+<ul>
+<li>Provide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data</li>
+<li>Provide correlation heat maps using <code>corr()</code> and <code>seaborn.heatmap()</code>. Below provides the Python code for creating a correlation heatmap.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample DataFrame with varied correlations</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Revenue'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">500</span>],  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Profit'</span>: [<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">100</span>],       </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'n_Employee'</span>: [<span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">40</span>, <span class="dv">35</span>, <span class="dv">30</span>], </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'n_Customer'</span>: [<span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>]  </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame from the dictionary</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the correlation matrix of the DataFrame</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> df.corr()</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the matplotlib figure size</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a heatmap in seaborn:</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'corr' is the correlation matrix</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'annot=True' enables annotations inside the squares with the correlation values</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'cmap="coolwarm"' assigns a color map from cool to warm (blue to red)</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'fmt=".2f"' formats the annotations to two decimal places</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'linewidths=.5' adds lines between each cell</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, fmt<span class="op">=</span><span class="st">".2f"</span>, linewidths<span class="op">=</span><span class="fl">.5</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Title of the heatmap</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Heatmap with Varied Correlations'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the heatmap</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="danl-210-project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<ol start="5" type="1">
+<li><strong>Exploratory Data Analysis</strong>:
+<ul>
+<li>List the questions you aim to answer.</li>
+<li>Address the questions through data visualization with <code>seaborn</code> (or <code>lets-plot</code>) and <code>pandas</code> methods and attributes.</li>
+</ul></li>
+<li><strong>Significance of the Project</strong>:
+<ul>
+<li>Explain its implications for real-world applications, business strategies, or public policy.</li>
+</ul></li>
+<li><strong>References</strong>
+<ul>
+<li>List all sources cited in the project.</li>
+<li>Leave a web address of the reference if that is from the web.</li>
+<li>Indicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.</li>
+<li>Clearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated.</li>
+</ul></li>
+</ol>
+<p><br></p>
+</section>
+</section>
+<section id="rubric-for-the-project" class="level2">
+<h2 class="anchored" data-anchor-id="rubric-for-the-project">Rubric for the Project</h2>
+<ul>
+<li>Here is the <a href="https://drive.google.com/file/d/1OEW2U9U_TwPzPCPruz9hR8ftD7UZdCwE/view?usp=share_link">link</a> to the PDF file of the rubric for the project.</li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/210" data-repo-id="R_kgDOLE4y0w" data-category="General" data-category-id="DIC_kwDOLE4y084CcsGI" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><span data-line-height="0.2"><font size="2">powered with github, quarto, and rstudio</font></span><br><span style="display:block; margin:-5px;"></span> <span data-line-height="0.7"><font size="2">byeong-hak choe, 2024</font></span></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<div id="scroll-padding"></div>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/posts.js"></script>
+
+
+
+</body></html>
