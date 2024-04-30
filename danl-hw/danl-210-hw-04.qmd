@@ -256,7 +256,7 @@ by joining the two DataFrames.
 ## Question 5
 
 - Provide your Python Selenium codes to scrape the table for Top 200 Family Movies and TV Shows. 
-  - You should create the following variables in the data frame:
+  - You should create the following variables in the DataFrame:
     - `ranking`	(e.g., 1, 2, 3)
     - `title`	(e.g., Wish, Harry Potter and the Sorcerer's Stone)
     - `year`	(e.g., 2023, 2024-)
@@ -267,6 +267,23 @@ by joining the two DataFrames.
     - `metascore`	(e.g., 56, 74)
     - `plot` (e.g., A young girl named Asha wishes on a star and gets a more direct answer than she bargained for when a trouble-making star comes down from the sky to join her.)
 
+
+- Suppose `ranking` and `title` are in one column, `ranking_title`. For example,
+  - "1.	Transformers One"
+  - "2. The Spiderwick Chronicles"
+- Then, we can use the code below:
+
+```{python}
+# Split the 'ranking_title' column into two new variables, 'ranking' and 'title'
+# by the first occurrence of a period (dot). 
+
+# n=1 ensures the split to be limited to the first dot.
+# expand=True tells pandas to return the results in a DataFrame
+  # If expand were False, the result would be a Series of lists.
+
+df[['ranking', 'title']] = df['ranking_title'].str.split('.', n=1, expand=True)
+df = df.drop(columns=['ranking_title'])
+```
 
 - Save the DataFrame in the CSV file.
 

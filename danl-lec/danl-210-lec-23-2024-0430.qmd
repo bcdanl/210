@@ -1,0 +1,474 @@
+---
+title: Lecture 23
+subtitle: Data Collection through APIs
+format:
+  clean-revealjs:
+    self-contained: true
+    incremental: false   
+    # css: clean-revealjs.css
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2024-04-30
+execute: 
+  eval: false
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+
+# bibliography: refs.bib
+include-after-body: target-hover.html
+---
+
+
+```{r setup}
+#| include: false
+#| eval: true
+
+library(knitr)
+library(tidyverse)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               comment = "#",
+               dpi = 300)
+
+knitr::knit_engines$set("markdown")
+```
+
+
+## Spyder IDE
+### Keyboard Shortcuts
+  
+- To set your keyboard shortcuts,
+  - Preferences > Keyboard Shortcuts > Search "run" and/or "comment"
+  - Set the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; (4) blockcomment; and (5) unblockcomment
+  
+- Default shortcuts
+  - Run selection (a current line): F9
+  - Run cell: Ctrl + Enter
+    - `# %%` defines a coding cell
+  - Comment (`#`): Ctrl/command + 1
+  - Block-comment: Ctrl/command + 4
+  - Unblock-comment: Ctrl/command + 5
+
+
+
+
+
+
+# API {background-color="#1c4982"}
+
+
+
+## API
+### Key Concepts
+::: {.incremental}
+
+- API stands for Application Programming Interface.
+  - It enables data transmission between **client** and **server**.
+
+
+- **Methods**: The “verbs” that clients use to talk with a server.
+  - The main one that we’ll be using is `GET` (i.e. ask a server to retrieve information). Other common methods are `POST`, `PUT` and `DELETE`.
+  
+  
+- **Requests**: What the client asks of the server.
+- **Response**: The server’s response, which includes 
+  - Status Code (e.g. “404” if not found, or “200” if successful);
+  - Header (i.e. meta-information about the reponse); 
+  - Body (i.e the actual content that we’re interested in.
+
+:::
+
+
+## API
+### API endpoints
+::: {.incremental}
+- In the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).
+  - These URLs are known as an **API endpoints**.
+
+- Navigate your browser to an API endpoint and you’ll just see a load of the following format of texts:
+  - JSON (JavaScript Object Notation) or 
+  - XML (Extensible Markup Language).
+
+- We can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.
+  - [https://jsonview.com/](https://jsonview.com/)
+
+:::
+
+## API
+### NYC Open Data
+
+::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- NYC Open Data ([https://opendata.cityofnewyork.us](https://opendata.cityofnewyork.us)) is free
+public data published by NYC agencies and other partners.
+
+
+- Los Angeles has the open data website too:
+  - [https://data.lacity.org](https://data.lacity.org)
+
+
+
+
+## (2)
+- Let’s get the NYC's Payroll Data.
+  1. Open the web page
+[https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e) in your
+browser.
+  2. Click the API tab.
+  3. Copy the API endpoint that appears in the popup box.
+
+
+
+
+## (3)
+```{.python}
+import requests
+import pandas as pd
+endpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint
+response_API = requests.get(endpoint)
+df = pd.read_json(response_API.text)
+```
+
+- The `request.get()` method sends a `GET` request to the specified url.
+
+- `pd.read_json()` automatically convert JSON data into DataFrame. 
+  - JSON objects have the same format as Python dictionaries.
+
+:::
+:::
+
+
+## API
+### Federal Reserve Economic Data (FRED)
+
+::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- Most API interfaces will only let you access and download data after you have registered an API key with them.
+
+- Let’s download economic data from the FRED [https://fred.stlouisfed.org](https://fred.stlouisfed.org) using its API.
+
+- You need to create an account [https://fredaccount.stlouisfed.org/login/](https://fredaccount.stlouisfed.org/login/) to get an API key for your FRED account.
+
+
+
+## (2)
+- As with all APIs, a good place to start is the FRED API developer docs [https://fred.stlouisfed.org/docs/api/fred/](https://fred.stlouisfed.org/docs/api/fred/).
+
+- We are interested in *series/observations* [https://fred.stlouisfed.org/docs/api/fred/series_observations.html](https://fred.stlouisfed.org/docs/api/fred/series_observations.html)
+  
+- The parameters that we will use are `api_key`, `file_type`, and `series_id`.
+
+- Replace “YOUR_API_KEY” with your actual API key in the following web address: [https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json](https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json)
+
+
+
+
+## (3)
+- We’re going to go through the `requests`, `json`, and `pandas` libraries.
+  - `requests` comes with a variety of features that allow us to interact more flexibly and securely with web APIs.
+  
+```{.python}
+import requests
+import json
+import pandas as pd
+params = {
+'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key
+'file_type': 'json',
+'series_id': 'GDPC1'   ## ID for US real GDP
+}
+endpoint = "series/observations"
+url = "https://api.stlouisfed.org/"
+response = requests.get(url + "fred/" + endpoint, params = params)
+```
+
+
+
+## (4)
+- To actually extract the content (i.e. data) from of the response, we’ll use the `.content.decode('utf-8')`.
+- We can convert JSON into a Python dictionary object using then `json.loads()` function.
+  
+```{.python}
+# Extract the response content (i.e. text).
+content = response.content.decode('utf-8')
+
+# Convert JSON response to Python dictionary.
+fred = json.loads(content) 
+
+# Extract the "observations" list element.
+observations = pd.DataFrame( fred['observations'] )
+observations = observations.astype({'value': float})
+```
+  
+
+:::
+:::
+
+
+
+# Unofficial API: `yfinance` {background-color="#1c4982"}
+
+
+## Unofficial API
+
+::: {.nonincremental}
+
+- Some developers build their own version of API, and make it open-source.
+- Here is one example of an unofficial API, `yfinance`:
+  - `yfinance` is an unofficial API for [Yahoo! Finance](https://finance.yahoo.com/)
+    - [https://pypi.org/project/yfinance](https://pypi.org/project/yfinance)
+    - It offers a threaded and Pythonic way to download stock market data from **Yahoo Finance**.
+
+:::
+
+```{.python}
+pip install yfinance
+```
+
+
+
+## Yahoo! Finance with `yfinance`
+### `Ticker()` and `history()`
+- One of the most critical use cases of `yfinance` is the possibility to access stocks (and some crypto currencies’) historical data. 
+  - These include `Open`, `High`, `Low`, `Close`, `Volume`, and also `Dividends` payments, and `Stock Splits`.
+
+```{.python}
+import yfinance as yf
+from datetime import datetime
+
+# Create the ticker for Nvidia
+nvda = yf.Ticker("NVDA")
+
+# Get today's date and convert it to a string with YYYY-MM-DD format
+  # (yfinance expects that format)
+end_date = datetime.now().strftime('%Y-%m-%d')
+
+nvda_hist = nvda.history(start='2024-01-01', end=end_date)
+```
+
+
+
+
+## Yahoo! Finance with `yfinance`
+### `history(interval = ..., period = ...)`
+
+```{.python}
+nvda_hist_min = nvda.history(end = end_date, interval = '1m', period = 'max')
+```
+
+:::{.incremental}
+- By default, `yfinance` returns daily data, but we can also set the time `interval`. 
+  - Different time interval have different limitations regarding how far back we can go in time.
+  - Requesting an interval (start – end) greater than the limitations will result in an error.
+  - We can avoid this error by only asking for the maximum allowed days of data. 
+    - This is done by setting the parameter `period` to ‘max’, in addition to either “end” or “start” (but not both)
+
+:::
+
+
+## Yahoo! Finance with `yfinance`
+### `Tickers()`
+
+- It is also possible to retrieve historical data of more than one company's stock with a single request. 
+  - This can be done by instantiating a `Tickers` object (plural instead of singular).
+
+```{.python}
+companies = ['AMZN', 'APPL', 'GOOG', 'MSFT', 'NVDA', 'TSLA', 'META'] 
+tickers = yf.Tickers(companies)
+tickers_hist = tickers.history(period='max', end=end_date, interval='1m',)
+```
+
+
+
+## Yahoo! Finance with `yfinance`
+### `Tickers()` and Dealing with `MultiLevel Index`
+
+- Notice that the returned DataFrame has a `MultiLevel Index`, which is an undesired structure for most purposes.
+
+```{.python}
+tickers_hist_long = (
+    tickers_hist
+    .stack()   # stacking, similar to DataFrame.melt()
+    .rename_axis(['Date', 'Ticker']) # rename row index
+    .reset_index()
+)
+```
+
+
+
+
+## Yahoo! Finance with `yfinance`
+### More on `history()`
+
+- The `history()` method includes several parameters, and knowing them is important in order to make most out of `yfinance`.
+
+::: {.nonincremental}
+::: {.panel-tabset}
+## `period`
+- `period`: Especially useful is the value `“max”`. 
+  - The following are the valid values: `1d`, `5d`, `1mo`, `3mo`, `6mo`, `1y`, `2y`, `5y`, `10y`, `ytd`, `max`.
+  
+
+## `interval`
+- `interval`: Defines the size of each interval. 
+  - Smaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.
+  - The following are the valid values: `1m`, `2m`, `5m`, `15m`, `30m`, `60m`, `90m`, `1h`, `1d`, `5d`, `1wk`, `1mo`, `3mo`
+
+
+## `start`\`end`
+  - `start`: Start date. The server expects a string formatted as YYYY-MM-DD.
+  - `end`: End date. The server expects a string formatted as YYYY-MM-DD.
+
+
+
+## `repost`
+  - `repost`: Defines whether to include or not data not corresponding to regular trading hours. Default value is `False`
+
+
+## `auto_adjust`
+  - `auto_adjust`: whether to adjust prices to stock splits and dividend payments. The default value is `True`.
+  
+:::
+:::
+
+## Yahoo! Finance with `yfinance`
+### Fetch financial information
+
+- Yahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios. 
+
+- However, `yfinance` does not currently work well with fetching these information.
+
+- Let's work with [Microsoft page in Yahoo! Finance](https://finance.yahoo.com/quote/MSFT/).
+
+```{.python}
+msft = yf.Ticker("MSFT")
+```
+
+
+
+## Yahoo! Finance with `yfinance`
+### Fetch financial information about Microsoft
+
+  
+::: {.nonincremental}
+::: {.panel-tabset}
+
+## `info`
+```{.python}
+# get all stock info
+msft.info 
+```
+
+## `history_metadata`
+```{.python}
+# show meta information about the history (requires history() to be called first)
+msft.history_metadata
+```
+
+
+
+## `get_shares_full`
+```{.python}
+# show share count
+# - accurate time-series count:
+msft.get_shares_full(start="2022-01-01", end=None)
+```
+
+:::
+:::
+
+
+
+
+## Yahoo! Finance with `yfinance`
+### Fetch financial information about Microsoft
+
+  
+::: {.nonincremental}
+::: {.panel-tabset}
+
+## `income_stmt`
+```{.python}
+# show financials:
+# - income statement
+msft.income_stmt
+msft.quarterly_income_stmt
+```
+
+
+## `balance_sheet`
+```{.python}
+# - balance sheet
+msft.balance_sheet
+msft.quarterly_balance_sheet
+
+```
+
+## `cashflow`
+```{.python}
+# - cash flow statement
+msft.cashflow
+msft.quarterly_cashflow
+  # see `Ticker.get_income_stmt()` for more options
+```
+
+## `*_holders`
+```{.python}
+# show holders
+msft.major_holders
+msft.institutional_holders
+msft.mutualfund_holders
+```
+
+:::
+:::
+
+
+## Yahoo! Finance with `yfinance`
+### Fetch financial information about Microsoft
+
+::: {.nonincremental}
+::: {.panel-tabset}
+
+## `calendar`
+```{.python}
+# show next event (earnings, etc)
+msft.calendar
+```
+
+
+## `earnings_dates`
+```{.python}
+# Show future and historic earnings dates, 
+# returns at most next 4 quarters and last 8 quarters by default. 
+# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.
+msft.earnings_dates
+msft.get_earnings_dates()
+```
+
+
+## `options`
+```{.python}
+# show options expirations
+msft.options
+```
+
+
+## `news`
+```{.python}
+# show news
+msft.news
+```
+
+:::
+:::
+

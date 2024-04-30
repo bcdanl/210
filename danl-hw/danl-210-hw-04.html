@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2024-04-21">
+<meta name="dcterms.date" content="2024-04-30">
 
 <title>Homework 4 | Byeong-Hak Choe</title>
 <style>
@@ -282,14 +282,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 21, 2024</p>
+      <p class="date">April 30, 2024</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 21, 2024</p>
+      <p class="date-modified">April 30, 2024</p>
     </div>
   </div>
     
@@ -510,7 +510,7 @@ z_{t} = \frac{\text{Close}_{t} - \text{mean}(\text{Close}_{t})}{\text{std}(\text
 <ul>
 <li>Provide your Python Selenium codes to scrape the table for Top 200 Family Movies and TV Shows.
 <ul>
-<li>You should create the following variables in the data frame:
+<li>You should create the following variables in the DataFrame:
 <ul>
 <li><code>ranking</code> (e.g., 1, 2, 3)</li>
 <li><code>title</code> (e.g., Wish, Harry Potter and the Sorcerer’s Stone)</li>
@@ -523,6 +523,25 @@ z_{t} = \frac{\text{Close}_{t} - \text{mean}(\text{Close}_{t})}{\text{std}(\text
 <li><code>plot</code> (e.g., A young girl named Asha wishes on a star and gets a more direct answer than she bargained for when a trouble-making star comes down from the sky to join her.)</li>
 </ul></li>
 </ul></li>
+<li>Suppose <code>ranking</code> and <code>title</code> are in one column, <code>ranking_title</code>. For example,
+<ul>
+<li>“1. Transformers One”</li>
+<li>“2. The Spiderwick Chronicles”</li>
+</ul></li>
+<li>Then, we can use the code below:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the 'ranking_title' column into two new variables, 'ranking' and 'title'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># by the first occurrence of a period (dot). </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># n=1 ensures the split to be limited to the first dot.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># expand=True tells pandas to return the results in a DataFrame</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If expand were False, the result would be a Series of lists.</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'ranking'</span>, <span class="st">'title'</span>]] <span class="op">=</span> df[<span class="st">'ranking_title'</span>].<span class="bu">str</span>.split(<span class="st">'.'</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ranking_title'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
 <li>Save the DataFrame in the CSV file.</li>
 </ul>
 <p><em>Answer</em>:</p>

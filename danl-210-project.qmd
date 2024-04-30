@@ -33,6 +33,8 @@ theme_set(theme_ipsum() +
                 axis.title.y = element_text(size = rel(1.5) ))
           )
 
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+
 ```
 
 <br>
@@ -216,4 +218,16 @@ plt.show()
 
 ## Rubric for the Project
 
-- Here is the [link](https://drive.google.com/file/d/1OEW2U9U_TwPzPCPruz9hR8ftD7UZdCwE/view?usp=share_link) to the PDF file of the rubric for the project.
+- Here is the [link](https://drive.google.com/file/d/1OEW2U9U_TwPzPCPruz9hR8ftD7UZdCwE/view?usp=share_link) to the PDF file of the rubric for the project web-page.
+
+
+### Rubric for Quality of Data Collection
+
+| Evaluation | Description | Criteria |
+|-------|-------------|----------|
+| 0 (Very Deficient) | - Very poorly implemented<br>- Data is unreliable. | - Ineffective use of `yfinance`, resulting in incomplete or inaccurate financial data.<br>- Poor web scraping practices with `selenium`, leading to unreliable or incorrect data from Yahoo Finance.<br>- Inadequate use of `pandas`, resulting in poorly structured DataFrames. |
+| 1 (Somewhat Deficient) | - Somewhat effective implementation<br>- Data has minor reliability issues. | - Basic use of `yfinance` with minor inaccuracies in data retrieval.<br>- Basic web scraping with `selenium` that sometimes fails to capture all relevant data accurately.<br>- Basic use of `pandas`, but with occasional issues in data structuring. |
+| 2 (Acceptable) | - Competently implemented<br>- Data is mostly reliable. | - Competent use of `yfinance` to retrieve most financial data accurately.<br>- Effective web scraping with `selenium`, capturing most required data from Yahoo Finance.<br>- Adequate use of `pandas` to structure data in a mostly logical format. |
+| 3 (Very Good) | - Well-implemented and organized<br>- Data is reliable. | - Advanced use of `yfinance` to reliably and accurately fetch financial data.<br>- Thorough web scraping with `selenium` that consistently captures accurate and complete data from Yahoo Finance.<br>- Skillful use of `pandas` for clear and logical data structuring. |
+| 4 (Outstanding) | - Exceptionally implemented<br>- Data is highly reliable. | - Expert use of `yfinance` to obtain comprehensive and precise financial data.<br>- Expert web scraping with `selenium`, capturing detailed and accurate data from Yahoo Finance without fail.<br>- Expert use of `pandas` to create exceptionally well-organized DataFrames that facilitate easy analysis. |
+
