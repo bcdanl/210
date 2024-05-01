@@ -77,7 +77,7 @@ nyc_weather['month'] = nyc_weather['date'].dt.month
 
 - FYI, GHCND stands for the Global Historical Climatology Network - Daily.
 
-- FYI, the above DataFrames are collected by the following code:
+- FYI, the above dataset is collected by the following code:
 
 ```{python}
 #| eval: false
