@@ -1,7 +1,7 @@
 ---
 title: Classwork 13
 subtitle: Web-scrapping with Python `selenium`
-date: 2024-04-25
+date: 2024-05-02
 execute: 
   eval: false
   echo: false
@@ -36,7 +36,36 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 
 ```
 
+<br><br>
 
+# Question 2.
+- Use selenium to download all the Excel files in the following Census page:
+  - [https://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/](https://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/)
+
+*Answer*:
+```{python}
+
+```
+
+<br><br>
+
+# Question 3.
+
+- Provide your Python Selenium code to scrape the following information for each book in [this website](http://books.toscrape.com).
+  - `category`: category of a book
+  - `title`: title of a book
+  - `price`: price of a book
+  
+- Find the most expensive book
+- Find the category with the most number of books.
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
 
 # Discussion
 
