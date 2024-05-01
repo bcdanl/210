@@ -1,0 +1,230 @@
+---
+title: Homework 5
+subtitle: APIs; `selenium` automation; `pandas` analysis.
+date: last-modified
+from: markdown+emoji
+execute: 
+  eval: false
+---
+
+# Direction
+
+- Please submit your **Python script for Homework 5** to the Brightspace with the name below:
+
+  - `danl-210-hw5-LASTNAME-FIRSTNAME.py`\
+  ( e.g., `danl-210-hw5-choe-byeonghak.py` )
+  
+- For readability, please create a separate cell for each question in your Python script.
+
+- The due is May 9, 2024, 11:59 P.M.
+
+- Please send an email to Byeong-Hak (`bchoe@geneseo.edu`) if you have any questions or clarifications.
+
+
+# Part 1. Data Collection
+
+
+## Question 1
+- Go to the following webpage:
+[https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page](https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page)
+
+- Provide a Python Selenium code to download all the MS Excel files in the webpage above.
+  - In your code, please code properly, so that you do not downalod any PDF files.
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
+
+
+## Question 2
+Provide a Python code to get New York City air quality surveillance data using the following API endpoint:
+
+[https://data.cityofnewyork.us/resource/c3uy-2p5r.json](https://data.cityofnewyork.us/resource/c3uy-2p5r.json)
+
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br><br>
+
+
+
+
+
+# Part 2. Data Analysis
+- The followings are data for daily NYC weather in 2022 and 2023 from the National Centers for Environmental Information (NCEI) [https://www.ncdc.noaa.gov/cdo-web/webservices/v2](https://www.ncdc.noaa.gov/cdo-web/webservices/v2), observed from the weather stations in the NYC metropolitan area.  
+
+```{python}
+#| eval: false
+#| echo: true
+nyc_weather = pd.read_csv('https://bcdanl.github.io/data/nyc_weather_2022_2023.csv')
+stations = pd.read_csv('https://bcdanl.github.io/data/weather_stations.csv')
+
+# Below is to add year and month variables:
+from datetime import datetime
+nyc_weather['date'] = pd.to_datetime(nyc_weather['date'])
+nyc_weather['year'] = nyc_weather['date'].dt.year
+nyc_weather['month'] = nyc_weather['date'].dt.month
+```
+
+
+- FYI, GHCND stands for the Global Historical Climatology Network - Daily.
+
+- FYI, the above DataFrames are collected by the following code:
+
+```{python}
+#| eval: false
+#| echo: true
+
+import requests
+import datetime
+# pip install display
+from IPython import display # for updating the cell dynamically
+
+
+def make_request(endpoint, payload=None):
+    """
+    Make a request to a specific endpoint on the weather API
+    passing headers and optional payload.
+    
+    Parameters:
+        - endpoint: The endpoint of the API you want to 
+                    make a GET request to.
+        - payload: A dictionary of data to pass along 
+                   with the request.
+    
+    Returns:
+        Response object.
+    """
+    return requests.get(
+        f'https://www.ncdc.noaa.gov/cdo-web/api/v2/{endpoint}',
+        headers={
+            'token': 'HERE_SHOULD_BE_THE_TOKEN'
+        },
+        params=payload
+    )
+
+
+current = datetime.date(2022, 1, 1)
+end = datetime.date(2024, 1, 1)
+
+results = []
+while current < end:
+    # update the cell with status information
+    display.clear_output(wait=True)
+    display.display(f'Gathering data for {str(current)}')
+    
+    response = make_request(
+        'data', 
+        {
+            'datasetid': 'GHCND', # Global Historical Climatology Network - Daily (GHCND) dataset
+            'locationid': 'CITY:US360019', # NYC
+            'startdate': current,
+            'enddate': current,
+            'units': 'metric',
+            'limit': 1000 # max allowed
+        }
+    )
+
+    if response.ok:
+        # we extend the list instead of appending to avoid getting a nested list
+        results.extend(response.json()['results'])
+
+    # update the current date to avoid an infinite loop
+    current += datetime.timedelta(days=1)
+    
+nyc_weather = pd.DataFrame(results)
+
+    
+# Weather stations
+response = make_request(
+    'stations', 
+    {
+        'datasetid': 'GHCND', # Global Historical Climatology Network - Daily (GHCND) dataset
+        'locationid': 'CITY:US360019', # NYC
+        'limit': 1000 # max allowed
+    }
+)
+
+stations = pd.DataFrame(response.json()['results'])[['id', 'name', 'latitude', 'longitude', 'elevation']]
+```
+
+<br><br>
+
+
+## Question 3
+- Create the DataFrame with only the following values of `datatype`: 'PRCP', 'SNOW', 'SNWD', 'TMIN', 'TMAX', 'AWND', and 'TAVG'
+
+- Below explains what each value means:
+  - `PRCP`: Precipitation (tenths of mm)
+  - `SNOW`: Snowfall (mm)
+  - `SNWD`: Snow depth (mm)
+  - `TMAX`: Maximum temperature (tenths of degrees C)
+  - `TMIN`: Minimum temperature (tenths of degrees C)
+  - `AWND`: Average daily wind speed (tenths of meters per second)
+  - `TAVG`: Average temperature (tenths of degrees C) 
+
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
+
+
+
+## Question 4
+For each weather station, calculate the monthly average of 'value' for each 'datatype' from January 2022 to December 2023.
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
+
+
+
+## Question 5
+- Find the names of the top 10 weather stations in terms of the mean 'value' of 'TMAX' 
+in June, July, and August, respectively. (Here, top 10 means the 10 hottest temperatures.)
+
+- Find the names of the top 10 weather stations in terms of the mean 'value' of 'TMIN' in December, January, and February, respectively. (Here, top 10 means the 10 coldest temperatures.)
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
+
+
+
+
+## Question 6
+- Find the names of the top 10 weather stations in terms of the number of days with precipitation in each year.
+
+- How many days were snowing or raining at the top 1 weather station in each year?
+
+- For each of the top 10 weather stations in each year, summarize the descriptive statistics of precipitation value.
+
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
+

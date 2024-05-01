@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 14, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Counting, Sorting, Indexing, and Filtering Data\n\n\nFebruary 29, 2024\n\n\n\n\nHomework 3\n\n\nGroup Operations; Pivoting DataFrame; Joining DataFrame\n\n\nMarch 20, 2024\n\n\n\n\nHomework 4\n\n\nPivoting and Joining DataFrames; Data Visualization; Web Scrapping with selenium\n\n\nApril 30, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 14, 2024\n\n\n\n\nHomework 2\n\n\nPandas Basics - Counting, Sorting, Indexing, and Filtering Data\n\n\nFebruary 29, 2024\n\n\n\n\nHomework 3\n\n\nGroup Operations; Pivoting DataFrame; Joining DataFrame\n\n\nMarch 20, 2024\n\n\n\n\nHomework 4\n\n\nPivoting and Joining DataFrames; Data Visualization; Web Scrapping with selenium\n\n\nApril 30, 2024\n\n\n\n\nHomework 5\n\n\nAPIs; selenium automation; pandas analysis.\n\n\nMay 1, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-210-midterm-a.html",
@@ -6626,7 +6626,7 @@
     "href": "index.html#bullet-homework",
     "title": " DANL 210: Data Preparation and Management, Spring 2024",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 4\n\n\nApril 30, 2024\n\n\n\n\nHomework 3\n\n\nMarch 20, 2024\n\n\n\n\nHomework 2\n\n\nFebruary 29, 2024\n\n\n\n\nHomework 1\n\n\nFebruary 14, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 5\n\n\nMay 1, 2024\n\n\n\n\nHomework 4\n\n\nApril 30, 2024\n\n\n\n\nHomework 3\n\n\nMarch 20, 2024\n\n\n\n\nHomework 2\n\n\nFebruary 29, 2024\n\n\n\n\nHomework 1\n\n\nFebruary 14, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-qa/danl-210-qa-17.html",
@@ -7124,5 +7124,54 @@
     "title": "Lecture 23",
     "section": "Yahoo! Finance with yfinance",
     "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ncalendarearnings_datesoptionsnews\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html",
+    "href": "danl-hw/danl-210-hw-05.html",
+    "title": "Homework 5",
+    "section": "",
+    "text": "Please submit your Python script for Homework 5 to the Brightspace with the name below:\n\ndanl-210-hw5-LASTNAME-FIRSTNAME.py\n( e.g., danl-210-hw5-choe-byeonghak.py )\n\nFor readability, please create a separate cell for each question in your Python script.\nThe due is May 9, 2024, 11:59 P.M.\nPlease send an email to Byeong-Hak (bchoe@geneseo.edu) if you have any questions or clarifications."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html#question-1",
+    "href": "danl-hw/danl-210-hw-05.html#question-1",
+    "title": "Homework 5",
+    "section": "Question 1",
+    "text": "Question 1\n\nGo to the following webpage: https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page\nProvide a Python Selenium code to download all the MS Excel files in the webpage above.\n\nIn your code, please code properly, so that you do not downalod any PDF files.\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html#question-2",
+    "href": "danl-hw/danl-210-hw-05.html#question-2",
+    "title": "Homework 5",
+    "section": "Question 2",
+    "text": "Question 2\nProvide a Python code to get New York City air quality surveillance data using the following API endpoint:\nhttps://data.cityofnewyork.us/resource/c3uy-2p5r.json\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html#question-3",
+    "href": "danl-hw/danl-210-hw-05.html#question-3",
+    "title": "Homework 5",
+    "section": "Question 3",
+    "text": "Question 3\n\nCreate the DataFrame with only the following values of datatype: ‘PRCP’, ‘SNOW’, ‘SNWD’, ‘TMIN’, ‘TMAX’, ‘AWND’, and ‘TAVG’\nBelow explains what each value means:\n\nPRCP: Precipitation (tenths of mm)\nSNOW: Snowfall (mm)\nSNWD: Snow depth (mm)\nTMAX: Maximum temperature (tenths of degrees C)\nTMIN: Minimum temperature (tenths of degrees C)\nAWND: Average daily wind speed (tenths of meters per second)\nTAVG: Average temperature (tenths of degrees C)\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html#question-4",
+    "href": "danl-hw/danl-210-hw-05.html#question-4",
+    "title": "Homework 5",
+    "section": "Question 4",
+    "text": "Question 4\nFor each weather station, calculate the monthly average of ‘value’ for each ‘datatype’ from January 2022 to December 2023.\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html#question-5",
+    "href": "danl-hw/danl-210-hw-05.html#question-5",
+    "title": "Homework 5",
+    "section": "Question 5",
+    "text": "Question 5\n\nFind the names of the top 10 weather stations in terms of the mean ‘value’ of ‘TMAX’ in June, July, and August, respectively. (Here, top 10 means the 10 hottest temperatures.)\nFind the names of the top 10 weather stations in terms of the mean ‘value’ of ‘TMIN’ in December, January, and February, respectively. (Here, top 10 means the 10 coldest temperatures.)\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-05.html#question-6",
+    "href": "danl-hw/danl-210-hw-05.html#question-6",
+    "title": "Homework 5",
+    "section": "Question 6",
+    "text": "Question 6\n\nFind the names of the top 10 weather stations in terms of the number of days with precipitation in each year.\nHow many days were snowing or raining at the top 1 weather station in each year?\nFor each of the top 10 weather stations in each year, summarize the descriptive statistics of precipitation value.\n\nAnswer:"
   }
 ]
