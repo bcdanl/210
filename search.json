@@ -7081,35 +7081,35 @@
     "href": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-4",
     "title": "Lecture 23",
     "section": "Yahoo! Finance with yfinance",
-    "text": "Yahoo! Finance with yfinance\nMore on history()\n\nThe history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\nperiodintervalstart`end-start: Start date. The server expects a string formatted as YYYY-MM-DD.   -end`: End date. The server expects a string formatted as YYYY-MM-DD.repostauto_adjust\n\n\n\nperiod: Especially useful is the value “max”.\n\nThe following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.\n\n\n\n\n\ninterval: Defines the size of each interval.\n\nSmaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.\nThe following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo\n\n\n\n\n\n\n\n\nrepost: Defines whether to include or not data not corresponding to regular trading hours. Default value is False\n\n\n\n\nauto_adjust: whether to adjust prices to stock splits and dividend payments. The default value is True."
+    "text": "Yahoo! Finance with yfinance\nMore on history()\n\nThe history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\nperiodintervalstart and end\n\n\n\nperiod: Especially useful is the value “max”.\n\nThe following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.\n\n\n\n\n\ninterval: Defines the size of each interval.\n\nSmaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.\nThe following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo\n\n\n\n\n\nstart: Start date. The server expects a string formatted as YYYY-MM-DD.\nend: End date. The server expects a string formatted as YYYY-MM-DD."
   },
   {
     "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-5",
     "href": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-5",
     "title": "Lecture 23",
     "section": "Yahoo! Finance with yfinance",
-    "text": "Yahoo! Finance with yfinance\nFetch financial information\n\nYahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios.\nHowever, yfinance does not currently work well with fetching these information.\nLet’s work with Microsoft page in Yahoo! Finance.\n\nmsft = yf.Ticker(\"MSFT\")"
+    "text": "Yahoo! Finance with yfinance\nMore on history()\n\nThe history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\nrepostauto_adjust\n\n\n\nrepost: Defines whether to include or not data not corresponding to regular trading hours. Default value is False\n\n\n\n\nauto_adjust: whether to adjust prices to stock splits and dividend payments. The default value is True."
   },
   {
     "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-6",
     "href": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-6",
     "title": "Lecture 23",
     "section": "Yahoo! Finance with yfinance",
-    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ninfohistory_metadataget_shares_full\n\n\n# get all stock info\nmsft.info \n\n\n# show meta information about the history (requires history() to be called first)\nmsft.history_metadata\n\n\n# show share count\n# - accurate time-series count:\nmsft.get_shares_full(start=\"2022-01-01\", end=None)"
+    "text": "Yahoo! Finance with yfinance\nFetch financial information\n\nYahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios.\nHowever, yfinance does not currently work well with fetching these information.\nLet’s work with Microsoft page in Yahoo! Finance.\n\nmsft = yf.Ticker(\"MSFT\")"
   },
   {
     "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-7",
     "href": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-7",
     "title": "Lecture 23",
     "section": "Yahoo! Finance with yfinance",
-    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\nincome_stmtbalance_sheetcashflow*_holders\n\n\n# show financials:\n# - income statement\nmsft.income_stmt\nmsft.quarterly_income_stmt\n\n\n# - balance sheet\nmsft.balance_sheet\nmsft.quarterly_balance_sheet\n\n\n# - cash flow statement\nmsft.cashflow\nmsft.quarterly_cashflow\n  # see `Ticker.get_income_stmt()` for more options\n\n\n# show holders\nmsft.major_holders\nmsft.institutional_holders\nmsft.mutualfund_holders"
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ninfohistory_metadataget_shares_full\n\n\n# get all stock info\nmsft.info \n\n\n# show meta information about the history (requires history() to be called first)\nmsft.history_metadata\n\n\n# show share count\n# - accurate time-series count:\nmsft.get_shares_full(start=\"2022-01-01\", end=None)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-8",
     "href": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-8",
     "title": "Lecture 23",
     "section": "Yahoo! Finance with yfinance",
-    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ncalendarearnings_datesoptionsnews\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\nincome_stmtbalance_sheetcashflow*_holders\n\n\n# show financials:\n# - income statement\nmsft.income_stmt\nmsft.quarterly_income_stmt\n\n\n# - balance sheet\nmsft.balance_sheet\nmsft.quarterly_balance_sheet\n\n\n# - cash flow statement\nmsft.cashflow\nmsft.quarterly_cashflow\n  # see `Ticker.get_income_stmt()` for more options\n\n\n# show holders\nmsft.major_holders\nmsft.institutional_holders\nmsft.mutualfund_holders"
   },
   {
     "objectID": "danl-qa/danl-210-qa-23.html",
@@ -7117,5 +7117,12 @@
     "title": "Lecture 23 - Q & A",
     "section": "",
     "text": "Welcome to our Lecture 23 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Lecture 23 slides.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Lecture 23 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-9",
+    "href": "danl-lec/danl-210-lec-23-2024-0430.html#yahoo-finance-with-yfinance-9",
+    "title": "Lecture 23",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ncalendarearnings_datesoptionsnews\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
   }
 ]

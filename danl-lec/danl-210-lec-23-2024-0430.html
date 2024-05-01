@@ -1497,7 +1497,7 @@ Byeong-Hak Choe
 </ul>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-3-1"><code>period</code></a></li><li><a href="#tabset-3-2"><code>interval</code></a></li><li><a href="#tabset-3-3"><code>start</code>`end<code>-</code>start<code>: Start date. The server expects a string formatted as YYYY-MM-DD.   -</code>end`: End date. The server expects a string formatted as YYYY-MM-DD.</a></li><li><a href="#tabset-3-4"><code>repost</code></a></li><li><a href="#tabset-3-5"><code>auto_adjust</code></a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-3-1"><code>period</code></a></li><li><a href="#tabset-3-2"><code>interval</code></a></li><li><a href="#tabset-3-3"><code>start</code> and <code>end</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
 <ul>
@@ -1517,14 +1517,31 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-3-3">
-
+<ul>
+<li><code>start</code>: Start date. The server expects a string formatted as YYYY-MM-DD.</li>
+<li><code>end</code>: End date. The server expects a string formatted as YYYY-MM-DD.</li>
+</ul>
 </div>
-<div id="tabset-3-4">
+</div>
+</div>
+</div>
+</section>
+<section id="yahoo-finance-with-yfinance-5" class="slide level2">
+<h2>Yahoo! Finance with <code>yfinance</code></h2>
+<h3 id="more-on-history-1">More on <code>history()</code></h3>
+<ul>
+<li>The <code>history()</code> method includes several parameters, and knowing them is important in order to make most out of <code>yfinance</code>.</li>
+</ul>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-4-1"><code>repost</code></a></li><li><a href="#tabset-4-2"><code>auto_adjust</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
 <ul>
 <li><code>repost</code>: Defines whether to include or not data not corresponding to regular trading hours. Default value is <code>False</code></li>
 </ul>
 </div>
-<div id="tabset-3-5">
+<div id="tabset-4-2">
 <ul>
 <li><code>auto_adjust</code>: whether to adjust prices to stock splits and dividend payments. The default value is <code>True</code>.</li>
 </ul>
@@ -1533,7 +1550,7 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="yahoo-finance-with-yfinance-5" class="slide level2">
+<section id="yahoo-finance-with-yfinance-6" class="slide level2">
 <h2>Yahoo! Finance with <code>yfinance</code></h2>
 <h3 id="fetch-financial-information">Fetch financial information</h3>
 <ul>
@@ -1543,22 +1560,22 @@ Byeong-Hak Choe
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>msft <span class="op">=</span> yf.Ticker(<span class="st">&quot;MSFT&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="yahoo-finance-with-yfinance-6" class="slide level2">
+<section id="yahoo-finance-with-yfinance-7" class="slide level2">
 <h2>Yahoo! Finance with <code>yfinance</code></h2>
 <h3 id="fetch-financial-information-about-microsoft">Fetch financial information about Microsoft</h3>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-4-1"><code>info</code></a></li><li><a href="#tabset-4-2"><code>history_metadata</code></a></li><li><a href="#tabset-4-3"><code>get_shares_full</code></a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-5-1"><code>info</code></a></li><li><a href="#tabset-5-2"><code>history_metadata</code></a></li><li><a href="#tabset-5-3"><code>get_shares_full</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># get all stock info</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>msft.info </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># show meta information about the history (requires history() to be called first)</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>msft.history_metadata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-5-3">
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># show share count</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="co"># - accurate time-series count:</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>msft.get_shares_full(start<span class="op">=</span><span class="st">&quot;2022-01-01&quot;</span>, end<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1567,31 +1584,31 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="yahoo-finance-with-yfinance-7" class="slide level2">
+<section id="yahoo-finance-with-yfinance-8" class="slide level2">
 <h2>Yahoo! Finance with <code>yfinance</code></h2>
 <h3 id="fetch-financial-information-about-microsoft-1">Fetch financial information about Microsoft</h3>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-5-1"><code>income_stmt</code></a></li><li><a href="#tabset-5-2"><code>balance_sheet</code></a></li><li><a href="#tabset-5-3"><code>cashflow</code></a></li><li><a href="#tabset-5-4"><code>*_holders</code></a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-6-1"><code>income_stmt</code></a></li><li><a href="#tabset-6-2"><code>balance_sheet</code></a></li><li><a href="#tabset-6-3"><code>cashflow</code></a></li><li><a href="#tabset-6-4"><code>*_holders</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-6-1">
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># show financials:</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="co"># - income statement</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a>msft.income_stmt</span>
 <span id="cb13-4"><a href="#cb13-4"></a>msft.quarterly_income_stmt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-6-2">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># - balance sheet</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>msft.balance_sheet</span>
 <span id="cb14-3"><a href="#cb14-3"></a>msft.quarterly_balance_sheet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-6-3">
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># - cash flow statement</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>msft.cashflow</span>
 <span id="cb15-3"><a href="#cb15-3"></a>msft.quarterly_cashflow</span>
 <span id="cb15-4"><a href="#cb15-4"></a>  <span class="co"># see `Ticker.get_income_stmt()` for more options</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-5-4">
+<div id="tabset-6-4">
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># show holders</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>msft.major_holders</span>
 <span id="cb16-3"><a href="#cb16-3"></a>msft.institutional_holders</span>
@@ -1601,29 +1618,29 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="yahoo-finance-with-yfinance-8" class="slide level2">
+<section id="yahoo-finance-with-yfinance-9" class="slide level2">
 <h2>Yahoo! Finance with <code>yfinance</code></h2>
 <h3 id="fetch-financial-information-about-microsoft-2">Fetch financial information about Microsoft</h3>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-6-1"><code>calendar</code></a></li><li><a href="#tabset-6-2"><code>earnings_dates</code></a></li><li><a href="#tabset-6-3"><code>options</code></a></li><li><a href="#tabset-6-4"><code>news</code></a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-7-1"><code>calendar</code></a></li><li><a href="#tabset-7-2"><code>earnings_dates</code></a></li><li><a href="#tabset-7-3"><code>options</code></a></li><li><a href="#tabset-7-4"><code>news</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># show next event (earnings, etc)</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>msft.calendar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-7-2">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Show future and historic earnings dates, </span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="co"># returns at most next 4 quarters and last 8 quarters by default. </span></span>
 <span id="cb18-3"><a href="#cb18-3"></a><span class="co"># Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a>msft.earnings_dates</span>
 <span id="cb18-5"><a href="#cb18-5"></a>msft.get_earnings_dates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-6-3">
+<div id="tabset-7-3">
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># show options expirations</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>msft.options</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-6-4">
+<div id="tabset-7-4">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># show news</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>msft.news</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
