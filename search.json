@@ -7173,5 +7173,26 @@
     "title": "Homework 5",
     "section": "Question 6",
     "text": "Question 6\n\nFind the names of the top 10 weather stations in terms of the number of days with precipitation in each year.\nHow many days were snowing or raining at the top 1 weather station in each year?\nFor each of the top 10 weather stations in each year, summarize the descriptive statistics of precipitation value.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#student-course-evaluation-sce",
+    "href": "danl-lec/danl-210-lec-23-2024-0430.html#student-course-evaluation-sce",
+    "title": "Lecture 23",
+    "section": "Student Course Evaluation (SCE)",
+    "text": "Student Course Evaluation (SCE)\n\nI have tried to improve your learning experience in this course.\nI value your feedback immensely.\nI request for your participation in the Student Course Evaluation (SCE).\nTake 10 minutes right now to complete the SCE.\nOn your laptop, access the SCE form for DANL 210 as follows:\nHere are the web-link and steps to do so:\n\nGo to myGeneseo.edu\nClick the KnightWeb\nClick on the “Surveys” option\nChoose DANL 210 (class for which you want to fill out the SCE) and then complete the SCE survey."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#hidden-api-1",
+    "href": "danl-lec/danl-210-lec-23-2024-0430.html#hidden-api-1",
+    "title": "Lecture 23",
+    "section": "Hidden API",
+    "text": "Hidden API\n\nMost industry-scale websites display data from their database servers.\n\nMany of them do not provide official APIs to retrieve data.\n\nSometimes, it is possible to find their hidden APIs to retrieve data!\nExamples:\n\nIMDb\nPremier League Stats"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-23-2024-0430.html#hidden-api-2",
+    "href": "danl-lec/danl-210-lec-23-2024-0430.html#hidden-api-2",
+    "title": "Lecture 23",
+    "section": "Hidden API",
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Insomnia\n\nMake a new request\nPaste the cURL to the address bar, and then click “Send” button.\nClick the right most part of “New Request” (default name)\nClick “&lt;/&gt; Generate Code”; Choose “Python” and “Requests”\nCopy a Python requests code, and run it on your IDE."
   }
 ]

@@ -41,6 +41,20 @@ knitr::knit_engines$set("markdown")
 ```
 
 
+## Student Course Evaluation (SCE)
+
+- I have tried to improve your learning experience in this course.
+- I value your feedback immensely.
+- I request for your participation in the Student Course Evaluation (SCE).
+- Take 10 minutes right now to complete the SCE.
+- On your laptop, access the SCE form for DANL 210 as follows:
+- Here are the web-link and steps to do so:
+  1. Go to [myGeneseo.edu](https://my.geneseo.edu/dashboard)
+  2. Click the KnightWeb
+  3. Click on the "Surveys" option
+  4. Choose DANL 210 (class for which you want to fill out the SCE) and then complete the SCE survey.
+
+
 ## Spyder IDE
 ### Keyboard Shortcuts
   
@@ -489,3 +503,35 @@ msft.news
 :::
 :::
 
+
+
+
+# Hidden API {background-color="#1c4982"}
+
+
+## Hidden API
+- Most industry-scale websites display data from their database servers.
+  - Many of them do not provide official APIs to retrieve data.
+
+- Sometimes, it is possible to find their hidden APIs to retrieve data!
+
+- Examples:
+  - [IMDb](https://www.imdb.com)
+  - [Premier League Stats](https://www.premierleague.com/stats)
+
+
+
+## Hidden API
+### How can we find a hidden API?
+- On a web-browser (FireFox is recommended)
+  1. F12 -> Network -> XHR (**X**ML**H**ttp**R**equest)
+  2. Refresh the webpage that loads data
+  3. Find `json` type response that seems to have data
+  4. Right-click that response -> Copy as cURL
+
+- On an API tool such as [Insomnia](https://insomnia.rest)
+  5. Make a new request 
+  6. Paste the cURL to the address bar, and then click "Send" button.
+  7. Click the right most part of "New Request" (default name)
+  8. Click "</> Generate Code"; Choose "Python" and "Requests"
+  9. Copy a Python `requests` code, and run it on your IDE.
