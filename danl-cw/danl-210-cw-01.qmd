@@ -332,21 +332,12 @@ git add .
 git commit -m "any message to describe the changes"
 ```
 
-  3. `git push -u origin main` uploads the local changes to the online repository in GitHub.
+  3. `git push` uploads the local changes to the online repository in GitHub.
 ```{.bash}
-git push -u origin main
+git push
 ```
 
 
-:::{.callout-note}
-If `git push -u origin main` gives error, try the following:
-```{.bash}
-git push -u origin master
-```
-
-- The name of the default branch in a GitHub repo is usually `main`, but sometimes GitHub gives `master` default branch instead.
-
-:::
 
 <br>
 
