@@ -75,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -171,7 +171,7 @@ border-radius: 5px; /* Rounds the corners */
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./listing-danl-210-rw.html"><font size="5"><b>- Team Project </b></font><font size="5" color="#194493">{{&lt; fa solid brain &gt;}}</font></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><font style="font-family:Optima"><b>DANL 210 - Project</b></font></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -217,8 +217,8 @@ border-radius: 5px; /* Rounds the corners */
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-rw.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><font size="5"><b>- Team Project </b></font><font size="5" color="#194493"><i class="fa-solid fa-brain" aria-label="brain"></i></font></span></a>
+  <a href="./danl-rw/danl-210-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><font size="5"><b>- Project </b></font><font size="5" color="#194493"><i class="fa-solid fa-brain" aria-label="brain"></i></font></span></a>
   </div>
 </li>
     </ul>
@@ -279,6 +279,14 @@ Date
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1737485289000" data-listing-file-modified-sort="1737485289464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis" data-listing-filename-sort="danl-210-project.qmd">
+<td>
+<a href="./danl-rw/danl-210-project.html" class="title listing-title">Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis</a>
+</td>
+<td>
+<span class="listing-date">January 21, 2025</span>
+</td>
+</tr>
 </tbody>
 
 </table>
@@ -654,7 +662,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2024</div>
+    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2025</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Byeong-Hak Choe">
-  <meta name="dcterms.date" content="2024-08-27">
+  <meta name="dcterms.date" content="2025-01-22">
   <title>Home - Lecture 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -356,7 +421,7 @@ Byeong-Hak Choe
     </div>
 </div>
 
-  <p class="date">August 27, 2024</p>
+  <p class="date">January 22, 2025</p>
 </section>
 <section>
 <section id="instructor" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -381,9 +446,9 @@ Byeong-Hak Choe
 </section>
 <section id="instructor-2" class="slide level2">
 <h2>Instructor</h2>
-<h3 id="economics-and-data-science">Economics and Data Science</h3>
+<h3 id="economics-data-science-and-climate-change">Economics, Data Science, and Climate Change</h3>
 <ul>
-<li class="fragment"><p>Choe, B.H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”</p></li>
+<li class="fragment"><p>Choe, B.H., 2025. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”</p></li>
 <li class="fragment"><p>Question: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?</p></li>
 <li class="fragment"><p>Data include:</p>
 <ul>
@@ -398,7 +463,7 @@ Byeong-Hak Choe
 </section>
 <section id="instructor-3" class="slide level2">
 <h2>Instructor</h2>
-<h3 id="economics-and-data-science-1">Economics and Data Science</h3>
+<h3 id="economics-data-science-and-climate-change-1">Economics, Data Science, and Climate Change</h3>
 <ul>
 <li class="fragment"><p>Choe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”</p></li>
 <li class="fragment"><p><strong>Climate finance</strong> refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.</p>
@@ -411,7 +476,7 @@ Byeong-Hak Choe
 </section>
 <section id="instructor-4" class="slide level2">
 <h2>Instructor</h2>
-<h3 id="economics-and-data-science-2">Economics and Data Science</h3>
+<h3 id="economics-data-science-and-climate-change-2">Economics, Data Science, and Climate Change</h3>
 <ul>
 <li class="fragment"><p>Choe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”</p></li>
 <li class="fragment"><p>Data include:</p>
@@ -419,17 +484,6 @@ Byeong-Hak Choe
 <li class="fragment">Global climate finance data (e.g., donors, recipients, characteristics of climate change projects)</li>
 <li class="fragment">World Bank Governance Indicators over the years (e.g., government effectiveness, voice and accountability, political stability and absence of violence/terrorism, regulatory quality, rule of law, control of corruption)</li>
 <li class="fragment">Various economic indicators (e.g., trade pattern of low carbon technology products, macroeconomic risks, energy)</li>
-</ul></li>
-</ul>
-</section>
-<section id="instructor-5" class="slide level2">
-<h2>Instructor</h2>
-<h3 id="economics-and-data-science-3">Economics and Data Science</h3>
-<ul>
-<li class="fragment"><p>Choe, B.H., James, Alex and Newbold, Steve, 2025. “Estimating the Value of Statistical Life (VSL) through Big Data”</p></li>
-<li class="fragment"><p>VSL is the monetary value associated with reducing the risk of death.</p>
-<ul>
-<li class="fragment">How much value would that be? How can we measure it?</li>
 </ul></li>
 </ul>
 </section></section>
@@ -445,124 +499,182 @@ Byeong-Hak Choe
 <li class="fragment"><p>Email: <a href="bchoe@geneseo.edu">bchoe@geneseo.edu</a></p></li>
 <li class="fragment"><p>Class Homepage:</p>
 <ol type="i">
-<li class="fragment"><a href="https://mylearning.suny.edu/d2l/home/1513935" target="_blank">https://mylearning.suny.edu/d2l/home/1513935</a></li>
-<li class="fragment"><a href="http://bcdanl.github.io" target="_blank">http://bcdanl.github.io</a></li>
+<li class="fragment"><a href="https://brightspace.geneseo.edu/" target="_blank">https://brightspace.geneseo.edu/</a></li>
+<li class="fragment"><a href="http://bcdanl.github.io/210/" target="_blank">http://bcdanl.github.io/210/</a></li>
 </ol></li>
-<li class="fragment"><p>Office: South Hall 301</p></li>
+<li class="fragment"><p>Office: South Hall 227B</p></li>
 <li class="fragment"><p>Office Hours:</p>
-<ul>
-<li class="fragment">In-person: Mondays and Wednesdays 1:30 P.M.–3:00 P.M.</li>
-<li class="fragment">Online: by appointment via email.</li>
-</ul></li>
+<ol type="1">
+<li class="fragment">Mondays 5:00 P.M. – 6:30 P.M.<br>
+</li>
+<li class="fragment">Wednesdays 5:00 P.M. – 6:30 P.M.</li>
+</ol></li>
 </ul>
 </section>
 <section id="syllabus-2" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="course-description">Course Description</h3>
 <ul>
-<li class="fragment">This course offers a practical introduction to the data analytics process and methods.</li>
-<li class="fragment">The goal is to help you unlock the potential of data analysis and enhance your ability to transform data into a powerful decision-making tool.</li>
-<li class="fragment">You will develop foundational data analytics skills that will prepare you for a career or further studies in more advanced data analytics topics.</li>
-<li class="fragment">The course covers: (1) an introduction to data analytics thinking, (2) exploratory data analysis through data wrangling and visualization, and (3) an introduction to data science, social media analytics, and artificial intelligence (AI).</li>
-<li class="fragment">Throughout the course, you will gain hands-on experience with the Python and R programming languages, along with its associated data analysis libraries and AI tools.</li>
+<li class="fragment"><p>This course is designed to provide a comprehensive overview of data handling techniques, focusing on practical application through case studies.</p></li>
+<li class="fragment"><p>Key topics include:</p>
+<ol type="1">
+<li class="fragment">data loading, cleaning, transformation, merging, and reshaping;</li>
+<li class="fragment">techniques for slicing, dicing, and summarizing datasets;</li>
+<li class="fragment">data collection via web scraping and APIs.</li>
+</ol></li>
+<li class="fragment"><p>These areas will be explored through detailed, real-world examples to address common data analysis challenges.</p></li>
+<li class="fragment"><p>Throughout the course, students will gain hands-on experience with <strong>Python</strong> and its data analysis libraries, along with practical applications of <strong>git</strong> and <strong>GitHub</strong>.</p></li>
 </ul>
 </section>
 <section id="syllabus-3" class="slide level2">
 <h2>Syllabus</h2>
-<h3 id="course-learning-outcomes">Course Learning Outcomes</h3>
+<h3 id="required-materials">Required Materials</h3>
 <ul>
-<li class="fragment">Grasp the basic principles of data analytics, including data types and data processing.</li>
-<li class="fragment">Gain introductory experience with programming languages commonly used in data analytics, such as Python or R.</li>
-<li class="fragment">Develop the ability to create and interpret various types of data visualizations.</li>
-<li class="fragment">Enhance critical thinking skills by learning to ask relevant questions and draw insights from data.</li>
-<li class="fragment">Apply data analytics techniques to solve real-world problems in various domains.</li>
+<li class="fragment"><p><a href="https://wesmckinney.com/book" target="_blank"><strong>Python for Data Analysis</strong> (3rd Edition)</a> by <a href="https://wesmckinney.com/" target="_blank">Wes McKinney</a></p>
+<ul>
+<li class="fragment">A free online version of this book is available.</li>
+</ul></li>
 </ul>
 </section>
 <section id="syllabus-4" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="reference-materials">Reference Materials</h3>
 <ul>
-<li class="fragment"><a href="https://r4ds.hadley.nz" target="_blank"><strong>R for Data Science</strong> (2nd Edition)</a> by Hadley Wickham &amp; Garrett Grolemund.</li>
-<li class="fragment"><a href="https://aeturrell.github.io/python4DS" target="_blank"><strong>Python for Data Science</strong></a> by Arthur Turrell et. al.</li>
-<li class="fragment"><a href="https://aeturrell.github.io/coding-for-economists" target="_blank"><strong>Coding for Economists</strong></a> by Arthur Turrell.</li>
-<li class="fragment"><a href="https://moderndive.com" target="_blank"><strong>Statistical Inference via Data Science: A ModernDive into R and the Tidyverse</strong></a> by Chester Ismay and Albert Y. Kim.</li>
+<li class="fragment"><p><a href="https://quarto.org/docs/guide" target="_blank">Guide for Quarto</a></p></li>
+<li class="fragment"><p><a href="https://www.tomasbeuzen.com/python-programming-for-data-science" target="_blank">Python Programming for Data Science</a> by Tomas Beuzen</p></li>
+<li class="fragment"><p><a href="https://aeturrell.github.io/coding-for-economists" target="_blank">Coding for Economists</a> by Arthur Turrell</p></li>
+<li class="fragment"><p><a href="https://pyecon.org/lecture/%7D%7Bhttps://pyecon.org/lecture/" target="_blank">Python for Econometrics in Economics</a> by Fabian H. C. Raters</p></li>
+<li class="fragment"><p><a href="https://datascience.quantecon.org/python_fundamentals/index.html" target="_blank">QuantEcon DataScience - Python Fundamentals</a> by Chase Coleman, Spencer Lyon, and Jesse Perla</p></li>
+<li class="fragment"><p><a href="https://datascience.quantecon.org/pandas/index.html" target="_blank">QuantEcon DataScience - pandas</a> by Chase Coleman, Spencer Lyon, and Jesse Perla</p></li>
 </ul>
 </section>
 <section id="syllabus-5" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="course-requirements">Course Requirements</h3>
 <ul>
-<li class="fragment"><strong>Homework</strong>: There will be six homework assignments.</li>
-<li class="fragment"><strong>Quiz</strong>: There will be in-class quizzes.</li>
-<li class="fragment"><strong>Class Participation</strong>: You are encouraged to ask questions and discuss topics during the class time.</li>
-<li class="fragment"><strong>Exam</strong>: There will be two short midterm exams and one comprehensive final exam.</li>
-<li class="fragment"><strong>Team presentation</strong>: There will be a team presentation.</li>
+<li class="fragment"><strong>Laptop</strong>: You should bring your own laptop (<strong>Mac</strong> or <strong>Windows</strong>) to the classroom.
+<ul>
+<li class="fragment">The minimum specification for your laptop in this course is 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.</li>
+</ul></li>
 </ul>
+<div>
+<ul>
+<li class="fragment"><p><strong>Homework</strong>: There will be six homework assignments.</p></li>
+<li class="fragment"><p><strong>Project</strong>: There will be one project on a <em>personal website</em>.</p></li>
+<li class="fragment"><p><strong>Exams</strong>: There will be two Midterm Exams and one Final Exam.</p>
+<ul>
+<li class="fragment">The final exam is comprehensive.</li>
+</ul></li>
+<li class="fragment"><p><strong>Discussions</strong>: You are encouraged to participate in GitHub-based online discussions and class discussion, and office hours.</p>
+<ul>
+<li class="fragment">Checkout the netiquette policy in the syllabus.</li>
+</ul></li>
+</ul>
+</div>
+<!-- ## Syllabus -->
+<!-- ### Netiquette Policy for Online Discussions -->
+<!-- - Before posting your question to a discussion board, check if anyone has asked it already and received a reply. Just as you would not repeat a topic of discussion right after it happened in real life, do not do that in discussion boards either. -->
+<!-- - Stay on topic - Do not post irrelevant inks. comments, thoughts, or pictures. -->
+<!-- - Do not type in all capital letters. If you do, it will look like you are screaming. -->
+<!-- - Do not write anything that sounds angry or sarcastic, even as a joke, because without hearing your tone of voice, your peers might not realize you are joking. -->
+<!-- - Always remember to say "Please" and "Thank you" when soliciting help from your peers or an instructor. -->
+<!-- - Respect the opinions of your classmates. If you feel the need to disagree, do so respectfully and acknowledge the valid points in your peers' arguments. Acknowledge that others are entitled to have their own perspective on the issue. -->
+<!-- - If you reply to a question from a peer, make sure your answer is accurate! If you are not 100% when the homework is due, do not guess. Otherwise, you could really mess things up for your peers and they will not appreciate it. -->
+<!-- - Be brief. If you write a long dissertation in response to a simple question, it is unlikely that anyone will spend the time to read through it all. -->
+<!-- - If you ask a question and many people respond, summarize all answers and post that summary to benefit your whole class. -->
+<!-- - Do not badmouth others or call them stupid. You may disagree with their ideas, but do not mock the person. -->
+<!-- - If you refer to something your peers said earlier in the discussion, quote just a few key lines from their post so that others wont have to go back and figure out which post you re referring to. -->
+<!-- - Be forgiving. If your peer makes a mistake, do not badger him or her for it. Just let it go - it happens to the best of us. -->
+<!-- - Run a spelling and grammar check before posting anything to the discussion board. It only takes a minute, and can make the difference between sounding like a fool and sounding knowledgeable. -->
 </section>
 <section id="syllabus-6" class="slide level2">
 <h2>Syllabus</h2>
-<h3 id="team-presentations">Team Presentations</h3>
+<h3 id="personal-website">Personal Website</h3>
 <ul>
-<li class="fragment"><p>Each team will present on data storytelling with visualization.</p></li>
-<li class="fragment"><p>Data storytelling with visualization is the art of communicating complex data insights in a clear, engaging, and impactful way by blending data analysis, visual design, and narrative techniques.</p></li>
-<li class="fragment"><p>It goes beyond simply showing charts and graphs; it involves crafting a compelling story that guides the audience through the data, highlights key findings, and effectively conveys the intended message.</p></li>
+<li class="fragment"><p>You will create your own website using Quarto, R Studio, and Git.</p></li>
+<li class="fragment"><p>You will publish your homework assignments and team project on your website.</p></li>
+<li class="fragment"><p>Your website will be hosted in <a href="https://www.github.com" target="_blank">GitHub</a>.</p></li>
+<li class="fragment"><p>The basics in Markdown will be discussed.</p></li>
+<li class="fragment"><p>References:</p>
+<ul>
+<li class="fragment"><a href="https://quarto.org/docs/guide" target="_blank">Quarto Guide</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="syllabus-7" class="slide level2">
 <h2>Syllabus</h2>
-<h3 id="team-presentations-1">Team Presentations</h3>
+<h3 id="team-project">Team Project</h3>
 <ul>
-<li class="fragment">Key aspects of data storytelling include:
-<ul>
-<li class="fragment"><strong>Clarity</strong>: Make sure the visuals are easy to understand and focus on the most important information.</li>
-<li class="fragment"><strong>Structure</strong>: Just like a story, start with an introduction, present the main points, and finish with a conclusion.</li>
-<li class="fragment"><strong>Engagement</strong>: Tailor the story to your audience so it is relevant and interesting to them.</li>
-</ul></li>
+<li class="fragment">Team formation is scheduled for late March.</li>
 </ul>
+<div>
+<ul>
+<li class="fragment"><p>Each team must have one to two students.</p></li>
+<li class="fragment"><p>The project report should include data collection and exploratory data analysis using summary statistics, visual representations, and data wrangling.</p></li>
+<li class="fragment"><p>The document for the team project must be published in each member’s website.</p></li>
+<li class="fragment"><p>Any changes to team composition require approval from Byeong-Hak Choe.</p></li>
+</ul>
+</div>
 </section>
 <section id="syllabus-8" class="slide level2">
 <h2>Syllabus</h2>
-<h3 id="class-schedule">Class Schedule</h3>
+<h3 id="class-schedule-and-exams">Class Schedule and Exams</h3>
 <ul>
-<li class="fragment">There will be tentatively 42 class sessions.
-<ul>
-<li class="fragment"><strong>The midterm exam 1</strong> is scheduled on <strong>October 9, 2024, Wednesday</strong>, during the class time.</li>
-<li class="fragment"><strong>The midterm exam 2</strong> is scheduled on <strong>November 8, 2024, Friday</strong>, during the class time.</li>
-<li class="fragment"><strong>The team presentation</strong> is scheduled during the first week of December, 2024.</li>
-<li class="fragment"><strong>The final exam</strong> is scheduled on <strong>December 16, 2024, Monday, noon–2:00 P.M.</strong></li>
-</ul></li>
+<li class="fragment">There will be tentatively 42 class sessions.</li>
 </ul>
+<div>
+<ul>
+<li class="fragment"><p>The Midterm Exam I is scheduled on February 28, 2025, Friday, during the class time.</p></li>
+<li class="fragment"><p>The Midterm Exam II is scheduled on April 9, 2025, Wednesday, during the class time.</p></li>
+<li class="fragment"><p>The Final Exam is scheduled on May 14, Wednesday, 8:30 A.M.–10:30 A.M.</p></li>
+<li class="fragment"><p>No class on</p>
+<ul>
+<li class="fragment">March 17, 19, and 21 (<em>Spring Break</em>)</li>
+<li class="fragment">April 23 (<em>GREAT Day</em>)</li>
+</ul></li>
+<li class="fragment"><p>The due for the team project is May 16, 2025, Friday, 11:59 P.M., Eastern Time</p></li>
+</ul>
+</div>
 </section>
 <section id="syllabus-9" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="course-contents">Course Contents</h3>
+<ul>
+<li class="fragment">The first part of the course covers Python basics and <code>pandas</code> basics:</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-14f64036a5a42ba11d43" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-14f64036a5a42ba11d43">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7"],["Course Outlines; Overview","Introduction","Data Analytics Careers","Basic Tools","Basic Tools","Data Preparation and Management","Data Preparation and Management"],["","","HW 1","","","HW 2","Midterm I"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Contents<\/th>\n      <th>HW.Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Week","targets":0},{"name":"Contents","targets":1},{"name":"HW.Exam","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-f16751b72180f870a22c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f16751b72180f870a22c">{"x":{"filter":"none","vertical":false,"data":[["1","2","3-6"],["Course Outlines; Installing the Tools; Building a Website; Markdown","Python Basics I with Google Colab","Filtering, Sorting, and Ranking Values"],["","HW 1-2","Midterm I"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Contents<\/th>\n      <th>HW.Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Week","targets":0},{"name":"Contents","targets":1},{"name":"HW.Exam","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 <section id="syllabus-10" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="course-contents-1">Course Contents</h3>
+<ul>
+<li class="fragment">The second part of the course covers advanced <code>pandas</code>:</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f5a1cf03384b41075bf1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f5a1cf03384b41075bf1">{"x":{"filter":"none","vertical":false,"data":[["8","9","10","11"],["Data Visualization","Data Visualization","Data Visualization","Data Visualization"],["","HW 3","","HW 4 &amp; Midterm II"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Contents<\/th>\n      <th>HW.Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Week","targets":0},{"name":"Contents","targets":1},{"name":"HW.Exam","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-11bd7f1c738a8ca3e69d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-11bd7f1c738a8ca3e69d">{"x":{"filter":"none","vertical":false,"data":[["7-8","9","10"],["Group Operations","Visualizing DataFrames","Pivoting, Joining and Concatenating DataFrames"],["HW 3","HW 4","Midterm II"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Contents<\/th>\n      <th>HW.Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Week","targets":0},{"name":"Contents","targets":1},{"name":"HW.Exam","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 <section id="syllabus-11" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="course-contents-2">Course Contents</h3>
+<ul>
+<li class="fragment">The third part of the course covers data collection:</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-623112ab40f4577b6720" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-623112ab40f4577b6720">{"x":{"filter":"none","vertical":false,"data":[["12","13","14","15","16"],["Data Science","Social Media Analytics","Artificial Intelligence","Team Presentations","Wrap-up"],["","HW 5","","HW 6","Final"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Contents<\/th>\n      <th>HW.Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Week","targets":0},{"name":"Contents","targets":1},{"name":"HW.Exam","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a573e8bcdf6158176cde" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a573e8bcdf6158176cde">{"x":{"filter":"none","vertical":false,"data":[["11","12-14","15"],["Python Basics II","Web Scrapping with Selenium","Data Collection with Application Programming Interfaces (APIs)"],["","HW 5","HW 6"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Contents<\/th>\n      <th>HW.Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Week","targets":0},{"name":"Contents","targets":1},{"name":"HW.Exam","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -571,11 +683,11 @@ Byeong-Hak Choe
 <h3 id="grading">Grading</h3>
 <p><span class="math display">\[
 \begin{align}
-(\text{Total Percentage Grade}) =&amp;\;\, 0.05\times(\text{Attendance}) \notag\\
-&amp;\,+\, 0.15\times(\text{Quiz &amp; Class Participation})\notag\\
-&amp; \,+\, 0.15\times(\text{Homework})\notag\\  
-&amp;\,+\, 0.15\times(\text{Presentation})\notag\\
-&amp; \,+\, 0.50\times(\text{Exam}).\notag
+(\text{Total Percentage Grade}) =&amp;\quad\;\, 0.05\times(\text{Attendance Score})\notag\\
+&amp;\,+\, 0.05\times(\text{Participation Score})\notag\\
+&amp;\,+\, 0.15\times(\text{Project and Website Score})\notag\\
+&amp;\,+\, 0.25\times(\text{Total Homework Score})\notag\\
+&amp;\,+\, 0.50\times(\text{Total Exam Score}).\notag
 \end{align}
 \]</span></p>
 </section>
@@ -583,20 +695,47 @@ Byeong-Hak Choe
 <h2>Syllabus</h2>
 <h3 id="grading-1">Grading</h3>
 <ul>
-<li class="fragment"><p>You are allowed up to 6 absences without penalty.</p>
+<li class="fragment">You are allowed up to 5 absences without penalty.
 <ul>
 <li class="fragment">Send me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).</li>
 </ul></li>
-<li class="fragment"><p>For each absence beyond the initial six, there will be a deduction of 1% from the Total Percentage Grade.</p></li>
-<li class="fragment"><p>The single lowest homework score will be dropped when calculating the total homework score.</p>
-<ul>
-<li class="fragment">Each homework except for the homework with the lowest score accounts for 20% of the total homework score.</li>
-</ul></li>
 </ul>
+<div>
+<ul>
+<li class="fragment"><p>For each absence beyond the initial five, there will be a deduction of 1% from the Total Percentage Grade.</p></li>
+<li class="fragment"><p>Participation will be evaluated by quantity and quality of GitHub-based online discussions and in-person discussion.</p></li>
+<li class="fragment"><p>The single lowest homework score will be dropped when calculating the total homework score.</p></li>
+</ul>
+</div>
 </section>
 <section id="syllabus-14" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="grading-2">Grading</h3>
+<ul>
+<li class="fragment">The Midterm Exam Score is the maximum between
+<ol type="1">
+<li class="fragment">the simple average of the Midterm Exam I score and the Midterm Exam II Score and</li>
+<li class="fragment">the weighted average of them with one-fourth weight on the Midterm Exam I Score and three-third weight on the Midterm Exam II Score:</li>
+</ol></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+&amp;(\text{Midterm Exam Score}) \\
+=\, &amp;\text{max}\,\left\{0.50\times(\text{Midterm Exam I Score}) \,+\, 0.50\times(\text{Midterm Exam II Score})\right.,\notag\\
+&amp;\qquad\;\,\left.0.25\times(\text{Midterm Exam I Score}) \,+\, 0.75\times(\text{Midterm Exam II Score})\right\}.\notag
+\end{align}
+\]</span></p>
+</section>
+<section id="syllabus-15" class="slide level2">
+<h2>Syllabus</h2>
+<h3 id="grading-3">Grading</h3>
+<ul>
+<li class="fragment">The Total Exam Score is the maximum between
+<ol type="1">
+<li class="fragment">the simple average of the Midterm Exam Score and the Final Exam Score and</li>
+<li class="fragment">the weighted average of them with one-fourth weight on the Midterm Exam Score and three-third weight on the Final Exam Score:</li>
+</ol></li>
+</ul>
 <p><span class="math display">\[
 \begin{align}
 &amp;(\text{Total Exam Score}) \\
@@ -604,26 +743,23 @@ Byeong-Hak Choe
 &amp;\qquad\;\,\left.0.25\times(\text{Midterm Exam Score}) \,+\, 0.75\times(\text{Final Exam Score})\right\}.\notag
 \end{align}
 \]</span></p>
-<ul>
-<li class="fragment">The total exam score is the maximum between
-<ol type="1">
-<li class="fragment">the simple average of the midterm exam score and the final exam score and</li>
-<li class="fragment">the weighted average of them with one-fourth weight on the midterm exam score and three-third weight on the final exam score:</li>
-</ol></li>
-</ul>
 </section>
-<section id="syllabus-15" class="slide level2">
+<section id="syllabus-16" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="make-up-policy">Make-up Policy</h3>
 <ul>
-<li class="fragment"><p>Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.</p></li>
+<li class="fragment">Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.</li>
+</ul>
+<div>
+<ul>
 <li class="fragment"><p>If you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.</p></li>
 <li class="fragment"><p>A missed exam without an excused absence earns a grade of zero.</p></li>
 <li class="fragment"><p>Late submissions for homework assignment will be accepted with a penalty.</p></li>
 <li class="fragment"><p>A zero will be recorded for a missed assignment.</p></li>
 </ul>
+</div>
 </section>
-<section id="syllabus-16" class="slide level2">
+<section id="syllabus-17" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="academic-integrity-and-plagiarism">Academic Integrity and Plagiarism</h3>
 <ul>
@@ -640,17 +776,6 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="syllabus-17" class="slide level2">
-<h2>Syllabus</h2>
-<h3 id="artificial-intelligence-ai-policy">Artificial Intelligence (AI) Policy</h3>
-<ul>
-<li class="fragment"><p>Unless AI tools are explicitly permitted for homework or in-class quizzes, you must complete your work independently.</p></li>
-<li class="fragment"><p>This means you should not use tools like ChatGPT for any aspect of our coursework.</p></li>
-<li class="fragment"><p>Such use is a form of academic dishonesty. Use of such tools is not only cheating, it will also cheat you of the opportunity to learn and develop your own skills.</p></li>
-<li class="fragment"><p>While AI will undoubtedly play important roles in our future society, you will be better able to utilize AI if you have developed your own critical thinking, writing, and analytical skills by doing your own work.</p></li>
-<li class="fragment"><p>If you have any questions about this, please ask.</p></li>
-</ul>
-</section>
 <section id="syllabus-18" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="accessibility">Accessibility</h3>
@@ -660,6 +785,15 @@ Byeong-Hak Choe
 </ul>
 </section>
 <section id="syllabus-19" class="slide level2">
+<h2>Syllabus</h2>
+<h3 id="well-being">Well-being</h3>
+<ul>
+<li class="fragment"><p>You are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.</p></li>
+<li class="fragment"><p>Liz Felski, the School of Business Student Advocate (<a href="felski@geneseo.edu">felski@geneseo.edu</a>, South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.</p></li>
+<li class="fragment"><p>For more information, see <a href="https://www.geneseo.edu/dean_students" target="_blank">https://www.geneseo.edu/dean_students</a>.</p></li>
+</ul>
+</section>
+<section id="syllabus-20" class="slide level2">
 <h2>Syllabus</h2>
 <h3 id="career-design">Career Design</h3>
 <ul>
@@ -676,6 +810,30 @@ Byeong-Hak Choe
 <section id="prologue" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1>Prologue</h1>
 
+</section>
+<section id="why-personal-website" class="slide level2">
+<h2>Why Personal Website?</h2>
+<h3 id="benefits-of-a-personal-website-in-data-analytics">Benefits of a Personal Website in Data Analytics</h3>
+<div>
+<ul>
+<li class="fragment">Here are the example websites:
+<ul>
+<li class="fragment"><a href="https://bcecon.github.io">Byeong-Hak’s Website</a></li>
+<li class="fragment"><a href="https://bcdanl.github.io/danl-website-template">DANL Website Template</a></li>
+</ul></li>
+</ul>
+</div>
+<div>
+<ul>
+<li class="fragment"><strong>Professional Showcase</strong>: Display skills and projects</li>
+<li class="fragment"><strong>Visibility and Networking</strong>: Increase online presence</li>
+<li class="fragment"><strong>Controlled Narrative</strong>: Manage your professional brand</li>
+<li class="fragment"><strong>Content Sharing and Engagement</strong>: Publish articles, insights</li>
+<li class="fragment"><strong>Job Opportunities</strong>: Attract potential employers and clients</li>
+<li class="fragment"><strong>Long-term Asset</strong>: A growing repository of your career journey</li>
+<li class="fragment"><strong>Reproducible Research</strong>: Showcase data-driven reports</li>
+</ul>
+</div>
 </section>
 <section id="why-data-analytics" class="slide level2">
 <h2>Why Data Analytics?</h2>
@@ -740,7 +898,7 @@ Byeong-Hak Choe
 <p>From 2008 to 2023</p>
 <p><img data-src="https://bcdanl.github.io/lec_figs/stackoverflow-datascience-r-sql-2024.png"></p>
 </div><div class="column" style="width:50%;">
-<h3 id="programmers-in-2024">Programmers in 2024</h3>
+<h3 id="programmers-in-2025">Programmers in 2025</h3>
 <p><img data-src="https://bcdanl.github.io/lec_figs/chatgpt-stackoverflow-meme.jpg"></p>
 </div>
 </div>
@@ -878,6 +1036,235 @@ Byeong-Hak Choe
 <section id="python-vs.-r" class="slide level2">
 <h2>Python vs.&nbsp;R</h2>
 <iframe data-external="1" src="https://www.youtube.com/embed/4lcwTGA7MZw" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section></section>
+<section>
+<section id="installing-the-tools" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Installing the Tools</h1>
+
+</section>
+<section id="installing-the-tools-1" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="anaconda">Anaconda</h3>
+<ul>
+<li class="fragment">To install Anaconda, go to the following download page:
+<ul>
+<li class="fragment"><a href="https://www.anaconda.com/products/distribution" target="_blank">https://www.anaconda.com/products/distribution</a>.</li>
+<li class="fragment">Click the “Download” button.</li>
+</ul></li>
+</ul>
+</section>
+<section id="installing-the-tools-2" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="r-programming">R programming</h3>
+<ul>
+<li class="fragment">The R language is available as a free download from the R Project website at:
+<ul>
+<li class="fragment">Windows: <a href="https://cran.r-project.org/bin/windows/base/" target="_blank">https://cran.r-project.org/bin/windows/base/</a></li>
+<li class="fragment">Mac: <a href="https://cran.r-project.org/bin/macosx/" target="_blank">https://cran.r-project.org/bin/macosx/</a></li>
+<li class="fragment">Download the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)</li>
+</ul></li>
+</ul>
+</section>
+<section id="installing-the-tools-3" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="r-studio">R Studio</h3>
+<div>
+<ul>
+<li class="fragment">The RStudio Desktop is available as a free download from the following webpage:
+<ul>
+<li class="fragment"><a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">https://www.rstudio.com/products/rstudio/download/#download</a></li>
+</ul></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment">For <strong>Mac</strong> users, try the following steps:
+<ol type="1">
+<li class="fragment">Run <strong><code>RStudio-*.dmg</code></strong> file.</li>
+<li class="fragment">From the Pop-up menu, click the RStudio icon.</li>
+<li class="fragment">While clicking the RStudio icon, drag it to the <strong>Applications</strong> directory.</li>
+</ol></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/rstudio-mac-install.gif"></p>
+</div>
+</div>
+</section>
+<section id="installing-the-tools-4" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="rstudio-environment">RStudio Environment</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Script Pane</strong> is where you write R commands in a script file that you can save.</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">An R script is simply a text file containing R commands.</li>
+<li class="fragment">RStudio will color-code different elements of your code to make it easier to read.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment">To open an R script,
+<ul>
+<li class="fragment">File <span class="math inline">\(&gt;\)</span> New File <span class="math inline">\(&gt;\)</span> R Script</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment">To save the R script,
+<ul>
+<li class="fragment">File <span class="math inline">\(&gt;\)</span> Save</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="installing-the-tools-5" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="rstudio-environment-1">RStudio Environment</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Console Pane</strong> allows you to interact directly with the R interpreter and type commands where R will immediately execute them.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="installing-the-tools-6" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="rstudio-environment-2">RStudio Environment</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p><strong>Environment Pane</strong> is where you can see the values of variables, data frames, and other objects that are currently stored in memory.</p></li>
+<li class="fragment"><p>Type below in the Console Pane, and then hit <em>Enter</em>:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="installing-the-tools-7" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="rstudio-environment-3">RStudio Environment</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Plots Pane</strong> contains any graphics that you generate from your R code.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="installing-the-tools-8" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="r-packages-and-tidyverse">R Packages and <code>tidyverse</code></h3>
+<ul>
+<li class="fragment"><strong>R packages</strong> are collections of R functions, compiled code, and data that are combined in a structured format.</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">The <code>tidyverse</code> is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.
+<ul>
+<li class="fragment">The <code>tidyverse</code> packages work harmoniously together to make data manipulation, exploration, and visualization more.</li>
+<li class="fragment">We will use several R packages from <code>tidyverse</code> throughout the course. (e.g., <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="installing-the-tools-9" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="installing-r-packages-with-install.packagespackagename">Installing R packages with <code>install.packages("packageName")</code></h3>
+<ul>
+<li class="fragment">R packages can be easily installed from within R using functions <code>install.packages("packageName")</code>.
+<ul>
+<li class="fragment">To install the R package <code>tidyverse</code>, type and run the following from R console:</li>
+</ul></li>
+</ul>
+<div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">While running the above codes, you may encounter the question below from the R Console:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Mac</strong>: <em>“Do you want to install from sources the packages which need compilation?”</em> from Console Pane.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Windows</strong>: <em>“Would you like to use a personal library instead?”</em> from Pop-up message.</li>
+</ul>
+</div>
+</div>
+<ul>
+<li class="fragment">Type <code>no</code> in the R Console, and then hit <em>Enter</em>.</li>
+</ul>
+</div>
+</section>
+<section id="installing-the-tools-10" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="loading-r-packages-with-librarypackagename">Loading R packages with <code>library(packageName)</code></h3>
+<ul>
+<li class="fragment">Once installed, a package is loaded into an R session using <code>library(packageName)</code> so that its functions and data can be used.
+<ul>
+<li class="fragment">To load the R package <code>tidyverse</code>, type and run the following command from a R script:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>df_mpg <span class="ot">&lt;-</span> mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li class="fragment"><code>mpg</code> is the data.frame provided by the R package <code>ggplot2</code>, one of the R pakcages in <code>tidyverse</code>.</li>
+</ul>
+</div>
+</section>
+<section id="installing-the-tools-11" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="rstudio-options-setting">RStudio Options Setting</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://bcdanl.github.io/lec_figs/RStudio_options.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">This option menu is found by menus as follows:
+<ul>
+<li class="fragment">Tools <span class="math inline">\(&gt;\)</span> Global Options</li>
+</ul></li>
+<li class="fragment">Check the boxes as in the left.</li>
+<li class="fragment">Choose the option <strong><em>Never</em></strong> for <u> Save workspace to .RData on exit: </u></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="building-a-personal-website-on-github" class="slide level2">
+<h2>Building a Personal Website on GitHub</h2>
+<ul>
+<li class="fragment">Follow steps described in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html">Classwork 1</a>.</li>
+</ul>
+</section>
+<section id="lets-practice-markdown" class="slide level2">
+<h2>Let’s Practice Markdown!</h2>
+<ul>
+<li class="fragment"><p>Jupyter Notebook, Quarto, and GitHub-based Discussion Boards use <strong>markdown</strong> as its underlying document syntax.</p></li>
+<li class="fragment"><p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-02.html">Classwork 2</a>.</p></li>
+</ul>
 
 <div class="footer footer-default">
 

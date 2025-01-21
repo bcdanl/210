@@ -6,6 +6,7 @@
   {
     "listing": "/listing-danl-210-cw.html",
     "items": [
+      "/danl-cw/danl-210-cw-02.html",
       "/danl-cw/danl-210-cw-01.html"
     ]
   },
@@ -13,6 +14,7 @@
     "listing": "/index.html",
     "items": [
       "/danl-lec/danl-210-lec-01-2025-0122.html",
+      "/danl-cw/danl-210-cw-02.html",
       "/danl-cw/danl-210-cw-01.html"
     ]
   },
@@ -24,7 +26,9 @@
   },
   {
     "listing": "/listing-danl-210-rw.html",
-    "items": []
+    "items": [
+      "/danl-rw/danl-210-project.html"
+    ]
   },
   {
     "listing": "/blog-listing.html",
@@ -40,9 +44,5 @@
     "items": [
       "/danl-qa/danl-210-qa.html"
     ]
-  },
-  {
-    "listing": "/danl-qa/danl-210-qa.html",
-    "items": []
   }
 ]

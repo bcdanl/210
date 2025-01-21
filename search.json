@@ -46,7 +46,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -60,14 +60,14 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -81,7 +81,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nAugust 27, 2024\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
@@ -91,39 +91,81 @@
     "text": "Getting a GitHub account\nStep 1. Create the GitHub account with your Geneseo email.\n\nGo to GitHub.\nClick “Sign up for GitHub”.\n\n\nChoose your GitHub username carefully:\n\nhttps://USERNAME.github.io will be the address for your website.\nByeong-Hak’s GitHub username is bcdanl, so that Byeong-Hak owns the web address https://bcdanl.github.io.\n\nIt is recommended to have a username with all lower cases.\n\n\n\n\n\nInstalling git if you do not have one.\nStep 2.\n\nCheck whether git is installed in your laptop.\n\n\nFrom the Console Pane in RStudio, click Terminal tab.\n\n\n\n\n\nFrom the Terminal, run the following command to check if your laptop has git installed.\n\ngit --version\n\nIf your computer has git installed, you will see the message below and you do not need to install git:\n\ngit version 2.xx\n\nIf your computer does not have git installed, you will see the message below and you need to install git:\n\n'git' is not recognized as an internal or external command\n\n\nInstall git if you do not have one. Move to the next step if you have git installed in your laptop.\n\n\n\n\nMac\n\nGo to http://git-scm.com/downloads, and download the file.\nClick “macOS”, scroll down the webpage, and then click “installer” from the Binary installer section.\nRun the downloaded file.\n\n\n\n\nWindows\n\nGo to https://gitforwindows.org, and download the file.\nRun the downloaded file.\n\n\n\n\n\nKeep clicking “Next” to complete the installation of git.\nAfter the git installation is done, close RStudio and re-open it.\n\n\nHow to open git installation file on Mac?\n\nRun the downloaded file.\nClick Okay\nGo to “Setting” &gt; “Privacy and Security”\nGo to “General” or scroll down\nClick “Open Anyway”\n\n\n\n\n\n\n\n\nSetting up GitHub Credential on your local Git.\nStep 3. In Terminal, run the following commands one by one:\ngit config --global user.email \"YOUR_EMAIL_ADDRESS\"\ngit config --global user.name \"YOUR_USERNAME\"\nFor example, the email address for my GitHub account is bchoe@geneseo.edu, and my GitHub username is bcdanl, so that I ran below:\ngit config --global user.email \"bchoe@geneseo.edu\"\ngit config --global user.name \"bcdanl\"\n\nStep 4. Obtain a personal access token (PAT) from GitHub.\n\nIn RStudio Console, run the followings line by line:\n\ninstall.packages(\"usethis\")\nusethis::create_github_token()\n\nThen, click “Generate token” in the pop-upped web browser.\nWe can think of GitHub’s personal access token as a password that expires. You can decide how long it remains valid. My recommendation is to set its expiration for May 31, 2024, or later.\n\n\n\n\n\nThen, copy the generated PAT, and paste it to your clipboard or R script.\n\n\nStep 5. Set the GitHub credential using the PAT.\n\nIn RStudio Console, run the followings line by line:\n\ninstall.packages(\"gitcreds\")\ngitcreds::gitcreds_set()\n\nYou will be asked to provide your PAT.\nPaste your PAT to the RStudio Console, and then hit Enter.\n\n\n\n\n\n\n\nNote\n\n\n\n\nIt does not harm to create multiple PAT for one GitHub account.\nAfter the PAT expires, you should repeat the following if you want to update your GitHub website:\n\n\nCreate a new PAT:\n\nusethis::create_github_token()\n\nReplace the current PAT with the new PAT:\n\ngitcreds::gitcreds_set()\n\nSelect the option 2: Replace these credentials by typing 2 and hitting Enter on R Console.\n\n\n\n\n\n\nEstablishing the Connection between GitHub repo and your local Git\nStep 6. Login to your GitHib and make the repository.\n\nFrom https://github.com, click the plus [+] icon in the upper right corner and select “New repository”.\nName this repo USERNAME.github.io, which will be the domain for your website.\n\n\ne.g., If your GitHub username is abc9, the name of your repo should be abc9.github.io, not abc_9.github.io.\n\n\nThen, copy the web address of your GitHub repo, https://github.com/USERNAME/USERNAME.github.io\n\n\nFor example, the web address for Byeong-Hak’s GitHub repo is https://github.com/bcdanl/bcdanl.github.io.\n\n\nStep 7. Create a RStudio project with Version Control\n\n\n\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Version Control” &gt; “Git”\nPaste the web address of your GitHub repo to the Repository URL menu.\nClick “Browse” to select the parent directory for your local project directory (I recommend “Documents” folder.)\nClick “Create”\n\n\n\n\n\n\n\nNote\n\n\n\nIf Step 7 does not work on your laptop, try below Steps 7-1 and 7-2 instead. If Step 7 DOES work well, skip Steps 7-1 and 7-2.\n\n\nStep 7-1. Use git clone to establish the connection between GitHub repo and your local laptop:\n\nChange directory to “Documents” in Terminal using cd command.\n\ncd &lt;pathname of \"Documents\" directory&gt;\n\nHere, you need to know the pathname of “Documents” directory.\nFor example, LAPTOP_USERNAME below is not your GitHub username but one for your local laptop.\n\nMac\ncd /Users/LAPTOP_USERNAME/Documents\nWindows\ncd C:/Users/LAPTOP_USERNAME/Documents\n\nUse git clone to creates a local copy of the GitHub Repository.\n\ngit clone &lt;repository-url&gt;\n\nFor example,\n\ngit clone https://github.com/USERNAME/USERNAME.github.io\n\nStep 7-2. Create a RStudio project from Existing Directory\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Existing Directory”\nClick “Browse” to select the local copy of the GitHub Repository\nClick “Create Project”\n\n\n\n\nDownloading Website Template Files\nStep 8. Download the files of website template:\n\nGo to the following webpage: https://github.com/bcdanl/danl-website-template\nFrom the webpage above, click the green icon &lt; &gt; Code, and then click “Download Zip”\nExtract the Zip file you have downloaded\nIf there are the files, .gitignore, .DS_Store, or *.Rproj, in the folder, delete all of them.\nMove all the files that were compressed in the Zip file to your local project directory, USERNAME.github.io.\n\n\nSelect all the files in the danl-website-template folder (Tip: Ctrl + A (Windows) / command + A (Mac) selects all files in a directory).\nThen, Ctrl + C (Windows) / command + C (Mac) to copy them.\nThen, go to your local project directory USERNAME.github.io.\nThen, Ctrl + V (Windows) / command + V (Mac) to paste them to your local project directory USERNAME.github.io.\n\n\nRemove the danl-website-template directory from your local project directory, if you have one.\n\n\nAll the website files should be located at the same level with the R Project file (USERNAME.github.io.Rproj), shown below.\n\n\n\n\n\n\n\nPushing the Website Files to the GitHub repository\n\n\n\nStep 8. Push the files to your GitHub repository\n\nOn Terminal within RStudio, execute the following 3-step git commands, which will stage, commit, and push all the files in the local working directory to your GitHub repository:\n\n\ngit add . adds changes in your local working directory (e.g., edited files, new files, deleted files) to the staging area, which is a temporary area where you can prepare your next commit\n\ngit add .\n\ngit commit -m \"...\" records the changes in the staging area as a new snapshot in the local working directory, along with a message describing the changes.\n\ngit commit -m \"any message to describe the changes\"\n\ngit push uploads the local changes to the online repository in GitHub.\n\ngit push\n\nStep 9. Check whether the files are well uploaded.\n\nGo to the webpages of your GitHub repository and your website:\n\nhttps://github.com/USERNAME/USERNAME.github.io.git\nhttps://USERNAME.github.io\nRefresh the webpages (Ctrl + R for Windows users; cmd + R for Mac users)\n\nAdd a URL for your website (https://YOUR_GITHUB_USERNAME.github.io/) in About section in your GihtHub repository webpage by clicking the setting. Below describes how to do it:\n\n\n\n\nDiscussion\nWelcome to our Classwork 1 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 1.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/beer-markets/beer-markets.html",
-    "href": "posts/beer-markets/beer-markets.html",
-    "title": "Beer Markets",
+    "objectID": "listing-danl-210-rw.html",
+    "href": "listing-danl-210-rw.html",
+    "title": "DANL 210 - Project",
     "section": "",
-    "text": "Diving into the complex world of what people like in their beer, the beer_markets.csv dataset comes across as a goldmine of data, showing us the detailed interactions between buyers and their favorite beers. This dataset covers everything from how much and at what price people are buying beer to how deals and brand loyalty influence their decisions, across different types of people and places. As we start digging into this dataset, we aim to uncover the patterns that show what really influences the modern beer drinker’s choices, offering up valuable insights for marketers, industry watchers, and beer lovers. By breaking down the data, our exploration will shine a light on the factors that drive consumer behavior in the beer market, giving us a full picture of the trends that shape this lively industry.\nCode\n# Creating an interactive table\n!pip install itables\nfrom itables import init_notebook_mode\nfrom itables import show\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# Reading the CSV file\nbeer_data = pd.read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\nshow(beer_data)\n\n\n\n\n\n\n\n    \n      \n      hh\n      _purchase_desc\n      quantity\n      brand\n      dollar_spent\n      beer_floz\n      price_per_floz\n      container\n      promo\n      market\n      buyertype\n      income\n      childrenUnder6\n      children6to17\n      age\n      employment\n      degree\n      cow\n      race\n      microwave\n      dishwasher\n      tvcable\n      singlefamilyhome\n      npeople\n    \n  Loading... (need help?)\nCode\n# Setting up the visualization settings\nsns.set(style=\"whitegrid\")\n\n# Calculate total quantity and spending for each brand\nbrand_summary = beer_data.groupby('brand').agg({'quantity':'sum', 'dollar_spent':'sum'}).reset_index()\n\n# Sort by total quantity and spending\nbrand_summary_sorted_quantity = brand_summary.sort_values('quantity', ascending=False)\nbrand_summary_sorted_spent = brand_summary.sort_values('dollar_spent', ascending=False)\nCode\n# Plotting total quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=brand_summary_sorted_quantity, palette='viridis')\nplt.title('Total Quantity of Beer Purchased by Brand')\nplt.xlabel('Total Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe bar charts above display the total quantity of beer purchased and the total spending by brand. From the looks of it, certain brands dominate in terms of quantity sold and total spending, indicating their popularity.\nNow, let’s calculate the average quantity purchased and average spending per purchase. For this, we’ll consider each row in the dataset as a separate purchase and compute the averages accordingly.\nCode\n# Calculate average quantity purchased and average spending per purchase\naverage_purchase = beer_data.groupby('brand').agg({\n    'quantity': 'mean',\n    'dollar_spent': 'mean'\n}).reset_index()\n\n# Sort by average quantity and average spending\naverage_purchase_sorted_quantity = average_purchase.sort_values('quantity', ascending=False)\naverage_purchase_sorted_spent = average_purchase.sort_values('dollar_spent', ascending=False)\n\n# Plotting average quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=average_purchase_sorted_quantity, palette='viridis')\nplt.title('Average Quantity of Beer Purchased by Brand')\nplt.xlabel('Average Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe visualizations above depict the average quantity of beer purchased per brand and the average spending per brand. This shows which brands tend to be bought in larger quantities on average and which brands tend to have higher spending per purchase, which could be indicative of their price point or the purchase of premium products.\nNext, we’ll look at the total spending across different markets to see if there are any notable differences in spending habits geographically. To do this, we’ll sum up the spending in each market and visualize it.\nCode\n# Calculate total spending in each market\nmarket_spending_summary = beer_data.groupby('market').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nmarket_spending_summary_sorted = market_spending_summary.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending in each market\nplt.figure(figsize=(12, 18))\nsns.barplot(x='dollar_spent', y='market', data=market_spending_summary_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Market')\nplt.xlabel('Total Spending')\nplt.ylabel('Market')\nplt.show()\nThe bar chart illustrates the total spending on beer by market, showcasing the differences in spending habits across various regions. Some markets have significantly higher spending, which could be due to a variety of factors including market size, consumer preferences, or economic factors.\nNow, let’s move on to the second analysis:"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "posts/beer-markets/beer-markets.html#demographic-analysis",
-    "href": "posts/beer-markets/beer-markets.html#demographic-analysis",
-    "title": "Beer Markets",
-    "section": "Demographic Analysis",
-    "text": "Demographic Analysis\nWe will examine which demographics are buying what kind of beer and whether spending habits vary by demographics such as age, employment, and race. For this, we could look at:\n\nSpending by age group\nSpending by employment status\nSpending by race\n\nI’ll start by analyzing spending by age group.\n\n\nCode\n# Calculate total spending by age group\nage_group_spending = beer_data.groupby('age').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nage_group_spending_sorted = age_group_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by age group\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='age', data=age_group_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Age Group')\nplt.xlabel('Total Spending')\nplt.ylabel('Age Group')\nplt.show()\n\n\n\n\n\nThe bar chart demonstrates the total spending on beer segmented by age group, highlighting which age groups spend the most on beer. It appears that certain age groups are more dominant in beer spending, which may align with the purchasing power or preferences of those groups.\nNext, we will examine spending by employment status.\n\n\nCode\n# Calculate total spending by employment status\nemployment_spending = beer_data.groupby('employment').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nemployment_spending_sorted = employment_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by employment status\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='employment', data=employment_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Employment Status')\nplt.xlabel('Total Spending')\nplt.ylabel('Employment Status')\nplt.show()\n\n\n\n\n\nThe visualization shows the total spending on beer by employment status. We can see that certain employment groups, such as full-time workers, are spending more on beer, which might be related to their disposable income.\nFinally, let’s look at spending by race to complete the demographic analysis.\n\n\nCode\n# Calculate total spending by race\nrace_spending = beer_data.groupby('race').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nrace_spending_sorted = race_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by race\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='race', data=race_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Race')\nplt.xlabel('Total Spending')\nplt.ylabel('Race')\nplt.show()\n\n\n\n\n\nThe bar chart above indicates the total spending on beer broken down by race, highlighting which racial groups account for the most beer spending within the dataset. This could reflect both the demographics of the regions where the data was collected and cultural preferences regarding beer.\nNow, let’s proceed to the third analysis:"
-  },
-  {
-    "objectID": "posts/beer-markets/beer-markets.html#price-sensitivity",
-    "href": "posts/beer-markets/beer-markets.html#price-sensitivity",
-    "title": "Beer Markets",
-    "section": "Price Sensitivity",
-    "text": "Price Sensitivity\nWe’ll look at the price per fluid ounce and see if there are any trends or correlations with the quantity purchased or the brand popularity. To do this, we’ll visualize how the price is sensitive to the quantity purchased by brand.\n\n\nCode\n# Ensure there's no entries with 0 for 'price_per_floz' or 'quantity' to avoid log(0) issues\nfiltered_data = beer_data[(beer_data['price_per_floz'] &gt; 0) & (beer_data['quantity'] &gt; 0)]\n\n# Calculate log values for both 'price_per_floz' and 'quantity'\nfiltered_data['log_price_per_floz'] = np.log(filtered_data['price_per_floz'])\nfiltered_data['log_quantity'] = np.log(filtered_data['quantity'])\n\n# Use seaborn to create a scatterplot with fitted lines, facetted by 'brand'\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', col='brand', col_wrap=4, height=3, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5}, aspect = .75)\n\n# Adjusting plot aesthetics\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nHere’s the scatterplot with fitted straight lines for the log of price_per_floz versus the log of quantity, facetted by brands. Each subplot represents a different brand, showing the relationship between these two logarithmic variables along with a fitted line to illustrate the trend within each brand’s data.\n\n\nCode\n# Adjust the facetting to split rows by 'brand' and columns by 'promo' for a more detailed comparative analysis\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', row='brand', col='promo', height=3, aspect=.75, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5})\n\n# Adjusting plot aesthetics\ng.set_titles(\"Brand: {row_name}\\n Promo: {col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9, wspace = .4, hspace = .4)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nThe scatterplot has been reorganized to split rows by brand and columns by promo status, offering a comprehensive view across different brands and their promotional status. Each subplot now provides a clear comparison of the log of price_per_floz versus the log of quantity for purchases made on promotion versus those that were not, across various beer brands.\nThis layout facilitates an easier comparison across brands and how promotion impacts the relationship between quantity and price per fluid ounce within each brand.\nLastly, let’s move to the fourth analysis:"
-  },
-  {
-    "objectID": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
-    "href": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
-    "title": "Beer Markets",
-    "section": "Promotional Impact on Quantity Purchased",
-    "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/py-basic/blog-python-basics.html",
+    "href": "posts/py-basic/blog-python-basics.html",
+    "title": "Python Basics",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\n Back to top"
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#what-is-python",
+    "href": "posts/py-basic/blog-python-basics.html#what-is-python",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
+    "href": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
+    "title": "Python Basics",
+    "section": "",
+    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#control-structures",
+    "href": "posts/py-basic/blog-python-basics.html#control-structures",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#functions",
+    "href": "posts/py-basic/blog-python-basics.html#functions",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
+  },
+  {
+    "objectID": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
+    "href": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+  },
+  {
+    "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
+    "href": "posts/nba/nba.html#salary-distribution-among-teams",
+    "title": "NBA",
+    "section": "Salary Distribution Among Teams",
+    "text": "Salary Distribution Among Teams\nLet’s start with the salary distribution among teams using seaborn for visualization. ​​\n\n\nCode\n\n# Handle missing values in 'Salary' by replacing them with the median salary\nmedian_salary = nba['Salary'].median()\nnba['Salary'].fillna(median_salary, inplace=True)\n\n\n\n\nCode\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Calculate total salary by team\nteam_salary = (\n    nba\n    .groupby('Team')['Salary']\n    .sum()\n    .reset_index()\n    .sort_values(by='Salary', ascending=False)\n)\n\n# Plot total salary by team\nplt.figure(figsize=(10, 8))\nsns.barplot(data = team_salary,\n            x = 'Salary', y = 'Team',\n            palette = 'coolwarm')\nplt.title('Total Salary Distribution Among NBA Teams')\nplt.xlabel('Total Salary')\nplt.ylabel('Team')\nplt.xticks(rotation=45)\nplt.show()\n\n\n\n\n\nThe visualization above displays the total salary distribution among NBA teams, with teams sorted by their total salary expenditure. This bar plot reveals which teams are the biggest spenders on player salaries and which are more conservative. The color gradient provides a visual cue to easily distinguish between the higher and lower spending teams. Portland Trail Blazers spent most in their players’ salary, followed by Golden State Warriors and Philadelphia 76ers."
+  },
+  {
+    "objectID": "posts/nba/nba.html#player-age-distribution",
+    "href": "posts/nba/nba.html#player-age-distribution",
+    "title": "NBA",
+    "section": "Player Age Distribution",
+    "text": "Player Age Distribution\nNext, let’s explore the Player Age Distribution across the NBA. We’ll create a histogram to visualize how player ages are distributed, which will help us understand if the league trends younger, older, or has a balanced age mix. ​​\n\n\nCode\n# Convert 'Birthday' column to datetime format\nfrom dateutil import parser\nnba['Birthday'] = nba['Birthday'].apply(lambda x: parser.parse(x))\n\n# Now, let's calculate the age of each player\nnba['Age'] = (datetime.now() - nba['Birthday']).dt.days // 365\n\n# Plot the age distribution of NBA players\nplt.figure(figsize=(10, 6))\nsns.histplot(nba['Age'],\n             bins = 15,\n             kde = True,\n             color = 'skyblue')\nplt.title('Age Distribution of NBA Players')\nplt.xlabel('Age')\nplt.ylabel('Count')\nplt.show()\n\n\n\n\n\n\nThe histogram above shows the age distribution of NBA players, with a kernel density estimate (KDE) overlay to indicate the distribution shape. The majority of players fall within a certain age range from 25 to 35, illustrating the league’s age dynamics. The plot helps identify the common ages for NBA players and whether there are significant numbers of very young or older players."
+  },
+  {
+    "objectID": "posts/nba/nba.html#position-wise-salary-insights",
+    "href": "posts/nba/nba.html#position-wise-salary-insights",
+    "title": "NBA",
+    "section": "Position-wise Salary Insights",
+    "text": "Position-wise Salary Insights\nMoving on to Position-wise Salary Insights, we’ll examine how average salaries differ across player positions. This analysis could reveal which positions are typically higher-paid, potentially reflecting their value on the basketball court. Let’s create a box plot to visualize the salary distribution for each position. ​​\n\n\nCode\n# Plot salary distribution by player position\nplt.figure(figsize=(10, 6))\nsns.boxplot(data = nba,\n            x = 'Position', y = 'Salary',\n            palette = 'Set2')\nplt.title('Salary Distribution by Position')\nplt.xlabel('Position')\nplt.ylabel('Salary')\nplt.show()\n\n\n\n\n\nThe box plot above illustrates the salary distribution by player position, showcasing the variation in salaries among different positions within the NBA. This visualization helps us understand which positions tend to have higher median salaries and the spread of salaries within each position, including outliers that represent exceptionally high or low salaries. While the positions of C and PG have the widest interquantiles of salaries, the positions of FC, F, G, and GF have the narrowest interquantiles of them."
+  },
+  {
+    "objectID": "posts/nba/nba.html#top-10-highest-paid-players",
+    "href": "posts/nba/nba.html#top-10-highest-paid-players",
+    "title": "NBA",
+    "section": "Top 10 Highest Paid Players",
+    "text": "Top 10 Highest Paid Players\nLastly, we’ll identify the Top 10 Highest Paid Players in the NBA. This analysis highlights the star earners of the league, providing insights into which players command the highest salaries and potentially why. Let’s extract and visualize this information. ​​\n\n\nCode\n# Identify the top 10 highest paid players\ntop_10_salaries = nba.sort_values(by='Salary', ascending=False).head(10)\n\n# Plot the top 10 highest paid players\nplt.figure(figsize=(12, 8))\nsns.barplot(data = top_10_salaries,\n            x = 'Salary', y = 'Name',\n            palette = 'viridis')\nplt.title('Top 10 Highest Paid NBA Players')\nplt.xlabel('Salary')\nplt.ylabel('Player')\nplt.show()\n\n\n\n\n\nThe bar chart above reveals the top 10 highest-paid NBA players, showcasing those who stand at the pinnacle of the league in terms of salary. Stephen Curry is the highest-paid NBA player, followed by Russel Westbrook and Chris Paul. This visualization not only highlights the star players who command the highest salaries but also may reflect their marketability, performance, and contribution to their respective teams."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-1",
@@ -137,147 +179,140 @@
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-2",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+    "text": "Instructor\nEconomics, Data Science, and Climate Change\n\nChoe, B.H., 2025. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-3",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-3",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance can be significant barriers to emissions reductions within these countries."
+    "text": "Instructor\nEconomics, Data Science, and Climate Change\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance can be significant barriers to emissions reductions within these countries."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-4",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-4",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nData include:\n\nGlobal climate finance data (e.g., donors, recipients, characteristics of climate change projects)\nWorld Bank Governance Indicators over the years (e.g., government effectiveness, voice and accountability, political stability and absence of violence/terrorism, regulatory quality, rule of law, control of corruption)\nVarious economic indicators (e.g., trade pattern of low carbon technology products, macroeconomic risks, energy)"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-5",
-    "href": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-5",
-    "title": "Lecture 1",
-    "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H., James, Alex and Newbold, Steve, 2025. “Estimating the Value of Statistical Life (VSL) through Big Data”\nVSL is the monetary value associated with reducing the risk of death.\n\nHow much value would that be? How can we measure it?"
+    "text": "Instructor\nEconomics, Data Science, and Climate Change\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nData include:\n\nGlobal climate finance data (e.g., donors, recipients, characteristics of climate change projects)\nWorld Bank Governance Indicators over the years (e.g., government effectiveness, voice and accountability, political stability and absence of violence/terrorism, regulatory quality, rule of law, control of corruption)\nVarious economic indicators (e.g., trade pattern of low carbon technology products, macroeconomic risks, energy)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-1",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-1",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://mylearning.suny.edu/d2l/home/1513935\nhttp://bcdanl.github.io\n\nOffice: South Hall 301\nOffice Hours:\n\nIn-person: Mondays and Wednesdays 1:30 P.M.–3:00 P.M.\nOnline: by appointment via email."
+    "text": "Syllabus\nEmail, Class & Office Hours\n\nEmail: bchoe@geneseo.edu\nClass Homepage:\n\nhttps://brightspace.geneseo.edu/\nhttp://bcdanl.github.io/210/\n\nOffice: South Hall 227B\nOffice Hours:\n\nMondays 5:00 P.M. – 6:30 P.M.\n\nWednesdays 5:00 P.M. – 6:30 P.M."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-2",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-2",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Description\n\nThis course offers a practical introduction to the data analytics process and methods.\nThe goal is to help you unlock the potential of data analysis and enhance your ability to transform data into a powerful decision-making tool.\nYou will develop foundational data analytics skills that will prepare you for a career or further studies in more advanced data analytics topics.\nThe course covers: (1) an introduction to data analytics thinking, (2) exploratory data analysis through data wrangling and visualization, and (3) an introduction to data science, social media analytics, and artificial intelligence (AI).\nThroughout the course, you will gain hands-on experience with the Python and R programming languages, along with its associated data analysis libraries and AI tools."
+    "text": "Syllabus\nCourse Description\n\nThis course is designed to provide a comprehensive overview of data handling techniques, focusing on practical application through case studies.\nKey topics include:\n\ndata loading, cleaning, transformation, merging, and reshaping;\ntechniques for slicing, dicing, and summarizing datasets;\ndata collection via web scraping and APIs.\n\nThese areas will be explored through detailed, real-world examples to address common data analysis challenges.\nThroughout the course, students will gain hands-on experience with Python and its data analysis libraries, along with practical applications of git and GitHub."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-3",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-3",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Learning Outcomes\n\nGrasp the basic principles of data analytics, including data types and data processing.\nGain introductory experience with programming languages commonly used in data analytics, such as Python or R.\nDevelop the ability to create and interpret various types of data visualizations.\nEnhance critical thinking skills by learning to ask relevant questions and draw insights from data.\nApply data analytics techniques to solve real-world problems in various domains."
+    "text": "Syllabus\nRequired Materials\n\nPython for Data Analysis (3rd Edition) by Wes McKinney\n\nA free online version of this book is available."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-4",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-4",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nReference Materials\n\nR for Data Science (2nd Edition) by Hadley Wickham & Garrett Grolemund.\nPython for Data Science by Arthur Turrell et. al.\nCoding for Economists by Arthur Turrell.\nStatistical Inference via Data Science: A ModernDive into R and the Tidyverse by Chester Ismay and Albert Y. Kim."
+    "text": "Syllabus\nReference Materials\n\nGuide for Quarto\nPython Programming for Data Science by Tomas Beuzen\nCoding for Economists by Arthur Turrell\nPython for Econometrics in Economics by Fabian H. C. Raters\nQuantEcon DataScience - Python Fundamentals by Chase Coleman, Spencer Lyon, and Jesse Perla\nQuantEcon DataScience - pandas by Chase Coleman, Spencer Lyon, and Jesse Perla"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-5",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-5",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Requirements\n\nHomework: There will be six homework assignments.\nQuiz: There will be in-class quizzes.\nClass Participation: You are encouraged to ask questions and discuss topics during the class time.\nExam: There will be two short midterm exams and one comprehensive final exam.\nTeam presentation: There will be a team presentation."
+    "text": "Syllabus\nCourse Requirements\n\nLaptop: You should bring your own laptop (Mac or Windows) to the classroom.\n\nThe minimum specification for your laptop in this course is 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.\n\n\n\n\nHomework: There will be six homework assignments.\nProject: There will be one project on a personal website.\nExams: There will be two Midterm Exams and one Final Exam.\n\nThe final exam is comprehensive.\n\nDiscussions: You are encouraged to participate in GitHub-based online discussions and class discussion, and office hours.\n\nCheckout the netiquette policy in the syllabus."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-6",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-6",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nTeam Presentations\n\nEach team will present on data storytelling with visualization.\nData storytelling with visualization is the art of communicating complex data insights in a clear, engaging, and impactful way by blending data analysis, visual design, and narrative techniques.\nIt goes beyond simply showing charts and graphs; it involves crafting a compelling story that guides the audience through the data, highlights key findings, and effectively conveys the intended message."
+    "text": "Syllabus\nPersonal Website\n\nYou will create your own website using Quarto, R Studio, and Git.\nYou will publish your homework assignments and team project on your website.\nYour website will be hosted in GitHub.\nThe basics in Markdown will be discussed.\nReferences:\n\nQuarto Guide"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-7",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-7",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nTeam Presentations\n\nKey aspects of data storytelling include:\n\nClarity: Make sure the visuals are easy to understand and focus on the most important information.\nStructure: Just like a story, start with an introduction, present the main points, and finish with a conclusion.\nEngagement: Tailor the story to your audience so it is relevant and interesting to them."
+    "text": "Syllabus\nTeam Project\n\nTeam formation is scheduled for late March.\n\n\n\nEach team must have one to two students.\nThe project report should include data collection and exploratory data analysis using summary statistics, visual representations, and data wrangling.\nThe document for the team project must be published in each member’s website.\nAny changes to team composition require approval from Byeong-Hak Choe."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-8",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-8",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nClass Schedule\n\nThere will be tentatively 42 class sessions.\n\nThe midterm exam 1 is scheduled on October 9, 2024, Wednesday, during the class time.\nThe midterm exam 2 is scheduled on November 8, 2024, Friday, during the class time.\nThe team presentation is scheduled during the first week of December, 2024.\nThe final exam is scheduled on December 16, 2024, Monday, noon–2:00 P.M."
+    "text": "Syllabus\nClass Schedule and Exams\n\nThere will be tentatively 42 class sessions.\n\n\n\nThe Midterm Exam I is scheduled on February 28, 2025, Friday, during the class time.\nThe Midterm Exam II is scheduled on April 9, 2025, Wednesday, during the class time.\nThe Final Exam is scheduled on May 14, Wednesday, 8:30 A.M.–10:30 A.M.\nNo class on\n\nMarch 17, 19, and 21 (Spring Break)\nApril 23 (GREAT Day)\n\nThe due for the team project is May 16, 2025, Friday, 11:59 P.M., Eastern Time"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-9",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-9",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents"
+    "text": "Syllabus\nCourse Contents\n\nThe first part of the course covers Python basics and pandas basics:"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-10",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-10",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents"
+    "text": "Syllabus\nCourse Contents\n\nThe second part of the course covers advanced pandas:"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-11",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-11",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nCourse Contents"
+    "text": "Syllabus\nCourse Contents\n\nThe third part of the course covers data collection:"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-12",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-12",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =&\\;\\, 0.05\\times(\\text{Attendance}) \\notag\\\\\n&\\,+\\, 0.15\\times(\\text{Quiz & Class Participation})\\notag\\\\\n& \\,+\\, 0.15\\times(\\text{Homework})\\notag\\\\  \n&\\,+\\, 0.15\\times(\\text{Presentation})\\notag\\\\\n& \\,+\\, 0.50\\times(\\text{Exam}).\\notag\n\\end{align}\n\\]"
+    "text": "Syllabus\nGrading\n\\[\n\\begin{align}\n(\\text{Total Percentage Grade}) =&\\quad\\;\\, 0.05\\times(\\text{Attendance Score})\\notag\\\\\n&\\,+\\, 0.05\\times(\\text{Participation Score})\\notag\\\\\n&\\,+\\, 0.15\\times(\\text{Project and Website Score})\\notag\\\\\n&\\,+\\, 0.25\\times(\\text{Total Homework Score})\\notag\\\\\n&\\,+\\, 0.50\\times(\\text{Total Exam Score}).\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-13",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-13",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\nYou are allowed up to 6 absences without penalty.\n\nSend me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).\n\nFor each absence beyond the initial six, there will be a deduction of 1% from the Total Percentage Grade.\nThe single lowest homework score will be dropped when calculating the total homework score.\n\nEach homework except for the homework with the lowest score accounts for 20% of the total homework score."
+    "text": "Syllabus\nGrading\n\nYou are allowed up to 5 absences without penalty.\n\nSend me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).\n\n\n\n\nFor each absence beyond the initial five, there will be a deduction of 1% from the Total Percentage Grade.\nParticipation will be evaluated by quantity and quality of GitHub-based online discussions and in-person discussion.\nThe single lowest homework score will be dropped when calculating the total homework score."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-14",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-14",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nGrading\n\\[\n\\begin{align}\n&(\\text{Total Exam Score}) \\\\\n=\\, &\\text{max}\\,\\left\\{0.50\\times(\\text{Midterm Exam Score}) \\,+\\, 0.50\\times(\\text{Final Exam Score})\\right.,\\notag\\\\\n&\\qquad\\;\\,\\left.0.25\\times(\\text{Midterm Exam Score}) \\,+\\, 0.75\\times(\\text{Final Exam Score})\\right\\}.\\notag\n\\end{align}\n\\]\n\nThe total exam score is the maximum between\n\nthe simple average of the midterm exam score and the final exam score and\nthe weighted average of them with one-fourth weight on the midterm exam score and three-third weight on the final exam score:"
+    "text": "Syllabus\nGrading\n\nThe Midterm Exam Score is the maximum between\n\nthe simple average of the Midterm Exam I score and the Midterm Exam II Score and\nthe weighted average of them with one-fourth weight on the Midterm Exam I Score and three-third weight on the Midterm Exam II Score:\n\n\n\\[\n\\begin{align}\n&(\\text{Midterm Exam Score}) \\\\\n=\\, &\\text{max}\\,\\left\\{0.50\\times(\\text{Midterm Exam I Score}) \\,+\\, 0.50\\times(\\text{Midterm Exam II Score})\\right.,\\notag\\\\\n&\\qquad\\;\\,\\left.0.25\\times(\\text{Midterm Exam I Score}) \\,+\\, 0.75\\times(\\text{Midterm Exam II Score})\\right\\}.\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-15",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-15",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nMake-up Policy\n\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero.\nLate submissions for homework assignment will be accepted with a penalty.\nA zero will be recorded for a missed assignment."
+    "text": "Syllabus\nGrading\n\nThe Total Exam Score is the maximum between\n\nthe simple average of the Midterm Exam Score and the Final Exam Score and\nthe weighted average of them with one-fourth weight on the Midterm Exam Score and three-third weight on the Final Exam Score:\n\n\n\\[\n\\begin{align}\n&(\\text{Total Exam Score}) \\\\\n=\\, &\\text{max}\\,\\left\\{0.50\\times(\\text{Midterm Exam Score}) \\,+\\, 0.50\\times(\\text{Final Exam Score})\\right.,\\notag\\\\\n&\\qquad\\;\\,\\left.0.25\\times(\\text{Midterm Exam Score}) \\,+\\, 0.75\\times(\\text{Final Exam Score})\\right\\}.\\notag\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-16",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-16",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nAcademic Integrity and Plagiarism\n\nAll homework assignments and exams must be the original work by you.\nExamples of academic dishonesty include:\n\nrepresenting the work, thoughts, and ideas of another person as your own\nallowing others to represent your work, thoughts, or ideas as theirs, and\nbeing complicit in academic dishonesty by suspecting or knowing of it and not taking action.\n\nGeneseo’s Library offers frequent workshops to help you understand how to paraphrase, quote, and cite outside sources properly.\n\nSee https://www.geneseo.edu/library/library-workshops."
+    "text": "Syllabus\nMake-up Policy\n\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\n\n\n\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero.\nLate submissions for homework assignment will be accepted with a penalty.\nA zero will be recorded for a missed assignment."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-17",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-17",
     "title": "Lecture 1",
     "section": "Syllabus",
-    "text": "Syllabus\nArtificial Intelligence (AI) Policy\n\nUnless AI tools are explicitly permitted for homework or in-class quizzes, you must complete your work independently.\nThis means you should not use tools like ChatGPT for any aspect of our coursework.\nSuch use is a form of academic dishonesty. Use of such tools is not only cheating, it will also cheat you of the opportunity to learn and develop your own skills.\nWhile AI will undoubtedly play important roles in our future society, you will be better able to utilize AI if you have developed your own critical thinking, writing, and analytical skills by doing your own work.\nIf you have any questions about this, please ask."
+    "text": "Syllabus\nAcademic Integrity and Plagiarism\n\nAll homework assignments and exams must be the original work by you.\nExamples of academic dishonesty include:\n\nrepresenting the work, thoughts, and ideas of another person as your own\nallowing others to represent your work, thoughts, or ideas as theirs, and\nbeing complicit in academic dishonesty by suspecting or knowing of it and not taking action.\n\nGeneseo’s Library offers frequent workshops to help you understand how to paraphrase, quote, and cite outside sources properly.\n\nSee https://www.geneseo.edu/library/library-workshops."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-18",
@@ -289,6 +324,13 @@
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-19",
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-19",
+    "title": "Lecture 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nWell-being\n\nYou are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.\nLiz Felski, the School of Business Student Advocate (felski@geneseo.edu, South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.\nFor more information, see https://www.geneseo.edu/dean_students."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-20",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#syllabus-20",
     "title": "Lecture 1",
     "section": "Syllabus",
     "text": "Syllabus\nCareer Design\n\nTo get information about career development, you can visit the Career Development Events Calendar (https://www.geneseo.edu/career_development/events/calendar).\nYou can stop by South 112 to get assistance in completing your Handshake Profile https://app.joinhandshake.com/login.\n\nHandshake is ranked #1 by students as the best place to find full-time jobs.\n50% of the 2018-2020 graduates received a job or internship offer on Handshake.\nHandshake is trusted by all 500 of the Fortune 500."
@@ -333,7 +375,7 @@
     "href": "danl-lec/danl-210-lec-01-2025-0122.html#the-state-of-the-art",
     "title": "Lecture 1",
     "section": "The State of the Art",
-    "text": "The State of the Art\nGenerative AI and ChatGPT\n\n\nData Science and Big Data Trend\nFrom 2008 to 2023\n\n\nProgrammers in 2024"
+    "text": "The State of the Art\nGenerative AI and ChatGPT\n\n\nData Science and Big Data Trend\nFrom 2008 to 2023\n\n\nProgrammers in 2025"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#the-state-of-the-art-1",
@@ -406,81 +448,277 @@
     "text": "Python vs. R"
   },
   {
-    "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
-    "href": "posts/nba/nba.html#salary-distribution-among-teams",
-    "title": "NBA",
-    "section": "Salary Distribution Among Teams",
-    "text": "Salary Distribution Among Teams\nLet’s start with the salary distribution among teams using seaborn for visualization. ​​\n\n\nCode\n\n# Handle missing values in 'Salary' by replacing them with the median salary\nmedian_salary = nba['Salary'].median()\nnba['Salary'].fillna(median_salary, inplace=True)\n\n\n\n\nCode\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Calculate total salary by team\nteam_salary = (\n    nba\n    .groupby('Team')['Salary']\n    .sum()\n    .reset_index()\n    .sort_values(by='Salary', ascending=False)\n)\n\n# Plot total salary by team\nplt.figure(figsize=(10, 8))\nsns.barplot(data = team_salary,\n            x = 'Salary', y = 'Team',\n            palette = 'coolwarm')\nplt.title('Total Salary Distribution Among NBA Teams')\nplt.xlabel('Total Salary')\nplt.ylabel('Team')\nplt.xticks(rotation=45)\nplt.show()\n\n\n\n\n\nThe visualization above displays the total salary distribution among NBA teams, with teams sorted by their total salary expenditure. This bar plot reveals which teams are the biggest spenders on player salaries and which are more conservative. The color gradient provides a visual cue to easily distinguish between the higher and lower spending teams. Portland Trail Blazers spent most in their players’ salary, followed by Golden State Warriors and Philadelphia 76ers."
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-1",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-1",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button."
   },
   {
-    "objectID": "posts/nba/nba.html#player-age-distribution",
-    "href": "posts/nba/nba.html#player-age-distribution",
-    "title": "NBA",
-    "section": "Player Age Distribution",
-    "text": "Player Age Distribution\nNext, let’s explore the Player Age Distribution across the NBA. We’ll create a histogram to visualize how player ages are distributed, which will help us understand if the league trends younger, older, or has a balanced age mix. ​​\n\n\nCode\n# Convert 'Birthday' column to datetime format\nfrom dateutil import parser\nnba['Birthday'] = nba['Birthday'].apply(lambda x: parser.parse(x))\n\n# Now, let's calculate the age of each player\nnba['Age'] = (datetime.now() - nba['Birthday']).dt.days // 365\n\n# Plot the age distribution of NBA players\nplt.figure(figsize=(10, 6))\nsns.histplot(nba['Age'],\n             bins = 15,\n             kde = True,\n             color = 'skyblue')\nplt.title('Age Distribution of NBA Players')\nplt.xlabel('Age')\nplt.ylabel('Count')\nplt.show()\n\n\n\n\n\n\nThe histogram above shows the age distribution of NBA players, with a kernel density estimate (KDE) overlay to indicate the distribution shape. The majority of players fall within a certain age range from 25 to 35, illustrating the league’s age dynamics. The plot helps identify the common ages for NBA players and whether there are significant numbers of very young or older players."
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-2",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-2",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: https://cran.r-project.org/bin/windows/base/\nMac: https://cran.r-project.org/bin/macosx/\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
   },
   {
-    "objectID": "posts/nba/nba.html#position-wise-salary-insights",
-    "href": "posts/nba/nba.html#position-wise-salary-insights",
-    "title": "NBA",
-    "section": "Position-wise Salary Insights",
-    "text": "Position-wise Salary Insights\nMoving on to Position-wise Salary Insights, we’ll examine how average salaries differ across player positions. This analysis could reveal which positions are typically higher-paid, potentially reflecting their value on the basketball court. Let’s create a box plot to visualize the salary distribution for each position. ​​\n\n\nCode\n# Plot salary distribution by player position\nplt.figure(figsize=(10, 6))\nsns.boxplot(data = nba,\n            x = 'Position', y = 'Salary',\n            palette = 'Set2')\nplt.title('Salary Distribution by Position')\nplt.xlabel('Position')\nplt.ylabel('Salary')\nplt.show()\n\n\n\n\n\nThe box plot above illustrates the salary distribution by player position, showcasing the variation in salaries among different positions within the NBA. This visualization helps us understand which positions tend to have higher median salaries and the spread of salaries within each position, including outliers that represent exceptionally high or low salaries. While the positions of C and PG have the widest interquantiles of salaries, the positions of FC, F, G, and GF have the narrowest interquantiles of them."
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-3",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-3",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nhttps://www.rstudio.com/products/rstudio/download/#download\n\n\n\n\n\n\nFor Mac users, try the following steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
   },
   {
-    "objectID": "posts/nba/nba.html#top-10-highest-paid-players",
-    "href": "posts/nba/nba.html#top-10-highest-paid-players",
-    "title": "NBA",
-    "section": "Top 10 Highest Paid Players",
-    "text": "Top 10 Highest Paid Players\nLastly, we’ll identify the Top 10 Highest Paid Players in the NBA. This analysis highlights the star earners of the league, providing insights into which players command the highest salaries and potentially why. Let’s extract and visualize this information. ​​\n\n\nCode\n# Identify the top 10 highest paid players\ntop_10_salaries = nba.sort_values(by='Salary', ascending=False).head(10)\n\n# Plot the top 10 highest paid players\nplt.figure(figsize=(12, 8))\nsns.barplot(data = top_10_salaries,\n            x = 'Salary', y = 'Name',\n            palette = 'viridis')\nplt.title('Top 10 Highest Paid NBA Players')\nplt.xlabel('Salary')\nplt.ylabel('Player')\nplt.show()\n\n\n\n\n\nThe bar chart above reveals the top 10 highest-paid NBA players, showcasing those who stand at the pinnacle of the league in terms of salary. Stephen Curry is the highest-paid NBA player, followed by Russel Westbrook and Chris Paul. This visualization not only highlights the star players who command the highest salaries but also may reflect their marketability, performance, and contribution to their respective teams."
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-4",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-4",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\n\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html",
-    "href": "posts/py-basic/blog-python-basics.html",
-    "title": "Python Basics",
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-5",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-5",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-6",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-6",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\na &lt;- 1"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-7",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-7",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-8",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-8",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more.\nWe will use several R packages from tidyverse throughout the course. (e.g., ggplot2, dplyr, tidyr)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-9",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-9",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-10",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-10",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- mpg\n\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-11",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-11",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-12",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-12",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-13",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-13",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nGit\n\nFrom the Consol Pane in RStudio, click Terminal.\nIn the Terminal, run the following command to check if your laptop has git installed.\n\ngit --version"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-14",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-14",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nInstall git if you do not have it.\n\n\nMac\n\nGo to http://git-scm.com/downloads, and download the file.\nRun the downloaded file.\n\n\nWindows\n\nGo to https://gitforwindows.org, and download the file.\nRun the downloaded file.\n\n\n\n\nKeep clicking “Next” to complete installation of git.\nAfter the git installation is done, close RStudio and re-open it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-15",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-15",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing GitHub Credential on your local Git.\nStep 0. In Terminal, run the following commands one by one:\ngit config --global user.email \"YOUR_GITHUB_EMAIL_ADDRESS\"\ngit config --global user.name \"YOUR_GITHUB_USERNAME\""
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-16",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-16",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing GitHub Credential on your local Git.\nStep 1. Obtain a personal access token (PAT) for GitHub.\n\nIn RStudio Console, run the followings line by line:\n\n\ninstall.packages(\"usethis\")\nusethis::create_github_token()\n\n\nThen, click “Generate token” in the pop-upped web browser.\nThen, copy the generated PAT to your clipboard or R script."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-17",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-17",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing GitHub Credential on your local Git.\nStep 2. Set the GitHub credential using the PAT.\n\nIn RStudio Console, run the followings line by line:\n\n\ninstall.packages(\"gitcreds\")\ngitcreds::gitcreds_set()\n\n\nThen, paste your PAT to the RStudio Console"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-18",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-18",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing the connection between GitHub repo and your local laptop\nStep 3. Login to your GitHib and make the repository.\n\nFrom https://github.com, click the plus (+) icon in the upper right corner and select “New repository”.\nName this repo YOUR_GITHUB_NAME.github.io, which will be the domain for your website.\nThen, copy the web address of your GitHub repo."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-19",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-19",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing the connection between GitHub repo and your local laptop\nStep 4. Create a RStudio project with Version Control\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Version Control” &gt; “Git”\nPaste the web address of your GitHub repo to the Repository URL menu.\nClick “Browse” to select the parent directory for your local project directory (I recommend “Documents” folder.)\nClick “Create”"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-20",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-20",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing the connection between GitHub repo and your local laptop\n\nFor users who can’t create the R project with version control, do the following alternative Steps 4-1 and 4-2:\n\nStep 4-1. Use git clone to establish the connection between GitHub repo and your local laptop 1. Change the directory to “Documents” in Terminal.\n\n\ncd /Users/USERNAME/Documents\n\ncd C:\\Users\\USERNAME\\Documents\n\n\n\nUse git clone to creates a local copy of the GitHub Repository.\n\ngit clone &lt;repository-url&gt;\n\nFor example,\n\ngit clone https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-21",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-21",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nEstablishing the connection between GitHub repo and your local laptop\n\nFor users who can’t create the R project with version control, do the following alternative Steps 4-1 and 4-2:\n\nStep 4-2. Create a RStudio project from Existing Directory\n\nClick “Project (None)” at the top-right corner in RStudio.\nClick “New Project” &gt; “Existing Directory”\nClick “Browse” to select a local copy of the GitHub Repository\nClick “Create Project”"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-22",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-22",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nWebsite Template Files\nStep 5. Download the files of website template:\n\nGo to the following webpage: https://github.com/bcdanl/danl-website-template\nFrom the webpage above, click the green icon “&lt; &gt; Code”, and then click “Download ZIP”\nExtract the ZIP file you have downloaded\nIf there are the files, .gitignore, .DS_Store, or *.Rproj, in the folder, delete them.\nMove all the files that were compressed the ZIP file to your local project directory.\n\n\nCtrl/cmd + A selects all files in a folder."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-23",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-23",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nWebsite Template Files\n\nAll the website files should be located at the same level with the R Project file (YOUR_USERNAME.github.io.Rproj)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-24",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-24",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nPushing the website files to the GitHub repository\nStep 6. Push the files to your GitHub repository\n\nOn Terminal within RStudio, execute the following three git commands, which will stage, commit, and push all the files to your GitHub repository:\n\ngit add .\ngit commit -m \"ANY_MASSAGE\"\ngit push\nIf git push gives error, try the following:\ngit push"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-25",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#installing-the-tools-25",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nPushing the website files to the GitHub repository\nStep 7. Check whether the files are well uploaded\n\nGo to the webpages of your GitHub repository and your website:\n\nhttps://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git\nhttps://YOUR_USERNAME.github.io\nRefresh the webpage (cmd/Ctrl + R)"
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#project",
+    "href": "danl-rw/danl-210-project.html#project",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Project",
+    "text": "Project\n\nPublish the webpage of your data analysis project on your website, hosted on GitHub.\n\nYour data analysis should focus on the agenda, “Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis”.\nUse either a Jupyter Notebook or a Quarto document to present your work.\nThe due for the project is May 16, 2025, Friday, 11:59 P.M."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#project-data",
+    "href": "danl-rw/danl-210-project.html#project-data",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Project Data",
+    "text": "Project Data\n\nBelow is the esg_proj DataFrame, which provides a list of companies and associated information\n\n\nimport pandas as pd\nesg_proj = pd.read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#project-tasks",
+    "href": "danl-rw/danl-210-project.html#project-tasks",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Project Tasks",
+    "text": "Project Tasks\n\nData Collection\n\n\nyfinance\n\nUtilize the yfinance library, an unofficial API for accessing Yahoo! Finance data.\n\nFor each company listed in the esg_proj DataFrame, you should retrieve the following:\n\nDaily historical stock data spanning from January 1, 2024, to March 31, 2025.\nQuarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).\nQuarterly balance sheets for the same period as the income statements.\n\n\n\n\n\nselenium\n\nEmploy the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company’s webpage on Yahoo! Finance, such as:\n\nAgilent Technologies (A)\nAlcoa Corporation (AA)\n\nEnsure robust error and exception handling during data collection from the Sustainability Section on Yahoo! Finance:\n\nTo avoid being blocked by Yahoo! Finance for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies’ Sustainability Sections.\nUse time.sleep() for each visit of the Sustainability Section webpage.\nSome companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.\nYahoo! Finance intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.\n\n\nYou can check the new and classic layouts of Yahoo! Finance by selecting the corresponding options from the navigation bar on their website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python yfinance and selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nList the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#rubric-for-the-project",
+    "href": "danl-rw/danl-210-project.html#rubric-for-the-project",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Rubric for the Project",
+    "text": "Rubric for the Project\n\nHere is the link to the PDF file of the rubric for the project web-page.\n\n\nRubric for Quality of Data Collection\n\n\n\n\n\n\n\n\nEvaluation\nDescription\nCriteria\n\n\n\n\n1 (Very Deficient)\n- Very poorly implemented- Data is unreliable.\n- Ineffective use of yfinance, resulting in incomplete or inaccurate financial data.- Poor web scraping practices with selenium, leading to unreliable or incorrect data from Yahoo Finance.- Inadequate use of pandas, resulting in poorly structured DataFrames.\n\n\n2 (Somewhat Deficient)\n- Somewhat effective implementation- Data has minor reliability issues.\n- Basic use of yfinance with minor inaccuracies in data retrieval.- Basic web scraping with selenium that sometimes fails to capture all relevant data accurately.- Basic use of pandas, but with occasional issues in data structuring.\n\n\n3 (Acceptable)\n- Competently implemented- Data is mostly reliable.\n- Competent use of yfinance to retrieve most financial data accurately.- Effective web scraping with selenium, capturing most required data from Yahoo Finance.- Adequate use of pandas to structure data in a mostly logical format.\n\n\n4 (Very Good)\n- Well-implemented and organized- Data is reliable.\n- Advanced use of yfinance to reliably and accurately fetch financial data.- Thorough web scraping with selenium that consistently captures accurate and complete data from Yahoo Finance.- Skillful use of pandas for clear and logical data structuring.\n\n\n5 (Outstanding)\n- Exceptionally implemented- Data is highly reliable.\n- Expert use of yfinance to obtain comprehensive and precise financial data.- Expert web scraping with selenium, capturing detailed and accurate data from Yahoo Finance without fail.- Expert use of pandas to create exceptionally well-organized DataFrames that facilitate easy analysis."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#what-is-python",
-    "href": "posts/py-basic/blog-python-basics.html#what-is-python",
-    "title": "Python Basics",
+    "objectID": "posts/beer-markets/beer-markets.html",
+    "href": "posts/beer-markets/beer-markets.html",
+    "title": "Beer Markets",
     "section": "",
-    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')"
+    "text": "Diving into the complex world of what people like in their beer, the beer_markets.csv dataset comes across as a goldmine of data, showing us the detailed interactions between buyers and their favorite beers. This dataset covers everything from how much and at what price people are buying beer to how deals and brand loyalty influence their decisions, across different types of people and places. As we start digging into this dataset, we aim to uncover the patterns that show what really influences the modern beer drinker’s choices, offering up valuable insights for marketers, industry watchers, and beer lovers. By breaking down the data, our exploration will shine a light on the factors that drive consumer behavior in the beer market, giving us a full picture of the trends that shape this lively industry.\nCode\n# Creating an interactive table\n!pip install itables\nfrom itables import init_notebook_mode\nfrom itables import show\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# Reading the CSV file\nbeer_data = pd.read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\nshow(beer_data)\n\n\n\n\n\n\n\n    \n      \n      hh\n      _purchase_desc\n      quantity\n      brand\n      dollar_spent\n      beer_floz\n      price_per_floz\n      container\n      promo\n      market\n      buyertype\n      income\n      childrenUnder6\n      children6to17\n      age\n      employment\n      degree\n      cow\n      race\n      microwave\n      dishwasher\n      tvcable\n      singlefamilyhome\n      npeople\n    \n  Loading... (need help?)\nCode\n# Setting up the visualization settings\nsns.set(style=\"whitegrid\")\n\n# Calculate total quantity and spending for each brand\nbrand_summary = beer_data.groupby('brand').agg({'quantity':'sum', 'dollar_spent':'sum'}).reset_index()\n\n# Sort by total quantity and spending\nbrand_summary_sorted_quantity = brand_summary.sort_values('quantity', ascending=False)\nbrand_summary_sorted_spent = brand_summary.sort_values('dollar_spent', ascending=False)\nCode\n# Plotting total quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=brand_summary_sorted_quantity, palette='viridis')\nplt.title('Total Quantity of Beer Purchased by Brand')\nplt.xlabel('Total Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe bar charts above display the total quantity of beer purchased and the total spending by brand. From the looks of it, certain brands dominate in terms of quantity sold and total spending, indicating their popularity.\nNow, let’s calculate the average quantity purchased and average spending per purchase. For this, we’ll consider each row in the dataset as a separate purchase and compute the averages accordingly.\nCode\n# Calculate average quantity purchased and average spending per purchase\naverage_purchase = beer_data.groupby('brand').agg({\n    'quantity': 'mean',\n    'dollar_spent': 'mean'\n}).reset_index()\n\n# Sort by average quantity and average spending\naverage_purchase_sorted_quantity = average_purchase.sort_values('quantity', ascending=False)\naverage_purchase_sorted_spent = average_purchase.sort_values('dollar_spent', ascending=False)\n\n# Plotting average quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=average_purchase_sorted_quantity, palette='viridis')\nplt.title('Average Quantity of Beer Purchased by Brand')\nplt.xlabel('Average Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe visualizations above depict the average quantity of beer purchased per brand and the average spending per brand. This shows which brands tend to be bought in larger quantities on average and which brands tend to have higher spending per purchase, which could be indicative of their price point or the purchase of premium products.\nNext, we’ll look at the total spending across different markets to see if there are any notable differences in spending habits geographically. To do this, we’ll sum up the spending in each market and visualize it.\nCode\n# Calculate total spending in each market\nmarket_spending_summary = beer_data.groupby('market').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nmarket_spending_summary_sorted = market_spending_summary.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending in each market\nplt.figure(figsize=(12, 18))\nsns.barplot(x='dollar_spent', y='market', data=market_spending_summary_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Market')\nplt.xlabel('Total Spending')\nplt.ylabel('Market')\nplt.show()\nThe bar chart illustrates the total spending on beer by market, showcasing the differences in spending habits across various regions. Some markets have significantly higher spending, which could be due to a variety of factors including market size, consumer preferences, or economic factors.\nNow, let’s move on to the second analysis:"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
-    "href": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
-    "title": "Python Basics",
-    "section": "",
-    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
+    "objectID": "posts/beer-markets/beer-markets.html#demographic-analysis",
+    "href": "posts/beer-markets/beer-markets.html#demographic-analysis",
+    "title": "Beer Markets",
+    "section": "Demographic Analysis",
+    "text": "Demographic Analysis\nWe will examine which demographics are buying what kind of beer and whether spending habits vary by demographics such as age, employment, and race. For this, we could look at:\n\nSpending by age group\nSpending by employment status\nSpending by race\n\nI’ll start by analyzing spending by age group.\n\n\nCode\n# Calculate total spending by age group\nage_group_spending = beer_data.groupby('age').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nage_group_spending_sorted = age_group_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by age group\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='age', data=age_group_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Age Group')\nplt.xlabel('Total Spending')\nplt.ylabel('Age Group')\nplt.show()\n\n\n\n\n\nThe bar chart demonstrates the total spending on beer segmented by age group, highlighting which age groups spend the most on beer. It appears that certain age groups are more dominant in beer spending, which may align with the purchasing power or preferences of those groups.\nNext, we will examine spending by employment status.\n\n\nCode\n# Calculate total spending by employment status\nemployment_spending = beer_data.groupby('employment').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nemployment_spending_sorted = employment_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by employment status\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='employment', data=employment_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Employment Status')\nplt.xlabel('Total Spending')\nplt.ylabel('Employment Status')\nplt.show()\n\n\n\n\n\nThe visualization shows the total spending on beer by employment status. We can see that certain employment groups, such as full-time workers, are spending more on beer, which might be related to their disposable income.\nFinally, let’s look at spending by race to complete the demographic analysis.\n\n\nCode\n# Calculate total spending by race\nrace_spending = beer_data.groupby('race').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nrace_spending_sorted = race_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by race\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='race', data=race_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Race')\nplt.xlabel('Total Spending')\nplt.ylabel('Race')\nplt.show()\n\n\n\n\n\nThe bar chart above indicates the total spending on beer broken down by race, highlighting which racial groups account for the most beer spending within the dataset. This could reflect both the demographics of the regions where the data was collected and cultural preferences regarding beer.\nNow, let’s proceed to the third analysis:"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#control-structures",
-    "href": "posts/py-basic/blog-python-basics.html#control-structures",
-    "title": "Python Basics",
-    "section": "",
-    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
+    "objectID": "posts/beer-markets/beer-markets.html#price-sensitivity",
+    "href": "posts/beer-markets/beer-markets.html#price-sensitivity",
+    "title": "Beer Markets",
+    "section": "Price Sensitivity",
+    "text": "Price Sensitivity\nWe’ll look at the price per fluid ounce and see if there are any trends or correlations with the quantity purchased or the brand popularity. To do this, we’ll visualize how the price is sensitive to the quantity purchased by brand.\n\n\nCode\n# Ensure there's no entries with 0 for 'price_per_floz' or 'quantity' to avoid log(0) issues\nfiltered_data = beer_data[(beer_data['price_per_floz'] &gt; 0) & (beer_data['quantity'] &gt; 0)]\n\n# Calculate log values for both 'price_per_floz' and 'quantity'\nfiltered_data['log_price_per_floz'] = np.log(filtered_data['price_per_floz'])\nfiltered_data['log_quantity'] = np.log(filtered_data['quantity'])\n\n# Use seaborn to create a scatterplot with fitted lines, facetted by 'brand'\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', col='brand', col_wrap=4, height=3, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5}, aspect = .75)\n\n# Adjusting plot aesthetics\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nHere’s the scatterplot with fitted straight lines for the log of price_per_floz versus the log of quantity, facetted by brands. Each subplot represents a different brand, showing the relationship between these two logarithmic variables along with a fitted line to illustrate the trend within each brand’s data.\n\n\nCode\n# Adjust the facetting to split rows by 'brand' and columns by 'promo' for a more detailed comparative analysis\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', row='brand', col='promo', height=3, aspect=.75, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5})\n\n# Adjusting plot aesthetics\ng.set_titles(\"Brand: {row_name}\\n Promo: {col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9, wspace = .4, hspace = .4)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nThe scatterplot has been reorganized to split rows by brand and columns by promo status, offering a comprehensive view across different brands and their promotional status. Each subplot now provides a clear comparison of the log of price_per_floz versus the log of quantity for purchases made on promotion versus those that were not, across various beer brands.\nThis layout facilitates an easier comparison across brands and how promotion impacts the relationship between quantity and price per fluid ounce within each brand.\nLastly, let’s move to the fourth analysis:"
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#functions",
-    "href": "posts/py-basic/blog-python-basics.html#functions",
-    "title": "Python Basics",
-    "section": "",
-    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
+    "objectID": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
+    "href": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
+    "title": "Beer Markets",
+    "section": "Promotional Impact on Quantity Purchased",
+    "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
   },
   {
-    "objectID": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
-    "href": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
-    "title": "Python Basics",
+    "objectID": "danl-cw/danl-210-cw-02.html",
+    "href": "danl-cw/danl-210-cw-02.html",
+    "title": "Classwork 2",
     "section": "",
-    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
   },
   {
-    "objectID": "listing-danl-210-rw.html",
-    "href": "listing-danl-210-rw.html",
-    "title": "DANL 210 - Project",
+    "objectID": "danl-cw/danl-210-cw-02.html#basic-syntax",
+    "href": "danl-cw/danl-210-cw-02.html#basic-syntax",
+    "title": "Classwork 2",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#advanced-syntax",
+    "href": "danl-cw/danl-210-cw-02.html#advanced-syntax",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#practice-problems",
+    "href": "danl-cw/danl-210-cw-02.html#practice-problems",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#references",
+    "href": "danl-cw/danl-210-cw-02.html#references",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Quarto Markdown Basics\nStart writing on GitHub"
   },
   {
     "objectID": "index-home.html",
@@ -515,6 +753,34 @@
     "href": "listing-danl-210-qa.html",
     "title": "DANL 210 - Q & A",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nDiscussion and Q & A Board\n\n\nundefined\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nDANL 210 - Discussion and Q & A Board\n\n\nundefined\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html",
+    "title": "Lecture 1",
+    "section": "",
+    "text": "Name: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics, School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea.\n\nMinor in Business Administration.\nConcentration in Finance.\n\n\n\n\n\n\n\n\n\nChoe, B.H., 2025. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.).\n\n\n\n\n\n\n\n\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance can be significant barriers to emissions reductions within these countries.\n\n\n\n\n\n\n\n\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nData include:\n\nGlobal climate finance data (e.g., donors, recipients, characteristics of climate change projects)\nWorld Bank Governance Indicators over the years (e.g., government effectiveness, voice and accountability, political stability and absence of violence/terrorism, regulatory quality, rule of law, control of corruption)\nVarious economic indicators (e.g., trade pattern of low carbon technology products, macroeconomic risks, energy)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#why-personal-website",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#why-personal-website",
+    "title": "Lecture 1",
+    "section": "Why Personal Website?",
+    "text": "Why Personal Website?\nBenefits of a Personal Website in Data Analytics\n\n\nHere are the example websites:\n\nByeong-Hak’s Website\nDANL Website Template\n\n\n\n\n\nProfessional Showcase: Display skills and projects\nVisibility and Networking: Increase online presence\nControlled Narrative: Manage your professional brand\nContent Sharing and Engagement: Publish articles, insights\nJob Opportunities: Attract potential employers and clients\nLong-term Asset: A growing repository of your career journey\nReproducible Research: Showcase data-driven reports"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#building-a-personal-website-on-github",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#building-a-personal-website-on-github",
+    "title": "Lecture 1",
+    "section": "Building a Personal Website on GitHub",
+    "text": "Building a Personal Website on GitHub\n\nFollow steps described in Classwork 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#lets-practice-markdown",
+    "href": "danl-lec/danl-210-lec-01-2025-0122.html#lets-practice-markdown",
+    "title": "Lecture 1",
+    "section": "Let’s Practice Markdown!",
+    "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
   }
 ]

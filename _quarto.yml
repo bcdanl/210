@@ -55,15 +55,15 @@ website:
       - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
         href: danl-qa/danl-210-qa.qmd
       - text: &nbsp;
-      - text: <font size ="5" ><b>- Team Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
-        href: listing-danl-210-rw.qmd
+      - text: <font size ="5" ><b>- Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
+        href: danl-rw/danl-210-project.qmd
       # - text: &nbsp;
       # - text: <font size ="5" ><b>- Class Notes </b></font><font size ="5" color="#194493">{{< fa solid pencil >}}</font>
       #   href: listing-danl-210-class.qmd
         
   page-footer: 
     border: false
-    center: "powered with github, quarto, and rstudio<br>byeong-hak choe, 2024"
+    center: "powered with github, quarto, and rstudio<br>byeong-hak choe, 2025"
     # foreground: dark
     # background: '#9b4e55' 
 

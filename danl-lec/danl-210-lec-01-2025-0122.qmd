@@ -14,7 +14,7 @@ author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
     affiliations: SUNY Geneseo
-date: 2024-08-27
+date: 2025-01-22
 execute: 
   eval: true
   echo: true
@@ -75,9 +75,9 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## Instructor
-### Economics and Data Science
+### Economics, Data Science, and Climate Change
 
-- Choe, B.H., 2021. "Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies."
+- Choe, B.H., 2025. "Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies."
 
 - Question: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?
 
@@ -92,7 +92,7 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## Instructor
-### Economics and Data Science
+### Economics, Data Science, and Climate Change
 
 - Choe, B.H. and Ore-Monago, T., 2024. "Governance and Climate Finance in the Developing World"
 
@@ -103,7 +103,7 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## Instructor
-### Economics and Data Science
+### Economics, Data Science, and Climate Change
 
 - Choe, B.H. and Ore-Monago, T., 2024. "Governance and Climate Finance in the Developing World"
 
@@ -111,17 +111,6 @@ theme_set(theme_fivethirtyeight()+
   - Global climate finance data (e.g., donors, recipients, characteristics of climate change projects)
   - World Bank Governance Indicators over the years (e.g., government effectiveness, voice and accountability, political stability and absence of violence/terrorism, regulatory quality, rule of law, control of corruption)
   - Various economic indicators (e.g., trade pattern of low carbon technology products, macroeconomic risks, energy)
-
-
-## Instructor
-### Economics and Data Science
-
-- Choe, B.H., James, Alex and Newbold, Steve, 2025. "Estimating the Value of Statistical Life (VSL) through Big Data"
-
-- VSL is the monetary value associated with reducing the risk of death. 
-  - How much value would that be? How can we measure it?
-
-
 
 
 # Syllabus {background-color="#1c4982"}
@@ -134,111 +123,175 @@ theme_set(theme_fivethirtyeight()+
 
 
 - Class Homepage: 
-  i. [https://mylearning.suny.edu/d2l/home/1513935](https://mylearning.suny.edu/d2l/home/1513935){target="_blank"}
-  i. [http://bcdanl.github.io](http://bcdanl.github.io){target="_blank"}
+  i. [https://brightspace.geneseo.edu/](https://brightspace.geneseo.edu/){target="_blank"}
+  i. [http://bcdanl.github.io/210/](http://bcdanl.github.io/210/){target="_blank"}
   
   
-- Office: South Hall 301
+- Office: South Hall 227B
 - Office Hours: 
-  - In-person: Mondays and Wednesdays 1:30 P.M.--3:00 P.M.
-  - Online: by appointment via email.
+  1. Mondays 5:00 P.M. -- 6:30 P.M.  
+  2. Wednesdays 5:00 P.M. -- 6:30 P.M. 
+
 
 
 ## Syllabus
 
 ### Course Description
 
-- This course offers a practical introduction to the data analytics process and methods. 
-- The goal is to help you unlock the potential of data analysis and enhance your ability to transform data into a powerful decision-making tool. 
-- You will develop foundational data analytics skills that will prepare you for a career or further studies in more advanced data analytics topics. 
-- The course covers: (1) an introduction to data analytics thinking, (2) exploratory data analysis through data wrangling and visualization, and (3) an introduction to data science, social media analytics, and artificial intelligence (AI). 
-- Throughout the course, you will gain hands-on experience with the Python and R programming languages, along with its associated data analysis libraries and AI tools.
+- This course is designed to provide a comprehensive overview of data handling techniques, focusing on practical application through case studies. 
 
+- Key topics include: 
+  1. data loading, cleaning, transformation, merging, and reshaping;
+  2. techniques for slicing, dicing, and summarizing datasets;
+  3. data collection via web scraping and APIs. 
+  
+- These areas will be explored through detailed, real-world examples to address common data analysis challenges. 
+
+- Throughout the course, students will gain hands-on experience with **Python** and its data analysis libraries, along with practical applications of **git** and **GitHub**.
 
 
 
 ## Syllabus
+### Required Materials
 
-### Course Learning Outcomes
+- [**Python for Data Analysis** (3rd Edition)](https://wesmckinney.com/book){target="_blank"} by [Wes McKinney](https://wesmckinney.com/){target="_blank"}
 
-- Grasp the basic principles of data analytics, including data types and data processing.
-- Gain introductory experience with programming languages commonly used in data analytics, such as Python or R.
-- Develop the ability to create and interpret various types of data visualizations.
-- Enhance critical thinking skills by learning to ask relevant questions and draw insights from data.
-- Apply data analytics techniques to solve real-world problems in various domains.
+  - A free online version of this book is available.
+
 
 
 ## Syllabus
-
 ### Reference Materials
 
-- [**R for Data Science** (2nd Edition)](https://r4ds.hadley.nz){target="_blank"} by Hadley Wickham \& Garrett Grolemund.
-- [**Python for Data Science**](https://aeturrell.github.io/python4DS){target="_blank"} by Arthur Turrell et. al.
-- [**Coding for Economists**](https://aeturrell.github.io/coding-for-economists){target="_blank"} by Arthur Turrell.
-- [**Statistical Inference via Data Science: A ModernDive into R and the Tidyverse**](https://moderndive.com){target="_blank"} by Chester Ismay and Albert Y. Kim.
+- [Guide for Quarto](https://quarto.org/docs/guide){target="_blank"}
+
+- [Python Programming for Data Science](https://www.tomasbeuzen.com/python-programming-for-data-science){target="_blank"} by Tomas Beuzen
+
+- [Coding for Economists](https://aeturrell.github.io/coding-for-economists){target="_blank"} by Arthur Turrell 
+
+- [Python for Econometrics in Economics](https://pyecon.org/lecture/}{https://pyecon.org/lecture/){target="_blank"} by Fabian H. C. Raters
+
+- [QuantEcon DataScience - Python Fundamentals](https://datascience.quantecon.org/python_fundamentals/index.html){target="_blank"} by Chase Coleman, Spencer Lyon, and Jesse Perla
+
+- [QuantEcon DataScience - pandas](https://datascience.quantecon.org/pandas/index.html){target="_blank"} by Chase Coleman, Spencer Lyon, and Jesse Perla
 
 
 
 ## Syllabus
-
 ### Course Requirements
+
+
+- **Laptop**: You should bring your own laptop (**Mac** or **Windows**) to the classroom. 
+  - The minimum specification for your laptop in this course is 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.
+  
+::: {.incremental}
+
 - **Homework**: There will be six homework assignments.
-- **Quiz**: There will be in-class quizzes.
-- **Class Participation**: You are encouraged to ask questions and discuss topics during the class time.
-- **Exam**: There will be two short midterm exams and one comprehensive final exam.
-- **Team presentation**: There will be a team presentation.
-  
-  
-  
+
+- **Project**: There will be one project on a *personal website*.
+
+- **Exams**: There will be two Midterm Exams and one Final Exam. 
+  - The final exam is comprehensive.
+
+- **Discussions**: You are encouraged to participate in GitHub-based online discussions and class discussion, and office hours.
+  - Checkout the netiquette policy in the syllabus.
+
+:::
+
+
+
+<!-- ## Syllabus -->
+<!-- ### Netiquette Policy for Online Discussions -->
+
+<!-- - Before posting your question to a discussion board, check if anyone has asked it already and received a reply. Just as you would not repeat a topic of discussion right after it happened in real life, do not do that in discussion boards either. -->
+<!-- - Stay on topic - Do not post irrelevant inks. comments, thoughts, or pictures. -->
+<!-- - Do not type in all capital letters. If you do, it will look like you are screaming. -->
+<!-- - Do not write anything that sounds angry or sarcastic, even as a joke, because without hearing your tone of voice, your peers might not realize you are joking. -->
+<!-- - Always remember to say "Please" and "Thank you" when soliciting help from your peers or an instructor. -->
+<!-- - Respect the opinions of your classmates. If you feel the need to disagree, do so respectfully and acknowledge the valid points in your peers' arguments. Acknowledge that others are entitled to have their own perspective on the issue. -->
+<!-- - If you reply to a question from a peer, make sure your answer is accurate! If you are not 100% when the homework is due, do not guess. Otherwise, you could really mess things up for your peers and they will not appreciate it. -->
+<!-- - Be brief. If you write a long dissertation in response to a simple question, it is unlikely that anyone will spend the time to read through it all. -->
+<!-- - If you ask a question and many people respond, summarize all answers and post that summary to benefit your whole class. -->
+<!-- - Do not badmouth others or call them stupid. You may disagree with their ideas, but do not mock the person. -->
+<!-- - If you refer to something your peers said earlier in the discussion, quote just a few key lines from their post so that others wont have to go back and figure out which post you re referring to. -->
+<!-- - Be forgiving. If your peer makes a mistake, do not badger him or her for it. Just let it go - it happens to the best of us. -->
+<!-- - Run a spelling and grammar check before posting anything to the discussion board. It only takes a minute, and can make the difference between sounding like a fool and sounding knowledgeable. -->
+
+
 ## Syllabus
-### Team Presentations
 
-- Each team will present on data storytelling with visualization. 
+### Personal Website
 
-- Data storytelling with visualization is the art of communicating complex data insights in a clear, engaging, and impactful way by blending data analysis, visual design, and narrative techniques. 
+- You will create your own website using Quarto, R Studio, and Git. 
 
-- It goes beyond simply showing charts and graphs; it involves crafting a compelling story that guides the audience through the data, highlights key findings, and effectively conveys the intended message. 
+- You will publish your homework assignments and team project on your website. 
 
+- Your website will be hosted in [GitHub](https://www.github.com){target="_blank"}. 
 
-## Syllabus
-### Team Presentations
-- Key aspects of data storytelling include:
-  - **Clarity**: Make sure the visuals are easy to understand and focus on the most important information.
-  - **Structure**: Just like a story, start with an introduction, present the main points, and finish with a conclusion.
-  - **Engagement**: Tailor the story to your audience so it is relevant and interesting to them.
+- The basics in Markdown will be discussed.
 
+- References:
+  - [Quarto Guide](https://quarto.org/docs/guide){target="_blank"}
 
 
 
 ## Syllabus
+### Team Project
 
-### Class Schedule
+- Team formation is scheduled for late March. 
+
+::: {.incremental}
+
+- Each team must have one to two students. 
+
+- The project report should include data collection and exploratory data analysis using summary statistics, visual representations, and data wrangling. 
+
+- The document for the team project must be published in each member's website. 
+
+- Any changes to team composition require approval from Byeong-Hak Choe. 
+
+::: 
+
+
+
+## Syllabus
+
+### Class Schedule and Exams
 
 - There will be tentatively 42 class sessions.
-  - **The midterm exam 1** is scheduled on **October 9, 2024, Wednesday**, during the class time.
-  - **The midterm exam 2** is scheduled on **November 8, 2024, Friday**, during the class time.
-  - **The team presentation** is scheduled during the first week of December, 2024.
-  - **The final exam** is scheduled on **December 16, 2024, Monday, noon--2:00 P.M.**
 
+::: {.incremental}
+
+
+- The Midterm Exam I is scheduled on February 28, 2025, Friday, during the class time.
+
+- The Midterm Exam II is scheduled on April 9, 2025, Wednesday, during the class time.
+
+- The Final Exam is scheduled on May 14, Wednesday, 8:30 A.M.--10:30 A.M.
+
+- No class on 
+  - March 17, 19, and 21 (*Spring Break*)
+  - April 23 (*GREAT Day*)
+
+- The due for the team project is May 16, 2025, Friday, 11:59 P.M., Eastern Time
+
+:::
 
 
 
 ## Syllabus
 ### Course Contents
 
+- The first part of the course covers Python basics and `pandas` basics:
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
 text_tbl <- data.frame(
-  Week = c("1", "2", "3", "4", "5", "6", "7"),
-  Contents = c("Course Outlines; Overview",
-"Introduction",
-"Data Analytics Careers",
-"Basic Tools",
-"Basic Tools",
-"Data Preparation and Management", 
-"Data Preparation and Management"),
-  `HW Exam` = c("", "", "HW 1", "", "", "HW 2", "Midterm I")
+  Week = c("1", "2", "3-6"),
+  Contents = c("Course Outlines; Installing the Tools; Building a Website; Markdown",
+"Python Basics I with Google Colab",
+"Filtering, Sorting, and Ranking Values"),
+  `HW Exam` = c("", "HW 1-2", "Midterm I")
   )
 
 
@@ -293,18 +346,18 @@ DT::datatable(text_tbl, rownames = FALSE,
 ## Syllabus
 ### Course Contents
 
+- The second part of the course covers advanced `pandas`:
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
 text_tbl <- data.frame(
-  Week = c("8", "9", "10", "11"),
+  Week = c("7-8", "9", "10"),
   Contents = c(
-"Data Visualization",
-"Data Visualization",
-"Data Visualization",
-"Data Visualization"
+"Group Operations",
+"Visualizing DataFrames",
+"Pivoting, Joining and Concatenating DataFrames"
 ),
-  `HW Exam` = c("", "HW 3", "", "HW 4 & Midterm II")
+  `HW Exam` = c("HW 3", "HW 4", "Midterm II")
   )
 
 
@@ -359,18 +412,18 @@ DT::datatable(text_tbl, rownames = FALSE,
 ## Syllabus
 ### Course Contents
 
+- The third part of the course covers data collection:
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
 text_tbl <- data.frame(
-  Week = c("12", "13", "14", "15", "16"),
+  Week = c("11", "12-14", "15"),
   Contents = c(
-"Data Science",
-"Social Media Analytics",
-"Artificial Intelligence",
-"Team Presentations", "Wrap-up"
+"Python Basics II",
+"Web Scrapping with Selenium",
+"Data Collection with Application Programming Interfaces (APIs)"
 ),
-  `HW Exam` = c("", "HW 5", "", "HW 6", "Final")
+  `HW Exam` = c("", "HW 5", "HW 6")
   )
 
 
@@ -426,30 +479,53 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 $$
 \begin{align}
-(\text{Total Percentage Grade}) =&\;\, 0.05\times(\text{Attendance}) \notag\\
-&\,+\, 0.15\times(\text{Quiz & Class Participation})\notag\\ 
-& \,+\, 0.15\times(\text{Homework})\notag\\  
-&\,+\, 0.15\times(\text{Presentation})\notag\\
-& \,+\, 0.50\times(\text{Exam}).\notag
+(\text{Total Percentage Grade}) =&\quad\;\, 0.05\times(\text{Attendance Score})\notag\\
+&\,+\, 0.05\times(\text{Participation Score})\notag\\ 
+&\,+\, 0.15\times(\text{Project and Website Score})\notag\\ 
+&\,+\, 0.25\times(\text{Total Homework Score})\notag\\ 
+&\,+\, 0.50\times(\text{Total Exam Score}).\notag
 \end{align}
 $$
 
-
-
 ## Syllabus
 ### Grading
 
-- You are allowed up to 6 absences without penalty. 
+- You are allowed up to 5 absences without penalty. 
   - Send me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).
 
-- For each absence beyond the initial six, there will be a deduction of 1% from the Total Percentage Grade.
 
-- The single lowest homework score will be dropped when calculating the total homework score. 
-  - Each homework except for the homework with the lowest score accounts for 20% of the total homework score.
+::: {.incremental}
 
+- For each absence beyond the initial five, there will be a deduction of 1% from the Total Percentage Grade.
+
+- Participation will be evaluated by quantity and quality of GitHub-based online discussions and in-person discussion.
+
+- The single lowest homework score will be dropped when calculating the total homework score.
+
+::: 
+  
 
 ## Syllabus
 ### Grading
+
+- The Midterm Exam Score is the maximum between 
+  1. the simple average of the Midterm Exam I score and the Midterm Exam II Score and
+  2. the weighted average of them with one-fourth weight on the Midterm Exam I Score and three-third weight on the Midterm Exam II Score:
+
+$$
+\begin{align}
+&(\text{Midterm Exam Score}) \\
+=\, &\text{max}\,\left\{0.50\times(\text{Midterm Exam I Score}) \,+\, 0.50\times(\text{Midterm Exam II Score})\right.,\notag\\ 
+&\qquad\;\,\left.0.25\times(\text{Midterm Exam I Score}) \,+\, 0.75\times(\text{Midterm Exam II Score})\right\}.\notag
+\end{align}
+$$
+
+## Syllabus
+### Grading
+
+- The Total Exam Score is the maximum between 
+  1. the simple average of the Midterm Exam Score and the Final Exam Score and
+  2. the weighted average of them with one-fourth weight on the Midterm Exam Score and three-third weight on the Final Exam Score:
 
 $$
 \begin{align}
@@ -461,15 +537,12 @@ $$
 
 
 
-- The total exam score is the maximum between 
-  1. the simple average of the midterm exam score and the final exam score and
-  2. the weighted average of them with one-fourth weight on the midterm exam score and three-third weight on the final exam score:
-
-
 ## Syllabus
 ### Make-up Policy
 
 -  Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.
+
+::: {.incremental}
 
 - If you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.
 
@@ -478,6 +551,10 @@ $$
 - Late submissions for homework assignment will be accepted with a penalty. 
 
 - A zero will be recorded for a missed assignment.
+
+:::
+
+
 
 
 ## Syllabus
@@ -495,19 +572,6 @@ $$
   - See [https://www.geneseo.edu/library/library-workshops](https://www.geneseo.edu/library/library-workshops){target="_blank"}.
 
 
-## Syllabus
-### Artificial Intelligence (AI) Policy
-
-- Unless AI tools are explicitly permitted for homework or in-class quizzes, you must complete your work independently. 
-
-- This means you should not use tools like ChatGPT for any aspect of our coursework. 
-
-- Such use is a form of academic dishonesty. Use of such tools is not only cheating, it will also cheat you of the opportunity to learn and develop your own skills. 
-
-- While AI will undoubtedly play important roles in our future society, you will be better able to utilize AI if you have developed your own critical thinking, writing, and analytical skills by doing your own work. 
-
-- If you have any questions about this, please ask.
-
 
 
 ## Syllabus
@@ -516,6 +580,19 @@ $$
 -  The Office of Accessibility will coordinate reasonable accommodations for persons with physical, emotional, or cognitive disabilities to ensure equal access to academic programs, activities, and services at Geneseo.
 
 - Please contact me and the Office of Accessibility Services for questions related to access and accommodations.
+
+
+
+
+
+## Syllabus
+### Well-being
+
+- You are strongly encouraged to communicate your needs to faculty and staff and seek support if you are experiencing unmanageable stress or are having difficulties with daily functioning.
+
+- Liz Felski, the School of Business Student Advocate ([felski@geneseo.edu](felski@geneseo.edu), South Hall 303), or the Dean of Students (585-245-5706) can assist and provide direction to appropriate campus resources.
+
+- For more information, see [https://www.geneseo.edu/dean_students](https://www.geneseo.edu/dean_students){target="_blank"}.
 
 
 
@@ -530,8 +607,27 @@ $$
   - Handshake is trusted by all 500 of the Fortune 500.
 
 
-
 # Prologue {background-color="#1c4982"}
+
+
+## Why Personal Website?
+### Benefits of a Personal Website in Data Analytics
+
+:::{}
+- Here are the example websites:
+  - [Byeong-Hak's Website](https://bcecon.github.io)
+  - [DANL Website Template](https://bcdanl.github.io/danl-website-template)
+:::
+
+:::{.incremental}
+- **Professional Showcase**: Display skills and projects
+- **Visibility and Networking**: Increase online presence
+- **Controlled Narrative**: Manage your professional brand
+- **Content Sharing and Engagement**: Publish articles, insights
+- **Job Opportunities**: Attract potential employers and clients
+- **Long-term Asset**: A growing repository of your career journey
+- **Reproducible Research**: Showcase data-driven reports
+:::
 
 
 ## Why Data Analytics?
@@ -620,7 +716,7 @@ From 2008 to 2023
 
 ::: {.column width="50%"}
 
-### Programmers in 2024
+### Programmers in 2025
 
 ![](https://bcdanl.github.io/lec_figs/chatgpt-stackoverflow-meme.jpg)
 :::
@@ -765,5 +861,240 @@ $\quad$
 ## Python vs. R
 
 {{< video https://www.youtube.com/watch?v=4lcwTGA7MZw width="100%" height="100%">}}
+
+
+
+
+
+
+
+# Installing the Tools {background-color="#1c4982"}
+
+## Installing the Tools
+### Anaconda
+
+- To install Anaconda, go to the following download page:
+  - [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution){target="_blank"}.
+  - Click the "Download" button.
+
+
+## Installing the Tools
+### R programming
+
+- The R language is available as a free download from the R Project website at:
+  - Windows: [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/){target="_blank"}
+  - Mac: [https://cran.r-project.org/bin/macosx/](https://cran.r-project.org/bin/macosx/){target="_blank"}
+  - Download the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)
+
+
+
+
+## Installing the Tools
+### R Studio
+
+:::{}
+- The RStudio Desktop is available as a free download from the following webpage:
+    - [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"}
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- For **Mac** users, try the following steps:
+  1. Run **`RStudio-*.dmg`** file.
+  2. From the Pop-up menu, click the RStudio icon.
+  3. While clicking the RStudio icon, drag it to the **Applications** directory.
+
+:::
+
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/rstudio-mac-install.gif)
+:::
+::::
+
+
+## Installing the Tools
+### RStudio Environment
+:::: {.columns}
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+
+
+- **Script Pane** is where you write R commands in a script file that you can save.
+
+:::{.incremental}
+  - An R script is simply a text file containing R commands. 
+  - RStudio will color-code different elements of your code to make it easier to read.
+
+:::
+
+:::
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+:::{.incremental}
+- To open an R script, 
+  - File $>$ New File  $>$ R Script
+
+:::
+:::
+
+::: {.column width="50%"}
+:::{.incremental}
+- To save the R script, 
+  - File $>$ Save
+
+:::
+:::
+
+::::
+
+## Installing the Tools
+### RStudio Environment
+:::: {.columns}
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+- **Console Pane** allows you to interact directly with the R interpreter and type commands where R will immediately execute them.
+:::
+::::
+
+## Installing the Tools
+### RStudio Environment
+:::: {.columns}
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+- **Environment Pane** is where you can see the values of variables, data frames, and other objects that are currently stored in memory.
+
+- Type below in the Console Pane, and then hit *Enter*:
+```{.r}
+a <- 1
+```
+
+:::
+::::
+
+## Installing the Tools
+### RStudio Environment
+
+:::: {.columns}
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/rstudio_env.png)
+:::
+
+::: {.column width="50%"}
+- **Plots Pane** contains any graphics that you generate from your R code.
+
+:::
+::::
+
+
+
+## Installing the Tools
+### R Packages and `tidyverse`
+
+- **R packages** are collections of R functions, compiled code, and data that are combined in a structured format.
+
+
+:::{.incremental}
+
+- The `tidyverse` is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures. 
+  - The `tidyverse` packages work harmoniously together to make data manipulation, exploration, and visualization more.
+  - We will use several R packages from `tidyverse` throughout the course. (e.g., `ggplot2`, `dplyr`, `tidyr`)
+
+:::
+
+
+## Installing the Tools
+### Installing R packages with `install.packages("packageName")`
+
+- R packages can be easily installed from within R using functions  `install.packages("packageName")`. 
+  - To install the R package `tidyverse`, type and run the following from R console:
+
+:::{.incremental}
+```{.r}
+install.packages("tidyverse")
+```
+
+
+- While running the above codes, you may encounter the question below from the R Console:
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- **Mac**: *"Do you want to install from sources the packages which need compilation?"* from Console Pane.
+:::
+
+::: {.column width="50%"}
+
+- **Windows**: *"Would you like to use a personal library instead?"* from Pop-up message.
+:::
+::::
+
+- Type `no` in the R Console, and then hit *Enter*.
+
+:::
+
+## Installing the Tools
+### Loading R packages with `library(packageName)`
+
+- Once installed, a package is loaded into an R session using `library(packageName)` so that its functions and data can be used.
+  - To load the R package `tidyverse`, type and run the following command from a R script:
+
+```{.r}
+library(tidyverse)
+df_mpg <- mpg
+```
+
+:::{.incremental}
+- `mpg` is the data.frame provided by the R package `ggplot2`, one of the R pakcages in `tidyverse`.
+:::
+
+## Installing the Tools
+### RStudio Options Setting
+
+:::: {.columns}
+::: {.column width="50%"}
+![](https://bcdanl.github.io/lec_figs/RStudio_options.png)
+:::
+
+::: {.column width="50%"}
+- This option menu is found by menus as follows:
+  - Tools $>$ Global Options
+
+- Check the boxes as in the left.
+- Choose the option __*Never*__ for <u> Save workspace to .RData on exit: </u>
+:::
+
+::::
+
+
+
+## Building a Personal Website on GitHub
+
+- Follow steps described in [Classwork 1](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html).
+
+
+## Let's Practice Markdown!
+
+- Jupyter Notebook, Quarto, and GitHub-based Discussion Boards use **markdown** as its underlying document syntax.
+
+- Let's do [Classwork 2](https://bcdanl.github.io/210/danl-cw/danl-210-cw-02.html).
+
+
+
+
 
 

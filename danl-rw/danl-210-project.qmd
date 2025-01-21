@@ -1,0 +1,233 @@
+---
+title: "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis"
+subtitle: DANL 210 Project
+author: Byeong-Hak Choe
+institute: SUNY Geneseo
+date: last-modified
+format: 
+  html
+    # toc: true
+    # toc-depth: 2
+    # toc-expand: true
+    # toc-title: Contents
+code-fold: false
+
+execute:
+  echo: true
+  eval: true
+  message: false
+  warning: false
+  fig-width: 9
+  fig-height: 6
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(broom)
+library(hrbrthemes)
+
+theme_set(theme_ipsum() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1.5) ),
+                axis.title.y = element_text(size = rel(1.5) ))
+          )
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+
+```
+
+<br>
+
+## Project
+
+- Publish the webpage of your data analysis project on your website, hosted on GitHub. 
+  - Your data analysis should focus on the agenda, **"Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis"**. 
+  - Use either a Jupyter Notebook or a Quarto document to present your work.
+  - The due for the project is May 16, 2025, Friday, 11:59 P.M.
+
+<br>
+
+## Project Data
+- Below is the `esg_proj` DataFrame, which provides a list of companies and associated information
+
+```{python}
+#| eval: false
+import pandas as pd
+esg_proj = pd.read_csv("https://bcdanl.github.io/data/stock_esg_list.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+esg_proj <- read_csv("https://bcdanl.github.io/data/stock_esg_list.csv")
+DT::datatable(esg_proj, rownames = F)
+```
+
+#### Variable Description
+
+- `Symbol`: a company's ticker;
+- `Company Name`: a company name;
+- `Sector`: a sector a company belongs to;
+- `Industry`: an industry a company belongs to;
+- `Country`: a country a company belongs to;
+- `Market Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
+  - A company's market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.
+
+
+<br><br>
+
+## Project Tasks
+
+### Data Collection
+
+### `yfinance`
+- Utilize the `yfinance` library, an unofficial API for accessing [Yahoo! Finance](https://finance.yahoo.com) data.
+  - For each company listed in the `esg_proj` DataFrame, you should retrieve the following:
+    - Daily historical stock data spanning from January 1, 2024, to March 31, 2025.
+    - Quarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).
+    - Quarterly balance sheets for the same period as the income statements.
+
+### `selenium`
+- Employ the Python `selenium` library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
+  - [Agilent Technologies (A)](https://finance.yahoo.com/quote/A/sustainability)
+  - [Alcoa Corporation (AA)](https://finance.yahoo.com/quote/AA/sustainability)
+  
+- Ensure robust error and exception handling during data collection from the Sustainability Section on [Yahoo! Finance](https://finance.yahoo.com):
+  1. To avoid being blocked by [Yahoo! Finance](https://finance.yahoo.com) for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies' Sustainability Sections.
+  2. Use `time.sleep()` for each visit of the Sustainability Section webpage.
+  3. Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.
+  4. [Yahoo! Finance](https://finance.yahoo.com) intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.
+  - You can check the new and classic layouts of [Yahoo! Finance](https://finance.yahoo.com) by selecting the corresponding options from the navigation bar on their website.
+  
+::::{.columns}
+
+::: {.column width="31%"}
+![](https://bcdanl.github.io/lec_figs/yf-old.png)
+:::
+
+
+::: {.column width="15%"}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="34%"}
+![](https://bcdanl.github.io/lec_figs/yf-new.png)
+:::
+
+::: {.column width="15%"}
+:::
+
+::::
+
+::::{.columns}
+
+::: {.column width="46%"}
+![](https://bcdanl.github.io/lec_figs/yf-old-layout.png)
+:::
+
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="49%"}
+![](https://bcdanl.github.io/lec_figs/yf-new-layout.png)
+:::
+
+
+::::
+
+
+<br>
+
+
+### Data Analysis
+
+- Below are the key components in the data analysis webpage.
+
+  1. **Title**: A clear and concise title that gives an idea of the project topics.
+  
+  2. **Introduction**:
+     - **Background**: Provide context for the research questions, explaining why they are significant, relevant, or interesting.
+     - **Statement of the Problem**: Clearly articulate the specific problem or issue the project will address.
+
+  3. **Data Collection**: Use a Python script (`*.py`) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python `yfinance` and `selenium`.
+     - Do NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.
+
+  4. **Descriptive Statistics**
+    - Provide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data
+    - Provide correlation heat maps using `corr()` and `seaborn.heatmap()`. Below provides the Python code for creating a correlation heatmap.
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Sample DataFrame with varied correlations
+data = {
+    'Revenue': [100, 200, 300, 400, 500],  
+    'Profit': [20, 40, 60, 80, 100],       
+    'n_Employee': [50, 45, 40, 35, 30], 
+    'n_Customer': [10, 11, 12, 13, 14]  
+}
+
+# Create a DataFrame from the dictionary
+df = pd.DataFrame(data)
+
+# Calculate the correlation matrix of the DataFrame
+corr = df.corr()
+
+# Set up the matplotlib figure size
+plt.figure(figsize=(8, 6))
+
+# Generate a heatmap in seaborn:
+# - 'corr' is the correlation matrix
+# - 'annot=True' enables annotations inside the squares with the correlation values
+# - 'cmap="coolwarm"' assigns a color map from cool to warm (blue to red)
+# - 'fmt=".2f"' formats the annotations to two decimal places
+# - 'linewidths=.5' adds lines between each cell
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
+
+# Title of the heatmap
+plt.title('Correlation Heatmap with Varied Correlations')
+
+# Display the heatmap
+plt.show()
+```
+
+
+  5. **Exploratory Data Analysis**:
+     - List the questions you aim to answer.
+     - Address the questions through data visualization with `seaborn` (or `lets-plot`) and `pandas` methods and attributes.
+  
+  6. **Significance of the Project**:
+     - Explain its implications for real-world applications, business strategies, or public policy.
+  
+  7. **References**
+     - List all sources cited in the project.
+     - Leave a web address of the reference if that is from the web.
+     - Indicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.
+     - Clearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated.
+
+
+
+<br>
+
+## Rubric for the Project
+
+- Here is the [link](https://bcdanl.github.io/210/danl-210-rubric-project.pdf) to the PDF file of the rubric for the project web-page.
+
+
+### Rubric for Quality of Data Collection
+
+| Evaluation | Description | Criteria |
+|-------|-------------|----------|
+| 1 (Very Deficient) | - Very poorly implemented<br>- Data is unreliable. | - Ineffective use of `yfinance`, resulting in incomplete or inaccurate financial data.<br>- Poor web scraping practices with `selenium`, leading to unreliable or incorrect data from Yahoo Finance.<br>- Inadequate use of `pandas`, resulting in poorly structured DataFrames. |
+| 2 (Somewhat Deficient) | - Somewhat effective implementation<br>- Data has minor reliability issues. | - Basic use of `yfinance` with minor inaccuracies in data retrieval.<br>- Basic web scraping with `selenium` that sometimes fails to capture all relevant data accurately.<br>- Basic use of `pandas`, but with occasional issues in data structuring. |
+| 3 (Acceptable) | - Competently implemented<br>- Data is mostly reliable. | - Competent use of `yfinance` to retrieve most financial data accurately.<br>- Effective web scraping with `selenium`, capturing most required data from Yahoo Finance.<br>- Adequate use of `pandas` to structure data in a mostly logical format. |
+| 4 (Very Good) | - Well-implemented and organized<br>- Data is reliable. | - Advanced use of `yfinance` to reliably and accurately fetch financial data.<br>- Thorough web scraping with `selenium` that consistently captures accurate and complete data from Yahoo Finance.<br>- Skillful use of `pandas` for clear and logical data structuring. |
+| 5 (Outstanding) | - Exceptionally implemented<br>- Data is highly reliable. | - Expert use of `yfinance` to obtain comprehensive and precise financial data.<br>- Expert web scraping with `selenium`, capturing detailed and accurate data from Yahoo Finance without fail.<br>- Expert use of `pandas` to create exceptionally well-organized DataFrames that facilitate easy analysis. |
+
