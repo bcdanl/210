@@ -1,11 +1,41 @@
 ---
-title: Discussion and Q & A Board
+title: '<font style="font-family:Optima"><b>DANL 210 - Discussion and Q & A Board</b></font>'
 date: last-modified
-execute: 
-  echo: true
-  eval: true
-  warning: false
-  message: false
+date-modified: "" 
+author: ""
+page-layout: full
+
+toc: false
+toc-title: ""
+toc-location: right
+# comments: false
+# css: front.css
+from: markdown+emoji
+fig-align: center
+
+format: 
+  html:
+    include-in-header:
+     text: |
+        <style>
+        #toc-welcome {
+              font-size: 1.67em;
+        }
+        #toc-bullet-lecture {
+              font-size: 1.67em;
+        }
+        #toc-bullet-classwork {
+              font-size: 1.67em;
+        }
+        #toc-bullet-homework {
+              font-size: 1.67em;
+        }
+        a {
+        text-decoration: none; /* This removes the underline */
+        padding: 5px 10px; /* Top & Bottom, Left & Right Padding */
+        border-radius: 5px; /* Rounds the corners */
+        }
+        </style>
 ---
 
 <font size = "5">Welcome to our Discussion and Q & A Board! 👋 </font>
@@ -19,4 +49,4 @@ If you have any specific questions to Byeong-Hak (**@bcdanl**) or your classmate
 
 Let's collaborate and learn from each other!
 
-Please note that all our comments are recorded in [here](https://github.com/bcdanl/210/discussions), regardless of comments are displayed here or not.
+Please note that all our comments are recorded in [here](https://github.com/bcdanl/210/discussions), regardless of whether comments are displayed in this page or not.
