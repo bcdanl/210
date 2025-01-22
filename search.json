@@ -46,7 +46,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -67,7 +67,7 @@
     "href": "index.html#bullet-classwork",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nClasswork 3\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -789,5 +789,40 @@
     "title": "Lecture 1",
     "section": "Syllabus",
     "text": "Syllabus\nCareer Design\n\nTo get information about career development, you can visit the Career Development Events Calendar (https://www.geneseo.edu/career_development/events/calendar).\nYou can stop by South 112 to get assistance in completing your Handshake Profile https://app.joinhandshake.com/login.\n\nHandshake is ranked #1 by students as the best place to find full-time jobs.\n50% of the 2018-2020 graduates received a job or internship offer on Handshake.\nHandshake is trusted by all 500 of the Fortune 500."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-03.html",
+    "href": "danl-cw/danl-210-cw-03.html",
+    "title": "Classwork 3",
+    "section": "",
+    "text": "_quarto.yml configures the website:\n\nIt determines the structure of the website.\n\ne.g., Navigation bar, themes, HTML options, etc.\n\nIf _quarto.yml is edited, use quarto render to render all qmd and ipynb files.\n\nindex.qmd renders index.html, the front page of the website.\n\nDo not create Quarto files something like index2.qmd within the working directory.\n\nblog-listing.qmd configures the blog listing page.\nposts directory includes sub-directories of blog posts.\nimg directory can be used to store picture files.\n\n\n\n\nA file in the working directory can have its own web address.\n\nFor example, if you have resume-example.pdf in your working directory, it has the web address, https://USERNAME.github.io/resume-example.pdf.\n\nWhen naming a file in the website, do not have any space in a file name!\nBe systematic when naming a series of files in the website.\n\nE.g., danl-210-cw-01.qmd, danl-210-cw-02.qmd, danl-210-cw-03.qmd.\n\n\n\n\n\n\n\nRules\n\nOne blog post corresponds to:\n\n\nOne sub-directory in the posts directory.\nOne *.qmd or *.ipynb file.\n\n\nPut all files for one blog post (e.g., *.qmd, *.png) in one corresponding sub-directory in the posts directory.\nWhen inserting an image file to a blog post, use a relative path, i.e., a file name of the image file.\n\n\n\n\n\n\n\nDecorate your website:\n\n\nReplace YOUR NAME with your name in _quarto.yml and index.qmd.\nDescribe yourself in index.qmd.\nAdd the picture (png) file of your profile photo to img directory. Then correct img/profile.png in index.qmd accordingly.\nCorrect links for your resumé, linkedin, email, and social media.\n\n\nAdd a drop-down menu of “Python Data Analysis” to the navigation bar.\n\n\nUnder the menu of “Python Data Analysis”, add links for the following two webpages:\n\nPython Basics using danl-210-python-basic.ipynb\nPython Basics with Pandas using danl-210-quarto-py-only.qmd\n\n\n\nUse the 3-step git commands (git add, git commit, and git push) to update your website.\n\n\n\n\n\n\nQuarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-03.html#website-files",
+    "href": "danl-cw/danl-210-cw-03.html#website-files",
+    "title": "Classwork 3",
+    "section": "",
+    "text": "_quarto.yml configures the website:\n\nIt determines the structure of the website.\n\ne.g., Navigation bar, themes, HTML options, etc.\n\nIf _quarto.yml is edited, use quarto render to render all qmd and ipynb files.\n\nindex.qmd renders index.html, the front page of the website.\n\nDo not create Quarto files something like index2.qmd within the working directory.\n\nblog-listing.qmd configures the blog listing page.\nposts directory includes sub-directories of blog posts.\nimg directory can be used to store picture files.\n\n\n\n\nA file in the working directory can have its own web address.\n\nFor example, if you have resume-example.pdf in your working directory, it has the web address, https://USERNAME.github.io/resume-example.pdf.\n\nWhen naming a file in the website, do not have any space in a file name!\nBe systematic when naming a series of files in the website.\n\nE.g., danl-210-cw-01.qmd, danl-210-cw-02.qmd, danl-210-cw-03.qmd."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-03.html#blogging",
+    "href": "danl-cw/danl-210-cw-03.html#blogging",
+    "title": "Classwork 3",
+    "section": "",
+    "text": "Rules\n\nOne blog post corresponds to:\n\n\nOne sub-directory in the posts directory.\nOne *.qmd or *.ipynb file.\n\n\nPut all files for one blog post (e.g., *.qmd, *.png) in one corresponding sub-directory in the posts directory.\nWhen inserting an image file to a blog post, use a relative path, i.e., a file name of the image file."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-03.html#practice-problems",
+    "href": "danl-cw/danl-210-cw-03.html#practice-problems",
+    "title": "Classwork 3",
+    "section": "",
+    "text": "Decorate your website:\n\n\nReplace YOUR NAME with your name in _quarto.yml and index.qmd.\nDescribe yourself in index.qmd.\nAdd the picture (png) file of your profile photo to img directory. Then correct img/profile.png in index.qmd accordingly.\nCorrect links for your resumé, linkedin, email, and social media.\n\n\nAdd a drop-down menu of “Python Data Analysis” to the navigation bar.\n\n\nUnder the menu of “Python Data Analysis”, add links for the following two webpages:\n\nPython Basics using danl-210-python-basic.ipynb\nPython Basics with Pandas using danl-210-quarto-py-only.qmd\n\n\n\nUse the 3-step git commands (git add, git commit, and git push) to update your website."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-03.html#references",
+    "href": "danl-cw/danl-210-cw-03.html#references",
+    "title": "Classwork 3",
+    "section": "",
+    "text": "Quarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
   }
 ]
