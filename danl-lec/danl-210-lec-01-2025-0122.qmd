@@ -184,8 +184,6 @@ theme_set(theme_fivethirtyeight()+
 - **Laptop**: You should bring your own laptop (**Mac** or **Windows**) to the classroom. 
   - The minimum specification for your laptop in this course is 2+ core CPU, 4+ GB RAM, and 500+ GB disk storage.
   
-::: {.incremental}
-
 - **Homework**: There will be six homework assignments.
 
 - **Project**: There will be one project on a *personal website*.
@@ -196,7 +194,6 @@ theme_set(theme_fivethirtyeight()+
 - **Discussions**: You are encouraged to participate in GitHub-based online discussions and class discussion, and office hours.
   - Checkout the netiquette policy in the syllabus.
 
-:::
 
 
 
@@ -234,23 +231,32 @@ theme_set(theme_fivethirtyeight()+
   - [Quarto Guide](https://quarto.org/docs/guide){target="_blank"}
 
 
+## Syllabus
+### Why Personal Website?
+
+- Here are the example websites:
+  - [Byeong-Hak's Website](https://bcecon.github.io)
+  - [DANL Website Template](https://bcdanl.github.io/danl-website-template)
+
+- **Professional Showcase**: Display skills and projects
+- **Visibility and Networking**: Increase online presence
+- **Content Sharing and Engagement**: Publish articles, insights
+- **Job Opportunities**: Attract potential employers and clients
+- **Long-term Asset**: A growing repository of your career journey
+- **Reproducible Research**: Showcase data-driven reports
+
 
 ## Syllabus
 ### Team Project
 
 - Team formation is scheduled for late March. 
-
-::: {.incremental}
-
-- Each team must have one to two students. 
+  - Each team must have one to two students. 
 
 - The project report should include data collection and exploratory data analysis using summary statistics, visual representations, and data wrangling. 
 
 - The document for the team project must be published in each member's website. 
 
 - Any changes to team composition require approval from Byeong-Hak Choe. 
-
-::: 
 
 
 
@@ -260,14 +266,11 @@ theme_set(theme_fivethirtyeight()+
 
 - There will be tentatively 42 class sessions.
 
-::: {.incremental}
+- The **Midterm Exam I** is scheduled on February 28, 2025, Friday, during the class time.
 
+- The **Midterm Exam II** is scheduled on April 9, 2025, Wednesday, during the class time.
 
-- The Midterm Exam I is scheduled on February 28, 2025, Friday, during the class time.
-
-- The Midterm Exam II is scheduled on April 9, 2025, Wednesday, during the class time.
-
-- The Final Exam is scheduled on May 14, Wednesday, 8:30 A.M.--10:30 A.M.
+- The **Final Exam** is scheduled on May 14, Wednesday, 8:30 A.M.--10:30 A.M.
 
 - No class on 
   - March 17, 19, and 21 (*Spring Break*)
@@ -275,14 +278,12 @@ theme_set(theme_fivethirtyeight()+
 
 - The due for the team project is May 16, 2025, Friday, 11:59 P.M., Eastern Time
 
-:::
 
 
 
 ## Syllabus
 ### Course Contents
 
-- The first part of the course covers Python basics and `pandas` basics:
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
@@ -291,7 +292,7 @@ text_tbl <- data.frame(
   Contents = c("Course Outlines; Installing the Tools; Building a Website; Markdown",
 "Python Basics I with Google Colab",
 "Filtering, Sorting, and Ranking Values"),
-  `HW Exam` = c("", "HW 1-2", "Midterm I")
+  HW = c("", "1", "2")
   )
 
 
@@ -340,13 +341,12 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
-
+- The first part of the course covers Python basics and `pandas` basics.
 
 
 ## Syllabus
 ### Course Contents
 
-- The second part of the course covers advanced `pandas`:
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
@@ -357,7 +357,7 @@ text_tbl <- data.frame(
 "Visualizing DataFrames",
 "Pivoting, Joining and Concatenating DataFrames"
 ),
-  `HW Exam` = c("HW 3", "HW 4", "Midterm II")
+  HW = c("","3", "4")
   )
 
 
@@ -407,12 +407,12 @@ DT::datatable(text_tbl, rownames = FALSE,
 ```
 
 
+- The second part of the course covers advanced `pandas`.
 
 
 ## Syllabus
 ### Course Contents
 
-- The third part of the course covers data collection:
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
@@ -423,7 +423,7 @@ text_tbl <- data.frame(
 "Web Scrapping with Selenium",
 "Data Collection with Application Programming Interfaces (APIs)"
 ),
-  `HW Exam` = c("", "HW 5", "HW 6")
+  HW = c("", "5", "6")
   )
 
 
@@ -472,6 +472,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
+- The third part of the course covers data collection.
 
 
 ## Syllabus
@@ -493,24 +494,16 @@ $$
 - You are allowed up to 5 absences without penalty. 
   - Send me an email if you have standard excused reasons (illness, family emergency, transportation problems, etc.).
 
-
-::: {.incremental}
-
 - For each absence beyond the initial five, there will be a deduction of 1% from the Total Percentage Grade.
 
 - Participation will be evaluated by quantity and quality of GitHub-based online discussions and in-person discussion.
 
 - The single lowest homework score will be dropped when calculating the total homework score.
 
-::: 
   
 
 ## Syllabus
 ### Grading
-
-- The Midterm Exam Score is the maximum between 
-  1. the simple average of the Midterm Exam I score and the Midterm Exam II Score and
-  2. the weighted average of them with one-fourth weight on the Midterm Exam I Score and three-third weight on the Midterm Exam II Score:
 
 $$
 \begin{align}
@@ -520,12 +513,13 @@ $$
 \end{align}
 $$
 
+- The Midterm Exam Score is the maximum between 
+  1. the simple average of the Midterm Exam I score and the Midterm Exam II Score and
+  2. the weighted average of them with one-fourth weight on the Midterm Exam I Score and three-third weight on the Midterm Exam II Score.
+  
+  
 ## Syllabus
 ### Grading
-
-- The Total Exam Score is the maximum between 
-  1. the simple average of the Midterm Exam Score and the Final Exam Score and
-  2. the weighted average of them with one-fourth weight on the Midterm Exam Score and three-third weight on the Final Exam Score:
 
 $$
 \begin{align}
@@ -536,13 +530,15 @@ $$
 $$
 
 
+- The Total Exam Score is the maximum between 
+  1. the simple average of the Midterm Exam Score and the Final Exam Score and
+  2. the weighted average of them with one-fourth weight on the Midterm Exam Score and three-third weight on the Final Exam Score.
+
 
 ## Syllabus
 ### Make-up Policy
 
 -  Make-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.
-
-::: {.incremental}
 
 - If you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.
 
@@ -551,8 +547,6 @@ $$
 - Late submissions for homework assignment will be accepted with a penalty. 
 
 - A zero will be recorded for a missed assignment.
-
-:::
 
 
 
@@ -610,25 +604,6 @@ $$
 # Prologue {background-color="#1c4982"}
 
 
-## Why Personal Website?
-### Benefits of a Personal Website in Data Analytics
-
-:::{}
-- Here are the example websites:
-  - [Byeong-Hak's Website](https://bcecon.github.io)
-  - [DANL Website Template](https://bcdanl.github.io/danl-website-template)
-:::
-
-:::{.incremental}
-- **Professional Showcase**: Display skills and projects
-- **Visibility and Networking**: Increase online presence
-- **Controlled Narrative**: Manage your professional brand
-- **Content Sharing and Engagement**: Publish articles, insights
-- **Job Opportunities**: Attract potential employers and clients
-- **Long-term Asset**: A growing repository of your career journey
-- **Reproducible Research**: Showcase data-driven reports
-:::
-
 
 ## Why Data Analytics?
 
@@ -663,41 +638,6 @@ $$
 
 
 
-
-
-## Why R, Python, and Databases?
-
-![](https://bcdanl.github.io/lec_figs/indeed-py-r-sql.png)
-
-## Why R, Python, and Databases?
-
-- [Stack Overflow](https://stackoverflow.com){target="_blank"}  is the most popular Q & A website specifically for programmers and software developers in the world.
-
-- See how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2022.
-
-
-:::: {.columns}
-
-::: {.column width="50%"}
-### Most Popular Languagues
-
-![](https://bcdanl.github.io/lec_figs/stackoverflow-py-r-sql.png)
-:::
-
-
-::: {.column width="50%"}
-### Data Science and Big Data
-
-![](https://bcdanl.github.io/lec_figs/stackoverflow-datascience-r-sql.png)
-
-:::
-
-:::: 
-
-
-
-
-
 ## The State of the Art
 ### Generative AI and ChatGPT
 
@@ -724,27 +664,6 @@ From 2008 to 2023
 
 ::::
 
-
-
-
-
-
-
-
-## The State of the Art
-### Generative AI and ChatGPT
-
-- **Generative AI** refers to a category of artificial intelligence (AI) that is capable of generating new content, ranging from text, images, and videos to music and code. 
-
-:::{.incremental}
-
-- In the early 2020s, advances in transformer-based deep neural networks enabled a number of generative AI systems notable for accepting natural language prompts as input.
-  - These include large language model (LLM) chatbots (e.g., ChatGPT, Claude, Copilot, Gemini, LLaMA, Grok).
-
-- **ChatGPT** (Chat Generative Pre-trained Transformer) is a chatbot developed by OpenAI and launched on November 30, 2022. 
-  - By January 2023, it had become what was then the fastest-growing consumer software application in history.
-
-:::
 
 
 
@@ -814,24 +733,15 @@ $\quad$
 {{< video https://www.youtube.com/watch?v=pBy1zgt0XPc width="100%" height="100%">}}
 
 
-## What is R?
-
-- **R** is a programming language and software environment designed for statistical computing and graphics. 
-
-- R has become a major tool in data analysis, statistical modeling, and visualization. 
-  - It is widely used among statisticians and data scientists for developing statistical software and performing data analysis. 
-  - R is open source and freely available. 
-
 
 ## What is RStudio?
 
-- **RStudio** is an integrated development environment (IDE) for R. 
+- **RStudio** is an integrated development environment (IDE) mainly for R programming. 
   - An IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development. 
 
 - RStudio is a user-friendly interface that makes using R easier and more interactive. 
   - It provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.
 
-- We will use a free cloud version of RStudio, which is [**Posit Cloud**](https://posit.cloud).
 
 
 
@@ -847,22 +757,14 @@ $\quad$
 
 ## What is Jupyter?
 
-- **Jupyter** is an open-source integrated development environment (IDE) primarily for Python, though it supports many other languages.
+- **Jupyter** is an open-source IDE primarily for Python, though it supports many other languages.
   - Jupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format.
 
-- Jupyter Notebook is a user-friendly environment that enhances coding, data analysis, and visualization.
+- Jupyter Notebook (`*.ipynb`) is a user-friendly environment that enhances coding, data analysis, and visualization.
   - It offers a web-based interface that combines live code, equations, visualizations, and narrative text.
-  - Jupyter is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.
+  - Jupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.
 
 - We will use a free cloud version of Jupyter, which is [**Google Colab**](https://colab.research.google.com).
-
-
-
-## Python vs. R
-
-{{< video https://www.youtube.com/watch?v=4lcwTGA7MZw width="100%" height="100%">}}
-
-
 
 
 
