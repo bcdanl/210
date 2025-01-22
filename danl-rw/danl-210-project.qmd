@@ -123,22 +123,22 @@ DT::datatable(esg_proj, rownames = F)
 
 ::::
 
-::::{.columns}
+<!-- ::::{.columns} -->
 
-::: {.column width="46%"}
-![](https://bcdanl.github.io/lec_figs/yf-old-layout.png)
-:::
-
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="49%"}
-![](https://bcdanl.github.io/lec_figs/yf-new-layout.png)
-:::
+<!-- ::: {.column width="46%"} -->
+<!-- ![](https://bcdanl.github.io/lec_figs/yf-old-layout.png) -->
+<!-- ::: -->
 
 
-::::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="49%"} -->
+<!-- ![](https://bcdanl.github.io/lec_figs/yf-new-layout.png) -->
+<!-- ::: -->
+
+
+<!-- :::: -->
 
 
 <br>
