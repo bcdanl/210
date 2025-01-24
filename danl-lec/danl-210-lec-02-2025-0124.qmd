@@ -200,26 +200,29 @@ $\quad$
 
 ## What is Jupyter?
 
-- **Jupyter** is an open-source IDE primarily for Python, though it supports many other languages.
+- **Jupyter** is an open-source integrated development environment (IDE) primarily for **Python**, though it supports many other languages.
+  - An IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to users for a programming-related project. 
   - Jupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format.
 
+
+
+## What is Jupyter Notebook?
 - Jupyter Notebook (`*.ipynb`) is a user-friendly environment that enhances coding, data analysis, and visualization.
   - It offers a web-based interface that combines live code, equations, visualizations, and narrative text.
   - Jupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.
 
-- We will use a free cloud version of Jupyter, which is [**Google Colab**](https://colab.research.google.com).
 
+- We will use [**Google Colab**](https://colab.research.google.com), a free cloud version of Jupyter.
 
 
 ## What is RStudio?
 
-- **RStudio** is an integrated development environment (IDE) mainly for R programming. 
-  - An IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development. 
+- **RStudio** is an IDE mainly for **R** programming. 
 
 - RStudio is a user-friendly interface that makes using R easier and more interactive. 
   - It provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.
 
-- We will use RStudio to manage a personal website using Quarto and Jupyter Notebook.
+- We will use RStudio to manage a personal website, where HTML files are rendered from **Quarto Document** and **Jupyter Notebook**.
 
 
 
@@ -450,7 +453,7 @@ df_mpg <- ggplot2::mpg
   - [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution){target="_blank"}.
   - Click the "Download" button.
 
-- To work on web-scrapping and APIs, we will use Spyder IDE provided by Anaconda.
+- To work on web-scrapping and APIs, we will use **Spyder IDE** provided by Anaconda.
 
 
 ## Building a Personal Website on GitHub

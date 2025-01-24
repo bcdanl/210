@@ -886,7 +886,7 @@
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-rstudio",
     "title": "Lecture 2",
     "section": "What is RStudio?",
-    "text": "What is RStudio?\n\nRStudio is an integrated development environment (IDE) mainly for R programming.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.\n\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\n\nWe will use RStudio to manage a personal website using Quarto and Jupyter Notebook."
+    "text": "What is RStudio?\n\nRStudio is an IDE mainly for R programming.\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\n\nWe will use RStudio to manage a personal website, where HTML files are rendered from Quarto Document and Jupyter Notebook."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-python",
@@ -900,7 +900,7 @@
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter",
     "title": "Lecture 2",
     "section": "What is Jupyter?",
-    "text": "What is Jupyter?\n\nJupyter is an open-source IDE primarily for Python, though it supports many other languages.\n\nJupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format.\n\nJupyter Notebook (*.ipynb) is a user-friendly environment that enhances coding, data analysis, and visualization.\n\nIt offers a web-based interface that combines live code, equations, visualizations, and narrative text.\nJupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.\n\nWe will use a free cloud version of Jupyter, which is Google Colab."
+    "text": "What is Jupyter?\n\nJupyter is an open-source integrated development environment (IDE) primarily for Python, though it supports many other languages.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to users for a programming-related project.\nJupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-1",
@@ -992,5 +992,12 @@
     "title": "Lecture 2",
     "section": "Let’s Practice Markdown!",
     "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter-notebook",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter-notebook",
+    "title": "Lecture 2",
+    "section": "What is Jupyter Notebook?",
+    "text": "What is Jupyter Notebook?\n\nJupyter Notebook (*.ipynb) is a user-friendly environment that enhances coding, data analysis, and visualization.\n\nIt offers a web-based interface that combines live code, equations, visualizations, and narrative text.\nJupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.\n\nWe will use Google Colab, a free cloud version of Jupyter."
   }
 ]
