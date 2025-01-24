@@ -525,19 +525,6 @@ Byeong-Hak Choe
 <h2>What is GitHub?</h2>
 <iframe data-external="1" src="https://www.youtube.com/embed/pBy1zgt0XPc" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
-<section id="what-is-rstudio" class="slide level2">
-<h2>What is RStudio?</h2>
-<ul>
-<li class="fragment"><strong>RStudio</strong> is an integrated development environment (IDE) mainly for R programming.
-<ul>
-<li class="fragment">An IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.</li>
-</ul></li>
-<li class="fragment">RStudio is a user-friendly interface that makes using R easier and more interactive.
-<ul>
-<li class="fragment">It provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.</li>
-</ul></li>
-</ul>
-</section>
 <section id="what-is-python" class="slide level2">
 <h2>What is Python?</h2>
 <ul>
@@ -563,6 +550,20 @@ Byeong-Hak Choe
 </ul></li>
 <li class="fragment">We will use a free cloud version of Jupyter, which is <a href="https://colab.research.google.com"><strong>Google Colab</strong></a>.</li>
 </ul>
+</section>
+<section id="what-is-rstudio" class="slide level2">
+<h2>What is RStudio?</h2>
+<ul>
+<li class="fragment"><strong>RStudio</strong> is an integrated development environment (IDE) mainly for R programming.
+<ul>
+<li class="fragment">An IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.</li>
+</ul></li>
+<li class="fragment">RStudio is a user-friendly interface that makes using R easier and more interactive.
+<ul>
+<li class="fragment">It provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.</li>
+</ul></li>
+<li class="fragment">We will use RStudio to manage a personal website using Quarto and Jupyter Notebook.</li>
+</ul>
 </section></section>
 <section>
 <section id="installing-the-tools" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -570,17 +571,6 @@ Byeong-Hak Choe
 
 </section>
 <section id="installing-the-tools-1" class="slide level2">
-<h2>Installing the Tools</h2>
-<h3 id="anaconda">Anaconda</h3>
-<ul>
-<li class="fragment">To install Anaconda, go to the following download page:
-<ul>
-<li class="fragment"><a href="https://www.anaconda.com/products/distribution" target="_blank">https://www.anaconda.com/products/distribution</a>.</li>
-<li class="fragment">Click the “Download” button.</li>
-</ul></li>
-</ul>
-</section>
-<section id="installing-the-tools-2" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="r-programming">R programming</h3>
 <ul>
@@ -592,7 +582,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="installing-the-tools-3" class="slide level2">
+<section id="installing-the-tools-2" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="r-studio">R Studio</h3>
 <div>
@@ -618,36 +608,33 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="installing-the-tools-4" class="slide level2">
+<section id="installing-the-tools-3" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="rstudio-environment">RStudio Environment</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
 </div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment"><strong>Script Pane</strong> is where you write R commands in a script file that you can save.</li>
-</ul>
 <div>
 <ul>
-<li class="fragment">An R script is simply a text file containing R commands.</li>
-<li class="fragment">RStudio will color-code different elements of your code to make it easier to read.</li>
+<li><p><strong>Script Pane</strong> is where you write R commands in a script file that you can save.</p>
+<ul>
+<li>An R script is simply a text file containing R commands.</li>
+<li>RStudio will color-code different elements of your code to make it easier to read.</li>
+</ul></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div>
 <ul>
 <li class="fragment">To open an R script,
 <ul>
 <li class="fragment">File <span class="math inline">\(&gt;\)</span> New File <span class="math inline">\(&gt;\)</span> R Script</li>
 </ul></li>
 </ul>
-</div>
 </div><div class="column" style="width:50%;">
-<div>
 <ul>
 <li class="fragment">To save the R script,
 <ul>
@@ -656,50 +643,55 @@ Byeong-Hak Choe
 </ul>
 </div>
 </div>
-</div>
 </section>
-<section id="installing-the-tools-5" class="slide level2">
+<section id="installing-the-tools-4" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="rstudio-environment-1">RStudio Environment</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
 </div><div class="column" style="width:50%;">
+<div>
 <ul>
-<li class="fragment"><strong>Console Pane</strong> allows you to interact directly with the R interpreter and type commands where R will immediately execute them.</li>
+<li><strong>Console Pane</strong> allows you to interact directly with the R interpreter and type commands where R will immediately execute them.</li>
 </ul>
 </div>
 </div>
+</div>
 </section>
-<section id="installing-the-tools-6" class="slide level2">
+<section id="installing-the-tools-5" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="rstudio-environment-2">RStudio Environment</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
 </div><div class="column" style="width:50%;">
+<div>
 <ul>
-<li class="fragment"><p><strong>Environment Pane</strong> is where you can see the values of variables, data frames, and other objects that are currently stored in memory.</p></li>
-<li class="fragment"><p>Type below in the Console Pane, and then hit <em>Enter</em>:</p></li>
+<li><p><strong>Environment Pane</strong> is where you can see the values of variables, data frames, and other objects that are currently stored in memory.</p></li>
+<li><p>Type below in the Console Pane, and then hit <em>Enter</em>:</p></li>
 </ul>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="installing-the-tools-7" class="slide level2">
+<section id="installing-the-tools-6" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="rstudio-environment-3">RStudio Environment</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="https://bcdanl.github.io/lec_figs/rstudio_env.png"></p>
 </div><div class="column" style="width:50%;">
+<div>
 <ul>
-<li class="fragment"><strong>Plots Pane</strong> contains any graphics that you generate from your R code.</li>
+<li><strong>Plots Pane</strong> contains any graphics that you generate from your R code.</li>
 </ul>
 </div>
 </div>
+</div>
 </section>
-<section id="installing-the-tools-8" class="slide level2">
+<section id="installing-the-tools-7" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="r-packages-and-tidyverse">R Packages and <code>tidyverse</code></h3>
 <ul>
@@ -715,16 +707,17 @@ Byeong-Hak Choe
 </ul>
 </div>
 </section>
-<section id="installing-the-tools-9" class="slide level2">
+<section id="installing-the-tools-8" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="installing-r-packages-with-install.packagespackagename">Installing R packages with <code>install.packages("packageName")</code></h3>
+<div>
 <ul>
-<li class="fragment">R packages can be easily installed from within R using functions <code>install.packages("packageName")</code>.
+<li>R packages can be easily installed from within R using functions <code>install.packages("packageName")</code>.
 <ul>
-<li class="fragment">To install the R package <code>tidyverse</code>, type and run the following from R console:</li>
+<li>To install the R package <code>tidyverse</code>, type and run the following from R console:</li>
 </ul></li>
 </ul>
-<div>
+</div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">While running the above codes, you may encounter the question below from the R Console:</li>
@@ -743,26 +736,25 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">Type <code>no</code> in the R Console, and then hit <em>Enter</em>.</li>
 </ul>
-</div>
 </section>
-<section id="installing-the-tools-10" class="slide level2">
+<section id="installing-the-tools-9" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="loading-r-packages-with-librarypackagename">Loading R packages with <code>library(packageName)</code></h3>
+<div>
 <ul>
-<li class="fragment">Once installed, a package is loaded into an R session using <code>library(packageName)</code> so that its functions and data can be used.
+<li>Once installed, a package is loaded into an R session using <code>library(packageName)</code> so that its functions and data can be used.
 <ul>
-<li class="fragment">To load the R package <code>tidyverse</code>, type and run the following command from a R script:</li>
+<li>To load the R package <code>tidyverse</code>, type and run the following command from a R script:</li>
 </ul></li>
 </ul>
+</div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>df_mpg <span class="ot">&lt;-</span> mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
+<span id="cb3-2"><a href="#cb3-2"></a>df_mpg <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>mpg</code> is the data.frame provided by the R package <code>ggplot2</code>, one of the R pakcages in <code>tidyverse</code>.</li>
 </ul>
-</div>
 </section>
-<section id="installing-the-tools-11" class="slide level2">
+<section id="installing-the-tools-10" class="slide level2">
 <h2>Installing the Tools</h2>
 <h3 id="rstudio-options-setting">RStudio Options Setting</h3>
 <div class="columns">
@@ -780,17 +772,29 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
+<section id="installing-the-tools-11" class="slide level2">
+<h2>Installing the Tools</h2>
+<h3 id="anaconda">Anaconda</h3>
+<ul>
+<li class="fragment">To install Anaconda, go to the following download page:
+<ul>
+<li class="fragment"><a href="https://www.anaconda.com/products/distribution" target="_blank">https://www.anaconda.com/products/distribution</a>.</li>
+<li class="fragment">Click the “Download” button.</li>
+</ul></li>
+<li class="fragment">To work on web-scrapping and APIs, we will use Spyder IDE provided by Anaconda.</li>
+</ul>
+</section>
 <section id="building-a-personal-website-on-github" class="slide level2">
 <h2>Building a Personal Website on GitHub</h2>
 <ul>
-<li class="fragment">Follow steps described in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html">Classwork 1</a>.</li>
+<li class="fragment">Follow steps described in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html"><strong>Classwork 1</strong></a>.</li>
 </ul>
 </section>
 <section id="lets-practice-markdown" class="slide level2">
 <h2>Let’s Practice Markdown!</h2>
 <ul>
 <li class="fragment"><p>Jupyter Notebook, Quarto, and GitHub-based Discussion Boards use <strong>markdown</strong> as its underlying document syntax.</p></li>
-<li class="fragment"><p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-02.html">Classwork 2</a>.</p></li>
+<li class="fragment"><p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-02.html"><strong>Classwork 2</strong></a>.</p></li>
 </ul>
 
 <div class="footer footer-default">

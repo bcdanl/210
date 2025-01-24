@@ -886,7 +886,7 @@
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-rstudio",
     "title": "Lecture 2",
     "section": "What is RStudio?",
-    "text": "What is RStudio?\n\nRStudio is an integrated development environment (IDE) mainly for R programming.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.\n\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management."
+    "text": "What is RStudio?\n\nRStudio is an integrated development environment (IDE) mainly for R programming.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to computer programmers for software development.\n\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\n\nWe will use RStudio to manage a personal website using Quarto and Jupyter Notebook."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-python",
@@ -907,77 +907,77 @@
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-1",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button."
+    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: https://cran.r-project.org/bin/windows/base/\nMac: https://cran.r-project.org/bin/macosx/\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-2",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-2",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: https://cran.r-project.org/bin/windows/base/\nMac: https://cran.r-project.org/bin/macosx/\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
+    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nhttps://www.rstudio.com/products/rstudio/download/#download\n\n\n\n\n\n\nFor Mac users, try the following steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-3",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-3",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nhttps://www.rstudio.com/products/rstudio/download/#download\n\n\n\n\n\n\nFor Mac users, try the following steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-4",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-4",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\n\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-5",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-5",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\n\na &lt;- 1"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-6",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-6",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\na &lt;- 1"
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-7",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-7",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
+    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more.\nWe will use several R packages from tidyverse throughout the course. (e.g., ggplot2, dplyr, tidyr)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-8",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-8",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more.\nWe will use several R packages from tidyverse throughout the course. (e.g., ggplot2, dplyr, tidyr)"
+    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-9",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-9",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
+    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- ggplot2::mpg\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-10",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-10",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- mpg\n\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse."
+    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-11",
     "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-11",
     "title": "Lecture 2",
     "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
+    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button.\n\nTo work on web-scrapping and APIs, we will use Spyder IDE provided by Anaconda."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#building-a-personal-website-on-github",
