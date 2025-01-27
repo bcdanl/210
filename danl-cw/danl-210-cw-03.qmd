@@ -48,7 +48,7 @@ from: markdown+emoji
 - When naming a file in the website, do not have any space in a file name!
 
 - Be systematic when naming a series of files in the website.
-  - E.g., `danl-210-cw-01.qmd`, `danl-210-cw-02.qmd`, `danl-210-cw-03.qmd`.
+  - E.g., `danl-210-cw-01.ipynb`, `danl-210-cw-02.ipynb`, `danl-210-cw-03.ipynb`.
 
 
 <br><br>
@@ -58,9 +58,9 @@ from: markdown+emoji
 
   1. One blog post corresponds to:
     - One sub-directory in the `posts` directory.
-    - One `*.qmd` or `*.ipynb` file.
+    - One `*.ipynb` (or `*.qmd`) file.
     
-  2. Put all files for one blog post (e.g., `*.qmd`, `*.png`) in one corresponding sub-directory in the `posts` directory.
+  2. Put all files for one blog post (e.g., `*.ipynb` (or `*.qmd`), `*.png`) in one corresponding sub-directory in the `posts` directory.
   
   3. When inserting an image file to a blog post, use a relative path, i.e., a file name of the image file.
 
@@ -73,10 +73,12 @@ from: markdown+emoji
   - Add the picture (`png`) file of your profile photo to `img` directory. Then correct `img/profile.png` in `index.qmd` accordingly.
   - Correct links for your resumé, linkedin, email, and social media.
 
-2. Add a drop-down menu of "Python Data Analysis" to the navigation bar.
-  - Under the menu of "Python Data Analysis", add links for the following two webpages:
-    a. **Python Basics** using `danl-210-python-basic.ipynb`
-    b. **Python Basics with Pandas** using `danl-210-quarto-py-only.qmd`
+2. Add a menu of "Project" to the navigation bar using `danl_proj_nba.ipynb`.
+    
+3. Add a drop-down menu of "Python Data Analysis" to the navigation bar.
+  - Under the menu of "Python Data Analysis", add links for the following webpage:
+    - **Pandas Basics** using `pandas_basic.ipynb`
+    - **Seaborn Basics** using `seaborn_basic.ipynb`
     
 3. Use the 3-step git commands (`git add`, `git commit`, and `git push`) to update your website.
 
