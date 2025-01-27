@@ -148,17 +148,6 @@ format:
 
 
 
-## Getting Started with Jupyter Notebook and HTML
-### Markdown, Jupyter Notebook, and HTML
-
-
-- In RStudio, close the project `USERNAME.github.io.Rporj` if it is on.
-  1. Click `USERNAME.github.io.Rporj` at the top-right corner.
-  2. Click *Close Project*.
-  
-
-- Download the Jupyter Notebook file, `danl-210-python-basic.ipynb` from Brightspace, and open it from Google Colab (or VSCode if you prefer).
-
 
 
 
@@ -173,6 +162,7 @@ date: "2025-01-27"
 ---
 ```
 
+- Download the Jupyter Notebook file, `danl-210-python-basic.ipynb` from Brightspace, and open it from Google Colab (or VSCode if you prefer).
 
 - The above syntax is part of YAML metadata in `danl-210-python-basic.ipynb`.
   - YAML should be always in the first cell, and the first cell should be **text**, not code.

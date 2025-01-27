@@ -1250,7 +1250,7 @@
     "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-4",
     "title": "Lecture 3",
     "section": "Getting Started with Jupyter Notebook and HTML",
-    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n\nIn RStudio, close the project USERNAME.github.io.Rporj if it is on.\n\nClick USERNAME.github.io.Rporj at the top-right corner.\nClick Close Project.\n\nDownload the Jupyter Notebook file, danl-210-python-basic.ipynb from Brightspace, and open it from Google Colab (or VSCode if you prefer)."
+    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n---\ntitle: \"Python Basics\"\nauthor: YOUR_NAME\ndate: \"2025-01-27\"\n---\n\nDownload the Jupyter Notebook file, danl-210-python-basic.ipynb from Brightspace, and open it from Google Colab (or VSCode if you prefer).\nThe above syntax is part of YAML metadata in danl-210-python-basic.ipynb.\n\nYAML should be always in the first cell, and the first cell should be text, not code.\n\nIn YAML, indentation really matters!\n\ntab (or four spaces) defines a level in YAML."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-5",
