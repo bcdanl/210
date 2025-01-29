@@ -330,12 +330,10 @@ quarto render
 
 ```{.bash}
 left:
-- text: Project
-  href: project.ipynb
-- text: Blog
-  href: blog-listing.qmd
-- text: Homeowrk
-  href: hw.ipynb
+  - text: Project
+    href: danl_proj_nba.ipynb
+  - text: Blog
+    href: blog-listing.qmd
 ```
 
 - We can add a new page to the website through `navbar` in `_quarto.yml`
@@ -359,15 +357,6 @@ left:
 - More details about navbar are available here:
   - [https://quarto.org/docs/websites/website-navigation.html](https://quarto.org/docs/websites/website-navigation.html)
 
-
-
-
-## Quarto Website  {background-color="#6497b1"}
-### Colors
-
-
-- A ton of hex codes for colors are available here:
-  - [https://www.color-hex.com](https://www.color-hex.com)
 
 
 

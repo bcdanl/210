@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2025-01-27">
+<meta name="dcterms.date" content="2025-01-29">
 
-<title>Classwork 3 | Byeong-Hak Choe</title>
+<title>Classwork 4 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -65,11 +99,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
-<meta property="og:title" content="Classwork 3 | Byeong-Hak Choe">
-<meta property="og:description" content="Quarto Website Basics">
+<meta property="og:title" content="Classwork 4 | Byeong-Hak Choe">
+<meta property="og:description" content="Python Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="Home">
 </head>
@@ -121,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 3</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 4</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -181,13 +217,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-quarto-website" id="toc-introduction-to-quarto-website" class="nav-link active" data-scroll-target="#introduction-to-quarto-website">Introduction to Quarto Website</a>
-  <ul>
-  <li><a href="#website-files" id="toc-website-files" class="nav-link" data-scroll-target="#website-files">Website Files</a></li>
-  <li><a href="#blogging" id="toc-blogging" class="nav-link" data-scroll-target="#blogging">Blogging</a></li>
-  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems">Practice Problems</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
@@ -197,8 +233,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Classwork 3</h1>
-<p class="subtitle lead">Quarto Website Basics</p>
+<h1 class="title">Classwork 4</h1>
+<p class="subtitle lead">Python Basics</p>
 </div>
 
 
@@ -215,14 +251,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 27, 2025</p>
+      <p class="date">January 29, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 26, 2025</p>
+      <p class="date-modified">January 27, 2025</p>
     </div>
   </div>
     
@@ -231,111 +267,120 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="introduction-to-quarto-website" class="level1">
-<h1>Introduction to Quarto Website</h1>
-<section id="website-files" class="level2">
-<h2 class="anchored" data-anchor-id="website-files">Website Files</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p align="center">
-<img src="https://bcdanl.github.io/lec_figs/website-files-rstudio.png" style="width: 67%;">
-</p>
-</div><div class="column" style="width:50%;">
-<ul>
-<li><p><code>_quarto.yml</code> configures the website:</p>
-<ul>
-<li>It determines the structure of the website.
-<ul>
-<li>e.g., Navigation bar, themes, HTML options, etc.</li>
-</ul></li>
-<li>If <code>_quarto.yml</code> is edited, use <code>quarto render</code> to render all <code>qmd</code> and <code>ipynb</code> files.</li>
-</ul></li>
-<li><p><code>index.qmd</code> renders <code>index.html</code>, the front page of the website.</p>
-<ul>
-<li>Do not create Quarto files something like <code>index2.qmd</code> within the working directory.</li>
-</ul></li>
-<li><p><code>blog-listing.qmd</code> configures the blog listing page.</p></li>
-<li><p><code>posts</code> directory includes sub-directories of blog posts.</p></li>
-<li><p><code>img</code> directory can be used to store picture files.</p></li>
-</ul>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Using Python operations only, calculate below: <span class="math display">\[\frac{2^5}{7 \cdot (4 - 2^3)}\]</span></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>For each expression below, what is the value of the expression? Explain thoroughly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="op">==</span> <span class="st">'20'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">4.0</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">.5</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">&lt;</span> y <span class="kw">or</span> <span class="dv">3</span><span class="op">*</span>y <span class="op">&lt;</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li><p>A file in the working directory can have its own web address.</p>
-<ul>
-<li>For example, if you have <code>resume-example.pdf</code> in your working directory, it has the web address, <a href="https://USERNAME.github.io/resume-example.pdf">https://USERNAME.github.io/resume-example.pdf</a>.</li>
-</ul></li>
-<li><p>When naming a file in the website, do not have any space in a file name!</p></li>
-<li><p>Be systematic when naming a series of files in the website.</p>
-<ul>
-<li>E.g., <code>danl-210-cw-01.ipynb</code>, <code>danl-210-cw-02.ipynb</code>, <code>danl-210-cw-03.ipynb</code>.</li>
-</ul></li>
-</ul>
-<p><br><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
 </section>
-<section id="blogging" class="level2">
-<h2 class="anchored" data-anchor-id="blogging">Blogging</h2>
-<ul>
-<li><p>Rules</p>
-<ol type="1">
-<li>One blog post corresponds to:</li>
-</ol>
-<ul>
-<li>One sub-directory in the <code>posts</code> directory.</li>
-<li>One <code>*.ipynb</code> (or <code>*.qmd</code>) file.</li>
-</ul>
-<ol start="2" type="1">
-<li><p>Put all files for one blog post (e.g., <code>*.ipynb</code> (or <code>*.qmd</code>), <code>*.png</code>) in one corresponding sub-directory in the <code>posts</code> directory.</p></li>
-<li><p>When inserting an image file to a blog post, use a relative path, i.e., a file name of the image file.</p></li>
-</ol></li>
-</ul>
-<p><br><br></p>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fare <span class="op">=</span> <span class="st">"$10.00"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tip <span class="op">=</span> <span class="st">"2.00$"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="st">"$ 0.80"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a Python code that uses <em>slicing</em> and the <code>print()</code> function to print out the following message:</p>
+<div style="font-family:courier">
+The total trip cost is: $12.80
+</div>
+<p><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
 </section>
-<section id="practice-problems" class="level2">
-<h2 class="anchored" data-anchor-id="practice-problems">Practice Problems</h2>
-<ol type="1">
-<li>Decorate your website:</li>
-</ol>
-<ul>
-<li>Replace <code>YOUR NAME</code> with your name in <code>_quarto.yml</code> and <code>index.qmd</code>.</li>
-<li>Describe yourself in <code>index.qmd</code>.</li>
-<li>Add the picture (<code>png</code>) file of your profile photo to <code>img</code> directory. Then correct <code>img/profile.png</code> in <code>index.qmd</code> accordingly.</li>
-<li>Correct links for your resumé, linkedin, email, and social media.</li>
-</ul>
-<ol start="2" type="1">
-<li><p>Add a menu of “Project” to the navigation bar using <code>danl_proj_nba.ipynb</code>.</p></li>
-<li><p>Add a drop-down menu of “Python Data Analysis” to the navigation bar.</p></li>
-</ol>
-<ul>
-<li>Under the menu of “Python Data Analysis”, add links for the following webpage:
-<ul>
-<li><strong>Pandas Basics</strong> using <code>pandas_basic.ipynb</code></li>
-<li><strong>Seaborn Basics</strong> using <code>seaborn_basic.ipynb</code></li>
-</ul></li>
-</ul>
-<ol start="3" type="1">
-<li>Use the 3-step git commands (<code>git add</code>, <code>git commit</code>, and <code>git push</code>) to update your website.</li>
-</ol>
-<p><br><br></p>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>list_variable <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">144</span>, <span class="dv">169</span>, <span class="dv">1000</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a Python code that uses <code>print()</code> and <code>max()</code> functions to print out the largest value in the list, <code>list_variable</code>, as follows:</p>
+<div style="font-family:courier">
+The largest value in the list is: 1000
+</div>
+<p><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <ul>
-<li><a href="https://quarto.org/docs/websites/">Quarto - Creating a Website</a></li>
-<li><a href="https://quarto.org/docs/output-formats/html-basics.html">Quarto - HTML Basics</a></li>
-<li><a href="https://quarto.org/docs/output-formats/html-code.html">Quarto - HTML Code Blocks</a></li>
-<li><a href="https://quarto.org/docs/output-formats/html-themes.html">Quarto - HTML Theming</a></li>
-<li><a href="https://quarto.org/docs/websites/website-blog.html">Quarto - Creating a Blog</a></li>
+<li>Use a <code>while</code> loop to print the values of the list [3, 2, 1, 0].</li>
+<li>Use a <code>for</code> loop to print the values of the list [3, 2, 1, 0].</li>
 </ul>
 <p><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br> ## Question 6 - Assign the value 7 to the variable <code>guess_me</code>, and the value 1 to the variable <code>number</code>.</p>
+<ul>
+<li>Write a <code>while</code> loop that compares <code>number</code> with <code>guess_me.</code>
+<ul>
+<li>Print ‘too low’ if <code>number</code> is less than guess me.</li>
+<li>If <code>number</code> equals <code>guess_me</code>, print ‘found it!’ and then exit the loop.</li>
+<li>If <code>number</code> is greater than <code>guess_me</code>, print ‘oops’ and then exit the loop.</li>
+<li>Increment <code>number</code> at the end of the loop.</li>
+</ul></li>
+<li>Write a <code>for</code> loop that compares <code>number</code> with <code>guess_me.</code>
+<ul>
+<li>Print ‘too low’ if <code>number</code> is less than guess me.</li>
+<li>If <code>number</code> equals <code>guess_me</code>, print ‘found it!’ and then exit the loop.</li>
+<li>If <code>number</code> is greater than <code>guess_me</code>, print ‘oops’ and then exit the loop.</li>
+<li>Increment <code>number</code> at the end of the loop.</li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
 </section>
+<section id="question-7" class="level1">
+<h1>Question 7</h1>
+<ul>
+<li>You are given a variable value that contains a string.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="st">"320"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Write a Python program to:
+<ol type="1">
+<li>Attempt to convert value to a floating-point number using <code>float()</code>.</li>
+<li>If the conversion is successful, print: “You entered: <number>”.</number></li>
+<li>If the conversion fails (e.g., the value is not a valid number), print: “That’s not a valid number!”.</li>
+</ol></li>
+<li>Use a try-except block to handle the potential error.</li>
+</ul>
+<p><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
+</section>
+<section id="question-8" class="level1">
+<h1>Question 8</h1>
+<ul>
+<li>Import the <code>pandas</code> library as <code>pd</code>.</li>
+<li>Install the <code>itables</code> package.</li>
+<li>From <code>itables</code>, import the functions <code>init_notebook_mode</code> and <code>show</code>.</li>
+</ul>
+<p><br></p>
+<p><em>Answer</em></p>
+<p><br><br><br></p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p><font size="5">Welcome to our Classwork 3 Discussion Board! 👋 </font></p>
-<p>This space is designed for you to engage with your classmates about the material covered in Classwork 3.</p>
+<p><font size="5">Welcome to our Classwork 4 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Classwork 4.</p>
 <p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
-<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 3 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 4 materials or need clarification on any points, don’t hesitate to ask here.</p>
 <p>Let’s collaborate and learn from each other!</p>
 
 
