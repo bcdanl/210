@@ -1005,7 +1005,7 @@
     "href": "danl-cw/danl-210-cw-04.html#question-5",
     "title": "Classwork 4",
     "section": "Question 5",
-    "text": "Question 5\n\nUse a while loop to print the values of the list [3, 2, 1, 0].\nUse a for loop to print the values of the list [3, 2, 1, 0].\n\n\nAnswer\n ## Question 6 - Assign the value 7 to the variable guess_me, and the value 1 to the variable number.\n\nWrite a while loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\nWrite a for loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\n\n\nAnswer"
+    "text": "Question 5\n\nUse a while loop to print the values of the list [3, 2, 1, 0].\nUse a for loop to print the values of the list [3, 2, 1, 0].\n\n\nAnswer"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2025-0129.html",
@@ -1433,5 +1433,12 @@
     "title": "Lecture 4",
     "section": "Importing Modules, Packages, and Libraries",
     "text": "Importing Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 4.8"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-6",
+    "href": "danl-cw/danl-210-cw-04.html#question-6",
+    "title": "Classwork 4",
+    "section": "Question 6",
+    "text": "Question 6\n\nAssign the value 7 to the variable guess_me, and the value 1 to the variable number.\nWrite a while loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\nWrite a for loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\n\n\nAnswer"
   }
 ]
