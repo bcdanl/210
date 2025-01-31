@@ -117,6 +117,21 @@ print(a)
 
 
 ## Python Basics
+## Variable in `data.frame`
+
+<div style="text-align: center; width: 70%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- **Definition**: A `data.frame` is a table-like data structure used for storing data in a tabular format with rows and columns.
+- **Structure**: Consists of:
+  - **Variables** (Columns)
+  - **Observations** (Rows)
+  - **Values** (Cells): Individual data points within each cell of the `data.frame`.
+
+
+## Python Basics
 ###  Assignment ( `=` )
 
 
