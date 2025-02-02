@@ -16,14 +16,14 @@ website:
     right:
       # - text: Causal ML
       #   href: danlml.qmd
-      - text: Research
-        href: index-home.qmd
+      # - text: Research
+      #   href: index-home.qmd
       - text: Blog
         href: blog-listing.qmd
       # - text: "Teaching {{< fa external-link >}}"
       #   href: https://bcdanl.github.io
       #   target: _blank
-      - icon: Class Code
+      - text: Class Code
         href: https://github.com/bcdanl/210-code
         target: _blank
       - text: " "

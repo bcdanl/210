@@ -126,368 +126,81 @@
     "text": "Quarto - Creating a Website\nQuarto - HTML Basics\nQuarto - HTML Code Blocks\nQuarto - HTML Theming\nQuarto - Creating a Blog"
   },
   {
-    "objectID": "posts/beer-markets/beer-markets.html",
-    "href": "posts/beer-markets/beer-markets.html",
-    "title": "Beer Markets",
+    "objectID": "listing-danl-210-rw.html",
+    "href": "listing-danl-210-rw.html",
+    "title": "DANL 210 - Project",
     "section": "",
-    "text": "Diving into the complex world of what people like in their beer, the beer_markets.csv dataset comes across as a goldmine of data, showing us the detailed interactions between buyers and their favorite beers. This dataset covers everything from how much and at what price people are buying beer to how deals and brand loyalty influence their decisions, across different types of people and places. As we start digging into this dataset, we aim to uncover the patterns that show what really influences the modern beer drinker’s choices, offering up valuable insights for marketers, industry watchers, and beer lovers. By breaking down the data, our exploration will shine a light on the factors that drive consumer behavior in the beer market, giving us a full picture of the trends that shape this lively industry.\nCode\n# Creating an interactive table\n!pip install itables\nfrom itables import init_notebook_mode\nfrom itables import show\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# Reading the CSV file\nbeer_data = pd.read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\nshow(beer_data)\n\n\n\n\n\n\n\n    \n      \n      hh\n      _purchase_desc\n      quantity\n      brand\n      dollar_spent\n      beer_floz\n      price_per_floz\n      container\n      promo\n      market\n      buyertype\n      income\n      childrenUnder6\n      children6to17\n      age\n      employment\n      degree\n      cow\n      race\n      microwave\n      dishwasher\n      tvcable\n      singlefamilyhome\n      npeople\n    \n  Loading... (need help?)\nCode\n# Setting up the visualization settings\nsns.set(style=\"whitegrid\")\n\n# Calculate total quantity and spending for each brand\nbrand_summary = beer_data.groupby('brand').agg({'quantity':'sum', 'dollar_spent':'sum'}).reset_index()\n\n# Sort by total quantity and spending\nbrand_summary_sorted_quantity = brand_summary.sort_values('quantity', ascending=False)\nbrand_summary_sorted_spent = brand_summary.sort_values('dollar_spent', ascending=False)\nCode\n# Plotting total quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=brand_summary_sorted_quantity, palette='viridis')\nplt.title('Total Quantity of Beer Purchased by Brand')\nplt.xlabel('Total Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe bar charts above display the total quantity of beer purchased and the total spending by brand. From the looks of it, certain brands dominate in terms of quantity sold and total spending, indicating their popularity.\nNow, let’s calculate the average quantity purchased and average spending per purchase. For this, we’ll consider each row in the dataset as a separate purchase and compute the averages accordingly.\nCode\n# Calculate average quantity purchased and average spending per purchase\naverage_purchase = beer_data.groupby('brand').agg({\n    'quantity': 'mean',\n    'dollar_spent': 'mean'\n}).reset_index()\n\n# Sort by average quantity and average spending\naverage_purchase_sorted_quantity = average_purchase.sort_values('quantity', ascending=False)\naverage_purchase_sorted_spent = average_purchase.sort_values('dollar_spent', ascending=False)\n\n# Plotting average quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=average_purchase_sorted_quantity, palette='viridis')\nplt.title('Average Quantity of Beer Purchased by Brand')\nplt.xlabel('Average Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe visualizations above depict the average quantity of beer purchased per brand and the average spending per brand. This shows which brands tend to be bought in larger quantities on average and which brands tend to have higher spending per purchase, which could be indicative of their price point or the purchase of premium products.\nNext, we’ll look at the total spending across different markets to see if there are any notable differences in spending habits geographically. To do this, we’ll sum up the spending in each market and visualize it.\nCode\n# Calculate total spending in each market\nmarket_spending_summary = beer_data.groupby('market').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nmarket_spending_summary_sorted = market_spending_summary.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending in each market\nplt.figure(figsize=(12, 18))\nsns.barplot(x='dollar_spent', y='market', data=market_spending_summary_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Market')\nplt.xlabel('Total Spending')\nplt.ylabel('Market')\nplt.show()\nThe bar chart illustrates the total spending on beer by market, showcasing the differences in spending habits across various regions. Some markets have significantly higher spending, which could be due to a variety of factors including market size, consumer preferences, or economic factors.\nNow, let’s move on to the second analysis:"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "posts/beer-markets/beer-markets.html#demographic-analysis",
-    "href": "posts/beer-markets/beer-markets.html#demographic-analysis",
-    "title": "Beer Markets",
-    "section": "Demographic Analysis",
-    "text": "Demographic Analysis\nWe will examine which demographics are buying what kind of beer and whether spending habits vary by demographics such as age, employment, and race. For this, we could look at:\n\nSpending by age group\nSpending by employment status\nSpending by race\n\nI’ll start by analyzing spending by age group.\n\n\nCode\n# Calculate total spending by age group\nage_group_spending = beer_data.groupby('age').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nage_group_spending_sorted = age_group_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by age group\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='age', data=age_group_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Age Group')\nplt.xlabel('Total Spending')\nplt.ylabel('Age Group')\nplt.show()\n\n\n\n\n\nThe bar chart demonstrates the total spending on beer segmented by age group, highlighting which age groups spend the most on beer. It appears that certain age groups are more dominant in beer spending, which may align with the purchasing power or preferences of those groups.\nNext, we will examine spending by employment status.\n\n\nCode\n# Calculate total spending by employment status\nemployment_spending = beer_data.groupby('employment').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nemployment_spending_sorted = employment_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by employment status\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='employment', data=employment_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Employment Status')\nplt.xlabel('Total Spending')\nplt.ylabel('Employment Status')\nplt.show()\n\n\n\n\n\nThe visualization shows the total spending on beer by employment status. We can see that certain employment groups, such as full-time workers, are spending more on beer, which might be related to their disposable income.\nFinally, let’s look at spending by race to complete the demographic analysis.\n\n\nCode\n# Calculate total spending by race\nrace_spending = beer_data.groupby('race').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nrace_spending_sorted = race_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by race\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='race', data=race_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Race')\nplt.xlabel('Total Spending')\nplt.ylabel('Race')\nplt.show()\n\n\n\n\n\nThe bar chart above indicates the total spending on beer broken down by race, highlighting which racial groups account for the most beer spending within the dataset. This could reflect both the demographics of the regions where the data was collected and cultural preferences regarding beer.\nNow, let’s proceed to the third analysis:"
-  },
-  {
-    "objectID": "posts/beer-markets/beer-markets.html#price-sensitivity",
-    "href": "posts/beer-markets/beer-markets.html#price-sensitivity",
-    "title": "Beer Markets",
-    "section": "Price Sensitivity",
-    "text": "Price Sensitivity\nWe’ll look at the price per fluid ounce and see if there are any trends or correlations with the quantity purchased or the brand popularity. To do this, we’ll visualize how the price is sensitive to the quantity purchased by brand.\n\n\nCode\n# Ensure there's no entries with 0 for 'price_per_floz' or 'quantity' to avoid log(0) issues\nfiltered_data = beer_data[(beer_data['price_per_floz'] &gt; 0) & (beer_data['quantity'] &gt; 0)]\n\n# Calculate log values for both 'price_per_floz' and 'quantity'\nfiltered_data['log_price_per_floz'] = np.log(filtered_data['price_per_floz'])\nfiltered_data['log_quantity'] = np.log(filtered_data['quantity'])\n\n# Use seaborn to create a scatterplot with fitted lines, facetted by 'brand'\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', col='brand', col_wrap=4, height=3, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5}, aspect = .75)\n\n# Adjusting plot aesthetics\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nHere’s the scatterplot with fitted straight lines for the log of price_per_floz versus the log of quantity, facetted by brands. Each subplot represents a different brand, showing the relationship between these two logarithmic variables along with a fitted line to illustrate the trend within each brand’s data.\n\n\nCode\n# Adjust the facetting to split rows by 'brand' and columns by 'promo' for a more detailed comparative analysis\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', row='brand', col='promo', height=3, aspect=.75, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5})\n\n# Adjusting plot aesthetics\ng.set_titles(\"Brand: {row_name}\\n Promo: {col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9, wspace = .4, hspace = .4)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nThe scatterplot has been reorganized to split rows by brand and columns by promo status, offering a comprehensive view across different brands and their promotional status. Each subplot now provides a clear comparison of the log of price_per_floz versus the log of quantity for purchases made on promotion versus those that were not, across various beer brands.\nThis layout facilitates an easier comparison across brands and how promotion impacts the relationship between quantity and price per fluid ounce within each brand.\nLastly, let’s move to the fourth analysis:"
-  },
-  {
-    "objectID": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
-    "href": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
-    "title": "Beer Markets",
-    "section": "Promotional Impact on Quantity Purchased",
-    "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/py-basic/blog-python-basics.html",
+    "href": "posts/py-basic/blog-python-basics.html",
+    "title": "Python Basics",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\n Back to top"
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
   },
   {
-    "objectID": "danl-rw/danl-210-project.html#project",
-    "href": "danl-rw/danl-210-project.html#project",
-    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
-    "section": "Project",
-    "text": "Project\n\nPublish the webpage of your data analysis project on your website, hosted on GitHub.\n\nYour data analysis should focus on the agenda, “Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis”.\nUse either a Jupyter Notebook or a Quarto document to present your work.\nThe due for the project is May 16, 2025, Friday, 11:59 P.M."
+    "objectID": "posts/py-basic/blog-python-basics.html#what-is-python",
+    "href": "posts/py-basic/blog-python-basics.html#what-is-python",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')"
   },
   {
-    "objectID": "danl-rw/danl-210-project.html#project-data",
-    "href": "danl-rw/danl-210-project.html#project-data",
-    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
-    "section": "Project Data",
-    "text": "Project Data\n\nBelow is the esg_proj DataFrame, which provides a list of companies and associated information\n\n\nimport pandas as pd\nesg_proj = pd.read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price."
+    "objectID": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
+    "href": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
+    "title": "Python Basics",
+    "section": "",
+    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
   },
   {
-    "objectID": "danl-rw/danl-210-project.html#project-tasks",
-    "href": "danl-rw/danl-210-project.html#project-tasks",
-    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
-    "section": "Project Tasks",
-    "text": "Project Tasks\n\nData Collection\n\n\nyfinance\n\nUtilize the yfinance library, an unofficial API for accessing Yahoo! Finance data.\n\nFor each company listed in the esg_proj DataFrame, you should retrieve the following:\n\nDaily historical stock data spanning from January 1, 2024, to March 31, 2025.\nQuarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).\nQuarterly balance sheets for the same period as the income statements.\n\n\n\n\n\nselenium\n\nEmploy the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company’s webpage on Yahoo! Finance, such as:\n\nAgilent Technologies (A)\nAlcoa Corporation (AA)\n\nEnsure robust error and exception handling during data collection from the Sustainability Section on Yahoo! Finance:\n\nTo avoid being blocked by Yahoo! Finance for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies’ Sustainability Sections.\nUse time.sleep() for each visit of the Sustainability Section webpage.\nSome companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.\nYahoo! Finance intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.\n\n\nYou can check the new and classic layouts of Yahoo! Finance by selecting the corresponding options from the navigation bar on their website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python yfinance and selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nList the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
+    "objectID": "posts/py-basic/blog-python-basics.html#control-structures",
+    "href": "posts/py-basic/blog-python-basics.html#control-structures",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
   },
   {
-    "objectID": "danl-rw/danl-210-project.html#rubric-for-the-project",
-    "href": "danl-rw/danl-210-project.html#rubric-for-the-project",
-    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
-    "section": "Rubric for the Project",
-    "text": "Rubric for the Project\n\nHere is the link to the PDF file of the rubric for the project web-page.\n\n\nRubric for Quality of Data Collection\n\n\n\n\n\n\n\n\nEvaluation\nDescription\nCriteria\n\n\n\n\n1 (Very Deficient)\n- Very poorly implemented- Data is unreliable.\n- Ineffective use of yfinance, resulting in incomplete or inaccurate financial data.- Poor web scraping practices with selenium, leading to unreliable or incorrect data from Yahoo Finance.- Inadequate use of pandas, resulting in poorly structured DataFrames.\n\n\n2 (Somewhat Deficient)\n- Somewhat effective implementation- Data has minor reliability issues.\n- Basic use of yfinance with minor inaccuracies in data retrieval.- Basic web scraping with selenium that sometimes fails to capture all relevant data accurately.- Basic use of pandas, but with occasional issues in data structuring.\n\n\n3 (Acceptable)\n- Competently implemented- Data is mostly reliable.\n- Competent use of yfinance to retrieve most financial data accurately.- Effective web scraping with selenium, capturing most required data from Yahoo Finance.- Adequate use of pandas to structure data in a mostly logical format.\n\n\n4 (Very Good)\n- Well-implemented and organized- Data is reliable.\n- Advanced use of yfinance to reliably and accurately fetch financial data.- Thorough web scraping with selenium that consistently captures accurate and complete data from Yahoo Finance.- Skillful use of pandas for clear and logical data structuring.\n\n\n5 (Outstanding)\n- Exceptionally implemented- Data is highly reliable.\n- Expert use of yfinance to obtain comprehensive and precise financial data.- Expert web scraping with selenium, capturing detailed and accurate data from Yahoo Finance without fail.- Expert use of pandas to create exceptionally well-organized DataFrames that facilitate easy analysis."
+    "objectID": "posts/py-basic/blog-python-basics.html#functions",
+    "href": "posts/py-basic/blog-python-basics.html#functions",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
   },
   {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics",
-    "title": "Lecture 2",
-    "section": "Why Data Analytics?",
-    "text": "Why Data Analytics?\n\nFill in the gaps left by traditional business and economics classes.\n\nPractical skills that will benefit your future career.\nNeglected skills like how to actually find datasets in the wild and clean them.\n\nData analytics skills are largely distinct from (and complementary to) the core quantitative works familiar to business undergrads.\n\nData visualization, cleaning and wrangling; databases; machine learning; etc.\n\nIn short, we will cover things that I wish someone had taught me when I was undergraduate."
+    "objectID": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
+    "href": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
   },
   {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#you-at-the-end-of-this-course",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#you-at-the-end-of-this-course",
-    "title": "Lecture 2",
-    "section": "You, at the end of this course",
-    "text": "You, at the end of this course"
+    "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
+    "href": "posts/nba/nba.html#salary-distribution-among-teams",
+    "title": "NBA",
+    "section": "Salary Distribution Among Teams",
+    "text": "Salary Distribution Among Teams\nLet’s start with the salary distribution among teams using seaborn for visualization. ​​\n\n\nCode\n\n# Handle missing values in 'Salary' by replacing them with the median salary\nmedian_salary = nba['Salary'].median()\nnba['Salary'].fillna(median_salary, inplace=True)\n\n\n\n\nCode\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Calculate total salary by team\nteam_salary = (\n    nba\n    .groupby('Team')['Salary']\n    .sum()\n    .reset_index()\n    .sort_values(by='Salary', ascending=False)\n)\n\n# Plot total salary by team\nplt.figure(figsize=(10, 8))\nsns.barplot(data = team_salary,\n            x = 'Salary', y = 'Team',\n            palette = 'coolwarm')\nplt.title('Total Salary Distribution Among NBA Teams')\nplt.xlabel('Total Salary')\nplt.ylabel('Team')\nplt.xticks(rotation=45)\nplt.show()\n\n\n\n\n\nThe visualization above displays the total salary distribution among NBA teams, with teams sorted by their total salary expenditure. This bar plot reveals which teams are the biggest spenders on player salaries and which are more conservative. The color gradient provides a visual cue to easily distinguish between the higher and lower spending teams. Portland Trail Blazers spent most in their players’ salary, followed by Golden State Warriors and Philadelphia 76ers."
   },
   {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics-1",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics-1",
-    "title": "Lecture 2",
-    "section": "Why Data Analytics?",
-    "text": "Why Data Analytics?\n\nData analysts use analytical tools and techniques to extract meaningful insights from data.\n\nSkills in data analytics are also useful for business analysts or market analysts.\n\nBreau of Labor Statistics forecasts that the projected growth rate of the employment in the industry related to data analytics from 2021 to 2031 is 36%.\n\nThe average growth rate for all occupations is 5%."
+    "objectID": "posts/nba/nba.html#player-age-distribution",
+    "href": "posts/nba/nba.html#player-age-distribution",
+    "title": "NBA",
+    "section": "Player Age Distribution",
+    "text": "Player Age Distribution\nNext, let’s explore the Player Age Distribution across the NBA. We’ll create a histogram to visualize how player ages are distributed, which will help us understand if the league trends younger, older, or has a balanced age mix. ​​\n\n\nCode\n# Convert 'Birthday' column to datetime format\nfrom dateutil import parser\nnba['Birthday'] = nba['Birthday'].apply(lambda x: parser.parse(x))\n\n# Now, let's calculate the age of each player\nnba['Age'] = (datetime.now() - nba['Birthday']).dt.days // 365\n\n# Plot the age distribution of NBA players\nplt.figure(figsize=(10, 6))\nsns.histplot(nba['Age'],\n             bins = 15,\n             kde = True,\n             color = 'skyblue')\nplt.title('Age Distribution of NBA Players')\nplt.xlabel('Age')\nplt.ylabel('Count')\nplt.show()\n\n\n\n\n\n\nThe histogram above shows the age distribution of NBA players, with a kernel density estimate (KDE) overlay to indicate the distribution shape. The majority of players fall within a certain age range from 25 to 35, illustrating the league’s age dynamics. The plot helps identify the common ages for NBA players and whether there are significant numbers of very young or older players."
   },
   {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art",
-    "title": "Lecture 2",
-    "section": "The State of the Art",
-    "text": "The State of the Art\nGenerative AI and ChatGPT\n\n\nData Science and Big Data Trend\nFrom 2008 to now\n\n\nProgrammers in 2025"
+    "objectID": "posts/nba/nba.html#position-wise-salary-insights",
+    "href": "posts/nba/nba.html#position-wise-salary-insights",
+    "title": "NBA",
+    "section": "Position-wise Salary Insights",
+    "text": "Position-wise Salary Insights\nMoving on to Position-wise Salary Insights, we’ll examine how average salaries differ across player positions. This analysis could reveal which positions are typically higher-paid, potentially reflecting their value on the basketball court. Let’s create a box plot to visualize the salary distribution for each position. ​​\n\n\nCode\n# Plot salary distribution by player position\nplt.figure(figsize=(10, 6))\nsns.boxplot(data = nba,\n            x = 'Position', y = 'Salary',\n            palette = 'Set2')\nplt.title('Salary Distribution by Position')\nplt.xlabel('Position')\nplt.ylabel('Salary')\nplt.show()\n\n\n\n\n\nThe box plot above illustrates the salary distribution by player position, showcasing the variation in salaries among different positions within the NBA. This visualization helps us understand which positions tend to have higher median salaries and the spread of salaries within each position, including outliers that represent exceptionally high or low salaries. While the positions of C and PG have the widest interquantiles of salaries, the positions of FC, F, G, and GF have the narrowest interquantiles of them."
   },
   {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art-1",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art-1",
-    "title": "Lecture 2",
-    "section": "The State of the Art",
-    "text": "The State of the Art\nGenerative AI and ChatGPT\n\nUsers around the world have explored how to best utilize GPT for writing essays and programming codes.\n\n\n\n\nIs AI a threat to data analytics?\n\nFundamental understanding of the subject matter is still crucial for effectively utilizing AI’s capabilities.\n\n\n\n\n\nIf you use Generative AI such as ChatGPT, please try to understand what ChatGPT gives you.\n\nCopying and pasting it without any understanding harms your learning opportunity."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-git",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-git",
-    "title": "Lecture 2",
-    "section": "What is Git?",
-    "text": "What is Git?\n\n\n\n\n\\(\\quad\\)\n\nGit is the most popular version control tool for any software development.\n\nIt tracks changes in a series of snapshots of the project, allowing developers to revert to previous versions, compare changes, and merge different versions.\nIt is the industry standard and ubiquitous for coding collaboration."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github",
-    "title": "Lecture 2",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nGitHub is a web-based hosting platform for Git repositories to store, manage, and share code.\nOut class website is hosted on a GitHub repository.\nCourse contents will be posted not only in Brightspace but also in our GitHub repositories (“repos”) and websites.\nGithub is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github-1",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github-1",
-    "title": "Lecture 2",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-python",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-python",
-    "title": "Lecture 2",
-    "section": "What is Python?",
-    "text": "What is Python?\n\nPython is a versatile programming language known for its simplicity and readability.\nPython has become a dominant tool in various fields including data analysis, machine learning, and web development.\n\nIt is widely used among developers, data scientists, and researchers for building applications and performing data-driven tasks.\nPython is open source and has a vast ecosystem of libraries and frameworks."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter",
-    "title": "Lecture 2",
-    "section": "What is Jupyter?",
-    "text": "What is Jupyter?\n\nJupyter is an open-source integrated development environment (IDE) primarily for Python, though it supports many other languages.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to users for a programming-related project.\nJupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter-notebook",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter-notebook",
-    "title": "Lecture 2",
-    "section": "What is Jupyter Notebook?",
-    "text": "What is Jupyter Notebook?\n\nJupyter Notebook (*.ipynb) is a user-friendly environment that enhances coding, data analysis, and visualization.\n\nIt offers a web-based interface that combines live code, equations, visualizations, and narrative text.\nJupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.\n\nWe will use Google Colab, a free cloud version of Jupyter."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-rstudio",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-rstudio",
-    "title": "Lecture 2",
-    "section": "What is RStudio?",
-    "text": "What is RStudio?\n\nRStudio is an IDE mainly for R programming.\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\n\nWe will use RStudio to manage a personal website, where HTML files are rendered from Quarto Document and Jupyter Notebook."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-1",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-1",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: https://cran.r-project.org/bin/windows/base/\nMac: https://cran.r-project.org/bin/macosx/\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-2",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-2",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nhttps://www.rstudio.com/products/rstudio/download/#download\n\n\n\n\n\n\nFor Mac users, try the following steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-3",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-3",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-4",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-4",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-5",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-5",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\n\na &lt;- 1"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-6",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-6",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-7",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-7",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more.\nWe will use several R packages from tidyverse throughout the course. (e.g., ggplot2, dplyr, tidyr)"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-8",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-8",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-9",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-9",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- ggplot2::mpg\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-10",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-10",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-11",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-11",
-    "title": "Lecture 2",
-    "section": "Installing the Tools",
-    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button.\n\nTo work on web-scrapping and APIs, we will use Spyder IDE provided by Anaconda."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#building-a-personal-website-on-github",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#building-a-personal-website-on-github",
-    "title": "Lecture 2",
-    "section": "Building a Personal Website on GitHub",
-    "text": "Building a Personal Website on GitHub\n\nFollow steps described in Classwork 1."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#lets-practice-markdown",
-    "href": "danl-lec/danl-210-lec-02-2025-0124.html#lets-practice-markdown",
-    "title": "Lecture 2",
-    "section": "Let’s Practice Markdown!",
-    "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#building-a-personal-website-on-github",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#building-a-personal-website-on-github",
-    "title": "Lecture 3",
-    "section": "Building a Personal Website on GitHub",
-    "text": "Building a Personal Website on GitHub\n\nFollow steps described in Classwork 1."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#lets-practice-markdown",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#lets-practice-markdown",
-    "title": "Lecture 3",
-    "section": "Let’s Practice Markdown!",
-    "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html",
-    "title": "Lecture 3",
-    "section": "Getting Started with Jupyter Notebook and HTML",
-    "text": "Getting Started with Jupyter Notebook and HTML\nYAML\n\n\n\n\n\n\nAn YAML (yet another markup language) header surrounded by ---.\n\nIt is commonly used for document configuration (e.g., title, author, date, style, …)."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-1",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-1",
-    "title": "Lecture 3",
-    "section": "Getting Started with Jupyter Notebook and HTML",
-    "text": "Getting Started with Jupyter Notebook and HTML\nKnitting / Rendering\n\n\nWhen we knit the document, Quarto sends the .qmd file to jupyter/knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.\nThe markdown file (*.md) generated by jupyter/knitr is then processed by pandoc, which is responsible for creating the output file."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-2",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-2",
-    "title": "Lecture 3",
-    "section": "Getting Started with Jupyter Notebook and HTML",
-    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n\nThe very original version of Markdown was invented mainly to write HTML content more easily.\n\nFor example, - SOME_TEXT in “.md” is equivalent to &lt;ul&gt;&lt;li&gt; SOME_TEXT &lt;/li&gt; in ”.html”\n\nPandoc makes it possible to convert a Markdown document to a large variety of output formats, such as HTML."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-3",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-3",
-    "title": "Lecture 3",
-    "section": "Getting Started with Jupyter Notebook and HTML",
-    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n---\ntitle: \"Habits\"\nauthor: YOUR_NAME\ndate: January 27, 2025\nformat: \n  html\n---\n\nTo create an HTML document from Jupyter Notebook, we specify the html output format in the YAML metadata of our document.\n\nBy default, format: html is set.\n\nOpen an empty Jupyter Notebook file from Google Colab (or VSCode).\n\nCreate the first cell that is Text.\nType the above YAML metadata to the first Text cell."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-4",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-4",
-    "title": "Lecture 3",
-    "section": "Getting Started with Jupyter Notebook and HTML",
-    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n---\ntitle: \"Python Basics\"\nauthor: YOUR_NAME\ndate: \"2025-01-27\"\n---\n\nDownload the Jupyter Notebook file, danl-210-python-basic.ipynb from Brightspace, and open it from Google Colab (or VSCode if you prefer).\nThe above syntax is part of YAML metadata in danl-210-python-basic.ipynb.\n\nYAML should be always in the first cell, and the first cell should be text, not code.\n\nIn YAML, indentation really matters!\n\ntab (or four spaces) defines a level in YAML."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-_quarto.yml",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-_quarto.yml",
-    "title": "Lecture 3",
-    "section": "Quarto Website: _quarto.yml",
-    "text": "Quarto Website: _quarto.yml\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: danl_proj_nba.ipynb\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!\n\n\n\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rproj.\n\n_quarto.yml configures a website, and provides various options for HTML documents within the website."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nCustom CSS\n\nCascading Style Sheets (CSS) is used to format the layout of a webpage (color, font, text size, background, display, etc.).\n\nHTML will format the architecture of the house.\nCSS will be the carpet and walls to decorate the house.\nJavaScript adds interactive elements in the house, such as opening doors and lighting.\n\nWe are not front-end web developers.\n\nWe will not cover the use of CSS and JavaScript."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-1",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-1",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto document file (e.g., index.qmd) to create an output document.\nquarto render from Terminal renders ALL Quarto documents and Jupyter Notebook files in your local working directory:\n\nquarto render\n\nquarto render should be used if there is any change in _quarto.yml.\n\n\n\n\n\nTip\n\n\n\nEdit _quarto.yml, *.qmd, or *.ipynb files ONLY from your local laptop or Google Colab.\n\nDo not edit them from your GitHub repo for the website."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-2",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-2",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nAdding *.ipynb to a Quarto website\n\nBy default, quarto render doesn’t execute any code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf you need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, save the notebook, and download it to your local working directory."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-3",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-3",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-4",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-4",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nAbout\n\nYour index.qmd sets a front page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-5",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-5",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-6",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-6",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nNaviation and Adding Pages\nleft:\n  - text: Project\n    href: danl_proj_nba.ipynb\n  - text: Blog\n    href: blog-listing.qmd\n\nWe can add a new page to the website through navbar in _quarto.yml"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-7",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-7",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nNaviation and Adding Pages\nleft:\n  - text: \"Python Data Analysis\"\n    menu:\n      - pandas_basic.ipynb\n      - seaborn_basic.ipynb\n\nWe can also create a drop-down menu by including a menu\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-8",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-8",
-    "title": "Lecture 3",
-    "section": "Quarto Website",
-    "text": "Quarto Website\nColors\n\nA ton of hex codes for colors are available here:\n\nhttps://www.color-hex.com"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-basics",
-    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-basics",
-    "title": "Lecture 3",
-    "section": "Quarto Website Basics",
-    "text": "Quarto Website Basics\n\nLet’s do Classwork 3."
+    "objectID": "posts/nba/nba.html#top-10-highest-paid-players",
+    "href": "posts/nba/nba.html#top-10-highest-paid-players",
+    "title": "NBA",
+    "section": "Top 10 Highest Paid Players",
+    "text": "Top 10 Highest Paid Players\nLastly, we’ll identify the Top 10 Highest Paid Players in the NBA. This analysis highlights the star earners of the league, providing insights into which players command the highest salaries and potentially why. Let’s extract and visualize this information. ​​\n\n\nCode\n# Identify the top 10 highest paid players\ntop_10_salaries = nba.sort_values(by='Salary', ascending=False).head(10)\n\n# Plot the top 10 highest paid players\nplt.figure(figsize=(12, 8))\nsns.barplot(data = top_10_salaries,\n            x = 'Salary', y = 'Name',\n            palette = 'viridis')\nplt.title('Top 10 Highest Paid NBA Players')\nplt.xlabel('Salary')\nplt.ylabel('Player')\nplt.show()\n\n\n\n\n\nThe bar chart above reveals the top 10 highest-paid NBA players, showcasing those who stand at the pinnacle of the league in terms of salary. Stephen Curry is the highest-paid NBA player, followed by Russel Westbrook and Chris Paul. This visualization not only highlights the star players who command the highest salaries but also may reflect their marketability, performance, and contribution to their respective teams."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2025-0122.html#instructor-1",
@@ -819,643 +532,6 @@
     "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
   },
   {
-    "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
-    "href": "posts/nba/nba.html#salary-distribution-among-teams",
-    "title": "NBA",
-    "section": "Salary Distribution Among Teams",
-    "text": "Salary Distribution Among Teams\nLet’s start with the salary distribution among teams using seaborn for visualization. ​​\n\n\nCode\n\n# Handle missing values in 'Salary' by replacing them with the median salary\nmedian_salary = nba['Salary'].median()\nnba['Salary'].fillna(median_salary, inplace=True)\n\n\n\n\nCode\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Calculate total salary by team\nteam_salary = (\n    nba\n    .groupby('Team')['Salary']\n    .sum()\n    .reset_index()\n    .sort_values(by='Salary', ascending=False)\n)\n\n# Plot total salary by team\nplt.figure(figsize=(10, 8))\nsns.barplot(data = team_salary,\n            x = 'Salary', y = 'Team',\n            palette = 'coolwarm')\nplt.title('Total Salary Distribution Among NBA Teams')\nplt.xlabel('Total Salary')\nplt.ylabel('Team')\nplt.xticks(rotation=45)\nplt.show()\n\n\n\n\n\nThe visualization above displays the total salary distribution among NBA teams, with teams sorted by their total salary expenditure. This bar plot reveals which teams are the biggest spenders on player salaries and which are more conservative. The color gradient provides a visual cue to easily distinguish between the higher and lower spending teams. Portland Trail Blazers spent most in their players’ salary, followed by Golden State Warriors and Philadelphia 76ers."
-  },
-  {
-    "objectID": "posts/nba/nba.html#player-age-distribution",
-    "href": "posts/nba/nba.html#player-age-distribution",
-    "title": "NBA",
-    "section": "Player Age Distribution",
-    "text": "Player Age Distribution\nNext, let’s explore the Player Age Distribution across the NBA. We’ll create a histogram to visualize how player ages are distributed, which will help us understand if the league trends younger, older, or has a balanced age mix. ​​\n\n\nCode\n# Convert 'Birthday' column to datetime format\nfrom dateutil import parser\nnba['Birthday'] = nba['Birthday'].apply(lambda x: parser.parse(x))\n\n# Now, let's calculate the age of each player\nnba['Age'] = (datetime.now() - nba['Birthday']).dt.days // 365\n\n# Plot the age distribution of NBA players\nplt.figure(figsize=(10, 6))\nsns.histplot(nba['Age'],\n             bins = 15,\n             kde = True,\n             color = 'skyblue')\nplt.title('Age Distribution of NBA Players')\nplt.xlabel('Age')\nplt.ylabel('Count')\nplt.show()\n\n\n\n\n\n\nThe histogram above shows the age distribution of NBA players, with a kernel density estimate (KDE) overlay to indicate the distribution shape. The majority of players fall within a certain age range from 25 to 35, illustrating the league’s age dynamics. The plot helps identify the common ages for NBA players and whether there are significant numbers of very young or older players."
-  },
-  {
-    "objectID": "posts/nba/nba.html#position-wise-salary-insights",
-    "href": "posts/nba/nba.html#position-wise-salary-insights",
-    "title": "NBA",
-    "section": "Position-wise Salary Insights",
-    "text": "Position-wise Salary Insights\nMoving on to Position-wise Salary Insights, we’ll examine how average salaries differ across player positions. This analysis could reveal which positions are typically higher-paid, potentially reflecting their value on the basketball court. Let’s create a box plot to visualize the salary distribution for each position. ​​\n\n\nCode\n# Plot salary distribution by player position\nplt.figure(figsize=(10, 6))\nsns.boxplot(data = nba,\n            x = 'Position', y = 'Salary',\n            palette = 'Set2')\nplt.title('Salary Distribution by Position')\nplt.xlabel('Position')\nplt.ylabel('Salary')\nplt.show()\n\n\n\n\n\nThe box plot above illustrates the salary distribution by player position, showcasing the variation in salaries among different positions within the NBA. This visualization helps us understand which positions tend to have higher median salaries and the spread of salaries within each position, including outliers that represent exceptionally high or low salaries. While the positions of C and PG have the widest interquantiles of salaries, the positions of FC, F, G, and GF have the narrowest interquantiles of them."
-  },
-  {
-    "objectID": "posts/nba/nba.html#top-10-highest-paid-players",
-    "href": "posts/nba/nba.html#top-10-highest-paid-players",
-    "title": "NBA",
-    "section": "Top 10 Highest Paid Players",
-    "text": "Top 10 Highest Paid Players\nLastly, we’ll identify the Top 10 Highest Paid Players in the NBA. This analysis highlights the star earners of the league, providing insights into which players command the highest salaries and potentially why. Let’s extract and visualize this information. ​​\n\n\nCode\n# Identify the top 10 highest paid players\ntop_10_salaries = nba.sort_values(by='Salary', ascending=False).head(10)\n\n# Plot the top 10 highest paid players\nplt.figure(figsize=(12, 8))\nsns.barplot(data = top_10_salaries,\n            x = 'Salary', y = 'Name',\n            palette = 'viridis')\nplt.title('Top 10 Highest Paid NBA Players')\nplt.xlabel('Salary')\nplt.ylabel('Player')\nplt.show()\n\n\n\n\n\nThe bar chart above reveals the top 10 highest-paid NBA players, showcasing those who stand at the pinnacle of the league in terms of salary. Stephen Curry is the highest-paid NBA player, followed by Russel Westbrook and Chris Paul. This visualization not only highlights the star players who command the highest salaries but also may reflect their marketability, performance, and contribution to their respective teams."
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html",
-    "href": "posts/py-basic/blog-python-basics.html",
-    "title": "Python Basics",
-    "section": "",
-    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html#what-is-python",
-    "href": "posts/py-basic/blog-python-basics.html#what-is-python",
-    "title": "Python Basics",
-    "section": "",
-    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint('Hello, World!')"
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
-    "href": "posts/py-basic/blog-python-basics.html#variables-and-data-types",
-    "title": "Python Basics",
-    "section": "",
-    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html#control-structures",
-    "href": "posts/py-basic/blog-python-basics.html#control-structures",
-    "title": "Python Basics",
-    "section": "",
-    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html#functions",
-    "href": "posts/py-basic/blog-python-basics.html#functions",
-    "title": "Python Basics",
-    "section": "",
-    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
-  },
-  {
-    "objectID": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
-    "href": "posts/py-basic/blog-python-basics.html#lists-and-dictionaries",
-    "title": "Python Basics",
-    "section": "",
-    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
-  },
-  {
-    "objectID": "listing-danl-210-rw.html",
-    "href": "listing-danl-210-rw.html",
-    "title": "DANL 210 - Project",
-    "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-02.html",
-    "href": "danl-cw/danl-210-cw-02.html",
-    "title": "Classwork 2",
-    "section": "",
-    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-02.html#basic-syntax",
-    "href": "danl-cw/danl-210-cw-02.html#basic-syntax",
-    "title": "Classwork 2",
-    "section": "",
-    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-02.html#advanced-syntax",
-    "href": "danl-cw/danl-210-cw-02.html#advanced-syntax",
-    "title": "Classwork 2",
-    "section": "",
-    "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-02.html#practice-problems",
-    "href": "danl-cw/danl-210-cw-02.html#practice-problems",
-    "title": "Classwork 2",
-    "section": "",
-    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-02.html#references",
-    "href": "danl-cw/danl-210-cw-02.html#references",
-    "title": "Classwork 2",
-    "section": "",
-    "text": "Quarto Markdown Basics\nStart writing on GitHub"
-  },
-  {
-    "objectID": "index-home.html",
-    "href": "index-home.html",
-    "title": "Byeong-Hak Choe",
-    "section": "",
-    "text": "Hello! 👋\nI am an assistant professor of data analytics and economics at School of Business at SUNY Geneseo.\nMy research interests lie in economics of the environment and climate change."
-  },
-  {
-    "objectID": "index-home.html#research",
-    "href": "index-home.html#research",
-    "title": "Byeong-Hak Choe",
-    "section": "Research",
-    "text": "Research\n\nWorking papers\n1️⃣ Social Media Campaign, Lobbying, and Legislation: Evidence from #cliamtechange and Energy Lobbies\n2️⃣ Climate Finance under Conflicts and Renegotiations: A Dynamic Contract Approach\n\n\nWork in progress\n🌟 ‘Hiding Behind a Small Cake’ in an Online Dictator Game: The Way You Hide Matters!, (with Tabaré Capitan (1st author) , Jason Shogren, and Benjamin White).\n🌟 Estimating the Value of Statistical Life through Big Data, (with Stephen Newbold and Alexander James).\n\n\nBook chapters\n💡 Governance and Climate Finance in the Developing World (with Tilsa Oré-Monago).\n- In Wu, F., Zhang, D., and Ji, Q. (Eds.), Climate Finance: Supporting a Sustainable Energy Transition, Chapter 7, Springer Nature (July, 2024)."
-  },
-  {
-    "objectID": "danl-qa/danl-210-qa.html",
-    "href": "danl-qa/danl-210-qa.html",
-    "title": "DANL 210 - Discussion and Q & A Board",
-    "section": "",
-    "text": "Welcome to our Discussion and Q & A Board! 👋 \nThis space is designed for you to engage with your classmates about the course materials.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions to Byeong-Hak (@bcdanl) or your classmates or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\nPlease note that all our comments are recorded in here, regardless of whether comments are displayed in this page or not.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Big & tiny insights through data",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNBA\n\n\n3 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBeer Markets\n\n\n5 min\n\n\n\nByeong-Hak Choe\n\n\nNovember 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nOctober 27, 2023\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "listing-danl-210-qa.html",
-    "href": "listing-danl-210-qa.html",
-    "title": "DANL 210 - Q & A",
-    "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nDANL 210 - Discussion and Q & A Board\n\n\nundefined\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html",
-    "href": "danl-cw/danl-210-cw-04.html",
-    "title": "Classwork 4",
-    "section": "",
-    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html#question-1",
-    "href": "danl-cw/danl-210-cw-04.html#question-1",
-    "title": "Classwork 4",
-    "section": "",
-    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html#question-2",
-    "href": "danl-cw/danl-210-cw-04.html#question-2",
-    "title": "Classwork 4",
-    "section": "Question 2",
-    "text": "Question 2\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\n\n\nx = 4.0\ny = .5\n\nx &lt; y or 3*y &lt; x\n\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html#question-3",
-    "href": "danl-cw/danl-210-cw-04.html#question-3",
-    "title": "Classwork 4",
-    "section": "Question 3",
-    "text": "Question 3\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html#question-4",
-    "href": "danl-cw/danl-210-cw-04.html#question-4",
-    "title": "Classwork 4",
-    "section": "Question 4",
-    "text": "Question 4\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nAnswer"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html#question-5",
-    "href": "danl-cw/danl-210-cw-04.html#question-5",
-    "title": "Classwork 4",
-    "section": "Question 5",
-    "text": "Question 5\n\nvals = [3, 2, 1, 0]\n\n\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time.\n\n\nAnswer"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html",
-    "title": "Lecture 4",
-    "section": "",
-    "text": "A value is datum (literal) such as a number or text.\nThere are different types of values:\n\n352.3 is known as a float or double;\n22 is an integer;\n“Hello World!” is a string.\n\n\n\n\n\n\n\n\na = 10\nprint(a)\n\n\n\n\n\n\n\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\nA variable is just a name!\n\n\n\n\n\n\n\n\n\n\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object.\n\n\n\n\n\n\n\n\n# Here we assign the integer value 5 to the variable x.\nx = 5   \n\n# Now we can use the variable x in the next line.\ny = x + 12  \ny\n\nIn Python, we use = to assign a value to a variable.\nIn math, = means equality of both sides.\nIn programs, = means assignment: assign the value on the right side to the variable on the left side.\n\n\n\n\n\n\n\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is Google Colab’s comment character.\n\nThe # character has many names: hash, sharp, pound, or octothorpe.\n# indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\n\nConsider adding more comments on code cells and their results using text cells.\n\n\n\n\n\n\n\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen Python reads y = x + 12, it does the following:\n\nSees the = in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y.\n\n\n\n\n\n\n\n\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)\n\nThe most basic built-in data types that we’ll need to know about are:\n\nintegers 10\nfloats 1.23\nstrings \"like this\"\nbooleans True\nnothing None\n\nPython also has a built-in type of data container called a list (e.g., [10, 15, 20]) that can contain anything, even different types\n\n\n\n\n\n\n\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation.\n\n\n\n\n\n\n\n\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\nvector = ['a', 'b']\nvector[0]\n\n[] is used to denote a list or to signify accessing a position using an index.\n\n\n\n{'a', 'b'}  # set\n{'first_letter': 'a', 'second_letter': 'b'}  # dictionary\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n\n\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n() is used to denote\n\na tuple, or\nthe arguments to a function, e.g., function(x) where x is the input passed to the function.\n\n\n\n\n\n\n\n\n\n\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nAll of the basic operators we see in mathematics are available to use:\n\n\n\n\n+ for addition\n- for subtraction\n\n\n\n* for multiplication\n** for powers\n\n\n\n/ for division\n// for integer division\n\n\n\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\nWe can ‘sum’ strings (which really concatenates them).\n\n\n\n\n\n\n\n\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!\n\n\n\n\n\n\n\n\n\nQ. Classwork 4.1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\n\n\n\n\n\n\n10 == 20\n10 == '10'\n\nBoolean data have either True or False value.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExisting booleans can be combined, which create a boolean when executed.\n\n\n\n\n\n\n\nConditions are expressions that evaluate as booleans.\n\n\n\n\n\n\n\n\n\n\n\n\n\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 4.2\n\n\n\n\n\n\n\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements.\n\n\n\n\n\n\n\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?\n\n\n\n\n\n\n\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:\n\n\n\n\n\n\n\n\n\norig_number = 4.39898498\ntype(orig_number)\n\nmod_number = int(orig_number)\nmod_number\ntype(mod_number)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like str(), int(), and float().\nIf we try these, Python will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw a great big error.\n\n\n\n\n\n\n\n\n\n\nA tuple is an object that is defined by parentheses and entries that are separated by commas, for example (15, 20, 32). (They are of type tuple.)\nTuples are immutable, while lists are mutable.\nImmutable objects, such as tuples and strings, can’t have their elements changed, appended, extended, or removed.\n\nMutable objects, such as lists, can do all of these things.\n\nIn everyday programming, we use lists and dictionaries more than tuples.\n\n\n\n\n\n\n\n\n\nWe have seen that certain parts of the code examples are indented.\nCode that is part of a function, a conditional clause, or loop is indented.\nIndention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.\n\n\n\n\n\n\n\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\nHere’s a basic example of indentation as part of an if statement.\nThe standard practice for indentation is that each sub-statement should be indented by 4 spaces.\n\n\n\n\n\n\n\ncities_to_temps = {\"Paris\": 28, \"London\": 22, \"New York\": 36, \"Seoul\": 29}\n\ncities_to_temps.keys()\ncities_to_temps.values()\ncities_to_temps.items()\n\nAnother built-in Python type that is enormously useful is the dictionary.\n\nThis provides a mapping one set of variables to another (either one-to-one or many-to-one).\nIf you need to create associations between objects, use a dictionary.\n\nWe can obtain keys, values, or key-value paris from dictionaries.\n\n\n\n\n\n\n\n\nBeing able to create empty containers is sometimes useful, especially when using loops.\nThe commands to create empty lists, tuples, dictionaries, and sets are lst = [], tup=(), dic={}, and st = set() respectively.\nQ. What is the type of an empty list?\n\n\n\n\n\n\n\n\n\n\n\nWith slicing methods, we can get subset of the data object.\nSlicing methods can apply for strings, lists, arrays, and DataFrames.\nThe above example describes indexing in Python\n\n\n\n\n\n\n\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length:\n\n\n\n\n\n\n\n\n\n\nIn Python, we can access attributes by using a dot notation (.).\nUnlike len(), some functions use a dot to access to strings.\nTo use those string functions, type (1) the name of the string, (2) a dot, (3) the name of the function, and (4) any arguments that the function needs:\n\nstring_name.some_function(arguments).\n\n\n\n\n\n\n\n\n\n\n\n\nWe can use the built-in string split() function to break a string into a list of smaller strings based on some separator.\n\nIf we don’t specify a separator, split() uses any sequence of white space characters—newlines, spaces, and tabs:\n\ntasks = 'get gloves,get mask,give cat vitamins,call ambulance'\ntasks.split(',')\ntasks.split()\n\n\n\n\n\n\n\n\n\n\n\n\njoin() collapses a list of strings into a single string.\n\ncrypto_list = ['Yeti', 'Bigfoot', 'Loch Ness Monster']\ncrypto_string = ', '.join(crypto_list)\nprint('Found and signing book deals:', crypto_string)\n\n\n\n\n\n\n\nWe can extract a substring (a part of a string) from a string by using a slice.\nWe define a slice by using square brackets ([]), a start index, an end index, and an optional step count between them.\n\nWe can omit some of these.\n\nThe slice will include characters from index start to one before end:\n\n\n\n\n\n\n\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step.\n\n\n\n\n\n\n\n\n\n\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values.\n\n\n\n\n\n\n\n\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post.\n\n\n\n\n\n\n\n\n\n[index]slice\n\n\n\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\nWe can extract a single value from a list by specifying its index:\n\n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\n\n\n\n\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]\n\n\n\n\n\n\n\n\n\n\n\n\n\nQ. Classwork 4.3\n\n\n\n\n\n\n\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions.\n\n\n\n\n\n\n\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one.\n\n\n\n\n\n\n\n\nQ. Classwork 4.4"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-1",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-1",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nVariables Are Names, Not Places\n\n\n\n\nA value is datum (literal) such as a number or text.\nThere are different types of values:\n\n352.3 is known as a float or double;\n22 is an integer;\n“Hello World!” is a string."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-2",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-2",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nValues, Variables, and Types\na = 10\nprint(a)\n\n\n\n\n\n\n\nA variable is a name that refers to a value.\n\nWe can think of a variable as a box that has a value, or multiple values, packed inside it.\n\nA variable is just a name!"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-3",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-3",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nValues, Variables, and Types\n\n\nSometimes you will hear variables referred to as objects.\nEverything that is not a literal value, such as 10, is an object."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-4",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-4",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nAssignment ( = )\n# Here we assign the integer value 5 to the variable x.\nx = 5   \n\n# Now we can use the variable x in the next line.\ny = x + 12  \ny\n\nIn Python, we use = to assign a value to a variable.\nIn math, = means equality of both sides.\nIn programs, = means assignment: assign the value on the right side to the variable on the left side."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-5",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-5",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nCode and comment style\n\nThe two main principles for coding and managing data are:\n\nMake things easier for your future self.\nDon’t trust your future self.\n\nThe # mark is Google Colab’s comment character.\n\nThe # character has many names: hash, sharp, pound, or octothorpe.\n# indicates that the rest of the line is to be ignored.\nWrite comments before the line that you want the comment to apply to.\n\nConsider adding more comments on code cells and their results using text cells."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-6",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-6",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nAssignment\n\nIn programming code, everything on the right side needs to have a value.\n\nThe right side can be a literal value, or a variable that has already been assigned a value, or a combination.\n\nWhen Python reads y = x + 12, it does the following:\n\nSees the = in the middle.\nKnows that this is an assignment.\nCalculates the right side (gets the value of the object referred to by x and adds it to 12).\nAssigns the result to the left-side variable, y."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-7",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-7",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nVariables Are Names, Not Places\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)\n\nThe most basic built-in data types that we’ll need to know about are:\n\nintegers 10\nfloats 1.23\nstrings \"like this\"\nbooleans True\nnothing None\n\nPython also has a built-in type of data container called a list (e.g., [10, 15, 20]) that can contain anything, even different types"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-8",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-8",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nTypes\n\n\n\n\nThe second column (Type) contains the Python name of that type.\nThe third column (Mutable?) indicates whether the value can be changed after creation."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-9",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-9",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBrackets\n\n\nThere are several kinds of brackets in Python, including [], {}, and ().\n\n\n[]{}()\n\n\nvector = ['a', 'b']\nvector[0]\n\n[] is used to denote a list or to signify accessing a position using an index.\n\n\n\n{'a', 'b'}  # set\n{'first_letter': 'a', 'second_letter': 'b'}  # dictionary\n\n{} is used to denote a set or a dictionary (with key-value pairs).\n\n\n\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n() is used to denote\n\na tuple, or\nthe arguments to a function, e.g., function(x) where x is the input passed to the function."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-10",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-10",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nOperators\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nAll of the basic operators we see in mathematics are available to use:\n\n\n\n\n+ for addition\n- for subtraction\n\n\n\n* for multiplication\n** for powers\n\n\n\n/ for division\n// for integer division\n\n\n\n\nThese work as you’d expect on numbers.\nThese operators are sometimes defined for other built-in data types too.\n\nWe can ‘sum’ strings (which really concatenates them)."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-11",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-11",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nOperators\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-12",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-12",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nOperators\nQ. Classwork 4.1\nUsing Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-13",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-13",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n10 == 20\n10 == '10'\n\nBoolean data have either True or False value."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-14",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-14",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\n\n\n\n\n\n\n\n\nExisting booleans can be combined, which create a boolean when executed."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-15",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-15",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nConditions are expressions that evaluate as booleans."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-16",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-16",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nboolean_condition1 = 10 == 20\nprint(boolean_condition1)\n\nboolean_condition2 = 10 == '10'\nprint(boolean_condition2)\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 4.2"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-17",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-17",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-18",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-18",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nname_list = [\"Lovelace\", \"Smith\", \"Hopper\", \"Babbage\"]\n\nprint(\"Lovelace\" in name_list)\n\nprint(\"Bob\" in name_list)\n\nOne of the most useful conditional keywords is in.\n\nThis one must pop up ten times a day in most coders’ lives because it can pick out a variable or make sure something is where it’s supposed to be.\n\nQ. Check if “a” is in the string “Sun Devil Arena” using in. Is “a” in “Anyone”?"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-19",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-19",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nBooleans and Conditions\nscore = 98\n\nif score == 100:\n    print(\"Top marks!\")\nelif score &gt; 90 and score &lt; 100:\n    print(\"High score!\")\nelif score &gt; 10 and score &lt;= 90:\n    pass\nelse:\n    print(\"Better luck next time.\")\n\nOne conditional construct we’re bound to use at some point, is the if-else chain:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-20",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-20",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nCasting Variables\n\n\norig_number = 4.39898498\ntype(orig_number)\n\nmod_number = int(orig_number)\nmod_number\ntype(mod_number)\n\n\n\nSometimes we need to explicitly cast a value from one type to another.\n\nWe can do this using built-in functions like str(), int(), and float().\nIf we try these, Python will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw a great big error."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-21",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-21",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nTuples and (im)mutability\n\n\nA tuple is an object that is defined by parentheses and entries that are separated by commas, for example (15, 20, 32). (They are of type tuple.)\nTuples are immutable, while lists are mutable.\nImmutable objects, such as tuples and strings, can’t have their elements changed, appended, extended, or removed.\n\nMutable objects, such as lists, can do all of these things.\n\nIn everyday programming, we use lists and dictionaries more than tuples."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-22",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-22",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nIndentation\n\nWe have seen that certain parts of the code examples are indented.\nCode that is part of a function, a conditional clause, or loop is indented.\nIndention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-23",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-23",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nIndentation\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\nHere’s a basic example of indentation as part of an if statement.\nThe standard practice for indentation is that each sub-statement should be indented by 4 spaces."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-24",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-24",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nDictionaries\ncities_to_temps = {\"Paris\": 28, \"London\": 22, \"New York\": 36, \"Seoul\": 29}\n\ncities_to_temps.keys()\ncities_to_temps.values()\ncities_to_temps.items()\n\nAnother built-in Python type that is enormously useful is the dictionary.\n\nThis provides a mapping one set of variables to another (either one-to-one or many-to-one).\nIf you need to create associations between objects, use a dictionary.\n\nWe can obtain keys, values, or key-value paris from dictionaries."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-25",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-25",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nRunning on Empty\n\nBeing able to create empty containers is sometimes useful, especially when using loops.\nThe commands to create empty lists, tuples, dictionaries, and sets are lst = [], tup=(), dic={}, and st = set() respectively.\nQ. What is the type of an empty list?"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-26",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-26",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nSlicing Methods\n\n\n\n\nWith slicing methods, we can get subset of the data object.\nSlicing methods can apply for strings, lists, arrays, and DataFrames.\nThe above example describes indexing in Python"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-27",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-27",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nStrings\nstring = \"cheesecake\"\nprint( string[-4:] )\n\nFrom strings, we can access the individual characters via slicing and indexing.\n\n\n\nstring = \"cheesecake\"\nprint(\"String has length:\")\nprint( len(string) )\n\nlist_of_numbers = range(1, 20)\nprint(\"List of numbers has length:\")\nprint( len(list_of_numbers) )\n\n\n\nBoth lists and strings will allow us to use the len() command to get their length:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-28",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-28",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nString-related Functions\nDot operation\n\nIn Python, we can access attributes by using a dot notation (.).\nUnlike len(), some functions use a dot to access to strings.\nTo use those string functions, type (1) the name of the string, (2) a dot, (3) the name of the function, and (4) any arguments that the function needs:\n\nstring_name.some_function(arguments)."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-29",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-29",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nString-related Functions\nSplit with split()\n\nWe can use the built-in string split() function to break a string into a list of smaller strings based on some separator.\n\nIf we don’t specify a separator, split() uses any sequence of white space characters—newlines, spaces, and tabs:\n\ntasks = 'get gloves,get mask,give cat vitamins,call ambulance'\ntasks.split(',')\ntasks.split()"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-30",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-30",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nString-related Functions\nCombine by Using join()\n\njoin() collapses a list of strings into a single string.\n\ncrypto_list = ['Yeti', 'Bigfoot', 'Loch Ness Monster']\ncrypto_string = ', '.join(crypto_list)\nprint('Found and signing book deals:', crypto_string)"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-31",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-31",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nStrings and Slicing\n\nWe can extract a substring (a part of a string) from a string by using a slice.\nWe define a slice by using square brackets ([]), a start index, an end index, and an optional step count between them.\n\nWe can omit some of these.\n\nThe slice will include characters from index start to one before end:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-32",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-32",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nGet a Substring with a Slice\n\n[:][ start :][: end ][ start : end ][ start : end : step ]\n\n\nletters = 'abcdefghij'\nletters[:]\n\n[:] extracts the entire sequence from start to end.\n\n\n\nletters = 'abcdefghij'\nletters[4:]\nletters[2:]\nletters[-3:]\nletters[-50:]\n\n[ start :] specifies from the start index to the end.\n\n\n\nletters = 'abcdefghij'\nletters[:3]\nletters[:-3]\nletters[:70]\n\n[: end ] specifies from the beginning to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2:5]\nletters[-26:-24]\nletters[35:37]\n\n[ start : end ] indicates from the start index to the end index minus 1.\n\n\n\nletters = 'abcdefghij'\nletters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters\nletters[ : : 3]     # From the start to the end, in steps of 3 characters\nletters[ 6 : : 4 ]    # From index 19 to the end, by 4\nletters[ : 7 : 5 ]    # From the start to index 6 by 5:\nletters[-1 : : -1 ]   # Starts at the end and ends at the start\nletters[: : -1 ]\n\n[ start : end : step ] extracts from the start index to the end index minus 1, skipping characters by step."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-33",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-33",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-34",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-34",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-35",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-35",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\n[index]slice\n\n\nGet an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\nWe can extract a single value from a list by specifying its index:\n\n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]\n\n\n\n\nGet an Item with a Slice\n\nWe can extract a subsequence of a list by using a slice:\n\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-36",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-36",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nLists and Slicing\n\nQ. Classwork 4.3"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-37",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-37",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nFunctions\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")\n\nA function can take any number and type of input parameters and return any number and type of output results.\nPython ships with more than 65 built-in functions.\nPython also allows a user to define a new function.\nWe will mostly use built-in functions."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-38",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-38",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-39",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#python-basics-39",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 4.4"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while",
-    "title": "Lecture 4",
-    "section": "Repeat with while",
-    "text": "Repeat with while\n\n\ncount = 1        \nwhile count &lt;= 5:\n    print(count)\n    count += 1\n\n\nWe first assigned the value 1 to count.\nThe while loop compared the value of count to 5 and continued if count was less than or equal to 5.\nInside the loop, we printed the value of count and then incremented its value by one with the statement count += 1.\nPython goes back to the top of the loop, and again compares count with 5.\nThe value of count is now 2, so the contents of the while loop are again executed, and count is incremented to 3.\nThis continues until count is incremented from 5 to 6 at the bottom of the loop.\nOn the next trip to the top, count &lt;= 5 is now False, and the while loop ends."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-1",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-1",
-    "title": "Lecture 4",
-    "section": "Repeat with while",
-    "text": "Repeat with while\nAsking the user for input\n\n\nstuff = input()\n# Type something and press Return/Enter on Console \n# before running print(stuff)\nprint(stuff)\n\n\nSometimes we would like to take the value for a variable from the user via their keyboard.\n\nThe input() function gets input from the keyboard.\nWhen the input() is called, the program stops and waits for the user to type something on Console (interactive Python interpreter).\nWhen the user presses Return or Enter on Console, the program resumes and input returns what the user typed as a string."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-2",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-2",
-    "title": "Lecture 4",
-    "section": "Repeat with while",
-    "text": "Repeat with while\nCancel with break\n\n\nwhile True:\n    user_input = input(\"Enter 'yes' to continue or 'no' to stop: \")\n    if user_input.lower() == 'no':\n        print(\"Exiting the loop. Goodbye!\")\n        break\n    elif user_input.lower() == 'yes':\n        print(\"You chose to continue.\")\n    else:\n        print(\"Invalid input, please enter 'yes' or 'no'.\")\n\n\nWhile loop is used to execute a block of code repeatedly until given boolean condition evaluated to False.\n\nwhile True loop will run forever unless we write it with a break statement.\n\nIf we want to loop until something occurs, but we’re not sure when that might happen, we can use an infinite loop with a break statement."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-3",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-3",
-    "title": "Lecture 4",
-    "section": "Repeat with while",
-    "text": "Repeat with while\nSkip Ahead with continue\n\n\nwhile True:\n    value = input(\"Integer, please [q to quit]: \")\n    if value == 'q': # quit\n        break\n    number = int(value)\n    if number % 2 == 0: # an even number\n        continue\n    print(number, \"squared is\", number*number)\n\n\nSometimes, we don’t want to break out of a loop but just want to skip ahead to the next iteration for some reason.\nThe continue statement is used to skip the rest of the code inside a loop for the current iteration only."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\n\nSometimes we want to loop through a set of things such as a string of text, a list of words or a list of numbers.\n\nWhen we have a list of things to loop through, we can construct a for loop.\nA for loop makes it possible for you to traverse data structures without knowing how large they are or how they are implemented."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-1",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-1",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\n\nLet’s see two ways to walk through a string here:\n\n\n\nword = 'thud'\noffset = 0\nwhile offset &lt; len(word):\n    print(word[offset])\n    offset += 1\n\nword = 'thud'\nfor letter in word:\n    print(letter)\n\n\n\nWhich one do you prefer?"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-2",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-2",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\nCancel with break\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        break\n    print(letter)\n\nA break in a for loop breaks out of the loop, as it does for a while loop:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-3",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-3",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\nSkip with continue\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        continue\n    print(letter)\n\nInserting a continue in a for loop jumps to the next iteration of the loop, as it does for a while loop."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-4",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-4",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\nGenerate Number Sequences with range()\n\nThe range() function returns a stream of numbers within a specified range, without first having to create and store a large data structure such as a list or tuple.\n\nThis lets us create huge ranges without using all the memory in our computers and crashing our program.\nrange() returns an iterable object, so we need to step through the values with for … in, or convert the object to a sequence like a list."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-5",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-5",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\nfor … in range()\n\n\nfor x in range(0, 3):\n    print(x)\nlist( range(0, 3) )\n\n\nWe use range() similar to how we use slices: range( start, stop, step ).\n\nIf we omit start, the range begins at 0.\nThe only required value is stop; as with slices, the last value created will be just before stop.\nThe default value of step is 1, but we can change it."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#loop-with-while-and-for-1",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#loop-with-while-and-for-1",
-    "title": "Lecture 4",
-    "section": "Loop with while and for",
-    "text": "Loop with while and for\nClass Exercises\n\nQ. Classwork 4.5\nQ. Classwork 4.6"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-1",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-1",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nException handlers"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-2",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-2",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nException handlers\n\nIn some languages, errors are indicated by special function return values.\n\nPython uses exceptions: code that is executed when an associated error occurs.\n\nWhen we run code that might fail under some circumstances, we also need appropriate exception handlers to intercept any potential errors.\n\nAccessing a list or tuple with an out-of-range position, or a dictionary with a nonexistent key."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-3",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-3",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nErrors\nshort_list = [1, 2, 3]\nposition = 5\nshort_list[position]\n\nIf we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-4",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-4",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\n\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nRather than leaving things to chance, use try to wrap your code, and except to provide the error handling:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-5",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-5",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nThe code inside the try block is run.\n\nIf there is an error, an exception is raised and the code inside the except block runs.\n\nIf there are no errors, the except block is skipped."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-6",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-6",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nexcept type\n\nSpecifying a plain except with no arguments, as we did here, is a catchall for any exception type.\nIf more than one type of exception could occur, it’s best to provide a separate exception handler for each.\nWe get the full exception object in the variable name if we use the form:"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-7",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-7",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nexcept type\nshort_list = [1, 2, 3]\nwhile True:\n    value = input('Position [q to quit]? ')\n    if value == 'q':\n        break\n    try:\n        position = int(value)\n        print(short_list[position])\n    except IndexError as err:\n        print('Bad index:', position)\n    except Exception as other:\n        print('Something else broke:', other)"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-8",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-8",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nexcept type\n\nThe example looks for an IndexError first, because that’s the exception type raised when we provide an illegal position to a sequence.\nIt saves an IndexError exception in the variable err, and any other exception in the variable other.\nThe example prints everything stored in other to show what you get in that object.\n\nInputting position 3 raised an IndexError as expected.\nEntering two annoyed the int() function, which we handled in our second, catchall except code."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-9",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#handle-errors-with-try-and-except-9",
-    "title": "Lecture 4",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nClass Exercises\n\nQ. Classwork 4.7"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#importing-modules-packages-and-libraries-1",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#importing-modules-packages-and-libraries-1",
-    "title": "Lecture 4",
-    "section": "Importing Modules, Packages, and Libraries",
-    "text": "Importing Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 4.8"
-  },
-  {
-    "objectID": "danl-cw/danl-210-cw-04.html#question-6",
-    "href": "danl-cw/danl-210-cw-04.html#question-6",
-    "title": "Classwork 4",
-    "section": "Question 6",
-    "text": "Question 6\n\nAssign the value 7 to the variable guess_me, and the value 1 to the variable number.\nWrite a while loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\nWrite a for loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\n\n\nAnswer"
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-4",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#repeat-with-while-4",
-    "title": "Lecture 4",
-    "section": "Repeat with while",
-    "text": "Repeat with while\nCheck break Use with else\n\nWe can consider using while with else when we’ve coded a while loop to check for something, and breaking as soon as it’s found. \n\nnumbers = [1, 3, 5]\nposition = 0\n\nwhile position &lt; len(numbers):\n    number = numbers[position]\n    if number &gt; 4:  # Condition changed to checking if the number is greater than 4\n        print('Found a number greater than 4:', number)\n        break\n    position += 1\nelse:  # break not called\n    print('No number greater than 4 found')\n\nConsider it a break checker."
-  },
-  {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-6",
-    "href": "danl-lec/danl-210-lec-04-2025-0129.html#iterate-with-for-and-in-6",
-    "title": "Lecture 4",
-    "section": "Iterate with for and in",
-    "text": "Iterate with for and in\nCheck break Use with else\n\nSimilar to while, for has an optional else that checks whether the for completed normally.\n\nIf break was not called, the else statement is run.\n\n\nword = 'thud'\nfor letter in word:\n    if letter == 'x':\n        print(\"Eek! An 'x'!\")\n        break\n    print(letter)\nelse:\n    print(\"No 'x' in there.\")"
-  },
-  {
     "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-1",
     "href": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-1",
     "title": "Lecture 4",
@@ -1482,6 +558,13 @@
     "title": "Lecture 4",
     "section": "Python Basics",
     "text": "Python Basics"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#variable-in-data.frame",
+    "href": "danl-lec/danl-210-lec-04-2025-0131.html#variable-in-data.frame",
+    "title": "Lecture 4",
+    "section": "Variable in data.frame",
+    "text": "Variable in data.frame\n\n\n\n\n\n\nDefinition: A data.frame is a table-like data structure used for storing data in a tabular format with rows and columns.\nStructure: Consists of:\n\nVariables (Columns)\nObservations (Rows)\nValues (Cells): Individual data points within each cell of the data.frame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-5",
@@ -1729,6 +812,13 @@
     "text": "Python Basics\nFunctions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nWe invoke a function by entering its name and a pair of opening and closing parentheses.\nMuch as a cooking recipe can accept ingredients, a function invocation can accept inputs called arguments.\nWe pass arguments sequentially inside the parentheses (, separated by commas).\nA parameter is a name given to an expected function argument.\nA default argument is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one."
   },
   {
+    "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-40",
+    "href": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-40",
+    "title": "Lecture 4",
+    "section": "Python Basics",
+    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 4.4"
+  },
+  {
     "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#repeat-with-while",
     "href": "danl-lec/danl-210-lec-04-2025-0131.html#repeat-with-while",
     "title": "Lecture 4",
@@ -1890,17 +980,479 @@
     "text": "Importing Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 4.8"
   },
   {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#variable-in-data.frame",
-    "href": "danl-lec/danl-210-lec-04-2025-0131.html#variable-in-data.frame",
-    "title": "Lecture 4",
-    "section": "Variable in data.frame",
-    "text": "Variable in data.frame\n\n\n\n\n\n\nDefinition: A data.frame is a table-like data structure used for storing data in a tabular format with rows and columns.\nStructure: Consists of:\n\nVariables (Columns)\nObservations (Rows)\nValues (Cells): Individual data points within each cell of the data.frame."
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#building-a-personal-website-on-github",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#building-a-personal-website-on-github",
+    "title": "Lecture 3",
+    "section": "Building a Personal Website on GitHub",
+    "text": "Building a Personal Website on GitHub\n\nFollow steps described in Classwork 1."
   },
   {
-    "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-40",
-    "href": "danl-lec/danl-210-lec-04-2025-0131.html#python-basics-40",
-    "title": "Lecture 4",
-    "section": "Python Basics",
-    "text": "Python Basics\nFunctions, Arguments, and Parameters\n\nQ. Classwork 4.4"
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#lets-practice-markdown",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#lets-practice-markdown",
+    "title": "Lecture 3",
+    "section": "Let’s Practice Markdown!",
+    "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html",
+    "title": "Lecture 3",
+    "section": "Getting Started with Jupyter Notebook and HTML",
+    "text": "Getting Started with Jupyter Notebook and HTML\nYAML\n\n\n\n\n\n\nAn YAML (yet another markup language) header surrounded by ---.\n\nIt is commonly used for document configuration (e.g., title, author, date, style, …)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-1",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-1",
+    "title": "Lecture 3",
+    "section": "Getting Started with Jupyter Notebook and HTML",
+    "text": "Getting Started with Jupyter Notebook and HTML\nKnitting / Rendering\n\n\nWhen we knit the document, Quarto sends the .qmd file to jupyter/knitr, which executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output.\nThe markdown file (*.md) generated by jupyter/knitr is then processed by pandoc, which is responsible for creating the output file."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-2",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-2",
+    "title": "Lecture 3",
+    "section": "Getting Started with Jupyter Notebook and HTML",
+    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n\nThe very original version of Markdown was invented mainly to write HTML content more easily.\n\nFor example, - SOME_TEXT in “.md” is equivalent to &lt;ul&gt;&lt;li&gt; SOME_TEXT &lt;/li&gt; in ”.html”\n\nPandoc makes it possible to convert a Markdown document to a large variety of output formats, such as HTML."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-3",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-3",
+    "title": "Lecture 3",
+    "section": "Getting Started with Jupyter Notebook and HTML",
+    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n---\ntitle: \"Habits\"\nauthor: YOUR_NAME\ndate: January 27, 2025\nformat: \n  html\n---\n\nTo create an HTML document from Jupyter Notebook, we specify the html output format in the YAML metadata of our document.\n\nBy default, format: html is set.\n\nOpen an empty Jupyter Notebook file from Google Colab (or VSCode).\n\nCreate the first cell that is Text.\nType the above YAML metadata to the first Text cell."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-4",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#getting-started-with-jupyter-notebook-and-html-4",
+    "title": "Lecture 3",
+    "section": "Getting Started with Jupyter Notebook and HTML",
+    "text": "Getting Started with Jupyter Notebook and HTML\nMarkdown, Jupyter Notebook, and HTML\n---\ntitle: \"Python Basics\"\nauthor: YOUR_NAME\ndate: \"2025-01-27\"\n---\n\nDownload the Jupyter Notebook file, danl-210-python-basic.ipynb from Brightspace, and open it from Google Colab (or VSCode if you prefer).\nThe above syntax is part of YAML metadata in danl-210-python-basic.ipynb.\n\nYAML should be always in the first cell, and the first cell should be text, not code.\n\nIn YAML, indentation really matters!\n\ntab (or four spaces) defines a level in YAML."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-_quarto.yml",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-_quarto.yml",
+    "title": "Lecture 3",
+    "section": "Quarto Website: _quarto.yml",
+    "text": "Quarto Website: _quarto.yml\n\n\n---\nproject:\n  type: website\n\nwebsite:\n  title: \"YOUR NAME\"\n  navbar:\n    left:\n      - text: Project\n        href: danl_proj_nba.ipynb\n      - text: Blog\n        href: blog-listing.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: false\n---\n\nThe _quarto.yml file configures the website settings.\nIndentation matters!\n\n\n\n\nIn RStudio, open the project USERNAME.github.io.Rporj.\n\nClick Project: (None) at the top-right corner.\nClick USERNAME.github.io.Rproj.\n\n_quarto.yml configures a website, and provides various options for HTML documents within the website."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nCustom CSS\n\nCascading Style Sheets (CSS) is used to format the layout of a webpage (color, font, text size, background, display, etc.).\n\nHTML will format the architecture of the house.\nCSS will be the carpet and walls to decorate the house.\nJavaScript adds interactive elements in the house, such as opening doors and lighting.\n\nWe are not front-end web developers.\n\nWe will not cover the use of CSS and JavaScript."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-1",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-1",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nRendering\n\n\nThe Render button (command/Ctrl + shift + K) renders a single Quarto document file (e.g., index.qmd) to create an output document.\nquarto render from Terminal renders ALL Quarto documents and Jupyter Notebook files in your local working directory:\n\nquarto render\n\nquarto render should be used if there is any change in _quarto.yml.\n\n\n\n\n\nTip\n\n\n\nEdit _quarto.yml, *.qmd, or *.ipynb files ONLY from your local laptop or Google Colab.\n\nDo not edit them from your GitHub repo for the website."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-2",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-2",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nAdding *.ipynb to a Quarto website\n\nBy default, quarto render doesn’t execute any code in .ipynb notebooks.\nquarto render renders .ipynb notebooks, so that corresponding html files are rendered.\n\nIf you need to update cell outputs in *.ipynb, run that *.ipynb on Google Colab, save the notebook, and download it to your local working directory."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-3",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-3",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nAppearance and Style\n\ntheme specifies the Bootstrap theme to use for the page (themes are drawn from the Bootswatch theme library).\n\nValid themes include default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti.\n\nhighlight-style specifies the code highlighting style.\n\nSupported styles include default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-4",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-4",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nAbout\n\nYour index.qmd sets a front page about you.\n\nDetails in about pages are available here:\nhttps://quarto.org/docs/websites/website-about.html.\n\nQuarto includes 5 built in templates:\n\njolla\ntrestles\nsolana\nmarquee\nbroadside"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-5",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-5",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nIcons and Emojis\n\nA ton of Bootstrap icons are available here:\n\nhttps://icons.getbootstrap.com.\n\nA ton of markdown emojis are available here 😄:\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\nhttps://gist.github.com/rxaviers/7360908"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-6",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-6",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nNaviation and Adding Pages\nleft:\n  - text: Project\n    href: danl_proj_nba.ipynb\n  - text: Blog\n    href: blog-listing.qmd\n\nWe can add a new page to the website through navbar in _quarto.yml"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-7",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-7",
+    "title": "Lecture 3",
+    "section": "Quarto Website",
+    "text": "Quarto Website\nNaviation and Adding Pages\nleft:\n  - text: \"Python Data Analysis\"\n    menu:\n      - pandas_basic.ipynb\n      - seaborn_basic.ipynb\n\nWe can also create a drop-down menu by including a menu\nMore details about navbar are available here:\n\nhttps://quarto.org/docs/websites/website-navigation.html"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-basics",
+    "href": "danl-lec/danl-210-lec-03-2025-0127.html#quarto-website-basics",
+    "title": "Lecture 3",
+    "section": "Quarto Website Basics",
+    "text": "Quarto Website Basics\n\nLet’s do Classwork 3."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics",
+    "title": "Lecture 2",
+    "section": "Why Data Analytics?",
+    "text": "Why Data Analytics?\n\nFill in the gaps left by traditional business and economics classes.\n\nPractical skills that will benefit your future career.\nNeglected skills like how to actually find datasets in the wild and clean them.\n\nData analytics skills are largely distinct from (and complementary to) the core quantitative works familiar to business undergrads.\n\nData visualization, cleaning and wrangling; databases; machine learning; etc.\n\nIn short, we will cover things that I wish someone had taught me when I was undergraduate."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#you-at-the-end-of-this-course",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#you-at-the-end-of-this-course",
+    "title": "Lecture 2",
+    "section": "You, at the end of this course",
+    "text": "You, at the end of this course"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics-1",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#why-data-analytics-1",
+    "title": "Lecture 2",
+    "section": "Why Data Analytics?",
+    "text": "Why Data Analytics?\n\nData analysts use analytical tools and techniques to extract meaningful insights from data.\n\nSkills in data analytics are also useful for business analysts or market analysts.\n\nBreau of Labor Statistics forecasts that the projected growth rate of the employment in the industry related to data analytics from 2021 to 2031 is 36%.\n\nThe average growth rate for all occupations is 5%."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art",
+    "title": "Lecture 2",
+    "section": "The State of the Art",
+    "text": "The State of the Art\nGenerative AI and ChatGPT\n\n\nData Science and Big Data Trend\nFrom 2008 to now\n\n\nProgrammers in 2025"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art-1",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#the-state-of-the-art-1",
+    "title": "Lecture 2",
+    "section": "The State of the Art",
+    "text": "The State of the Art\nGenerative AI and ChatGPT\n\nUsers around the world have explored how to best utilize GPT for writing essays and programming codes.\n\n\n\n\nIs AI a threat to data analytics?\n\nFundamental understanding of the subject matter is still crucial for effectively utilizing AI’s capabilities.\n\n\n\n\n\nIf you use Generative AI such as ChatGPT, please try to understand what ChatGPT gives you.\n\nCopying and pasting it without any understanding harms your learning opportunity."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-git",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-git",
+    "title": "Lecture 2",
+    "section": "What is Git?",
+    "text": "What is Git?\n\n\n\n\n\\(\\quad\\)\n\nGit is the most popular version control tool for any software development.\n\nIt tracks changes in a series of snapshots of the project, allowing developers to revert to previous versions, compare changes, and merge different versions.\nIt is the industry standard and ubiquitous for coding collaboration."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github",
+    "title": "Lecture 2",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nGitHub is a web-based hosting platform for Git repositories to store, manage, and share code.\nOut class website is hosted on a GitHub repository.\nCourse contents will be posted not only in Brightspace but also in our GitHub repositories (“repos”) and websites.\nGithub is useful for many reasons, but the main reason is how user friendly it makes uploading and sharing code."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github-1",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-github-1",
+    "title": "Lecture 2",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-python",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-python",
+    "title": "Lecture 2",
+    "section": "What is Python?",
+    "text": "What is Python?\n\nPython is a versatile programming language known for its simplicity and readability.\nPython has become a dominant tool in various fields including data analysis, machine learning, and web development.\n\nIt is widely used among developers, data scientists, and researchers for building applications and performing data-driven tasks.\nPython is open source and has a vast ecosystem of libraries and frameworks."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter",
+    "title": "Lecture 2",
+    "section": "What is Jupyter?",
+    "text": "What is Jupyter?\n\nJupyter is an open-source integrated development environment (IDE) primarily for Python, though it supports many other languages.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to users for a programming-related project.\nJupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter-notebook",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-jupyter-notebook",
+    "title": "Lecture 2",
+    "section": "What is Jupyter Notebook?",
+    "text": "What is Jupyter Notebook?\n\nJupyter Notebook (*.ipynb) is a user-friendly environment that enhances coding, data analysis, and visualization.\n\nIt offers a web-based interface that combines live code, equations, visualizations, and narrative text.\nJupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.\n\nWe will use Google Colab, a free cloud version of Jupyter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-rstudio",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#what-is-rstudio",
+    "title": "Lecture 2",
+    "section": "What is RStudio?",
+    "text": "What is RStudio?\n\nRStudio is an IDE mainly for R programming.\nRStudio is a user-friendly interface that makes using R easier and more interactive.\n\nIt provides a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging, and workspace management.\n\nWe will use RStudio to manage a personal website, where HTML files are rendered from Quarto Document and Jupyter Notebook."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-1",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-1",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR programming\n\nThe R language is available as a free download from the R Project website at:\n\nWindows: https://cran.r-project.org/bin/windows/base/\nMac: https://cran.r-project.org/bin/macosx/\nDownload the file of R that corresponds to your Mac OS (Big Sur, Apple silicon arm64, High Sierra, El Capitan, Mavericks, etc.)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-2",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-2",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR Studio\n\n\nThe RStudio Desktop is available as a free download from the following webpage:\n\nhttps://www.rstudio.com/products/rstudio/download/#download\n\n\n\n\n\n\nFor Mac users, try the following steps:\n\nRun RStudio-*.dmg file.\nFrom the Pop-up menu, click the RStudio icon.\nWhile clicking the RStudio icon, drag it to the Applications directory."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-3",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-3",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nScript Pane is where you write R commands in a script file that you can save.\n\nAn R script is simply a text file containing R commands.\nRStudio will color-code different elements of your code to make it easier to read.\n\n\n\n\n\n\n\n\nTo open an R script,\n\nFile \\(&gt;\\) New File \\(&gt;\\) R Script\n\n\n\n\nTo save the R script,\n\nFile \\(&gt;\\) Save"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-4",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-4",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nConsole Pane allows you to interact directly with the R interpreter and type commands where R will immediately execute them."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-5",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-5",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nEnvironment Pane is where you can see the values of variables, data frames, and other objects that are currently stored in memory.\nType below in the Console Pane, and then hit Enter:\n\n\na &lt;- 1"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-6",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-6",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Environment\n\n\n\n\n\n\nPlots Pane contains any graphics that you generate from your R code."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-7",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-7",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nR Packages and tidyverse\n\nR packages are collections of R functions, compiled code, and data that are combined in a structured format.\n\n\n\nThe tidyverse is a collection of R packages designed for data science that share an underlying design philosophy, grammar, and data structures.\n\nThe tidyverse packages work harmoniously together to make data manipulation, exploration, and visualization more.\nWe will use several R packages from tidyverse throughout the course. (e.g., ggplot2, dplyr, tidyr)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-8",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-8",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nInstalling R packages with install.packages(\"packageName\")\n\n\nR packages can be easily installed from within R using functions install.packages(\"packageName\").\n\nTo install the R package tidyverse, type and run the following from R console:\n\n\n\ninstall.packages(\"tidyverse\")\n\nWhile running the above codes, you may encounter the question below from the R Console:\n\n\n\n\nMac: “Do you want to install from sources the packages which need compilation?” from Console Pane.\n\n\n\nWindows: “Would you like to use a personal library instead?” from Pop-up message.\n\n\n\n\nType no in the R Console, and then hit Enter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-9",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-9",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nLoading R packages with library(packageName)\n\n\nOnce installed, a package is loaded into an R session using library(packageName) so that its functions and data can be used.\n\nTo load the R package tidyverse, type and run the following command from a R script:\n\n\n\nlibrary(tidyverse)\ndf_mpg &lt;- ggplot2::mpg\n\nmpg is the data.frame provided by the R package ggplot2, one of the R pakcages in tidyverse."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-10",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-10",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nRStudio Options Setting\n\n\n\n\n\nThis option menu is found by menus as follows:\n\nTools \\(&gt;\\) Global Options\n\nCheck the boxes as in the left.\nChoose the option Never for  Save workspace to .RData on exit:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-11",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#installing-the-tools-11",
+    "title": "Lecture 2",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button.\n\nTo work on web-scrapping and APIs, we will use Spyder IDE provided by Anaconda."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#building-a-personal-website-on-github",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#building-a-personal-website-on-github",
+    "title": "Lecture 2",
+    "section": "Building a Personal Website on GitHub",
+    "text": "Building a Personal Website on GitHub\n\nFollow steps described in Classwork 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2025-0124.html#lets-practice-markdown",
+    "href": "danl-lec/danl-210-lec-02-2025-0124.html#lets-practice-markdown",
+    "title": "Lecture 2",
+    "section": "Let’s Practice Markdown!",
+    "text": "Let’s Practice Markdown!\n\nJupyter Notebook, Quarto, and GitHub-based Discussion Boards use markdown as its underlying document syntax.\nLet’s do Classwork 2."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#project",
+    "href": "danl-rw/danl-210-project.html#project",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Project",
+    "text": "Project\n\nPublish the webpage of your data analysis project on your website, hosted on GitHub.\n\nYour data analysis should focus on the agenda, “Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis”.\nUse either a Jupyter Notebook or a Quarto document to present your work.\nThe due for the project is May 16, 2025, Friday, 11:59 P.M."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#project-data",
+    "href": "danl-rw/danl-210-project.html#project-data",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Project Data",
+    "text": "Project Data\n\nBelow is the esg_proj DataFrame, which provides a list of companies and associated information\n\n\nimport pandas as pd\nesg_proj = pd.read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#project-tasks",
+    "href": "danl-rw/danl-210-project.html#project-tasks",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Project Tasks",
+    "text": "Project Tasks\n\nData Collection\n\n\nyfinance\n\nUtilize the yfinance library, an unofficial API for accessing Yahoo! Finance data.\n\nFor each company listed in the esg_proj DataFrame, you should retrieve the following:\n\nDaily historical stock data spanning from January 1, 2024, to March 31, 2025.\nQuarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).\nQuarterly balance sheets for the same period as the income statements.\n\n\n\n\n\nselenium\n\nEmploy the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company’s webpage on Yahoo! Finance, such as:\n\nAgilent Technologies (A)\nAlcoa Corporation (AA)\n\nEnsure robust error and exception handling during data collection from the Sustainability Section on Yahoo! Finance:\n\nTo avoid being blocked by Yahoo! Finance for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies’ Sustainability Sections.\nUse time.sleep() for each visit of the Sustainability Section webpage.\nSome companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.\nYahoo! Finance intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.\n\n\nYou can check the new and classic layouts of Yahoo! Finance by selecting the corresponding options from the navigation bar on their website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python yfinance and selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nList the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
+  },
+  {
+    "objectID": "danl-rw/danl-210-project.html#rubric-for-the-project",
+    "href": "danl-rw/danl-210-project.html#rubric-for-the-project",
+    "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
+    "section": "Rubric for the Project",
+    "text": "Rubric for the Project\n\nHere is the link to the PDF file of the rubric for the project web-page.\n\n\nRubric for Quality of Data Collection\n\n\n\n\n\n\n\n\nEvaluation\nDescription\nCriteria\n\n\n\n\n1 (Very Deficient)\n- Very poorly implemented- Data is unreliable.\n- Ineffective use of yfinance, resulting in incomplete or inaccurate financial data.- Poor web scraping practices with selenium, leading to unreliable or incorrect data from Yahoo Finance.- Inadequate use of pandas, resulting in poorly structured DataFrames.\n\n\n2 (Somewhat Deficient)\n- Somewhat effective implementation- Data has minor reliability issues.\n- Basic use of yfinance with minor inaccuracies in data retrieval.- Basic web scraping with selenium that sometimes fails to capture all relevant data accurately.- Basic use of pandas, but with occasional issues in data structuring.\n\n\n3 (Acceptable)\n- Competently implemented- Data is mostly reliable.\n- Competent use of yfinance to retrieve most financial data accurately.- Effective web scraping with selenium, capturing most required data from Yahoo Finance.- Adequate use of pandas to structure data in a mostly logical format.\n\n\n4 (Very Good)\n- Well-implemented and organized- Data is reliable.\n- Advanced use of yfinance to reliably and accurately fetch financial data.- Thorough web scraping with selenium that consistently captures accurate and complete data from Yahoo Finance.- Skillful use of pandas for clear and logical data structuring.\n\n\n5 (Outstanding)\n- Exceptionally implemented- Data is highly reliable.\n- Expert use of yfinance to obtain comprehensive and precise financial data.- Expert web scraping with selenium, capturing detailed and accurate data from Yahoo Finance without fail.- Expert use of pandas to create exceptionally well-organized DataFrames that facilitate easy analysis."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "posts/beer-markets/beer-markets.html",
+    "href": "posts/beer-markets/beer-markets.html",
+    "title": "Beer Markets",
+    "section": "",
+    "text": "Diving into the complex world of what people like in their beer, the beer_markets.csv dataset comes across as a goldmine of data, showing us the detailed interactions between buyers and their favorite beers. This dataset covers everything from how much and at what price people are buying beer to how deals and brand loyalty influence their decisions, across different types of people and places. As we start digging into this dataset, we aim to uncover the patterns that show what really influences the modern beer drinker’s choices, offering up valuable insights for marketers, industry watchers, and beer lovers. By breaking down the data, our exploration will shine a light on the factors that drive consumer behavior in the beer market, giving us a full picture of the trends that shape this lively industry.\nCode\n# Creating an interactive table\n!pip install itables\nfrom itables import init_notebook_mode\nfrom itables import show\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# Reading the CSV file\nbeer_data = pd.read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\nshow(beer_data)\n\n\n\n\n\n\n\n    \n      \n      hh\n      _purchase_desc\n      quantity\n      brand\n      dollar_spent\n      beer_floz\n      price_per_floz\n      container\n      promo\n      market\n      buyertype\n      income\n      childrenUnder6\n      children6to17\n      age\n      employment\n      degree\n      cow\n      race\n      microwave\n      dishwasher\n      tvcable\n      singlefamilyhome\n      npeople\n    \n  Loading... (need help?)\nCode\n# Setting up the visualization settings\nsns.set(style=\"whitegrid\")\n\n# Calculate total quantity and spending for each brand\nbrand_summary = beer_data.groupby('brand').agg({'quantity':'sum', 'dollar_spent':'sum'}).reset_index()\n\n# Sort by total quantity and spending\nbrand_summary_sorted_quantity = brand_summary.sort_values('quantity', ascending=False)\nbrand_summary_sorted_spent = brand_summary.sort_values('dollar_spent', ascending=False)\nCode\n# Plotting total quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=brand_summary_sorted_quantity, palette='viridis')\nplt.title('Total Quantity of Beer Purchased by Brand')\nplt.xlabel('Total Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe bar charts above display the total quantity of beer purchased and the total spending by brand. From the looks of it, certain brands dominate in terms of quantity sold and total spending, indicating their popularity.\nNow, let’s calculate the average quantity purchased and average spending per purchase. For this, we’ll consider each row in the dataset as a separate purchase and compute the averages accordingly.\nCode\n# Calculate average quantity purchased and average spending per purchase\naverage_purchase = beer_data.groupby('brand').agg({\n    'quantity': 'mean',\n    'dollar_spent': 'mean'\n}).reset_index()\n\n# Sort by average quantity and average spending\naverage_purchase_sorted_quantity = average_purchase.sort_values('quantity', ascending=False)\naverage_purchase_sorted_spent = average_purchase.sort_values('dollar_spent', ascending=False)\n\n# Plotting average quantity for each brand\nplt.figure(figsize=(10, 8))\nsns.barplot(x='quantity', y='brand', data=average_purchase_sorted_quantity, palette='viridis')\nplt.title('Average Quantity of Beer Purchased by Brand')\nplt.xlabel('Average Quantity')\nplt.ylabel('Brand')\nplt.show()\nThe visualizations above depict the average quantity of beer purchased per brand and the average spending per brand. This shows which brands tend to be bought in larger quantities on average and which brands tend to have higher spending per purchase, which could be indicative of their price point or the purchase of premium products.\nNext, we’ll look at the total spending across different markets to see if there are any notable differences in spending habits geographically. To do this, we’ll sum up the spending in each market and visualize it.\nCode\n# Calculate total spending in each market\nmarket_spending_summary = beer_data.groupby('market').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nmarket_spending_summary_sorted = market_spending_summary.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending in each market\nplt.figure(figsize=(12, 18))\nsns.barplot(x='dollar_spent', y='market', data=market_spending_summary_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Market')\nplt.xlabel('Total Spending')\nplt.ylabel('Market')\nplt.show()\nThe bar chart illustrates the total spending on beer by market, showcasing the differences in spending habits across various regions. Some markets have significantly higher spending, which could be due to a variety of factors including market size, consumer preferences, or economic factors.\nNow, let’s move on to the second analysis:"
+  },
+  {
+    "objectID": "posts/beer-markets/beer-markets.html#demographic-analysis",
+    "href": "posts/beer-markets/beer-markets.html#demographic-analysis",
+    "title": "Beer Markets",
+    "section": "Demographic Analysis",
+    "text": "Demographic Analysis\nWe will examine which demographics are buying what kind of beer and whether spending habits vary by demographics such as age, employment, and race. For this, we could look at:\n\nSpending by age group\nSpending by employment status\nSpending by race\n\nI’ll start by analyzing spending by age group.\n\n\nCode\n# Calculate total spending by age group\nage_group_spending = beer_data.groupby('age').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nage_group_spending_sorted = age_group_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by age group\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='age', data=age_group_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Age Group')\nplt.xlabel('Total Spending')\nplt.ylabel('Age Group')\nplt.show()\n\n\n\n\n\nThe bar chart demonstrates the total spending on beer segmented by age group, highlighting which age groups spend the most on beer. It appears that certain age groups are more dominant in beer spending, which may align with the purchasing power or preferences of those groups.\nNext, we will examine spending by employment status.\n\n\nCode\n# Calculate total spending by employment status\nemployment_spending = beer_data.groupby('employment').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nemployment_spending_sorted = employment_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by employment status\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='employment', data=employment_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Employment Status')\nplt.xlabel('Total Spending')\nplt.ylabel('Employment Status')\nplt.show()\n\n\n\n\n\nThe visualization shows the total spending on beer by employment status. We can see that certain employment groups, such as full-time workers, are spending more on beer, which might be related to their disposable income.\nFinally, let’s look at spending by race to complete the demographic analysis.\n\n\nCode\n# Calculate total spending by race\nrace_spending = beer_data.groupby('race').agg({'dollar_spent':'sum'}).reset_index()\n\n# Sort by total spending\nrace_spending_sorted = race_spending.sort_values('dollar_spent', ascending=False)\n\n# Plotting total spending by race\nplt.figure(figsize=(10, 6))\nsns.barplot(x='dollar_spent', y='race', data=race_spending_sorted, palette='viridis')\nplt.title('Total Spending on Beer by Race')\nplt.xlabel('Total Spending')\nplt.ylabel('Race')\nplt.show()\n\n\n\n\n\nThe bar chart above indicates the total spending on beer broken down by race, highlighting which racial groups account for the most beer spending within the dataset. This could reflect both the demographics of the regions where the data was collected and cultural preferences regarding beer.\nNow, let’s proceed to the third analysis:"
+  },
+  {
+    "objectID": "posts/beer-markets/beer-markets.html#price-sensitivity",
+    "href": "posts/beer-markets/beer-markets.html#price-sensitivity",
+    "title": "Beer Markets",
+    "section": "Price Sensitivity",
+    "text": "Price Sensitivity\nWe’ll look at the price per fluid ounce and see if there are any trends or correlations with the quantity purchased or the brand popularity. To do this, we’ll visualize how the price is sensitive to the quantity purchased by brand.\n\n\nCode\n# Ensure there's no entries with 0 for 'price_per_floz' or 'quantity' to avoid log(0) issues\nfiltered_data = beer_data[(beer_data['price_per_floz'] &gt; 0) & (beer_data['quantity'] &gt; 0)]\n\n# Calculate log values for both 'price_per_floz' and 'quantity'\nfiltered_data['log_price_per_floz'] = np.log(filtered_data['price_per_floz'])\nfiltered_data['log_quantity'] = np.log(filtered_data['quantity'])\n\n# Use seaborn to create a scatterplot with fitted lines, facetted by 'brand'\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', col='brand', col_wrap=4, height=3, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5}, aspect = .75)\n\n# Adjusting plot aesthetics\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nHere’s the scatterplot with fitted straight lines for the log of price_per_floz versus the log of quantity, facetted by brands. Each subplot represents a different brand, showing the relationship between these two logarithmic variables along with a fitted line to illustrate the trend within each brand’s data.\n\n\nCode\n# Adjust the facetting to split rows by 'brand' and columns by 'promo' for a more detailed comparative analysis\ng = sns.lmplot(data=filtered_data, x='log_quantity', y='log_price_per_floz', row='brand', col='promo', height=3, aspect=.75, line_kws={'color': 'red'}, scatter_kws={'alpha':0.5})\n\n# Adjusting plot aesthetics\ng.set_titles(\"Brand: {row_name}\\n Promo: {col_name}\")\ng.set_axis_labels(\"Log of Quantity\", \"Log of Price per Floz\")\nplt.subplots_adjust(top=0.9, wspace = .4, hspace = .4)\ng.fig.suptitle('Log of Price per Floz vs. Log of Quantity')\n\nplt.show()\n\n\n\n\n\nThe scatterplot has been reorganized to split rows by brand and columns by promo status, offering a comprehensive view across different brands and their promotional status. Each subplot now provides a clear comparison of the log of price_per_floz versus the log of quantity for purchases made on promotion versus those that were not, across various beer brands.\nThis layout facilitates an easier comparison across brands and how promotion impacts the relationship between quantity and price per fluid ounce within each brand.\nLastly, let’s move to the fourth analysis:"
+  },
+  {
+    "objectID": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
+    "href": "posts/beer-markets/beer-markets.html#promotional-impact-on-quantity-purchased",
+    "title": "Beer Markets",
+    "section": "Promotional Impact on Quantity Purchased",
+    "text": "Promotional Impact on Quantity Purchased\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n\nCode\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html",
+    "href": "danl-cw/danl-210-cw-04.html",
+    "title": "Classwork 4",
+    "section": "",
+    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-1",
+    "href": "danl-cw/danl-210-cw-04.html#question-1",
+    "title": "Classwork 4",
+    "section": "",
+    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-2",
+    "href": "danl-cw/danl-210-cw-04.html#question-2",
+    "title": "Classwork 4",
+    "section": "Question 2",
+    "text": "Question 2\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n20 == '20'\n\n\nx = 4.0\ny = .5\n\nx &lt; y or 3*y &lt; x\n\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-3",
+    "href": "danl-cw/danl-210-cw-04.html#question-3",
+    "title": "Classwork 4",
+    "section": "Question 3",
+    "text": "Question 3\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-4",
+    "href": "danl-cw/danl-210-cw-04.html#question-4",
+    "title": "Classwork 4",
+    "section": "Question 4",
+    "text": "Question 4\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-5",
+    "href": "danl-cw/danl-210-cw-04.html#question-5",
+    "title": "Classwork 4",
+    "section": "Question 5",
+    "text": "Question 5\n\nvals = [3, 2, 1, 0]\n\n\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time.\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-6",
+    "href": "danl-cw/danl-210-cw-04.html#question-6",
+    "title": "Classwork 4",
+    "section": "Question 6",
+    "text": "Question 6\n\nAssign the value 7 to the variable guess_me, and the value 1 to the variable number.\nWrite a while loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\nWrite a for loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\n\n\nAnswer"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html",
+    "href": "danl-cw/danl-210-cw-02.html",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Quarto.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#basic-syntax",
+    "href": "danl-cw/danl-210-cw-02.html#basic-syntax",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#advanced-syntax",
+    "href": "danl-cw/danl-210-cw-02.html#advanced-syntax",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#practice-problems",
+    "href": "danl-cw/danl-210-cw-02.html#practice-problems",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#references",
+    "href": "danl-cw/danl-210-cw-02.html#references",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Quarto Markdown Basics\nStart writing on GitHub"
+  },
+  {
+    "objectID": "index-home.html",
+    "href": "index-home.html",
+    "title": "Byeong-Hak Choe",
+    "section": "",
+    "text": "Hello! 👋\nI am an assistant professor of data analytics and economics at School of Business at SUNY Geneseo.\nMy research interests lie in economics of the environment and climate change."
+  },
+  {
+    "objectID": "index-home.html#research",
+    "href": "index-home.html#research",
+    "title": "Byeong-Hak Choe",
+    "section": "Research",
+    "text": "Research\n\nWorking papers\n1️⃣ Social Media Campaign, Lobbying, and Legislation: Evidence from #cliamtechange and Energy Lobbies\n2️⃣ Climate Finance under Conflicts and Renegotiations: A Dynamic Contract Approach\n\n\nWork in progress\n🌟 ‘Hiding Behind a Small Cake’ in an Online Dictator Game: The Way You Hide Matters!, (with Tabaré Capitan (1st author) , Jason Shogren, and Benjamin White).\n🌟 Estimating the Value of Statistical Life through Big Data, (with Stephen Newbold and Alexander James).\n\n\nBook chapters\n💡 Governance and Climate Finance in the Developing World (with Tilsa Oré-Monago).\n- In Wu, F., Zhang, D., and Ji, Q. (Eds.), Climate Finance: Supporting a Sustainable Energy Transition, Chapter 7, Springer Nature (July, 2024)."
+  },
+  {
+    "objectID": "danl-qa/danl-210-qa.html",
+    "href": "danl-qa/danl-210-qa.html",
+    "title": "DANL 210 - Discussion and Q & A Board",
+    "section": "",
+    "text": "Welcome to our Discussion and Q & A Board! 👋 \nThis space is designed for you to engage with your classmates about the course materials.\nWhether you are looking to delve deeper into the slides, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions to Byeong-Hak (@bcdanl) or your classmates or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\nPlease note that all our comments are recorded in here, regardless of whether comments are displayed in this page or not.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Big & tiny insights through data",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNBA\n\n\n3 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nFebruary 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBeer Markets\n\n\n5 min\n\n\n\nByeong-Hak Choe\n\n\nNovember 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n1 min\n\n\n\nByeong-Hak Choe\n\n\nOctober 27, 2023\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "listing-danl-210-qa.html",
+    "href": "listing-danl-210-qa.html",
+    "title": "DANL 210 - Q & A",
+    "section": "",
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nDANL 210 - Discussion and Q & A Board\n\n\nundefined\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   }
 ]
