@@ -1,4 +1,5 @@
 # system("quarto render")
+quarto::quarto_render("listing-danl-210-lec.qmd")
 quarto::quarto_render("index.qmd")
 
 library(stringr)

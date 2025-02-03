@@ -60,7 +60,7 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 5\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 4\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 3\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 2\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 1\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 5\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 4\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 3\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 2\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 1\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
@@ -81,7 +81,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics I\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics II\n\n\nJanuary 31, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics I\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics II\n\n\nFebruary 3, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
@@ -1776,5 +1776,12 @@
     "title": "Lecture 5",
     "section": "Importing Modules, Packages, and Libraries",
     "text": "Importing Modules, Packages, and Libraries\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other modules/pacakges/libraries by using the Python import statement.\n\nThis makes the code and variables in the imported module available to our programming codes.\nWe can use the as keyword when importing the modules using their canonical names.\n\nQ. Classwork 4.8"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2025-0131.html#google-colab-settings",
+    "href": "danl-lec/danl-210-lec-04-2025-0131.html#google-colab-settings",
+    "title": "Lecture 4",
+    "section": "Google Colab Settings",
+    "text": "Google Colab Settings\nTurn off AI Assistance\n\nOn Google Colab\n\nFrom the top-right corner, click ⚙️\nClick “AI Assistance” from the side menu.\nDisable all options."
   }
 ]
