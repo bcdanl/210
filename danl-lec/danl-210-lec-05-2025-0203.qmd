@@ -5,7 +5,7 @@ format:
   clean-revealjs:
     self-contained: false
     chalkboard: true
-    incremental: true
+    incremental: false
     code-annotations: hover
     scrollable: false
 
@@ -587,6 +587,7 @@ suny[-6 : -4]
 
 
 
+
 # Functions, Arguments, and Parameters {background-color="#1c4982"}
 
 ## Functions, Arguments, and Parameters
@@ -916,6 +917,112 @@ else:
 - **Q**. [**Classwork 4.6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-6){target="_blank"}
 
 
+# List and Dictionary Comprehensions {background-color="#1c4982"}
+
+## List Comprehension
+### What is List Comprehension?
+
+- A concise way to create or modify lists.
+- Syntax: `[expression for item in iterable if condition]`
+
+1. **Creating a List of Squares:**
+```{.python}
+squares = [x**2 for x in range(5)]
+```
+
+2. **Filtering Items:**
+```{.python}
+numbers = [1, 2, 3, 4, 5, 6]
+evens = [x for x in numbers if x != 2]
+```
+
+
+## Dictionary Comprehension
+
+### What is Dictionary Comprehension?
+
+- A concise way to create or modify dictionaries.
+- Syntax: `{key_expression: value_expression for item in iterable if condition}`
+
+1. **Creating a Dictionary of Squares:**
+```{.python}
+squares_dict = {x: x**2 for x in range(5)}
+```
+
+2. **Filtering Dictionary Items:**
+```{.python}
+   my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+   filtered_dict = {k: v for k, v in my_dict.items() if v != 2}
+```
+
+3. **Swapping Keys and Values:**
+```{.python}
+original_dict = {'a': 1, 'b': 2, 'c': 3}
+swapped_dict = {v: k for k, v in original_dict.items()}
+```
+
+
+
+# Modifying Lists and Dictionaries {background-color="#1c4982"}
+
+## Modifying a List
+### Adding Items
+
+- **`append()`**: Adds an item to the end of the list.
+  
+```{.python}
+my_list = [1, 2, 3]
+my_list.append(4)
+```
+  
+## Modifying a List
+### Deleting Items
+
+- **`del` statement**: Deletes an item by index or a slice of items.
+  
+```{.python}
+my_list = [1, 2, 3, 4]
+del my_list[1] 
+del my_list[1:3]
+```
+
+- **List Comprehension**: Removes items based on a condition.
+
+```{.python}
+my_list = [1, 2, 3, 4, 2]
+my_list = [x for x in my_list if x != 2]  
+```
+
+
+
+## Modifying a Dictionary
+### Adding/Updating Items
+
+- **`update()`**: Adds new key-value pairs or updates existing ones.
+  
+```{.python}
+my_dict = {'a': 1, 'b': 2}
+my_dict.update({'c': 3})  
+my_dict.update({'a': 10})  
+```
+  
+## Modifying a Dictionary
+### Deleting Items
+
+- **`del` statement**: Deletes an item by key.
+  
+```{.python}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+del my_dict['b']  
+```
+
+- **Dictionary Comprehension**: Removes items based on a condition.
+
+```{.python}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict = {k: v for k, v in my_dict.items() if v != 2}  
+```
+
 
 
 
@@ -1011,7 +1118,7 @@ while True:
         position = int(value)
         print(short_list[position])
     except IndexError as err:
-        print('Bad index:', position)
+        print('Bad index:', position, '-', err)
     except Exception as other:
         print('Something else broke:', other)
 ```

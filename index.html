@@ -131,9 +131,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -329,7 +329,7 @@ Date
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1738558800000" data-listing-file-modified-sort="1738596582183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-title-sort="Lecture 5" data-listing-filename-sort="danl-210-lec-05-2025-0203.qmd">
+<tr data-index="0" data-listing-date-sort="1738558800000" data-listing-file-modified-sort="1738793505529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-title-sort="Lecture 5" data-listing-filename-sort="danl-210-lec-05-2025-0203.qmd">
 <td>
 <a href="#" onclick="window.open('./danl-lec/danl-210-lec-05-2025-0203.html'); return false;"" class="title listing-title">Lecture 5</a>
 </td>
@@ -452,6 +452,14 @@ Date
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1738809300000" data-listing-file-modified-sort="1738809300977" data-listing-date-modified-sort="1738809300000" data-listing-reading-time-sort="4" data-listing-title-sort="Homework 1" data-listing-filename-sort="danl-210-hw-01.qmd">
+<td>
+<a href="./danl-hw/danl-210-hw-01.html" class="title listing-title">Homework 1</a>
+</td>
+<td>
+<span class="listing-date">February 5, 2025</span>
+</td>
+</tr>
 </tbody>
 
 </table>
