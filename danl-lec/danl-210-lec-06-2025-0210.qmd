@@ -92,7 +92,7 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-# Pandas Basics {background-color="#1c4982"}
+# **Pandas Basics** {background-color="#1c4982"}
 
 ## Pandas Basics
 ### Learning Objectives
@@ -139,11 +139,10 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-# Loading Data {background-color="#1c4982"}
+# **Loading Data** {background-color="#1c4982"}
 
 
-## Pandas Basics
-###  `Series` and `DataFrame`
+## `Series` and `DataFrame`
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
@@ -154,8 +153,7 @@ theme_set(theme_fivethirtyeight()+
 - `DataFrame`: a collection of `Series` columns with an *index*.
 
 
-## Pandas Basics
-### Importing a data set with `read_csv()`
+## Importing a data set with `read_csv()`
 
 :::{.nonincremental}
 - A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba.csv)).
@@ -178,8 +176,7 @@ nba
 
 
 
-## Pandas Basics
-### Importing a data set with `read_csv()`
+## Importing a data set with `read_csv()`
 
 
 ```{.python}
@@ -192,7 +189,7 @@ nba
 
 
 
-## Pandas Basics
+## Loading Data
 ### Google Drive on Google Colab
 
 :::: {.columns}
@@ -221,7 +218,7 @@ files.upload()
 ::::
 
 
-## Pandas Basics
+## Loading Data
 ### Colab's Interactive DataFrame Display
 
 
@@ -234,7 +231,7 @@ nba
 - Colab includes an extension that renders pandas `DataFrames` into interactive displays.
 
 
-## Pandas Basics
+## Loading Data
 ### Another Interactive DataFrame Display
 
 
@@ -250,10 +247,9 @@ show(nba)
 
 
 
-# Getting a Summary of Data {background-color="#1c4982"}
+# **Getting a Summary of Data** {background-color="#1c4982"}
 
-## Pandas Basics
-### DataFrame Terminologies: Variables, Observations, and Values
+## DataFrame Terminologies: Variables, Observations, and Values
 
 
 <p align="center">
@@ -272,8 +268,7 @@ show(nba)
 
 
 
-## Pandas Basics
-### DataFrame Terminologies: Dot Operators, Methods and Attributes
+## DataFrame Terminologies: Dot Operators, Methods and Attributes
 
 - The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
 
@@ -284,8 +279,7 @@ show(nba)
   - e.g., `nba.dtype`
 
 
-## Pandas Basics
-### Getting a Summary of a `DataFrame` with `.info()`
+## Getting a Summary of a `DataFrame` with `.info()`
 
 :::: {.columns}
 
@@ -319,8 +313,7 @@ nba.count()   # method
 
 
 
-## Pandas Basics
-### Getting a Summary of a `DataFrame` with `.describe()`
+## Getting a Summary of a `DataFrame` with `.describe()`
 
 ```{.python}
 nba.describe()
@@ -334,10 +327,9 @@ nba.describe(include='all')
 
 
 
-# Selecting Variables {background-color="#1c4982"}
+# **Selecting Variables** {background-color="#1c4982"}
 
-## Pandas Basics
-### Selecting a Variable by its Name
+## Selecting a Variable by its Name
 
 ```{.python}
 nba_player_name_1 = nba['Name']   # Series
@@ -354,8 +346,7 @@ nba_player_name_2
 
 
 
-## Pandas Basics
-### Selecting Multiple Variables by their Names
+## Selecting Multiple Variables by their Names
 
 ```{.python}
 nba_player_name_team = nba[ ['Name', 'Team'] ]
@@ -367,8 +358,7 @@ nba_player_name_team
 
 
 
-## Pandas Basics
-### Selecting Multiple Variables with `select_dtypes()`
+## Selecting Multiple Variables with `select_dtypes()`
 
 
 ```{.python}
@@ -383,11 +373,10 @@ nba.select_dtypes(exclude = ["object", "int"])
   - The method accepts two parameters, `include` and `exclude`.
 
 
-# Counting Methods {background-color="#1c4982"}
+# **Counting Methods** {background-color="#1c4982"}
 
 
-## Pandas Basics
-### Counting with `.count()` 
+## Counting with `.count()` 
 
 
 :::: {.columns}
@@ -405,8 +394,7 @@ nba[['Salary']].count()
 
 
 
-## Pandas Basics
-### Counting with `.value_counts()` 
+## Counting with `.value_counts()` 
 
 
 :::: {.columns}
@@ -428,8 +416,7 @@ nba[['Team']].value_counts()
 
 
 
-## Pandas Basics
-### Counting with `.nunique()` 
+## Counting with `.nunique()` 
 
 :::: {.columns}
 
@@ -458,9 +445,9 @@ Let's do Questions 1-3 in [**Classwork 5**](https://bcdanl.github.io/210/danl-cw
 
 
 
-# Sorting Methods {background-color="#1c4982"}
+# **Sorting Methods** {background-color="#1c4982"}
 
-## Pandas Basics
+## Sorting Methods
 :::{.nonincremental}
 - Let's read `nba.csv` as `nba`.
 
@@ -484,8 +471,7 @@ nba.describe( include="all" )
 
 :::
 
-## Pandas Basics
-### Sorting by a Single Variable with `sort_values()`
+## Sorting by a Single Variable with `sort_values()`
 
 ```{.python}
 # The two lines below are equivalent
@@ -499,8 +485,8 @@ nba.sort_values(by = ["Name"])
 
 :::
 
-## Pandas Basics
-### Sorting by a Single Variable with `sort_values()`
+
+## Sorting by a Single Variable with `sort_values()`
 
 ```{.python}
 nba.sort_values(["Name"], ascending = False)
@@ -516,6 +502,7 @@ nba.sort_values(["Name"], ascending = False)
     - A variable of datetimes in *chronological* order.
 
 :::
+
 
 ## Pandas Basics
 ### Method Chaining
@@ -535,8 +522,8 @@ nba.sort_values(["Name"], ascending = False)
   
 :::
 
-## Pandas Basics
-### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+## Sorting by a Single Variable with `nsmallest()` and `nlargest()`
 
 ```{.python}
 nba.nsmallest(5, 'Salary')
@@ -551,8 +538,7 @@ nba.nlargest(5, 'Salary')
 
 
 
-## Pandas Basics
-### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+## Sorting by a Single Variable with `nsmallest()` and `nlargest()`
 
 ```{.python}
 nba.nsmallest(4, 'Salary', keep = "all")
@@ -563,8 +549,7 @@ nba.nlargest(4, 'Salary', keep = "all")
 
 
 
-## Pandas Basics
-### Sorting by Multiple Variables with `sort_values()`
+## Sorting by Multiple Variables with `sort_values()`
 
 ```{.python}
 nba.sort_values(["Team", "Name"])
@@ -575,8 +560,7 @@ nba.sort_values(by = ["Team", "Name"])
 
 
 
-## Pandas Basics
-### Sorting by Multiple Variables with `sort_values()`
+## Sorting by Multiple Variables with `sort_values()`
 
 ```{.python}
 nba.sort_values(by = ["Team", "Name"], 
@@ -586,8 +570,7 @@ nba.sort_values(by = ["Team", "Name"],
 - We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each variable.
 
 
-## Pandas Basics
-### Sorting by Multiple Variables with `sort_values()`
+## Sorting by Multiple Variables with `sort_values()`
 
 ```{.python}
 nba.sort_values(by = ["Team", "Name"], 
@@ -598,14 +581,12 @@ nba.sort_values(by = ["Team", "Name"],
 
 
 
-## Pandas Basics
-### Sorting by Multiple Variables with `sort_values()`
+## Sorting by Multiple Variables with `sort_values()`
 
 **Q**. Which players on each team are paid the most?
 
 
-## Pandas Basics
-### Sorting by Row Index with `sort_index()`
+## Sorting by Row Index with `sort_index()`
 
 
 :::: {.columns}
@@ -634,8 +615,7 @@ nba.sort_index(ascending = False)
 
 
 
-## Pandas Basics
-### Changing the Order of Variables with `sort_index()`
+## Relocating Variables with `sort_index()`
 
 ```{.python}
 # The two lines below are equivalent
@@ -649,10 +629,9 @@ nba.sort_index(axis = 1)
 
 
 
-# Setting a New Index {background-color="#1c4982"}
+# **Setting a New Index** {background-color="#1c4982"}
 
-## Pandas Basics
-### Setting a New Index
+## Setting a New Index
 
 - We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
   - This is particularly useful when:
@@ -660,8 +639,7 @@ nba.sort_index(axis = 1)
     - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
     
 
-## Pandas Basics
-### Setting a New Index with `set_index()`
+## Setting a New Index with `set_index()`
 
 ```{.python}
 # The two lines below are equivalent
@@ -674,9 +652,7 @@ nba.set_index("Name")
   
   
 
-
-## Pandas Basics
-### Re-setting an Index with `reset_index()`
+## Re-setting an Index with `reset_index()`
 
 ```{.python}
 nba2 = nba.set_index("Name")
@@ -693,10 +669,10 @@ nba2.reset_index(inplace=True)    # Useful for the method chaining
 
 
 
-# Locating Observations {background-color="#1c4982"}
+# **Locating Observations** {background-color="#1c4982"}
 
 
-## Pandas Basics
+## Locating Observations
 :::{.nonincremental}
 - Let's read `nba.csv` as `nba`.
 
@@ -713,16 +689,14 @@ nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
 :::
 
 
-## Pandas Basics
-### Locating Observations/Values
+## Locating Observations/Values
 
 - We can extract observations, variables, and values from a `DataFrame` by using the `loc[]` and `iloc[]` accessors. 
 
   - These accessors work well when we know the **index labels and positions** of the observations/variables we want to target.
   
 
-## Pandas Basics
-### Locating Observations by `.loc[ Index Labels ]`
+## Locating Observations by `.loc[Index Labels]`
 
 :::{.nonincremental}
 
@@ -746,8 +720,7 @@ nba.loc[ ["Kawhi Leonard", "Paul George"] ]
 - The `.loc` attribute extracts an observation by **index label** (row name).
 
 
-## Pandas Basics
-### Locating Observations by `.loc[ Index Labels ]`
+## Locating Observations by `.loc[Index Labels]`
 
 
 ```{.python}
@@ -763,8 +736,7 @@ nba.loc[ ["Kawhi Leonard", "Paul George"] ]
 
 
 
-## Pandas Basics
-### Locating Observations by `.loc[ Index Labels ]`
+## Locating Observations by `.loc[Index Labels]`
 
 :::: {.columns}
 
@@ -799,11 +771,7 @@ nba.loc[ ["Kawhi Leonard", "Paul George"] ]
 
 
 
-
-
-
-## Pandas Basics
-### Locating Observations by `.iloc[ Index Positions ]`
+## Locating Observations by `.iloc[Index Positions]`
 
 :::: {.columns}
 
@@ -844,16 +812,15 @@ Let's do [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.h
 
 
 
-# Locating Values {background-color="#1c4982"}
+# **Locating Values** {background-color="#1c4982"}
 
 
-## Pandas Basics
-### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+## Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
 
 
 :::: {.columns}
 
-::: {.column width="38%"}
+::: {.column width="42%"}
 ```{.python}
 nba.loc[
     "LeBron James",
@@ -867,7 +834,7 @@ nba.loc[
 ```
 :::
 
-::: {.column width="62%"}
+::: {.column width="58%"}
 ```{.python}
 nba.loc[
     ["Russell Westbrook", "Anthony Davis"],
@@ -889,8 +856,9 @@ nba.loc[
 - Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
   - If we are using `.loc`, we have to provide the column names. 
 
-## Pandas Basics
-### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+## Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
 
 :::: {.columns}
 
@@ -917,11 +885,10 @@ nba.iloc[
 
 
 
-# Mathematical & Vectorized Operations  {background-color="#1c4982"}
+# **Mathematical & Vectorized Operations**  {background-color="#1c4982"}
 
 
-## Pandas Basics
-### Mathematical Operations
+## Mathematical Operations
 
 ```{.python}
 nba.max()
@@ -931,8 +898,7 @@ nba.min()
 - The `min()` method returns a `Series` with the minimum value from each variable.
 
 
-## Pandas Basics
-### Mathematical Operations
+## Mathematical Operations
 
 :::: {.columns}
 
@@ -966,8 +932,8 @@ nba.std(numeric_only = True)
 
 
 
-## Pandas Basics
-### Vectorized Operations
+
+## Vectorized Operations
 
 ```{.python}
 nba["Salary_2x"] = nba["Salary"] + nba["Salary"]
@@ -982,11 +948,45 @@ nba["Salary_minus_Mean"] = nba["Salary"] - nba["Salary"].mean()
 
 
 
+# **Adding, Removing, Renaming, and Relocating Variables** {background-color="#1c4982"}
 
-# Renaming Variables  {background-color="#1c4982"}
 
-## Pandas Basics
-### Renaming Variables with `nba.columns`
+
+## Adding and Removing Variables
+
+::: {.nonincremental}
+
+- Here we use `[]` to add variables:
+
+
+```{.python}
+nba['Salary_k'] = nba['Salary'] / 1000
+nba['Salary_2x'] = nba['Salary'] + nba['Salary']
+nba['Salary_3x'] = nba['Salary'] * 3
+```
+
+:::
+
+
+
+## Removing Variables with `drop(columns = ... )`
+
+::: {.nonincremental}
+
+- We can use `.drop(columns = ...)` to drop variables:
+
+
+```{.python}
+nba.drop(columns = "Salary_k")
+nba.drop(columns = ["Salary_2x", "Salary_3x"])
+```
+
+:::
+
+
+
+
+## Renaming Variables with `nba.columns`
 
 
 :::{.nonincremental}
@@ -1006,8 +1006,7 @@ nba.columns = ["Team", "Position", "Date of Birth", "Income"]
 :::
 
 
-## Pandas Basics
-### Renaming Variables with `rename( columns = { "Existing One" : "New One" } )`
+## Renaming Variables with `rename( columns = { "Existing One" : "New One" } )`
 
 
 ```{.python}
@@ -1018,8 +1017,7 @@ nba.rename( columns = { "Date of Birth": "Birthday" } )
 
 
 
-## Pandas Basics
-### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+## Renaming rows with `rename( index = { "Existing One" : "New One" } )`
 
 ```{.python}
 nba = nba.rename(
@@ -1030,43 +1028,8 @@ nba = nba.rename(
 - The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
 
 
-# Removing and Relocating Variables {background-color="#1c4982"}
 
-
-
-## Pandas Basics
-### Adding and Removing Variables
-
-::: {.nonincremental}
-
-- Here we use `[]` to add variables:
-
-
-```{.python}
-nba['Salary_k'] = nba['Salary'] / 1000
-nba['Salary_2x'] = nba['Salary'] + nba['Salary']
-nba['Salary_3x'] = nba['Salary'] * 3
-```
-
-:::
-
-## Pandas Basics
-### Removing Variables with `drop(columns = ... )`
-
-::: {.nonincremental}
-
-- We can use `.drop(columns = ...)` to drop variables:
-
-
-```{.python}
-nba.drop(columns = "Salary_k")
-nba.drop(columns = ["Salary_2x", "Salary_3x"])
-```
-
-:::
-
-## Pandas Basics
-### Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
+## Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
 
 ```{.python}
 ref_var = nba.columns.get_loc('Team') 
@@ -1083,10 +1046,10 @@ nba.insert(ref_var, 'Salary', var_to_move) # insert() directly alters 'nba'
 
 
 
-# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
+# **Converting Data Types with the `astype()` Method** {background-color="#1c4982"}
 
 
-## Pandas Basics
+## Converting Data Types with the `astype()` Method
 :::{.nonincremental}
 - Let's read `employment.csv` as `emp`.
 
@@ -1102,8 +1065,8 @@ emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
 
 :::
 
-## Pandas Basics
-### Converting Data Types with the `astype()` method
+
+## Converting Data Types with the `astype()` method
 
 ::: {.nonincremental}
 
@@ -1121,8 +1084,7 @@ emp["Mgmt"].astype(bool)
 
 
 
-## Pandas Basics
-### Converting Data Types with the `astype()` method
+## Converting Data Types with the `astype()` method
 
 ```{.python}
 emp["Mgmt"] = emp["Mgmt"].astype(bool)
@@ -1132,8 +1094,8 @@ emp["Mgmt"] = emp["Mgmt"].astype(bool)
 
 
 
-## Pandas Basics
-### Converting Data Types with the `astype()` method
+
+## Converting Data Types with the `astype()` method
 
 ```{.python}
 emp["Salary"].astype(int)
@@ -1144,8 +1106,7 @@ emp["Salary"].astype(int)
 
 
 
-## Pandas Basics
-### Fill Missing Values with the `fillna()` method
+## Fill Missing Values with the `fillna()` method
 
 ```{.python}
 emp["Salary"].fillna(0)
@@ -1159,8 +1120,7 @@ emp["Salary"].fillna(0)
 
 
 
-## Pandas Basics
-### Fill Missing Values with the `fillna()` method
+## Converting Data Types with the `astype()` method
 
 ```{.python}
 emp["Salary"] = emp["Salary"].fillna(0).astype(int)
@@ -1171,8 +1131,7 @@ emp["Salary"] = emp["Salary"].fillna(0).astype(int)
 
 
 
-## Pandas Basics
-### Converting Data Types with the `astype()` method
+## Converting Data Types with the `astype()` method
 
 ```{.python}
 emp["Gender"] = emp["Gender"].astype("category")
@@ -1185,8 +1144,7 @@ to its total size.
 
 
 
-## Pandas Basics
-### Converting Data Types with the `pd.to_datetime()` method
+## Converting Data Types with the `pd.to_datetime()` method
 
 ```{.python}
 # Below two are equivalent:
@@ -1198,8 +1156,7 @@ emp["Start Date"] = emp["Start Date"].astype('datetime64')
 
 
 
-## Pandas Basics
-### Converting Data Types with the `astype()` method
+## Converting Data Types with the `astype()` method
 
 ```{.python}
 emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
@@ -1220,12 +1177,11 @@ Let's do Question 1 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/da
 
 
 
-# Filtering by a Single Condition {background-color="#1c4982"}
+# **Filtering by a Condition** {background-color="#1c4982"}
 
 
 
-## Pandas Basics
-### Filtering by a Condition
+## Filtering by a Condition
 
 - We may often not know the **index labels and positions** of the observations we want to target.
 
@@ -1234,8 +1190,7 @@ Let's do Question 1 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/da
 
 
 
-## Pandas Basics
-### Filtering by a Single Condition
+## Filtering by a Single Condition
 
 
 ```{.python}
@@ -1250,8 +1205,7 @@ emp["First Name"] == "Donna"
   - pandas performs a vectorized operation (element-by-element operation) on `Series`.
 
 
-## Pandas Basics
-### Filtering by a Single Condition
+## Filtering by a Single Condition
 
 
 ```{.python}
@@ -1263,8 +1217,7 @@ emp[ emp["First Name"] == "Donna" ]
 
 
 
-## Pandas Basics
-### Filtering by a Single Condition
+## Filtering by a Single Condition
 
 ```{.python}
 donnas = emp["First Name"] == "Donna"
@@ -1277,8 +1230,7 @@ emp[ donnas ]
 
 
 
-## Pandas Basics
-### Filtering by a Single Condition
+## Filtering by a Single Condition
 
 ::: {.nonincremental}
 - What if we want to extract a subset of employees who are not on the "`Marketing`" team?
@@ -1294,8 +1246,7 @@ emp[ non_marketing ]
 
 
 
-## Pandas Basics
-### Filtering by a Single Condition
+## Filtering by a Single Condition
 
 ::: {.nonincremental}
 
@@ -1311,8 +1262,7 @@ emp[ emp["Mgmt"] ]
 - We could execute `emp["Mgmt"] == True`, but we do not need to.
 
 
-## Pandas Basics
-### Filtering by a Single Condition
+## Filtering by a Single Condition
 
 ```{.python}
 high_earners = emp["Salary"] > 100000
@@ -1322,10 +1272,8 @@ emp[ high_earners ]
 - We can also use arithmetic operands to filter observations based on mathematical conditions.
 
 
-# Filtering by a Condition {background-color="#1c4982"}
 
-## Pandas Basics
-### Filtering by a Condition
+## Filtering by a Condition
 
 ```{.python}
 sales = emp["Team"] == "Sales"
@@ -1339,9 +1287,7 @@ emp[ sales | legal | fnce ] # '|' is 'or' opeartor
 - What if our next report asked for employees from 30 teams instead of three? 
 
 
-
-## Pandas Basics
-### Filtering with the `isin()` method
+## Filtering with the `isin()` method
 
 ```{.python}
 star_teams = ["Sales", "Legal", "Finance"]
@@ -1356,8 +1302,7 @@ emp[ on_star_teams ]
 
 
 
-## Pandas Basics
-### Filtering by a Condition
+## Filtering by a Condition
 
 :::{.nonincremental}
 - When working with numbers or dates, we often want to extract values that fall within a range. 
@@ -1377,8 +1322,7 @@ emp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor
 
 
 
-## Pandas Basics
-### Filtering with the `between()` method
+## Filtering with the `between()` method
 
 
 ```{.python}
@@ -1392,8 +1336,7 @@ emp[ between_90k_and_100k ]
 
 
 
-## Pandas Basics
-### Filtering with the `between()` method
+## Filtering with the `between()` method
 
 ```{.python}
 name_starts_with_t = emp["First Name"].between("T", "U")
@@ -1405,8 +1348,7 @@ emp[ name_starts_with_t ]
 
 
 
-## Pandas Basics
-### Filtering by a Condition with the `query()` method!
+## Filtering by a Condition with the `query()` method!
 
 ```{.python}
 emp.query("Salary >= 100000 & Team == 'Finance'")
@@ -1417,16 +1359,18 @@ emp.query("Salary >= 100000 & `First Name` == 'Douglas'")
   - `query()` accepts a string value that describes filtering conditions.
 
 - When using the `query()` method, if we have variable names with spaces, we can wrap the variable names in backtick (`)
-  
+
+
+
 ## Pandas Basics
 
 Let's do Questions 2-6 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
 
 
-# Dealing with Missing Values {background-color="#1c4982"}
+# **Dealing with Missing Values** {background-color="#1c4982"}
 
 
-## Pandas Basics
+## Dealing with Missing Values
 :::{.nonincremental}
 - Let's read `employment.csv` as `emp`.
 
@@ -1443,8 +1387,8 @@ emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
 :::
 
 
-## Pandas Basics
-### Dealing with Missing Values
+
+## Dealing with Missing Values
 
 - Pandas often marks (1) missing text values and (2) missing numeric values with a `NaN` (not a number); 
   - It also marks missing datetime values with a `NaT` (not a time).
@@ -1453,8 +1397,7 @@ emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `isna()` and `notna()` methods
+## Dealing with Missing Values: The `isna()` and `notna()` methods
 
 ```{.python}
 emp["Team"].isna()
@@ -1464,8 +1407,8 @@ emp["Start Date"].isna()
 - The `isna()` method returns a Boolean `Series` in which `True` denotes that an observation's value is missing.
   - Is a value of a variable "XYZ" missing?
 
-## Pandas Basics
-### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+## Dealing with Missing Values: The `isna()` and `notna()` methods
 
 ```{.python}
 # Below two are equivalent.
@@ -1481,8 +1424,8 @@ emp["Team"].notna()
 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `value_counts(dropna = False)` method
+
+## Dealing with Missing Values: The `value_counts(dropna = False)` method
 
 ```{.python}
 emp["Mgmt"].isna().sum()
@@ -1499,8 +1442,8 @@ emp["Mgmt"].value_counts(dropna = False)
 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `dropna()` method
+
+## Dealing with Missing Values: The `dropna()` method
 
 ```{.python}
 emp.dropna()
@@ -1510,8 +1453,7 @@ emp.dropna()
 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `dropna()` method with `how`
+## Dealing with Missing Values: The `dropna()` method with `how`
 
 ```{.python}
 emp.dropna(how = "all")
@@ -1521,8 +1463,8 @@ emp.dropna(how = "all")
 - Note that the `how` parameter’s default argument is `"any"`. 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `dropna()` method with `subset`
+
+## Dealing with Missing Values: The `dropna()` method with `subset`
 
 ```{.python}
 emp.dropna(subset = ["Gender"])
@@ -1533,8 +1475,8 @@ emp.dropna(subset = ["Gender"])
 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `dropna()` method with `subset`
+
+## Dealing with Missing Values: The `dropna()` method with `subset`
 
 ```{.python}
 emp.dropna(subset = ["Start Date", "Salary"])
@@ -1544,8 +1486,8 @@ emp.dropna(subset = ["Start Date", "Salary"])
 
 
 
-## Pandas Basics
-### Dealing with Missing Values: The `dropna()` method with `thresh`
+
+## Dealing with Missing Values: The `dropna()` method with `thresh`
 
 ```{.python}
 emp.dropna(thresh = 4)
@@ -1556,10 +1498,9 @@ emp.dropna(thresh = 4)
 
 
 
-# Dealing with Duplicates {background-color="#1c4982"}
+# **Dealing with Duplicates** {background-color="#1c4982"}
 
-## Pandas Basics
-### Dealing with Duplicates with the `duplicated()` method
+## Dealing with Duplicates with the `duplicated()` method
 
 ::: {.nonincremental}
 - Missing values are a common occurrence in messy data sets, and so are duplicate values.
@@ -1574,8 +1515,7 @@ emp["Team"].duplicated()
 variable.
 
 
-## Pandas Basics
-### Dealing with Duplicates with the `duplicated()` method
+## Dealing with Duplicates with the `duplicated()` method
 
 ```{.python}
 emp["Team"].duplicated(keep = "first")
@@ -1592,8 +1532,8 @@ emp["Team"].duplicated(keep = "last")
 
 
 
-## Pandas Basics
-### Dealing with Duplicates with the `drop_duplicates()` method
+
+## Dealing with Duplicates with the `drop_duplicates()` method
 
 ```{.python}
 emp.drop_duplicates()
@@ -1604,8 +1544,8 @@ emp.drop_duplicates()
 
 
 
-## Pandas Basics
-### Dealing with Duplicates with the `drop_duplicates()` method
+
+## Dealing with Duplicates with the `drop_duplicates()` method
 
 
 ::: {.nonincremental}
@@ -1628,8 +1568,8 @@ df_unique = df.drop_duplicates()
 
 
 
-## Pandas Basics
-### Dealing with Duplicates with the `drop_duplicates()` method
+
+## Dealing with Duplicates with the `drop_duplicates()` method
 
 ```{.python}
 emp.drop_duplicates(subset = ["Team"])
@@ -1641,8 +1581,8 @@ emp.drop_duplicates(subset = ["Team"])
 
 
 
-## Pandas Basics
-### Dealing with Duplicates with the `drop_duplicates()` method
+
+## Dealing with Duplicates with the `drop_duplicates()` method
 
 ```{.python}
 emp.drop_duplicates(subset = ["Gender", "Team"])
@@ -1650,8 +1590,8 @@ emp.drop_duplicates(subset = ["Gender", "Team"])
 
 - The above example uses a combination of values across the `Gender` and `Team` variables to identify duplicates.
 
-## Pandas Basics
-### Dealing with Duplicates with the `drop_duplicates()` method
+
+## Dealing with Duplicates with the `drop_duplicates()` method
 
 ```{.python}
 emp.drop_duplicates(subset = ["Team"], keep = "last")
@@ -1673,9 +1613,8 @@ emp.drop_duplicates(subset = ["Team"], keep = False)
 Let's do Questions 7-8 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
 
 
-# Reshaping `DataFrames` {background-color="#1c4982"}
 
-
+# **Reshaping `DataFrames`** {background-color="#1c4982"}
 
 ## Reshaping `DataFrames`
 ### Tidy `DataFrames`
@@ -1715,8 +1654,7 @@ data_table.enable_dataframe_formatter()
 
 
 
-## Reshaping `DataFrames`
-### Long vs. Wide `DataFrames`
+## Long vs. Wide `DataFrames`
 
 :::{.nonincremental}
 - The following `DataFrames` measure temperatures in two cities over two days.
@@ -1739,8 +1677,7 @@ df_long = pd.DataFrame({
 ```
 
 
-## Reshaping `DataFrames`
-### Long vs. Wide `DataFrames`
+## Long vs. Wide `DataFrames`
 - A `DataFrame` can store its values in **wide** or **long** format.
 - These names reflect the direction in which the data set expands as we add more values to it.
   - A long `DataFrame` increases in height.
@@ -1748,8 +1685,7 @@ df_long = pd.DataFrame({
 
 
 
-## Reshaping `DataFrames`
-### Long vs. Wide `DataFrames`
+## Long vs. Wide `DataFrames`
 - The optimal storage format for a `DataFrame` depends on the insight we are trying to glean from it.
   - We consider making `DataFrames` **longer** if one *variable* is spread across multiple *columns*.
   - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
@@ -1767,8 +1703,8 @@ df_long = pd.DataFrame({
 - `pivot()` and `pivot_table()` make `DataFrame` wider.
 
 
-## Reshaping `DataFrames`
-### Make `DataFrame` Longer with `melt()`
+
+## Make `DataFrame` Longer with `melt()`
 
 ```{.python}
 df_wide_to_long = (
@@ -1779,8 +1715,7 @@ df_wide_to_long = (
 ```
 
 
-## Reshaping `DataFrames`
-### Make `DataFrame` Longer with `melt()`
+## Make `DataFrame` Longer with `melt()`
 
 ```{.python}
 df_wide_to_long = (
@@ -1802,8 +1737,8 @@ df_wide_to_long = (
 :::
 
 
-## Reshaping `DataFrames`
-### Make `DataFrame` Longer with `melt()`
+
+## Make `DataFrame` Longer with `melt()`
 
 ```{.python}
 df_wide_to_long = (
@@ -1824,8 +1759,8 @@ df_wide_to_long = (
 
 :::
 
-## Reshaping `DataFrames`
-### Make `DataFrame` Longer with `melt()`
+
+## Make `DataFrame` Longer with `melt()`
 
 ```{.python}
 df_wide_to_long = (
@@ -1845,8 +1780,8 @@ df_wide_to_long = (
 
 :::
 
-## Reshaping `DataFrames`
-### Make `DataFrame` Wider with `pivot()`
+
+## Make `DataFrame` Wider with `pivot()`
 ```{.python}
 df_long_to_wide = (
     df_long
@@ -1916,7 +1851,7 @@ Let's do Part 1 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-2
 
 
 
-# Joining `DataFrames` {background-color="#1c4982"}
+# **Joining `DataFrames`** {background-color="#1c4982"}
 
 
 ## Joining `DataFrames`
@@ -2233,7 +2168,7 @@ Let's do Part 2 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-2
 
 
 
-# Data Concatenation {background-color="#1c4982"}
+# **Data Concatenation** {background-color="#1c4982"}
 
 
 ## Data Concatenation
@@ -2344,8 +2279,7 @@ pd.concat([df1, df2, df3], axis="columns", ignore_index=True)
 :::
 
 
-## Data Concatenation
-###  Concatenate with Different Indices  
+## Concatenate with Different Indices  
 :::{.nonincremental}
 
 - What would happen when the row and column indices are not aligned?
@@ -2366,8 +2300,7 @@ row_concat = pd.concat([df1, df2, df3])
 :::
 
 
-## Data Concatenation
-###  Concatenate with Different Indices  
+## Concatenate with Different Indices  
 
 :::{.nonincremental}
 
@@ -2385,8 +2318,7 @@ pd.concat([df1, df3], join ='inner',  ignore_index =False)
 :::
 
 
-## Data Concatenation
-###  Concatenate with Different Indices  
+## Concatenate with Different Indices  
 
 :::{.nonincremental}
 
@@ -2401,8 +2333,7 @@ df3.index = [0, 2, 5, 7]
 :::
 
 
-## Data Concatenation
-###  Concatenate with Different Indices  
+## Concatenate with Different Indices  
 
 :::{.nonincremental}
 
@@ -2420,8 +2351,9 @@ pd.concat([df1, df3], axis ="columns", join='inner')
 
 :::
 
-## Data Concatenation
 
+
+## Data Concatenation
 
 Let's do Part 3 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
 
