@@ -2099,7 +2099,7 @@ merge_right_x = x.merge(y, on='key', how='right')
 
 
 ## Joining `DataFrames` with `merge()`
-### Full Join
+### Outer (Full) Join
 
 - A **full join** keeps all observations in `x` and `y`.
 

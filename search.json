@@ -2797,7 +2797,7 @@
     "href": "danl-lec/danl-210-lec-06-2025-0210.html#joining-dataframes-with-merge-4",
     "title": "Lecture 6",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\nFull Join\n\nA full join keeps all observations in x and y.\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
+    "text": "Joining DataFrames with merge()\nOuter (Full) Join\n\nA full join keeps all observations in x and y.\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#data-concatenation-1",
