@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -46,7 +46,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 7\n\n\nReshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 6\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 10, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 10, 2025\n\n\n\n\nClasswork 6\n\n\nConvering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nReshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -3078,5 +3078,75 @@
     "title": "Lecture 6",
     "section": "Joining DataFrames with merge()",
     "text": "Joining DataFrames with merge()\nLet’s do Part 2 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html",
+    "href": "danl-cw/danl-210-cw-07.knit.html",
+    "title": "Classwork 7",
+    "section": "",
+    "text": "Make ny_pincp longer.\n\nny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')\n\n\n\n\n\n  \n\n\n\n\n\n\n\nMake a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-1",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-1",
+    "title": "Classwork 7",
+    "section": "",
+    "text": "Make ny_pincp longer.\n\nny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-2",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-2",
+    "title": "Classwork 7",
+    "section": "",
+    "text": "Make a wide-form DataFrame of covid whose variable names are from countriesAndTerritories and values are from cases.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#variables-in-flights-dataframe",
+    "href": "danl-cw/danl-210-cw-07.knit.html#variables-in-flights-dataframe",
+    "title": "Classwork 7",
+    "section": "Variables in flights DataFrame",
+    "text": "Variables in flights DataFrame\n\nyear, month, day: Date of departure.\ndep_time, arr_time: Actual departure and arrival times (format HHMM or HMM), local tz.\nsched_dep_time, sched_arr_time: Scheduled departure and arrival times (format HHMM or HMM), local tz.\ndep_delay, arr_delay: Departure and arrival delays, in minutes. Negative times represent early departures/arrivals.\ncarrier: Two letter carrier abbreviation. See airlines DataFrame to get full names.\nflight: Flight number.\ntailnum: Plane tail number. See planes DataFrame for additional metadata.\norigin, dest: Origin and destination. See airports DataFrame for additional metadata.\nair_time: Amount of time spent in the air, in minutes.\ndistance: Distance between airports, in miles.\nhour, minute: Time of scheduled departure broken into hour and minutes.\ntime_hour: Scheduled date and hour of the flight as a datetime64. Along with origin, can be used to join flights data to weather DataFrame"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-3",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-3",
+    "title": "Classwork 7",
+    "section": "Question 3",
+    "text": "Question 3\n\nMerge flights with weather.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-4",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-4",
+    "title": "Classwork 7",
+    "section": "Question 4",
+    "text": "Question 4\n\nIdentify the full name of the airline with the highest average dep_delay, considering only positive delays.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-5",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-5",
+    "title": "Classwork 7",
+    "section": "Question 5",
+    "text": "Question 5\n\nFind the airline that has the largest proportion of flights with longer than 30-minute dep_delay.\nHint: numpy.where() is like an if-else statement, which can be very useful:\n\n\nimport pandas as pd\nimport numpy as np\n\n# Sample DataFrame with temperatures\ndf = pd.DataFrame({\n    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],\n    'Temperature (C)': [12, 22, 7, 25, 30]\n})\n\n# Categorize temperatures using numpy.where\ndf['Category'] = np.where(df['Temperature (C)'] &lt; 10, 'Cold', 'Not Cold'))\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-6",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-6",
+    "title": "Classwork 7",
+    "section": "Question 6",
+    "text": "Question 6\n\nWrite a Pandas code to join the two given DataFrames along rows and assign all data.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-7",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-7",
+    "title": "Classwork 7",
+    "section": "Question 7",
+    "text": "Question 7\n\nWrite a Pandas code to join the two given DataFrames along columns and assign all data.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-07.knit.html#question-8",
+    "href": "danl-cw/danl-210-cw-07.knit.html#question-8",
+    "title": "Classwork 7",
+    "section": "Question 8",
+    "text": "Question 8\n\nConsider the following Pandas Series:\n\n\ns6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'marks'])\n\nWrite a Pandas code to append rows to the DataFrame student_data1.\nAnswer:"
   }
 ]
