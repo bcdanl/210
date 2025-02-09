@@ -5,7 +5,7 @@ format:
   clean-revealjs:
     self-contained: false
     chalkboard: true
-    incremental: false
+    incremental: true
     code-annotations: hover
     scrollable: false
 
@@ -839,7 +839,7 @@ nba.iloc[0:10:2] # every other rows
 
 ## Pandas Basics
 
-Let's do [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+Let's do [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
 
 
 
