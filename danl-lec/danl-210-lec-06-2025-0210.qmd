@@ -1,0 +1,2430 @@
+---
+title: Lecture 6
+subtitle: "`pandas` Basics; Loading Data; Summarizing Data; Selecting Variables"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: false
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-10
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+
+# Workflow for File Management  {background-color="#1c4982"}
+
+
+## Workflow for File Management  
+- Save your Jupyter Notebook for each class to a dedicated directory in your local laptop, Google Drive, or a new GitHub repo.
+  - Go to **File** and select **Save ...**/
+  ( e.g., `danl-210-lec-08-2025-0210.ipynb`)
+
+
+
+
+## Workflow for File Management
+### Your Personal Website
+
+- In your local website project directory, avoid having
+  - Any file that exceeds 30 MB in size;
+  - `.ipynb` files you do not use for your website.
+
+- Your website project directory should include files specifically dedicated to your website.
+
+
+## Workflow for File Management
+### Jupyter Notebooks for Your Webpage
+
+1. Run Python code cells in a Jupyter Notebook (`.ipynb`) on **Google Colab**. Then, download the Jupyter Notebook from Google Colab.
+2. Use the **Finder/File Explorer** to move the Jupyter Notebook file (`.ipynb`) to your **website project directory**. (If it is for a blog post, create a subdirectory in the `posts` directory, and move it to the subdirectory.)
+3. Edit `_quarto.yml` properly. Save the changes by clicking the floppy disk icon (💾).
+4. On **Terminal**, run `quarto render`.
+5. Once `quarto render` completes, **view the `index.html`** in your **website working directory** to see the HTML output.
+6. After confirming the HTML output, use the 3-step `git` commands (`add`-`commit`-`push`) on **Terminal** to update your online website.
+
+
+
+
+# Pandas Basics {background-color="#1c4982"}
+
+## Pandas Basics
+### Learning Objectives
+
+- Loading `DataFrame` with `read_csv()`
+- Getting a Summary with `info()` and `describe()`
+- Selecting Variables with `[]`
+- Counting Values with `value_counts()`, `nunique()`, and `count()`
+- Sorting with `sort_values()` and `sort_index()`
+- Indexing with `set_index()` and `reset_index()`
+- Locating Observations and Values  with `loc[]` and `iloc[]`
+- Mathematical & Vectorized Operations
+- Adding, Removing, Renaming, and Relocating Variables
+- Converting Data Types with `.astype()`
+- Filtering Observations
+
+
+## Pandas Basics
+### Learning Objectives
+
+- Dealing with Missing Values
+- Dealing wit Duplicates
+- Reshaping `DataFrames` with `.melt()` and `.pivot()`
+- Joining `DataFrames` with `.merge()`
+- Concatenating `DataFrames`
+
+
+
+## Data Collection
+### Learning Objectives
+
+- Scrapping web tables with `.read_html()`
+- Scrapping web data with `selenium`
+- Collecting web data with Application Programming Interfaces (APIs)
+
+
+## Pandas Group Operations & Data Visualization
+### Learning Objectives
+
+- Using Custom Functions and Anonymous Functions
+- Grouping `DataFrames` with `groupby()`, `.agg()`, and `.transform()`
+- Visualizing `DataFrames` with `seaborn`
+
+
+
+
+# Loading Data {background-color="#1c4982"}
+
+
+## Pandas Basics
+###  `Series` and `DataFrame`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
+</p>
+
+- `Series`:	a collection of a one-dimensional object containing a sequence of values.
+  
+- `DataFrame`: a collection of `Series` columns with an *index*.
+
+
+## Pandas Basics
+### Importing a data set with `read_csv()`
+
+:::{.nonincremental}
+- A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba.csv)).
+
+- The CSV is widely used for storing data, and we will use this throughout the module.
+
+- We use the `read_csv()` function to load a CSV data file.
+
+```{.python}
+import pandas as pd
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+type(nba)
+nba
+```
+
+
+:::
+
+- The `DataFrame` is the workhorse of the pandas library and the data structure.
+
+
+
+## Pandas Basics
+### Importing a data set with `read_csv()`
+
+
+```{.python}
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+nba
+```
+
+- We can use the `parse_dates` parameter to coerce the values into `datetimes`.
+
+
+
+## Pandas Basics
+### Google Drive on Google Colab
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+from google.colab import drive, files
+drive.mount('/content/drive')
+files.upload()
+```
+
+- `drive.mount('/content/drive')`
+  - To mount your Google Drive on Google colab:
+- `files.upload()`
+  - To initiate uploading a file on Google Drive:
+
+:::
+::: {.column width="50%"}
+- To find a pathname of a CSV file in Google Drive:
+  - Click :file_folder: from the sidebar menu
+  - `drive` :arrow_right: `MyDrive` ...
+  - Hover a mouse cursor on the CSV file
+  - Click the vertical dots
+  - Click **"Copy path"**
+
+:::
+::::
+
+
+## Pandas Basics
+### Colab's Interactive DataFrame Display
+
+
+```{.python}
+from google.colab import data_table
+data_table.enable_dataframe_formatter()  # Enabling an interactive DataFrame display
+nba
+```
+
+- Colab includes an extension that renders pandas `DataFrames` into interactive displays.
+
+
+## Pandas Basics
+### Another Interactive DataFrame Display
+
+
+```{.python}
+# !pip install itables
+from itables import init_notebook_mode, show
+init_notebook_mode(all_interactive=False)
+show(nba)
+```
+
+- `itables` provides similar interactive displays for `DataFrames`.
+  - For a blog post, `itables`'s interactive displays may work better than `google.colab`' ones.
+
+
+
+# Getting a Summary of Data {background-color="#1c4982"}
+
+## Pandas Basics
+### DataFrame Terminologies: Variables, Observations, and Values
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
+</p>
+
+
+1. Each **variable** is a *column*.
+2. Each **observation** is a *row*.
+3. Each **value** is a *cell*.
+
+
+<!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
+
+<!-- - When we work with `DataFrame`, we mean a variable a column. -->
+
+
+
+## Pandas Basics
+### DataFrame Terminologies: Dot Operators, Methods and Attributes
+
+- The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
+
+- A method (`DataFrame.method()`) is a function that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
+  - e.g., `nba.info()`
+
+- An attribute (`DataFrame.attribute`) is a property that provides information about the `DataFrame`'s structure or content without modifying it. 
+  - e.g., `nba.dtype`
+
+
+## Pandas Basics
+### Getting a Summary of a `DataFrame` with `.info()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.info()    # method
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.shape     # attribute
+nba.dtypes    # attribute
+nba.columns   # attribute
+nba.count()   # method
+```
+:::
+
+::::
+
+- Every `DataFrame` object has a `.info()` method that provides a summary of a DataFrame:
+  - Variable names (`.columns`)
+  - Number of variables/observations (`.shape`)
+  - Data type of each variable (`.dtypes`)
+  - Number of non-missing values in each variable (`.count()`)
+    - Pandas often displays missing values as `NaN`.
+
+
+
+<!-- -  Since `.shape` is an **attribute** of the `DataFrame` object, and not a **function** or **method** of the `DataFrame` object, it does not have round parentheses after the period. -->
+
+
+
+## Pandas Basics
+### Getting a Summary of a `DataFrame` with `.describe()`
+
+```{.python}
+nba.describe()
+nba.describe(include='all')
+```
+
+
+- `.describe()` method generates **descriptive statistics** that summarize the central tendency, dispersion, and distribution of each variable. 
+  - It can also process `string`-type variables if specified explicitly (`include='all'`).
+
+
+
+
+# Selecting Variables {background-color="#1c4982"}
+
+## Pandas Basics
+### Selecting a Variable by its Name
+
+```{.python}
+nba_player_name_1 = nba['Name']   # Series
+nba_player_name_1
+
+nba_player_name_2 = nba[ ['Name'] ]   # DataFrame
+nba_player_name_2
+```
+
+- If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.
+  - `DataFrame[ 'var_1' ]` 
+  - `DataFrame[ ['var_1'] ]`
+
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables by their Names
+
+```{.python}
+nba_player_name_team = nba[ ['Name', 'Team'] ]
+nba_player_name_team
+```
+
+- In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
+  - `DataFrame[ ['var_1', 'var_2', ... ] ]`
+
+
+
+## Pandas Basics
+### Selecting Multiple Variables with `select_dtypes()`
+
+
+```{.python}
+# To include only string variables
+nba.select_dtypes(include = "object")
+
+# To exclude string and integer variables
+nba.select_dtypes(exclude = ["object", "int"])
+```
+
+- We can use the `select_dtypes()` method to select columns based on their data types.
+  - The method accepts two parameters, `include` and `exclude`.
+
+
+# Counting Methods {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Counting with `.count()` 
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba['Salary'].count()
+nba[['Salary']].count()
+```
+:::
+
+::::
+
+- The `.count()` counts <u>the number of non-missing values</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.value_counts()` 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba['Team'].value_counts()
+```
+:::
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].value_counts()
+```
+:::
+
+::::
+
+- The `.value_counts()` counts <u>the number of occurrences of each unique value</u> in a `Series`/`DataFrame`. 
+
+
+
+## Pandas Basics
+### Counting with `.nunique()` 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].nunique()
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.nunique()
+```
+:::
+
+::::
+
+
+- The `.nunique()` counts <u>the number of unique values</u> in each variable in a `DataFrame`. 
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-3 in [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+# Sorting Methods {background-color="#1c4982"}
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `nba.csv` as `nba`.
+
+```{.python}
+# Below is to import the pandas library as pd
+import pandas as pd 
+
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table  
+data_table.enable_dataframe_formatter()
+
+# Below is to read nba.csv as nba DataFrame
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+                  
+# Below is to view the nba DataFrame and to get a summary of it
+nba
+nba.info()
+nba.describe( include="all" )
+```
+
+:::
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"])
+nba.sort_values(by = ["Name"])
+```
+:::{.nonincremental}
+
+
+- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort the `DataFrame`.
+
+:::
+
+## Pandas Basics
+### Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+nba.sort_values(["Name"], ascending = False)
+```
+:::{.nonincremental}
+
+
+- The `sort_values()` method’s `ascending` parameter determines the sort order.
+  - `ascending` has a default argument of `True`.
+  - By default, pandas will sort:
+    - A variable of numbers in *increasing* order;
+    - A variable of strings in *alphabetical* order;
+    - A variable of datetimes in *chronological* order.
+
+:::
+
+## Pandas Basics
+### Method Chaining
+
+```{.python}
+(
+    nba
+    .sort_values(['Salary'])
+    .head(5)
+)
+```
+
+:::{.nonincremental}
+
+-  `DataFrame` has various methods that modify the existing `DataFrame`. 
+  - **Method Chaining**: We can call methods sequentially without the need to store intermediate results.
+  
+:::
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(5, 'Salary')
+nba.nlargest(5, 'Salary')
+```
+
+- `nsmallest()` are useful to get the first `n` observations ordered by a variable in <u>*ascending*</u> order.
+
+- `nlargest()` are useful to get the first `n` observations ordered by a variable in <u>*descending*</u> order.
+
+
+
+
+
+## Pandas Basics
+### Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(4, 'Salary', keep = "all")
+nba.nlargest(4, 'Salary', keep = "all")
+```
+
+- `keep = "all"` keeps all duplicates, even it means selecting more than `n` observations.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(["Team", "Name"])
+nba.sort_values(by = ["Team", "Name"])
+```
+
+- We can sort a `DataFrame` by multiple columns by passing a *list* to the `by` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = False)
+```
+
+- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each variable.
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = [False, True])
+```
+
+- If we want to sort each variable in a different order, we can pass a Boolean *list* to the `ascending` parameter.
+
+
+
+## Pandas Basics
+### Sorting by Multiple Variables with `sort_values()`
+
+**Q**. Which players on each team are paid the most?
+
+
+## Pandas Basics
+### Sorting by Row Index with `sort_index()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+# Below lines are equivalent
+nba.sort_index()
+nba.sort_index(ascending = True)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.sort_index(ascending = False)
+```
+:::
+
+::::
+
+- How can we return it to its original form of `DataFrame`?
+
+- Our `nba` `DataFrame` still has its numeric index labels.
+
+- `sort_index()` sorts observations by their index labels (row names).
+
+
+
+## Pandas Basics
+### Changing the Order of Variables with `sort_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_index(axis = "columns")
+nba.sort_index(axis = 1)
+```
+
+- The `sort_index()` method can also be used to change the order of variables in an alphabetical order. 
+  - We need to add an `axis` parameter and pass it an argument of `"columns"` or `1`.
+
+
+
+
+# Setting a New Index {background-color="#1c4982"}
+
+## Pandas Basics
+### Setting a New Index
+
+- We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
+  - This is particularly useful when:
+    - We have a column that *uniquely identifies* each observation (e.g., ID);
+    - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
+    
+
+## Pandas Basics
+### Setting a New Index with `set_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.set_index(keys = "Name")
+nba.set_index("Name")
+```
+
+- The `set_index()` method returns a new `DataFrame` with a given column set as the index. 
+  - Its first parameter, `keys`, accepts the column name.
+  
+  
+
+
+## Pandas Basics
+### Re-setting an Index with `reset_index()`
+
+```{.python}
+nba2 = nba.set_index("Name")
+nba2.reset_index(inplace=True)    # Useful for the method chaining
+```
+
+  
+- We use the `reset_index()` method: 
+  - When we want to convert the index back into a `DataFrame` column;
+  - When we need to reset the index to the default integer index. 
+
+- Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
+
+
+
+
+# Locating Observations {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `nba.csv` as `nba`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+```
+
+
+:::
+
+
+## Pandas Basics
+### Locating Observations/Values
+
+- We can extract observations, variables, and values from a `DataFrame` by using the `loc[]` and `iloc[]` accessors. 
+
+  - These accessors work well when we know the **index labels and positions** of the observations/variables we want to target.
+  
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `Name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by **index label** (row name).
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Note: Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Pandas Basics
+### Locating Observations by `.loc[ Index Labels ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+
+
+
+## Pandas Basics
+### Locating Observations by `.iloc[ Index Positions ]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the **slicing** syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+
+## Pandas Basics
+
+Let's do [Classwork 5](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+
+# Locating Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="38%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="62%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+## Pandas Basics
+### Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
+
+
+# Mathematical & Vectorized Operations  {background-color="#1c4982"}
+
+
+## Pandas Basics
+### Mathematical Operations
+
+```{.python}
+nba.max()
+nba.min()
+```
+- The `max()` method returns a `Series` with the maximum value from each variable.
+- The `min()` method returns a `Series` with the minimum value from each variable.
+
+
+## Pandas Basics
+### Mathematical Operations
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{.python}
+nba.sum()
+nba.mean()
+nba.median()
+nba.quantile(0.75) # 0 to 1
+nba.std()
+```
+:::
+
+::: {.column width="55%"}
+```{.python}
+nba.sum(numeric_only = True)
+nba.mean(numeric_only = True)
+nba.median(numeric_only = True)
+nba.quantile(0.75, numeric_only=True)
+nba.std(numeric_only = True)
+```
+:::
+
+::::
+
+- The `sum()`/`mean()`/`median()` method returns a `Series` with the sum/mean/median of the values in each variable.
+- The `quantile()` method returns a `Series` with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).
+- The `std()` method returns a `Series` with the standard deviation of the values in each variable.
+- To limit the operation to numeric volumes, we can pass `True` to the `sum()`/`mean()`/`median()`/`std()` method’s `numeric_only` parameter.
+
+
+
+
+## Pandas Basics
+### Vectorized Operations
+
+```{.python}
+nba["Salary_2x"] = nba["Salary"] + nba["Salary"]
+nba["Name_w_Position"] = nba["Name"] + " (" + nba["Position"] + ")"
+nba["Salary_minus_Mean"] = nba["Salary"] - nba["Salary"].mean()
+```
+
+- `pandas` performs a *vectorized operation* on `Series` or a variable in `DataFrame`.
+  - This means an element-by-element operation.
+  - This enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops.
+
+
+
+
+
+# Renaming Variables  {background-color="#1c4982"}
+
+## Pandas Basics
+### Renaming Variables with `nba.columns`
+
+
+:::{.nonincremental}
+
+- Do you recall the `.columns` attribute? 
+
+```{.python}
+nba.columns
+```
+
+- We can rename any or all of a DataFrame’s columns by assigning a *list* of new names to the attribute:
+
+```{.python}
+nba.columns = ["Team", "Position", "Date of Birth", "Income"]
+```
+
+:::
+
+
+## Pandas Basics
+### Renaming Variables with `rename( columns = { "Existing One" : "New One" } )`
+
+
+```{.python}
+nba.rename( columns = { "Date of Birth": "Birthday" } )
+```
+
+- The above `rename()` method renames the variable *Date of Birth* to *Birthday*.
+
+
+
+## Pandas Basics
+### Renaming rows with `rename( index = { "Existing One" : "New One" } )`
+
+```{.python}
+nba = nba.rename(
+    index = { "LeBron James": "LeBron Raymone James" }
+)
+```
+
+- The above `rename()` method renames the observation *LeBron James* to *LeBron Raymone James*.
+
+
+# Removing and Relocating Variables {background-color="#1c4982"}
+
+
+
+## Pandas Basics
+### Adding and Removing Variables
+
+::: {.nonincremental}
+
+- Here we use `[]` to add variables:
+
+
+```{.python}
+nba['Salary_k'] = nba['Salary'] / 1000
+nba['Salary_2x'] = nba['Salary'] + nba['Salary']
+nba['Salary_3x'] = nba['Salary'] * 3
+```
+
+:::
+
+## Pandas Basics
+### Removing Variables with `drop(columns = ... )`
+
+::: {.nonincremental}
+
+- We can use `.drop(columns = ...)` to drop variables:
+
+
+```{.python}
+nba.drop(columns = "Salary_k")
+nba.drop(columns = ["Salary_2x", "Salary_3x"])
+```
+
+:::
+
+## Pandas Basics
+### Relocating Variables with `.columns.get_loc()`, `.pop()`, and `.insert()`
+
+```{.python}
+ref_var = nba.columns.get_loc('Team') 
+var_to_move = nba.pop('Salary')
+nba.insert(ref_var, 'Salary', var_to_move) # insert() directly alters 'nba'
+```
+
+- **Step 1**. `DataFrame.columns.get_loc('Reference_Var')`
+  - Get the integer position (right before the reference variable, 'Reference_Var')
+- **Step 2**. `DataFrame.pop('Some_Var_To_Move')`
+  - Remove the variable we want to relocate from the DataFrame and store it in a `Series`
+- **Step 3**. `DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)`
+  - Insert the variable back into the DataFrame right after the reference variable.
+
+
+
+# Converting Data Types with the `astype()` Method {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+
+:::
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+::: {.nonincremental}
+
+- What values are in the `Mgmt` variable?
+
+:::
+
+```{.python}
+emp["Mgmt"].astype(bool)
+```
+
+
+- The `astype()` method converts a `Series`' values to a different data type. 
+  - It can accept a single argument: the new data type. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Mgmt"] = emp["Mgmt"].astype(bool)
+```
+
+- The above code overwrites the `Mgmt` variable with our new `Series` of Booleans.
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Salary"].astype(int)
+```
+
+- The above code tries to coerce the `Salary` variable's values to integers with the `astype()` method.
+  - Pandas is unable to convert the `NaN` values to integers.
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"].fillna(0)
+```
+
+- The `fillna()` method replaces a `Series`' missing values with the argument we pass in. 
+- The above example provides a fill value of `0`. 
+  - Note that our choice of value can distort the data; `0` is passed solely for the sake of example.
+
+
+
+
+
+## Pandas Basics
+### Fill Missing Values with the `fillna()` method
+
+```{.python}
+emp["Salary"] = emp["Salary"].fillna(0).astype(int)
+```
+
+- The above code overwrites the `Salary` variable with our new `Series` of integers.
+
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp["Gender"] = emp["Gender"].astype("category")
+```
+
+- Pandas includes a special data type called a `category`, 
+  - It is ideal for a variable consisting of a small number of unique values relative
+to its total size. 
+  - E.g., gender, weekdays, blood types, planets, and income groups. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `pd.to_datetime()` method
+
+```{.python}
+# Below two are equivalent:
+emp["Start Date"] = pd.to_datetime(emp["Start Date"])
+emp["Start Date"] = emp["Start Date"].astype('datetime64')
+```
+
+- The `pd.to_datetime()` function is used to convert a `Series`, `DataFrame`, or a single variable of a `DataFrame` from its current data type into `datetime` format. 
+
+
+
+## Pandas Basics
+### Converting Data Types with the `astype()` method
+
+```{.python}
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+
+emp["Salary"] = emp["Salary"].fillna(0)
+emp = emp.astype({'Mgmt': 'bool', 
+                  'Salary': 'int',
+                  'Gender': 'category',
+                  'Start Date': 'datetime64'})
+```
+
+- We can provide a dictionary of variable-type pairs to `astype()`.
+
+
+## Pandas Basics
+
+Let's do Question 1 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+
+# Filtering by a Single Condition {background-color="#1c4982"}
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+- We may often not know the **index labels and positions** of the observations we want to target.
+
+- We may want to target observations not by an index label but by a **Boolean condition**.
+
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp["First Name"] == "Donna"
+```
+
+
+- To compare every value in `Series` with a constant value, we place the `Series` on one side of the equality operator (`==`) and the value on the other.
+  - `Series == value`
+
+- The above example compares each `First Name` value with "Donna".
+  - pandas performs a vectorized operation (element-by-element operation) on `Series`.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+
+```{.python}
+emp[ emp["First Name"] == "Donna" ]
+```
+
+- To filter observations, we provide the Boolean `Series` between square brackets following the `DataFrame`.
+  - `DataFrame[ Boolean_Series ]`
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+donnas = emp["First Name"] == "Donna"
+emp[ donnas ]
+```
+
+
+- If the use of multiple square brackets is confusing, we can assign the Boolean
+`Series` to an object and then pass it into the square brackets instead.
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+::: {.nonincremental}
+- What if we want to extract a subset of employees who are not on the "`Marketing`" team?
+
+:::
+
+```{.python}
+non_marketing = emp["Team"] != "Marketing"  # != means "not equal to"
+emp[ non_marketing ]
+```
+
+- `True` denotes that the `Team` value for a given index is not "`Marketing`", and `False` indicates the `Team` value is "`Marketing`"
+
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+::: {.nonincremental}
+
+- What if we want to retrieve all the managers in the company? 
+  - Managers have a value of `True` in the `Mgmt` variable.
+
+:::
+
+```{.python}
+emp[ emp["Mgmt"] ]
+```
+
+- We could execute `emp["Mgmt"] == True`, but we do not need to.
+
+
+## Pandas Basics
+### Filtering by a Single Condition
+
+```{.python}
+high_earners = emp["Salary"] > 100000
+emp[ high_earners ]
+```
+
+- We can also use arithmetic operands to filter observations based on mathematical conditions.
+
+
+# Filtering by a Condition {background-color="#1c4982"}
+
+## Pandas Basics
+### Filtering by a Condition
+
+```{.python}
+sales = emp["Team"] == "Sales"
+legal = emp["Team"] == "Legal"
+fnce = emp["Team"] == "Finance"
+emp[ sales | legal | fnce ] # '|' is 'or' opeartor
+```
+
+- We could provide three separate Boolean `Series` inside the square brackets and add the `|` symbol to declare `OR` criteria.
+
+- What if our next report asked for employees from 30 teams instead of three? 
+
+
+
+## Pandas Basics
+### Filtering with the `isin()` method
+
+```{.python}
+star_teams = ["Sales", "Legal", "Finance"]
+on_star_teams = emp["Team"].isin(star_teams)
+emp[ on_star_teams ]
+```
+
+
+- A better solution is the `isin()` method, which accepts an iterable (e.g., `list`, `tuple`, `array`, `Series`) and returns a Boolean `Series`. 
+
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition
+
+:::{.nonincremental}
+- When working with numbers or dates, we often want to extract values that fall within a range. 
+  - E.g., Identify all employees with a salary between $90,000 and $100,000. 
+
+:::
+
+```{.python}
+higher_than_90k = emp["Salary"] >= 90000
+lower_than_100k = emp["Salary"] < 100000
+emp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor
+```
+
+- We can create two Boolean `Series`, one to declare the lower bound and one to declare the upper bound. 
+
+- Then we can use the `&` operator to mandate that both conditions are `True`.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+
+```{.python}
+between_90k_and_100k = emp["Salary"].between(90000, 100000)
+emp[ between_90k_and_100k ]
+```
+
+- A slightly cleaner solution is to use a method called `between()`.
+  - It returns a Boolean Series where `True` denotes that an observation's value falls between the specified interval.
+  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is **exclusive**.
+
+
+
+## Pandas Basics
+### Filtering with the `between()` method
+
+```{.python}
+name_starts_with_t = emp["First Name"].between("T", "U")
+emp[ name_starts_with_t ]
+```
+
+- We can also apply the `between()` method to *string* variables.
+
+
+
+
+## Pandas Basics
+### Filtering by a Condition with the `query()` method!
+
+```{.python}
+emp.query("Salary >= 100000 & Team == 'Finance'")
+emp.query("Salary >= 100000 & `First Name` == 'Douglas'")
+```
+
+- The `query()` method filters observations using a concise, **string**-based query syntax. 
+  - `query()` accepts a string value that describes filtering conditions.
+
+- When using the `query()` method, if we have variable names with spaces, we can wrap the variable names in backtick (`)
+  
+## Pandas Basics
+
+Let's do Questions 2-6 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+# Dealing with Missing Values {background-color="#1c4982"}
+
+
+## Pandas Basics
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+
+:::
+
+
+## Pandas Basics
+### Dealing with Missing Values
+
+- Pandas often marks (1) missing text values and (2) missing numeric values with a `NaN` (not a number); 
+  - It also marks missing datetime values with a `NaT` (not a time).
+
+<!-- - We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable. -->
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+emp["Team"].isna()
+emp["Start Date"].isna()
+```
+
+- The `isna()` method returns a Boolean `Series` in which `True` denotes that an observation's value is missing.
+  - Is a value of a variable "XYZ" missing?
+
+## Pandas Basics
+### Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+# Below two are equivalent.
+emp["Team"].notna()
+~emp["Team"].isna()
+```
+
+- The `notna()` method returns the inverse `Series`, one in which `True` indicates that an observation's value is present.
+
+- We use the tilde symbol (`~`) to invert a Boolean `Series`.
+
+- **Q**. How can we pull out employees with non-missing `Team` values?
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `value_counts(dropna = False)` method
+
+```{.python}
+emp["Mgmt"].isna().sum()
+emp["Mgmt"].value_counts()
+emp["Mgmt"].value_counts(dropna = False)
+```
+
+- One way to missing data counts is to use the `isna().sum()` on a `Series`.
+  - `True` is 1 and `False` is 0.
+
+- Another way to get missing data counts is to use the `.value_counts()` method on a `Series`. 
+  - If we use the `dropna = False` option, we can also get a missing value count.
+
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method
+
+```{.python}
+emp.dropna()
+```
+
+- The `dropna()` method removes observations that hold any `NaN` or `NaT` values.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `how`
+
+```{.python}
+emp.dropna(how = "all")
+```
+- We can pass the `how` parameter an argument of `"all"` to remove observations in which all values are missing.
+
+- Note that the `how` parameter’s default argument is `"any"`. 
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Gender"])
+```
+
+- We can use the `subset` parameter to target observations with a missing value in a specific variable.
+  - The above example removes observations that have a missing value in the `Gender` variable.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Start Date", "Salary"])
+```
+
+- We can also pass the `subset` parameter a list of variables.
+
+
+
+## Pandas Basics
+### Dealing with Missing Values: The `dropna()` method with `thresh`
+
+```{.python}
+emp.dropna(thresh = 4)
+```
+
+- The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.
+
+
+
+
+# Dealing with Duplicates {background-color="#1c4982"}
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+::: {.nonincremental}
+- Missing values are a common occurrence in messy data sets, and so are duplicate values.
+
+:::
+
+```{.python}
+emp["Team"].duplicated()
+```
+
+- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a
+variable.
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `duplicated()` method
+
+```{.python}
+emp["Team"].duplicated(keep = "first")
+emp["Team"].duplicated(keep = "last")
+~emp["Team"].duplicated()
+```
+
+- The `duplicated()` method’s `keep` parameter informs pandas which duplicate occurrence to keep. 
+  - Its default argument, `"first"`, keeps the first occurrence of each duplicate value.
+  - Its argument, `"last"`, keeps the last occurrence of each duplicate value.
+
+- **Q**. How can we keep observations with the first occurrences of a value in the Team variable?
+
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates()
+```
+
+
+- The `drop_duplicates()` method removes observations in which all values are equal to those in a previously encountered observations.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+
+::: {.nonincremental}
+- Below is an example of the `drop_duplicates()` method:
+
+:::
+
+```{.python}
+# Sample DataFrame with duplicate observations
+data = {
+    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],
+    'Age': [28, 23, 28, 32, 23],
+    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']
+}
+
+# pd.DataFrame( Series, List, or Dict ) creates a DataFrame
+df = pd.DataFrame(data)  
+df_unique = df.drop_duplicates()
+```
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"])
+```
+
+- We can pass the `drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+
+  - The above example finds the first occurrence of each unique value in the Team variable.
+
+
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Gender", "Team"])
+```
+
+- The above example uses a combination of values across the `Gender` and `Team` variables to identify duplicates.
+
+## Pandas Basics
+### Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"], keep = "last")
+emp.drop_duplicates(subset = ["Team"], keep = False)
+```
+
+- The `drop_duplicates()` method also accepts a `keep` parameter. 
+  - We can pass it an argument of `"last"` to keep the observations with each duplicate value’s last occurrence.
+  - We can pass it an argument of `False` to exclude all observations with duplicate values.
+  
+- **Q**. What does `emp.drop_duplicates(subset = ["First Name"], keep = False)` do?
+
+- **Q**. Find a subset of all employees with a First Name of "Douglas" and a Gender of "Male". Then check which "Douglas" is in the DataFrame `emp.drop_duplicates(subset = ["Gender", "Team"])`.
+
+
+
+## Pandas Basics
+
+Let's do Questions 7-8 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+# Reshaping `DataFrames` {background-color="#1c4982"}
+
+
+
+## Reshaping `DataFrames`
+### Tidy `DataFrames`
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
+</p>
+
+- There are three interrelated rules that make a `DataFrame` tidy:
+  - Each *variable* is a *column*; each *column* is a *variable*.
+  - Each *observation* is a *row*; each *row* is an *observation*.
+  - Each *value* is a *cell*; each *cell* is a single *value*.
+
+
+
+
+## Reshaping `DataFrames`
+
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+```
+
+
+- A `DataFrame` can be given in a format unsuited for the analysis that we would like to perform on it.
+  - A `DataFrame` may have larger structural problems that extend beyond the data.
+  - Perhaps the `DataFrame` stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.
+  
+
+- *Reshaping* a `DataFrame` means manipulating it into a different shape.
+
+- In this section, we will discuss pandas techniques for molding a `DataFrame` into the shape we desire.
+
+
+
+## Reshaping `DataFrames`
+### Long vs. Wide `DataFrames`
+
+:::{.nonincremental}
+- The following `DataFrames` measure temperatures in two cities over two days.
+
+:::
+
+```{.python}
+df_wide = pd.DataFrame({
+    'Weekday': ['Tuesday', 'Wednesday'],
+    'Miami': [80, 83],
+    'Rochester': [57, 62],
+    'St. Louis': [71, 75]
+})
+
+df_long = pd.DataFrame({
+    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],
+    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],
+    'Temperature': [80, 83, 57, 62, 71, 75]
+})
+```
+
+
+## Reshaping `DataFrames`
+### Long vs. Wide `DataFrames`
+- A `DataFrame` can store its values in **wide** or **long** format.
+- These names reflect the direction in which the data set expands as we add more values to it.
+  - A long `DataFrame` increases in height.
+  - A wide `DataFrame` increases in width. 
+
+
+
+## Reshaping `DataFrames`
+### Long vs. Wide `DataFrames`
+- The optimal storage format for a `DataFrame` depends on the insight we are trying to glean from it.
+  - We consider making `DataFrames` **longer** if one *variable* is spread across multiple *columns*.
+  - We consider making `DataFrames` **wider** if one *observation* is spread across multiple *rows*.
+
+
+
+## Reshaping `DataFrames` 
+### `melt()` and `pivot()`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-melt-pivot.gif" width="400px">
+</p>
+
+- `melt()` makes `DataFrame` longer.
+- `pivot()` and `pivot_table()` make `DataFrame` wider.
+
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt()
+)
+
+```
+
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt(id_vars = "Weekday")
+)
+
+
+
+
+```
+
+:::{.nonincremental}
+- `melt()` can take a few parameters:
+  - `id_vars` is a container (`string`, `list`, `tuple`, or `array`) that represents the variables that will remain as is.
+  - `id_vars` can indicate which column should be the “identifier”.
+
+
+:::
+
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt(id_vars = "Weekday",
+          var_name = "City",
+          value_name = "Temperature")
+)
+
+
+```
+
+:::{.nonincremental}
+
+- `melt()` can take a few parameters:
+  - `var_name` is a `string` for the *name* of the variable whose values are taken from *column names* in a given wide-form DataFrame.
+  - `value_name` is a `string` for the *name* of the variable whose values are taken from the *values* in a given wide-form DataFrame.
+
+:::
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Longer with `melt()`
+
+```{.python}
+df_wide_to_long = (
+    df_wide
+    .melt(id_vars = "Weekday",
+          var_name = "City",
+          value_name = "Temperature",
+          value_vars = ['Miami', 'Rochester'])
+)
+```
+
+:::{.nonincremental}
+
+- `melt()` can take a few parameters:
+  - `value_vars` parameter allows us to select which specific columns we want to “melt”.
+  - By default, it will melt all the columns not specified in the `id_vars` parameter.
+
+:::
+
+## Reshaping `DataFrames`
+### Make `DataFrame` Wider with `pivot()`
+```{.python}
+df_long_to_wide = (
+    df_long
+    .pivot(index = "Weekday",
+           columns = "City",
+           values = "Temperature"  
+        )
+    .reset_index()
+    )
+```
+
+- When using `pivot()`, we need to specify a few parameters:
+  - `index` that takes the *column* to pivot on;
+  - `columns` that takes the *column* to be used to make the *new variable names* of the wider `DataFrame`;
+  - `values` that takes the *column* that provides the *values* of the *variables* in the wider `DataFrame`.
+
+
+
+## Reshaping `DataFrames`
+:::{.nonincremental}
+- Let's consider the following wide-form `DataFrame`, `df`, containing information about the number of courses each student took from each department in each year.
+
+:::
+```{.python}
+dict_data = {"Name": ["Donna", "Donna", "Mike", "Mike"],
+             "Department": ["ECON", "DANL", "ECON", "DANL"],
+             "2018": [1, 2, 3, 1],
+             "2019": [2, 3, 4, 2],
+             "2020": [5, 1, 2, 2]}
+df = pd.DataFrame(dict_data)
+
+df_longer = df.melt(id_vars=["Name", "Department"], 
+                    var_name="Year", 
+                    value_name="Number of Courses")
+```
+
+- The `pivot()` method can also take a `list` of variable names for the `index` parameter.
+
+
+## Reshaping `DataFrames`
+:::{.nonincremental}
+- Let's consider the following wide-form `DataFrame`, `df`, containing information about the number of courses each student took from each department in each year.
+
+:::
+```{.python}
+dict_data = {"Name": ["Donna", "Donna", "Mike", "Mike"],
+             "Department": ["ECON", "DANL", "ECON", "DANL"],
+             "2018": [1, 2, 3, 1],
+             "2019": [2, 3, 4, 2],
+             "2020": [5, 1, 2, 2]}
+df = pd.DataFrame(dict_data)
+
+df_longer = df.melt(id_vars=["Name", "Department"], 
+                    var_name="Year", 
+                    value_name="Number of Courses")
+```
+
+**Q**. How can we use the `df_longer` to create the wide-form `DataFrame`, `df_wider`, which is equivalent to the `df`?
+
+
+
+
+
+## Reshaping `DataFrames`
+
+Let's do Part 1 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
+
+# Joining `DataFrames` {background-color="#1c4982"}
+
+
+## Joining `DataFrames`
+### Relational Data
+
+- Sometimes, one data set is scattered across multiple files.
+  - The size of the files can be huge.
+  - The data collection process can be scattered across time and space.
+  - E.g., `DataFrame` for county-level data and `DataFrame` for geographic information, such as longitude and latitude.
+
+
+- Sometimes we want to combine two or more `DataFrames` based on common data values in those `DataFrames`.
+  -  This task is known in the database world as performing a "join."
+  -  We can do this with the `merge()` method in Pandas.
+
+
+
+
+
+## Joining `DataFrames`
+### Relational Data
+
+:::{.nonincremental}
+-  The variables that are used to connect each pair of tables are called **keys**.
+
+:::
+```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
+text_tbl <- data.frame(
+  Pandas = c("left", "right", "outer", "inner"),
+  SQL = c("left outer",
+"right outer", 
+"full outer",
+"inner"),
+  Description = c("Keep all the observations in the left",  
+                  "Keep all the observations in the right", 
+                  "Keep all the observations in both left and right",
+                  "Keep only the observations whose key values exist in both")
+  )
+
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+
+```
+
+
+
+
+## Joining `DataFrames` with `merge()`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-setup.png" width="300">
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+x = pd.DataFrame({
+    'key': [1, 2, 3],
+    'val_x': ['x1', 'x2', 'x3']
+})
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+y = pd.DataFrame({
+    'key': [1, 2, 4],
+    'val_y': ['y1', 'y2', 'y3']
+})
+```
+:::
+
+::::
+
+- The colored column represents the "key" variable.
+- The grey column represents the "value" column.
+
+
+
+## Joining `DataFrames` with `merge()`
+### Inner Join
+- An **inner join** matches pairs of observations whenever their keys are equal:
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-inner.png" width="425">
+</p>
+
+```{.python}
+# the default value for 'how' is 'inner'
+# so it doesn't actually need to be specified
+merge_inner = pd.merge(x, y, on='key', how='inner')
+merge_inner_x = x.merge(y, on='key', how='inner')
+merge_inner_x_how = x.merge(y, on='key')
+```
+
+
+
+## Joining `DataFrames` with `merge()`
+### Left Join
+
+- A **left join** keeps all observations in `x`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-left.png" width="425">
+</p>
+
+```{.python}
+merge_left = pd.merge(x, y, on='key', how='left')
+merge_left_x = x.merge(y, on='key', how='left')
+```
+
+- The most commonly used join is the left join.
+
+
+## Joining `DataFrames` with `merge()`
+### Right Join
+
+- A **right join** keeps all observations in `y`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-right.png" width="425">
+</p>
+
+
+```{.python}
+merge_right = pd.merge(x, y, on='key', how='right')
+merge_right_x = x.merge(y, on='key', how='right')
+```
+
+
+
+## Joining `DataFrames` with `merge()`
+### Full Join
+
+- A **full join** keeps all observations in `x` and `y`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-full.png" width="412.5">
+</p>
+
+
+```{.python}
+merge_outer = pd.merge(x, y, on='key', how='outer')
+merge_outer_x = x.merge(y, on='key', how='outer')
+```
+
+
+
+
+## Joining `DataFrames` with `merge()`
+### Duplicate keys: one-to-many
+
+- One `DataFrame` has duplicate keys (a one-to-many relationship). 
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-one-to-many.png" width="375">
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+```{.python}
+x = pd.DataFrame({
+    'key':[1, 2, 2, 3],
+    'val_x':['x1', 'x2', 'x3', 'x4']})
+```
+
+:::
+
+::: {.column width="52.5%"}
+```{.python}
+y = pd.DataFrame({
+    'key':[1, 2],
+    'val_y':['y1', 'y2'] })
+one_to_many = x.merge(y, on='key', 
+                         how='left')
+```
+
+:::
+
+::::
+
+
+## Joining `DataFrames` with `merge()`
+### Duplicate keys: many-to-many
+- Both `DataFrames` have duplicate keys (many-to-many relationship).
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-many-to-many.png" width="350">
+</p>
+
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{.python}
+x = pd.DataFrame({
+  'key':[1, 2, 2, 3],
+  'val_x':['x1','x2','x3','x4']})
+
+```
+
+:::
+
+
+::: {.column width="55%"}
+```{.python}
+y = pd.DataFrame({
+  'key': [1, 2, 2, 3],
+  'val_y': ['y1', 'y2', 'y3', 'y4'] })
+many_to_many = x.merge(y, on='key', 
+                          how='left')
+
+```
+:::
+
+::::
+
+
+
+## Joining `DataFrames` with `merge()`
+### Defining the key columns
+
+:::{.nonincremental}
+- If the left and right columns do not have the same name for the key variables, we can use the `left_on` and `right_on` parameters instead.
+
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+x = pd.DataFrame({
+  'key_x': [1, 2, 3],
+  'val_x': ['x1', 'x2', 'x3']
+})
+```
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+y = pd.DataFrame({
+  'key_y': [1, 2],
+  'val_y': ['y1', 'y2'] })
+
+keys_xy = 
+  x.merge(y, left_on = 'key_x', 
+             right_on = 'key_y', 
+             how = 'left')
+```
+:::
+::::
+
+
+
+## Joining `DataFrames` with `merge()`
+
+
+Let's do Part 2 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
+
+
+# Data Concatenation {background-color="#1c4982"}
+
+
+## Data Concatenation
+:::{.nonincremental}
+- Concatenation can be thought of as appending a row or column to our data. 
+  - This approach is possible if our data was split into parts or if we performed a calculation that we want to append to our existing data set.
+
+- Let's consider the following example DataFrames:
+
+```{.python}
+df1 = pd.read_csv('https://bcdanl.github.io/data/concat_1.csv')
+df2 = pd.read_csv('https://bcdanl.github.io/data/concat_2.csv')
+df3 = pd.read_csv('https://bcdanl.github.io/data/concat_3.csv')
+```
+
+
+- We will be working with `.index` and `.columns` in this Section.
+```{.python}
+df1.index
+df1.columns
+```
+
+:::
+
+## Data Concatenation
+###  Add Rows  
+
+:::{.nonincremental}
+
+- Concatenating the `DataFrames` on top of each other uses the `concat()` method. 
+  - All of the `DataFrames` to be concatenated are passed in a `list`.
+  
+```{.python}
+row_concat = pd.concat([df1, df2, df3])
+row_concat
+```
+
+:::
+
+## Data Concatenation
+###  Add Rows  
+:::{.nonincremental}
+
+- Let's consider a new Series and concatenate it with `df1`:
+```{.python}
+# create a new row of data
+new_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
+new_row_series
+
+
+# attempt to add the new row to a dataframe
+df = pd.concat([df1, new_row_series])
+df
+```
+
+-  Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.
+  - Why?
+
+:::
+
+## Data Concatenation
+###  Add Rows  
+
+:::{.nonincremental}
+
+- To fix the problem, we need turn our `Series` into a `DataFrame`.
+  - This data frame contains one row of data, and the column names are the ones the data will bind to.
+
+```{.python}
+new_row_df = pd.DataFrame(
+  # note the double brackets to create a "row" of data
+  data =[["n1", "n2", "n3", "n4"]],
+  columns =["A", "B", "C", "D"],
+)
+
+df = pd.concat([df1, new_row_df])
+```
+
+:::
+
+## Data Concatenation
+###   Add Columns  
+
+:::{.nonincremental}
+
+- Concatenating *columns* is very similar to concatenating *rows*. 
+  - The main difference is the `axis` parameter in the `concat()` method. 
+  - The default value of `axis` is `0` (or `axis = "index"`), so it will concatenate data in a row-wise fashion. 
+  - If we pass `axis = 1` (or `axis = "columns"`) to the function, it will concatenate data in a column-wise manner.
+  
+  
+```{.python}
+col_concat = pd.concat([df1, df2, df3], axis = "columns")
+```
+
+:::
+
+## Data Concatenation
+###   Add Columns  
+:::{.nonincremental}
+
+- We can use `ignore_index=True` to reset the column indices, so that we do not have duplicated column names.
+
+```{.python}
+pd.concat([df1, df2, df3], axis="columns", ignore_index=True)
+```
+
+:::
+
+
+## Data Concatenation
+###  Concatenate with Different Indices  
+:::{.nonincremental}
+
+- What would happen when the row and column indices are not aligned?
+
+- Let’s modify our DataFrames for the next few examples.
+```{.python}
+# rename the columns of our dataframes
+df1.columns = ['A', 'B', 'C', 'D']
+df2.columns = ['E', 'F', 'G', 'H']
+df3.columns = ['A', 'C', 'F', 'H']
+```
+
+-  If we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.
+```{.python}
+row_concat = pd.concat([df1, df2, df3])
+```
+
+:::
+
+
+## Data Concatenation
+###  Concatenate with Different Indices  
+
+:::{.nonincremental}
+
+- We can set `join = 'inner'` to keep only the columns that are shared among the data sets.
+```{.python}
+pd.concat([df1, df2, df3], join ='inner')
+```
+
+
+- If we use the `DataFrames` that have columns in common, only the columns that all of them share will be returned.
+```{.python}
+pd.concat([df1, df3], join ='inner',  ignore_index =False)
+```
+
+:::
+
+
+## Data Concatenation
+###  Concatenate with Different Indices  
+
+:::{.nonincremental}
+
+- Let’s modify our DataFrames further.
+```{.python}
+# re-indexing the rows of our DataFrames
+df1.index = [0, 1, 2, 3]
+df2.index = [4, 5, 6, 7]
+df3.index = [0, 2, 5, 7]
+```
+
+:::
+
+
+## Data Concatenation
+###  Concatenate with Different Indices  
+
+:::{.nonincremental}
+
+- When we concatenate along `axis="columns"` `(axis=1`), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.
+
+```{.python}
+col_concat = pd.concat([df1, df2, df3], axis="columns")
+```
+
+
+- Just as we did when we concatenated in a row-wise manner, we can choose to keep the results only when there are matching indices by using `join="inner"`.
+```{.python}
+pd.concat([df1, df3], axis ="columns", join='inner')
+```
+
+:::
+
+## Data Concatenation
+
+
+Let's do Part 3 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
+
+

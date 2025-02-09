@@ -1,0 +1,251 @@
+---
+title: Classwork 7
+subtitle: Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns
+date: 2025-02-24
+execute: 
+  eval: false
+  echo: false
+  warning: false
+  message: false
+  
+from: markdown+emoji
+---
+
+```{r}
+#| include: false
+
+library(DT)
+library(reticulate)
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+# Part 1 - Pivoting DataFrames
+
+## Question 1
+
+Make `ny_pincp` longer.
+
+
+```{python}
+#| echo: true
+ny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+          )
+```
+
+
+
+## Question 2
+
+- Make a wide-form DataFrame of `covid` whose variable names are from `countriesAndTerritories` and values are from `cases`.
+
+
+*Answer:*
+```{python}
+
+```
+
+<br>
+
+<br><br><br>
+
+# Part 2 - Joining DataFrames
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/relational-nycflights.png" width="400px">
+</p>
+
+
+The CSV files are related each other, as described above.
+
+
+```{python}
+#| echo: true
+flights = pd.read_csv("https://bcdanl.github.io/data/flights.zip")
+airlines = pd.read_csv("https://bcdanl.github.io/data/flights-airlines.csv")
+airports = pd.read_csv("https://bcdanl.github.io/data/flights-airports.csv")
+planes = pd.read_csv("https://bcdanl.github.io/data/flights-planes.csv")
+weather = pd.read_csv("https://bcdanl.github.io/data/flights-weather.csv")
+```
+
+## Variables in flights DataFrame
+
+- `year`, `month`, `day`: Date of departure.
+
+- `dep_time`, `arr_time`: Actual departure and arrival times (format HHMM or HMM), local tz.
+
+- `sched_dep_time`, `sched_arr_time`: Scheduled departure and arrival times (format HHMM or HMM), local tz.
+
+- `dep_delay`, `arr_delay`: Departure and arrival delays, in minutes. Negative times represent early departures/arrivals.
+
+- `carrier`: Two letter carrier abbreviation. See airlines DataFrame to get full names. 
+
+- `flight`: Flight number.
+
+- `tailnum`:
+ Plane tail number. See planes DataFrame for additional metadata.
+
+- `origin`, `dest`: Origin and destination. See `airports` DataFrame for additional metadata.
+
+- `air_time`: Amount of time spent in the air, in minutes.
+
+- `distance`: Distance between airports, in miles.
+
+- `hour`, `minute`: Time of scheduled departure broken into hour and minutes.
+
+- `time_hour`: Scheduled date and hour of the flight as a datetime64. Along with `origin`, can be used to join flights data to `weather` DataFrame
+
+
+
+
+
+## Question 3
+
+- Merge `flights` with `weather`.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 4
+
+- Identify the full name of the airline with the highest average `dep_delay`, considering only positive delays.
+
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 5
+
+- Find the airline that has the largest proportion of flights with longer than 30-minute `dep_delay`.
+
+- Hint: `numpy.where()` is like an if-else statement, which can be very useful:
+
+```{python}
+#| echo: true
+
+import pandas as pd
+import numpy as np
+
+# Sample DataFrame with temperatures
+df = pd.DataFrame({
+    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],
+    'Temperature (C)': [12, 22, 7, 25, 30]
+})
+
+# Categorize temperatures using numpy.where
+df['Category'] = np.where(df['Temperature (C)'] < 10, 'Cold', 'Not Cold'))
+```
+
+
+*Answer:*
+```{python}
+
+```
+
+<br><br><br>
+
+# Part 3 - Concatenating Rows and Columns
+
+```{python}
+#| echo: true
+
+student_data1 = pd.DataFrame({
+        'student_id': ['S1', 'S2', 'S3', 'S4', 'S5'],
+         'name': ['Danniella Fenton', 'Ryder Storey', 'Bryce Jensen', 'Ed Bernal', 'Kwame Morin'], 
+        'marks': [200, 210, 190, 222, 199]})
+
+student_data2 = pd.DataFrame({
+        'student_id': ['S4', 'S5', 'S6', 'S7', 'S8'],
+        'name': ['Scarlette Fisher', 'Carla Williamson', 'Dante Morse', 'Kaiser William', 'Madeeha Preston'], 
+        'marks': [201, 200, 198, 219, 201]})
+```
+
+
+
+## Question 6
+
+- Write a Pandas code to join the two given DataFrames along **rows** and assign all data.
+
+
+
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+## Question 7
+
+- Write a Pandas code to join the two given DataFrames along **columns** and assign all data.
+
+
+
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+## Question 8
+
+- Consider the following Pandas `Series`:
+
+```{python}
+#| echo: true
+
+s6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'marks'])
+```
+
+Write a Pandas code to append rows to the DataFrame `student_data1`.
+
+
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+# Discussion
+
+<font size = "5">Welcome to our Classwork 7 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 7.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 7 materials or need clarification on any points, don't hesitate to ask here. 
+
+All comments will be stored [here](https://github.com/bcdanl/210/discussions/).
+
+Let's collaborate and learn from each other!
+
+
