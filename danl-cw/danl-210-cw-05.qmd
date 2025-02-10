@@ -26,10 +26,6 @@ The `nfl.csv` file contains a list of players in the National Football League wi
 
 
 
-```{python}
-#| echo: true
-import pandas as pd
-```
 
 <!-- <div style="position: relative;"> -->
 <!--   <button onclick="scrollTable(-200)" style="position: absolute; z-index: 1000; top: 0; left: 70px; border: 1px solid grey; width: 25px; height: 40px; background-color: #ededed;">←</button> -->
@@ -37,19 +33,6 @@ import pandas as pd
 <!-- </div> -->
 
 
-<script>
-function scrollTable(offset) {
-  // Ensure we're targeting the scroll body of the DataTable specifically
-  var scrollBody = $('#exampleTable .dataTables_scrollBody');
-  
-  // Check if the scrollBody is found
-  console.log(scrollBody.length); // For debugging, should be 1 if found
-  
-  scrollBody.animate({
-    scrollLeft: '+=' + offset
-  }, 'fast');
-}
-</script>
 
 
 ```{r}
