@@ -441,19 +441,32 @@ Byeong-Hak Choe
 <!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
 <!-- - When we work with `DataFrame`, we mean a variable a column. -->
 </section>
-<section id="dataframe-terminologies-dot-operators-methods-and-attributes" class="slide level2">
-<h2>DataFrame Terminologies: Dot Operators, Methods and Attributes</h2>
+<section id="dataframe-terminologies" class="slide level2">
+<h2>DataFrame Terminologies</h2>
+<h3 id="dot-operators-methods-and-attributes">Dot Operators, Methods, and Attributes</h3>
+<h4 id="dot-operator">Dot operator</h4>
 <ul>
-<li class="fragment"><p>The dot operator (<code>DataFrame.</code>) is used for an <strong>attribute</strong> or a <strong>method</strong> on objects.</p></li>
-<li class="fragment"><p>A method (<code>DataFrame.METHOD()</code>) is a function that we can call on a <code>DataFrame</code> to perform operations, modify data, or derive insights.</p>
+<li class="fragment">The dot operator (<code>DataFrame.</code>) is used for an <strong>attribute</strong> or a <strong>method</strong> on objects.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="method">Method</h4>
+<ul>
+<li class="fragment">A method (<code>DataFrame.METHOD()</code>) is a <strong>function</strong> that we can call on a <code>DataFrame</code> to perform operations, modify data, or derive insights.
 <ul>
 <li class="fragment">e.g., <code>nba.info()</code></li>
 </ul></li>
-<li class="fragment"><p>An attribute (<code>DataFrame.ATTRIBUTE</code>) is a property that provides information about the <code>DataFrame</code>’s structure or content without modifying it.</p>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="attribute">Attribute</h4>
+<ul>
+<li class="fragment">An attribute (<code>DataFrame.ATTRIBUTE</code>) is a <strong>property</strong> that provides information about the <code>DataFrame</code>’s structure or content without modifying it.
 <ul>
 <li class="fragment">e.g., <code>nba.dtype</code></li>
 </ul></li>
 </ul>
+</div>
+</div>
 </section>
 <section id="getting-a-summary-of-a-dataframe-with-.info" class="slide level2">
 <h2>Getting a Summary of a <code>DataFrame</code> with <code>.info()</code></h2>
@@ -1781,8 +1794,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f8382be7623ad73f540d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f8382be7623ad73f540d">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ba47d40e20b5df67eafa" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ba47d40e20b5df67eafa">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

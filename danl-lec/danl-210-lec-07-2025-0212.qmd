@@ -78,16 +78,30 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-## DataFrame Terminologies: Dot Operators, Methods and Attributes
+## DataFrame Terminologies
+### Dot Operators, Methods, and Attributes
 
+#### Dot operator
 - The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
 
-- A method (`DataFrame.METHOD()`) is a function that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### Method
+
+- A method (`DataFrame.METHOD()`) is a **function** that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
   - e.g., `nba.info()`
 
-- An attribute (`DataFrame.ATTRIBUTE`) is a property that provides information about the `DataFrame`'s structure or content without modifying it. 
+:::
+::: {.column width="50%"}
+#### Attribute
+
+- An attribute (`DataFrame.ATTRIBUTE`) is a **property** that provides information about the `DataFrame`'s structure or content without modifying it. 
   - e.g., `nba.dtype`
 
+:::
+::::
 
 ## Getting a Summary of a `DataFrame` with `.info()`
 

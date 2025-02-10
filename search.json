@@ -3875,7 +3875,7 @@
     "href": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies-dot-operators-methods-and-attributes",
     "title": "Lecture 7",
     "section": "DataFrame Terminologies: Dot Operators, Methods and Attributes",
-    "text": "DataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
+    "text": "DataFrame Terminologies: Dot Operators, Methods and Attributes\nDot operator\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\n\n\n\nMethod\n\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\n\n\nAttribute\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe-with-.info",
@@ -4716,5 +4716,12 @@
     "title": "Lecture 7",
     "section": "Data Concatenation",
     "text": "Data Concatenation\nLet’s do Part 3 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies",
+    "title": "Lecture 7",
+    "section": "DataFrame Terminologies",
+    "text": "DataFrame Terminologies\nDot Operators, Methods, and Attributes\nDot operator\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\n\n\n\nMethod\n\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\n\n\nAttribute\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
   }
 ]
