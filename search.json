@@ -60,7 +60,7 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 6\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 5\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 4\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 3\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 2\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 1\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nLecture 7\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 6\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 5\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 4\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 3\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 2\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 1\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
@@ -81,7 +81,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics I\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics II\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics; Loading Data; Summarizing Data; Selecting Variables\n\n\nFebruary 10, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics I\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics II\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics; Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\nGetting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 10, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
@@ -3862,5 +3862,859 @@
     "title": "Lecture 6",
     "section": "Locating Observations by .iloc[Index Positions]",
     "text": "Locating Observations by .iloc[Index Positions]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies-variables-observations-and-values",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies-variables-observations-and-values",
+    "title": "Lecture 7",
+    "section": "DataFrame Terminologies: Variables, Observations, and Values",
+    "text": "DataFrame Terminologies: Variables, Observations, and Values\n\n\n\n\nEach variable is a column.\nEach observation is a row.\nEach value is a cell."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies-dot-operators-methods-and-attributes",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dataframe-terminologies-dot-operators-methods-and-attributes",
+    "title": "Lecture 7",
+    "section": "DataFrame Terminologies: Dot Operators, Methods and Attributes",
+    "text": "DataFrame Terminologies: Dot Operators, Methods and Attributes\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe-with-.info",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe-with-.info",
+    "title": "Lecture 7",
+    "section": "Getting a Summary of a DataFrame with .info()",
+    "text": "Getting a Summary of a DataFrame with .info()\n\n\nnba.info()    # method\n\nnba.shape     # attribute\nnba.dtypes    # attribute\nnba.columns   # attribute\nnba.count()   # method\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nData type of each variable (.dtypes)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe-with-.describe",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe-with-.describe",
+    "title": "Lecture 7",
+    "section": "Getting a Summary of a DataFrame with .describe()",
+    "text": "Getting a Summary of a DataFrame with .describe()\nnba.describe()\nnba.describe(include='all')\n\n.describe() method generates descriptive statistics that summarize the central tendency, dispersion, and distribution of each variable.\n\nIt can also process string-type variables if specified explicitly (include='all')."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-a-variable-by-its-name",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-a-variable-by-its-name",
+    "title": "Lecture 7",
+    "section": "Selecting a Variable by its Name",
+    "text": "Selecting a Variable by its Name\nnba_player_name_s = nba['Name']   # Series\nnba_player_name_s\n\nnba_player_name_df = nba[ ['Name'] ]   # DataFrame\nnba_player_name_df\n\nIf we want only a specific variable from a DataFrame, we can access the variable with its name using squared brackets, [ ].\n\nDataFrame[ 'var_1' ]\nDataFrame[ ['var_1'] ]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-multiple-variables-by-their-names",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-multiple-variables-by-their-names",
+    "title": "Lecture 7",
+    "section": "Selecting Multiple Variables by their Names",
+    "text": "Selecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-multiple-variables-with-select_dtypes",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-multiple-variables-with-select_dtypes",
+    "title": "Lecture 7",
+    "section": "Selecting Multiple Variables with select_dtypes()",
+    "text": "Selecting Multiple Variables with select_dtypes()\n# To include only string variables\nnba.select_dtypes(include = \"object\")\n\n# To exclude string and integer variables\nnba.select_dtypes(exclude = [\"object\", \"int\"])\n\nWe can use the select_dtypes() method to select columns based on their data types.\n\nThe method accepts two parameters, include and exclude."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#counting-with-.count",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#counting-with-.count",
+    "title": "Lecture 7",
+    "section": "Counting with .count()",
+    "text": "Counting with .count()\n\n\nnba['Salary'].count()\nnba[['Salary']].count()\n\n\n\nThe .count() counts the number of non-missing values in a Series/DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#counting-with-.value_counts",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#counting-with-.value_counts",
+    "title": "Lecture 7",
+    "section": "Counting with .value_counts()",
+    "text": "Counting with .value_counts()\n\n\nnba['Team'].value_counts()\n\nnba[['Team']].value_counts()\n\n\n\nThe .value_counts() counts the number of occurrences of each unique value in a Series/DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#counting-with-.nunique",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#counting-with-.nunique",
+    "title": "Lecture 7",
+    "section": "Counting with .nunique()",
+    "text": "Counting with .nunique()\n\n\nnba[['Team']].nunique()\n\nnba.nunique()\n\n\n\nThe .nunique() counts the number of unique values in each variable in a DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 1-3 in Classwork 5!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-methods-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-methods-1",
+    "title": "Lecture 7",
+    "section": "Sorting Methods",
+    "text": "Sorting Methods\n\n\nLet’s read nba.csv as nba.\n\n# Below is to import the pandas library as pd\nimport pandas as pd \n\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table  \ndata_table.enable_dataframe_formatter()\n\n# Below is to read nba.csv as nba DataFrame\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])\n                  \n# Below is to view the nba DataFrame and to get a summary of it\nnba\nnba.info()\nnba.describe( include=\"all\" )"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-sort_values",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-sort_values",
+    "title": "Lecture 7",
+    "section": "Sorting by a Single Variable with sort_values()",
+    "text": "Sorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-sort_values-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-sort_values-1",
+    "title": "Lecture 7",
+    "section": "Sorting by a Single Variable with sort_values()",
+    "text": "Sorting by a Single Variable with sort_values()\nnba.sort_values([\"Name\"], ascending = False)\n\n\nThe sort_values() method’s ascending parameter determines the sort order.\n\nascending has a default argument of True.\nBy default, pandas will sort:\n\nA variable of numbers in increasing order;\nA variable of strings in alphabetical order;\nA variable of datetimes in chronological order."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-1",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nMethod Chaining\n(\n    nba\n    .sort_values(['Salary'])\n    .head(5)\n)\n\n\nDataFrame has various methods that modify the existing DataFrame.\nMethod Chaining: We can call methods sequentially without the need to store intermediate results."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-nsmallest-and-nlargest",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-nsmallest-and-nlargest",
+    "title": "Lecture 7",
+    "section": "Sorting by a Single Variable with nsmallest() and nlargest()",
+    "text": "Sorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(5, 'Salary')\nnba.nlargest(5, 'Salary')\n\nnsmallest() are useful to get the first n observations ordered by a variable in ascending order.\nnlargest() are useful to get the first n observations ordered by a variable in descending order."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-nsmallest-and-nlargest-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-a-single-variable-with-nsmallest-and-nlargest-1",
+    "title": "Lecture 7",
+    "section": "Sorting by a Single Variable with nsmallest() and nlargest()",
+    "text": "Sorting by a Single Variable with nsmallest() and nlargest()\nnba.nsmallest(4, 'Salary', keep = \"all\")\nnba.nlargest(4, 'Salary', keep = \"all\")\n\nkeep = \"all\" keeps all duplicates, even it means selecting more than n observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values",
+    "title": "Lecture 7",
+    "section": "Sorting by Multiple Variables with sort_values()",
+    "text": "Sorting by Multiple Variables with sort_values()\nnba.sort_values([\"Team\", \"Name\"])\nnba.sort_values(by = [\"Team\", \"Name\"])\n\nWe can sort a DataFrame by multiple columns by passing a list to the by parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values-1",
+    "title": "Lecture 7",
+    "section": "Sorting by Multiple Variables with sort_values()",
+    "text": "Sorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = False)\n\nWe can pass a single Boolean to the ascending parameter to apply the same sort order to each variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values-2",
+    "title": "Lecture 7",
+    "section": "Sorting by Multiple Variables with sort_values()",
+    "text": "Sorting by Multiple Variables with sort_values()\nnba.sort_values(by = [\"Team\", \"Name\"], \n                ascending = [False, True])\n\nIf we want to sort each variable in a different order, we can pass a Boolean list to the ascending parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-multiple-variables-with-sort_values-3",
+    "title": "Lecture 7",
+    "section": "Sorting by Multiple Variables with sort_values()",
+    "text": "Sorting by Multiple Variables with sort_values()\nQ. Which players on each team are paid the most?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-row-index-with-sort_index",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#sorting-by-row-index-with-sort_index",
+    "title": "Lecture 7",
+    "section": "Sorting by Row Index with sort_index()",
+    "text": "Sorting by Row Index with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nIf we assigned nba to nba DataFrame sorted by “Name”, how can we return it to its original form of DataFrame?\n\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#relocating-variables-with-sort_index",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#relocating-variables-with-sort_index",
+    "title": "Lecture 7",
+    "section": "Relocating Variables with sort_index()",
+    "text": "Relocating Variables with sort_index()\n# The two lines below are equivalent\nnba.sort_index(axis = \"columns\")\nnba.sort_index(axis = 1)\n\nThe sort_index() method can also be used to change the order of variables in an alphabetical order.\n\nWe need to add an axis parameter and pass it an argument of \"columns\" or 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#setting-a-new-index-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#setting-a-new-index-1",
+    "title": "Lecture 7",
+    "section": "Setting a New Index",
+    "text": "Setting a New Index\n\nWe can use the set_index() method when we want to change the current index of a DataFrame to one or more existing columns.\n\nThis is particularly useful when:\n\nWe have a column that uniquely identifies each observation (e.g., ID);\nWe sometimes want to use an unique identifier as the index for more efficient data wrangling."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#setting-a-new-index-with-set_index",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#setting-a-new-index-with-set_index",
+    "title": "Lecture 7",
+    "section": "Setting a New Index with set_index()",
+    "text": "Setting a New Index with set_index()\n# The two lines below are equivalent\nnba.set_index(keys = \"Name\")\nnba.set_index(\"Name\")\n\nThe set_index() method returns a new DataFrame with a given column set as the index.\n\nIts first parameter, keys, accepts the column name."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#re-setting-an-index-with-reset_index",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#re-setting-an-index-with-reset_index",
+    "title": "Lecture 7",
+    "section": "Re-setting an Index with reset_index()",
+    "text": "Re-setting an Index with reset_index()\nnba2 = nba.set_index(\"Name\")\nnba2.reset_index(inplace=True)    # Useful for the method chaining\n\nWe use the reset_index() method:\n\nWhen we want to convert the index back into a DataFrame column;\nWhen we need to reset the index to the default integer index.\n\nNote: With inplace=True, the operation alters the original DataFrame directly."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-1",
+    "title": "Lecture 7",
+    "section": "Locating Observations",
+    "text": "Locating Observations\n\n\nLet’s read nba.csv as nba.\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observationsvalues",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observationsvalues",
+    "title": "Lecture 7",
+    "section": "Locating Observations/Values",
+    "text": "Locating Observations/Values\n\nWe can extract observations, variables, and values from a DataFrame by using the loc[] and iloc[] accessors.\n\nThese accessors work well when we know the index labels and positions of the observations/variables we want to target."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.locindex-labels",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.locindex-labels",
+    "title": "Lecture 7",
+    "section": "Locating Observations by .loc[Index Labels]",
+    "text": "Locating Observations by .loc[Index Labels]\n\n\nLet’s consider the nba with the Name index.\n\n# The two lines below are equivalent\nnba = nba.set_index(\"Name\")\nnba.set_index(\"Name\", inplace = True)\n\nBelow extracts observations:\n\n\nnba.loc[ \"LeBron James\" ]\nnba.loc[ [\"Kawhi Leonard\", \"Paul George\"] ]\n\nThe .loc attribute extracts an observation by index label (row name)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.locindex-labels-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.locindex-labels-1",
+    "title": "Lecture 7",
+    "section": "Locating Observations by .loc[Index Labels]",
+    "text": "Locating Observations by .loc[Index Labels]\n(\n    nba\n    .sort_index()\n    .loc[\"Otto Porter\":\"Patrick Beverley\"]\n)\n\nWhat is the above code doing?\n\nNote: Both the starting value and the ending value are inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.locindex-labels-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.locindex-labels-2",
+    "title": "Lecture 7",
+    "section": "Locating Observations by .loc[Index Labels]",
+    "text": "Locating Observations by .loc[Index Labels]\n\n\n(\n    nba\n    .sort_index()\n    .loc[\"Zach Collins\":]\n)\n\n(\n    nba\n    .sort_index()\n    .loc[:\"Al Horford\"]\n)\n\n\n\nWe can use loc[:] to pull rows:\n\nFrom the middle of the DataFrame to its end;\nFrom the beginning of the DataFrame to a specific index label."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.ilocindex-positions",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-observations-by-.ilocindex-positions",
+    "title": "Lecture 7",
+    "section": "Locating Observations by .iloc[Index Positions]",
+    "text": "Locating Observations by .iloc[Index Positions]\n\n\nnba.iloc[ 300 ]\nnba.iloc[ [100, 200, 300, 400] ]\n\nnba.iloc[400:404]\nnba.iloc[:2]\nnba.iloc[447:]\nnba.iloc[-10:-6]\nnba.iloc[0:10:2] # every other rows\n\n\n\nThe .iloc (index location) attribute locates rows by index position.\n\nThis can be helpful when the position of rows has significance in our data set.\nWe pass integers.\n\nThe .iloc[:] is similar to the slicing syntax with strings/lists.\n\nThe end value is NOT inclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-2",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 4-7 in Classwork 5!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-values-by-locrows-columns-or-ilocrows-columns",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-values-by-locrows-columns-or-ilocrows-columns",
+    "title": "Lecture 7",
+    "section": "Locating Values by loc[Rows, Columns] or iloc[Rows, Columns]",
+    "text": "Locating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.loc[\n    \"LeBron James\",\n    \"Team\"\n]\n\nnba.loc[\n     \"James Harden\", \n      [\"Position\", \"Birthday\"] \n]\n\nnba.loc[\n    [\"Russell Westbrook\", \"Anthony Davis\"],\n     [\"Team\", \"Salary\"]\n]\n\nnba.loc[\n    \"Joel Embiid\", \n    \"Position\":\"Salary\"\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .loc, we have to provide the column names."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#locating-values-by-locrows-columns-or-ilocrows-columns-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#locating-values-by-locrows-columns-or-ilocrows-columns-1",
+    "title": "Lecture 7",
+    "section": "Locating Values by loc[Rows, Columns] or iloc[Rows, Columns]",
+    "text": "Locating Values by loc[Rows, Columns] or iloc[Rows, Columns]\n\n\nnba.iloc[\n    57, \n    3\n]\n\nnba.iloc[\n    100:104, \n    :3\n]\n\n\n\nBoth the .loc and .iloc attributes accept a second argument representing the column(s) to extract.\n\nIf we are using .iloc, we have to provide the column position."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#mathematical-operations",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#mathematical-operations",
+    "title": "Lecture 7",
+    "section": "Mathematical Operations",
+    "text": "Mathematical Operations\nnba.max()\nnba.min()\n\nThe max() method returns a Series with the maximum value from each variable.\nThe min() method returns a Series with the minimum value from each variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#mathematical-operations-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#mathematical-operations-1",
+    "title": "Lecture 7",
+    "section": "Mathematical Operations",
+    "text": "Mathematical Operations\n\n\nnba.sum()\nnba.mean()\nnba.median()\nnba.quantile(0.75) # 0 to 1\nnba.std()\n\nnba.sum(numeric_only = True)\nnba.mean(numeric_only = True)\nnba.median(numeric_only = True)\nnba.quantile(0.75, numeric_only=True)\nnba.std(numeric_only = True)\n\n\n\nThe sum()/mean()/median() method returns a Series with the sum/mean/median of the values in each variable.\nThe quantile() method returns a Series with the percentile value of the values in each variable (e.g., 25th, 75th, 90th percentile).\nThe std() method returns a Series with the standard deviation of the values in each variable.\nTo limit the operation to numeric volumes, we can pass True to the sum()/mean()/median()/std() method’s numeric_only parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#vectorized-operations",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#vectorized-operations",
+    "title": "Lecture 7",
+    "section": "Vectorized Operations",
+    "text": "Vectorized Operations\nnba[\"Salary_2x\"] = nba[\"Salary\"] + nba[\"Salary\"]\nnba[\"Name_w_Position\"] = nba[\"Name\"] + \" (\" + nba[\"Position\"] + \")\"\nnba[\"Salary_minus_Mean\"] = nba[\"Salary\"] - nba[\"Salary\"].mean()\n\npandas performs a vectorized operation on Series or a variable in DataFrame.\n\nThis means an element-by-element operation.\nThis enables us to apply functions and perform operations on the data efficiently, without the need for explicit loops."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#adding-and-removing-variables",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#adding-and-removing-variables",
+    "title": "Lecture 7",
+    "section": "Adding and Removing Variables",
+    "text": "Adding and Removing Variables\n\n\nHere we use [] to add variables:\n\nnba['Salary_k'] = nba['Salary'] / 1000\nnba['Salary_2x'] = nba['Salary'] + nba['Salary']\nnba['Salary_3x'] = nba['Salary'] * 3"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#removing-variables-with-dropcolumns-...",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#removing-variables-with-dropcolumns-...",
+    "title": "Lecture 7",
+    "section": "Removing Variables with drop(columns = ... )",
+    "text": "Removing Variables with drop(columns = ... )\n\n\nWe can use .drop(columns = ...) to drop variables:\n\nnba.drop(columns = \"Salary_k\")\nnba.drop(columns = [\"Salary_2x\", \"Salary_3x\"])"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#renaming-variables-with-nba.columns",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#renaming-variables-with-nba.columns",
+    "title": "Lecture 7",
+    "section": "Renaming Variables with nba.columns",
+    "text": "Renaming Variables with nba.columns\n\n\nDo you recall the .columns attribute?\n\nnba.columns\n\nWe can rename any or all of a DataFrame’s columns by assigning a list of new names to the attribute:\n\nnba.columns = [\"Team\", \"Position\", \"Date of Birth\", \"Income\"]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#renaming-variables-with-rename-columns-existing-one-new-one",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#renaming-variables-with-rename-columns-existing-one-new-one",
+    "title": "Lecture 7",
+    "section": "Renaming Variables with rename( columns = { \"Existing One\" : \"New One\" } )",
+    "text": "Renaming Variables with rename( columns = { \"Existing One\" : \"New One\" } )\nnba.rename( columns = { \"Date of Birth\": \"Birthday\" } )\n\nThe above rename() method renames the variable Date of Birth to Birthday."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#renaming-rows-with-rename-index-existing-one-new-one",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#renaming-rows-with-rename-index-existing-one-new-one",
+    "title": "Lecture 7",
+    "section": "Renaming rows with rename( index = { \"Existing One\" : \"New One\" } )",
+    "text": "Renaming rows with rename( index = { \"Existing One\" : \"New One\" } )\nnba = nba.rename(\n    index = { \"LeBron James\": \"LeBron Raymone James\" }\n)\n\nThe above rename() method renames the observation LeBron James to LeBron Raymone James."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#relocating-variables-with-.columns.get_loc-.pop-and-.insert",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#relocating-variables-with-.columns.get_loc-.pop-and-.insert",
+    "title": "Lecture 7",
+    "section": "Relocating Variables with .columns.get_loc(), .pop(), and .insert()",
+    "text": "Relocating Variables with .columns.get_loc(), .pop(), and .insert()\nref_var = nba.columns.get_loc('Team') \nvar_to_move = nba.pop('Salary')\nnba.insert(ref_var, 'Salary', var_to_move) # insert() directly alters 'nba'\n\nStep 1. DataFrame.columns.get_loc('Reference_Var')\n\nGet the integer position (right before the reference variable, ‘Reference_Var’)\n\nStep 2. DataFrame.pop('Some_Var_To_Move')\n\nRemove the variable we want to relocate from the DataFrame and store it in a Series\n\nStep 3. DataFrame.insert(ref_var, 'Some_Var_To_Move', var_to_move)\n\nInsert the variable back into the DataFrame right after the reference variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-1",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() Method",
+    "text": "Converting Data Types with the astype() Method\n\n\nLet’s read employment.csv as emp.\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-2",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() method",
+    "text": "Converting Data Types with the astype() method\n\n\nWhat values are in the Mgmt variable?\n\n\nemp[\"Mgmt\"].astype(bool)\n\nThe astype() method converts a Series’ values to a different data type.\n\nIt can accept a single argument: the new data type."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-3",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() method",
+    "text": "Converting Data Types with the astype() method\nemp[\"Mgmt\"] = emp[\"Mgmt\"].astype(bool)\n\nThe above code overwrites the Mgmt variable with our new Series of Booleans."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-4",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() method",
+    "text": "Converting Data Types with the astype() method\nemp[\"Salary\"].astype(int)\n\nThe above code tries to coerce the Salary variable’s values to integers with the astype() method.\n\nPandas is unable to convert the NaN values to integers."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#fill-missing-values-with-the-fillna-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#fill-missing-values-with-the-fillna-method",
+    "title": "Lecture 7",
+    "section": "Fill Missing Values with the fillna() method",
+    "text": "Fill Missing Values with the fillna() method\nemp[\"Salary\"].fillna(0)\n\nThe fillna() method replaces a Series’ missing values with the argument we pass in.\nThe above example provides a fill value of 0.\n\nNote that our choice of value can distort the data; 0 is passed solely for the sake of example."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-5",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-5",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() method",
+    "text": "Converting Data Types with the astype() method\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0).astype(int)\n\nThe above code overwrites the Salary variable with our new Series of integers."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-6",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-6",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() method",
+    "text": "Converting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\n\nPandas includes a special data type called a category,\n\nIt is ideal for a variable consisting of a small number of unique values relative to its total size.\nE.g., gender, weekdays, blood types, planets, and income groups."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-pd.to_datetime-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-pd.to_datetime-method",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the pd.to_datetime() method",
+    "text": "Converting Data Types with the pd.to_datetime() method\n# Below two are equivalent:\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\nemp[\"Start Date\"] = emp[\"Start Date\"].astype('datetime64')\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-7",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#converting-data-types-with-the-astype-method-7",
+    "title": "Lecture 7",
+    "section": "Converting Data Types with the astype() method",
+    "text": "Converting Data Types with the astype() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0)\nemp = emp.astype({'Mgmt': 'bool', \n                  'Salary': 'int',\n                  'Gender': 'category',\n                  'Start Date': 'datetime64'})\n\nWe can provide a dictionary of variable-type pairs to astype()."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-3",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Question 1 in Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-1",
+    "title": "Lecture 7",
+    "section": "Filtering by a Condition",
+    "text": "Filtering by a Condition\n\nWe may often not know the index labels and positions of the observations we want to target.\nWe may want to target observations not by an index label but by a Boolean condition."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition",
+    "title": "Lecture 7",
+    "section": "Filtering by a Single Condition",
+    "text": "Filtering by a Single Condition\nemp[\"First Name\"] == \"Donna\"\n\nTo compare every value in Series with a constant value, we place the Series on one side of the equality operator (==) and the value on the other.\n\nSeries == value\n\nThe above example compares each First Name value with “Donna”.\n\npandas performs a vectorized operation (element-by-element operation) on Series."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-1",
+    "title": "Lecture 7",
+    "section": "Filtering by a Single Condition",
+    "text": "Filtering by a Single Condition\nemp[ emp[\"First Name\"] == \"Donna\" ]\n\nTo filter observations, we provide the Boolean Series between square brackets following the DataFrame.\n\nDataFrame[ Boolean_Series ]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-2",
+    "title": "Lecture 7",
+    "section": "Filtering by a Single Condition",
+    "text": "Filtering by a Single Condition\ndonnas = emp[\"First Name\"] == \"Donna\"\nemp[ donnas ]\n\nIf the use of multiple square brackets is confusing, we can assign the Boolean Series to an object and then pass it into the square brackets instead."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-3",
+    "title": "Lecture 7",
+    "section": "Filtering by a Single Condition",
+    "text": "Filtering by a Single Condition\n\n\nWhat if we want to extract a subset of employees who are not on the “Marketing” team?\n\n\nnon_marketing = emp[\"Team\"] != \"Marketing\"  # != means \"not equal to\"\nemp[ non_marketing ]\n\nTrue denotes that the Team value for a given index is not “Marketing”, and False indicates the Team value is “Marketing”"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-4",
+    "title": "Lecture 7",
+    "section": "Filtering by a Single Condition",
+    "text": "Filtering by a Single Condition\n\n\nWhat if we want to retrieve all the managers in the company?\n\nManagers have a value of True in the Mgmt variable.\n\n\n\nemp[ emp[\"Mgmt\"] ]\n\nWe could execute emp[\"Mgmt\"] == True, but we do not need to."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-5",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-single-condition-5",
+    "title": "Lecture 7",
+    "section": "Filtering by a Single Condition",
+    "text": "Filtering by a Single Condition\nhigh_earners = emp[\"Salary\"] &gt; 100000\nemp[ high_earners ]\n\nWe can also use arithmetic operands to filter observations based on mathematical conditions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-2",
+    "title": "Lecture 7",
+    "section": "Filtering by a Condition",
+    "text": "Filtering by a Condition\nsales = emp[\"Team\"] == \"Sales\"\nlegal = emp[\"Team\"] == \"Legal\"\nfnce = emp[\"Team\"] == \"Finance\"\nemp[ sales | legal | fnce ] # '|' is 'or' opeartor\n\nWe could provide three separate Boolean Series inside the square brackets and add the | symbol to declare OR criteria.\nWhat if our next report asked for employees from 30 teams instead of three?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-with-the-isin-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-with-the-isin-method",
+    "title": "Lecture 7",
+    "section": "Filtering with the isin() method",
+    "text": "Filtering with the isin() method\nstar_teams = [\"Sales\", \"Legal\", \"Finance\"]\non_star_teams = emp[\"Team\"].isin(star_teams)\nemp[ on_star_teams ]\n\nA better solution is the isin() method, which accepts an iterable (e.g., list, tuple, array, Series) and returns a Boolean Series."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-3",
+    "title": "Lecture 7",
+    "section": "Filtering by a Condition",
+    "text": "Filtering by a Condition\n\n\nWhen working with numbers or dates, we often want to extract values that fall within a range.\n\nE.g., Identify all employees with a salary between $90,000 and $100,000.\n\n\n\nhigher_than_90k = emp[\"Salary\"] &gt;= 90000\nlower_than_100k = emp[\"Salary\"] &lt; 100000\nemp[ higher_than_90k & lower_than_100k ] # '&' is 'and' opeartor\n\nWe can create two Boolean Series, one to declare the lower bound and one to declare the upper bound.\nThen we can use the & operator to mandate that both conditions are True."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-with-the-between-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-with-the-between-method",
+    "title": "Lecture 7",
+    "section": "Filtering with the between() method",
+    "text": "Filtering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[ between_90k_and_100k ]\n\nA slightly cleaner solution is to use a method called between().\n\nIt returns a Boolean Series where True denotes that an observation’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-with-the-between-method-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-with-the-between-method-1",
+    "title": "Lecture 7",
+    "section": "Filtering with the between() method",
+    "text": "Filtering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[ name_starts_with_t ]\n\nWe can also apply the between() method to string variables."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-with-the-query-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#filtering-by-a-condition-with-the-query-method",
+    "title": "Lecture 7",
+    "section": "Filtering by a Condition with the query() method!",
+    "text": "Filtering by a Condition with the query() method!\nemp.query(\"Salary &gt;= 100000 & Team == 'Finance'\")\nemp.query(\"Salary &gt;= 100000 & `First Name` == 'Douglas'\")\n\nThe query() method filters observations using a concise, string-based query syntax.\n\nquery() accepts a string value that describes filtering conditions.\n\nWhen using the query() method, if we have variable names with spaces, we can wrap the variable names in backtick (`)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-4",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 2-6 in Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-1",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values",
+    "text": "Dealing with Missing Values\n\n\nLet’s read employment.csv as emp.\n\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-2",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values",
+    "text": "Dealing with Missing Values\n\nPandas often marks (1) missing text values and (2) missing numeric values with a NaN (not a number);\n\nIt also marks missing datetime values with a NaT (not a time)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-isna-and-notna-methods",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-isna-and-notna-methods",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The isna() and notna() methods",
+    "text": "Dealing with Missing Values: The isna() and notna() methods\nemp[\"Team\"].isna()\nemp[\"Start Date\"].isna()\n\nThe isna() method returns a Boolean Series in which True denotes that an observation’s value is missing.\n\nIs a value of a variable “XYZ” missing?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-isna-and-notna-methods-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-isna-and-notna-methods-1",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The isna() and notna() methods",
+    "text": "Dealing with Missing Values: The isna() and notna() methods\n# Below two are equivalent.\nemp[\"Team\"].notna()\n~emp[\"Team\"].isna()\n\nThe notna() method returns the inverse Series, one in which True indicates that an observation’s value is present.\nWe use the tilde symbol (~) to invert a Boolean Series.\nQ. How can we pull out employees with non-missing Team values?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-value_countsdropna-false-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-value_countsdropna-false-method",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The value_counts(dropna = False) method",
+    "text": "Dealing with Missing Values: The value_counts(dropna = False) method\nemp[\"Mgmt\"].isna().sum()\nemp[\"Mgmt\"].value_counts()\nemp[\"Mgmt\"].value_counts(dropna = False)\n\nOne way to missing data counts is to use the isna().sum() on a Series.\n\nTrue is 1 and False is 0.\n\nAnother way to get missing data counts is to use the .value_counts() method on a Series.\n\nIf we use the dropna = False option, we can also get a missing value count."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The dropna() method",
+    "text": "Dealing with Missing Values: The dropna() method\nemp.dropna()\n\nThe dropna() method removes observations that hold any NaN or NaT values."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-how",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-how",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The dropna() method with how",
+    "text": "Dealing with Missing Values: The dropna() method with how\nemp.dropna(how = \"all\")\n\nWe can pass the how parameter an argument of \"all\" to remove observations in which all values are missing.\nNote that the how parameter’s default argument is \"any\"."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-subset",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-subset",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The dropna() method with subset",
+    "text": "Dealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Gender\"])\n\nWe can use the subset parameter to target observations with a missing value in a specific variable.\n\nThe above example removes observations that have a missing value in the Gender variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-subset-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-subset-1",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The dropna() method with subset",
+    "text": "Dealing with Missing Values: The dropna() method with subset\nemp.dropna(subset = [\"Start Date\", \"Salary\"])\n\nWe can also pass the subset parameter a list of variables."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-thresh",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-missing-values-the-dropna-method-with-thresh",
+    "title": "Lecture 7",
+    "section": "Dealing with Missing Values: The dropna() method with thresh",
+    "text": "Dealing with Missing Values: The dropna() method with thresh\nemp.dropna(thresh = 4)\n\nThe thresh parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-duplicated-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-duplicated-method",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the duplicated() method",
+    "text": "Dealing with Duplicates with the duplicated() method\n\n\nMissing values are a common occurrence in messy data sets, and so are duplicate values.\n\n\nemp[\"Team\"].duplicated()\n\nThe duplicated() method returns a Boolean Series that identifies duplicates in a variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-duplicated-method-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-duplicated-method-1",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the duplicated() method",
+    "text": "Dealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value.\n\nQ. How can we keep observations with the first occurrences of a value in the Team variable?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the drop_duplicates() method",
+    "text": "Dealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates()\n\nThe drop_duplicates() method removes observations in which all values are equal to those in a previously encountered observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-1",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the drop_duplicates() method",
+    "text": "Dealing with Duplicates with the drop_duplicates() method\n\n\nBelow is an example of the drop_duplicates() method:\n\n\n# Sample DataFrame with duplicate observations\ndata = {\n    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],\n    'Age': [28, 23, 28, 32, 23],\n    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']\n}\n\n# pd.DataFrame( Series, List, or Dict ) creates a DataFrame\ndf = pd.DataFrame(data)  \ndf_unique = df.drop_duplicates()"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-2",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the drop_duplicates() method",
+    "text": "Dealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"])\n\nWe can pass the drop_duplicates() method a subset parameter with a list of columns that pandas should use to determine an observation’s uniqueness.\n\nThe above example finds the first occurrence of each unique value in the Team variable."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-3",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the drop_duplicates() method",
+    "text": "Dealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Gender\", \"Team\"])\n\nThe above example uses a combination of values across the Gender and Team variables to identify duplicates."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#dealing-with-duplicates-with-the-drop_duplicates-method-4",
+    "title": "Lecture 7",
+    "section": "Dealing with Duplicates with the drop_duplicates() method",
+    "text": "Dealing with Duplicates with the drop_duplicates() method\nemp.drop_duplicates(subset = [\"Team\"], keep = \"last\")\nemp.drop_duplicates(subset = [\"Team\"], keep = False)\n\nThe drop_duplicates() method also accepts a keep parameter.\n\nWe can pass it an argument of \"last\" to keep the observations with each duplicate value’s last occurrence.\nWe can pass it an argument of False to exclude all observations with duplicate values.\n\nQ. What does emp.drop_duplicates(subset = [\"First Name\"], keep = False) do?\nQ. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame emp.drop_duplicates(subset = [\"Gender\", \"Team\"])."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-5",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#pandas-basics-5",
+    "title": "Lecture 7",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLet’s do Questions 7-8 in Classwork 6!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-1",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nTidy DataFrames\n\n\n\n\nThere are three interrelated rules that make a DataFrame tidy:\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-2",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding a DataFrame into the shape we desire."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#long-vs.-wide-dataframes",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#long-vs.-wide-dataframes",
+    "title": "Lecture 7",
+    "section": "Long vs. Wide DataFrames",
+    "text": "Long vs. Wide DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#long-vs.-wide-dataframes-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#long-vs.-wide-dataframes-1",
+    "title": "Lecture 7",
+    "section": "Long vs. Wide DataFrames",
+    "text": "Long vs. Wide DataFrames\n\nA DataFrame can store its values in wide or long format.\nThese names reflect the direction in which the data set expands as we add more values to it.\n\nA long DataFrame increases in height.\nA wide DataFrame increases in width."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#long-vs.-wide-dataframes-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#long-vs.-wide-dataframes-2",
+    "title": "Lecture 7",
+    "section": "Long vs. Wide DataFrames",
+    "text": "Long vs. Wide DataFrames\n\nThe optimal storage format for a DataFrame depends on the insight we are trying to glean from it.\n\nWe consider making DataFrames longer if one variable is spread across multiple columns.\nWe consider making DataFrames wider if one observation is spread across multiple rows."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-3",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() and pivot_table() make DataFrame wider."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt",
+    "title": "Lecture 7",
+    "section": "Make DataFrame Longer with melt()",
+    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt()\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt-1",
+    "title": "Lecture 7",
+    "section": "Make DataFrame Longer with melt()",
+    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt-2",
+    "title": "Lecture 7",
+    "section": "Make DataFrame Longer with melt()",
+    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the name of the variable whose values are taken from column names in a given wide-form DataFrame.\nvalue_name is a string for the name of the variable whose values are taken from the values in a given wide-form DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-longer-with-melt-3",
+    "title": "Lecture 7",
+    "section": "Make DataFrame Longer with melt()",
+    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\",\n          value_vars = ['Miami', 'Rochester'])\n)\n\n\nmelt() can take a few parameters:\n\nvalue_vars parameter allows us to select which specific columns we want to “melt”.\nBy default, it will melt all the columns not specified in the id_vars parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-wider-with-pivot",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#make-dataframe-wider-with-pivot",
+    "title": "Lecture 7",
+    "section": "Make DataFrame Wider with pivot()",
+    "text": "Make DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  \n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-4",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\n\nThe pivot() method can also take a list of variable names for the index parameter."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-5",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-5",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-6",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#reshaping-dataframes-6",
+    "title": "Lecture 7",
+    "section": "Reshaping DataFrames",
+    "text": "Reshaping DataFrames\nLet’s do Part 1 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-1",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\nSometimes, one data set is scattered across multiple files.\n\nThe size of the files can be huge.\nThe data collection process can be scattered across time and space.\nE.g., DataFrame for county-level data and DataFrame for geographic information, such as longitude and latitude.\n\nSometimes we want to combine two or more DataFrames based on common data values in those DataFrames.\n\nThis task is known in the database world as performing a “join.”\nWe can do this with the merge() method in Pandas."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-2",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames",
+    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of tables are called keys."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3']\n})\n\n\n\nThe colored column represents the “key” variable.\nThe grey column represents the “value” column."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-1",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nInner Join\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n# the default value for 'how' is 'inner'\n# so it doesn't actually need to be specified\nmerge_inner = pd.merge(x, y, on='key', how='inner')\nmerge_inner_x = x.merge(y, on='key', how='inner')\nmerge_inner_x_how = x.merge(y, on='key')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-2",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nLeft Join\n\nA left join keeps all observations in x.\n\n\n\n\nmerge_left = pd.merge(x, y, on='key', how='left')\nmerge_left_x = x.merge(y, on='key', how='left')\n\nThe most commonly used join is the left join."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-3",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nRight Join\n\nA right join keeps all observations in y.\n\n\n\n\nmerge_right = pd.merge(x, y, on='key', how='right')\nmerge_right_x = x.merge(y, on='key', how='right')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-4",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nOuter (Full) Join\n\nA full join keeps all observations in x and y.\n\n\n\n\nmerge_outer = pd.merge(x, y, on='key', how='outer')\nmerge_outer_x = x.merge(y, on='key', how='outer')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-5",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-5",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDuplicate keys: one-to-many\n\nOne DataFrame has duplicate keys (a one-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n    'key':[1, 2, 2, 3],\n    'val_x':['x1', 'x2', 'x3', 'x4']})\n\ny = pd.DataFrame({\n    'key':[1, 2],\n    'val_y':['y1', 'y2'] })\none_to_many = x.merge(y, on='key', \n                         how='left')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-6",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-6",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDuplicate keys: many-to-many\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-7",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-7",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nDefining the key columns\n\n\nIf the left and right columns do not have the same name for the key variables, we can use the left_on and right_on parameters instead.\n\n\n\n\nx = pd.DataFrame({\n  'key_x': [1, 2, 3],\n  'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n  'key_y': [1, 2],\n  'val_y': ['y1', 'y2'] })\n\nkeys_xy = \n  x.merge(y, left_on = 'key_x', \n             right_on = 'key_y', \n             how = 'left')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-8",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#joining-dataframes-with-merge-8",
+    "title": "Lecture 7",
+    "section": "Joining DataFrames with merge()",
+    "text": "Joining DataFrames with merge()\nLet’s do Part 2 of Classwork 7!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-1",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\n\n\nConcatenation can be thought of as appending a row or column to our data.\n\nThis approach is possible if our data was split into parts or if we performed a calculation that we want to append to our existing data set.\n\nLet’s consider the following example DataFrames:\n\ndf1 = pd.read_csv('https://bcdanl.github.io/data/concat_1.csv')\ndf2 = pd.read_csv('https://bcdanl.github.io/data/concat_2.csv')\ndf3 = pd.read_csv('https://bcdanl.github.io/data/concat_3.csv')\n\nWe will be working with .index and .columns in this Section.\n\ndf1.index\ndf1.columns"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-2",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\nAdd Rows\n\n\nConcatenating the DataFrames on top of each other uses the concat() method.\n\nAll of the DataFrames to be concatenated are passed in a list.\n\n\nrow_concat = pd.concat([df1, df2, df3])\nrow_concat"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-3",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\nAdd Rows\n\n\nLet’s consider a new Series and concatenate it with df1:\n\n# create a new row of data\nnew_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])\nnew_row_series\n\n\n# attempt to add the new row to a dataframe\ndf = pd.concat([df1, new_row_series])\ndf\n\nNot only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.\nWhy?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-4",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-4",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\nAdd Rows\n\n\nTo fix the problem, we need turn our Series into a DataFrame.\n\nThis data frame contains one row of data, and the column names are the ones the data will bind to.\n\n\nnew_row_df = pd.DataFrame(\n  # note the double brackets to create a \"row\" of data\n  data =[[\"n1\", \"n2\", \"n3\", \"n4\"]],\n  columns =[\"A\", \"B\", \"C\", \"D\"],\n)\n\ndf = pd.concat([df1, new_row_df])"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-5",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-5",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\nAdd Columns\n\n\nConcatenating columns is very similar to concatenating rows.\n\nThe main difference is the axis parameter in the concat() method.\nThe default value of axis is 0 (or axis = \"index\"), so it will concatenate data in a row-wise fashion.\nIf we pass axis = 1 (or axis = \"columns\") to the function, it will concatenate data in a column-wise manner.\n\n\ncol_concat = pd.concat([df1, df2, df3], axis = \"columns\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-6",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-6",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\nAdd Columns\n\n\nWe can use ignore_index=True to reset the column indices, so that we do not have duplicated column names.\n\npd.concat([df1, df2, df3], axis=\"columns\", ignore_index=True)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices",
+    "title": "Lecture 7",
+    "section": "Concatenate with Different Indices",
+    "text": "Concatenate with Different Indices\n\n\nWhat would happen when the row and column indices are not aligned?\nLet’s modify our DataFrames for the next few examples.\n\n# rename the columns of our dataframes\ndf1.columns = ['A', 'B', 'C', 'D']\ndf2.columns = ['E', 'F', 'G', 'H']\ndf3.columns = ['A', 'C', 'F', 'H']\n\nIf we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.\n\nrow_concat = pd.concat([df1, df2, df3])"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices-1",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices-1",
+    "title": "Lecture 7",
+    "section": "Concatenate with Different Indices",
+    "text": "Concatenate with Different Indices\n\n\nWe can set join = 'inner' to keep only the columns that are shared among the data sets.\n\npd.concat([df1, df2, df3], join ='inner')\n\nIf we use the DataFrames that have columns in common, only the columns that all of them share will be returned.\n\npd.concat([df1, df3], join ='inner',  ignore_index =False)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices-2",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices-2",
+    "title": "Lecture 7",
+    "section": "Concatenate with Different Indices",
+    "text": "Concatenate with Different Indices\n\n\nLet’s modify our DataFrames further.\n\n# re-indexing the rows of our DataFrames\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices-3",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#concatenate-with-different-indices-3",
+    "title": "Lecture 7",
+    "section": "Concatenate with Different Indices",
+    "text": "Concatenate with Different Indices\n\n\nWhen we concatenate along axis=\"columns\" (axis=1), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.\n\ncol_concat = pd.concat([df1, df2, df3], axis=\"columns\")\n\nJust as we did when we concatenated in a row-wise manner, we can choose to keep the results only when there are matching indices by using join=\"inner\".\n\npd.concat([df1, df3], axis =\"columns\", join='inner')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-7",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#data-concatenation-7",
+    "title": "Lecture 7",
+    "section": "Data Concatenation",
+    "text": "Data Concatenation\nLet’s do Part 3 of Classwork 7!"
   }
 ]
