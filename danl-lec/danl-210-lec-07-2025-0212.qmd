@@ -179,7 +179,7 @@ nba_player_name_team
 
 - In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
   - `DataFrame[ ['var_1', 'var_2', ... ] ]`
-
+  - This is also how we can relocate variables by the order specified in the list.
 
 
 ## Selecting Multiple Variables with `select_dtypes()`

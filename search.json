@@ -3903,7 +3903,7 @@
     "href": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-multiple-variables-by-their-names",
     "title": "Lecture 7",
     "section": "Selecting Multiple Variables by their Names",
-    "text": "Selecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]"
+    "text": "Selecting Multiple Variables by their Names\nnba_player_name_team = nba[ ['Name', 'Team'] ]\nnba_player_name_team\n\nIn order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.\n\nDataFrame[ ['var_1', 'var_2', ... ] ]\nThis is also how we can relocate variables by the order specified in the list."
   },
   {
     "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#selecting-multiple-variables-with-select_dtypes",
