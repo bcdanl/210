@@ -481,7 +481,7 @@ nba.sort_values(by = ["Name"])
 :::{.nonincremental}
 
 
-- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort the `DataFrame`.
+- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort observations.
 
 :::
 
@@ -607,11 +607,9 @@ nba.sort_index(ascending = False)
 
 ::::
 
-- How can we return it to its original form of `DataFrame`?
-
-- Our `nba` `DataFrame` still has its numeric index labels.
-
-- `sort_index()` sorts observations by their index labels (row names).
+- If we assigned `nba` to `nba` DataFrame sorted by "Name", how can we return it to its original form of `DataFrame`?
+  - Our `nba` `DataFrame` still has its numeric index labels.
+  - `sort_index()` sorts observations by their index labels (row names).
 
 
 
@@ -807,7 +805,7 @@ nba.iloc[0:10:2] # every other rows
 
 ## Pandas Basics
 
-Let's do [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+Let's do Questions 4-7 in [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
 
 
 

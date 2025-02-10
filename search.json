@@ -2013,7 +2013,7 @@
     "href": "danl-lec/danl-210-lec-06-2025-0210.html#pandas-basics-5",
     "title": "Lecture 6",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLet’s do Classwork 5!"
+    "text": "Pandas Basics\nLet’s do Questions 4-7 in Classwork 5!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#pandas-basics-6",
@@ -3273,7 +3273,7 @@
     "href": "danl-lec/danl-210-lec-06-2025-0210.html#sorting-by-a-single-variable-with-sort_values",
     "title": "Lecture 6",
     "section": "Sorting by a Single Variable with sort_values()",
-    "text": "Sorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort the DataFrame."
+    "text": "Sorting by a Single Variable with sort_values()\n# The two lines below are equivalent\nnba.sort_values([\"Name\"])\nnba.sort_values(by = [\"Name\"])\n\n\nThe sort_values() method’s first parameter, by, accepts the variables that pandas should use to sort observations."
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#sorting-by-a-single-variable-with-sort_values-1",
@@ -3329,7 +3329,7 @@
     "href": "danl-lec/danl-210-lec-06-2025-0210.html#sorting-by-row-index-with-sort_index",
     "title": "Lecture 6",
     "section": "Sorting by Row Index with sort_index()",
-    "text": "Sorting by Row Index with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nHow can we return it to its original form of DataFrame?\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
+    "text": "Sorting by Row Index with sort_index()\n\n\n# Below lines are equivalent\nnba.sort_index()\nnba.sort_index(ascending = True)\n\nnba.sort_index(ascending = False)\n\n\n\nIf we assigned nba to nba DataFrame sorted by “Name”, how can we return it to its original form of DataFrame?\n\nOur nba DataFrame still has its numeric index labels.\nsort_index() sorts observations by their index labels (row names)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#relocating-variables-with-sort_index",
