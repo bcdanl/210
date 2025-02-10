@@ -190,7 +190,7 @@ nba
 
 
 ## Loading Data
-### Google Drive on Google Colab
+### Mounting Google Drive on Google Colab
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -272,10 +272,10 @@ show(nba)
 
 - The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
 
-- A method (`DataFrame.method()`) is a function that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
+- A method (`DataFrame.METHOD()`) is a function that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
   - e.g., `nba.info()`
 
-- An attribute (`DataFrame.attribute`) is a property that provides information about the `DataFrame`'s structure or content without modifying it. 
+- An attribute (`DataFrame.ATTRIBUTE`) is a property that provides information about the `DataFrame`'s structure or content without modifying it. 
   - e.g., `nba.dtype`
 
 
@@ -332,11 +332,11 @@ nba.describe(include='all')
 ## Selecting a Variable by its Name
 
 ```{.python}
-nba_player_name_1 = nba['Name']   # Series
-nba_player_name_1
+nba_player_name_s = nba['Name']   # Series
+nba_player_name_s
 
-nba_player_name_2 = nba[ ['Name'] ]   # DataFrame
-nba_player_name_2
+nba_player_name_df = nba[ ['Name'] ]   # DataFrame
+nba_player_name_df
 ```
 
 - If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.

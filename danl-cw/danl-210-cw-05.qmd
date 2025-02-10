@@ -29,7 +29,6 @@ The `nfl.csv` file contains a list of players in the National Football League wi
 ```{python}
 #| echo: true
 import pandas as pd
-nfl = pd.read_csv("https://bcdanl.github.io/data/nfl.csv")
 ```
 
 <!-- <div style="position: relative;"> -->

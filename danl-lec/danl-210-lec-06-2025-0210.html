@@ -555,7 +555,7 @@ Byeong-Hak Choe
 </section>
 <section id="loading-data-1" class="slide level2">
 <h2>Loading Data</h2>
-<h3 id="google-drive-on-google-colab">Google Drive on Google Colab</h3>
+<h3 id="mounting-google-drive-on-google-colab">Mounting Google Drive on Google Colab</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive, files</span>
@@ -631,11 +631,11 @@ Byeong-Hak Choe
 <h2>DataFrame Terminologies: Dot Operators, Methods and Attributes</h2>
 <ul>
 <li class="fragment"><p>The dot operator (<code>DataFrame.</code>) is used for an <strong>attribute</strong> or a <strong>method</strong> on objects.</p></li>
-<li class="fragment"><p>A method (<code>DataFrame.method()</code>) is a function that we can call on a <code>DataFrame</code> to perform operations, modify data, or derive insights.</p>
+<li class="fragment"><p>A method (<code>DataFrame.METHOD()</code>) is a function that we can call on a <code>DataFrame</code> to perform operations, modify data, or derive insights.</p>
 <ul>
 <li class="fragment">e.g., <code>nba.info()</code></li>
 </ul></li>
-<li class="fragment"><p>An attribute (<code>DataFrame.attribute</code>) is a property that provides information about the <code>DataFrame</code>’s structure or content without modifying it.</p>
+<li class="fragment"><p>An attribute (<code>DataFrame.ATTRIBUTE</code>) is a property that provides information about the <code>DataFrame</code>’s structure or content without modifying it.</p>
 <ul>
 <li class="fragment">e.g., <code>nba.dtype</code></li>
 </ul></li>
@@ -685,11 +685,11 @@ Byeong-Hak Choe
 </section>
 <section id="selecting-a-variable-by-its-name" class="slide level2">
 <h2>Selecting a Variable by its Name</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>nba_player_name_1 <span class="op">=</span> nba[<span class="st">'Name'</span>]   <span class="co"># Series</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>nba_player_name_1</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>nba_player_name_s <span class="op">=</span> nba[<span class="st">'Name'</span>]   <span class="co"># Series</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>nba_player_name_s</span>
 <span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>nba_player_name_2 <span class="op">=</span> nba[ [<span class="st">'Name'</span>] ]   <span class="co"># DataFrame</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>nba_player_name_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-4"><a href="#cb9-4"></a>nba_player_name_df <span class="op">=</span> nba[ [<span class="st">'Name'</span>] ]   <span class="co"># DataFrame</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>nba_player_name_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">If we want only a specific variable from a <code>DataFrame</code>, we can access the variable with its name using squared brackets, <code>[ ]</code>.
 <ul>
@@ -1965,8 +1965,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-b5d45e3126b1eb1c5050" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b5d45e3126b1eb1c5050">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e984e8cc46cf096580e1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e984e8cc46cf096580e1">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
