@@ -112,7 +112,7 @@ How can we sort the `DataFrame` first by `Team` in alphabetical order and then b
 
 # Question 6
 
-How can we set the `DataFrame` index to store the player names?
+How do we set the player names as the `DataFrame` index?
 
 *Answer:*
 ```{python}
