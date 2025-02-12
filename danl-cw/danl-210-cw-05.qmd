@@ -22,7 +22,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 </p>
 
 
-The `nfl.csv` file contains a list of players in the National Football League with similar `Name`, `Team`, `Position`, `Birthday`, and `Salary` variables in the `nba.csv` file. 
+The `nfl.csv` file (with its pathname `https://bcdanl.github.io/data/nfl.csv`) contains a list of players in the National Football League with similar `Name`, `Team`, `Position`, `Birthday`, and `Salary` variables in the `nba.csv` file. 
 
 
 
