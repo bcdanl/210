@@ -1985,7 +1985,7 @@
     "href": "danl-lec/danl-210-lec-06-2025-0210.html#pandas-basics-1",
     "title": "Lecture 6",
     "section": "Pandas Basics",
-    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame with read_csv()\nGetting a Summary with info() and describe()\nSelecting Variables with []\nCounting Values with value_counts(), nunique(), and count()\nSorting with sort_values() and sort_index()\nIndexing with set_index() and reset_index()\nLocating Observations and Values with loc[] and iloc[]\nMathematical & Vectorized Operations\nAdding, Removing, Renaming, and Relocating Variables\nConverting Data Types with .astype()\nFiltering Observations"
+    "text": "Pandas Basics\nLearning Objectives\n\nDealing with Missing Values\nDealing wit Duplicates\nReshaping DataFrames with .melt() and .pivot()\nJoining DataFrames with .merge()\nConcatenating DataFrames"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#pandas-basics-2",
@@ -4723,5 +4723,12 @@
     "title": "Lecture 7",
     "section": "DataFrame Terminologies",
     "text": "DataFrame Terminologies\nDot Operators, Methods, and Attributes\nDot operator\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\n\n\n\nMethod\n\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., nba.info()\n\n\n\nAttribute\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., nba.dtype"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#pandas-basics",
+    "href": "danl-lec/danl-210-lec-06-2025-0210.html#pandas-basics",
+    "title": "Lecture 6",
+    "section": "Pandas Basics",
+    "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame with read_csv()\nGetting a Summary with info() and describe()\nSelecting Variables with []\nCounting Values with value_counts(), nunique(), and count()\nSorting with sort_values() and sort_index()\nIndexing with set_index() and reset_index()\nLocating Observations and Values with loc[] and iloc[]\nMathematical & Vectorized Operations\nAdding, Removing, Renaming, and Relocating Variables\nConverting Data Types with .astype()\nFiltering Observations"
   }
 ]
