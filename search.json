@@ -4730,5 +4730,19 @@
     "title": "Lecture 6",
     "section": "Pandas Basics",
     "text": "Pandas Basics\nLearning Objectives\n\nLoading DataFrame with read_csv()\nGetting a Summary with info() and describe()\nSelecting Variables with []\nCounting Values with value_counts(), nunique(), and count()\nSorting with sort_values() and sort_index()\nIndexing with set_index() and reset_index()\nLocating Observations and Values with loc[] and iloc[]\nMathematical & Vectorized Operations\nAdding, Removing, Renaming, and Relocating Variables\nConverting Data Types with .astype()\nFiltering Observations"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#getting-a-summary-of-a-dataframe",
+    "title": "Lecture 7",
+    "section": "Getting a Summary of a DataFrame",
+    "text": "Getting a Summary of a DataFrame\n\n\nnba.info()    # method\n\nnba.shape     # attribute\nnba.dtypes    # attribute\nnba.columns   # attribute\nnba.count()   # method\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nData type of each variable (.dtypes)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-07-2025-0212.html#nba-dataframe",
+    "href": "danl-lec/danl-210-lec-07-2025-0212.html#nba-dataframe",
+    "title": "Lecture 7",
+    "section": "nba DataFrame",
+    "text": "nba DataFrame\n\n\nLet’s read the nba.csv file as nba:\n\n\n# Below is to import the pandas library as pd\nimport pandas as pd \n\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table  \ndata_table.enable_dataframe_formatter()\n\n# Below is to read nba.csv as nba DataFrame\nnba = pd.read_csv(\"https://bcdanl.github.io/data/nba.csv\",\n                  parse_dates = [\"Birthday\"])"
   }
 ]

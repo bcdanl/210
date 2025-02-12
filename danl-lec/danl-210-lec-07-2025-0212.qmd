@@ -56,8 +56,30 @@ theme_set(theme_fivethirtyeight()+
 ```
 
 
+## `nba` DataFrame
+:::{.nonincremental}
+- Let's read the **nba.csv** file as `nba`:
+
+:::
+
+```{.python}
+# Below is to import the pandas library as pd
+import pandas as pd 
+
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table  
+data_table.enable_dataframe_formatter()
+
+# Below is to read nba.csv as nba DataFrame
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+
+```
+
+
 
 # **Getting a Summary of Data** {background-color="#1c4982"}
+
 
 ## DataFrame Terminologies: Variables, Observations, and Values
 
@@ -271,29 +293,6 @@ Let's do Questions 1-3 in [**Classwork 5**](https://bcdanl.github.io/210/danl-cw
 
 # **Sorting Methods** {background-color="#1c4982"}
 
-## Sorting Methods
-:::{.nonincremental}
-- Let's read `nba.csv` as `nba`.
-
-```{.python}
-# Below is to import the pandas library as pd
-import pandas as pd 
-
-# Below is for an interactive display of DataFrame in Colab
-from google.colab import data_table  
-data_table.enable_dataframe_formatter()
-
-# Below is to read nba.csv as nba DataFrame
-nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
-                  parse_dates = ["Birthday"])
-                  
-# Below is to view the nba DataFrame and to get a summary of it
-nba
-nba.info()
-nba.describe( include="all" )
-```
-
-:::
 
 ## Sorting by a Single Variable with `sort_values()`
 

@@ -423,6 +423,24 @@ Byeong-Hak Choe
 
   <p class="date">February 12, 2025</p>
 </section>
+<section id="nba-dataframe" class="slide level2">
+<h2><code>nba</code> DataFrame</h2>
+<div>
+<ul>
+<li>Let’s read the <strong>nba.csv</strong> file as <code>nba</code>:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Below is to import the pandas library as pd</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table  </span>
+<span id="cb1-6"><a href="#cb1-6"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># Below is to read nba.csv as nba DataFrame</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>nba <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/nba.csv"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>                  parse_dates <span class="op">=</span> [<span class="st">"Birthday"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section>
 <section id="getting-a-summary-of-data" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1><strong>Getting a Summary of Data</strong></h1>
@@ -472,12 +490,12 @@ Byeong-Hak Choe
 <h2>Getting a Summary of a <code>DataFrame</code> with <code>.info()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>nba.info()    <span class="co"># method</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>nba.info()    <span class="co"># method</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>nba.shape     <span class="co"># attribute</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>nba.dtypes    <span class="co"># attribute</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>nba.columns   <span class="co"># attribute</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>nba.count()   <span class="co"># method</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>nba.shape     <span class="co"># attribute</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>nba.dtypes    <span class="co"># attribute</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>nba.columns   <span class="co"># attribute</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>nba.count()   <span class="co"># method</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -496,8 +514,8 @@ Byeong-Hak Choe
 </section>
 <section id="getting-a-summary-of-a-dataframe-with-.describe" class="slide level2">
 <h2>Getting a Summary of a <code>DataFrame</code> with <code>.describe()</code></h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>nba.describe()</span>
-<span id="cb3-2"><a href="#cb3-2"></a>nba.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>nba.describe()</span>
+<span id="cb4-2"><a href="#cb4-2"></a>nba.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>.describe()</code> method generates <strong>descriptive statistics</strong> that summarize the central tendency, dispersion, and distribution of each variable.
 <ul>
@@ -512,11 +530,11 @@ Byeong-Hak Choe
 </section>
 <section id="selecting-a-variable-by-its-name" class="slide level2">
 <h2>Selecting a Variable by its Name</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>nba_player_name_s <span class="op">=</span> nba[<span class="st">'Name'</span>]   <span class="co"># Series</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>nba_player_name_s</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>nba_player_name_df <span class="op">=</span> nba[ [<span class="st">'Name'</span>] ]   <span class="co"># DataFrame</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>nba_player_name_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>nba_player_name_s <span class="op">=</span> nba[<span class="st">'Name'</span>]   <span class="co"># Series</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>nba_player_name_s</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a>nba_player_name_df <span class="op">=</span> nba[ [<span class="st">'Name'</span>] ]   <span class="co"># DataFrame</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>nba_player_name_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">If we want only a specific variable from a <code>DataFrame</code>, we can access the variable with its name using squared brackets, <code>[ ]</code>.
 <ul>
@@ -527,8 +545,8 @@ Byeong-Hak Choe
 </section>
 <section id="selecting-multiple-variables-by-their-names" class="slide level2">
 <h2>Selecting Multiple Variables by their Names</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>nba_player_name_team <span class="op">=</span> nba[ [<span class="st">'Name'</span>, <span class="st">'Team'</span>] ]</span>
-<span id="cb5-2"><a href="#cb5-2"></a>nba_player_name_team</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>nba_player_name_team <span class="op">=</span> nba[ [<span class="st">'Name'</span>, <span class="st">'Team'</span>] ]</span>
+<span id="cb6-2"><a href="#cb6-2"></a>nba_player_name_team</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
 <ul>
@@ -539,11 +557,11 @@ Byeong-Hak Choe
 </section>
 <section id="selecting-multiple-variables-with-select_dtypes" class="slide level2">
 <h2>Selecting Multiple Variables with <code>select_dtypes()</code></h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># To include only string variables</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>nba.select_dtypes(include <span class="op">=</span> <span class="st">"object"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># To exclude string and integer variables</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>nba.select_dtypes(exclude <span class="op">=</span> [<span class="st">"object"</span>, <span class="st">"int"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># To include only string variables</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>nba.select_dtypes(include <span class="op">=</span> <span class="st">"object"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># To exclude string and integer variables</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>nba.select_dtypes(exclude <span class="op">=</span> [<span class="st">"object"</span>, <span class="st">"int"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We can use the <code>select_dtypes()</code> method to select columns based on their data types.
 <ul>
@@ -560,8 +578,8 @@ Byeong-Hak Choe
 <h2>Counting with <code>.count()</code></h2>
 <div class="columns">
 <div class="column" style="width:100%;">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>nba[<span class="st">'Salary'</span>].count()</span>
-<span id="cb7-2"><a href="#cb7-2"></a>nba[[<span class="st">'Salary'</span>]].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>nba[<span class="st">'Salary'</span>].count()</span>
+<span id="cb8-2"><a href="#cb8-2"></a>nba[[<span class="st">'Salary'</span>]].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -572,9 +590,9 @@ Byeong-Hak Choe
 <h2>Counting with <code>.value_counts()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>nba[<span class="st">'Team'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>nba[<span class="st">'Team'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>nba[[<span class="st">'Team'</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>nba[[<span class="st">'Team'</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -585,9 +603,9 @@ Byeong-Hak Choe
 <h2>Counting with <code>.nunique()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>nba[[<span class="st">'Team'</span>]].nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>nba[[<span class="st">'Team'</span>]].nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>nba.nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>nba.nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -602,29 +620,6 @@ Byeong-Hak Choe
 <section id="sorting-methods" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1><strong>Sorting Methods</strong></h1>
 
-</section>
-<section id="sorting-methods-1" class="slide level2">
-<h2>Sorting Methods</h2>
-<div>
-<ul>
-<li>Let’s read <code>nba.csv</code> as <code>nba</code>.</li>
-</ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Below is to import the pandas library as pd</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table  </span>
-<span id="cb12-6"><a href="#cb12-6"></a>data_table.enable_dataframe_formatter()</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Below is to read nba.csv as nba DataFrame</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>nba <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/nba.csv"</span>,</span>
-<span id="cb12-10"><a href="#cb12-10"></a>                  parse_dates <span class="op">=</span> [<span class="st">"Birthday"</span>])</span>
-<span id="cb12-11"><a href="#cb12-11"></a>                  </span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="co"># Below is to view the nba DataFrame and to get a summary of it</span></span>
-<span id="cb12-13"><a href="#cb12-13"></a>nba</span>
-<span id="cb12-14"><a href="#cb12-14"></a>nba.info()</span>
-<span id="cb12-15"><a href="#cb12-15"></a>nba.describe( include<span class="op">=</span><span class="st">"all"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="sorting-by-a-single-variable-with-sort_values" class="slide level2">
 <h2>Sorting by a Single Variable with <code>sort_values()</code></h2>
@@ -1795,8 +1790,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-1c1916143ed589919ff5" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1c1916143ed589919ff5">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-34b6d424a7f6e6ebeeae" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-34b6d424a7f6e6ebeeae">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
