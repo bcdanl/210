@@ -1957,7 +1957,7 @@
     "href": "danl-lec/danl-210-lec-05-2025-0203.html#installing-modules-packages-and-libraries",
     "title": "Lecture 5",
     "section": "Installing Modules, Packages, and Libraries",
-    "text": "Installing Modules, Packages, and Libraries\npip tool\n\nTo install a library LIBRARY on your Google Colab or Anaconda Python, run the following:\n\npip install LIBRARY\n\nQ. Classwork 4.8"
+    "text": "Installing Modules, Packages, and Libraries\npip tool\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY\n\n\n\nQ. Classwork 4.8"
   },
   {
     "objectID": "danl-lec/danl-210-lec-06-2025-0210.html#workflow-for-file-management-1",

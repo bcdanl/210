@@ -1250,11 +1250,24 @@ from LIBRARY import FUNCTION, PACKAGE, MODULE
 ## Installing Modules, Packages, and Libraries
 ### `pip` tool
 
-- To install a library `LIBRARY` on your Google Colab or Anaconda Python, run the following:
+:::: {.columns}
+::: {.column width="50%"}
+- To install a library `LIBRARY` on your Google Colab, run:
+
+```{.python}
+!pip install LIBRARY
+```
+
+:::
+::: {.column width="50%"}
+
+- To install a library `LIBRARY` on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:
 
 ```{.python}
 pip install LIBRARY
 ```
 
+:::
+::::
 
 - **Q**. [**Classwork 4.8**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-8){target="_blank"}
