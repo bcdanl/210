@@ -99,13 +99,13 @@ theme_set(theme_fivethirtyeight()+
 
 - Loading `DataFrame` with `read_csv()`
 - Getting a Summary with `info()` and `describe()`
-- Selecting Variables with `[]`
+- Selecting and Relocating Variables with `[]`
 - Counting Values with `value_counts()`, `nunique()`, and `count()`
 - Sorting with `sort_values()` and `sort_index()`
 - Indexing with `set_index()` and `reset_index()`
 - Locating Observations and Values  with `loc[]` and `iloc[]`
 - Mathematical & Vectorized Operations
-- Adding, Removing, Renaming, and Relocating Variables
+- Adding, Removing, and Renaming Variables
 - Converting Data Types with `.astype()`
 - Filtering Observations
 
