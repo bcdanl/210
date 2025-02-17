@@ -5639,7 +5639,7 @@
     "href": "danl-lec/danl-210-lec-09-2025-0217.html#converting-data-types-with-the-astype-method-6",
     "title": "Lecture 9",
     "section": "Converting Data Types with the astype() method",
-    "text": "Converting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\n\nPandas includes a special data type called a category,\n\nIt is ideal for a variable consisting of a small number of unique values relative to its total size.\nE.g., gender, weekdays, blood types, planets, and income groups."
+    "text": "Converting Data Types with the astype() method\nemp[\"Gender\"] = emp[\"Gender\"].astype(\"category\")\n\nPandas includes a special data type called a category,\n\nIt is ideal for a variable consisting of a small number of unique values relative to its total number of values.\nE.g., gender, weekdays, blood types, planets, and income groups."
   },
   {
     "objectID": "danl-lec/danl-210-lec-09-2025-0217.html#converting-data-types-with-the-pd.to_datetime-method",

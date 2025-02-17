@@ -331,8 +331,7 @@ emp["Gender"] = emp["Gender"].astype("category")
 ```
 
 - Pandas includes a special data type called a `category`, 
-  - It is ideal for a variable consisting of a small number of unique values relative
-to its total size. 
+  - It is ideal for a variable consisting of a small number of unique values relative to its total number of values. 
   - E.g., gender, weekdays, blood types, planets, and income groups. 
 
 
