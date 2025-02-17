@@ -5646,14 +5646,14 @@
     "href": "danl-lec/danl-210-lec-09-2025-0217.html#converting-data-types-with-the-pd.to_datetime-method",
     "title": "Lecture 9",
     "section": "Converting Data Types with the pd.to_datetime() method",
-    "text": "Converting Data Types with the pd.to_datetime() method\n# Below two are equivalent:\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\nemp[\"Start Date\"] = emp[\"Start Date\"].astype('datetime64')\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
+    "text": "Converting Data Types with the pd.to_datetime() method\n# Below two are equivalent:\nemp[\"Start Date\"] = pd.to_datetime(emp[\"Start Date\"])\nemp[\"Start Date\"] = emp[\"Start Date\"].astype('datetime64[ns]')\n\nThe pd.to_datetime() function is used to convert a Series, DataFrame, or a single variable of a DataFrame from its current data type into datetime format."
   },
   {
     "objectID": "danl-lec/danl-210-lec-09-2025-0217.html#converting-data-types-with-the-astype-method-7",
     "href": "danl-lec/danl-210-lec-09-2025-0217.html#converting-data-types-with-the-astype-method-7",
     "title": "Lecture 9",
     "section": "Converting Data Types with the astype() method",
-    "text": "Converting Data Types with the astype() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0)\nemp = emp.astype({'Mgmt': 'bool', \n                  'Salary': 'int',\n                  'Gender': 'category',\n                  'Start Date': 'datetime64'})\n\nWe can provide a dictionary of variable-type pairs to astype()."
+    "text": "Converting Data Types with the astype() method\nemp = pd.read_csv(\"https://bcdanl.github.io/data/employment.csv\")\n\nemp[\"Salary\"] = emp[\"Salary\"].fillna(0)\nemp = emp.astype({'Mgmt': 'bool', \n                  'Salary': 'int',\n                  'Gender': 'category',\n                  'Start Date': 'datetime64[ns]',\n                  'Team': 'category'})\n\nWe can provide a dictionary of variable-type pairs to astype()."
   },
   {
     "objectID": "danl-lec/danl-210-lec-09-2025-0217.html#pandas-basics",
@@ -5737,14 +5737,14 @@
     "href": "danl-lec/danl-210-lec-09-2025-0217.html#filtering-with-the-between-method",
     "title": "Lecture 9",
     "section": "Filtering with the between() method",
-    "text": "Filtering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[ between_90k_and_100k ]\n\nA slightly cleaner solution is to use a method called between().\n\nIt returns a Boolean Series where True denotes that an observation’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
+    "text": "Filtering with the between() method\nbetween_90k_and_100k = emp[\"Salary\"].between(90000, 100000)\nemp[ between_90k_and_100k ]\n\nA slightly cleaner solution is to use a method called between().\n\nIt returns a Boolean Series where True denotes that an observation’s value falls between the specified interval.\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is also inclusive."
   },
   {
     "objectID": "danl-lec/danl-210-lec-09-2025-0217.html#filtering-with-the-between-method-1",
     "href": "danl-lec/danl-210-lec-09-2025-0217.html#filtering-with-the-between-method-1",
     "title": "Lecture 9",
     "section": "Filtering with the between() method",
-    "text": "Filtering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[ name_starts_with_t ]\n\nWe can also apply the between() method to string variables."
+    "text": "Filtering with the between() method\nname_starts_with_t = emp[\"First Name\"].between(\"T\", \"U\")\nemp[ name_starts_with_t ]\n\nWe can also apply the between() method to string variables.\n\nThe first argument, the lower bound, is inclusive, and the second argument, the upper bound, is exclusive."
   },
   {
     "objectID": "danl-lec/danl-210-lec-09-2025-0217.html#filtering-by-a-condition-with-the-query-method",

@@ -643,7 +643,7 @@ Byeong-Hak Choe
 <h2>Converting Data Types with the <code>pd.to_datetime()</code> method</h2>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Below two are equivalent:</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>emp[<span class="st">"Start Date"</span>] <span class="op">=</span> pd.to_datetime(emp[<span class="st">"Start Date"</span>])</span>
-<span id="cb19-3"><a href="#cb19-3"></a>emp[<span class="st">"Start Date"</span>] <span class="op">=</span> emp[<span class="st">"Start Date"</span>].astype(<span class="st">'datetime64'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3"></a>emp[<span class="st">"Start Date"</span>] <span class="op">=</span> emp[<span class="st">"Start Date"</span>].astype(<span class="st">'datetime64[ns]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>pd.to_datetime()</code> function is used to convert a <code>Series</code>, <code>DataFrame</code>, or a single variable of a <code>DataFrame</code> from its current data type into <code>datetime</code> format.</li>
 </ul>
@@ -656,7 +656,8 @@ Byeong-Hak Choe
 <span id="cb20-4"><a href="#cb20-4"></a>emp <span class="op">=</span> emp.astype({<span class="st">'Mgmt'</span>: <span class="st">'bool'</span>, </span>
 <span id="cb20-5"><a href="#cb20-5"></a>                  <span class="st">'Salary'</span>: <span class="st">'int'</span>,</span>
 <span id="cb20-6"><a href="#cb20-6"></a>                  <span class="st">'Gender'</span>: <span class="st">'category'</span>,</span>
-<span id="cb20-7"><a href="#cb20-7"></a>                  <span class="st">'Start Date'</span>: <span class="st">'datetime64'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-7"><a href="#cb20-7"></a>                  <span class="st">'Start Date'</span>: <span class="st">'datetime64[ns]'</span>,</span>
+<span id="cb20-8"><a href="#cb20-8"></a>                  <span class="st">'Team'</span>: <span class="st">'category'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We can provide a dictionary of variable-type pairs to <code>astype()</code>.</li>
 </ul>
@@ -791,7 +792,7 @@ Byeong-Hak Choe
 <li class="fragment">A slightly cleaner solution is to use a method called <code>between()</code>.
 <ul>
 <li class="fragment">It returns a Boolean Series where <code>True</code> denotes that an observation’s value falls between the specified interval.</li>
-<li class="fragment">The first argument, the lower bound, is <strong>inclusive</strong>, and the second argument, the upper bound, is <strong>exclusive</strong>.</li>
+<li class="fragment">The first argument, the lower bound, is <strong>inclusive</strong>, and the second argument, the upper bound, is also <strong>inclusive</strong>.</li>
 </ul></li>
 </ul>
 </section>
@@ -800,7 +801,10 @@ Byeong-Hak Choe
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>name_starts_with_t <span class="op">=</span> emp[<span class="st">"First Name"</span>].between(<span class="st">"T"</span>, <span class="st">"U"</span>)</span>
 <span id="cb31-2"><a href="#cb31-2"></a>emp[ name_starts_with_t ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">We can also apply the <code>between()</code> method to <em>string</em> variables.</li>
+<li class="fragment">We can also apply the <code>between()</code> method to <em>string</em> variables.
+<ul>
+<li class="fragment">The first argument, the lower bound, is <strong>inclusive</strong>, and the second argument, the upper bound, is <strong>exclusive</strong>.</li>
+</ul></li>
 </ul>
 </section>
 <section id="filtering-by-a-condition-with-the-query-method" class="slide level2">
@@ -1264,8 +1268,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-185d456812fe58cb0a64" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-185d456812fe58cb0a64">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-15cc9ebb33840271e1ae" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-15cc9ebb33840271e1ae">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

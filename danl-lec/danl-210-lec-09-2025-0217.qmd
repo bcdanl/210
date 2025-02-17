@@ -341,7 +341,7 @@ emp["Gender"] = emp["Gender"].astype("category")
 ```{.python}
 # Below two are equivalent:
 emp["Start Date"] = pd.to_datetime(emp["Start Date"])
-emp["Start Date"] = emp["Start Date"].astype('datetime64')
+emp["Start Date"] = emp["Start Date"].astype('datetime64[ns]')
 ```
 
 - The `pd.to_datetime()` function is used to convert a `Series`, `DataFrame`, or a single variable of a `DataFrame` from its current data type into `datetime` format. 
@@ -357,7 +357,8 @@ emp["Salary"] = emp["Salary"].fillna(0)
 emp = emp.astype({'Mgmt': 'bool', 
                   'Salary': 'int',
                   'Gender': 'category',
-                  'Start Date': 'datetime64'})
+                  'Start Date': 'datetime64[ns]',
+                  'Team': 'category'})
 ```
 
 - We can provide a dictionary of variable-type pairs to `astype()`.
@@ -524,7 +525,7 @@ emp[ between_90k_and_100k ]
 
 - A slightly cleaner solution is to use a method called `between()`.
   - It returns a Boolean Series where `True` denotes that an observation's value falls between the specified interval.
-  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is **exclusive**.
+  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is also **inclusive**.
 
 
 
@@ -536,6 +537,7 @@ emp[ name_starts_with_t ]
 ```
 
 - We can also apply the `between()` method to *string* variables.
+  - The first argument, the lower bound, is **inclusive**, and the second argument, the upper bound, is **exclusive**.
 
 
 
