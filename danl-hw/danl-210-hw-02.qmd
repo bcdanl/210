@@ -238,7 +238,7 @@ Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and cou
 
 
 ## Question 13
-- Fill missing values in the `Last_Name` variable with "UNKNOWN".
+- Fill missing values in the "Last_Name" variable with "UNKNOWN".
 
 
 *Answer*
@@ -353,7 +353,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2022_ep
   1. All the variables in the DataFrame, `NFL2022_stuffs`;
   2. The variables, `passer`, `receiver`, and `epa`, from the DataFrame, `NFL2022_epa` by joining the two DataFrames.
 
-- In the resulting DataFrame, `NFL2022_stuffs_EPA`, remove observations with `NA` in `passer`.
+- In the resulting DataFrame, `NFL2022_stuffs_EPA`, remove observations with `NA` in `passer` after the join.
 
 
 ```{r}
@@ -431,7 +431,7 @@ rmarkdown::paged_table(trashwheel ,
 |`Name`           |string |Name of the Trash Wheel           |
 |`Month`          |string |Month          |
 |`Year`           |numeric   |Year           |
-|`Date`           |string |Date (Monthly)           |
+|`Date`           |string |Date (Daily)           |
 |`Weight`         |numeric    |Weight in tons         |
 |`Volume`         |numeric    |Volume in cubic yards          |
 |`PlasticBottles` |numeric    |Number of plastic bottles |
@@ -482,7 +482,7 @@ DT::datatable(trashwheel_long)
 
 <br><br><br>
 
-# Part 4. Quarto Blogging
+# Part 4. Jupyter Notebook Blogging
 
 <br>
 

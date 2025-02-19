@@ -6745,7 +6745,7 @@
     "href": "danl-hw/danl-210-hw-02.html#question-13",
     "title": "Homework 2",
     "section": "Question 13",
-    "text": "Question 13\n\nFill missing values in the Last_Name variable with “UNKNOWN”.\n\nAnswer"
+    "text": "Question 13\n\nFill missing values in the “Last_Name” variable with “UNKNOWN”.\n\nAnswer"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-14",
@@ -6766,14 +6766,14 @@
     "href": "danl-hw/danl-210-hw-02.html#question-16",
     "title": "Homework 2",
     "section": "Question 16",
-    "text": "Question 16\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa &lt;- pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the following DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, remove observations with NA in passer.\n\n\n\n\n\n\n\n\nAnswer:"
+    "text": "Question 16\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa &lt;- pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the following DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, remove observations with NA in passer after the join.\n\n\n\n\n\n\n\n\nAnswer:"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description-2",
     "href": "danl-hw/danl-210-hw-02.html#variable-description-2",
     "title": "Homework 2",
     "section": "Variable Description",
-    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nMonth\nstring\nMonth\n\n\nYear\nnumeric\nYear\n\n\nDate\nstring\nDate (Monthly)\n\n\nWeight\nnumeric\nWeight in tons\n\n\nVolume\nnumeric\nVolume in cubic yards\n\n\nPlasticBottles\nnumeric\nNumber of plastic bottles\n\n\nPolystyrene\nnumeric\nNumber of polystyrene items\n\n\nCigaretteButts\nnumeric\nNumber of cigarette butts\n\n\nGlassBottles\nnumeric\nNumber of glass bottles\n\n\nPlasticBags\nnumeric\nNumber of plastic bags\n\n\nWrappers\nnumeric\nNumber of wrappers\n\n\nSportsBalls\nnumeric\nNumber of sports balls\n\n\nHomesPowered\nnumeric\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
+    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nMonth\nstring\nMonth\n\n\nYear\nnumeric\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nnumeric\nWeight in tons\n\n\nVolume\nnumeric\nVolume in cubic yards\n\n\nPlasticBottles\nnumeric\nNumber of plastic bottles\n\n\nPolystyrene\nnumeric\nNumber of polystyrene items\n\n\nCigaretteButts\nnumeric\nNumber of cigarette butts\n\n\nGlassBottles\nnumeric\nNumber of glass bottles\n\n\nPlasticBags\nnumeric\nNumber of plastic bags\n\n\nWrappers\nnumeric\nNumber of wrappers\n\n\nSportsBalls\nnumeric\nNumber of sports balls\n\n\nHomesPowered\nnumeric\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-17",
