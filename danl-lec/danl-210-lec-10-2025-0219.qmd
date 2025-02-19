@@ -262,6 +262,25 @@ emp.query("Salary >= 100000 & `First Name` == 'Douglas'")
 - When using the `query()` method, if we have variable names with spaces, we can wrap the variable names in backtick (`)
 
 
+## Adding a Variable based on a Condition using `np.where()` 
+
+:::{.nonincremental}
+
+- We can use `np.where` from NumPy to add a new variable to a DataFrame based on a condition.
+
+:::
+
+```{.python}
+import numpy as np
+
+# Using np.where to add the 'pass_fail' column
+emp['high_salary'] = np.where(emp['Salary'] >= 100000, 'Yes', 'No')
+```
+
+- We want to add a new variable `high_salary`:
+  - **"Yes"** if `score` is greater than or equal to 100,000.
+  - **"No"** otherwise.
+
 
 ## Pandas Basics
 
