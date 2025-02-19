@@ -388,13 +388,13 @@ emp.dropna(subset = ["Start Date", "Salary"])
 
 
 
-## Dealing with Missing Values: The `dropna()` method with `thresh`
+<!-- ## Dealing with Missing Values: The `dropna()` method with `thresh` -->
 
-```{.python}
-emp.dropna(thresh = 4)
-```
+<!-- ```{.python} -->
+<!-- emp.dropna(thresh = 4) -->
+<!-- ``` -->
 
-- The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.
+<!-- - The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it. -->
 
 
 
@@ -412,8 +412,7 @@ emp.dropna(thresh = 4)
 emp["Team"].duplicated()
 ```
 
-- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a
-variable.
+- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a variable.
 
 
 ## Dealing with Duplicates with the `duplicated()` method
@@ -428,7 +427,7 @@ emp["Team"].duplicated(keep = "last")
   - Its default argument, `"first"`, keeps the first occurrence of each duplicate value.
   - Its argument, `"last"`, keeps the last occurrence of each duplicate value.
 
-- **Q**. How can we keep observations with the first occurrences of a value in the Team variable?
+<!-- - **Q**. How can we keep observations with the first occurrence of a value in the **Team** variable? -->
 
 
 

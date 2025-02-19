@@ -6325,7 +6325,7 @@
     "href": "danl-lec/danl-210-lec-10-2025-0219.html#dealing-with-duplicates-with-the-duplicated-method-1",
     "title": "Lecture 10",
     "section": "Dealing with Duplicates with the duplicated() method",
-    "text": "Dealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value.\n\nQ. How can we keep observations with the first occurrences of a value in the Team variable?"
+    "text": "Dealing with Duplicates with the duplicated() method\nemp[\"Team\"].duplicated(keep = \"first\")\nemp[\"Team\"].duplicated(keep = \"last\")\n~emp[\"Team\"].duplicated()\n\nThe duplicated() method’s keep parameter informs pandas which duplicate occurrence to keep.\n\nIts default argument, \"first\", keeps the first occurrence of each duplicate value.\nIts argument, \"last\", keeps the last occurrence of each duplicate value."
   },
   {
     "objectID": "danl-lec/danl-210-lec-10-2025-0219.html#dealing-with-duplicates-with-the-drop_duplicates-method",

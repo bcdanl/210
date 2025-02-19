@@ -692,13 +692,11 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">We can also pass the <code>subset</code> parameter a list of variables.</li>
 </ul>
-</section>
-<section id="dealing-with-missing-values-the-dropna-method-with-thresh" class="slide level2">
-<h2>Dealing with Missing Values: The <code>dropna()</code> method with <code>thresh</code></h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>emp.dropna(thresh <span class="op">=</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>thresh</code> parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it.</li>
-</ul>
+<!-- ## Dealing with Missing Values: The `dropna()` method with `thresh` -->
+<!-- ```{.python} -->
+<!-- emp.dropna(thresh = 4) -->
+<!-- ``` -->
+<!-- - The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it. -->
 </section></section>
 <section>
 <section id="dealing-with-duplicates" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -712,28 +710,28 @@ Byeong-Hak Choe
 <li>Missing values are a common occurrence in messy data sets, and so are duplicate values.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>emp[<span class="st">"Team"</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>emp[<span class="st">"Team"</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>duplicated()</code> method returns a Boolean <code>Series</code> that identifies duplicates in a variable.</li>
 </ul>
 </section>
 <section id="dealing-with-duplicates-with-the-duplicated-method-1" class="slide level2">
 <h2>Dealing with Duplicates with the <code>duplicated()</code> method</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>emp[<span class="st">"Team"</span>].duplicated(keep <span class="op">=</span> <span class="st">"first"</span>)</span>
-<span id="cb24-2"><a href="#cb24-2"></a>emp[<span class="st">"Team"</span>].duplicated(keep <span class="op">=</span> <span class="st">"last"</span>)</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="op">~</span>emp[<span class="st">"Team"</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>emp[<span class="st">"Team"</span>].duplicated(keep <span class="op">=</span> <span class="st">"first"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>emp[<span class="st">"Team"</span>].duplicated(keep <span class="op">=</span> <span class="st">"last"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="op">~</span>emp[<span class="st">"Team"</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>duplicated()</code> method’s <code>keep</code> parameter informs pandas which duplicate occurrence to keep.
 <ul>
 <li class="fragment">Its default argument, <code>"first"</code>, keeps the first occurrence of each duplicate value.</li>
 <li class="fragment">Its argument, <code>"last"</code>, keeps the last occurrence of each duplicate value.</li>
 </ul></li>
-<li class="fragment"><strong>Q</strong>. How can we keep observations with the first occurrences of a value in the Team variable?</li>
 </ul>
+<!-- - **Q**. How can we keep observations with the first occurrence of a value in the **Team** variable? -->
 </section>
 <section id="dealing-with-duplicates-with-the-drop_duplicates-method" class="slide level2">
 <h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>emp.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>emp.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>drop_duplicates()</code> method removes observations in which all values are equal to those in a previously encountered observations.</li>
 </ul>
@@ -745,20 +743,20 @@ Byeong-Hak Choe
 <li>Below is an example of the <code>drop_duplicates()</code> method:</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Sample DataFrame with duplicate observations</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>data <span class="op">=</span> {</span>
-<span id="cb26-3"><a href="#cb26-3"></a>    <span class="st">'Name'</span>: [<span class="st">'John'</span>, <span class="st">'Anna'</span>, <span class="st">'John'</span>, <span class="st">'Mike'</span>, <span class="st">'Anna'</span>],</span>
-<span id="cb26-4"><a href="#cb26-4"></a>    <span class="st">'Age'</span>: [<span class="dv">28</span>, <span class="dv">23</span>, <span class="dv">28</span>, <span class="dv">32</span>, <span class="dv">23</span>],</span>
-<span id="cb26-5"><a href="#cb26-5"></a>    <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'Paris'</span>, <span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Paris'</span>]</span>
-<span id="cb26-6"><a href="#cb26-6"></a>}</span>
-<span id="cb26-7"><a href="#cb26-7"></a></span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="co"># pd.DataFrame( Series, List, or Dict ) creates a DataFrame</span></span>
-<span id="cb26-9"><a href="#cb26-9"></a>df <span class="op">=</span> pd.DataFrame(data)  </span>
-<span id="cb26-10"><a href="#cb26-10"></a>df_unique <span class="op">=</span> df.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Sample DataFrame with duplicate observations</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>data <span class="op">=</span> {</span>
+<span id="cb25-3"><a href="#cb25-3"></a>    <span class="st">'Name'</span>: [<span class="st">'John'</span>, <span class="st">'Anna'</span>, <span class="st">'John'</span>, <span class="st">'Mike'</span>, <span class="st">'Anna'</span>],</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    <span class="st">'Age'</span>: [<span class="dv">28</span>, <span class="dv">23</span>, <span class="dv">28</span>, <span class="dv">32</span>, <span class="dv">23</span>],</span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'Paris'</span>, <span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Paris'</span>]</span>
+<span id="cb25-6"><a href="#cb25-6"></a>}</span>
+<span id="cb25-7"><a href="#cb25-7"></a></span>
+<span id="cb25-8"><a href="#cb25-8"></a><span class="co"># pd.DataFrame( Series, List, or Dict ) creates a DataFrame</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a>df <span class="op">=</span> pd.DataFrame(data)  </span>
+<span id="cb25-10"><a href="#cb25-10"></a>df_unique <span class="op">=</span> df.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dealing-with-duplicates-with-the-drop_duplicates-method-2" class="slide level2">
 <h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>We can pass the <code>drop_duplicates()</code> method a <code>subset</code> parameter with a list of columns that pandas should use to determine an observation’s uniqueness.</p>
 <ul>
@@ -768,15 +766,15 @@ Byeong-Hak Choe
 </section>
 <section id="dealing-with-duplicates-with-the-drop_duplicates-method-3" class="slide level2">
 <h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Gender"</span>, <span class="st">"Team"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Gender"</span>, <span class="st">"Team"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The above example uses a combination of values across the <code>Gender</code> and <code>Team</code> variables to identify duplicates.</li>
 </ul>
 </section>
 <section id="dealing-with-duplicates-with-the-drop_duplicates-method-4" class="slide level2">
 <h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>], keep <span class="op">=</span> <span class="st">"last"</span>)</span>
-<span id="cb29-2"><a href="#cb29-2"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>], keep <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>], keep <span class="op">=</span> <span class="st">"last"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>], keep <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>The <code>drop_duplicates()</code> method also accepts a <code>keep</code> parameter.</p>
 <ul>
@@ -813,10 +811,10 @@ Byeong-Hak Choe
 </section>
 <section id="reshaping-dataframes-2" class="slide level2">
 <h2>Reshaping <code>DataFrames</code></h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
-<span id="cb30-4"><a href="#cb30-4"></a>data_table.enable_dataframe_formatter()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb29-4"><a href="#cb29-4"></a>data_table.enable_dataframe_formatter()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>A <code>DataFrame</code> can be given in a format unsuited for the analysis that we would like to perform on it.</p>
 <ul>
@@ -834,18 +832,18 @@ Byeong-Hak Choe
 <li>The following <code>DataFrames</code> measure temperatures in two cities over two days.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>df_wide <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb31-2"><a href="#cb31-2"></a>    <span class="st">'Weekday'</span>: [<span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>],</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="st">'Miami'</span>: [<span class="dv">80</span>, <span class="dv">83</span>],</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="st">'Rochester'</span>: [<span class="dv">57</span>, <span class="dv">62</span>],</span>
-<span id="cb31-5"><a href="#cb31-5"></a>    <span class="st">'St. Louis'</span>: [<span class="dv">71</span>, <span class="dv">75</span>]</span>
-<span id="cb31-6"><a href="#cb31-6"></a>})</span>
-<span id="cb31-7"><a href="#cb31-7"></a></span>
-<span id="cb31-8"><a href="#cb31-8"></a>df_long <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb31-9"><a href="#cb31-9"></a>    <span class="st">'Weekday'</span>: [<span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>, <span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>, <span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>],</span>
-<span id="cb31-10"><a href="#cb31-10"></a>    <span class="st">'City'</span>: [<span class="st">'Miami'</span>, <span class="st">'Miami'</span>, <span class="st">'Rochester'</span>, <span class="st">'Rochester'</span>, <span class="st">'St. Louis'</span>, <span class="st">'St. Louis'</span>],</span>
-<span id="cb31-11"><a href="#cb31-11"></a>    <span class="st">'Temperature'</span>: [<span class="dv">80</span>, <span class="dv">83</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">71</span>, <span class="dv">75</span>]</span>
-<span id="cb31-12"><a href="#cb31-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>df_wide <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb30-2"><a href="#cb30-2"></a>    <span class="st">'Weekday'</span>: [<span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>],</span>
+<span id="cb30-3"><a href="#cb30-3"></a>    <span class="st">'Miami'</span>: [<span class="dv">80</span>, <span class="dv">83</span>],</span>
+<span id="cb30-4"><a href="#cb30-4"></a>    <span class="st">'Rochester'</span>: [<span class="dv">57</span>, <span class="dv">62</span>],</span>
+<span id="cb30-5"><a href="#cb30-5"></a>    <span class="st">'St. Louis'</span>: [<span class="dv">71</span>, <span class="dv">75</span>]</span>
+<span id="cb30-6"><a href="#cb30-6"></a>})</span>
+<span id="cb30-7"><a href="#cb30-7"></a></span>
+<span id="cb30-8"><a href="#cb30-8"></a>df_long <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb30-9"><a href="#cb30-9"></a>    <span class="st">'Weekday'</span>: [<span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>, <span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>, <span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>],</span>
+<span id="cb30-10"><a href="#cb30-10"></a>    <span class="st">'City'</span>: [<span class="st">'Miami'</span>, <span class="st">'Miami'</span>, <span class="st">'Rochester'</span>, <span class="st">'Rochester'</span>, <span class="st">'St. Louis'</span>, <span class="st">'St. Louis'</span>],</span>
+<span id="cb30-11"><a href="#cb30-11"></a>    <span class="st">'Temperature'</span>: [<span class="dv">80</span>, <span class="dv">83</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">71</span>, <span class="dv">75</span>]</span>
+<span id="cb30-12"><a href="#cb30-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="long-vs.-wide-dataframes-1" class="slide level2">
 <h2>Long vs.&nbsp;Wide <code>DataFrames</code></h2>
@@ -881,20 +879,20 @@ Byeong-Hak Choe
 </section>
 <section id="make-dataframe-longer-with-melt" class="slide level2">
 <h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>df_wide_to_long <span class="op">=</span> (</span>
-<span id="cb32-2"><a href="#cb32-2"></a>    df_wide</span>
-<span id="cb32-3"><a href="#cb32-3"></a>    .melt()</span>
-<span id="cb32-4"><a href="#cb32-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb31-2"><a href="#cb31-2"></a>    df_wide</span>
+<span id="cb31-3"><a href="#cb31-3"></a>    .melt()</span>
+<span id="cb31-4"><a href="#cb31-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="make-dataframe-longer-with-melt-1" class="slide level2">
 <h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>df_wide_to_long <span class="op">=</span> (</span>
-<span id="cb33-2"><a href="#cb33-2"></a>    df_wide</span>
-<span id="cb33-3"><a href="#cb33-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>)</span>
-<span id="cb33-4"><a href="#cb33-4"></a>)</span>
-<span id="cb33-5"><a href="#cb33-5"></a></span>
-<span id="cb33-6"><a href="#cb33-6"></a></span>
-<span id="cb33-7"><a href="#cb33-7"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    df_wide</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4"></a>)</span>
+<span id="cb32-5"><a href="#cb32-5"></a></span>
+<span id="cb32-6"><a href="#cb32-6"></a></span>
+<span id="cb32-7"><a href="#cb32-7"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <ul>
 <li><code>melt()</code> can take a few parameters:
@@ -907,13 +905,13 @@ Byeong-Hak Choe
 </section>
 <section id="make-dataframe-longer-with-melt-2" class="slide level2">
 <h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>df_wide_to_long <span class="op">=</span> (</span>
-<span id="cb34-2"><a href="#cb34-2"></a>    df_wide</span>
-<span id="cb34-3"><a href="#cb34-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
-<span id="cb34-4"><a href="#cb34-4"></a>          var_name <span class="op">=</span> <span class="st">"City"</span>,</span>
-<span id="cb34-5"><a href="#cb34-5"></a>          value_name <span class="op">=</span> <span class="st">"Temperature"</span>)</span>
-<span id="cb34-6"><a href="#cb34-6"></a>)</span>
-<span id="cb34-7"><a href="#cb34-7"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb33-2"><a href="#cb33-2"></a>    df_wide</span>
+<span id="cb33-3"><a href="#cb33-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4"></a>          var_name <span class="op">=</span> <span class="st">"City"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5"></a>          value_name <span class="op">=</span> <span class="st">"Temperature"</span>)</span>
+<span id="cb33-6"><a href="#cb33-6"></a>)</span>
+<span id="cb33-7"><a href="#cb33-7"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <ul>
 <li><code>melt()</code> can take a few parameters:
@@ -926,13 +924,13 @@ Byeong-Hak Choe
 </section>
 <section id="make-dataframe-longer-with-melt-3" class="slide level2">
 <h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>df_wide_to_long <span class="op">=</span> (</span>
-<span id="cb35-2"><a href="#cb35-2"></a>    df_wide</span>
-<span id="cb35-3"><a href="#cb35-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
-<span id="cb35-4"><a href="#cb35-4"></a>          var_name <span class="op">=</span> <span class="st">"City"</span>,</span>
-<span id="cb35-5"><a href="#cb35-5"></a>          value_name <span class="op">=</span> <span class="st">"Temperature"</span>,</span>
-<span id="cb35-6"><a href="#cb35-6"></a>          value_vars <span class="op">=</span> [<span class="st">'Miami'</span>, <span class="st">'Rochester'</span>])</span>
-<span id="cb35-7"><a href="#cb35-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb34-2"><a href="#cb34-2"></a>    df_wide</span>
+<span id="cb34-3"><a href="#cb34-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
+<span id="cb34-4"><a href="#cb34-4"></a>          var_name <span class="op">=</span> <span class="st">"City"</span>,</span>
+<span id="cb34-5"><a href="#cb34-5"></a>          value_name <span class="op">=</span> <span class="st">"Temperature"</span>,</span>
+<span id="cb34-6"><a href="#cb34-6"></a>          value_vars <span class="op">=</span> [<span class="st">'Miami'</span>, <span class="st">'Rochester'</span>])</span>
+<span id="cb34-7"><a href="#cb34-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <ul>
 <li><code>melt()</code> can take a few parameters:
@@ -945,14 +943,14 @@ Byeong-Hak Choe
 </section>
 <section id="make-dataframe-wider-with-pivot" class="slide level2">
 <h2>Make <code>DataFrame</code> Wider with <code>pivot()</code></h2>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>df_long_to_wide <span class="op">=</span> (</span>
-<span id="cb36-2"><a href="#cb36-2"></a>    df_long</span>
-<span id="cb36-3"><a href="#cb36-3"></a>    .pivot(index <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
-<span id="cb36-4"><a href="#cb36-4"></a>           columns <span class="op">=</span> <span class="st">"City"</span>,</span>
-<span id="cb36-5"><a href="#cb36-5"></a>           values <span class="op">=</span> <span class="st">"Temperature"</span>  </span>
-<span id="cb36-6"><a href="#cb36-6"></a>        )</span>
-<span id="cb36-7"><a href="#cb36-7"></a>    .reset_index()</span>
-<span id="cb36-8"><a href="#cb36-8"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>df_long_to_wide <span class="op">=</span> (</span>
+<span id="cb35-2"><a href="#cb35-2"></a>    df_long</span>
+<span id="cb35-3"><a href="#cb35-3"></a>    .pivot(index <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
+<span id="cb35-4"><a href="#cb35-4"></a>           columns <span class="op">=</span> <span class="st">"City"</span>,</span>
+<span id="cb35-5"><a href="#cb35-5"></a>           values <span class="op">=</span> <span class="st">"Temperature"</span>  </span>
+<span id="cb35-6"><a href="#cb35-6"></a>        )</span>
+<span id="cb35-7"><a href="#cb35-7"></a>    .reset_index()</span>
+<span id="cb35-8"><a href="#cb35-8"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">When using <code>pivot()</code>, we need to specify a few parameters:
 <ul>
@@ -969,16 +967,16 @@ Byeong-Hak Choe
 <li>Let’s consider the following wide-form <code>DataFrame</code>, <code>df</code>, containing information about the number of courses each student took from each department in each year.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>dict_data <span class="op">=</span> {<span class="st">"Name"</span>: [<span class="st">"Donna"</span>, <span class="st">"Donna"</span>, <span class="st">"Mike"</span>, <span class="st">"Mike"</span>],</span>
-<span id="cb37-2"><a href="#cb37-2"></a>             <span class="st">"Department"</span>: [<span class="st">"ECON"</span>, <span class="st">"DANL"</span>, <span class="st">"ECON"</span>, <span class="st">"DANL"</span>],</span>
-<span id="cb37-3"><a href="#cb37-3"></a>             <span class="st">"2018"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
-<span id="cb37-4"><a href="#cb37-4"></a>             <span class="st">"2019"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
-<span id="cb37-5"><a href="#cb37-5"></a>             <span class="st">"2020"</span>: [<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]}</span>
-<span id="cb37-6"><a href="#cb37-6"></a>df <span class="op">=</span> pd.DataFrame(dict_data)</span>
-<span id="cb37-7"><a href="#cb37-7"></a></span>
-<span id="cb37-8"><a href="#cb37-8"></a>df_longer <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Department"</span>], </span>
-<span id="cb37-9"><a href="#cb37-9"></a>                    var_name<span class="op">=</span><span class="st">"Year"</span>, </span>
-<span id="cb37-10"><a href="#cb37-10"></a>                    value_name<span class="op">=</span><span class="st">"Number of Courses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>dict_data <span class="op">=</span> {<span class="st">"Name"</span>: [<span class="st">"Donna"</span>, <span class="st">"Donna"</span>, <span class="st">"Mike"</span>, <span class="st">"Mike"</span>],</span>
+<span id="cb36-2"><a href="#cb36-2"></a>             <span class="st">"Department"</span>: [<span class="st">"ECON"</span>, <span class="st">"DANL"</span>, <span class="st">"ECON"</span>, <span class="st">"DANL"</span>],</span>
+<span id="cb36-3"><a href="#cb36-3"></a>             <span class="st">"2018"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb36-4"><a href="#cb36-4"></a>             <span class="st">"2019"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
+<span id="cb36-5"><a href="#cb36-5"></a>             <span class="st">"2020"</span>: [<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]}</span>
+<span id="cb36-6"><a href="#cb36-6"></a>df <span class="op">=</span> pd.DataFrame(dict_data)</span>
+<span id="cb36-7"><a href="#cb36-7"></a></span>
+<span id="cb36-8"><a href="#cb36-8"></a>df_longer <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Department"</span>], </span>
+<span id="cb36-9"><a href="#cb36-9"></a>                    var_name<span class="op">=</span><span class="st">"Year"</span>, </span>
+<span id="cb36-10"><a href="#cb36-10"></a>                    value_name<span class="op">=</span><span class="st">"Number of Courses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>pivot()</code> method can also take a <code>list</code> of variable names for the <code>index</code> parameter.</li>
 </ul>
@@ -990,16 +988,16 @@ Byeong-Hak Choe
 <li>Let’s consider the following wide-form <code>DataFrame</code>, <code>df</code>, containing information about the number of courses each student took from each department in each year.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>dict_data <span class="op">=</span> {<span class="st">"Name"</span>: [<span class="st">"Donna"</span>, <span class="st">"Donna"</span>, <span class="st">"Mike"</span>, <span class="st">"Mike"</span>],</span>
-<span id="cb38-2"><a href="#cb38-2"></a>             <span class="st">"Department"</span>: [<span class="st">"ECON"</span>, <span class="st">"DANL"</span>, <span class="st">"ECON"</span>, <span class="st">"DANL"</span>],</span>
-<span id="cb38-3"><a href="#cb38-3"></a>             <span class="st">"2018"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
-<span id="cb38-4"><a href="#cb38-4"></a>             <span class="st">"2019"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
-<span id="cb38-5"><a href="#cb38-5"></a>             <span class="st">"2020"</span>: [<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]}</span>
-<span id="cb38-6"><a href="#cb38-6"></a>df <span class="op">=</span> pd.DataFrame(dict_data)</span>
-<span id="cb38-7"><a href="#cb38-7"></a></span>
-<span id="cb38-8"><a href="#cb38-8"></a>df_longer <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Department"</span>], </span>
-<span id="cb38-9"><a href="#cb38-9"></a>                    var_name<span class="op">=</span><span class="st">"Year"</span>, </span>
-<span id="cb38-10"><a href="#cb38-10"></a>                    value_name<span class="op">=</span><span class="st">"Number of Courses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>dict_data <span class="op">=</span> {<span class="st">"Name"</span>: [<span class="st">"Donna"</span>, <span class="st">"Donna"</span>, <span class="st">"Mike"</span>, <span class="st">"Mike"</span>],</span>
+<span id="cb37-2"><a href="#cb37-2"></a>             <span class="st">"Department"</span>: [<span class="st">"ECON"</span>, <span class="st">"DANL"</span>, <span class="st">"ECON"</span>, <span class="st">"DANL"</span>],</span>
+<span id="cb37-3"><a href="#cb37-3"></a>             <span class="st">"2018"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb37-4"><a href="#cb37-4"></a>             <span class="st">"2019"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
+<span id="cb37-5"><a href="#cb37-5"></a>             <span class="st">"2020"</span>: [<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]}</span>
+<span id="cb37-6"><a href="#cb37-6"></a>df <span class="op">=</span> pd.DataFrame(dict_data)</span>
+<span id="cb37-7"><a href="#cb37-7"></a></span>
+<span id="cb37-8"><a href="#cb37-8"></a>df_longer <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Department"</span>], </span>
+<span id="cb37-9"><a href="#cb37-9"></a>                    var_name<span class="op">=</span><span class="st">"Year"</span>, </span>
+<span id="cb37-10"><a href="#cb37-10"></a>                    value_name<span class="op">=</span><span class="st">"Number of Courses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Q</strong>. How can we use the <code>df_longer</code> to create the wide-form <code>DataFrame</code>, <code>df_wider</code>, which is equivalent to the <code>df</code>?</p>
 </section>
 <section id="reshaping-dataframes-6" class="slide level2">
@@ -1039,8 +1037,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e8220a9cdd2da646c889" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e8220a9cdd2da646c889">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-493ce774513f47045738" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-493ce774513f47045738">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1051,15 +1049,15 @@ Byeong-Hak Choe
 </p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb39-2"><a href="#cb39-2"></a>    <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb39-3"><a href="#cb39-3"></a>    <span class="st">'val_x'</span>: [<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>]</span>
-<span id="cb39-4"><a href="#cb39-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb38-2"><a href="#cb38-2"></a>    <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb38-3"><a href="#cb38-3"></a>    <span class="st">'val_x'</span>: [<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>]</span>
+<span id="cb38-4"><a href="#cb38-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb40-2"><a href="#cb40-2"></a>    <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb40-3"><a href="#cb40-3"></a>    <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>]</span>
-<span id="cb40-4"><a href="#cb40-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb39-2"><a href="#cb39-2"></a>    <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>]</span>
+<span id="cb39-4"><a href="#cb39-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1076,11 +1074,11 @@ Byeong-Hak Choe
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/join-inner.png" width="425">
 </p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># the default value for 'how' is 'inner'</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="co"># so it doesn't actually need to be specified</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a>merge_inner <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb41-4"><a href="#cb41-4"></a>merge_inner_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb41-5"><a href="#cb41-5"></a>merge_inner_x_how <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># the default value for 'how' is 'inner'</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="co"># so it doesn't actually need to be specified</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>merge_inner <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb40-4"><a href="#cb40-4"></a>merge_inner_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb40-5"><a href="#cb40-5"></a>merge_inner_x_how <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="joining-dataframes-with-merge-2" class="slide level2">
 <h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
@@ -1091,8 +1089,8 @@ Byeong-Hak Choe
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/join-left.png" width="425">
 </p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>merge_left <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb42-2"><a href="#cb42-2"></a>merge_left_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>merge_left <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb41-2"><a href="#cb41-2"></a>merge_left_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The most commonly used join is the left join.</li>
 </ul>
@@ -1106,8 +1104,8 @@ Byeong-Hak Choe
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/join-right.png" width="425">
 </p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>merge_right <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
-<span id="cb43-2"><a href="#cb43-2"></a>merge_right_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>merge_right <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb42-2"><a href="#cb42-2"></a>merge_right_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="joining-dataframes-with-merge-4" class="slide level2">
 <h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
@@ -1118,8 +1116,8 @@ Byeong-Hak Choe
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/join-full.png" width="412.5">
 </p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>merge_outer <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
-<span id="cb44-2"><a href="#cb44-2"></a>merge_outer_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>merge_outer <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb43-2"><a href="#cb43-2"></a>merge_outer_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="joining-dataframes-with-merge-5" class="slide level2">
 <h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
@@ -1132,15 +1130,15 @@ Byeong-Hak Choe
 </p>
 <div class="columns">
 <div class="column" style="width:47.5%;">
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb45-2"><a href="#cb45-2"></a>    <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb45-3"><a href="#cb45-3"></a>    <span class="st">'val_x'</span>:[<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>, <span class="st">'x4'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb44-2"><a href="#cb44-2"></a>    <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb44-3"><a href="#cb44-3"></a>    <span class="st">'val_x'</span>:[<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>, <span class="st">'x4'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:52.5%;">
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb46-2"><a href="#cb46-2"></a>    <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb46-3"><a href="#cb46-3"></a>    <span class="st">'val_y'</span>:[<span class="st">'y1'</span>, <span class="st">'y2'</span>] })</span>
-<span id="cb46-4"><a href="#cb46-4"></a>one_to_many <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, </span>
-<span id="cb46-5"><a href="#cb46-5"></a>                         how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb45-2"><a href="#cb45-2"></a>    <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb45-3"><a href="#cb45-3"></a>    <span class="st">'val_y'</span>:[<span class="st">'y1'</span>, <span class="st">'y2'</span>] })</span>
+<span id="cb45-4"><a href="#cb45-4"></a>one_to_many <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, </span>
+<span id="cb45-5"><a href="#cb45-5"></a>                         how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1155,15 +1153,15 @@ Byeong-Hak Choe
 </p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb47-3"><a href="#cb47-3"></a>  <span class="st">'val_x'</span>:[<span class="st">'x1'</span>,<span class="st">'x2'</span>,<span class="st">'x3'</span>,<span class="st">'x4'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="st">'val_x'</span>:[<span class="st">'x1'</span>,<span class="st">'x2'</span>,<span class="st">'x3'</span>,<span class="st">'x4'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:55%;">
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb48-2"><a href="#cb48-2"></a>  <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb48-3"><a href="#cb48-3"></a>  <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>, <span class="st">'y4'</span>] })</span>
-<span id="cb48-4"><a href="#cb48-4"></a>many_to_many <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, </span>
-<span id="cb48-5"><a href="#cb48-5"></a>                          how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb47-3"><a href="#cb47-3"></a>  <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>, <span class="st">'y4'</span>] })</span>
+<span id="cb47-4"><a href="#cb47-4"></a>many_to_many <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, </span>
+<span id="cb47-5"><a href="#cb47-5"></a>                          how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1177,19 +1175,19 @@ Byeong-Hak Choe
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb49-2"><a href="#cb49-2"></a>  <span class="st">'key_x'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb49-3"><a href="#cb49-3"></a>  <span class="st">'val_x'</span>: [<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>]</span>
-<span id="cb49-4"><a href="#cb49-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="st">'key_x'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb48-3"><a href="#cb48-3"></a>  <span class="st">'val_x'</span>: [<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>]</span>
+<span id="cb48-4"><a href="#cb48-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb50-2"><a href="#cb50-2"></a>  <span class="st">'key_y'</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb50-3"><a href="#cb50-3"></a>  <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>] })</span>
-<span id="cb50-4"><a href="#cb50-4"></a></span>
-<span id="cb50-5"><a href="#cb50-5"></a>keys_xy <span class="op">=</span> </span>
-<span id="cb50-6"><a href="#cb50-6"></a>  x.merge(y, left_on <span class="op">=</span> <span class="st">'key_x'</span>, </span>
-<span id="cb50-7"><a href="#cb50-7"></a>             right_on <span class="op">=</span> <span class="st">'key_y'</span>, </span>
-<span id="cb50-8"><a href="#cb50-8"></a>             how <span class="op">=</span> <span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="st">'key_y'</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>] })</span>
+<span id="cb49-4"><a href="#cb49-4"></a></span>
+<span id="cb49-5"><a href="#cb49-5"></a>keys_xy <span class="op">=</span> </span>
+<span id="cb49-6"><a href="#cb49-6"></a>  x.merge(y, left_on <span class="op">=</span> <span class="st">'key_x'</span>, </span>
+<span id="cb49-7"><a href="#cb49-7"></a>             right_on <span class="op">=</span> <span class="st">'key_y'</span>, </span>
+<span id="cb49-8"><a href="#cb49-8"></a>             how <span class="op">=</span> <span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1212,14 +1210,14 @@ Byeong-Hak Choe
 </ul></li>
 <li>Let’s consider the following example DataFrames:</li>
 </ul>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>df1 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_1.csv'</span>)</span>
-<span id="cb51-2"><a href="#cb51-2"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_2.csv'</span>)</span>
-<span id="cb51-3"><a href="#cb51-3"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_3.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>df1 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_1.csv'</span>)</span>
+<span id="cb50-2"><a href="#cb50-2"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_2.csv'</span>)</span>
+<span id="cb50-3"><a href="#cb50-3"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_3.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>We will be working with <code>.index</code> and <code>.columns</code> in this Section.</li>
 </ul>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>df1.index</span>
-<span id="cb52-2"><a href="#cb52-2"></a>df1.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>df1.index</span>
+<span id="cb51-2"><a href="#cb51-2"></a>df1.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-concatenation-2" class="slide level2">
@@ -1232,8 +1230,8 @@ Byeong-Hak Choe
 <li>All of the <code>DataFrames</code> to be concatenated are passed in a <code>list</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span>
-<span id="cb53-2"><a href="#cb53-2"></a>row_concat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span>
+<span id="cb52-2"><a href="#cb52-2"></a>row_concat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-concatenation-3" class="slide level2">
@@ -1243,14 +1241,14 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s consider a new Series and concatenate it with <code>df1</code>:</li>
 </ul>
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># create a new row of data</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a>new_row_series <span class="op">=</span> pd.Series([<span class="st">'n1'</span>, <span class="st">'n2'</span>, <span class="st">'n3'</span>, <span class="st">'n4'</span>])</span>
-<span id="cb54-3"><a href="#cb54-3"></a>new_row_series</span>
-<span id="cb54-4"><a href="#cb54-4"></a></span>
-<span id="cb54-5"><a href="#cb54-5"></a></span>
-<span id="cb54-6"><a href="#cb54-6"></a><span class="co"># attempt to add the new row to a dataframe</span></span>
-<span id="cb54-7"><a href="#cb54-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_series])</span>
-<span id="cb54-8"><a href="#cb54-8"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># create a new row of data</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>new_row_series <span class="op">=</span> pd.Series([<span class="st">'n1'</span>, <span class="st">'n2'</span>, <span class="st">'n3'</span>, <span class="st">'n4'</span>])</span>
+<span id="cb53-3"><a href="#cb53-3"></a>new_row_series</span>
+<span id="cb53-4"><a href="#cb53-4"></a></span>
+<span id="cb53-5"><a href="#cb53-5"></a></span>
+<span id="cb53-6"><a href="#cb53-6"></a><span class="co"># attempt to add the new row to a dataframe</span></span>
+<span id="cb53-7"><a href="#cb53-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_series])</span>
+<span id="cb53-8"><a href="#cb53-8"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.</li>
 <li>Why?</li>
@@ -1267,13 +1265,13 @@ Byeong-Hak Choe
 <li>This data frame contains one row of data, and the column names are the ones the data will bind to.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>new_row_df <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb55-2"><a href="#cb55-2"></a>  <span class="co"># note the double brackets to create a "row" of data</span></span>
-<span id="cb55-3"><a href="#cb55-3"></a>  data <span class="op">=</span>[[<span class="st">"n1"</span>, <span class="st">"n2"</span>, <span class="st">"n3"</span>, <span class="st">"n4"</span>]],</span>
-<span id="cb55-4"><a href="#cb55-4"></a>  columns <span class="op">=</span>[<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>],</span>
-<span id="cb55-5"><a href="#cb55-5"></a>)</span>
-<span id="cb55-6"><a href="#cb55-6"></a></span>
-<span id="cb55-7"><a href="#cb55-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_df])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>new_row_df <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb54-2"><a href="#cb54-2"></a>  <span class="co"># note the double brackets to create a "row" of data</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>  data <span class="op">=</span>[[<span class="st">"n1"</span>, <span class="st">"n2"</span>, <span class="st">"n3"</span>, <span class="st">"n4"</span>]],</span>
+<span id="cb54-4"><a href="#cb54-4"></a>  columns <span class="op">=</span>[<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>],</span>
+<span id="cb54-5"><a href="#cb54-5"></a>)</span>
+<span id="cb54-6"><a href="#cb54-6"></a></span>
+<span id="cb54-7"><a href="#cb54-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_df])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-concatenation-5" class="slide level2">
@@ -1288,7 +1286,7 @@ Byeong-Hak Choe
 <li>If we pass <code>axis = 1</code> (or <code>axis = "columns"</code>) to the function, it will concatenate data in a column-wise manner.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>col_concat <span class="op">=</span> pd.concat([df1, df2, df3], axis <span class="op">=</span> <span class="st">"columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>col_concat <span class="op">=</span> pd.concat([df1, df2, df3], axis <span class="op">=</span> <span class="st">"columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-concatenation-6" class="slide level2">
@@ -1298,7 +1296,7 @@ Byeong-Hak Choe
 <ul>
 <li>We can use <code>ignore_index=True</code> to reset the column indices, so that we do not have duplicated column names.</li>
 </ul>
-<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="concatenate-with-different-indices" class="slide level2">
@@ -1308,14 +1306,14 @@ Byeong-Hak Choe
 <li><p>What would happen when the row and column indices are not aligned?</p></li>
 <li><p>Let’s modify our DataFrames for the next few examples.</p></li>
 </ul>
-<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># rename the columns of our dataframes</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a>df1.columns <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
-<span id="cb58-3"><a href="#cb58-3"></a>df2.columns <span class="op">=</span> [<span class="st">'E'</span>, <span class="st">'F'</span>, <span class="st">'G'</span>, <span class="st">'H'</span>]</span>
-<span id="cb58-4"><a href="#cb58-4"></a>df3.columns <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'F'</span>, <span class="st">'H'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># rename the columns of our dataframes</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>df1.columns <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
+<span id="cb57-3"><a href="#cb57-3"></a>df2.columns <span class="op">=</span> [<span class="st">'E'</span>, <span class="st">'F'</span>, <span class="st">'G'</span>, <span class="st">'H'</span>]</span>
+<span id="cb57-4"><a href="#cb57-4"></a>df3.columns <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'F'</span>, <span class="st">'H'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>If we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.</li>
 </ul>
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="concatenate-with-different-indices-1" class="slide level2">
@@ -1324,11 +1322,11 @@ Byeong-Hak Choe
 <ul>
 <li>We can set <code>join = 'inner'</code> to keep only the columns that are shared among the data sets.</li>
 </ul>
-<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>pd.concat([df1, df2, df3], join <span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>pd.concat([df1, df2, df3], join <span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>If we use the <code>DataFrames</code> that have columns in common, only the columns that all of them share will be returned.</li>
 </ul>
-<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>pd.concat([df1, df3], join <span class="op">=</span><span class="st">'inner'</span>,  ignore_index <span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>pd.concat([df1, df3], join <span class="op">=</span><span class="st">'inner'</span>,  ignore_index <span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="concatenate-with-different-indices-2" class="slide level2">
@@ -1337,10 +1335,10 @@ Byeong-Hak Choe
 <ul>
 <li>Let’s modify our DataFrames further.</li>
 </ul>
-<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># re-indexing the rows of our DataFrames</span></span>
-<span id="cb62-2"><a href="#cb62-2"></a>df1.index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb62-3"><a href="#cb62-3"></a>df2.index <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>]</span>
-<span id="cb62-4"><a href="#cb62-4"></a>df3.index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># re-indexing the rows of our DataFrames</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>df1.index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb61-3"><a href="#cb61-3"></a>df2.index <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>]</span>
+<span id="cb61-4"><a href="#cb61-4"></a>df3.index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="concatenate-with-different-indices-3" class="slide level2">
@@ -1349,11 +1347,11 @@ Byeong-Hak Choe
 <ul>
 <li>When we concatenate along <code>axis="columns"</code> <code>(axis=1</code>), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.</li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>col_concat <span class="op">=</span> pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>col_concat <span class="op">=</span> pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Just as we did when we concatenated in a row-wise manner, we can choose to keep the results only when there are matching indices by using <code>join="inner"</code>.</li>
 </ul>
-<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>pd.concat([df1, df3], axis <span class="op">=</span><span class="st">"columns"</span>, join<span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>pd.concat([df1, df3], axis <span class="op">=</span><span class="st">"columns"</span>, join<span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-concatenation-7" class="slide level2">
