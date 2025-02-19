@@ -73,7 +73,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/nyc_payrol
 <br><br>
 
 ## Question 1
-Select "First_Name", "Last_Name", "Base_Salary", and "Total_OT_Paid", then sort the DataFrame with these selected variables by "Base Salary" in descending order and display the top 10 entries.
+Select "`First_Name`", "`Last_Name`", "`Base_Salary`", and "`Total_OT_Paid`", then sort the DataFrame with these selected variables by "`Base_Salary`" in descending order and display the top 10 entries.
 
 
 
@@ -88,7 +88,7 @@ Select "First_Name", "Last_Name", "Base_Salary", and "Total_OT_Paid", then sort 
 
 
 ## Question 2
-Using `set_index()`, change the DataFrame's index to "Last_Name", then locate the data for a specific last name, say "BROWN", and display their "Agency_Name", "Base_Salary", and "Total_OT_Paid".
+Using `set_index()`, change the DataFrame's index to "`Last_Name`", then locate the data for a specific last name, say **"BROWN"**, and display their "`Agency_Name`", "`Base_Salary`", and "`Total_OT_Paid`".
 
 
 
@@ -102,7 +102,7 @@ Using `set_index()`, change the DataFrame's index to "Last_Name", then locate th
 
 
 ## Question 3
-Find the 5 employees with the highest "Regular_Gross_Paid" and calculate their average "OT_Hours". Also, reset the index if you have changed it previously.
+Find the 5 employees with the highest "`Regular_Gross_Paid`" and calculate their average "`OT_Hours`". Also, reset the index if you have changed it previously.
 
 
 
@@ -117,7 +117,7 @@ Find the 5 employees with the highest "Regular_Gross_Paid" and calculate their a
 
 
 ## Question 4
-Sort the DataFrame by "Fiscal_Year" and "Total_Other_Pay" in descending order, then set "First_Name" as the index and use the `loc` accessor to retrieve the "Total_Other_Pay" for a specific first name, say "MICHAEL".
+Sort the DataFrame by "`Fiscal_Year`" and "`Total_Other_Pay`" in descending order, then set "`First_Name`" as the index and use the `loc` accessor to retrieve the "`Total_Other_Pay`" for a specific first name, say **"MICHAEL"**.
 
 
 
@@ -131,7 +131,7 @@ Sort the DataFrame by "Fiscal_Year" and "Total_Other_Pay" in descending order, t
 
 
 ## Question 5
-Sort the DataFrame first by "Work_Location_Borough" alphabetically, and then by "Total_Compensation" (sum of "Base_Salary" and "Total_OT_Paid") in descending order within each borough.
+Sort the DataFrame first by "`Work_Location_Borough`" alphabetically, and then by "`Total_Compensation`" (sum of "`Base_Salary`" and "`Total_OT_Paid`") in descending order within each borough.
 
 
 *Answer*
@@ -145,7 +145,7 @@ Sort the DataFrame first by "Work_Location_Borough" alphabetically, and then by 
 
 
 ## Question 6
-- Select employees who have "OT_Hours" greater than 0, calculate their "OT_Rate" (Total_OT_Paid / OT_Hours), and then find the employee with the highest "OT_Rate". Display their full name and "OT_Rate".
+- Select employees who have "OT_Hours" greater than **0**, calculate their "`OT_Rate`" ("`Total_OT_Paid`" / "`OT_Hours`"), and then find the employee with the highest "`OT_Rate`". Display their full name and "`OT_Rate`".
 
 
 *Answer*
@@ -159,7 +159,7 @@ Sort the DataFrame first by "Work_Location_Borough" alphabetically, and then by 
 
 
 ## Question 7
-Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION ADMIN" agency where the variables are "First_Name", "Last_Name", "Title_Description", "Base_Salary", and "Total_OT_Paid". Additionally, include a new variable "Total_Compensation" which is the sum of "Base_Salary" and "Total_OT_Paid".
+Create a new DataFrame that includes employees from the **"DEPARTMENT OF EDUCATION ADMIN"** agency where the variables are "`First_Name`", "`Last_Name`", "`Title_Description`", "`Base_Salary`", and "`Total_OT_Paid`". Additionally, include a new variable "`Total_Compensation`" which is the sum of "`Base_Salary`" and "`Total_OT_Paid`".
 
 
 
@@ -172,7 +172,7 @@ Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION
 
 ## Question 8
 
-- How many employees have a "Base_Salary" within the top 10% of the DataFrame?
+- How many employees have a "`Base_Salary`" within the top 10% of the DataFrame?
 
 
 *Answer*
@@ -186,7 +186,7 @@ Create a new DataFrame that includes employees from the "DEPARTMENT OF EDUCATION
 
 
 ## Question 9
-Filter the DataFrame for employees who have "OT_Hours" greater than 0 but less than 100, and their "Leave_Status_as_of_June_30" is "ACTIVE".
+Filter the DataFrame for employees who have "`OT_Hours`" greater than **0** but less than **100**, and their "`Leave_Status_as_of_June_30`" is **"ACTIVE"**.
 
 
 *Answer*
@@ -200,7 +200,7 @@ Filter the DataFrame for employees who have "OT_Hours" greater than 0 but less t
 
 
 ## Question 10
-Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and count how many there are.
+Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and count how many there are.
 
 
 *Answer*
@@ -212,8 +212,8 @@ Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and cou
 
 
 ## Question 11
-- Identify the employee(s) with the highest "Total_OT_Paid" in the DataFrame. 
-  - Include their "First_Name", "Last_Name", and "Total_OT_Paid".
+- Identify the employee(s) with the highest "`Total_OT_Paid`" in the DataFrame. 
+  - Include their "`First_Name`", "`Last_Name`", and "`Total_OT_Paid`".
 
 
 *Answer*
@@ -238,7 +238,7 @@ Find the unique job titles in the "DEPARTMENT OF EDUCATION ADMIN" agency and cou
 
 
 ## Question 13
-- Fill missing values in the "Last_Name" variable with "UNKNOWN".
+- Fill missing values in the "`Last_Name`" variable with "`UNKNOWN`".
 
 
 *Answer*
@@ -309,8 +309,8 @@ In DataFrame, `NFL2022_stuffs`, remove observations for which values of `posteam
 ## Question 15
 - Calculate the mean value of `pass` for each `posteam` when all the following conditions hold:
   1. `wp` is greater than 20% and less than 75%;
-  2. `down` is less than or equal to 2; and
-  3. `half_seconds_remaining` is greater than 120.
+  2. `down` is less than or equal to **2**; and
+  3. `half_seconds_remaining` is greater than **120**.
 
 *Answer*: 
 
@@ -445,14 +445,84 @@ rmarkdown::paged_table(trashwheel ,
 
 
 
+## Meet the Mr. Trash Wheel Family
+
 <br>
+
+::::{.columns}
+:::{.column width="50%"}
+![Mister Trash Wheel](https://bcdanl.github.io/lec_figs/mister.png){width=50%}
+:::
+
+:::{.column width="50%"}
+- Installed: May 9, 2014
+- Location: Jones Falls stream, Inner Harbor, Baltimore, MD
+
+:::
+
+::::
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Professor Trash Wheel](https://bcdanl.github.io/lec_figs/professor.png){width=50%}
+:::
+
+:::{.column width="50%"}
+- Installed: December 4, 2016
+- Location: Harris Creek, Canton neighborhood, Baltimore, MD
+
+:::
+::::
+
+
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Captain Trash Wheel](https://bcdanl.github.io/lec_figs/captain.png){width=50%}
+:::
+
+:::{.column width="50%"}
+<br>
+
+- Installed: June 5, 2018
+- Location: Masonville Cove, Baltimore, MD
+
+:::
+::::
+
+
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Gwynnda Trash Wheel](https://bcdanl.github.io/lec_figs/gwynnda.png){width=50%}
+:::
+
+:::{.column width="50%"}
+<br>
+
+  - Installed: June 3, 2021
+  - Location: Gwynns Falls, West Baltimore, MD
+
+:::
+::::
+
+
+
+
+<br>
+
 
 <br>
 
 ## Question 17
-- Reshape the `trashwheel` DataFrame into a DataFrame called `trashwheel_long` that includes variables for "Name", "Date", "Trash_Type", and "Number". 
-  - The "Trash_Type" variable should indicate the type of trash from the original DataFrame, and "Number" should contain the corresponding values. 
-  - Finally, sort `trashwheel_long` by "Name" and "Date" in ascending order.
+- Reshape the `trashwheel` DataFrame into a DataFrame called `trashwheel_long` that includes variables for "`Name`", "`Date`", "`Trash_Type`", and "`Number`". 
+  - The "`Trash_Type`" variable should indicate the type of trash from the original DataFrame, and "`Number`" should contain the corresponding values. 
+  - Finally, sort `trashwheel_long` by "`Name`" and "`Date`" in ascending order.
   
 ```{r}
 #| results: asis
@@ -524,7 +594,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_al
 <br>
 
 
-- Write a blog post about your favorite artist(s) in `spotify` DataFrame using Jupyter Notebook, and add it to your online blog.
+- Write a blog post about your favorite artist(s) in the `spotify` DataFrame using Jupyter Notebook, and add it to your online blog.
   - In your blog post, utilize counting, sorting, indexing, and filtering methods.
   
 <br>

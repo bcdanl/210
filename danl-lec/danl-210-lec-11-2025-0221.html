@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Byeong-Hak Choe">
+  <meta name="dcterms.date" content="2025-02-21">
+  <title>Home - Lecture 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  
+  <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="../site_libs/htmlwidgets-1.6.3/htmlwidgets.js"></script>
+  <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+  <script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+  <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+  <link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+  <script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture 11</h1>
+  <p class="subtitle"><code>pandas</code> Basics - Missing Values; Duplicates; Reshaping</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Byeong-Hak Choe 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bchoe@geneseo.edu">bchoe@geneseo.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            SUNY Geneseo
+          </p>
+    </div>
+</div>
+
+  <p class="date">February 21, 2025</p>
+</section>
+<section>
+<section id="dealing-with-missing-values" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Dealing with Missing Values</strong></h1>
+
+</section>
+<section id="dealing-with-missing-values-1" class="slide level2">
+<h2>Dealing with Missing Values</h2>
+<div>
+<ul>
+<li>Let’s read <code>employment.csv</code> as <code>emp</code>.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb1-4"><a href="#cb1-4"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>emp <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/employment.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dealing-with-missing-values-2" class="slide level2">
+<h2>Dealing with Missing Values</h2>
+<ul>
+<li class="fragment">Pandas often marks (1) missing text values and (2) missing numeric values with a <code>NaN</code> (not a number);
+<ul>
+<li class="fragment">It also marks missing datetime values with a <code>NaT</code> (not a time).</li>
+</ul></li>
+</ul>
+<!-- - We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable. -->
+</section>
+<section id="dealing-with-missing-values-the-isna-and-notna-methods" class="slide level2">
+<h2>Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>emp[<span class="st">"Team"</span>].isna()</span>
+<span id="cb2-2"><a href="#cb2-2"></a>emp[<span class="st">"Start Date"</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>isna()</code> method returns a Boolean <code>Series</code> in which <code>True</code> denotes that an observation’s value is missing.
+<ul>
+<li class="fragment">Is a value of a variable “XYZ” missing?</li>
+</ul></li>
+</ul>
+</section>
+<section id="dealing-with-missing-values-the-isna-and-notna-methods-1" class="slide level2">
+<h2>Dealing with Missing Values: The <code>isna()</code> and <code>notna()</code> methods</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Below two are equivalent.</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>emp[<span class="st">"Team"</span>].notna()</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="op">~</span>emp[<span class="st">"Team"</span>].isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>The <code>notna()</code> method returns the inverse <code>Series</code>, one in which <code>True</code> indicates that an observation’s value is present.</p></li>
+<li class="fragment"><p>We use the tilde symbol (<code>~</code>) to invert a Boolean <code>Series</code>.</p></li>
+<li class="fragment"><p><strong>Q</strong>. How can we pull out employees with non-missing <code>Team</code> values?</p></li>
+</ul>
+</section>
+<section id="dealing-with-missing-values-the-value_countsdropna-false-method" class="slide level2">
+<h2>Dealing with Missing Values: The <code>value_counts(dropna = False)</code> method</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>emp[<span class="st">"Mgmt"</span>].isna().<span class="bu">sum</span>()</span>
+<span id="cb4-2"><a href="#cb4-2"></a>emp[<span class="st">"Mgmt"</span>].value_counts()</span>
+<span id="cb4-3"><a href="#cb4-3"></a>emp[<span class="st">"Mgmt"</span>].value_counts(dropna <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">One way to missing data counts is to use the <code>isna().sum()</code> on a <code>Series</code>.
+<ul>
+<li class="fragment"><code>True</code> is 1 and <code>False</code> is 0.</li>
+</ul></li>
+<li class="fragment">Another way to get missing data counts is to use the <code>.value_counts()</code> method on a <code>Series</code>.
+<ul>
+<li class="fragment">If we use the <code>dropna = False</code> option, we can also get a missing value count.</li>
+</ul></li>
+</ul>
+</section>
+<section id="dealing-with-missing-values-the-dropna-method" class="slide level2">
+<h2>Dealing with Missing Values: The <code>dropna()</code> method</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>emp.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>dropna()</code> method removes observations that hold any <code>NaN</code> or <code>NaT</code> values.</li>
+</ul>
+</section>
+<section id="dealing-with-missing-values-the-dropna-method-with-how" class="slide level2">
+<h2>Dealing with Missing Values: The <code>dropna()</code> method with <code>how</code></h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>emp.dropna(how <span class="op">=</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>We can pass the <code>how</code> parameter an argument of <code>"all"</code> to remove observations in which all values are missing.</p></li>
+<li class="fragment"><p>Note that the <code>how</code> parameter’s default argument is <code>"any"</code>.</p></li>
+</ul>
+</section>
+<section id="dealing-with-missing-values-the-dropna-method-with-subset" class="slide level2">
+<h2>Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">"Gender"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can use the <code>subset</code> parameter to target observations with a missing value in a specific variable.
+<ul>
+<li class="fragment">The above example removes observations that have a missing value in the <code>Gender</code> variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="dealing-with-missing-values-the-dropna-method-with-subset-1" class="slide level2">
+<h2>Dealing with Missing Values: The <code>dropna()</code> method with <code>subset</code></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>emp.dropna(subset <span class="op">=</span> [<span class="st">"Start Date"</span>, <span class="st">"Salary"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can also pass the <code>subset</code> parameter a list of variables.</li>
+</ul>
+<!-- ## Dealing with Missing Values: The `dropna()` method with `thresh` -->
+<!-- ```{.python} -->
+<!-- emp.dropna(thresh = 4) -->
+<!-- ``` -->
+<!-- - The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it. -->
+</section></section>
+<section>
+<section id="dealing-with-duplicates" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Dealing with Duplicates</strong></h1>
+
+</section>
+<section id="dealing-with-duplicates-with-the-duplicated-method" class="slide level2">
+<h2>Dealing with Duplicates with the <code>duplicated()</code> method</h2>
+<div>
+<ul>
+<li>Missing values are a common occurrence in messy data sets, and so are duplicate values.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>emp[<span class="st">"Team"</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>duplicated()</code> method returns a Boolean <code>Series</code> that identifies duplicates in a variable.</li>
+</ul>
+</section>
+<section id="dealing-with-duplicates-with-the-duplicated-method-1" class="slide level2">
+<h2>Dealing with Duplicates with the <code>duplicated()</code> method</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>emp[<span class="st">"Team"</span>].duplicated(keep <span class="op">=</span> <span class="st">"first"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>emp[<span class="st">"Team"</span>].duplicated(keep <span class="op">=</span> <span class="st">"last"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="op">~</span>emp[<span class="st">"Team"</span>].duplicated()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>duplicated()</code> method’s <code>keep</code> parameter informs pandas which duplicate occurrence to keep.
+<ul>
+<li class="fragment">Its default argument, <code>"first"</code>, keeps the first occurrence of each duplicate value.</li>
+<li class="fragment">Its argument, <code>"last"</code>, keeps the last occurrence of each duplicate value.</li>
+</ul></li>
+</ul>
+<!-- - **Q**. How can we keep observations with the first occurrence of a value in the **Team** variable? -->
+</section>
+<section id="dealing-with-duplicates-with-the-drop_duplicates-method" class="slide level2">
+<h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>emp.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>drop_duplicates()</code> method removes observations in which all values are equal to those in a previously encountered observations.</li>
+</ul>
+</section>
+<section id="dealing-with-duplicates-with-the-drop_duplicates-method-1" class="slide level2">
+<h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
+<div>
+<ul>
+<li>Below is an example of the <code>drop_duplicates()</code> method:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Sample DataFrame with duplicate observations</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>data <span class="op">=</span> {</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="st">'Name'</span>: [<span class="st">'John'</span>, <span class="st">'Anna'</span>, <span class="st">'John'</span>, <span class="st">'Mike'</span>, <span class="st">'Anna'</span>],</span>
+<span id="cb12-4"><a href="#cb12-4"></a>    <span class="st">'Age'</span>: [<span class="dv">28</span>, <span class="dv">23</span>, <span class="dv">28</span>, <span class="dv">32</span>, <span class="dv">23</span>],</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'Paris'</span>, <span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Paris'</span>]</span>
+<span id="cb12-6"><a href="#cb12-6"></a>}</span>
+<span id="cb12-7"><a href="#cb12-7"></a></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># pd.DataFrame( Series, List, or Dict ) creates a DataFrame</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a>df <span class="op">=</span> pd.DataFrame(data)  </span>
+<span id="cb12-10"><a href="#cb12-10"></a>df_unique <span class="op">=</span> df.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dealing-with-duplicates-with-the-drop_duplicates-method-2" class="slide level2">
+<h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>We can pass the <code>drop_duplicates()</code> method a <code>subset</code> parameter with a list of columns that pandas should use to determine an observation’s uniqueness.</p>
+<ul>
+<li class="fragment">The above example finds the first occurrence of each unique value in the Team variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="dealing-with-duplicates-with-the-drop_duplicates-method-3" class="slide level2">
+<h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Gender"</span>, <span class="st">"Team"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The above example uses a combination of values across the <code>Gender</code> and <code>Team</code> variables to identify duplicates.</li>
+</ul>
+</section>
+<section id="dealing-with-duplicates-with-the-drop_duplicates-method-4" class="slide level2">
+<h2>Dealing with Duplicates with the <code>drop_duplicates()</code> method</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>], keep <span class="op">=</span> <span class="st">"last"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>emp.drop_duplicates(subset <span class="op">=</span> [<span class="st">"Team"</span>], keep <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>The <code>drop_duplicates()</code> method also accepts a <code>keep</code> parameter.</p>
+<ul>
+<li class="fragment">We can pass it an argument of <code>"last"</code> to keep the observations with each duplicate value’s last occurrence.</li>
+<li class="fragment">We can pass it an argument of <code>False</code> to exclude all observations with duplicate values.</li>
+</ul></li>
+<li class="fragment"><p><strong>Q</strong>. What does <code>emp.drop_duplicates(subset = ["First Name"], keep = False)</code> do?</p></li>
+<li class="fragment"><p><strong>Q</strong>. Find a subset of all employees with a First Name of “Douglas” and a Gender of “Male”. Then check which “Douglas” is in the DataFrame <code>emp.drop_duplicates(subset = ["Gender", "Team"])</code>.</p></li>
+</ul>
+</section>
+<section id="pandas-basics" class="slide level2">
+<h2>Pandas Basics</h2>
+<p>Let’s do Questions 7-8 in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html"><strong>Classwork 6</strong></a>!</p>
+</section></section>
+<section>
+<section id="reshaping-dataframes" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Reshaping <code>DataFrames</code></strong></h1>
+
+</section>
+<section id="reshaping-dataframes-1" class="slide level2">
+<h2>Reshaping <code>DataFrames</code></h2>
+<h3 id="tidy-dataframes">Tidy <code>DataFrames</code></h3>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/tidy-1.png" width="800px">
+</p>
+<ul>
+<li class="fragment">There are three interrelated rules that make a <code>DataFrame</code> tidy:
+<ul>
+<li class="fragment">Each <em>variable</em> is a <em>column</em>; each <em>column</em> is a <em>variable</em>.</li>
+<li class="fragment">Each <em>observation</em> is a <em>row</em>; each <em>row</em> is an <em>observation</em>.</li>
+<li class="fragment">Each <em>value</em> is a <em>cell</em>; each <em>cell</em> is a single <em>value</em>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reshaping-dataframes-2" class="slide level2">
+<h2>Reshaping <code>DataFrames</code></h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co"># Below is for an interactive display of DataFrame in Colab</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb16-4"><a href="#cb16-4"></a>data_table.enable_dataframe_formatter()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>A <code>DataFrame</code> can be given in a format unsuited for the analysis that we would like to perform on it.</p>
+<ul>
+<li class="fragment">A <code>DataFrame</code> may have larger structural problems that extend beyond the data.</li>
+<li class="fragment">Perhaps the <code>DataFrame</code> stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.</li>
+</ul></li>
+<li class="fragment"><p><em>Reshaping</em> a <code>DataFrame</code> means manipulating it into a different shape.</p></li>
+<li class="fragment"><p>In this section, we will discuss pandas techniques for molding a <code>DataFrame</code> into the shape we desire.</p></li>
+</ul>
+</section>
+<section id="long-vs.-wide-dataframes" class="slide level2">
+<h2>Long vs.&nbsp;Wide <code>DataFrames</code></h2>
+<div>
+<ul>
+<li>The following <code>DataFrames</code> measure temperatures in two cities over two days.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>df_wide <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb17-2"><a href="#cb17-2"></a>    <span class="st">'Weekday'</span>: [<span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>],</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    <span class="st">'Miami'</span>: [<span class="dv">80</span>, <span class="dv">83</span>],</span>
+<span id="cb17-4"><a href="#cb17-4"></a>    <span class="st">'Rochester'</span>: [<span class="dv">57</span>, <span class="dv">62</span>],</span>
+<span id="cb17-5"><a href="#cb17-5"></a>    <span class="st">'St. Louis'</span>: [<span class="dv">71</span>, <span class="dv">75</span>]</span>
+<span id="cb17-6"><a href="#cb17-6"></a>})</span>
+<span id="cb17-7"><a href="#cb17-7"></a></span>
+<span id="cb17-8"><a href="#cb17-8"></a>df_long <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb17-9"><a href="#cb17-9"></a>    <span class="st">'Weekday'</span>: [<span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>, <span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>, <span class="st">'Tuesday'</span>, <span class="st">'Wednesday'</span>],</span>
+<span id="cb17-10"><a href="#cb17-10"></a>    <span class="st">'City'</span>: [<span class="st">'Miami'</span>, <span class="st">'Miami'</span>, <span class="st">'Rochester'</span>, <span class="st">'Rochester'</span>, <span class="st">'St. Louis'</span>, <span class="st">'St. Louis'</span>],</span>
+<span id="cb17-11"><a href="#cb17-11"></a>    <span class="st">'Temperature'</span>: [<span class="dv">80</span>, <span class="dv">83</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">71</span>, <span class="dv">75</span>]</span>
+<span id="cb17-12"><a href="#cb17-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="long-vs.-wide-dataframes-1" class="slide level2">
+<h2>Long vs.&nbsp;Wide <code>DataFrames</code></h2>
+<ul>
+<li class="fragment">A <code>DataFrame</code> can store its values in <strong>wide</strong> or <strong>long</strong> format.</li>
+<li class="fragment">These names reflect the direction in which the data set expands as we add more values to it.
+<ul>
+<li class="fragment">A long <code>DataFrame</code> increases in height.</li>
+<li class="fragment">A wide <code>DataFrame</code> increases in width.</li>
+</ul></li>
+</ul>
+</section>
+<section id="long-vs.-wide-dataframes-2" class="slide level2">
+<h2>Long vs.&nbsp;Wide <code>DataFrames</code></h2>
+<ul>
+<li class="fragment">The optimal storage format for a <code>DataFrame</code> depends on the insight we are trying to glean from it.
+<ul>
+<li class="fragment">We consider making <code>DataFrames</code> <strong>longer</strong> if one <em>variable</em> is spread across multiple <em>columns</em>.</li>
+<li class="fragment">We consider making <code>DataFrames</code> <strong>wider</strong> if one <em>observation</em> is spread across multiple <em>rows</em>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reshaping-dataframes-3" class="slide level2">
+<h2>Reshaping <code>DataFrames</code></h2>
+<h3 id="melt-and-pivot"><code>melt()</code> and <code>pivot()</code></h3>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/pandas-melt-pivot.gif" width="400px">
+</p>
+<ul>
+<li class="fragment"><code>melt()</code> makes <code>DataFrame</code> longer.</li>
+<li class="fragment"><code>pivot()</code> and <code>pivot_table()</code> make <code>DataFrame</code> wider.</li>
+</ul>
+</section>
+<section id="make-dataframe-longer-with-melt" class="slide level2">
+<h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    df_wide</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    .melt()</span>
+<span id="cb18-4"><a href="#cb18-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="make-dataframe-longer-with-melt-1" class="slide level2">
+<h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb19-2"><a href="#cb19-2"></a>    df_wide</span>
+<span id="cb19-3"><a href="#cb19-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4"></a>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a></span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li><code>melt()</code> can take a few parameters:
+<ul>
+<li><code>id_vars</code> is a container (<code>string</code>, <code>list</code>, <code>tuple</code>, or <code>array</code>) that represents the variables that will remain as is.</li>
+<li><code>id_vars</code> can indicate which column should be the “identifier”.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="make-dataframe-longer-with-melt-2" class="slide level2">
+<h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb20-2"><a href="#cb20-2"></a>    df_wide</span>
+<span id="cb20-3"><a href="#cb20-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
+<span id="cb20-4"><a href="#cb20-4"></a>          var_name <span class="op">=</span> <span class="st">"City"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5"></a>          value_name <span class="op">=</span> <span class="st">"Temperature"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6"></a>)</span>
+<span id="cb20-7"><a href="#cb20-7"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li><code>melt()</code> can take a few parameters:
+<ul>
+<li><code>var_name</code> is a <code>string</code> for the <em>name</em> of the variable whose values are taken from <em>column names</em> in a given wide-form DataFrame.</li>
+<li><code>value_name</code> is a <code>string</code> for the <em>name</em> of the variable whose values are taken from the <em>values</em> in a given wide-form DataFrame.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="make-dataframe-longer-with-melt-3" class="slide level2">
+<h2>Make <code>DataFrame</code> Longer with <code>melt()</code></h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df_wide_to_long <span class="op">=</span> (</span>
+<span id="cb21-2"><a href="#cb21-2"></a>    df_wide</span>
+<span id="cb21-3"><a href="#cb21-3"></a>    .melt(id_vars <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4"></a>          var_name <span class="op">=</span> <span class="st">"City"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5"></a>          value_name <span class="op">=</span> <span class="st">"Temperature"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6"></a>          value_vars <span class="op">=</span> [<span class="st">'Miami'</span>, <span class="st">'Rochester'</span>])</span>
+<span id="cb21-7"><a href="#cb21-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li><code>melt()</code> can take a few parameters:
+<ul>
+<li><code>value_vars</code> parameter allows us to select which specific columns we want to “melt”.</li>
+<li>By default, it will melt all the columns not specified in the <code>id_vars</code> parameter.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="make-dataframe-wider-with-pivot" class="slide level2">
+<h2>Make <code>DataFrame</code> Wider with <code>pivot()</code></h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>df_long_to_wide <span class="op">=</span> (</span>
+<span id="cb22-2"><a href="#cb22-2"></a>    df_long</span>
+<span id="cb22-3"><a href="#cb22-3"></a>    .pivot(index <span class="op">=</span> <span class="st">"Weekday"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4"></a>           columns <span class="op">=</span> <span class="st">"City"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5"></a>           values <span class="op">=</span> <span class="st">"Temperature"</span>  </span>
+<span id="cb22-6"><a href="#cb22-6"></a>        )</span>
+<span id="cb22-7"><a href="#cb22-7"></a>    .reset_index()</span>
+<span id="cb22-8"><a href="#cb22-8"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">When using <code>pivot()</code>, we need to specify a few parameters:
+<ul>
+<li class="fragment"><code>index</code> that takes the <em>column</em> to pivot on;</li>
+<li class="fragment"><code>columns</code> that takes the <em>column</em> to be used to make the <em>new variable names</em> of the wider <code>DataFrame</code>;</li>
+<li class="fragment"><code>values</code> that takes the <em>column</em> that provides the <em>values</em> of the <em>variables</em> in the wider <code>DataFrame</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reshaping-dataframes-4" class="slide level2">
+<h2>Reshaping <code>DataFrames</code></h2>
+<div>
+<ul>
+<li>Let’s consider the following wide-form <code>DataFrame</code>, <code>df</code>, containing information about the number of courses each student took from each department in each year.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>dict_data <span class="op">=</span> {<span class="st">"Name"</span>: [<span class="st">"Donna"</span>, <span class="st">"Donna"</span>, <span class="st">"Mike"</span>, <span class="st">"Mike"</span>],</span>
+<span id="cb23-2"><a href="#cb23-2"></a>             <span class="st">"Department"</span>: [<span class="st">"ECON"</span>, <span class="st">"DANL"</span>, <span class="st">"ECON"</span>, <span class="st">"DANL"</span>],</span>
+<span id="cb23-3"><a href="#cb23-3"></a>             <span class="st">"2018"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb23-4"><a href="#cb23-4"></a>             <span class="st">"2019"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
+<span id="cb23-5"><a href="#cb23-5"></a>             <span class="st">"2020"</span>: [<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]}</span>
+<span id="cb23-6"><a href="#cb23-6"></a>df <span class="op">=</span> pd.DataFrame(dict_data)</span>
+<span id="cb23-7"><a href="#cb23-7"></a></span>
+<span id="cb23-8"><a href="#cb23-8"></a>df_longer <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Department"</span>], </span>
+<span id="cb23-9"><a href="#cb23-9"></a>                    var_name<span class="op">=</span><span class="st">"Year"</span>, </span>
+<span id="cb23-10"><a href="#cb23-10"></a>                    value_name<span class="op">=</span><span class="st">"Number of Courses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>pivot()</code> method can also take a <code>list</code> of variable names for the <code>index</code> parameter.</li>
+</ul>
+</section>
+<section id="reshaping-dataframes-5" class="slide level2">
+<h2>Reshaping <code>DataFrames</code></h2>
+<div>
+<ul>
+<li>Let’s consider the following wide-form <code>DataFrame</code>, <code>df</code>, containing information about the number of courses each student took from each department in each year.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>dict_data <span class="op">=</span> {<span class="st">"Name"</span>: [<span class="st">"Donna"</span>, <span class="st">"Donna"</span>, <span class="st">"Mike"</span>, <span class="st">"Mike"</span>],</span>
+<span id="cb24-2"><a href="#cb24-2"></a>             <span class="st">"Department"</span>: [<span class="st">"ECON"</span>, <span class="st">"DANL"</span>, <span class="st">"ECON"</span>, <span class="st">"DANL"</span>],</span>
+<span id="cb24-3"><a href="#cb24-3"></a>             <span class="st">"2018"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb24-4"><a href="#cb24-4"></a>             <span class="st">"2019"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
+<span id="cb24-5"><a href="#cb24-5"></a>             <span class="st">"2020"</span>: [<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]}</span>
+<span id="cb24-6"><a href="#cb24-6"></a>df <span class="op">=</span> pd.DataFrame(dict_data)</span>
+<span id="cb24-7"><a href="#cb24-7"></a></span>
+<span id="cb24-8"><a href="#cb24-8"></a>df_longer <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Department"</span>], </span>
+<span id="cb24-9"><a href="#cb24-9"></a>                    var_name<span class="op">=</span><span class="st">"Year"</span>, </span>
+<span id="cb24-10"><a href="#cb24-10"></a>                    value_name<span class="op">=</span><span class="st">"Number of Courses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Q</strong>. How can we use the <code>df_longer</code> to create the wide-form <code>DataFrame</code>, <code>df_wider</code>, which is equivalent to the <code>df</code>?</p>
+</section>
+<section id="reshaping-dataframes-6" class="slide level2">
+<h2>Reshaping <code>DataFrames</code></h2>
+<p>Let’s do Part 1 of <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html"><strong>Classwork 7</strong></a>!</p>
+</section></section>
+<section>
+<section id="joining-dataframes" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Joining <code>DataFrames</code></strong></h1>
+
+</section>
+<section id="joining-dataframes-1" class="slide level2">
+<h2>Joining <code>DataFrames</code></h2>
+<h3 id="relational-data">Relational Data</h3>
+<ul>
+<li class="fragment">Sometimes, one data set is scattered across multiple files.
+<ul>
+<li class="fragment">The size of the files can be huge.</li>
+<li class="fragment">The data collection process can be scattered across time and space.</li>
+<li class="fragment">E.g., <code>DataFrame</code> for county-level data and <code>DataFrame</code> for geographic information, such as longitude and latitude.</li>
+</ul></li>
+<li class="fragment">Sometimes we want to combine two or more <code>DataFrames</code> based on common data values in those <code>DataFrames</code>.
+<ul>
+<li class="fragment">This task is known in the database world as performing a “join.”</li>
+<li class="fragment">We can do this with the <code>merge()</code> method in Pandas.</li>
+</ul></li>
+</ul>
+</section>
+<section id="joining-dataframes-2" class="slide level2">
+<h2>Joining <code>DataFrames</code></h2>
+<h3 id="relational-data-1">Relational Data</h3>
+<div>
+<ul>
+<li>The variables that are used to connect each pair of tables are called <strong>keys</strong>.</li>
+</ul>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-f30d0a9a84917de6d1d9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f30d0a9a84917de6d1d9">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="joining-dataframes-with-merge" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-setup.png" width="300">
+</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb25-2"><a href="#cb25-2"></a>    <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb25-3"><a href="#cb25-3"></a>    <span class="st">'val_x'</span>: [<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>]</span>
+<span id="cb25-4"><a href="#cb25-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb26-2"><a href="#cb26-2"></a>    <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb26-3"><a href="#cb26-3"></a>    <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>]</span>
+<span id="cb26-4"><a href="#cb26-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">The colored column represents the “key” variable.</li>
+<li class="fragment">The grey column represents the “value” column.</li>
+</ul>
+</section>
+<section id="joining-dataframes-with-merge-1" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="inner-join">Inner Join</h3>
+<ul>
+<li class="fragment">An <strong>inner join</strong> matches pairs of observations whenever their keys are equal:</li>
+</ul>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-inner.png" width="425">
+</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># the default value for 'how' is 'inner'</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co"># so it doesn't actually need to be specified</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>merge_inner <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb27-4"><a href="#cb27-4"></a>merge_inner_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb27-5"><a href="#cb27-5"></a>merge_inner_x_how <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="joining-dataframes-with-merge-2" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="left-join">Left Join</h3>
+<ul>
+<li class="fragment">A <strong>left join</strong> keeps all observations in <code>x</code>.</li>
+</ul>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-left.png" width="425">
+</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>merge_left <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>merge_left_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The most commonly used join is the left join.</li>
+</ul>
+</section>
+<section id="joining-dataframes-with-merge-3" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="right-join">Right Join</h3>
+<ul>
+<li class="fragment">A <strong>right join</strong> keeps all observations in <code>y</code>.</li>
+</ul>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-right.png" width="425">
+</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>merge_right <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb29-2"><a href="#cb29-2"></a>merge_right_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="joining-dataframes-with-merge-4" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="outer-full-join">Outer (Full) Join</h3>
+<ul>
+<li class="fragment">A <strong>full join</strong> keeps all observations in <code>x</code> and <code>y</code>.</li>
+</ul>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-full.png" width="412.5">
+</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>merge_outer <span class="op">=</span> pd.merge(x, y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a>merge_outer_x <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="joining-dataframes-with-merge-5" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="duplicate-keys-one-to-many">Duplicate keys: one-to-many</h3>
+<ul>
+<li class="fragment">One <code>DataFrame</code> has duplicate keys (a one-to-many relationship).</li>
+</ul>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-one-to-many.png" width="375">
+</p>
+<div class="columns">
+<div class="column" style="width:47.5%;">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb31-2"><a href="#cb31-2"></a>    <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="st">'val_x'</span>:[<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>, <span class="st">'x4'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:52.5%;">
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    <span class="st">'val_y'</span>:[<span class="st">'y1'</span>, <span class="st">'y2'</span>] })</span>
+<span id="cb32-4"><a href="#cb32-4"></a>one_to_many <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, </span>
+<span id="cb32-5"><a href="#cb32-5"></a>                         how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="joining-dataframes-with-merge-6" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="duplicate-keys-many-to-many">Duplicate keys: many-to-many</h3>
+<ul>
+<li class="fragment">Both <code>DataFrames</code> have duplicate keys (many-to-many relationship).</li>
+</ul>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/join-many-to-many.png" width="350">
+</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="st">'key'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="st">'val_x'</span>:[<span class="st">'x1'</span>,<span class="st">'x2'</span>,<span class="st">'x3'</span>,<span class="st">'x4'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="st">'key'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>, <span class="st">'y3'</span>, <span class="st">'y4'</span>] })</span>
+<span id="cb34-4"><a href="#cb34-4"></a>many_to_many <span class="op">=</span> x.merge(y, on<span class="op">=</span><span class="st">'key'</span>, </span>
+<span id="cb34-5"><a href="#cb34-5"></a>                          how<span class="op">=</span><span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="joining-dataframes-with-merge-7" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<h3 id="defining-the-key-columns">Defining the key columns</h3>
+<div>
+<ul>
+<li>If the left and right columns do not have the same name for the key variables, we can use the <code>left_on</code> and <code>right_on</code> parameters instead.</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>x <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="st">'key_x'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="st">'val_x'</span>: [<span class="st">'x1'</span>, <span class="st">'x2'</span>, <span class="st">'x3'</span>]</span>
+<span id="cb35-4"><a href="#cb35-4"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>y <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="st">'key_y'</span>: [<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="st">'val_y'</span>: [<span class="st">'y1'</span>, <span class="st">'y2'</span>] })</span>
+<span id="cb36-4"><a href="#cb36-4"></a></span>
+<span id="cb36-5"><a href="#cb36-5"></a>keys_xy <span class="op">=</span> </span>
+<span id="cb36-6"><a href="#cb36-6"></a>  x.merge(y, left_on <span class="op">=</span> <span class="st">'key_x'</span>, </span>
+<span id="cb36-7"><a href="#cb36-7"></a>             right_on <span class="op">=</span> <span class="st">'key_y'</span>, </span>
+<span id="cb36-8"><a href="#cb36-8"></a>             how <span class="op">=</span> <span class="st">'left'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="joining-dataframes-with-merge-8" class="slide level2">
+<h2>Joining <code>DataFrames</code> with <code>merge()</code></h2>
+<p>Let’s do Part 2 of <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html"><strong>Classwork 7</strong></a>!</p>
+</section></section>
+<section>
+<section id="data-concatenation" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Data Concatenation</strong></h1>
+
+</section>
+<section id="data-concatenation-1" class="slide level2">
+<h2>Data Concatenation</h2>
+<div>
+<ul>
+<li>Concatenation can be thought of as appending a row or column to our data.
+<ul>
+<li>This approach is possible if our data was split into parts or if we performed a calculation that we want to append to our existing data set.</li>
+</ul></li>
+<li>Let’s consider the following example DataFrames:</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>df1 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_1.csv'</span>)</span>
+<span id="cb37-2"><a href="#cb37-2"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_2.csv'</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/concat_3.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>We will be working with <code>.index</code> and <code>.columns</code> in this Section.</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>df1.index</span>
+<span id="cb38-2"><a href="#cb38-2"></a>df1.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-concatenation-2" class="slide level2">
+<h2>Data Concatenation</h2>
+<h3 id="add-rows">Add Rows</h3>
+<div>
+<ul>
+<li>Concatenating the <code>DataFrames</code> on top of each other uses the <code>concat()</code> method.
+<ul>
+<li>All of the <code>DataFrames</code> to be concatenated are passed in a <code>list</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span>
+<span id="cb39-2"><a href="#cb39-2"></a>row_concat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-concatenation-3" class="slide level2">
+<h2>Data Concatenation</h2>
+<h3 id="add-rows-1">Add Rows</h3>
+<div>
+<ul>
+<li>Let’s consider a new Series and concatenate it with <code>df1</code>:</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># create a new row of data</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>new_row_series <span class="op">=</span> pd.Series([<span class="st">'n1'</span>, <span class="st">'n2'</span>, <span class="st">'n3'</span>, <span class="st">'n4'</span>])</span>
+<span id="cb40-3"><a href="#cb40-3"></a>new_row_series</span>
+<span id="cb40-4"><a href="#cb40-4"></a></span>
+<span id="cb40-5"><a href="#cb40-5"></a></span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="co"># attempt to add the new row to a dataframe</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_series])</span>
+<span id="cb40-8"><a href="#cb40-8"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.</li>
+<li>Why?</li>
+</ul>
+</div>
+</section>
+<section id="data-concatenation-4" class="slide level2">
+<h2>Data Concatenation</h2>
+<h3 id="add-rows-2">Add Rows</h3>
+<div>
+<ul>
+<li>To fix the problem, we need turn our <code>Series</code> into a <code>DataFrame</code>.
+<ul>
+<li>This data frame contains one row of data, and the column names are the ones the data will bind to.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>new_row_df <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="co"># note the double brackets to create a "row" of data</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>  data <span class="op">=</span>[[<span class="st">"n1"</span>, <span class="st">"n2"</span>, <span class="st">"n3"</span>, <span class="st">"n4"</span>]],</span>
+<span id="cb41-4"><a href="#cb41-4"></a>  columns <span class="op">=</span>[<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>],</span>
+<span id="cb41-5"><a href="#cb41-5"></a>)</span>
+<span id="cb41-6"><a href="#cb41-6"></a></span>
+<span id="cb41-7"><a href="#cb41-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_df])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-concatenation-5" class="slide level2">
+<h2>Data Concatenation</h2>
+<h3 id="add-columns">Add Columns</h3>
+<div>
+<ul>
+<li>Concatenating <em>columns</em> is very similar to concatenating <em>rows</em>.
+<ul>
+<li>The main difference is the <code>axis</code> parameter in the <code>concat()</code> method.</li>
+<li>The default value of <code>axis</code> is <code>0</code> (or <code>axis = "index"</code>), so it will concatenate data in a row-wise fashion.</li>
+<li>If we pass <code>axis = 1</code> (or <code>axis = "columns"</code>) to the function, it will concatenate data in a column-wise manner.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>col_concat <span class="op">=</span> pd.concat([df1, df2, df3], axis <span class="op">=</span> <span class="st">"columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-concatenation-6" class="slide level2">
+<h2>Data Concatenation</h2>
+<h3 id="add-columns-1">Add Columns</h3>
+<div>
+<ul>
+<li>We can use <code>ignore_index=True</code> to reset the column indices, so that we do not have duplicated column names.</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="concatenate-with-different-indices" class="slide level2">
+<h2>Concatenate with Different Indices</h2>
+<div>
+<ul>
+<li><p>What would happen when the row and column indices are not aligned?</p></li>
+<li><p>Let’s modify our DataFrames for the next few examples.</p></li>
+</ul>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># rename the columns of our dataframes</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>df1.columns <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
+<span id="cb44-3"><a href="#cb44-3"></a>df2.columns <span class="op">=</span> [<span class="st">'E'</span>, <span class="st">'F'</span>, <span class="st">'G'</span>, <span class="st">'H'</span>]</span>
+<span id="cb44-4"><a href="#cb44-4"></a>df3.columns <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'F'</span>, <span class="st">'H'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>If we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.</li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="concatenate-with-different-indices-1" class="slide level2">
+<h2>Concatenate with Different Indices</h2>
+<div>
+<ul>
+<li>We can set <code>join = 'inner'</code> to keep only the columns that are shared among the data sets.</li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>pd.concat([df1, df2, df3], join <span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>If we use the <code>DataFrames</code> that have columns in common, only the columns that all of them share will be returned.</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>pd.concat([df1, df3], join <span class="op">=</span><span class="st">'inner'</span>,  ignore_index <span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="concatenate-with-different-indices-2" class="slide level2">
+<h2>Concatenate with Different Indices</h2>
+<div>
+<ul>
+<li>Let’s modify our DataFrames further.</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># re-indexing the rows of our DataFrames</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>df1.index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb48-3"><a href="#cb48-3"></a>df2.index <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>]</span>
+<span id="cb48-4"><a href="#cb48-4"></a>df3.index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="concatenate-with-different-indices-3" class="slide level2">
+<h2>Concatenate with Different Indices</h2>
+<div>
+<ul>
+<li>When we concatenate along <code>axis="columns"</code> <code>(axis=1</code>), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.</li>
+</ul>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>col_concat <span class="op">=</span> pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Just as we did when we concatenated in a row-wise manner, we can choose to keep the results only when there are matching indices by using <code>join="inner"</code>.</li>
+</ul>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>pd.concat([df1, df3], axis <span class="op">=</span><span class="st">"columns"</span>, join<span class="op">=</span><span class="st">'inner'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-concatenation-7" class="slide level2">
+<h2>Data Concatenation</h2>
+<p>Let’s do Part 3 of <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html"><strong>Classwork 7</strong></a>!</p>
+
+<div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    document.addEventListener('wheel', function(event) {
+        if (event.deltaY > 0) {
+            Reveal.next(); // Scroll down to go to the next slide
+        } else {
+            Reveal.prev(); // Scroll up to go to the previous slide
+        }
+    }, false);
+
+    window.onload = function() {
+        document.querySelectorAll('a').forEach(function(link) {
+            link.setAttribute('target', '_blank');
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Query all anchor tags within code blocks (adjust the selector as needed)
+      document.querySelectorAll('pre code a').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent the default anchor action
+          e.stopPropagation(); // Stop the event from bubbling up
+        });
+      });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target all span elements within code blocks that have IDs starting with 'cb'
+        document.querySelectorAll('pre code span[id^="cb"]').forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // Apply yellow background color to the hovered span element
+                this.style.backgroundColor = '#FFFF99';
+            });
+            element.addEventListener('mouseleave', function() {
+                // Revert the background color when the mouse leaves the span element
+                this.style.backgroundColor = '';
+            });
+        });
+    });
+
+
+
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = ( cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' +  annotation + '"';
+            const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+            return selector;
+          }
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            })
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
+                //compute the position of the single el (top and bottom and make a div)
+                const el = window.document.getElementById(lineIds[0]);
+                top = el.offsetTop;
+                height = el.offsetHeight;
+                parent = el.parentElement.parentElement;
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
+              }
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it 
+                let div = window.document.getElementById("code-annotation-line-highlight");
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = 'absolute';
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                  gutterDiv.style.position = 'absolute';
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector('.code-annotation-gutter');
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
+              }
+              selectedAnnoteEl = annoteEl;
+            }
+          };
+          const unselectCodeLines = () => {
+            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+          // Handle positioning of the toggle
+          window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+          const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+          for (let i=0; i<annoteTargets.length; i++) {
+            const annoteTarget = annoteTargets[i];
+            const targetCell = annoteTarget.getAttribute("data-target-cell");
+            const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+            const contentFn = () => {
+              const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              if (content) {
+                const tipContent = content.cloneNode(true);
+                tipContent.classList.add("code-annotation-tip-content");
+                return tipContent.outerHTML;
+              }
+            }
+            const config = {
+              allowHTML: true,
+              content: contentFn,
+              onShow: (instance) => {
+                selectCodeLines(instance.reference);
+                instance.reference.classList.add('code-annotation-active');
+                window.tippy.hideAll();
+              },
+              onHide: (instance) => {
+                unselectCodeLines();
+                instance.reference.classList.remove('code-annotation-active');
+              },
+              maxWidth: 300,
+              delay: [50, 0],
+              duration: [200, 0],
+              offset: [5, 10],
+              arrow: true,
+              appendTo: function(el) {
+                return el.parentElement.parentElement.parentElement;
+              },
+              interactive: true,
+              interactiveBorder: 10,
+              theme: 'light-border',
+              placement: 'right',
+              popperOptions: {
+                modifiers: [
+                {
+                  name: 'flip',
+                  options: {
+                    flipVariations: false, // true by default
+                    allowedAutoPlacements: ['right'],
+                    fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                  },
+                },
+                {
+                  name: 'preventOverflow',
+                  options: {
+                    mainAxis: false,
+                    altAxis: false
+                  }
+                }
+                ]        
+              }      
+            };
+            window.tippy(annoteTarget, config); 
+          }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
