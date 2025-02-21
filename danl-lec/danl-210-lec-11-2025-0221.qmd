@@ -325,12 +325,12 @@ Let's do Questions 7-8 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw
 ## Reshaping `DataFrames`
 
 
-```{.python}
-import pandas as pd
-# Below is for an interactive display of DataFrame in Colab
-from google.colab import data_table
-data_table.enable_dataframe_formatter()
-```
+<!-- ```{.python} -->
+<!-- import pandas as pd -->
+<!-- # Below is for an interactive display of DataFrame in Colab -->
+<!-- from google.colab import data_table -->
+<!-- data_table.enable_dataframe_formatter() -->
+<!-- ``` -->
 
 
 - A `DataFrame` can be given in a format unsuited for the analysis that we would like to perform on it.
@@ -352,6 +352,10 @@ data_table.enable_dataframe_formatter()
 :::
 
 ```{.python}
+import pandas as pd
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
 df_wide = pd.DataFrame({
     'Weekday': ['Tuesday', 'Wednesday'],
     'Miami': [80, 83],
@@ -401,7 +405,6 @@ df_wide_to_long = (
     df_wide
     .melt()
 )
-
 ```
 
 
@@ -412,7 +415,6 @@ df_wide_to_long = (
     df_wide
     .melt(id_vars = "Weekday")
 )
-
 
 
 
@@ -438,7 +440,6 @@ df_wide_to_long = (
           value_name = "Temperature")
 )
 
-
 ```
 
 :::{.nonincremental}
@@ -450,25 +451,25 @@ df_wide_to_long = (
 :::
 
 
-## Make `DataFrame` Longer with `melt()`
+<!-- ## Make `DataFrame` Longer with `melt()` -->
 
-```{.python}
-df_wide_to_long = (
-    df_wide
-    .melt(id_vars = "Weekday",
-          var_name = "City",
-          value_name = "Temperature",
-          value_vars = ['Miami', 'Rochester'])
-)
-```
+<!-- ```{.python} -->
+<!-- df_wide_to_long = ( -->
+<!--     df_wide -->
+<!--     .melt(id_vars = "Weekday", -->
+<!--           var_name = "City", -->
+<!--           value_name = "Temperature", -->
+<!--           value_vars = ['Miami', 'Rochester']) -->
+<!-- ) -->
+<!-- ``` -->
 
-:::{.nonincremental}
+<!-- :::{.nonincremental} -->
 
-- `melt()` can take a few parameters:
-  - `value_vars` parameter allows us to select which specific columns we want to “melt”.
-  - By default, it will melt all the columns not specified in the `id_vars` parameter.
+<!-- - `melt()` can take a few parameters: -->
+<!--   - `value_vars` parameter allows us to select which specific columns we want to “melt”. -->
+<!--   - By default, it will melt all the columns not specified in the `id_vars` parameter. -->
 
-:::
+<!-- ::: -->
 
 
 ## Make `DataFrame` Wider with `pivot()`
@@ -519,9 +520,9 @@ df_longer = df.melt(id_vars=["Name", "Department"],
 ```{.python}
 dict_data = {"Name": ["Donna", "Donna", "Mike", "Mike"],
              "Department": ["ECON", "DANL", "ECON", "DANL"],
-             "2018": [1, 2, 3, 1],
-             "2019": [2, 3, 4, 2],
-             "2020": [5, 1, 2, 2]}
+             "2022": [1, 2, 3, 1],
+             "2023": [2, 3, 4, 2],
+             "2024": [5, 1, 2, 2]}
 df = pd.DataFrame(dict_data)
 
 df_longer = df.melt(id_vars=["Name", "Department"], 

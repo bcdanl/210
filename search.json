@@ -6927,14 +6927,14 @@
     "href": "danl-lec/danl-210-lec-11-2025-0221.html#reshaping-dataframes-2",
     "title": "Lecture 11",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nimport pandas as pd\n# Below is for an interactive display of DataFrame in Colab\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding a DataFrame into the shape we desire."
+    "text": "Reshaping DataFrames\n\n\n\n\n\n\n\n\nA DataFrame can be given in a format unsuited for the analysis that we would like to perform on it.\n\nA DataFrame may have larger structural problems that extend beyond the data.\nPerhaps the DataFrame stores its values in a format that makes it easy to extract a single row but difficult to aggregate the data.\n\nReshaping a DataFrame means manipulating it into a different shape.\nIn this section, we will discuss pandas techniques for molding a DataFrame into the shape we desire."
   },
   {
     "objectID": "danl-lec/danl-210-lec-11-2025-0221.html#long-vs.-wide-dataframes",
     "href": "danl-lec/danl-210-lec-11-2025-0221.html#long-vs.-wide-dataframes",
     "title": "Lecture 11",
     "section": "Long vs. Wide DataFrames",
-    "text": "Long vs. Wide DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
+    "text": "Long vs. Wide DataFrames\n\n\nThe following DataFrames measure temperatures in two cities over two days.\n\n\nimport pandas as pd\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\n\ndf_wide = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday'],\n    'Miami': [80, 83],\n    'Rochester': [57, 62],\n    'St. Louis': [71, 75]\n})\n\ndf_long = pd.DataFrame({\n    'Weekday': ['Tuesday', 'Wednesday', 'Tuesday', 'Wednesday', 'Tuesday', 'Wednesday'],\n    'City': ['Miami', 'Miami', 'Rochester', 'Rochester', 'St. Louis', 'St. Louis'],\n    'Temperature': [80, 83, 57, 62, 71, 75]\n})"
   },
   {
     "objectID": "danl-lec/danl-210-lec-11-2025-0221.html#long-vs.-wide-dataframes-1",
@@ -6969,14 +6969,14 @@
     "href": "danl-lec/danl-210-lec-11-2025-0221.html#make-dataframe-longer-with-melt-1",
     "title": "Lecture 11",
     "section": "Make DataFrame Longer with melt()",
-    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
+    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\")\n)\n\n\n\n\nmelt() can take a few parameters:\n\nid_vars is a container (string, list, tuple, or array) that represents the variables that will remain as is.\nid_vars can indicate which column should be the “identifier”."
   },
   {
     "objectID": "danl-lec/danl-210-lec-11-2025-0221.html#make-dataframe-longer-with-melt-2",
     "href": "danl-lec/danl-210-lec-11-2025-0221.html#make-dataframe-longer-with-melt-2",
     "title": "Lecture 11",
     "section": "Make DataFrame Longer with melt()",
-    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the name of the variable whose values are taken from column names in a given wide-form DataFrame.\nvalue_name is a string for the name of the variable whose values are taken from the values in a given wide-form DataFrame."
+    "text": "Make DataFrame Longer with melt()\ndf_wide_to_long = (\n    df_wide\n    .melt(id_vars = \"Weekday\",\n          var_name = \"City\",\n          value_name = \"Temperature\")\n)\n\n\nmelt() can take a few parameters:\n\nvar_name is a string for the name of the variable whose values are taken from column names in a given wide-form DataFrame.\nvalue_name is a string for the name of the variable whose values are taken from the values in a given wide-form DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-11-2025-0221.html#make-dataframe-longer-with-melt-3",
@@ -7004,7 +7004,7 @@
     "href": "danl-lec/danl-210-lec-11-2025-0221.html#reshaping-dataframes-5",
     "title": "Lecture 11",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2018\": [1, 2, 3, 1],\n             \"2019\": [2, 3, 4, 2],\n             \"2020\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
+    "text": "Reshaping DataFrames\n\n\nLet’s consider the following wide-form DataFrame, df, containing information about the number of courses each student took from each department in each year.\n\n\ndict_data = {\"Name\": [\"Donna\", \"Donna\", \"Mike\", \"Mike\"],\n             \"Department\": [\"ECON\", \"DANL\", \"ECON\", \"DANL\"],\n             \"2022\": [1, 2, 3, 1],\n             \"2023\": [2, 3, 4, 2],\n             \"2024\": [5, 1, 2, 2]}\ndf = pd.DataFrame(dict_data)\n\ndf_longer = df.melt(id_vars=[\"Name\", \"Department\"], \n                    var_name=\"Year\", \n                    value_name=\"Number of Courses\")\nQ. How can we use the df_longer to create the wide-form DataFrame, df_wider, which is equivalent to the df?"
   },
   {
     "objectID": "danl-lec/danl-210-lec-11-2025-0221.html#reshaping-dataframes-6",
