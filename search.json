@@ -7207,7 +7207,7 @@
     "href": "danl-lec/danl-210-lec-12-2025-0224.html#reshaping-dataframes-3",
     "title": "Lecture 12",
     "section": "Reshaping DataFrames",
-    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() and pivot_table() make DataFrame wider."
+    "text": "Reshaping DataFrames\nmelt() and pivot()\n\n\n\n\nmelt() makes DataFrame longer.\npivot() makes DataFrame wider."
   },
   {
     "objectID": "danl-lec/danl-210-lec-12-2025-0224.html#make-dataframe-longer-with-melt",

@@ -146,7 +146,7 @@ df_long = pd.DataFrame({
 </p>
 
 - `melt()` makes `DataFrame` longer.
-- `pivot()` and `pivot_table()` make `DataFrame` wider.
+- `pivot()` makes `DataFrame` wider.
 
 
 
