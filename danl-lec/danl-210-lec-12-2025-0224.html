@@ -555,8 +555,8 @@ Byeong-Hak Choe
 <ul>
 <li><code>melt()</code> can take a few parameters:
 <ul>
-<li><code>var_name</code> is a <code>string</code> for the <em>name</em> of the variable whose values are taken from <em>column names</em> in a given wide-form DataFrame.</li>
-<li><code>value_name</code> is a <code>string</code> for the <em>name</em> of the variable whose values are taken from the <em>values</em> in a given wide-form DataFrame.</li>
+<li><code>var_name</code> is a <em>string</em> for the <strong>name</strong> of the variable whose values are taken from <strong>column names</strong> in a given wide-form DataFrame.</li>
+<li><code>value_name</code> is a <em>string</em> for the <strong>name</strong> of the variable whose values are taken from the <strong>values</strong> in a given wide-form DataFrame.</li>
 </ul></li>
 </ul>
 </div>
@@ -590,8 +590,8 @@ Byeong-Hak Choe
 <li class="fragment">When using <code>pivot()</code>, we need to specify a few parameters:
 <ul>
 <li class="fragment"><code>index</code> that takes the <em>column</em> to pivot on;</li>
-<li class="fragment"><code>columns</code> that takes the <em>column</em> to be used to make the <em>new variable names</em> of the wider <code>DataFrame</code>;</li>
-<li class="fragment"><code>values</code> that takes the <em>column</em> that provides the <em>values</em> of the <em>variables</em> in the wider <code>DataFrame</code>.</li>
+<li class="fragment"><code>columns</code> that takes the <em>column</em> to be used to make the <strong>variable names</strong> of the wider <code>DataFrame</code>;</li>
+<li class="fragment"><code>values</code> that takes the <em>column</em> that provides the <strong>values</strong> of the variables in the wider <code>DataFrame</code>.</li>
 </ul></li>
 </ul>
 </section>
@@ -672,8 +672,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-ae8be442a0012646e662" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ae8be442a0012646e662">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c4f7ede1b426ee570d5f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c4f7ede1b426ee570d5f">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["left outer","right outer","full outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Pandas<\/th>\n      <th>SQL<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Pandas","targets":0},{"name":"SQL","targets":1},{"name":"Description","targets":2}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

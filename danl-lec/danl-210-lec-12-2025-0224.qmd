@@ -197,8 +197,8 @@ df_wide_to_long = (
 :::{.nonincremental}
 
 - `melt()` can take a few parameters:
-  - `var_name` is a `string` for the *name* of the variable whose values are taken from *column names* in a given wide-form DataFrame.
-  - `value_name` is a `string` for the *name* of the variable whose values are taken from the *values* in a given wide-form DataFrame.
+  - `var_name` is a *string* for the **name** of the variable whose values are taken from **column names** in a given wide-form DataFrame.
+  - `value_name` is a *string* for the **name** of the variable whose values are taken from the **values** in a given wide-form DataFrame.
 
 :::
 
@@ -238,8 +238,8 @@ df_long_to_wide = (
 
 - When using `pivot()`, we need to specify a few parameters:
   - `index` that takes the *column* to pivot on;
-  - `columns` that takes the *column* to be used to make the *new variable names* of the wider `DataFrame`;
-  - `values` that takes the *column* that provides the *values* of the *variables* in the wider `DataFrame`.
+  - `columns` that takes the *column* to be used to make the **variable names** of the wider `DataFrame`;
+  - `values` that takes the *column* that provides the **values** of the variables in the wider `DataFrame`.
 
 
 

@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 20, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -74,7 +74,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nFebruary 20, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nFebruary 24, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -7235,7 +7235,7 @@
     "href": "danl-lec/danl-210-lec-12-2025-0224.html#make-dataframe-wider-with-pivot",
     "title": "Lecture 12",
     "section": "Make DataFrame Wider with pivot()",
-    "text": "Make DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  \n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the new variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
+    "text": "Make DataFrame Wider with pivot()\ndf_long_to_wide = (\n    df_long\n    .pivot(index = \"Weekday\",\n           columns = \"City\",\n           values = \"Temperature\"  \n        )\n    .reset_index()\n    )\n\nWhen using pivot(), we need to specify a few parameters:\n\nindex that takes the column to pivot on;\ncolumns that takes the column to be used to make the variable names of the wider DataFrame;\nvalues that takes the column that provides the values of the variables in the wider DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-12-2025-0224.html#reshaping-dataframes-4",
