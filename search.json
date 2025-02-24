@@ -6780,7 +6780,7 @@
     "href": "danl-hw/danl-210-hw-02.html#question-17",
     "title": "Homework 2",
     "section": "Question 17",
-    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name” and “Date” in ascending order."
+    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name” and “Date” in ascending order.\nThe following displays the trashwheel_long DataFrame:"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description-3",

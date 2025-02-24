@@ -522,6 +522,7 @@ rmarkdown::paged_table(trashwheel ,
 - Reshape the `trashwheel` DataFrame into a DataFrame called `trashwheel_long` that includes variables for "`Name`", "`Date`", "`Trash_Type`", and "`Number`". 
   - The "`Trash_Type`" variable should indicate the type of trash from the original DataFrame, and "`Number`" should contain the corresponding values. 
   - Finally, sort `trashwheel_long` by "`Name`" and "`Date`" in ascending order.
+  - The following displays the `trashwheel_long` DataFrame:
   
 ```{r}
 #| results: asis
