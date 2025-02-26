@@ -151,7 +151,7 @@ rmarkdown::paged_table(weather)
 
 <br>
 
-- Merge `flights` with `weather`.
+Merge the `flights` and `weather` DataFrames so that all observations from `flights` are retained in the resulting DataFrame.
 
 *Answer:*
 ```{python}
@@ -174,8 +174,9 @@ rmarkdown::paged_table(airlines)
 
 <br>
 
-- Identify the full name of the airline with the highest average `dep_delay` in the `flights` DataFrame, considering only positive delays.
+<!-- - Identify the full name of the airline with the highest average `dep_delay` in the `flights` DataFrame, considering only positive delays. -->
 
+Identify the airlines (by full name) that have the top five `dep_delay` values in the `flights` DataFrame.
 
 *Answer:*
 ```{python}
@@ -186,9 +187,14 @@ rmarkdown::paged_table(airlines)
 
 ## Question 5
 
-- Find the airline that has the largest proportion of flights with longer than 30-minute `dep_delay`.
+-	Consider the following four airlines:
+	-	Delta Air Lines Inc. (DL)
+	-	United Air Lines Inc. (UA)
+	
+-	Determine which airline has a higher proportion of flights with a `dep_delay` greater than 30 minutes.
 
-- Hint: `numpy.where()` is like an if-else statement, which can be very useful:
+- Hint: `numpy.where()` is like an if-else statement, which can be very useful.
+  - The following is an example of `numpy.where()`:
 
 ```{python}
 #| echo: true
@@ -199,11 +205,11 @@ import numpy as np
 # Sample DataFrame with temperatures
 df = pd.DataFrame({
     'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],
-    'Temperature (C)': [12, 22, 7, 25, 30]
+    'Temperature': [12, 22, 7, 25, 30]
 })
 
 # Categorize temperatures using numpy.where
-df['Category'] = np.where(df['Temperature (C)'] < 10, 'Cold', 'Not Cold'))
+df['Category'] = np.where(df['Temperature'] < 10, 'Cold', 'Not Cold')
 ```
 
 
@@ -216,14 +222,37 @@ df['Category'] = np.where(df['Temperature (C)'] < 10, 'Cold', 'Not Cold'))
 
 # Part 3 - Concatenating Rows and Columns
 
-```{python}
-#| echo: true
-
+The following is the `student_data1` DataFrame:
+```{.python}
 student_data1 = pd.DataFrame({
         'student_id': ['S1', 'S2', 'S3', 'S4', 'S5'],
          'name': ['Danniella Fenton', 'Ryder Storey', 'Bryce Jensen', 'Ed Bernal', 'Kwame Morin'], 
         'marks': [200, 210, 190, 222, 199]})
 
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+
+library(tidyverse)
+student_data1 <- tibble(
+  student_id = c("S1", "S2", "S3", "S4", "S5"),
+  name = c("Danniella Fenton", "Ryder Storey", "Bryce Jensen", "Ed Bernal", "Kwame Morin"),
+  marks = c(200, 210, 190, 222, 199)
+)
+
+rmarkdown::paged_table(student_data1)
+
+```
+
+<br>
+
+The following is the `student_data2` DataFrame:
+
+
+```{.python}
 student_data2 = pd.DataFrame({
         'student_id': ['S4', 'S5', 'S6', 'S7', 'S8'],
         'name': ['Scarlette Fisher', 'Carla Williamson', 'Dante Morse', 'Kaiser William', 'Madeeha Preston'], 
@@ -231,10 +260,27 @@ student_data2 = pd.DataFrame({
 ```
 
 
+```{r}
+#| eval: true
+#| echo: false
+
+library(tidyverse)
+
+student_data2 <- tibble(
+  student_id = c("S4", "S5", "S6", "S7", "S8"),
+  name = c("Scarlette Fisher", "Carla Williamson", "Dante Morse", "Kaiser William", "Madeeha Preston"),
+  marks = c(201, 200, 198, 219, 201)
+)
+
+rmarkdown::paged_table(student_data2)
+
+```
+
+<br>
 
 ## Question 6
 
-- Write a Pandas code to join the two given DataFrames along **rows** and assign all data.
+- Write a Pandas code to concatenate the two given DataFrames along **rows**.
 
 
 *Answer:*
@@ -248,8 +294,7 @@ student_data2 = pd.DataFrame({
 
 ## Question 7
 
-- Write a Pandas code to join the two given DataFrames along **columns** and assign all data.
-
+- Write a Pandas code to concatenate the two given DataFrames along **columns**.
 
 
 
@@ -266,15 +311,13 @@ student_data2 = pd.DataFrame({
 
 - Consider the following Pandas `Series`:
 
-```{python}
-#| echo: true
-
+```{.python}
 s6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'marks'])
 ```
 
-Write a Pandas code to append rows to the DataFrame `student_data1`.
+- Write a Pandas code to append `s6` to the DataFrame `student_data1`.
 
-
+- Hint: Consider creating a DataFrame of `s6`.
 
 *Answer:*
 ```{python}

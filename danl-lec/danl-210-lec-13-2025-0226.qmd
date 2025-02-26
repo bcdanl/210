@@ -82,18 +82,18 @@ theme_set(theme_fivethirtyeight()+
 ### Relational Data
 
 :::{.nonincremental}
--  The variables that are used to connect each pair of tables are called **keys**.
+-  The variables that are used to connect each pair of `DataFrames` are called **keys**.
 
 :::
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
 text_tbl <- data.frame(
-  Pandas = c("left", "right", "outer", "inner"),
-  SQL = c("left outer",
-"right outer", 
-"full outer",
-"inner"),
+  Join = c("left", "right", "outer", "inner"),
+#   SQL = c("left outer",
+# "right outer", 
+# "full outer",
+# "inner"),
   Description = c("Keep all the observations in the left",  
                   "Keep all the observations in the right", 
                   "Keep all the observations in both left and right",
@@ -183,8 +183,8 @@ y = pd.DataFrame({
 
 ::::
 
-- The colored column represents the "key" variable.
-- The grey column represents the "value" column.
+- The colored column represents the **"key"** variable.
+- The grey column represents the "value" variable.
 
 
 
@@ -199,9 +199,10 @@ y = pd.DataFrame({
 ```{.python}
 # the default value for 'how' is 'inner'
 # so it doesn't actually need to be specified
-merge_inner = pd.merge(x, y, on='key', how='inner')
-merge_inner_x = x.merge(y, on='key', how='inner')
-merge_inner_x_how = x.merge(y, on='key')
+merge_inner_1 = pd.merge(x, y, on='key')
+merge_inner_2 = pd.merge(x, y, on='key', how='inner')
+merge_inner_3 = x.merge(y, on='key')
+merge_inner_4 = x.merge(y, on='key', how='inner')
 ```
 
 
@@ -329,7 +330,7 @@ many_to_many = x.merge(y, on='key',
 
 ::::
 
-
+- In practice, it is better to avoid the many-to-many join.
 
 ## Joining `DataFrames` with `merge()`
 ### Defining the key columns
@@ -380,8 +381,9 @@ Let's do Part 2 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-2
 
 ## Data Concatenation
 :::{.nonincremental}
-- Concatenation can be thought of as appending a row or column to our data. 
-  - This approach is possible if our data was split into parts or if we performed a calculation that we want to append to our existing data set.
+-	Concatenation involves combining multiple `DataFrames` by adding rows or columns. This method is useful:
+	  - When merging datasets that were split into parts; 
+	  - When appending new data to an existing dataset.
 
 - Let's consider the following example DataFrames:
 
@@ -419,7 +421,7 @@ row_concat
 ###  Add Rows  
 :::{.nonincremental}
 
-- Let's consider a new Series and concatenate it with `df1`:
+- Let's consider a new `Series` and concatenate it with `df1`:
 ```{.python}
 # create a new row of data
 new_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
@@ -442,7 +444,7 @@ df
 :::{.nonincremental}
 
 - To fix the problem, we need turn our `Series` into a `DataFrame`.
-  - This data frame contains one row of data, and the column names are the ones the data will bind to.
+  - This `DataFrame` contains one row of data, and the column names are the ones the data will bind to.
 
 ```{.python}
 new_row_df = pd.DataFrame(
@@ -468,8 +470,11 @@ df = pd.concat([df1, new_row_df])
   
   
 ```{.python}
-col_concat = pd.concat([df1, df2, df3], axis = "columns")
+pd.concat([df1, df2, df3], axis = "columns")
+pd.concat([df1, df2, df3], axis="columns", ignore_index=True)  
 ```
+
+- `ignore_index=True` to reset the column indices
 
 :::
 
@@ -480,56 +485,50 @@ col_concat = pd.concat([df1, df2, df3], axis = "columns")
 - We can use `ignore_index=True` to reset the column indices, so that we do not have duplicated column names.
 
 ```{.python}
-pd.concat([df1, df2, df3], axis="columns", ignore_index=True)
 ```
 
 :::
 
 
-## Concatenate with Different Indices  
+## Concatenate with Different Indices
+### What would happen when the column indices are not aligned?
 :::{.nonincremental}
 
-- What would happen when the row and column indices are not aligned?
-
-- Let’s modify our DataFrames for the next few examples.
+- Let’s modify our `DataFrames` as follows.
 ```{.python}
-# rename the columns of our dataframes
+# rename the columns of our DataFrames
 df1.columns = ['A', 'B', 'C', 'D']
-df2.columns = ['E', 'F', 'G', 'H']
+df2.columns = ['A', 'F', 'G', 'H']
 df3.columns = ['A', 'C', 'F', 'H']
 ```
 
--  If we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.
+-  If we try to concatenate these `DataFrames` as we did, the `DataFrames` now do much more than simply stack one on top of the other.
 ```{.python}
-row_concat = pd.concat([df1, df2, df3])
+pd.concat([df1, df2, df3])
+pd.concat([df1, df2, df3], join ='inner') # keep only the common columns
 ```
 
 :::
 
+<!-- ## Concatenate with Different Indices   -->
 
-## Concatenate with Different Indices  
-
-:::{.nonincremental}
-
-- We can set `join = 'inner'` to keep only the columns that are shared among the data sets.
-```{.python}
-pd.concat([df1, df2, df3], join ='inner')
-```
+<!-- :::{.nonincremental} -->
 
 
-- If we use the `DataFrames` that have columns in common, only the columns that all of them share will be returned.
-```{.python}
-pd.concat([df1, df3], join ='inner',  ignore_index =False)
-```
 
-:::
+<!-- - If we use the `DataFrames` that have columns in common, only the columns that all of them share will be returned. -->
+<!-- ```{.python} -->
+<!-- pd.concat([df1, df3], join ='inner',  ignore_index =False) -->
+<!-- ``` -->
+
+<!-- ::: -->
 
 
 ## Concatenate with Different Indices  
-
+### What would happen when the row indices are not aligned?
 :::{.nonincremental}
 
-- Let’s modify our DataFrames further.
+- Let’s modify our `DataFrames` as follows.
 ```{.python}
 # re-indexing the rows of our DataFrames
 df1.index = [0, 1, 2, 3]
@@ -537,24 +536,13 @@ df2.index = [4, 5, 6, 7]
 df3.index = [0, 2, 5, 7]
 ```
 
-:::
-
-
-## Concatenate with Different Indices  
-
-:::{.nonincremental}
-
-- When we concatenate along `axis="columns"` `(axis=1`), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.
+- When we concatenate along `axis="columns"` `(axis=1`), the new `DataFrames` will be added in a column-wise fashion and matched against their respective row indices.
 
 ```{.python}
-col_concat = pd.concat([df1, df2, df3], axis="columns")
+pd.concat([df1, df2, df3], axis="columns")
+pd.concat([df1, df3], axis ="columns", join='inner') # keep only the common rows
 ```
 
-
-- Just as we did when we concatenated in a row-wise manner, we can choose to keep the results only when there are matching indices by using `join="inner"`.
-```{.python}
-pd.concat([df1, df3], axis ="columns", join='inner')
-```
 
 :::
 

@@ -2909,42 +2909,42 @@
     "href": "danl-cw/danl-210-cw-07.html#question-3",
     "title": "Classwork 7",
     "section": "Question 3",
-    "text": "Question 3\nThe following is the flights DataFrame:\n\n\n\n\n  \n\n\n\n\nThe following is the weather DataFrame:\n\n\n\n\n  \n\n\n\n\n\nMerge flights with weather.\n\nAnswer:"
+    "text": "Question 3\nThe following is the flights DataFrame:\n\n\n\n\n  \n\n\n\n\nThe following is the weather DataFrame:\n\n\n\n\n  \n\n\n\n\nMerge the flights and weather DataFrames so that all observations from flights are retained in the resulting DataFrame.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-07.html#question-4",
     "href": "danl-cw/danl-210-cw-07.html#question-4",
     "title": "Classwork 7",
     "section": "Question 4",
-    "text": "Question 4\nThe following is the airlines DataFrame:\n\n\n\n\n  \n\n\n\n\n\nIdentify the full name of the airline with the highest average dep_delay in the flights DataFrame, considering only positive delays.\n\nAnswer:"
+    "text": "Question 4\nThe following is the airlines DataFrame:\n\n\n\n\n  \n\n\n\n\n\nIdentify the airlines (by full name) that have the top five dep_delay values in the flights DataFrame.\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-07.html#question-5",
     "href": "danl-cw/danl-210-cw-07.html#question-5",
     "title": "Classwork 7",
     "section": "Question 5",
-    "text": "Question 5\n\nFind the airline that has the largest proportion of flights with longer than 30-minute dep_delay.\nHint: numpy.where() is like an if-else statement, which can be very useful:\n\n\nimport pandas as pd\nimport numpy as np\n\n# Sample DataFrame with temperatures\ndf = pd.DataFrame({\n    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],\n    'Temperature (C)': [12, 22, 7, 25, 30]\n})\n\n# Categorize temperatures using numpy.where\ndf['Category'] = np.where(df['Temperature (C)'] &lt; 10, 'Cold', 'Not Cold'))\n\nAnswer:"
+    "text": "Question 5\n\nConsider the following four airlines:\n\nDelta Air Lines Inc. (DL)\nUnited Air Lines Inc. (UA)\n\nDetermine which airline has a higher proportion of flights with a dep_delay greater than 30 minutes.\nHint: numpy.where() is like an if-else statement, which can be very useful.\n\nThe following is an example of numpy.where():\n\n\n\nimport pandas as pd\nimport numpy as np\n\n# Sample DataFrame with temperatures\ndf = pd.DataFrame({\n    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],\n    'Temperature': [12, 22, 7, 25, 30]\n})\n\n# Categorize temperatures using numpy.where\ndf['Category'] = np.where(df['Temperature'] &lt; 10, 'Cold', 'Not Cold')\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-07.html#question-6",
     "href": "danl-cw/danl-210-cw-07.html#question-6",
     "title": "Classwork 7",
     "section": "Question 6",
-    "text": "Question 6\n\nWrite a Pandas code to join the two given DataFrames along rows and assign all data.\n\nAnswer:"
+    "text": "Question 6\n\nWrite a Pandas code to concatenate the two given DataFrames along rows.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-07.html#question-7",
     "href": "danl-cw/danl-210-cw-07.html#question-7",
     "title": "Classwork 7",
     "section": "Question 7",
-    "text": "Question 7\n\nWrite a Pandas code to join the two given DataFrames along columns and assign all data.\n\nAnswer:"
+    "text": "Question 7\n\nWrite a Pandas code to concatenate the two given DataFrames along columns.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-07.html#question-8",
     "href": "danl-cw/danl-210-cw-07.html#question-8",
     "title": "Classwork 7",
     "section": "Question 8",
-    "text": "Question 8\n\nConsider the following Pandas Series:\n\n\ns6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'marks'])\n\nWrite a Pandas code to append rows to the DataFrame student_data1.\nAnswer:"
+    "text": "Question 8\n\nConsider the following Pandas Series:\n\ns6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'marks'])\n\nWrite a Pandas code to append s6 to the DataFrame student_data1.\nHint: Consider creating a DataFrame of s6.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-06.html",
@@ -7424,21 +7424,21 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-2",
     "title": "Lecture 13",
     "section": "Joining DataFrames",
-    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of tables are called keys."
+    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of DataFrames are called keys."
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge",
     "title": "Lecture 13",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3']\n})\n\n\n\nThe colored column represents the “key” variable.\nThe grey column represents the “value” column."
+    "text": "Joining DataFrames with merge()\n\n\n\n\n\nx = pd.DataFrame({\n    'key': [1, 2, 3],\n    'val_x': ['x1', 'x2', 'x3']\n})\n\ny = pd.DataFrame({\n    'key': [1, 2, 4],\n    'val_y': ['y1', 'y2', 'y3']\n})\n\n\n\nThe colored column represents the “key” variable.\nThe grey column represents the “value” variable."
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge-1",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge-1",
     "title": "Lecture 13",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\nInner Join\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n# the default value for 'how' is 'inner'\n# so it doesn't actually need to be specified\nmerge_inner = pd.merge(x, y, on='key', how='inner')\nmerge_inner_x = x.merge(y, on='key', how='inner')\nmerge_inner_x_how = x.merge(y, on='key')"
+    "text": "Joining DataFrames with merge()\nInner Join\n\nAn inner join matches pairs of observations whenever their keys are equal:\n\n\n\n\n# the default value for 'how' is 'inner'\n# so it doesn't actually need to be specified\nmerge_inner_1 = pd.merge(x, y, on='key')\nmerge_inner_2 = pd.merge(x, y, on='key', how='inner')\nmerge_inner_3 = x.merge(y, on='key')\nmerge_inner_4 = x.merge(y, on='key', how='inner')"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge-2",
@@ -7473,7 +7473,7 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge-6",
     "title": "Lecture 13",
     "section": "Joining DataFrames with merge()",
-    "text": "Joining DataFrames with merge()\nDuplicate keys: many-to-many\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')"
+    "text": "Joining DataFrames with merge()\nDuplicate keys: many-to-many\n\nBoth DataFrames have duplicate keys (many-to-many relationship).\n\n\n\n\n\n\nx = pd.DataFrame({\n  'key':[1, 2, 2, 3],\n  'val_x':['x1','x2','x3','x4']})\n\ny = pd.DataFrame({\n  'key': [1, 2, 2, 3],\n  'val_y': ['y1', 'y2', 'y3', 'y4'] })\nmany_to_many = x.merge(y, on='key', \n                          how='left')\n\n\n\nIn practice, it is better to avoid the many-to-many join."
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge-7",
@@ -7494,7 +7494,7 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-1",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\n\n\nConcatenation can be thought of as appending a row or column to our data.\n\nThis approach is possible if our data was split into parts or if we performed a calculation that we want to append to our existing data set.\n\nLet’s consider the following example DataFrames:\n\ndf1 = pd.read_csv('https://bcdanl.github.io/data/concat_1.csv')\ndf2 = pd.read_csv('https://bcdanl.github.io/data/concat_2.csv')\ndf3 = pd.read_csv('https://bcdanl.github.io/data/concat_3.csv')\n\nWe will be working with .index and .columns in this Section.\n\ndf1.index\ndf1.columns"
+    "text": "Data Concatenation\n\n\nConcatenation involves combining multiple DataFrames by adding rows or columns. This method is useful:\n\nWhen merging datasets that were split into parts;\nWhen appending new data to an existing dataset.\n\nLet’s consider the following example DataFrames:\n\ndf1 = pd.read_csv('https://bcdanl.github.io/data/concat_1.csv')\ndf2 = pd.read_csv('https://bcdanl.github.io/data/concat_2.csv')\ndf3 = pd.read_csv('https://bcdanl.github.io/data/concat_3.csv')\n\nWe will be working with .index and .columns in this Section.\n\ndf1.index\ndf1.columns"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-2",
@@ -7515,42 +7515,42 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-4",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Rows\n\n\nTo fix the problem, we need turn our Series into a DataFrame.\n\nThis data frame contains one row of data, and the column names are the ones the data will bind to.\n\n\nnew_row_df = pd.DataFrame(\n  # note the double brackets to create a \"row\" of data\n  data =[[\"n1\", \"n2\", \"n3\", \"n4\"]],\n  columns =[\"A\", \"B\", \"C\", \"D\"],\n)\n\ndf = pd.concat([df1, new_row_df])"
+    "text": "Data Concatenation\nAdd Rows\n\n\nTo fix the problem, we need turn our Series into a DataFrame.\n\nThis DataFrame contains one row of data, and the column names are the ones the data will bind to.\n\n\nnew_row_df = pd.DataFrame(\n  # note the double brackets to create a \"row\" of data\n  data =[[\"n1\", \"n2\", \"n3\", \"n4\"]],\n  columns =[\"A\", \"B\", \"C\", \"D\"],\n)\n\ndf = pd.concat([df1, new_row_df])"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-5",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-5",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Columns\n\n\nConcatenating columns is very similar to concatenating rows.\n\nThe main difference is the axis parameter in the concat() method.\nThe default value of axis is 0 (or axis = \"index\"), so it will concatenate data in a row-wise fashion.\nIf we pass axis = 1 (or axis = \"columns\") to the function, it will concatenate data in a column-wise manner.\n\n\ncol_concat = pd.concat([df1, df2, df3], axis = \"columns\")"
+    "text": "Data Concatenation\nAdd Columns\n\n\nConcatenating columns is very similar to concatenating rows.\n\nThe main difference is the axis parameter in the concat() method.\nThe default value of axis is 0 (or axis = \"index\"), so it will concatenate data in a row-wise fashion.\nIf we pass axis = 1 (or axis = \"columns\") to the function, it will concatenate data in a column-wise manner.\n\n\npd.concat([df1, df2, df3], axis = \"columns\")\npd.concat([df1, df2, df3], axis=\"columns\", ignore_index=True)  \n\nignore_index=True to reset the column indices"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-6",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-6",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Columns\n\n\nWe can use ignore_index=True to reset the column indices, so that we do not have duplicated column names.\n\npd.concat([df1, df2, df3], axis=\"columns\", ignore_index=True)"
+    "text": "Data Concatenation\nAdd Columns\n\n\nWe can use ignore_index=True to reset the column indices, so that we do not have duplicated column names."
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices",
     "title": "Lecture 13",
     "section": "Concatenate with Different Indices",
-    "text": "Concatenate with Different Indices\n\n\nWhat would happen when the row and column indices are not aligned?\nLet’s modify our DataFrames for the next few examples.\n\n# rename the columns of our dataframes\ndf1.columns = ['A', 'B', 'C', 'D']\ndf2.columns = ['E', 'F', 'G', 'H']\ndf3.columns = ['A', 'C', 'F', 'H']\n\nIf we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.\n\nrow_concat = pd.concat([df1, df2, df3])"
+    "text": "Concatenate with Different Indices\nWhat would happen when the column indices are not aligned?\n\n\nLet’s modify our DataFrames as follows.\n\n# rename the columns of our DataFrames\ndf1.columns = ['A', 'B', 'C', 'D']\ndf2.columns = ['A', 'F', 'G', 'H']\ndf3.columns = ['A', 'C', 'F', 'H']\n\nIf we try to concatenate these DataFrames as we did, the DataFrames now do much more than simply stack one on top of the other.\n\npd.concat([df1, df2, df3])\npd.concat([df1, df2, df3], join ='inner') # keep only the common columns"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-1",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-1",
     "title": "Lecture 13",
     "section": "Concatenate with Different Indices",
-    "text": "Concatenate with Different Indices\n\n\nWe can set join = 'inner' to keep only the columns that are shared among the data sets.\n\npd.concat([df1, df2, df3], join ='inner')\n\nIf we use the DataFrames that have columns in common, only the columns that all of them share will be returned.\n\npd.concat([df1, df3], join ='inner',  ignore_index =False)"
+    "text": "Concatenate with Different Indices\nWhat would happen when the row indices are not aligned?\n\n\nLet’s modify our DataFrames as follows.\n\n# re-indexing the rows of our DataFrames\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]\n\nWhen we concatenate along axis=\"columns\" (axis=1), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.\n\npd.concat([df1, df2, df3], axis=\"columns\")\npd.concat([df1, df3], axis =\"columns\", join='inner') # keep only the common rows"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-2",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-2",
     "title": "Lecture 13",
     "section": "Concatenate with Different Indices",
-    "text": "Concatenate with Different Indices\n\n\nLet’s modify our DataFrames further.\n\n# re-indexing the rows of our DataFrames\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]"
+    "text": "Concatenate with Different Indices\n\n\nWhen we concatenate along axis=\"columns\" (axis=1), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.\n\ncol_concat = pd.concat([df1, df2, df3], axis=\"columns\")\n\nJust as we did when we concatenated in a row-wise manner, we can choose to keep the results only when there are matching indices by using join=\"inner\".\n\npd.concat([df1, df3], axis =\"columns\", join='inner')"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-3",
