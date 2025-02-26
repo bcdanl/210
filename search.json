@@ -2923,7 +2923,7 @@
     "href": "danl-cw/danl-210-cw-07.html#question-5",
     "title": "Classwork 7",
     "section": "Question 5",
-    "text": "Question 5\n\nConsider the following four airlines:\n\nDelta Air Lines Inc. (DL)\nUnited Air Lines Inc. (UA)\n\nDetermine which airline has a higher proportion of flights with a dep_delay greater than 30 minutes.\nHint: numpy.where() is like an if-else statement, which can be very useful.\n\nThe following is an example of numpy.where():\n\n\n\nimport pandas as pd\nimport numpy as np\n\n# Sample DataFrame with temperatures\ndf = pd.DataFrame({\n    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],\n    'Temperature': [12, 22, 7, 25, 30]\n})\n\n# Categorize temperatures using numpy.where\ndf['Category'] = np.where(df['Temperature'] &lt; 10, 'Cold', 'Not Cold')\n\nAnswer:"
+    "text": "Question 5\n\nConsider the following two airlines:\n\nDelta Air Lines Inc. (DL)\nUnited Air Lines Inc. (UA)\n\nDetermine which airline has a higher proportion of flights with a dep_delay greater than 30 minutes.\nHint: numpy.where() is like an if-else statement, which can be very useful.\n\nThe following is an example of numpy.where():\n\n\n\nimport pandas as pd\nimport numpy as np\n\n# Sample DataFrame with temperatures\ndf = pd.DataFrame({\n    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],\n    'Temperature': [12, 22, 7, 25, 30]\n})\n\n# Categorize temperatures using numpy.where\ndf['Category'] = np.where(df['Temperature'] &lt; 10, 'Cold', 'Not Cold')\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-07.html#question-6",

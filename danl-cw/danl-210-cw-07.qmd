@@ -20,7 +20,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
 
-# Part 1 - Pivoting DataFrames
+# Part 1 - Reshaping DataFrames
 
 ## Question 1
 
@@ -187,7 +187,7 @@ Identify the airlines (by full name) that have the top five `dep_delay` values i
 
 ## Question 5
 
--	Consider the following four airlines:
+-	Consider the following two airlines:
 	-	Delta Air Lines Inc. (DL)
 	-	United Air Lines Inc. (UA)
 	
