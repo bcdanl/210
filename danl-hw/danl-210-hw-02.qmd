@@ -428,6 +428,7 @@ rmarkdown::paged_table(trashwheel ,
 |variable       |type     |description    |
 |:--------------|:---------|:--------------|
 |`Name`           |string |Name of the Trash Wheel           |
+|`Dumpster`	      |double	|Dumpster number |
 |`Month`          |string |Month          |
 |`Year`           |numeric   |Year           |
 |`Date`           |string |Date (Daily)           |
@@ -519,9 +520,9 @@ rmarkdown::paged_table(trashwheel ,
 <br>
 
 ## Question 17
-- Reshape the `trashwheel` DataFrame into a DataFrame called `trashwheel_long` that includes variables for "`Name`", "`Date`", "`Trash_Type`", and "`Number`". 
+- Reshape the `trashwheel` DataFrame into a DataFrame called `trashwheel_long` that includes variables for "`Name`", "`Date`", "`Dumpster`", "`Trash_Type`", and "`Number`". 
   - The "`Trash_Type`" variable should indicate the type of trash from the original DataFrame, and "`Number`" should contain the corresponding values. 
-  - Finally, sort `trashwheel_long` by "`Name`" and "`Date`" in ascending order.
+  - Finally, sort `trashwheel_long` by "`Name`", "`Date`", "`Dumpster`", and "`Trash_Type`" in ascending order.
   - The following displays the `trashwheel_long` DataFrame:
   
 ```{r}
@@ -537,14 +538,14 @@ library(readr)
 trashwheel <- read_csv('https://bcdanl.github.io/data/trashwheel.csv')
 
 trashwheel_long <- trashwheel |> 
-  select(Name, Date, PlasticBottles:SportsBalls) |> 
+  select(Name, Date, Dumpster, PlasticBottles:SportsBalls) |> 
   pivot_longer(
     cols = PlasticBottles:SportsBalls,
     values_to = "Number",
     names_to = "Trash_Type"
   ) |> 
   mutate(Date = mdy(Date)) |>  # Converts "7/19/18" to a Date object
-  arrange(Trash_Type, Date)
+  arrange(Name, Date, Dumpster, Trash_Type)
 
 DT::datatable(trashwheel_long) 
 ```

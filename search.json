@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 26, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -74,7 +74,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nFebruary 24, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nFebruary 26, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -6773,14 +6773,14 @@
     "href": "danl-hw/danl-210-hw-02.html#variable-description-2",
     "title": "Homework 2",
     "section": "Variable Description",
-    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nMonth\nstring\nMonth\n\n\nYear\nnumeric\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nnumeric\nWeight in tons\n\n\nVolume\nnumeric\nVolume in cubic yards\n\n\nPlasticBottles\nnumeric\nNumber of plastic bottles\n\n\nPolystyrene\nnumeric\nNumber of polystyrene items\n\n\nCigaretteButts\nnumeric\nNumber of cigarette butts\n\n\nGlassBottles\nnumeric\nNumber of glass bottles\n\n\nPlasticBags\nnumeric\nNumber of plastic bags\n\n\nWrappers\nnumeric\nNumber of wrappers\n\n\nSportsBalls\nnumeric\nNumber of sports balls\n\n\nHomesPowered\nnumeric\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
+    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ndouble\nDumpster number\n\n\nMonth\nstring\nMonth\n\n\nYear\nnumeric\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nnumeric\nWeight in tons\n\n\nVolume\nnumeric\nVolume in cubic yards\n\n\nPlasticBottles\nnumeric\nNumber of plastic bottles\n\n\nPolystyrene\nnumeric\nNumber of polystyrene items\n\n\nCigaretteButts\nnumeric\nNumber of cigarette butts\n\n\nGlassBottles\nnumeric\nNumber of glass bottles\n\n\nPlasticBags\nnumeric\nNumber of plastic bags\n\n\nWrappers\nnumeric\nNumber of wrappers\n\n\nSportsBalls\nnumeric\nNumber of sports balls\n\n\nHomesPowered\nnumeric\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-17",
     "href": "danl-hw/danl-210-hw-02.html#question-17",
     "title": "Homework 2",
     "section": "Question 17",
-    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name” and “Date” in ascending order.\nThe following displays the trashwheel_long DataFrame:"
+    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Dumpster”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name”, “Date”, “Dumpster”, and “Trash_Type” in ascending order.\nThe following displays the trashwheel_long DataFrame:"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description-3",
