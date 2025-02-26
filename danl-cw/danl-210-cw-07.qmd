@@ -24,14 +24,12 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 ## Question 1
 
-Make `ny_pincp` longer.
-
-
 ```{python}
 #| echo: true
 ny_pincp = pd.read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
 ```
 
+The following is the `ny_pincp` DataFrame:
 
 ```{r}
 #| eval: true
@@ -40,12 +38,9 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NY_pinc_wi
           )
 ```
 
+<br>
 
-
-## Question 2
-
-- Make a wide-form DataFrame of `covid` whose variable names are from `countriesAndTerritories` and values are from `cases`.
-
+Make `ny_pincp` longer.
 
 *Answer:*
 ```{python}
@@ -53,6 +48,32 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NY_pinc_wi
 ```
 
 <br>
+
+## Question 2
+
+```{python}
+#| echo: true
+covid = pd.read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
+```
+
+The following is the `covid` DataFrame:
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
+          )
+```
+
+<br>
+
+- Make a wide-form DataFrame of `covid` whose variable names are from `countriesAndTerritories` and values are from `cases`.
+
+<br>
+
+*Answer:*
+```{python}
+
+```
 
 <br><br><br>
 
@@ -108,6 +129,28 @@ weather = pd.read_csv("https://bcdanl.github.io/data/flights-weather.csv")
 
 ## Question 3
 
+The following is the `flights` DataFrame:
+```{r}
+#| eval: true
+#| echo: false
+
+flights <- nycflights13::flights
+rmarkdown::paged_table(flights)
+```
+
+<br>
+
+The following is the `weather` DataFrame:
+```{r}
+#| eval: true
+#| echo: false
+
+weather <- nycflights13::weather
+rmarkdown::paged_table(weather)
+```
+
+<br>
+
 - Merge `flights` with `weather`.
 
 *Answer:*
@@ -120,7 +163,18 @@ weather = pd.read_csv("https://bcdanl.github.io/data/flights-weather.csv")
 
 ## Question 4
 
-- Identify the full name of the airline with the highest average `dep_delay`, considering only positive delays.
+The following is the `airlines` DataFrame:
+```{r}
+#| eval: true
+#| echo: false
+
+airlines <- nycflights13::airlines
+rmarkdown::paged_table(airlines)
+```
+
+<br>
+
+- Identify the full name of the airline with the highest average `dep_delay` in the `flights` DataFrame, considering only positive delays.
 
 
 *Answer:*
@@ -181,8 +235,6 @@ student_data2 = pd.DataFrame({
 ## Question 6
 
 - Write a Pandas code to join the two given DataFrames along **rows** and assign all data.
-
-
 
 
 *Answer:*
