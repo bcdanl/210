@@ -1,6 +1,6 @@
 ---
 title: Lecture 13
-subtitle: "`pandas` Basics - Joining DataFrames; Data Concatenation"
+subtitle: "`pandas` Basics - Joining DataFrames; Concatenating DataFrames"
 format:
   clean-revealjs:
     self-contained: false
@@ -478,16 +478,6 @@ pd.concat([df1, df2, df3], axis="columns", ignore_index=True)
 
 :::
 
-## Data Concatenation
-###   Add Columns  
-:::{.nonincremental}
-
-- We can use `ignore_index=True` to reset the column indices, so that we do not have duplicated column names.
-
-```{.python}
-```
-
-:::
 
 
 ## Concatenate with Different Indices
