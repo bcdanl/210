@@ -282,8 +282,7 @@ else:
 - One conditional construct we're bound to use at some point, is the `if-else` chain:
 
 
-##  Booleans, Conditions, and `if` Statements
-###  Indentation
+##  Indentation
 
 - We have seen that certain parts of the code examples are indented. 
 
@@ -294,8 +293,7 @@ else:
 
 
 
-##  Booleans, Conditions, and `if` Statements
-###  Indentation
+##  Indentation
 
 
 ```{.python}
@@ -329,8 +327,7 @@ if x > 2:
 - The above example describes indexing in Python
 
 
-## Slicing Methods
-###  Strings
+##  Strings
 
 ```{.python}
 string = "cheesecake"
@@ -362,8 +359,7 @@ print( len(list_of_numbers) )
 - Both lists and strings will allow us to use the `len()` command to get their length:
 
 
-## Slicing Methods
-###  String-related Functions
+##  String-related Functions
 
 #### Dot operation
 
@@ -377,8 +373,7 @@ print( len(list_of_numbers) )
 
 
 
-## Slicing Methods
-###  String-related Functions
+##  String-related Functions
 #### Split with `split()`
 - We can use the built-in string `split()` function to break a string into a list of smaller strings based on some *separator*.
   - If we don’t specify a *separator*, `split()` uses any sequence of white space characters---newlines, spaces, and tabs:
@@ -389,8 +384,7 @@ tasks.split()
 ```
 
 
-## Slicing Methods
-###  String-related Functions
+##  String-related Functions
 
 #### Combine by Using `join()`
 - `join()` collapses a *list* of strings into a single string.
@@ -401,8 +395,7 @@ print('Found and signing book deals:', crypto_string)
 ```
 
 
-## Slicing Methods
-### Strings and Slicing
+## Strings and Slicing
 
 - We can extract a substring (a part of a string) from a string by using a **slice**. 
 
@@ -416,8 +409,7 @@ print('Found and signing book deals:', crypto_string)
 
 
 
-## Slicing Methods
-### Get a Substring with a Slice
+## Get a Substring with a Slice
 
 
 ::: {.panel-tabset}
@@ -479,8 +471,7 @@ letters[: : -1 ]
 
 
 
-## Slicing Methods
-### Lists
+## Lists
 
 - Python is 
   - a zero-indexed language (things start counting from zero);
@@ -490,8 +481,7 @@ letters[: : -1 ]
 
 
 
-## Slicing Methods
-### Lists
+## Lists
 
   
 ```{.python}
@@ -509,8 +499,7 @@ list_example[ 1 : 3 ]
 - We can think of items in a list-like object as being fenced in. 
   - The index represents the fence post.
 
-## Slicing Methods
-### Lists
+## Lists
 
 ::: {.panel-tabset}
 ## `[index]`
@@ -546,8 +535,7 @@ suny[-7]
 
 
 
-## Slicing Methods
-### Get an Item with a Slice
+## Get an Item with a Slice
 - We can extract a subsequence of a list by using a *slice*:
 ```{.python}
 suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
@@ -590,8 +578,7 @@ suny[-6 : -4]
 
 # Functions, Arguments, and Parameters {background-color="#1c4982"}
 
-## Functions, Arguments, and Parameters
-### Functions
+## Functions
 
 ```{.python}
 int("20") 
@@ -674,8 +661,7 @@ while count <= 5:
 
 
 
-## Repeat with `while`
-###  Asking the user for input
+##  Asking the user for input
   
 
 :::: {.columns}
@@ -702,8 +688,9 @@ print(stuff)
 :::
 ::::
 
-## Repeat with `while`
-###  Cancel with `break`
+
+
+##  Cancel with `break`
 
 :::: {.columns}
 
@@ -735,7 +722,7 @@ while True:
 
 
 ## Repeat with `while`
-###  Skip Ahead with `continue`
+### Skip Ahead with `continue`
 
 :::: {.columns}
 
@@ -854,8 +841,7 @@ for letter in word:
 
 
 
-## Iterate with `for` and `in`
-### Generate Number Sequences with `range()`
+## Generate Number Sequences with `range()`
 
 - The `range()` function returns a stream of numbers within a specified range, without
 first having to create and store a large data structure such as a *list* or *tuple*. 
@@ -865,8 +851,7 @@ first having to create and store a large data structure such as a *list* or *tup
   - `range()` returns an iterable object, so we need to step through the values with `for` ... `in`, or convert the object to a sequence like a *list*. 
 
 
-## Iterate with `for` and `in`
-### `for` ... `in` `range()`
+## `for` ... `in` `range()`
 
 :::: {.columns}
 

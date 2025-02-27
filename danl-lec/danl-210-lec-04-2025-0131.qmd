@@ -60,8 +60,7 @@ theme_set(theme_fivethirtyeight()+
 # Python Basics {background-color="#1c4982"}
 
 
-## Python Basics
-###  Variables Are Names, Not Places
+##  Variables Are Names, Not Places
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/py-basic-box.png">
@@ -74,8 +73,7 @@ theme_set(theme_fivethirtyeight()+
   - 22 is an integer;
   - "Hello World!" is a string.
 
-## Python Basics
-###  Values, Variables, and Types
+##  Values, Variables, and Types
 
 ```{.python}
 a = 10
@@ -105,8 +103,7 @@ print(a)
 
 ::::
 
-## Python Basics
-###  Values, Variables, and Types
+##  Values, Variables, and Types
 
 ::: {}
 - Sometimes you will hear variables referred to as **objects**.
@@ -116,8 +113,7 @@ print(a)
 :::
 
 
-## Python Basics
-## Variable in `data.frame`
+## Variable in `DataFrame`
 
 <div style="text-align: center; width: 70%; margin: auto;">
   <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" style="width: 100%; margin-bottom: -20px;">
@@ -131,8 +127,7 @@ print(a)
   - **Values** (Cells): Individual data points within each cell of the `data.frame`.
 
 
-## Python Basics
-###  Assignment ( `=` )
+##  Assignment ( `=` )
 
 
 ```{.python}
@@ -151,8 +146,7 @@ y
 
 
 
-## Python Basics
-###  Code and comment style 
+##  Code and comment style 
 - The two main principles for coding and managing data are:
   - Make things easier for your future self.
   - Don't trust your future self.
@@ -167,8 +161,7 @@ y
 
 
 
-## Python Basics
-###  Assignment
+##  Assignment ( `=` )
 
 
 - In programming code, everything on the right side needs to have a value.
@@ -185,8 +178,7 @@ y
 
 
 
-## Python Basics
-###  Variables Are Names, Not Places
+##  Variables Are Names, Not Places
 
 ```{.python}
 list_example = [10, 1.23, "like this", True, None]
@@ -205,8 +197,7 @@ type(list_example)
 - Python also has a built-in type of data container called a **list** (e.g., `[10, 15, 20]`) that can *contain* anything, even different **types** 
 
 
-## Python Basics
-###  Types
+## Data Types
 
 
 <p align="center">
@@ -220,8 +211,7 @@ type(list_example)
 
 
 
-## Python Basics
-###  Brackets
+##  Brackets
 
 ::: {.nonincremental}
 
@@ -271,8 +261,7 @@ sum(num_tup)
 ::: 
 
 
-## Python Basics
-###  Operators
+##  Operators
 
 ```{.python}
 string_one = "This is an example "
@@ -315,8 +304,7 @@ print(string_full)
 
 
 
-## Python Basics
-###  Operators
+##  Operators
 :::: {.columns}
 ::: {.column width="50%"}
 
@@ -347,8 +335,7 @@ print(string * 3)
 
 
 
-## Python Basics
-###  Operators
+##  Operators
 
 **Q**. [**Classwork 4.1**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-1){target="_blank"}
 
@@ -357,8 +344,7 @@ $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 
 
 
-## Python Basics
-###  Casting Variables
+##  Casting Variables
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -385,8 +371,7 @@ type(mod_number)
   
 
 
-## Python Basics
-###  Tuples and (im)mutability
+##  Tuples and (im)mutability
 ::: {}
 
 - A tuple is an object that is defined by parentheses and entries that are separated by commas, for example `(15, 20, 32)`. (They are of type tuple.) 
@@ -403,8 +388,7 @@ type(mod_number)
 
 
 
-## Python Basics
-###  Dictionaries
+##  Dictionaries
 
 
 
@@ -426,8 +410,7 @@ cities_to_temps.items()
 
 
 
-## Python Basics
-###  Running on Empty
+##  Running on Empty
 
 - Being able to create empty containers is sometimes useful, especially when using loops. 
 
