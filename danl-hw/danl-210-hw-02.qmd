@@ -428,22 +428,26 @@ rmarkdown::paged_table(trashwheel ,
 |variable       |type     |description    |
 |:--------------|:---------|:--------------|
 |`Name`           |string |Name of the Trash Wheel           |
-|`Dumpster`	      |double	|Dumpster number |
+|`Dumpster`	      |integer	|Dumpster number over time; The Trash Wheel can have multiple dumpsters in a day |
 |`Month`          |string |Month          |
-|`Year`           |numeric   |Year           |
+|`Year`           |integer   |Year           |
 |`Date`           |string |Date (Daily)           |
-|`Weight`         |numeric    |Weight in tons         |
-|`Volume`         |numeric    |Volume in cubic yards          |
-|`PlasticBottles` |numeric    |Number of plastic bottles |
-|`Polystyrene`    |numeric    |Number of polystyrene items    |
-|`CigaretteButts` |numeric    |Number of cigarette butts |
-|`GlassBottles`   |numeric    |Number of glass bottles   |
-|`PlasticBags`    |numeric    |Number of plastic bags    |
-|`Wrappers`       |numeric    |Number of wrappers       |
-|`SportsBalls`    |numeric    |Number of sports balls    |
-|`HomesPowered`   |numeric    |Homes Powered - Each ton of trash equates to on average 500 kilowatts of electricity.  An average household will use 30 kilowatts per day.   |
+|`Weight`         |float    |Weight in tons         |
+|`Volume`         |integer    |Volume in cubic yards          |
+|`PlasticBottles` |float    |Number of plastic bottles |
+|`Polystyrene`    |float    |Number of polystyrene items    |
+|`CigaretteButts` |float    |Number of cigarette butts |
+|`GlassBottles`   |float    |Number of glass bottles   |
+|`PlasticBags`    |float    |Number of plastic bags    |
+|`Wrappers`       |float    |Number of wrappers       |
+|`SportsBalls`    |float    |Number of sports balls    |
+|`HomesPowered`   |integer    |Homes Powered - Each ton of trash equates to on average 500 kilowatts of electricity.  An average household will use 30 kilowatts per day.   |
 
+<br>
 
+- 
+
+<br>
 
 ## Meet the Mr. Trash Wheel Family
 
@@ -547,7 +551,9 @@ trashwheel_long <- trashwheel |>
   mutate(Date = mdy(Date)) |>  # Converts "7/19/18" to a Date object
   arrange(Name, Date, Dumpster, Trash_Type)
 
-DT::datatable(trashwheel_long) 
+DT::datatable(trashwheel_long, options = list(
+  pageLength = 20
+)) 
 ```
 
 
