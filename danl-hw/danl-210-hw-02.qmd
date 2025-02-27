@@ -261,7 +261,6 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 - The following is the DataFrame for Part 2. 
 
 ```{.python}
-#| echo: true
 NFL2022_stuffs = pd.read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
 ```
 
@@ -323,8 +322,7 @@ In DataFrame, `NFL2022_stuffs`, remove observations for which the value of `post
 ## Question 16
 - Consider the following DataFrame, `NFL2022_epa`:
 
-```{python}
-#| echo: true
+```{.python}
 NFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')
 ```
 
@@ -349,10 +347,10 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2022_ep
 <br>
 
 - Create the following DataFrame, `NFL2022_stuffs_EPA`, that includes
-  1. All the variables in the DataFrame, `NFL2022_stuffs`;
+  1. All the variables and the observations in the DataFrame, `NFL2022_stuffs`;
   2. The variables, `passer`, `receiver`, and `epa`, from the DataFrame, `NFL2022_epa` by joining the two DataFrames.
 
-- In the resulting DataFrame, `NFL2022_stuffs_EPA`, remove observations with `NA` in `passer` after the join.
+- In the resulting DataFrame, `NFL2022_stuffs_EPA`, please remove observations with `NaN` in `passer` after the join.
 
 
 ```{r}
@@ -571,15 +569,14 @@ DT::datatable(trashwheel_long, options = list(
 
 Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
 
-```{python}
-#| echo: true
+```{.python}
 spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
 ```
 
 
 ```{r}
 #| eval: true
-#| echo: true
+#| echo: false
 #| warning: false
 
 rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),
