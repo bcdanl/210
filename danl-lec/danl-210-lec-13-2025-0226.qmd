@@ -145,7 +145,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 ```
 
 -  The variables that are used to connect each pair of `DataFrames` are called **keys**.
-- Each observation in a DataFrame is uniquely identified by key variable(s).
+- Each observation in a DataFrame is often uniquely identified by key variable(s).
 - The key variable enables relationships between the DataFrames to be defined.
 
 
