@@ -7501,14 +7501,14 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-2",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Rows\n\n\nConcatenating the DataFrames on top of each other uses the concat() method.\n\nAll of the DataFrames to be concatenated are passed in a list.\n\n\nrow_concat = pd.concat([df1, df2, df3])\nrow_concat"
+    "text": "Data Concatenation\nAdd Rows\n\n\nConcatenating the DataFrames on top of each other uses the concat() method.\n\nAll of the DataFrames to be concatenated are passed in a list.\n\n\nrow_concat = pd.concat([df1, df2, df3])"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-3",
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-3",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Rows\n\n\nLet’s consider a new Series and concatenate it with df1:\n\n# create a new row of data\nnew_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])\nnew_row_series\n\n\n# attempt to add the new row to a dataframe\ndf = pd.concat([df1, new_row_series])\ndf\n\nNot only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.\nWhy?"
+    "text": "Data Concatenation\nAdd Rows\n\n\nLet’s consider a new Series and concatenate it with df1:\n\n# create a new row of data\nnew_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])\n\n# attempt to add the new row to a dataframe\ndf = pd.concat([df1, new_row_series])\n\nNot only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.\nWhy?"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-4",
@@ -7522,7 +7522,7 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-5",
     "title": "Lecture 13",
     "section": "Data Concatenation",
-    "text": "Data Concatenation\nAdd Columns\n\n\nConcatenating columns is very similar to concatenating rows.\n\nThe main difference is the axis parameter in the concat() method.\nThe default value of axis is 0 (or axis = \"index\"), so it will concatenate data in a row-wise fashion.\nIf we pass axis = 1 (or axis = \"columns\") to the function, it will concatenate data in a column-wise manner.\n\n\npd.concat([df1, df2, df3], axis = \"columns\")\npd.concat([df1, df2, df3], axis=\"columns\", ignore_index=True)  \n\nignore_index=True to reset the column indices"
+    "text": "Data Concatenation\nAdd Columns\n\n\nConcatenating columns is very similar to concatenating rows.\n\nThe main difference is the axis parameter in the concat() method.\nThe default value of axis is 0 (or axis = \"index\"), so it will concatenate data in a row-wise fashion.\nIf we pass axis = 1 (or axis = \"columns\") to the function, it will concatenate data in a column-wise manner.\n\n\npd.concat([df1, df2, df3], axis = \"columns\")\npd.concat([df1, df2, df3], axis = \"columns\", ignore_index = True)  \n\nignore_index=True to reset the column indices"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#data-concatenation-6",
@@ -7543,7 +7543,7 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-1",
     "title": "Lecture 13",
     "section": "Concatenate with Different Indices",
-    "text": "Concatenate with Different Indices\nWhat would happen when the row indices are not aligned?\n\n\nLet’s modify our DataFrames as follows.\n\n# re-indexing the rows of our DataFrames\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]\n\nWhen we concatenate along axis=\"columns\" (axis=1), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.\n\npd.concat([df1, df2, df3], axis=\"columns\")\npd.concat([df1, df3], axis =\"columns\", join='inner') # keep only the common rows"
+    "text": "Concatenate with Different Indices\nWhat would happen when the row indices are not aligned?\n\n\nLet’s modify our DataFrames as follows.\n\n# re-indexing the rows of our DataFrames\ndf1.index = [0, 1, 2, 3]\ndf2.index = [4, 5, 6, 7]\ndf3.index = [0, 2, 5, 7]\n\nWhen we concatenate along axis=\"columns\" (axis=1), the new DataFrames will be added in a column-wise fashion and matched against their respective row indices.\n\npd.concat([df1, df2, df3], axis = \"columns\")\npd.concat([df1, df3], axis =\"columns\", join='inner') # keep only the common rows"
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#concatenate-with-different-indices-2",

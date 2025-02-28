@@ -412,7 +412,6 @@ df1.columns
   
 ```{.python}
 row_concat = pd.concat([df1, df2, df3])
-row_concat
 ```
 
 :::
@@ -425,12 +424,9 @@ row_concat
 ```{.python}
 # create a new row of data
 new_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
-new_row_series
-
 
 # attempt to add the new row to a dataframe
 df = pd.concat([df1, new_row_series])
-df
 ```
 
 -  Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.
@@ -471,7 +467,7 @@ df = pd.concat([df1, new_row_df])
   
 ```{.python}
 pd.concat([df1, df2, df3], axis = "columns")
-pd.concat([df1, df2, df3], axis="columns", ignore_index=True)  
+pd.concat([df1, df2, df3], axis = "columns", ignore_index = True)  
 ```
 
 - `ignore_index=True` to reset the column indices
@@ -529,7 +525,7 @@ df3.index = [0, 2, 5, 7]
 - When we concatenate along `axis="columns"` `(axis=1`), the new `DataFrames` will be added in a column-wise fashion and matched against their respective row indices.
 
 ```{.python}
-pd.concat([df1, df2, df3], axis="columns")
+pd.concat([df1, df2, df3], axis = "columns")
 pd.concat([df1, df3], axis ="columns", join='inner') # keep only the common rows
 ```
 

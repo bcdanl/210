@@ -456,8 +456,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-8365300e74dd80bba3ce" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8365300e74dd80bba3ce">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Join<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Join","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-2f46328021de90dd52a1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2f46328021de90dd52a1">{"x":{"filter":"none","vertical":false,"data":[["left","right","outer","inner"],["Keep all the observations in the left","Keep all the observations in the right","Keep all the observations in both left and right","Keep only the observations whose key values exist in both"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Join<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Join","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}","selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -654,8 +654,7 @@ Byeong-Hak Choe
 <li>All of the <code>DataFrames</code> to be concatenated are passed in a <code>list</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span>
-<span id="cb15-2"><a href="#cb15-2"></a>row_concat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>row_concat <span class="op">=</span> pd.concat([df1, df2, df3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-concatenation-3" class="slide level2">
@@ -667,12 +666,9 @@ Byeong-Hak Choe
 </ul>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># create a new row of data</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>new_row_series <span class="op">=</span> pd.Series([<span class="st">'n1'</span>, <span class="st">'n2'</span>, <span class="st">'n3'</span>, <span class="st">'n4'</span>])</span>
-<span id="cb16-3"><a href="#cb16-3"></a>new_row_series</span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="co"># attempt to add the new row to a dataframe</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>df <span class="op">=</span> pd.concat([df1, new_row_series])</span>
-<span id="cb16-8"><a href="#cb16-8"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># attempt to add the new row to a dataframe</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>df <span class="op">=</span> pd.concat([df1, new_row_series])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.</li>
 <li>Why?</li>
@@ -711,7 +707,7 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>pd.concat([df1, df2, df3], axis <span class="op">=</span> <span class="st">"columns"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a>pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>, ignore_index<span class="op">=</span><span class="va">True</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2"></a>pd.concat([df1, df2, df3], axis <span class="op">=</span> <span class="st">"columns"</span>, ignore_index <span class="op">=</span> <span class="va">True</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>ignore_index=True</code> to reset the column indices</li>
 </ul>
@@ -756,7 +752,7 @@ Byeong-Hak Choe
 <ul>
 <li>When we concatenate along <code>axis="columns"</code> <code>(axis=1</code>), the new <code>DataFrames</code> will be added in a column-wise fashion and matched against their respective row indices.</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>pd.concat([df1, df2, df3], axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>pd.concat([df1, df2, df3], axis <span class="op">=</span> <span class="st">"columns"</span>)</span>
 <span id="cb22-2"><a href="#cb22-2"></a>pd.concat([df1, df3], axis <span class="op">=</span><span class="st">"columns"</span>, join<span class="op">=</span><span class="st">'inner'</span>) <span class="co"># keep only the common rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
