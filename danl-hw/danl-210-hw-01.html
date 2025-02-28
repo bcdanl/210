@@ -273,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 19, 2025</p>
+      <p class="date-modified">February 27, 2025</p>
     </div>
   </div>
     
@@ -370,6 +370,14 @@ toc: true
 <li>Create a list of integers from 1 to 10.</li>
 <li>Append the number <code>11</code> to the list and remove the number <code>5</code>.</li>
 </ul>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>list_numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>list_numbers.append(<span class="dv">11</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>list_numbers.remove(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="q1b" class="level3">
@@ -377,12 +385,29 @@ toc: true
 <ul>
 <li>Consider the following dictionary of three employees and their salaries:</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dict_salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="dv">60000</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dict_salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="dv">60000</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Add a new employee <code>'Dana'</code> with a salary of <code>65000</code>.</li>
 <li>Update <code>'Alice'</code>’s salary to <code>55000</code>.</li>
 <li>Print all employee names and their salaries.</li>
 </ul>
+<p><br></p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dict_salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="dv">60000</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dict_salaries[<span class="st">'Dana'</span>] <span class="op">=</span> <span class="dv">65000</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dict_salaries[<span class="st">'Alice'</span>] <span class="op">=</span> <span class="dv">55000</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, salary <span class="kw">in</span> dict_salaries.items():</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name, <span class="st">":"</span>, salary)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># An f-string (formatted string literal) is a way to embed expressions </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inside string literals using curly braces `{}`.</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, salary <span class="kw">in</span> dict_salaries.items():</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>salary<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 </section>
 </section>
@@ -400,6 +425,19 @@ toc: true
 </ul></li>
 </ul>
 <p><br></p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>salary <span class="op">=</span> <span class="dv">75000</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> salary <span class="op">&lt;</span> <span class="dv">50000</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Low'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="dv">50000</span> <span class="op">&lt;=</span> salary <span class="op">&lt;</span> <span class="dv">100000</span>:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Medium'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'High'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><br></p>
 </section>
 <section id="q2b" class="level3">
 <h3 class="anchored" data-anchor-id="q2b">Q2b</h3>
@@ -412,6 +450,27 @@ toc: true
 <li><code>'No action needed'</code> for all other cases.</li>
 </ul></li>
 </ul>
+<p><br></p>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>role <span class="op">=</span> <span class="st">'Manager'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>salary <span class="op">=</span> <span class="dv">85000</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> role <span class="op">==</span> <span class="st">'Manager'</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> salary <span class="op">&gt;</span> <span class="dv">80000</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Eligible for bonus'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'No action needed'</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> role <span class="op">==</span> <span class="st">'Analyst'</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> salary <span class="op">&lt;</span> <span class="dv">60000</span>:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Eligible for raise'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'No action needed'</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'No action needed'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 </section>
 </section>
@@ -422,11 +481,25 @@ toc: true
 <ul>
 <li>Consider the following list of salaries:</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>list_salaries <span class="op">=</span> [<span class="dv">45000</span>, <span class="dv">60000</span>, <span class="dv">75000</span>, <span class="dv">120000</span>, <span class="dv">30000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>list_salaries <span class="op">=</span> [<span class="dv">45000</span>, <span class="dv">60000</span>, <span class="dv">75000</span>, <span class="dv">120000</span>, <span class="dv">30000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Calculate the average salary.</li>
 <li>Use a <code>for</code> loop to print whether each salary is <code>'Above Average'</code> or <code>'Below Average'</code>.</li>
 </ul>
+<p><br></p>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>list_salaries <span class="op">=</span> [<span class="dv">45000</span>, <span class="dv">60000</span>, <span class="dv">75000</span>, <span class="dv">120000</span>, <span class="dv">30000</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>average_salary <span class="op">=</span> <span class="bu">sum</span>(list_salaries) <span class="op">/</span> <span class="bu">len</span>(list_salaries)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> salary <span class="kw">in</span> list_salaries:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> salary <span class="op">&gt;</span> average_salary:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>salary<span class="sc">}</span><span class="ss"> is Above Average'</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>salary<span class="sc">}</span><span class="ss"> is Below Average'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="q3b" class="level3">
@@ -437,21 +510,42 @@ toc: true
 <li>Print the salary after each increment.</li>
 </ul>
 <p><br></p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>salary <span class="op">=</span> <span class="dv">50000</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> salary <span class="op">&lt;=</span> <span class="dv">80000</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Salary: </span><span class="sc">{</span>salary<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    salary <span class="op">+=</span> <span class="dv">5000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><br></p>
 </section>
 <section id="q3c" class="level3">
 <h3 class="anchored" data-anchor-id="q3c">Q3c</h3>
 <ul>
 <li>Consider the following dictionary of employee salaries:</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="dv">60000</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>, <span class="st">'Dana'</span>: <span class="dv">45000</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="dv">60000</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>, <span class="st">'Dana'</span>: <span class="dv">45000</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Use a <code>for</code> loop to print the names of employees who earn more than <code>55000</code>.</li>
 </ul>
 <p><br></p>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="dv">60000</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>, <span class="st">'Dana'</span>: <span class="dv">45000</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, salary <span class="kw">in</span> salaries.items():</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> salary <span class="op">&gt;</span> <span class="dv">55000</span>:</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> earns more than 55000'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><br></p>
 </section>
 <section id="q3d" class="level3">
 <h3 class="anchored" data-anchor-id="q3d">Q3d</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_list <span class="op">=</span> [<span class="dv">42</span>, <span class="fl">3.14</span>, <span class="st">'Data Analytics'</span>, <span class="va">True</span>, <span class="va">None</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], {<span class="st">'key'</span>: <span class="st">'value'</span>}, (<span class="dv">4</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data_list <span class="op">=</span> [<span class="dv">42</span>, <span class="fl">3.14</span>, <span class="st">'Data Analytics'</span>, <span class="va">True</span>, <span class="va">None</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], {<span class="st">'key'</span>: <span class="st">'value'</span>}, (<span class="dv">4</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Given the list above, print the data type of each element using the <code>type()</code> function in a <code>for</code> loop. In the loop:
 <ul>
@@ -460,6 +554,28 @@ toc: true
 <li>Convert the boolean <code>True</code> to an integer.</li>
 </ul></li>
 </ul>
+<p><br></p>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data_list <span class="op">=</span> [<span class="dv">42</span>, <span class="fl">3.14</span>, <span class="st">'Data Analytics'</span>, <span class="va">True</span>, <span class="va">None</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], {<span class="st">'key'</span>: <span class="st">'value'</span>}, (<span class="dv">4</span>, <span class="dv">5</span>)]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> data_list:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Original: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">, Type: </span><span class="sc">{</span><span class="bu">type</span>(item)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="op">==</span> <span class="dv">42</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> <span class="bu">str</span>(item)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Converted 42 to string: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">, Type: </span><span class="sc">{</span><span class="bu">type</span>(item)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="op">==</span> <span class="fl">3.14</span>:</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> <span class="bu">float</span>(<span class="bu">str</span>(item))</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Converted "3.14" to float: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">, Type: </span><span class="sc">{</span><span class="bu">type</span>(item)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="kw">is</span> <span class="va">True</span>:</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> <span class="bu">int</span>(item)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Converted True to integer: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">, Type: </span><span class="sc">{</span><span class="bu">type</span>(item)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 </section>
 </section>
@@ -468,8 +584,8 @@ toc: true
 <section id="q4a" class="level3">
 <h3 class="anchored" data-anchor-id="q4a">Q4a</h3>
 <p>Consider the variables <code>a</code> and <code>b</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Use a <code>try</code>-<code>except</code> block to print the result of <code>a / b</code>.
 <ul>
@@ -477,16 +593,44 @@ toc: true
 </ul></li>
 </ul>
 <p><br></p>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> a <span class="op">/</span> b</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Cannot divide by zero!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><br></p>
 </section>
 <section id="q4b" class="level3">
 <h3 class="anchored" data-anchor-id="q4b">Q4b</h3>
 <ul>
 <li>Consider the following dictionary of salaries with some missing (<code>None</code>) values:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="va">None</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>, <span class="st">'Dana'</span>: <span class="va">None</span>, <span class="st">'Eve'</span>: <span class="dv">80000</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="va">None</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>, <span class="st">'Dana'</span>: <span class="va">None</span>, <span class="st">'Eve'</span>: <span class="dv">80000</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Use a <code>for</code> loop with a <code>try</code>-<code>except</code> block to calculate the total of non-missing salaries.</li>
 </ul>
+<p><br></p>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>salaries <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">50000</span>, <span class="st">'Bob'</span>: <span class="va">None</span>, <span class="st">'Charlie'</span>: <span class="dv">70000</span>, <span class="st">'Dana'</span>: <span class="va">None</span>, <span class="st">'Eve'</span>: <span class="dv">80000</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, salary <span class="kw">in</span> salaries.items():</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> salary</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">TypeError</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 </section>
 </section>
@@ -495,6 +639,14 @@ toc: true
 <ul>
 <li>Import the <code>math</code> library and calculate the square root of <code>81</code> using the <code>sqrt()</code> function provided by the <code>math</code> library.</li>
 </ul>
+<p><br></p>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>math.sqrt(<span class="dv">81</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 
 

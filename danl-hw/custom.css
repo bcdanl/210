@@ -1,0 +1,7 @@
+.code-fold-button::after {
+    content: " Show Code"; /* Change this to your preferred text */
+    font-size: 14px;
+}
+.code-fold-button .code-tools-button-label {
+    display: none; /* Hides default "Code" text */
+}
