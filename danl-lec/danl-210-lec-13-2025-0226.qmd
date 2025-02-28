@@ -79,12 +79,8 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## Joining `DataFrames`
-### Relational Data
+### Join, Relational Data, and Keys
 
-:::{.nonincremental}
--  The variables that are used to connect each pair of `DataFrames` are called **keys**.
-
-:::
 ```{r, out.width='100%', fig.align='center'}
 #| eval: true
 #| echo: false
@@ -148,7 +144,9 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
-
+-  The variables that are used to connect each pair of `DataFrames` are called **keys**.
+- Each observation in a DataFrame is uniquely identified by key variable(s).
+- The key variable enables relationships between the DataFrames to be defined.
 
 
 ## Joining `DataFrames` with `merge()`

@@ -7424,7 +7424,7 @@
     "href": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-2",
     "title": "Lecture 13",
     "section": "Joining DataFrames",
-    "text": "Joining DataFrames\nRelational Data\n\n\nThe variables that are used to connect each pair of DataFrames are called keys."
+    "text": "Joining DataFrames\nJoin, Relational Data, and Keys\n\n\n\n\n\n\n\n\nThe variables that are used to connect each pair of DataFrames are called keys.\nEach observation in a DataFrame is uniquely identified by key variable(s).\nThe key variable enables relationships between the DataFrames to be defined."
   },
   {
     "objectID": "danl-lec/danl-210-lec-13-2025-0226.html#joining-dataframes-with-merge",
