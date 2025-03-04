@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nFebruary 26, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 4, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -74,7 +74,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nFebruary 26, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nMarch 4, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -6626,7 +6626,7 @@
     "href": "danl-hw/danl-210-hw-02.html",
     "title": "Homework 2",
     "section": "",
-    "text": "Please submit your Jupyter Notebook for Part 1, Part 2, and Part 3 in Homework 2 to Brightspace with the name below:\n\ndanl_210_hw2_LASTNAME_FIRSTNAME.ipynb\n( e.g., danl_210_hw2_choe_byeonghak.ipynb )\n\nThe due is March 3, 2025, 10:30 A.M.\nPlease send Byeong-Hak an email (bchoe@geneseo.edu) if you have any questions."
+    "text": "Click to Check the Answer!\nimport pandas as pd\nfrom itables import init_notebook_mode, show # for displaying an interactive DataFrame"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-0",
@@ -6640,35 +6640,35 @@
     "href": "danl-hw/danl-210-hw-02.html#question-1",
     "title": "Homework 2",
     "section": "Question 1",
-    "text": "Question 1\nSelect “First_Name”, “Last_Name”, “Base_Salary”, and “Total_OT_Paid”, then sort the DataFrame with these selected variables by “Base_Salary” in descending order and display the top 10 entries.\nAnswer"
+    "text": "Question 1\nSelect “First_Name”, “Last_Name”, “Base_Salary”, and “Total_OT_Paid”, then sort the DataFrame with these selected variables by “Base_Salary” in descending order and display the top 10 entries.\nAnswer\n\n\nClick to Check the Answer!\n# 1. .sort_values() with head()\n(\n  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]\n  .sort_values('Base_Salary', ascending = False)\n  .head(10)\n)\n\n\n     First_Name Last_Name  Base_Salary  Total_OT_Paid\n2090     YVONNE  MILEWSKI     221268.0        2820.39\n1825    KENNETH   GODINER     221000.0           0.00\n3964      BRUCE    JORDAN     215861.0           0.00\n1062    MELINDA      KATZ     212800.0           0.00\n277     MELANIE   HARTZOG     207518.0           0.00\n2580       ERIC  BOORSTYN     193968.0           0.00\n370      JOANNE   RUSSELL     191468.0           0.00\n2007    PATRICK     KELLY     185886.0           0.00\n1412    DEIRDRE    SNYDER     184250.0           0.00\n2087       OLGA     MALUF     183201.0           0.00\n\n\nClick to Check the Answer!\n# 2. nlargest()\n(\n  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]\n  .nlargest(10, 'Base_Salary', keep = 'all')\n)\n\n\n     First_Name Last_Name  Base_Salary  Total_OT_Paid\n2090     YVONNE  MILEWSKI     221268.0        2820.39\n1825    KENNETH   GODINER     221000.0           0.00\n3964      BRUCE    JORDAN     215861.0           0.00\n1062    MELINDA      KATZ     212800.0           0.00\n277     MELANIE   HARTZOG     207518.0           0.00\n2580       ERIC  BOORSTYN     193968.0           0.00\n370      JOANNE   RUSSELL     191468.0           0.00\n2007    PATRICK     KELLY     185886.0           0.00\n1412    DEIRDRE    SNYDER     184250.0           0.00\n2087       OLGA     MALUF     183201.0           0.00"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-2",
     "href": "danl-hw/danl-210-hw-02.html#question-2",
     "title": "Homework 2",
     "section": "Question 2",
-    "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last_Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency_Name”, “Base_Salary”, and “Total_OT_Paid”.\nAnswer"
+    "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last_Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency_Name”, “Base_Salary”, and “Total_OT_Paid”.\nAnswer\n\n\nClick to Check the Answer!\n(\n  nyc_payroll\n  .set_index('Last_Name')\n  .loc[\"BROWN\"][['Agency_Name', 'Base_Salary', 'Total_OT_Paid']]\n)\n\n\n                              Agency_Name  Base_Salary  Total_OT_Paid\nLast_Name                                                            \nBROWN                   POLICE DEPARTMENT     51574.00           0.00\nBROWN       DEPT OF HEALTH/MENTAL HYGIENE     35538.00           0.00\nBROWN      DEPT OF ED PER SESSION TEACHER        33.18           0.00\nBROWN              DEPT OF ED PEDAGOGICAL     55670.00           0.00\nBROWN          DEPT. OF HOMELESS SERVICES     39438.00           0.00\nBROWN               NYC HOUSING AUTHORITY     40201.00         471.35\nBROWN      BOARD OF ELECTION POLL WORKERS         1.00           0.00\nBROWN       DEPT OF HEALTH/MENTAL HYGIENE    111288.00           0.00\nBROWN       DEPT OF ED HRLY SUPPORT STAFF        12.66           0.00\nBROWN            DEPARTMENT OF SANITATION     77318.00       10669.03\nBROWN       DEPT OF ED HRLY SUPPORT STAFF        16.19           0.00\nBROWN       DEPARTMENT OF EDUCATION ADMIN     68664.00           0.00\nBROWN              DEPT OF ED PEDAGOGICAL     69977.00           0.00\nBROWN       DEPT OF ED PARA PROFESSIONALS     26946.00           1.76\nBROWN                   POLICE DEPARTMENT    125531.00       35904.74\nBROWN            DEPARTMENT OF CORRECTION     92073.00        3253.36\nBROWN       DEPARTMENT OF EDUCATION ADMIN     65663.00           0.00"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-3",
     "href": "danl-hw/danl-210-hw-02.html#question-3",
     "title": "Homework 2",
     "section": "Question 3",
-    "text": "Question 3\nFind the 5 employees with the highest “Regular_Gross_Paid” and calculate their average “OT_Hours”. Also, reset the index if you have changed it previously.\nAnswer"
+    "text": "Question 3\nFind the 5 employees with the highest “Regular_Gross_Paid” and calculate their average “OT_Hours”. Also, reset the index if you have changed it previously.\nAnswer\n\n\nClick to Check the Answer!\n(\n  nyc_payroll\n  .nlargest(5, 'Regular_Gross_Paid', keep = \"all\")['OT_Hours']\n  .mean()\n)\n\n\n5.0"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-4",
     "href": "danl-hw/danl-210-hw-02.html#question-4",
     "title": "Homework 2",
     "section": "Question 4",
-    "text": "Question 4\nSort the DataFrame by “Fiscal_Year” and “Total_Other_Pay” in descending order, then set “First_Name” as the index and use the loc accessor to retrieve the “Total_Other_Pay” for a specific first name, say “MICHAEL”.\nAnswer"
+    "text": "Question 4\nSort the DataFrame by “Fiscal_Year” and “Total_Other_Pay” in descending order, then set “First_Name” as the index and use the loc accessor to retrieve the “Total_Other_Pay” for a specific first name, say “MICHAEL”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .sort_values(['Fiscal_Year', 'Total_Other_Pay'], ascending=False)\n    .set_index('First_Name')\n    .loc[\"MICHAEL\"][['Total_Other_Pay']]\n)\n\n\n            Total_Other_Pay\nFirst_Name                 \nMICHAEL            27959.35\nMICHAEL            17884.91\nMICHAEL             9331.02\nMICHAEL             2529.38\nMICHAEL              475.00\n...                     ...\nMICHAEL                0.00\nMICHAEL                0.00\nMICHAEL                0.00\nMICHAEL                0.00\nMICHAEL                0.00\n\n[74 rows x 1 columns]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-5",
     "href": "danl-hw/danl-210-hw-02.html#question-5",
     "title": "Homework 2",
     "section": "Question 5",
-    "text": "Question 5\nSort the DataFrame first by “Work_Location_Borough” alphabetically, and then by “Total_Compensation” (sum of “Base_Salary” and “Total_OT_Paid”) in descending order within each borough.\nAnswer"
+    "text": "Question 5\nSort the DataFrame first by “Work_Location_Borough” alphabetically, and then by “Total_Compensation” (sum of “Base_Salary” and “Total_OT_Paid”) in descending order within each borough.\nAnswer\n\nnyc_payroll.columns\n\nIndex(['Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date', 'Work_Location_Borough',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\nnyc_payroll['Total_Compensation'] = nyc_payroll['Base_Salary'] + nyc_payroll['Total_OT_Paid']\n\n(\n    nyc_payroll\n    .sort_values(['Work_Location_Borough', 'Total_Compensation'], ascending=[True, False])\n    [['Work_Location_Borough', 'Total_Compensation',     # This is to relocate variables\n      'Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay']]\n)\n\n\n     Work_Location_Borough  Total_Compensation  ...  Total_OT_Paid  Total_Other_Pay\n3813                 BRONX           190591.42  ...       55080.42         27374.03\n2068                 BRONX           180327.00  ...           0.00         26914.90\n1873                 BRONX           179200.00  ...           0.00          1000.00\n1677                 BRONX           177400.00  ...           0.00             0.00\n864                  BRONX           174928.76  ...       91463.76         21167.33\n...                    ...                 ...  ...            ...              ...\n3881                   NaN                1.00  ...           0.00             0.00\n4223                   NaN                1.00  ...           0.00             0.00\n4278                   NaN                1.00  ...           0.00             0.00\n4891                   NaN                1.00  ...           0.00             0.00\n4940                   NaN                1.00  ...           0.00             0.00\n\n[5000 rows x 18 columns]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description",
@@ -6682,42 +6682,42 @@
     "href": "danl-hw/danl-210-hw-02.html#question-6",
     "title": "Homework 2",
     "section": "Question 6",
-    "text": "Question 6\n\nSelect employees who have “OT_Hours” greater than 0, calculate their “OT_Rate” (“Total_OT_Paid” / “OT_Hours”), and then find the employee with the highest “OT_Rate”. Display their full name and “OT_Rate”.\n\nAnswer"
+    "text": "Question 6\n\nSelect employees who have “OT_Hours” greater than 0, calculate their “OT_Rate” (“Total_OT_Paid” / “OT_Hours”), and then find the employee with the highest “OT_Rate”. Display their full name and “OT_Rate”.\n\nAnswer\n\n\nClick to Check the Answer!\nq6 = (\n    nyc_payroll\n    .query(\"OT_Hours &gt; 0\")\n)\n\nq6['OT_Rate'] = q6['Total_OT_Paid'] / q6['OT_Hours']\n\n(\n    q6\n    .nlargest(1, \"OT_Rate\", keep = 'all')\n    [['First_Name', 'Last_Name', 'OT_Rate']]\n)\n\n\n     First_Name Last_Name  OT_Rate\n4224     SHARON     GOMEZ  155.836"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-7",
     "href": "danl-hw/danl-210-hw-02.html#question-7",
     "title": "Homework 2",
     "section": "Question 7",
-    "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First_Name”, “Last_Name”, “Title_Description”, “Base_Salary”, and “Total_OT_Paid”. Additionally, include a new variable “Total_Compensation” which is the sum of “Base_Salary” and “Total_OT_Paid”.\nAnswer"
+    "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First_Name”, “Last_Name”, “Title_Description”, “Base_Salary”, and “Total_OT_Paid”. Additionally, include a new variable “Total_Compensation” which is the sum of “Base_Salary” and “Total_OT_Paid”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query(\"Agency_Name == 'DEPARTMENT OF EDUCATION ADMIN'\")\n    [['First_Name', 'Last_Name', 'Title_Description', 'Base_Salary', 'Total_OT_Paid', 'Total_Compensation']]\n)\n\n\n     First_Name  Last_Name  ... Total_OT_Paid  Total_Compensation\n79         BETH     SHIELS  ...          0.00            81186.00\n318       SWETA     GANDHI  ...      16722.97            64094.97\n340       CLARE    PURCELL  ...          0.00            45384.00\n401      NYESHA      EVANS  ...         19.79            67702.79\n443    SAMANTHA      ELIAS  ...          0.00            76385.00\n...         ...        ...  ...           ...                 ...\n4798      RENEI    JOHNSON  ...         48.14            29366.14\n4835   MICHELLE  TIFLINSKY  ...          9.72            64049.72\n4870    REBEKHA      ASKEW  ...          0.00           108841.00\n4903     NICOLA   SINCLAIR  ...         37.48            81223.48\n4942      ELLEN    MORELLO  ...          0.00            67888.00\n\n[135 rows x 6 columns]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-8",
     "href": "danl-hw/danl-210-hw-02.html#question-8",
     "title": "Homework 2",
     "section": "Question 8",
-    "text": "Question 8\n\nHow many employees have a “Base_Salary” within the top 10% of the DataFrame?\n\nAnswer"
+    "text": "Question 8\n\nHow many employees have a “Base_Salary” within the top 10% of the DataFrame?\n\nAnswer\n\n\nClick to Check the Answer!\ntop10 = nyc_payroll['Base_Salary'].quantile(.9)\ntop10\n\n\n104178.40000000002\n\n\nClick to Check the Answer!\nnyc_payroll[ nyc_payroll['Base_Salary'] &gt;= top10 ].shape[0]\n\n\n500"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-9",
     "href": "danl-hw/danl-210-hw-02.html#question-9",
     "title": "Homework 2",
     "section": "Question 9",
-    "text": "Question 9\nFilter the DataFrame for employees who have “OT_Hours” greater than 0 but less than 100, and their “Leave_Status_as_of_June_30” is “ACTIVE”.\nAnswer"
+    "text": "Question 9\nFilter the DataFrame for employees who have “OT_Hours” greater than 0 but less than 100, and their “Leave_Status_as_of_June_30” is “ACTIVE”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query(\"OT_Hours &gt; 0 & OT_Hours &lt; 100 & Leave_Status_as_of_June_30 == 'ACTIVE'\")\n)\n\n\n      Fiscal_Year  Payroll_Number  ... Total_Other_Pay Total_Compensation\n6            2014           841.0  ...         3819.73           57082.37\n39           2015             NaN  ...        20076.23          118450.47\n71           2020           906.0  ...         7993.00           68302.10\n91           2019           806.0  ...          135.71           60413.66\n104          2020           806.0  ...            0.00           38500.85\n...           ...             ...  ...             ...                ...\n4903         2022           740.0  ...        14172.85           81223.48\n4911         2021            56.0  ...        19385.83           89314.93\n4949         2020           827.0  ...         3729.19           79611.47\n4979         2015             NaN  ...        25296.48          118245.95\n4992         2018            69.0  ...         2036.87           45600.59\n\n[339 rows x 18 columns]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-10",
     "href": "danl-hw/danl-210-hw-02.html#question-10",
     "title": "Homework 2",
     "section": "Question 10",
-    "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer"
+    "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer\n\n\nClick to Check the Answer!\n# 1. value_counts()\n(\n    nyc_payroll\n    .query('Agency_Name == \"DEPARTMENT OF EDUCATION ADMIN\"')['Title_Description']\n    .value_counts()\n    .reset_index()\n    .shape[0]\n)\n\n\n37\n\n\n\n\nClick to Check the Answer!\n# 2. nunique()\n(\n    nyc_payroll\n    .query('Agency_Name == \"DEPARTMENT OF EDUCATION ADMIN\"')['Title_Description']\n    .nunique()\n)\n\n\n37"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-11",
     "href": "danl-hw/danl-210-hw-02.html#question-11",
     "title": "Homework 2",
     "section": "Question 11",
-    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total_OT_Paid” in the DataFrame.\n\nInclude their “First_Name”, “Last_Name”, and “Total_OT_Paid”.\n\n\nAnswer"
+    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total_OT_Paid” in the DataFrame.\n\nInclude their “First_Name”, “Last_Name”, and “Total_OT_Paid”.\n\n\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .nlargest(1, 'Total_OT_Paid', keep=\"all\")[['First_Name', 'Last_Name']]\n)\n\n\n     First_Name  Last_Name\n1228     DANIEL  HOCK, JR."
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description-1",
@@ -6738,35 +6738,35 @@
     "href": "danl-hw/danl-210-hw-02.html#question-12",
     "title": "Homework 2",
     "section": "Question 12",
-    "text": "Question 12\n\nWhat percentage of the values is missing for each variable?\n\nAnswer"
+    "text": "Question 12\n\nWhat percentage of the values is missing for each variable?\n\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll.info()\n\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 5000 entries, 0 to 4999\nData columns (total 18 columns):\n #   Column                      Non-Null Count  Dtype  \n---  ------                      --------------  -----  \n 0   Fiscal_Year                 5000 non-null   int64  \n 1   Payroll_Number              3460 non-null   float64\n 2   Agency_Name                 5000 non-null   object \n 3   Last_Name                   4985 non-null   object \n 4   First_Name                  4985 non-null   object \n 5   Mid_Init                    2920 non-null   object \n 6   Agency_Start_Date           5000 non-null   object \n 7   Work_Location_Borough       4602 non-null   object \n 8   Title_Description           5000 non-null   object \n 9   Leave_Status_as_of_June_30  5000 non-null   object \n 10  Base_Salary                 5000 non-null   float64\n 11  Pay_Basis                   5000 non-null   object \n 12  Regular_Hours               5000 non-null   float64\n 13  Regular_Gross_Paid          5000 non-null   float64\n 14  OT_Hours                    5000 non-null   float64\n 15  Total_OT_Paid               5000 non-null   float64\n 16  Total_Other_Pay             5000 non-null   float64\n 17  Total_Compensation          5000 non-null   float64\ndtypes: float64(8), int64(1), object(9)\nmemory usage: 703.3+ KB\n\n\n\n\nClick to Check the Answer!\nnyc_payroll['Payroll_Number'].isna().sum() / nyc_payroll.shape[0]\n\n\n0.308\n\n\n\n\nClick to Check the Answer!\nfor var in nyc_payroll.columns:\n  print(var, ':', 100 * nyc_payroll[var].isna().sum() / nyc_payroll.shape[0])\n\n\nFiscal_Year : 0.0\nPayroll_Number : 30.8\nAgency_Name : 0.0\nLast_Name : 0.3\nFirst_Name : 0.3\nMid_Init : 41.6\nAgency_Start_Date : 0.0\nWork_Location_Borough : 7.96\nTitle_Description : 0.0\nLeave_Status_as_of_June_30 : 0.0\nBase_Salary : 0.0\nPay_Basis : 0.0\nRegular_Hours : 0.0\nRegular_Gross_Paid : 0.0\nOT_Hours : 0.0\nTotal_OT_Paid : 0.0\nTotal_Other_Pay : 0.0\nTotal_Compensation : 0.0"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-13",
     "href": "danl-hw/danl-210-hw-02.html#question-13",
     "title": "Homework 2",
     "section": "Question 13",
-    "text": "Question 13\n\nFill missing values in the “Last_Name” variable with “UNKNOWN”.\n\nAnswer"
+    "text": "Question 13\n\nFill missing values in the “Last_Name” variable with “UNKNOWN”.\n\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll['Last_Name'] = nyc_payroll['Last_Name'].fillna(\"UNKNOWN\")"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-14",
     "href": "danl-hw/danl-210-hw-02.html#question-14",
     "title": "Homework 2",
     "section": "Question 14",
-    "text": "Question 14\nIn DataFrame, NFL2022_stuffs, remove observations for which the value of posteam is missing.\nAnswer:"
+    "text": "Question 14\nIn DataFrame, NFL2022_stuffs, remove observations for which the value of posteam is missing.\nAnswer:\n\n\nClick to Check the Answer!\nNFL2022_stuffs.shape[0]\n\n\n50147\n\n\nClick to Check the Answer!\nNFL2022_stuffs = NFL2022_stuffs.dropna(subset = ['posteam'])\nNFL2022_stuffs.shape[0]\n\n\n46427"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-15",
     "href": "danl-hw/danl-210-hw-02.html#question-15",
     "title": "Homework 2",
     "section": "Question 15",
-    "text": "Question 15\n\nCalculate the mean value of pass for the BUF posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:"
+    "text": "Question 15\n\nCalculate the mean value of pass for the BUF posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:\n\n\nClick to Check the Answer!\n(\n    NFL2022_stuffs\n    .query('wp &gt; .2 & wp &lt; .75 & down &lt;= 2 & half_seconds_remaining &gt; 120 & posteam == \"BUF\"')['pass']\n    .mean()\n)\n\n\n0.6043956043956044"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-16",
     "href": "danl-hw/danl-210-hw-02.html#question-16",
     "title": "Homework 2",
     "section": "Question 16",
-    "text": "Question 16\n\nConsider the following DataFrame, NFL2022_epa:\n\nNFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the following DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables and the observations in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, please remove observations with NaN in passer after the join.\n\n\n\n\n\n\n\n\nAnswer:"
+    "text": "Question 16\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\n\n\n  \n\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the following DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables and the observations in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, please remove observations with NaN in passer after the join.\n\n\n\n\n\n\n\n\nAnswer:\n\nNFL2022_stuffs.columns\n\nIndex(['play_id', 'game_id', 'drive', 'week', 'posteam', 'qtr', 'down',\n       'half_seconds_remaining', 'pass', 'wp'],\n      dtype='object')\n\n\n\nNFL2022_epa.columns\n\nIndex(['play_id', 'game_id', 'drive', 'posteam', 'receiver', 'passer', 'epa'], dtype='object')\n\n\n\n\nClick to Check the Answer!\nNFL2022_stuffs_EPA = (\n    NFL2022_stuffs\n    .merge(NFL2022_epa,\n           on = ['play_id', 'game_id', 'drive', 'posteam'],\n           how = 'left')\n    .dropna(subset = ['passer'])\n)\n\nNFL2022_stuffs_EPA\n\n\n       play_id          game_id  drive  ...          receiver     passer       epa\n2           89  2022_01_BAL_NYJ    1.0  ...         Mi.Carter   J.Flacco -0.492192\n4          136  2022_01_BAL_NYJ    1.0  ...               NaN   J.Flacco -2.402200\n6          202  2022_01_BAL_NYJ    2.0  ...         R.Bateman  L.Jackson  0.075127\n7          230  2022_01_BAL_NYJ    2.0  ...        D.Duvernay  L.Jackson -0.105120\n10         301  2022_01_BAL_NYJ    2.0  ...        D.Duvernay  L.Jackson  0.411132\n...        ...              ...    ...  ...               ...        ...       ...\n46415     3789   2022_22_KC_PHI   17.0  ...           T.Kelce  P.Mahomes  0.710100\n46417     3834   2022_22_KC_PHI   17.0  ...               NaN  P.Mahomes  1.913129\n46419     3876   2022_22_KC_PHI   17.0  ...  J.Smith-Schuster  P.Mahomes -0.903265\n46420     3907   2022_22_KC_PHI   17.0  ...  J.Smith-Schuster  P.Mahomes  1.403649\n46426     4072   2022_22_KC_PHI   18.0  ...               NaN    J.Hurts -0.070803\n\n[22457 rows x 13 columns]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description-2",
@@ -6780,7 +6780,7 @@
     "href": "danl-hw/danl-210-hw-02.html#question-17",
     "title": "Homework 2",
     "section": "Question 17",
-    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Dumpster”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name”, “Date”, “Dumpster”, and “Trash_Type” in ascending order.\nThe following displays the trashwheel_long DataFrame:"
+    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Dumpster”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name”, “Date”, “Dumpster”, and “Trash_Type” in ascending order.\nThe following displays the trashwheel_long DataFrame:\n\n\n\n\n\n\n\nAnswer:\n\n\nClick to Check the Answer!\ntrashwheel.columns\n\n\nIndex(['ID', 'Name', 'Dumpster', 'Month', 'Year', 'Date', 'Weight', 'Volume',\n       'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',\n       'PlasticBags', 'Wrappers', 'SportsBalls', 'HomesPowered'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\ntrashwheel['Date'] = trashwheel['Date'].astype('datetime64[ns]')\n\n\ntrashwheel_long = (\n    trashwheel[['Name', 'Date', 'Dumpster',\n                'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',\n                'PlasticBags', 'Wrappers', 'SportsBalls']]\n    .melt(\n        id_vars=['Name', 'Date', 'Dumpster'],\n        var_name= 'Trash_Type',\n        value_name= 'Number'\n    )\n    .sort_values(['Name', 'Date', 'Dumpster', 'Trash_Type'])\n)\n\ntrashwheel_long\n\n\n                       Name       Date  Dumpster      Trash_Type  Number\n2729    Captain Trash Wheel 2018-06-30         1  CigaretteButts  8200.0\n3722    Captain Trash Wheel 2018-06-30         1    GlassBottles     NaN\n4715    Captain Trash Wheel 2018-06-30         1     PlasticBags  1420.0\n743     Captain Trash Wheel 2018-06-30         1  PlasticBottles  1150.0\n1736    Captain Trash Wheel 2018-06-30         1     Polystyrene   940.0\n...                     ...        ...       ...             ...     ...\n4714  Professor Trash Wheel 2023-12-05       114     PlasticBags   360.0\n742   Professor Trash Wheel 2023-12-05       114  PlasticBottles  4000.0\n1735  Professor Trash Wheel 2023-12-05       114     Polystyrene   380.0\n6700  Professor Trash Wheel 2023-12-05       114     SportsBalls     NaN\n5707  Professor Trash Wheel 2023-12-05       114        Wrappers  3900.0\n\n[6951 rows x 5 columns]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description-3",
@@ -7796,5 +7796,327 @@
     "title": "Lecture 5",
     "section": "for … in range()",
     "text": "for … in range()\n\n\nfor x in range(0, 3):\n    print(x)\nlist( range(0, 3) )\n\n\nWe use range() similar to how we use slices: range( start, stop, step ).\n\nIf we omit start, the range begins at 0.\nThe only required value is stop; as with slices, the last value created will be just before stop.\nThe default value of step is 1, but we can change it."
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html",
+    "href": "danl_210_hw_02_q.html",
+    "title": "Homework 2",
+    "section": "",
+    "text": "Click to Check the Answer!\n# Below is to import the pandas library as pd\nimport pandas as pd\nimport numpy as np"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#variable-description",
+    "href": "danl_210_hw_02_q.html#variable-description",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal_Year: Fiscal Year;\nPayroll_Number: Payroll Number;\nAgency_Name: The Payroll agency that the employee works for;\nLast_Name: Last name of employee;\nFirst_Name: First name of employee;\nMid_Init: Middle initial of employee;\nAgency_Start_Date: Date which employee began working for their current agency;\nWork_Location_Borough: Borough of employee’s primary work location;\nTitle_Description: Civil service title description of the employee;\nLeave_Status_as_of_June_30: Status of employee as of the close of the relevant fiscal year;\nBase_Salary: Base Salary assigned to the employee;\nPay_Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular_Hours: Number of regular hours employee worked in the fiscal year;\nRegular_Gross_Paid: The amount paid to the employee for base salary during the fiscal year;\nOT_Hours: Overtime Hours worked by employee in the fiscal year;\nTotal_OT_Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal_Other_Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-1",
+    "href": "danl_210_hw_02_q.html#question-1",
+    "title": "Homework 2",
+    "section": "Question 1",
+    "text": "Question 1\nSelect “First_Name”, “Last_Name”, “Base_Salary”, and “Total_OT_Paid”, then sort the DataFrame with these selected variables by “Base_Salary” in descending order and display the top 10 entries.\nAnswer\n\n\nClick to Check the Answer!\n# 1. .sort_values() with head()\n(\n  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]\n  .sort_values('Base_Salary', ascending = False)\n  .head(10)\n)\n\n\n\n\nClick to Check the Answer!\n# 2. nlargest()\n(\n  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]\n  .nlargest(10, 'Base_Salary', keep = 'all')\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-2",
+    "href": "danl_210_hw_02_q.html#question-2",
+    "title": "Homework 2",
+    "section": "Question 2",
+    "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last_Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency_Name”, “Base_Salary”, and “Total_OT_Paid”.\nAnswer\n\n\nClick to Check the Answer!\n\n(\n  nyc_payroll\n  .set_index('Last_Name')\n  .loc[\"BROWN\"][['Agency_Name', 'Base_Salary', 'Total_OT_Paid']]\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-3",
+    "href": "danl_210_hw_02_q.html#question-3",
+    "title": "Homework 2",
+    "section": "Question 3",
+    "text": "Question 3\nFind the 5 employees with the highest “Regular_Gross_Paid” and calculate their average “OT_Hours”. Also, reset the index if you have changed it previously.\nAnswer\n\n\nClick to Check the Answer!\n(\n  nyc_payroll\n  .nlargest(5, 'Regular_Gross_Paid', keep = \"all\")['OT_Hours']\n  .mean()\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-4",
+    "href": "danl_210_hw_02_q.html#question-4",
+    "title": "Homework 2",
+    "section": "Question 4",
+    "text": "Question 4\nSort the DataFrame by “Fiscal_Year” and “Total_Other_Pay” in descending order, then set “First_Name” as the index and use the loc accessor to retrieve the “Total_Other_Pay” for a specific first name, say “MICHAEL”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .sort_values(['Fiscal_Year', 'Total_Other_Pay'], ascending=False)\n    .set_index('First_Name')\n    .loc[\"MICHAEL\"][['Total_Other_Pay']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nTotal_Other_Pay\n\n\nFirst_Name\n\n\n\n\n\nMICHAEL\n27959.35\n\n\nMICHAEL\n17884.91\n\n\nMICHAEL\n9331.02\n\n\nMICHAEL\n2529.38\n\n\nMICHAEL\n475.00\n\n\n...\n...\n\n\nMICHAEL\n0.00\n\n\nMICHAEL\n0.00\n\n\nMICHAEL\n0.00\n\n\nMICHAEL\n0.00\n\n\nMICHAEL\n0.00\n\n\n\n\n\n74 rows × 1 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-5",
+    "href": "danl_210_hw_02_q.html#question-5",
+    "title": "Homework 2",
+    "section": "Question 5",
+    "text": "Question 5\nSort the DataFrame first by “Work_Location_Borough” alphabetically, and then by “Total_Compensation” (sum of “Base_Salary” and “Total_OT_Paid”) in descending order within each borough.\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll.columns\n\n\nIndex(['Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date', 'Work_Location_Borough',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\nnyc_payroll['Total_Compensation'] = nyc_payroll['Base_Salary'] + nyc_payroll['Total_OT_Paid']\n(\n    nyc_payroll\n    .sort_values(['Work_Location_Borough', 'Total_Compensation'], ascending=[True, False])\n    [['Work_Location_Borough', 'Total_Compensation',\n      'Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nWork_Location_Borough\nTotal_Compensation\nFiscal_Year\nPayroll_Number\nAgency_Name\nLast_Name\nFirst_Name\nMid_Init\nAgency_Start_Date\nTitle_Description\nLeave_Status_as_of_June_30\nBase_Salary\nPay_Basis\nRegular_Hours\nRegular_Gross_Paid\nOT_Hours\nTotal_OT_Paid\nTotal_Other_Pay\n\n\n\n\n3813\nBRONX\n190591.42\n2022\n56.0\nPOLICE DEPARTMENT\nWITRIOL\nJOEL\nNaN\n07/20/2006\nLIEUTENANT\nACTIVE\n135511.0\nper Annum\n2080.0\n135139.68\n919.0\n55080.42\n27374.03\n\n\n2068\nBRONX\n180327.00\n2021\n56.0\nPOLICE DEPARTMENT\nNUNEZ\nOSVALDO\nA\n07/18/1996\nCAPTAIN D/A DEPUTY INSPECTOR\nACTIVE\n180327.0\nper Annum\n2080.0\n179819.41\n0.0\n0.00\n26914.90\n\n\n1873\nBRONX\n179200.00\n2021\n11.0\nBOROUGH PRESIDENT-BRONX\nDIAZ JR\nRUBEN\nNaN\n05/01/2009\nBOROUGH PRESIDENT\nACTIVE\n179200.0\nper Annum\n1820.0\n178695.51\n0.0\n0.00\n1000.00\n\n\n1677\nBRONX\n177400.00\n2019\n902.0\nBRONX DISTRICT ATTORNEY\nOLDS\nVICTOR\nNaN\n09/07/2016\nASSISTANT DISTRICT ATTORNEY\nCEASED\n177400.0\nper Annum\n1267.0\n131483.29\n0.0\n0.00\n0.00\n\n\n864\nBRONX\n174928.76\n2022\n827.0\nDEPARTMENT OF SANITATION\nBRANNIGAN\nDESMOND\nG\n11/15/2004\nSANITATION WORKER\nACTIVE\n83465.0\nper Annum\n2080.0\n82186.02\n1171.0\n91463.76\n21167.33\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3881\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nAREM\nROSE\nNaN\n01/01/2010\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n500.00\n0.0\n0.00\n0.00\n\n\n4223\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nGATTO\nMARIE\nNaN\n01/01/2010\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n778.00\n0.0\n0.00\n0.00\n\n\n4278\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nJOHNSON\nIRA\nN\n01/01/2010\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n778.00\n0.0\n0.00\n0.00\n\n\n4891\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nCUNNINGHAM\nJEROME\nC\n01/02/2012\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n305.00\n0.0\n0.00\n0.00\n\n\n4940\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nKISIC\nMICHELLE\nM\n01/02/2012\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n303.00\n0.0\n0.00\n0.00\n\n\n\n\n\n5000 rows × 18 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-6",
+    "href": "danl_210_hw_02_q.html#question-6",
+    "title": "Homework 2",
+    "section": "Question 6",
+    "text": "Question 6\n\nSelect employees who have “OT_Hours” greater than 0, calculate their “OT_Rate” (“Total_OT_Paid” / “OT_Hours”), and then find the employee with the highest “OT_Rate”. Display their full name and “OT_Rate”.\n\nAnswer\n\n\nClick to Check the Answer!\nq6 = (\n    nyc_payroll\n    .query(\"OT_Hours &gt; 0\")\n)\n\nq6['OT_Rate'] = q6['Total_OT_Paid'] / q6['OT_Hours']\n\n(\n    q6\n    .nlargest(1, \"OT_Rate\", keep = 'all')\n    [['First_Name', 'Last_Name', 'OT_Rate']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nFirst_Name\nLast_Name\nOT_Rate\n\n\n\n\n4224\nSHARON\nGOMEZ\n155.836"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-7",
+    "href": "danl_210_hw_02_q.html#question-7",
+    "title": "Homework 2",
+    "section": "Question 7",
+    "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First_Name”, “Last_Name”, “Title_Description”, “Base_Salary”, and “Total_OT_Paid”. Additionally, include a new variable “Total_Compensation” which is the sum of “Base_Salary” and “Total_OT_Paid”.\nAnswer\n\nnyc_payroll.columns\n\nIndex(['Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date', 'Work_Location_Borough',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay', 'Total_Compensation'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query(\"Agency_Name == 'DEPARTMENT OF EDUCATION ADMIN'\")\n    [['First_Name', 'Last_Name', 'Title_Description', 'Base_Salary', 'Total_OT_Paid', 'Total_Compensation']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nFirst_Name\nLast_Name\nTitle_Description\nBase_Salary\nTotal_OT_Paid\nTotal_Compensation\n\n\n\n\n79\nBETH\nSHIELS\nPHYSICAL THERAPIST\n81186.0\n0.00\n81186.00\n\n\n318\nSWETA\nGANDHI\nBOOKKEEPER\n47372.0\n16722.97\n64094.97\n\n\n340\nCLARE\nPURCELL\nSECRETARY\n45384.0\n0.00\n45384.00\n\n\n401\nNYESHA\nEVANS\nCUSTOMER INFORMATION REPRESENTATIVE\n67683.0\n19.79\n67702.79\n\n\n443\nSAMANTHA\nELIAS\nCOMMUNITY COORDINATOR\n76385.0\n0.00\n76385.00\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n4798\nRENEI\nJOHNSON\nCOMMUNITY ASSISTANT\n29318.0\n48.14\n29366.14\n\n\n4835\nMICHELLE\nTIFLINSKY\nSENIOR OCCUPATIONAL THERAPIST\n64040.0\n9.72\n64049.72\n\n\n4870\nREBEKHA\nASKEW\nADMINISTRATIVE EDUCATION OFFICER\n108841.0\n0.00\n108841.00\n\n\n4903\nNICOLA\nSINCLAIR\nOCCUPATIONAL THERAPIST\n81186.0\n37.48\n81223.48\n\n\n4942\nELLEN\nMORELLO\nPHYSICAL THERAPIST\n67888.0\n0.00\n67888.00\n\n\n\n\n\n135 rows × 6 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-8",
+    "href": "danl_210_hw_02_q.html#question-8",
+    "title": "Homework 2",
+    "section": "Question 8",
+    "text": "Question 8\n\nHow many employees have a “Base_Salary” within the top 10% of the DataFrame?\n\nAnswer\n\n\nClick to Check the Answer!\ntop10 = nyc_payroll['Base_Salary'].quantile(.9)\ntop10\n\nnyc_payroll[ nyc_payroll['Base_Salary'] &gt;= top10 ].shape[0]\n\n\n500"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-9",
+    "href": "danl_210_hw_02_q.html#question-9",
+    "title": "Homework 2",
+    "section": "Question 9",
+    "text": "Question 9\nFilter the DataFrame for employees who have “OT_Hours” greater than 0 but less than 100, and their “Leave_Status_as_of_June_30” is “ACTIVE”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query(\"OT_Hours &gt; 0 & OT_Hours &lt; 100 & Leave_Status_as_of_June_30 == 'ACTIVE'\")\n)\n\n\n\n  \n    \n\n\n\n\n\n\nFiscal_Year\nPayroll_Number\nAgency_Name\nLast_Name\nFirst_Name\nMid_Init\nAgency_Start_Date\nWork_Location_Borough\nTitle_Description\nLeave_Status_as_of_June_30\nBase_Salary\nPay_Basis\nRegular_Hours\nRegular_Gross_Paid\nOT_Hours\nTotal_OT_Paid\nTotal_Other_Pay\nTotal_Compensation\n\n\n\n\n6\n2014\n841.0\nDEPARTMENT OF TRANSPORTATION\nLOMUNTAD\nLUIS\nV\n11/28/2004\nNaN\nDECKHAND\nACTIVE\n49793.0\nper Annum\n1668.38\n49650.65\n72.00\n7289.37\n3819.73\n57082.37\n\n\n39\n2015\nNaN\nFIRE DEPARTMENT\nCIRINO\nVINCENT\nC\n10/15/1990\nMANHATTAN\nCAPTAIN\nACTIVE\n117145.0\nper Annum\n2085.72\n121939.16\n14.00\n1305.47\n20076.23\n118450.47\n\n\n71\n2020\n906.0\nDISTRICT ATTORNEY-SPECIAL NARC\nNaN\nNaN\nNaN\n06/11/2018\nMANHATTAN\nSENIOR RACKETS INVESTIGATOR - START &gt;4-24-08 N...\nACTIVE\n67012.0\nper Annum\n2080.00\n64551.27\n27.00\n1290.10\n7993.00\n68302.10\n\n\n91\n2019\n806.0\nHOUSING PRESERVATION & DVLPMNT\nSALAS\nJESSICA\nA\n04/19/2004\nMANHATTAN\nADMIN COMMUNITY RELATIONS SPECIALIST\nACTIVE\n58926.0\nper Annum\n1809.25\n58681.36\n30.75\n1487.66\n135.71\n60413.66\n\n\n104\n2020\n806.0\nHOUSING PRESERVATION & DVLPMNT\nDESTINOBLE-NEUS\nANNE-LOISE\nD\n01/06/2020\nMANHATTAN\nCOMMUNITY ASSOCIATE\nACTIVE\n38333.0\nper Annum\n840.00\n17443.61\n7.00\n167.85\n0.00\n38500.85\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n4903\n2022\n740.0\nDEPARTMENT OF EDUCATION ADMIN\nSINCLAIR\nNICOLA\nS\n09/08/2009\nQUEENS\nOCCUPATIONAL THERAPIST\nACTIVE\n81186.0\nper Annum\n1664.00\n80815.89\n0.50\n37.48\n14172.85\n81223.48\n\n\n4911\n2021\n56.0\nPOLICE DEPARTMENT\nQUINONES\nCLAIRE\nNaN\n07/06/2011\nMANHATTAN\nPOLICE OFFICER\nACTIVE\n85292.0\nper Annum\n2080.00\n85051.84\n87.25\n4022.93\n19385.83\n89314.93\n\n\n4949\n2020\n827.0\nDEPARTMENT OF SANITATION\nFIGUEROA\nRICARDO\nA\n10/09/2007\nBROOKLYN\nSANITATION WORKER\nACTIVE\n77318.0\nper Annum\n2080.00\n70356.48\n32.00\n2293.47\n3729.19\n79611.47\n\n\n4979\n2015\nNaN\nPOLICE DEPARTMENT\nMARGOLIS\nJASON\nS\n07/18/1996\nQUEENS\nLIEUTENANT\nACTIVE\n117145.0\nper Annum\n2085.72\n119504.86\n8.75\n1100.95\n25296.48\n118245.95\n\n\n4992\n2018\n69.0\nHRA/DEPT OF SOCIAL SERVICES\nPECHERA\nJAMES\nO\n04/25/2011\nQUEENS\nJOB OPPORTUNITY SPECIALIST\nACTIVE\n45378.0\nper Annum\n1410.75\n35823.90\n6.25\n222.59\n2036.87\n45600.59\n\n\n\n\n\n339 rows × 18 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-10",
+    "href": "danl_210_hw_02_q.html#question-10",
+    "title": "Homework 2",
+    "section": "Question 10",
+    "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query('Agency_Name == \"DEPARTMENT OF EDUCATION ADMIN\"')['Title_Description']\n    .value_counts()\n    .reset_index()\n    .shape[0]\n)\n\n\n37\n\n\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query('Agency_Name == \"DEPARTMENT OF EDUCATION ADMIN\"')['Title_Description']\n    .nunique()\n)\n\n\n37"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-11",
+    "href": "danl_210_hw_02_q.html#question-11",
+    "title": "Homework 2",
+    "section": "Question 11",
+    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total_OT_Paid” in the DataFrame.\n\nInclude their “First_Name”, “Last_Name”, and “Total_OT_Paid”.\n\n\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .nlargest(1, 'Total_OT_Paid', keep=\"all\")[['First_Name', 'Last_Name']]\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-12",
+    "href": "danl_210_hw_02_q.html#question-12",
+    "title": "Homework 2",
+    "section": "Question 12",
+    "text": "Question 12\n\nWhat percentage of the values is missing for each variable?\n\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll.info()\n\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 5000 entries, 0 to 4999\nData columns (total 18 columns):\n #   Column                      Non-Null Count  Dtype  \n---  ------                      --------------  -----  \n 0   Fiscal_Year                 5000 non-null   int64  \n 1   Payroll_Number              3460 non-null   float64\n 2   Agency_Name                 5000 non-null   object \n 3   Last_Name                   4985 non-null   object \n 4   First_Name                  4985 non-null   object \n 5   Mid_Init                    2920 non-null   object \n 6   Agency_Start_Date           5000 non-null   object \n 7   Work_Location_Borough       4602 non-null   object \n 8   Title_Description           5000 non-null   object \n 9   Leave_Status_as_of_June_30  5000 non-null   object \n 10  Base_Salary                 5000 non-null   float64\n 11  Pay_Basis                   5000 non-null   object \n 12  Regular_Hours               5000 non-null   float64\n 13  Regular_Gross_Paid          5000 non-null   float64\n 14  OT_Hours                    5000 non-null   float64\n 15  Total_OT_Paid               5000 non-null   float64\n 16  Total_Other_Pay             5000 non-null   float64\n 17  Total_Compensation          5000 non-null   float64\ndtypes: float64(8), int64(1), object(9)\nmemory usage: 703.3+ KB\n\n\n\n\nClick to Check the Answer!\nnyc_payroll['Payroll_Number'].isna().sum() / nyc_payroll.shape[0]\n\n\n0.308\n\n\n\n\nClick to Check the Answer!\nfor var in nyc_payroll.columns:\n  print(var, ':', 100 * nyc_payroll[var].isna().sum() / nyc_payroll.shape[0])\n\n\nFiscal_Year : 0.0\nPayroll_Number : 30.8\nAgency_Name : 0.0\nLast_Name : 0.3\nFirst_Name : 0.3\nMid_Init : 41.6\nAgency_Start_Date : 0.0\nWork_Location_Borough : 7.96\nTitle_Description : 0.0\nLeave_Status_as_of_June_30 : 0.0\nBase_Salary : 0.0\nPay_Basis : 0.0\nRegular_Hours : 0.0\nRegular_Gross_Paid : 0.0\nOT_Hours : 0.0\nTotal_OT_Paid : 0.0\nTotal_Other_Pay : 0.0\nTotal_Compensation : 0.0"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-13",
+    "href": "danl_210_hw_02_q.html#question-13",
+    "title": "Homework 2",
+    "section": "Question 13",
+    "text": "Question 13\n\nFill missing values in the “Last_Name” variable with “UNKNOWN”.\n\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll['Last_Name'] = nyc_payroll['Last_Name'].fillna(\"UNKNOWN\")\n\n\n\n\nClick to Check the Answer!\nnyc_payroll[['Last_Name']].query('Last_Name == \"UNKNOWN\"')\n\n\n\n  \n    \n\n\n\n\n\n\nLast_Name\n\n\n\n\n71\nUNKNOWN\n\n\n688\nUNKNOWN\n\n\n798\nUNKNOWN\n\n\n1221\nUNKNOWN\n\n\n1465\nUNKNOWN\n\n\n1774\nUNKNOWN\n\n\n2245\nUNKNOWN\n\n\n2272\nUNKNOWN\n\n\n2346\nUNKNOWN\n\n\n3057\nUNKNOWN\n\n\n3698\nUNKNOWN\n\n\n3726\nUNKNOWN\n\n\n4481\nUNKNOWN\n\n\n4869\nUNKNOWN\n\n\n4875\nUNKNOWN"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#variable-description-1",
+    "href": "danl_210_hw_02_q.html#variable-description-1",
+    "title": "Homework 2",
+    "section": "Variable description",
+    "text": "Variable description\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nweek: Season week.\nposteam: String abbreviation for the team with possession.\nqtr: Quarter of the game (5 is overtime).\nhalf_seconds_remaining: Numeric seconds remaining in the half.\ndown: The down for the given play.\n\nBasically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it).\nIf you make 10 yards then you get another set of four downs.\n\npass: Binary indicator if the play was a pass play.\nwp: Estimated winning probability for the posteam given the current situation at the start of the given play."
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-14",
+    "href": "danl_210_hw_02_q.html#question-14",
+    "title": "Homework 2",
+    "section": "Question 14",
+    "text": "Question 14\nIn DataFrame, NFL2022_stuffs, remove observations for which the value of posteam is missing.\nAnswer:\n\n\nClick to Check the Answer!\nNFL2022_stuffs.shape[0]\n\n\n50147\n\n\n\n\nClick to Check the Answer!\nNFL2022_stuffs = NFL2022_stuffs.dropna(subset = ['posteam'])\nNFL2022_stuffs.shape[0]\n\n\n46427"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-15",
+    "href": "danl_210_hw_02_q.html#question-15",
+    "title": "Homework 2",
+    "section": "Question 15",
+    "text": "Question 15\n\nCalculate the mean value of pass for the BUF posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:\n\n\nClick to Check the Answer!\n(\n    NFL2022_stuffs\n    .query('wp &gt; .2 & wp &lt; .75 & down &lt;= 2 & half_seconds_remaining &gt; 120 & posteam == \"BUF\"')['pass']\n    .mean()\n)\n\n\n0.6043956043956044"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-16",
+    "href": "danl_210_hw_02_q.html#question-16",
+    "title": "Homework 2",
+    "section": "Question 16",
+    "text": "Question 16\n\nConsider the following DataFrame, NFL2022_epa:\n\n\n\nClick to Check the Answer!\nNFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the following DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables and the observations in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, please remove observations with NaN in passer after the join.\n\nAnswer:\n\nNFL2022_stuffs.columns\n\nIndex(['play_id', 'game_id', 'drive', 'week', 'posteam', 'qtr', 'down',\n       'half_seconds_remaining', 'pass', 'wp'],\n      dtype='object')\n\n\n\nNFL2022_epa.columns\n\nIndex(['play_id', 'game_id', 'drive', 'posteam', 'receiver', 'passer', 'epa'], dtype='object')\n\n\n\n\nClick to Check the Answer!\nNFL2022_stuffs_EPA = (\n    NFL2022_stuffs\n    .merge(NFL2022_epa,\n           on = ['play_id', 'game_id', 'drive', 'posteam'],\n           how = 'left')\n    .dropna(subset = ['passer'])\n)\nNFL2022_stuffs_EPA\n\n\nWarning: total number of rows (22457) exceeds max_rows (20000). Falling back to pandas display.\n\n\n\n  \n    \n\n\n\n\n\n\nplay_id\ngame_id\ndrive\nweek\nposteam\nqtr\ndown\nhalf_seconds_remaining\npass\nwp\nreceiver\npasser\nepa\n\n\n\n\n2\n89\n2022_01_BAL_NYJ\n1.0\n1\nNYJ\n1\n1.0\n1769\n1\n0.572573\nMi.Carter\nJ.Flacco\n-0.492192\n\n\n4\n136\n2022_01_BAL_NYJ\n1.0\n1\nNYJ\n1\n3.0\n1741\n1\n0.540167\nNaN\nJ.Flacco\n-2.402200\n\n\n6\n202\n2022_01_BAL_NYJ\n2.0\n1\nBAL\n1\n1.0\n1722\n1\n0.495820\nR.Bateman\nL.Jackson\n0.075127\n\n\n7\n230\n2022_01_BAL_NYJ\n2.0\n1\nBAL\n1\n2.0\n1701\n1\n0.496594\nD.Duvernay\nL.Jackson\n-0.105120\n\n\n10\n301\n2022_01_BAL_NYJ\n2.0\n1\nBAL\n1\n2.0\n1579\n1\n0.506771\nD.Duvernay\nL.Jackson\n0.411132\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n46415\n3789\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n2.0\n251\n1\n0.476804\nT.Kelce\nP.Mahomes\n0.710100\n\n\n46417\n3834\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n1.0\n175\n1\n0.565224\nNaN\nP.Mahomes\n1.913129\n\n\n46419\n3876\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n2.0\n120\n1\n0.727041\nJ.Smith-Schuster\nP.Mahomes\n-0.903265\n\n\n46420\n3907\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n3.0\n114\n1\n0.684246\nJ.Smith-Schuster\nP.Mahomes\n1.403649\n\n\n46426\n4072\n2022_22_KC_PHI\n18.0\n22\nPHI\n4\n1.0\n6\n1\n0.127170\nNaN\nJ.Hurts\n-0.070803\n\n\n\n\n\n22457 rows × 13 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#variable-description-2",
+    "href": "danl_210_hw_02_q.html#variable-description-2",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ninteger\nDumpster number over time; The Trash Wheel can have multiple dumpsters in a day\n\n\nMonth\nstring\nMonth\n\n\nYear\ninteger\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nfloat\nWeight in tons\n\n\nVolume\ninteger\nVolume in cubic yards\n\n\nPlasticBottles\nfloat\nNumber of plastic bottles\n\n\nPolystyrene\nfloat\nNumber of polystyrene items\n\n\nCigaretteButts\nfloat\nNumber of cigarette butts\n\n\nGlassBottles\nfloat\nNumber of glass bottles\n\n\nPlasticBags\nfloat\nNumber of plastic bags\n\n\nWrappers\nfloat\nNumber of wrappers\n\n\nSportsBalls\nfloat\nNumber of sports balls\n\n\nHomesPowered\ninteger\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#meet-the-mr.-trash-wheel-family",
+    "href": "danl_210_hw_02_q.html#meet-the-mr.-trash-wheel-family",
+    "title": "Homework 2",
+    "section": "Meet the Mr. Trash Wheel Family",
+    "text": "Meet the Mr. Trash Wheel Family\n\n\n\n\n\n\nMister Trash Wheel\n\n\n\n\nInstalled: May 9, 2014\nLocation: Jones Falls stream, Inner Harbor, Baltimore, MD\n\n\n\n\n\n\n\n\nProfessor Trash Wheel\n\n\n\n\nInstalled: December 4, 2016\nLocation: Harris Creek, Canton neighborhood, Baltimore, MD\n\n\n\n\n\n\n\n\nCaptain Trash Wheel\n\n\n\n\n\nInstalled: June 5, 2018\nLocation: Masonville Cove, Baltimore, MD\n\n\n\n\n\n\n\n\nGwynnda Trash Wheel\n\n\n\n\n\nInstalled: June 3, 2021\nLocation: Gwynns Falls, West Baltimore, MD"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#question-17",
+    "href": "danl_210_hw_02_q.html#question-17",
+    "title": "Homework 2",
+    "section": "Question 17",
+    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Dumpster”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name”, “Date”, “Dumpster”, and “Trash_Type” in ascending order.\n\n\nAnswer:\n\ntrashwheel.columns\n\nIndex(['ID', 'Name', 'Dumpster', 'Month', 'Year', 'Date', 'Weight', 'Volume',\n       'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',\n       'PlasticBags', 'Wrappers', 'SportsBalls', 'HomesPowered'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\ntrashwheel['Date'] = trashwheel['Date'].astype('datetime64[ns]')\n\n\ntrashwheel_long = (\n    trashwheel[['Name', 'Date', 'Dumpster',\n                'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',\n                'PlasticBags', 'Wrappers', 'SportsBalls']]\n    .melt(\n        id_vars=['Name', 'Date', 'Dumpster'],\n        var_name= 'Trash_Type',\n        value_name= 'Number'\n    )\n    .sort_values(['Name', 'Date', 'Dumpster', 'Trash_Type'])\n)\n\ntrashwheel_long\n\n\n\n  \n    \n\n\n\n\n\n\nName\nDate\nDumpster\nTrash_Type\nNumber\n\n\n\n\n2729\nCaptain Trash Wheel\n2018-06-30\n1\nCigaretteButts\n8200.0\n\n\n3722\nCaptain Trash Wheel\n2018-06-30\n1\nGlassBottles\nNaN\n\n\n4715\nCaptain Trash Wheel\n2018-06-30\n1\nPlasticBags\n1420.0\n\n\n743\nCaptain Trash Wheel\n2018-06-30\n1\nPlasticBottles\n1150.0\n\n\n1736\nCaptain Trash Wheel\n2018-06-30\n1\nPolystyrene\n940.0\n\n\n...\n...\n...\n...\n...\n...\n\n\n4714\nProfessor Trash Wheel\n2023-12-05\n114\nPlasticBags\n360.0\n\n\n742\nProfessor Trash Wheel\n2023-12-05\n114\nPlasticBottles\n4000.0\n\n\n1735\nProfessor Trash Wheel\n2023-12-05\n114\nPolystyrene\n380.0\n\n\n6700\nProfessor Trash Wheel\n2023-12-05\n114\nSportsBalls\nNaN\n\n\n5707\nProfessor Trash Wheel\n2023-12-05\n114\nWrappers\n3900.0\n\n\n\n\n\n6951 rows × 5 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02_q.html#variable-description-3",
+    "href": "danl_210_hw_02_q.html#variable-description-3",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album\n\n\n\nWrite a blog post about your favorite artist(s) in the spotify DataFrame using Jupyter Notebook, and add it to your online blog.\n\nIn your blog post, utilize counting, sorting, indexing, and filtering methods."
+  },
+  {
+    "objectID": "danl_210_hw_02.html",
+    "href": "danl_210_hw_02.html",
+    "title": "Homework 2",
+    "section": "",
+    "text": "Click to Check the Answer!\n# Below is to import the pandas library as pd\nimport pandas as pd\nimport numpy as np"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#variable-description",
+    "href": "danl_210_hw_02.html#variable-description",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\nFiscal_Year: Fiscal Year;\nPayroll_Number: Payroll Number;\nAgency_Name: The Payroll agency that the employee works for;\nLast_Name: Last name of employee;\nFirst_Name: First name of employee;\nMid_Init: Middle initial of employee;\nAgency_Start_Date: Date which employee began working for their current agency;\nWork_Location_Borough: Borough of employee’s primary work location;\nTitle_Description: Civil service title description of the employee;\nLeave_Status_as_of_June_30: Status of employee as of the close of the relevant fiscal year;\nBase_Salary: Base Salary assigned to the employee;\nPay_Basis: Lists whether the employee is paid on an hourly, per diem or annual basis;\nRegular_Hours: Number of regular hours employee worked in the fiscal year;\nRegular_Gross_Paid: The amount paid to the employee for base salary during the fiscal year;\nOT_Hours: Overtime Hours worked by employee in the fiscal year;\nTotal_OT_Paid: Total overtime pay paid to the employee in the fiscal year;\nTotal_Other_Pay: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable."
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-1",
+    "href": "danl_210_hw_02.html#question-1",
+    "title": "Homework 2",
+    "section": "Question 1",
+    "text": "Question 1\nSelect “First_Name”, “Last_Name”, “Base_Salary”, and “Total_OT_Paid”, then sort the DataFrame with these selected variables by “Base_Salary” in descending order and display the top 10 entries.\nAnswer\n\n\nClick to Check the Answer!\n# 1. .sort_values() with head()\n(\n  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]\n  .sort_values('Base_Salary', ascending = False)\n  .head(10)\n)\n\n\n\n\nClick to Check the Answer!\n# 2. nlargest()\n(\n  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]\n  .nlargest(10, 'Base_Salary', keep = 'all')\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-2",
+    "href": "danl_210_hw_02.html#question-2",
+    "title": "Homework 2",
+    "section": "Question 2",
+    "text": "Question 2\nUsing set_index(), change the DataFrame’s index to “Last_Name”, then locate the data for a specific last name, say “BROWN”, and display their “Agency_Name”, “Base_Salary”, and “Total_OT_Paid”.\nAnswer\n\n\nClick to Check the Answer!\n\n(\n  nyc_payroll\n  .set_index('Last_Name')\n  .loc[\"BROWN\"][['Agency_Name', 'Base_Salary', 'Total_OT_Paid']]\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-3",
+    "href": "danl_210_hw_02.html#question-3",
+    "title": "Homework 2",
+    "section": "Question 3",
+    "text": "Question 3\nFind the 5 employees with the highest “Regular_Gross_Paid” and calculate their average “OT_Hours”. Also, reset the index if you have changed it previously.\nAnswer\n\n\nClick to Check the Answer!\n(\n  nyc_payroll\n  .nlargest(5, 'Regular_Gross_Paid', keep = \"all\")['OT_Hours']\n  .mean()\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-4",
+    "href": "danl_210_hw_02.html#question-4",
+    "title": "Homework 2",
+    "section": "Question 4",
+    "text": "Question 4\nSort the DataFrame by “Fiscal_Year” and “Total_Other_Pay” in descending order, then set “First_Name” as the index and use the loc accessor to retrieve the “Total_Other_Pay” for a specific first name, say “MICHAEL”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .sort_values(['Fiscal_Year', 'Total_Other_Pay'], ascending=False)\n    .set_index('First_Name')\n    .loc[\"MICHAEL\"][['Total_Other_Pay']]\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-5",
+    "href": "danl_210_hw_02.html#question-5",
+    "title": "Homework 2",
+    "section": "Question 5",
+    "text": "Question 5\nSort the DataFrame first by “Work_Location_Borough” alphabetically, and then by “Total_Compensation” (sum of “Base_Salary” and “Total_OT_Paid”) in descending order within each borough.\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll.columns\n\n\nIndex(['Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date', 'Work_Location_Borough',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\nnyc_payroll['Total_Compensation'] = nyc_payroll['Base_Salary'] + nyc_payroll['Total_OT_Paid']\n(\n    nyc_payroll\n    .sort_values(['Work_Location_Borough', 'Total_Compensation'], ascending=[True, False])\n    [['Work_Location_Borough', 'Total_Compensation',\n      'Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nWork_Location_Borough\nTotal_Compensation\nFiscal_Year\nPayroll_Number\nAgency_Name\nLast_Name\nFirst_Name\nMid_Init\nAgency_Start_Date\nTitle_Description\nLeave_Status_as_of_June_30\nBase_Salary\nPay_Basis\nRegular_Hours\nRegular_Gross_Paid\nOT_Hours\nTotal_OT_Paid\nTotal_Other_Pay\n\n\n\n\n3813\nBRONX\n190591.42\n2022\n56.0\nPOLICE DEPARTMENT\nWITRIOL\nJOEL\nNaN\n07/20/2006\nLIEUTENANT\nACTIVE\n135511.0\nper Annum\n2080.0\n135139.68\n919.0\n55080.42\n27374.03\n\n\n2068\nBRONX\n180327.00\n2021\n56.0\nPOLICE DEPARTMENT\nNUNEZ\nOSVALDO\nA\n07/18/1996\nCAPTAIN D/A DEPUTY INSPECTOR\nACTIVE\n180327.0\nper Annum\n2080.0\n179819.41\n0.0\n0.00\n26914.90\n\n\n1873\nBRONX\n179200.00\n2021\n11.0\nBOROUGH PRESIDENT-BRONX\nDIAZ JR\nRUBEN\nNaN\n05/01/2009\nBOROUGH PRESIDENT\nACTIVE\n179200.0\nper Annum\n1820.0\n178695.51\n0.0\n0.00\n1000.00\n\n\n1677\nBRONX\n177400.00\n2019\n902.0\nBRONX DISTRICT ATTORNEY\nOLDS\nVICTOR\nNaN\n09/07/2016\nASSISTANT DISTRICT ATTORNEY\nCEASED\n177400.0\nper Annum\n1267.0\n131483.29\n0.0\n0.00\n0.00\n\n\n864\nBRONX\n174928.76\n2022\n827.0\nDEPARTMENT OF SANITATION\nBRANNIGAN\nDESMOND\nG\n11/15/2004\nSANITATION WORKER\nACTIVE\n83465.0\nper Annum\n2080.0\n82186.02\n1171.0\n91463.76\n21167.33\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3881\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nAREM\nROSE\nNaN\n01/01/2010\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n500.00\n0.0\n0.00\n0.00\n\n\n4223\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nGATTO\nMARIE\nNaN\n01/01/2010\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n778.00\n0.0\n0.00\n0.00\n\n\n4278\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nJOHNSON\nIRA\nN\n01/01/2010\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n778.00\n0.0\n0.00\n0.00\n\n\n4891\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nCUNNINGHAM\nJEROME\nC\n01/02/2012\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n305.00\n0.0\n0.00\n0.00\n\n\n4940\nNaN\n1.00\n2014\n300.0\nBOARD OF ELECTION POLL WORKERS\nKISIC\nMICHELLE\nM\n01/02/2012\nELECTION WORKER\nACTIVE\n1.0\nper Hour\n0.0\n303.00\n0.0\n0.00\n0.00\n\n\n\n\n\n5000 rows × 18 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-6",
+    "href": "danl_210_hw_02.html#question-6",
+    "title": "Homework 2",
+    "section": "Question 6",
+    "text": "Question 6\n\nSelect employees who have “OT_Hours” greater than 0, calculate their “OT_Rate” (“Total_OT_Paid” / “OT_Hours”), and then find the employee with the highest “OT_Rate”. Display their full name and “OT_Rate”.\n\nAnswer\n\n\nClick to Check the Answer!\nq6 = (\n    nyc_payroll\n    .query(\"OT_Hours &gt; 0\")\n)\n\nq6['OT_Rate'] = q6['Total_OT_Paid'] / q6['OT_Hours']\n\n(\n    q6\n    .nlargest(1, \"OT_Rate\", keep = 'all')\n    [['First_Name', 'Last_Name', 'OT_Rate']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nFirst_Name\nLast_Name\nOT_Rate\n\n\n\n\n4224\nSHARON\nGOMEZ\n155.836"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-7",
+    "href": "danl_210_hw_02.html#question-7",
+    "title": "Homework 2",
+    "section": "Question 7",
+    "text": "Question 7\nCreate a new DataFrame that includes employees from the “DEPARTMENT OF EDUCATION ADMIN” agency where the variables are “First_Name”, “Last_Name”, “Title_Description”, “Base_Salary”, and “Total_OT_Paid”. Additionally, include a new variable “Total_Compensation” which is the sum of “Base_Salary” and “Total_OT_Paid”.\nAnswer\n\nnyc_payroll.columns\n\nIndex(['Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',\n       'First_Name', 'Mid_Init', 'Agency_Start_Date', 'Work_Location_Borough',\n       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',\n       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',\n       'Total_OT_Paid', 'Total_Other_Pay', 'Total_Compensation'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query(\"Agency_Name == 'DEPARTMENT OF EDUCATION ADMIN'\")\n    [['First_Name', 'Last_Name', 'Title_Description', 'Base_Salary', 'Total_OT_Paid', 'Total_Compensation']]\n)\n\n\n\n  \n    \n\n\n\n\n\n\nFirst_Name\nLast_Name\nTitle_Description\nBase_Salary\nTotal_OT_Paid\nTotal_Compensation\n\n\n\n\n79\nBETH\nSHIELS\nPHYSICAL THERAPIST\n81186.0\n0.00\n81186.00\n\n\n318\nSWETA\nGANDHI\nBOOKKEEPER\n47372.0\n16722.97\n64094.97\n\n\n340\nCLARE\nPURCELL\nSECRETARY\n45384.0\n0.00\n45384.00\n\n\n401\nNYESHA\nEVANS\nCUSTOMER INFORMATION REPRESENTATIVE\n67683.0\n19.79\n67702.79\n\n\n443\nSAMANTHA\nELIAS\nCOMMUNITY COORDINATOR\n76385.0\n0.00\n76385.00\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n4798\nRENEI\nJOHNSON\nCOMMUNITY ASSISTANT\n29318.0\n48.14\n29366.14\n\n\n4835\nMICHELLE\nTIFLINSKY\nSENIOR OCCUPATIONAL THERAPIST\n64040.0\n9.72\n64049.72\n\n\n4870\nREBEKHA\nASKEW\nADMINISTRATIVE EDUCATION OFFICER\n108841.0\n0.00\n108841.00\n\n\n4903\nNICOLA\nSINCLAIR\nOCCUPATIONAL THERAPIST\n81186.0\n37.48\n81223.48\n\n\n4942\nELLEN\nMORELLO\nPHYSICAL THERAPIST\n67888.0\n0.00\n67888.00\n\n\n\n\n\n135 rows × 6 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-8",
+    "href": "danl_210_hw_02.html#question-8",
+    "title": "Homework 2",
+    "section": "Question 8",
+    "text": "Question 8\n\nHow many employees have a “Base_Salary” within the top 10% of the DataFrame?\n\nAnswer\n\n\nClick to Check the Answer!\ntop10 = nyc_payroll['Base_Salary'].quantile(.9)\ntop10\n\nnyc_payroll[ nyc_payroll['Base_Salary'] &gt;= top10 ].shape[0]\n\n\n500"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-9",
+    "href": "danl_210_hw_02.html#question-9",
+    "title": "Homework 2",
+    "section": "Question 9",
+    "text": "Question 9\nFilter the DataFrame for employees who have “OT_Hours” greater than 0 but less than 100, and their “Leave_Status_as_of_June_30” is “ACTIVE”.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query(\"OT_Hours &gt; 0 & OT_Hours &lt; 100 & Leave_Status_as_of_June_30 == 'ACTIVE'\")\n)\n\n\n\n  \n    \n\n\n\n\n\n\nFiscal_Year\nPayroll_Number\nAgency_Name\nLast_Name\nFirst_Name\nMid_Init\nAgency_Start_Date\nWork_Location_Borough\nTitle_Description\nLeave_Status_as_of_June_30\nBase_Salary\nPay_Basis\nRegular_Hours\nRegular_Gross_Paid\nOT_Hours\nTotal_OT_Paid\nTotal_Other_Pay\nTotal_Compensation\n\n\n\n\n6\n2014\n841.0\nDEPARTMENT OF TRANSPORTATION\nLOMUNTAD\nLUIS\nV\n11/28/2004\nNaN\nDECKHAND\nACTIVE\n49793.0\nper Annum\n1668.38\n49650.65\n72.00\n7289.37\n3819.73\n57082.37\n\n\n39\n2015\nNaN\nFIRE DEPARTMENT\nCIRINO\nVINCENT\nC\n10/15/1990\nMANHATTAN\nCAPTAIN\nACTIVE\n117145.0\nper Annum\n2085.72\n121939.16\n14.00\n1305.47\n20076.23\n118450.47\n\n\n71\n2020\n906.0\nDISTRICT ATTORNEY-SPECIAL NARC\nNaN\nNaN\nNaN\n06/11/2018\nMANHATTAN\nSENIOR RACKETS INVESTIGATOR - START &gt;4-24-08 N...\nACTIVE\n67012.0\nper Annum\n2080.00\n64551.27\n27.00\n1290.10\n7993.00\n68302.10\n\n\n91\n2019\n806.0\nHOUSING PRESERVATION & DVLPMNT\nSALAS\nJESSICA\nA\n04/19/2004\nMANHATTAN\nADMIN COMMUNITY RELATIONS SPECIALIST\nACTIVE\n58926.0\nper Annum\n1809.25\n58681.36\n30.75\n1487.66\n135.71\n60413.66\n\n\n104\n2020\n806.0\nHOUSING PRESERVATION & DVLPMNT\nDESTINOBLE-NEUS\nANNE-LOISE\nD\n01/06/2020\nMANHATTAN\nCOMMUNITY ASSOCIATE\nACTIVE\n38333.0\nper Annum\n840.00\n17443.61\n7.00\n167.85\n0.00\n38500.85\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n4903\n2022\n740.0\nDEPARTMENT OF EDUCATION ADMIN\nSINCLAIR\nNICOLA\nS\n09/08/2009\nQUEENS\nOCCUPATIONAL THERAPIST\nACTIVE\n81186.0\nper Annum\n1664.00\n80815.89\n0.50\n37.48\n14172.85\n81223.48\n\n\n4911\n2021\n56.0\nPOLICE DEPARTMENT\nQUINONES\nCLAIRE\nNaN\n07/06/2011\nMANHATTAN\nPOLICE OFFICER\nACTIVE\n85292.0\nper Annum\n2080.00\n85051.84\n87.25\n4022.93\n19385.83\n89314.93\n\n\n4949\n2020\n827.0\nDEPARTMENT OF SANITATION\nFIGUEROA\nRICARDO\nA\n10/09/2007\nBROOKLYN\nSANITATION WORKER\nACTIVE\n77318.0\nper Annum\n2080.00\n70356.48\n32.00\n2293.47\n3729.19\n79611.47\n\n\n4979\n2015\nNaN\nPOLICE DEPARTMENT\nMARGOLIS\nJASON\nS\n07/18/1996\nQUEENS\nLIEUTENANT\nACTIVE\n117145.0\nper Annum\n2085.72\n119504.86\n8.75\n1100.95\n25296.48\n118245.95\n\n\n4992\n2018\n69.0\nHRA/DEPT OF SOCIAL SERVICES\nPECHERA\nJAMES\nO\n04/25/2011\nQUEENS\nJOB OPPORTUNITY SPECIALIST\nACTIVE\n45378.0\nper Annum\n1410.75\n35823.90\n6.25\n222.59\n2036.87\n45600.59\n\n\n\n\n\n339 rows × 18 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-10",
+    "href": "danl_210_hw_02.html#question-10",
+    "title": "Homework 2",
+    "section": "Question 10",
+    "text": "Question 10\nFind the unique job titles in the “DEPARTMENT OF EDUCATION ADMIN” agency and count how many there are.\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query('Agency_Name == \"DEPARTMENT OF EDUCATION ADMIN\"')['Title_Description']\n    .value_counts()\n    .reset_index()\n    .shape[0]\n)\n\n\n37\n\n\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .query('Agency_Name == \"DEPARTMENT OF EDUCATION ADMIN\"')['Title_Description']\n    .nunique()\n)\n\n\n37"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-11",
+    "href": "danl_210_hw_02.html#question-11",
+    "title": "Homework 2",
+    "section": "Question 11",
+    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total_OT_Paid” in the DataFrame.\n\nInclude their “First_Name”, “Last_Name”, and “Total_OT_Paid”.\n\n\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .nlargest(1, 'Total_OT_Paid', keep=\"all\")[['First_Name', 'Last_Name']]\n)"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-12",
+    "href": "danl_210_hw_02.html#question-12",
+    "title": "Homework 2",
+    "section": "Question 12",
+    "text": "Question 12\n\nWhat percentage of the values is missing for each variable?\n\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll.info()\n\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 5000 entries, 0 to 4999\nData columns (total 18 columns):\n #   Column                      Non-Null Count  Dtype  \n---  ------                      --------------  -----  \n 0   Fiscal_Year                 5000 non-null   int64  \n 1   Payroll_Number              3460 non-null   float64\n 2   Agency_Name                 5000 non-null   object \n 3   Last_Name                   4985 non-null   object \n 4   First_Name                  4985 non-null   object \n 5   Mid_Init                    2920 non-null   object \n 6   Agency_Start_Date           5000 non-null   object \n 7   Work_Location_Borough       4602 non-null   object \n 8   Title_Description           5000 non-null   object \n 9   Leave_Status_as_of_June_30  5000 non-null   object \n 10  Base_Salary                 5000 non-null   float64\n 11  Pay_Basis                   5000 non-null   object \n 12  Regular_Hours               5000 non-null   float64\n 13  Regular_Gross_Paid          5000 non-null   float64\n 14  OT_Hours                    5000 non-null   float64\n 15  Total_OT_Paid               5000 non-null   float64\n 16  Total_Other_Pay             5000 non-null   float64\n 17  Total_Compensation          5000 non-null   float64\ndtypes: float64(8), int64(1), object(9)\nmemory usage: 703.3+ KB\n\n\n\n\nClick to Check the Answer!\nnyc_payroll['Payroll_Number'].isna().sum() / nyc_payroll.shape[0]\n\n\n0.308\n\n\n\n\nClick to Check the Answer!\nfor var in nyc_payroll.columns:\n  print(var, ':', 100 * nyc_payroll[var].isna().sum() / nyc_payroll.shape[0])\n\n\nFiscal_Year : 0.0\nPayroll_Number : 30.8\nAgency_Name : 0.0\nLast_Name : 0.3\nFirst_Name : 0.3\nMid_Init : 41.6\nAgency_Start_Date : 0.0\nWork_Location_Borough : 7.96\nTitle_Description : 0.0\nLeave_Status_as_of_June_30 : 0.0\nBase_Salary : 0.0\nPay_Basis : 0.0\nRegular_Hours : 0.0\nRegular_Gross_Paid : 0.0\nOT_Hours : 0.0\nTotal_OT_Paid : 0.0\nTotal_Other_Pay : 0.0\nTotal_Compensation : 0.0"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-13",
+    "href": "danl_210_hw_02.html#question-13",
+    "title": "Homework 2",
+    "section": "Question 13",
+    "text": "Question 13\n\nFill missing values in the “Last_Name” variable with “UNKNOWN”.\n\nAnswer\n\n\nClick to Check the Answer!\nnyc_payroll['Last_Name'] = nyc_payroll['Last_Name'].fillna(\"UNKNOWN\")\n\n\n\n\nClick to Check the Answer!\nnyc_payroll[['Last_Name']].query('Last_Name == \"UNKNOWN\"')\n\n\n\n  \n    \n\n\n\n\n\n\nLast_Name\n\n\n\n\n71\nUNKNOWN\n\n\n688\nUNKNOWN\n\n\n798\nUNKNOWN\n\n\n1221\nUNKNOWN\n\n\n1465\nUNKNOWN\n\n\n1774\nUNKNOWN\n\n\n2245\nUNKNOWN\n\n\n2272\nUNKNOWN\n\n\n2346\nUNKNOWN\n\n\n3057\nUNKNOWN\n\n\n3698\nUNKNOWN\n\n\n3726\nUNKNOWN\n\n\n4481\nUNKNOWN\n\n\n4869\nUNKNOWN\n\n\n4875\nUNKNOWN"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#variable-description-1",
+    "href": "danl_210_hw_02.html#variable-description-1",
+    "title": "Homework 2",
+    "section": "Variable description",
+    "text": "Variable description\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nweek: Season week.\nposteam: String abbreviation for the team with possession.\nqtr: Quarter of the game (5 is overtime).\nhalf_seconds_remaining: Numeric seconds remaining in the half.\ndown: The down for the given play.\n\nBasically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it).\nIf you make 10 yards then you get another set of four downs.\n\npass: Binary indicator if the play was a pass play.\nwp: Estimated winning probability for the posteam given the current situation at the start of the given play."
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-14",
+    "href": "danl_210_hw_02.html#question-14",
+    "title": "Homework 2",
+    "section": "Question 14",
+    "text": "Question 14\nIn DataFrame, NFL2022_stuffs, remove observations for which the value of posteam is missing.\nAnswer:\n\n\nClick to Check the Answer!\nNFL2022_stuffs.shape[0]\n\n\n50147\n\n\n\n\nClick to Check the Answer!\nNFL2022_stuffs = NFL2022_stuffs.dropna(subset = ['posteam'])\nNFL2022_stuffs.shape[0]\n\n\n46427"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-15",
+    "href": "danl_210_hw_02.html#question-15",
+    "title": "Homework 2",
+    "section": "Question 15",
+    "text": "Question 15\n\nCalculate the mean value of pass for the BUF posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:\n\n\nClick to Check the Answer!\n(\n    NFL2022_stuffs\n    .query('wp &gt; .2 & wp &lt; .75 & down &lt;= 2 & half_seconds_remaining &gt; 120 & posteam == \"BUF\"')['pass']\n    .mean()\n)\n\n\n0.6043956043956044"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-16",
+    "href": "danl_210_hw_02.html#question-16",
+    "title": "Homework 2",
+    "section": "Question 16",
+    "text": "Question 16\n\nConsider the following DataFrame, NFL2022_epa:\n\n\nNFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\nVariable Description for NFL2022_epa\n\nplay_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\ngame_id: Ten digit identifier for NFL game.\ndrive: Numeric drive number in the game.\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)\nreceiver: Name of the receiver.\nepa: Expected points added (EPA) by the posteam for the given play.\n\n\n\nCreate the following DataFrame, NFL2022_stuffs_EPA, that includes\n\nAll the variables and the observations in the DataFrame, NFL2022_stuffs;\nThe variables, passer, receiver, and epa, from the DataFrame, NFL2022_epa by joining the two DataFrames.\n\nIn the resulting DataFrame, NFL2022_stuffs_EPA, please remove observations with NaN in passer after the join.\n\nAnswer:\n\nNFL2022_stuffs.columns\n\nIndex(['play_id', 'game_id', 'drive', 'week', 'posteam', 'qtr', 'down',\n       'half_seconds_remaining', 'pass', 'wp'],\n      dtype='object')\n\n\n\nNFL2022_epa.columns\n\nIndex(['play_id', 'game_id', 'drive', 'posteam', 'receiver', 'passer', 'epa'], dtype='object')\n\n\n\n\nClick to Check the Answer!\nNFL2022_stuffs_EPA = (\n    NFL2022_stuffs\n    .merge(NFL2022_epa,\n           on = ['play_id', 'game_id', 'drive', 'posteam'],\n           how = 'left')\n    .dropna(subset = ['passer'])\n)\nNFL2022_stuffs_EPA\n\n\nWarning: total number of rows (22457) exceeds max_rows (20000). Falling back to pandas display.\n\n\n\n  \n    \n\n\n\n\n\n\nplay_id\ngame_id\ndrive\nweek\nposteam\nqtr\ndown\nhalf_seconds_remaining\npass\nwp\nreceiver\npasser\nepa\n\n\n\n\n2\n89\n2022_01_BAL_NYJ\n1.0\n1\nNYJ\n1\n1.0\n1769\n1\n0.572573\nMi.Carter\nJ.Flacco\n-0.492192\n\n\n4\n136\n2022_01_BAL_NYJ\n1.0\n1\nNYJ\n1\n3.0\n1741\n1\n0.540167\nNaN\nJ.Flacco\n-2.402200\n\n\n6\n202\n2022_01_BAL_NYJ\n2.0\n1\nBAL\n1\n1.0\n1722\n1\n0.495820\nR.Bateman\nL.Jackson\n0.075127\n\n\n7\n230\n2022_01_BAL_NYJ\n2.0\n1\nBAL\n1\n2.0\n1701\n1\n0.496594\nD.Duvernay\nL.Jackson\n-0.105120\n\n\n10\n301\n2022_01_BAL_NYJ\n2.0\n1\nBAL\n1\n2.0\n1579\n1\n0.506771\nD.Duvernay\nL.Jackson\n0.411132\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n46415\n3789\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n2.0\n251\n1\n0.476804\nT.Kelce\nP.Mahomes\n0.710100\n\n\n46417\n3834\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n1.0\n175\n1\n0.565224\nNaN\nP.Mahomes\n1.913129\n\n\n46419\n3876\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n2.0\n120\n1\n0.727041\nJ.Smith-Schuster\nP.Mahomes\n-0.903265\n\n\n46420\n3907\n2022_22_KC_PHI\n17.0\n22\nKC\n4\n3.0\n114\n1\n0.684246\nJ.Smith-Schuster\nP.Mahomes\n1.403649\n\n\n46426\n4072\n2022_22_KC_PHI\n18.0\n22\nPHI\n4\n1.0\n6\n1\n0.127170\nNaN\nJ.Hurts\n-0.070803\n\n\n\n\n\n22457 rows × 13 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#variable-description-2",
+    "href": "danl_210_hw_02.html#variable-description-2",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ninteger\nDumpster number over time; The Trash Wheel can have multiple dumpsters in a day\n\n\nMonth\nstring\nMonth\n\n\nYear\ninteger\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nfloat\nWeight in tons\n\n\nVolume\ninteger\nVolume in cubic yards\n\n\nPlasticBottles\nfloat\nNumber of plastic bottles\n\n\nPolystyrene\nfloat\nNumber of polystyrene items\n\n\nCigaretteButts\nfloat\nNumber of cigarette butts\n\n\nGlassBottles\nfloat\nNumber of glass bottles\n\n\nPlasticBags\nfloat\nNumber of plastic bags\n\n\nWrappers\nfloat\nNumber of wrappers\n\n\nSportsBalls\nfloat\nNumber of sports balls\n\n\nHomesPowered\ninteger\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
+  },
+  {
+    "objectID": "danl_210_hw_02.html#meet-the-mr.-trash-wheel-family",
+    "href": "danl_210_hw_02.html#meet-the-mr.-trash-wheel-family",
+    "title": "Homework 2",
+    "section": "Meet the Mr. Trash Wheel Family",
+    "text": "Meet the Mr. Trash Wheel Family\n\n\n\n\n\n\nMister Trash Wheel\n\n\n\n\nInstalled: May 9, 2014\nLocation: Jones Falls stream, Inner Harbor, Baltimore, MD\n\n\n\n\n\n\n\n\nProfessor Trash Wheel\n\n\n\n\nInstalled: December 4, 2016\nLocation: Harris Creek, Canton neighborhood, Baltimore, MD\n\n\n\n\n\n\n\n\nCaptain Trash Wheel\n\n\n\n\n\nInstalled: June 5, 2018\nLocation: Masonville Cove, Baltimore, MD\n\n\n\n\n\n\n\n\nGwynnda Trash Wheel\n\n\n\n\n\nInstalled: June 3, 2021\nLocation: Gwynns Falls, West Baltimore, MD"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#question-17",
+    "href": "danl_210_hw_02.html#question-17",
+    "title": "Homework 2",
+    "section": "Question 17",
+    "text": "Question 17\n\nReshape the trashwheel DataFrame into a DataFrame called trashwheel_long that includes variables for “Name”, “Date”, “Dumpster”, “Trash_Type”, and “Number”.\n\nThe “Trash_Type” variable should indicate the type of trash from the original DataFrame, and “Number” should contain the corresponding values.\nFinally, sort trashwheel_long by “Name”, “Date”, “Dumpster”, and “Trash_Type” in ascending order.\n\n\nAnswer:\n\ntrashwheel.columns\n\nIndex(['ID', 'Name', 'Dumpster', 'Month', 'Year', 'Date', 'Weight', 'Volume',\n       'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',\n       'PlasticBags', 'Wrappers', 'SportsBalls', 'HomesPowered'],\n      dtype='object')\n\n\n\n\nClick to Check the Answer!\ntrashwheel['Date'] = trashwheel['Date'].astype('datetime64[ns]')\n\n\ntrashwheel_long = (\n    trashwheel[['Name', 'Date', 'Dumpster',\n                'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',\n                'PlasticBags', 'Wrappers', 'SportsBalls']]\n    .melt(\n        id_vars=['Name', 'Date', 'Dumpster'],\n        var_name= 'Trash_Type',\n        value_name= 'Number'\n    )\n    .sort_values(['Name', 'Date', 'Dumpster', 'Trash_Type'])\n)\n\ntrashwheel_long\n\n\n\n  \n    \n\n\n\n\n\n\nName\nDate\nDumpster\nTrash_Type\nNumber\n\n\n\n\n2729\nCaptain Trash Wheel\n2018-06-30\n1\nCigaretteButts\n8200.0\n\n\n3722\nCaptain Trash Wheel\n2018-06-30\n1\nGlassBottles\nNaN\n\n\n4715\nCaptain Trash Wheel\n2018-06-30\n1\nPlasticBags\n1420.0\n\n\n743\nCaptain Trash Wheel\n2018-06-30\n1\nPlasticBottles\n1150.0\n\n\n1736\nCaptain Trash Wheel\n2018-06-30\n1\nPolystyrene\n940.0\n\n\n...\n...\n...\n...\n...\n...\n\n\n4714\nProfessor Trash Wheel\n2023-12-05\n114\nPlasticBags\n360.0\n\n\n742\nProfessor Trash Wheel\n2023-12-05\n114\nPlasticBottles\n4000.0\n\n\n1735\nProfessor Trash Wheel\n2023-12-05\n114\nPolystyrene\n380.0\n\n\n6700\nProfessor Trash Wheel\n2023-12-05\n114\nSportsBalls\nNaN\n\n\n5707\nProfessor Trash Wheel\n2023-12-05\n114\nWrappers\n3900.0\n\n\n\n\n\n6951 rows × 5 columns"
+  },
+  {
+    "objectID": "danl_210_hw_02.html#variable-description-3",
+    "href": "danl_210_hw_02.html#variable-description-3",
+    "title": "Homework 2",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album\n\n\n\nWrite a blog post about your favorite artist(s) in the spotify DataFrame using Jupyter Notebook, and add it to your online blog.\n\nIn your blog post, utilize counting, sorting, indexing, and filtering methods."
   }
 ]

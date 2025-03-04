@@ -3,9 +3,26 @@ title: Homework 2
 subtitle: Pandas Basics
 date: last-modified
 from: markdown+emoji
+format:
+  html:
+    code-fold: true
 execute: 
-  eval: false
+  eval: true
+language: 
+  code-summary: "Click to Check the Answer!"
 ---
+
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+```{python}
+import pandas as pd
+from itables import init_notebook_mode, show # for displaying an interactive DataFrame
+```
 
 # Direction
 
@@ -37,7 +54,8 @@ execute:
 
 Below is `nyc_payroll` `DataFrame` that reads the file `nyc_payroll.csv` containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: [NYC OpenData](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)).
 
-```{.python}
+```{python}
+#| code-fold: false
 nyc_payroll = pd.read_csv('https://bcdanl.github.io/data/nyc_payroll_2024.csv')
 ```
 
@@ -79,7 +97,18 @@ Select "`First_Name`", "`Last_Name`", "`Base_Salary`", and "`Total_OT_Paid`", th
 *Answer*
 
 ```{python}
+# 1. .sort_values() with head()
+(
+  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]
+  .sort_values('Base_Salary', ascending = False)
+  .head(10)
+)
 
+# 2. nlargest()
+(
+  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]
+  .nlargest(10, 'Base_Salary', keep = 'all')
+)
 ```
 
 
@@ -93,7 +122,11 @@ Using `set_index()`, change the DataFrame's index to "`Last_Name`", then locate 
 
 *Answer*
 ```{python}
-
+(
+  nyc_payroll
+  .set_index('Last_Name')
+  .loc["BROWN"][['Agency_Name', 'Base_Salary', 'Total_OT_Paid']]
+)
 ```
 
 
@@ -107,7 +140,11 @@ Find the 5 employees with the highest "`Regular_Gross_Paid`" and calculate their
 
 *Answer*
 ```{python}
-
+(
+  nyc_payroll
+  .nlargest(5, 'Regular_Gross_Paid', keep = "all")['OT_Hours']
+  .mean()
+)
 ```
 
 <br><br>
@@ -118,12 +155,14 @@ Find the 5 employees with the highest "`Regular_Gross_Paid`" and calculate their
 ## Question 4
 Sort the DataFrame by "`Fiscal_Year`" and "`Total_Other_Pay`" in descending order, then set "`First_Name`" as the index and use the `loc` accessor to retrieve the "`Total_Other_Pay`" for a specific first name, say **"MICHAEL"**.
 
-
-
-
 *Answer*
 ```{python}
-
+(
+    nyc_payroll
+    .sort_values(['Fiscal_Year', 'Total_Other_Pay'], ascending=False)
+    .set_index('First_Name')
+    .loc["MICHAEL"][['Total_Other_Pay']]
+)
 ```
 
 <br><br>
@@ -135,7 +174,23 @@ Sort the DataFrame first by "`Work_Location_Borough`" alphabetically, and then b
 
 *Answer*
 ```{python}
+#| code-fold: false
+nyc_payroll.columns
+```
 
+```{python}
+nyc_payroll['Total_Compensation'] = nyc_payroll['Base_Salary'] + nyc_payroll['Total_OT_Paid']
+
+(
+    nyc_payroll
+    .sort_values(['Work_Location_Borough', 'Total_Compensation'], ascending=[True, False])
+    [['Work_Location_Borough', 'Total_Compensation',     # This is to relocate variables
+      'Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',
+       'First_Name', 'Mid_Init', 'Agency_Start_Date',
+       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',
+       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',
+       'Total_OT_Paid', 'Total_Other_Pay']]
+)
 ```
 
 <br><br>
@@ -149,7 +204,18 @@ Sort the DataFrame first by "`Work_Location_Borough`" alphabetically, and then b
 
 *Answer*
 ```{python}
+q6 = (
+    nyc_payroll
+    .query("OT_Hours > 0")
+)
 
+q6['OT_Rate'] = q6['Total_OT_Paid'] / q6['OT_Hours']
+
+(
+    q6
+    .nlargest(1, "OT_Rate", keep = 'all')
+    [['First_Name', 'Last_Name', 'OT_Rate']]
+)
 ```
 
 <br><br>
@@ -164,7 +230,11 @@ Create a new DataFrame that includes employees from the **"DEPARTMENT OF EDUCATI
 
 *Answer*
 ```{python}
-
+(
+    nyc_payroll
+    .query("Agency_Name == 'DEPARTMENT OF EDUCATION ADMIN'")
+    [['First_Name', 'Last_Name', 'Title_Description', 'Base_Salary', 'Total_OT_Paid', 'Total_Compensation']]
+)
 ```
 
 <br><br>
@@ -176,7 +246,10 @@ Create a new DataFrame that includes employees from the **"DEPARTMENT OF EDUCATI
 
 *Answer*
 ```{python}
+top10 = nyc_payroll['Base_Salary'].quantile(.9)
+top10
 
+nyc_payroll[ nyc_payroll['Base_Salary'] >= top10 ].shape[0]
 ```
 
 <br><br>
@@ -190,7 +263,10 @@ Filter the DataFrame for employees who have "`OT_Hours`" greater than **0** but 
 
 *Answer*
 ```{python}
-
+(
+    nyc_payroll
+    .query("OT_Hours > 0 & OT_Hours < 100 & Leave_Status_as_of_June_30 == 'ACTIVE'")
+)
 ```
 
 <br><br>
@@ -204,8 +280,27 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 
 *Answer*
 ```{python}
-
+# 1. value_counts()
+(
+    nyc_payroll
+    .query('Agency_Name == "DEPARTMENT OF EDUCATION ADMIN"')['Title_Description']
+    .value_counts()
+    .reset_index()
+    .shape[0]
+)
 ```
+
+
+```{python}
+# 2. nunique()
+(
+    nyc_payroll
+    .query('Agency_Name == "DEPARTMENT OF EDUCATION ADMIN"')['Title_Description']
+    .nunique()
+)
+```
+
+
 
 <br><br>
 
@@ -217,7 +312,10 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 
 *Answer*
 ```{python}
-
+(
+    nyc_payroll
+    .nlargest(1, 'Total_OT_Paid', keep="all")[['First_Name', 'Last_Name']]
+)
 ```
 
 <br><br>
@@ -229,7 +327,17 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 
 *Answer*
 ```{python}
+nyc_payroll.info()
+```
 
+```{python}
+nyc_payroll['Payroll_Number'].isna().sum() / nyc_payroll.shape[0]
+```
+
+
+```{python}
+for var in nyc_payroll.columns:
+  print(var, ':', 100 * nyc_payroll[var].isna().sum() / nyc_payroll.shape[0])
 ```
 
 <br><br>
@@ -242,7 +350,7 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 
 *Answer*
 ```{python}
-
+nyc_payroll['Last_Name'] = nyc_payroll['Last_Name'].fillna("UNKNOWN")
 ```
 
 <br><br><br>
@@ -260,7 +368,8 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 
 - The following is the DataFrame for Part 2. 
 
-```{.python}
+```{python}
+#| code-fold: false
 NFL2022_stuffs = pd.read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
 ```
 
@@ -298,7 +407,10 @@ In DataFrame, `NFL2022_stuffs`, remove observations for which the value of `post
 *Answer*: 
 
 ```{python}
+NFL2022_stuffs.shape[0]
 
+NFL2022_stuffs = NFL2022_stuffs.dropna(subset = ['posteam'])
+NFL2022_stuffs.shape[0]
 ```
 
 <br>
@@ -313,7 +425,11 @@ In DataFrame, `NFL2022_stuffs`, remove observations for which the value of `post
 *Answer*: 
 
 ```{python}
-
+(
+    NFL2022_stuffs
+    .query('wp > .2 & wp < .75 & down <= 2 & half_seconds_remaining > 120 & posteam == "BUF"')['pass']
+    .mean()
+)
 ```
 
 <br>
@@ -322,7 +438,8 @@ In DataFrame, `NFL2022_stuffs`, remove observations for which the value of `post
 ## Question 16
 - Consider the following DataFrame, `NFL2022_epa`:
 
-```{.python}
+```{python}
+#| code-fold: false
 NFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')
 ```
 
@@ -371,8 +488,28 @@ DT::datatable(NFL2022_stuffs %>%
 *Answer*:
 
 ```{python}
-
+#| code-fold: false
+NFL2022_stuffs.columns
 ```
+
+```{python}
+#| code-fold: false
+NFL2022_epa.columns
+```
+
+
+```{python}
+NFL2022_stuffs_EPA = (
+    NFL2022_stuffs
+    .merge(NFL2022_epa,
+           on = ['play_id', 'game_id', 'drive', 'posteam'],
+           how = 'left')
+    .dropna(subset = ['passer'])
+)
+
+NFL2022_stuffs_EPA
+```
+
 
 
 <br><br><br>
@@ -401,7 +538,8 @@ See more [how Mr. Trash Wheel works](https://www.mrtrashwheel.com/technology/).
 
 - The following is the DataFrame for Part 3.
 
-```{.python}
+```{python}
+#| code-fold: false
 trashwheel = pd.read_csv('https://bcdanl.github.io/data/trashwheel.csv')
 ```
 
@@ -552,6 +690,31 @@ trashwheel_long <- trashwheel |>
 DT::datatable(trashwheel_long, options = list(
   pageLength = 20
 )) 
+```
+
+*Answer:*
+
+```{python}
+trashwheel.columns
+```
+
+```{python}
+trashwheel['Date'] = trashwheel['Date'].astype('datetime64[ns]')
+
+
+trashwheel_long = (
+    trashwheel[['Name', 'Date', 'Dumpster',
+                'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',
+                'PlasticBags', 'Wrappers', 'SportsBalls']]
+    .melt(
+        id_vars=['Name', 'Date', 'Dumpster'],
+        var_name= 'Trash_Type',
+        value_name= 'Number'
+    )
+    .sort_values(['Name', 'Date', 'Dumpster', 'Trash_Type'])
+)
+
+trashwheel_long
 ```
 
 
