@@ -317,12 +317,13 @@ s6 = pd.Series(['S6', 'Scarlette Fisher', 205], index=['student_id', 'name', 'ma
 
 - Write a Pandas code to append `s6` to the DataFrame `student_data1`.
 
-- Hint: Consider creating a DataFrame of `s6`.
+- Hint 1: Consider creating a DataFrame of `s6`.
 
-*Answer:*
-```{python}
-
+```{.python}
+pd.DataFrame(s6)
 ```
+
+- Hint 2: `DataFrame.T` returns the transpose of the `DataFrame`, swapping rows and columns.
 
 <br><br>
 

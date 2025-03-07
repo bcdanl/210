@@ -144,7 +144,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
--  The variables that are used to connect each pair of `DataFrames` are called **keys**.
+- The variables that are used to connect each pair of `DataFrames` are called **keys**.
 - Each observation in a DataFrame is often uniquely identified by key variable(s).
 - The key variable enables relationships between the DataFrames to be defined.
 
@@ -406,7 +406,6 @@ df1.columns
 :::{.nonincremental}
 
 - Concatenating the `DataFrames` on top of each other uses the `concat()` method. 
-  - All of the `DataFrames` to be concatenated are passed in a `list`.
   
 ```{.python}
 row_concat = pd.concat([df1, df2, df3])
@@ -414,44 +413,10 @@ row_concat = pd.concat([df1, df2, df3])
 
 :::
 
-## Data Concatenation
-###  Add Rows  
-:::{.nonincremental}
-
-- Let's consider a new `Series` and concatenate it with `df1`:
-```{.python}
-# create a new row of data
-new_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
-
-# attempt to add the new row to a dataframe
-df = pd.concat([df1, new_row_series])
-```
-
--  Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.
-  - Why?
-
-:::
-
-## Data Concatenation
-###  Add Rows  
-
-:::{.nonincremental}
-
-- To fix the problem, we need turn our `Series` into a `DataFrame`.
-  - This `DataFrame` contains one row of data, and the column names are the ones the data will bind to.
-
-```{.python}
-new_row_df = pd.DataFrame(
-  # note the double brackets to create a "row" of data
-  data =[["n1", "n2", "n3", "n4"]],
-  columns =["A", "B", "C", "D"],
-)
-
-df = pd.concat([df1, new_row_df])
-```
-
-:::
-
+- All of the `DataFrames` to be concatenated are passed in a `list`.
+  - `pd.concat( [DataFrame_1, DataFrame_2, ... , DataFrame_N] )`
+  
+  
 ## Data Concatenation
 ###   Add Columns  
 
@@ -474,25 +439,71 @@ pd.concat([df1, df2, df3], axis = "columns", ignore_index = True)
 
 
 
-## Concatenate with Different Indices
-### What would happen when the column indices are not aligned?
+## Data Concatenation
+###  Add a Series?  
 :::{.nonincremental}
 
-- Let’s modify our `DataFrames` as follows.
+- Let's consider a new `Series` and concatenate it with `df1`:
 ```{.python}
-# rename the columns of our DataFrames
-df1.columns = ['A', 'B', 'C', 'D']
-df2.columns = ['A', 'F', 'G', 'H']
-df3.columns = ['A', 'C', 'F', 'H']
+# create a new row of data
+new_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
+
+# attempt to add the new row to a DataFrame
+df = pd.concat([df1, new_row_series])
 ```
 
--  If we try to concatenate these `DataFrames` as we did, the `DataFrames` now do much more than simply stack one on top of the other.
+-  Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.
+  - Why?
+
+:::
+
+
+## Data Concatenation
+###  Add a Series?
+
+:::{.nonincremental}
+
+- To fix the problem, we need turn our `Series` into a `DataFrame`.
+  - This `DataFrame` contains one row of data, and the column names are the ones the data will bind to.
+
 ```{.python}
-pd.concat([df1, df2, df3])
-pd.concat([df1, df2, df3], join ='inner') # keep only the common columns
+new_row_df = pd.DataFrame(
+  # note the double brackets to create a "row" of data
+  data =[ ["n1", "n2", "n3", "n4"] ],
+  columns = df1.columns,
+)
+
+df = pd.concat([df1, new_row_df])
 ```
 
 :::
+
+
+- How about this?
+  - `pd.concat([df1, new_row_series], axis = 1)`
+  
+  
+
+<!-- ## Concatenate with Different Indices -->
+<!-- ### What would happen when the column indices are not aligned? -->
+<!-- :::{.nonincremental} -->
+
+<!-- - Let’s modify our `DataFrames` as follows. -->
+<!-- ```{.python} -->
+<!-- # rename the columns of our DataFrames -->
+<!-- df1.columns = ['A', 'B', 'C', 'D'] -->
+<!-- df2.columns = ['A', 'F', 'G', 'H'] -->
+<!-- df3.columns = ['A', 'C', 'F', 'H'] -->
+<!-- ``` -->
+
+<!-- -  If we try to concatenate these `DataFrames` as we did, the `DataFrames` now do much more than simply stack one on top of the other. -->
+<!-- ```{.python} -->
+<!-- pd.concat([df1, df2, df3]) -->
+<!-- pd.concat([df1, df2, df3], join ='inner') # keep only the common columns -->
+<!-- ``` -->
+
+:::
+
 
 <!-- ## Concatenate with Different Indices   -->
 
@@ -508,24 +519,24 @@ pd.concat([df1, df2, df3], join ='inner') # keep only the common columns
 <!-- ::: -->
 
 
-## Concatenate with Different Indices  
-### What would happen when the row indices are not aligned?
-:::{.nonincremental}
+<!-- ## Concatenate with Different Indices   -->
+<!-- ### What would happen when the row indices are not aligned? -->
+<!-- :::{.nonincremental} -->
 
-- Let’s modify our `DataFrames` as follows.
-```{.python}
-# re-indexing the rows of our DataFrames
-df1.index = [0, 1, 2, 3]
-df2.index = [4, 5, 6, 7]
-df3.index = [0, 2, 5, 7]
-```
+<!-- - Let’s modify our `DataFrames` as follows. -->
+<!-- ```{.python} -->
+<!-- # re-indexing the rows of our DataFrames -->
+<!-- df1.index = [0, 1, 2, 3] -->
+<!-- df2.index = [4, 5, 6, 7] -->
+<!-- df3.index = [0, 2, 5, 7] -->
+<!-- ``` -->
 
-- When we concatenate along `axis="columns"` `(axis=1`), the new `DataFrames` will be added in a column-wise fashion and matched against their respective row indices.
+<!-- - When we concatenate along `axis="columns"` `(axis=1`), the new `DataFrames` will be added in a column-wise fashion and matched against their respective row indices. -->
 
-```{.python}
-pd.concat([df1, df2, df3], axis = "columns")
-pd.concat([df1, df3], axis ="columns", join='inner') # keep only the common rows
-```
+<!-- ```{.python} -->
+<!-- pd.concat([df1, df2, df3], axis = "columns") -->
+<!-- pd.concat([df1, df3], axis ="columns", join='inner') # keep only the common rows -->
+<!-- ``` -->
 
 
 :::
