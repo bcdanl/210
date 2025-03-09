@@ -476,6 +476,21 @@ Additionally, the `categories` DataFrame offers metadata on product categories, 
 <br><br>
 
 ### DataFrames
+
+```{python}
+#| eval: true
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+categories = pd.read_csv('https://bcdanl.github.io/data/gourmet-Categories.csv')
+customers = pd.read_csv('https://bcdanl.github.io/data/gourmet-Customers2.csv')
+orders = pd.read_csv('https://bcdanl.github.io/data/gourmet-Orders2.csv')
+order_details = pd.read_csv('https://bcdanl.github.io/data/gourmet-OrderDetails2.csv')
+products = pd.read_csv('https://bcdanl.github.io/data/gourmet-Products2.csv')
+```
+
 #### 0. `categories` DataFrame (containing 8 observations)
 
 ```{r}
