@@ -52,8 +52,8 @@ website:
       - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
         href: listing-danl-210-hw.qmd
       - text: &nbsp;
-      - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-        href: danl-qa/danl-210-qa.qmd
+      - text: <font size ="5" ><b>- Exam </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
+        href: listing-danl-210-ex.qmd
       - text: &nbsp;
       - text: <font size ="5" ><b>- Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
         href: danl-rw/danl-210-project.qmd

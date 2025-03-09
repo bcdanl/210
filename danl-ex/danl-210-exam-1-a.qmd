@@ -1,0 +1,1054 @@
+---
+title: "Midterm Exam I"
+subtitle: "Spring 2025, DANL 210-01"
+author: ""
+date: 2025-03-05
+
+toc: true
+toc-depth: 3
+toc-expand: true
+toc-title: Contents
+code-fold: true
+
+fig-width: 9
+fig-align: center
+
+execute:
+  echo: true
+  eval: false
+  message: false
+  warning: false
+
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+```{r}
+#| include: false
+#| eval: true
+library(tidyverse)
+library(skimr)
+library(lubridate)
+library(stargazer)
+library(broom)
+library(hrbrthemes)
+library(ISAR)
+library(ggrepel)
+# theme_set(theme_ipsum())
+
+# knitr::opts_chunk$set(fig.width=6, fig.height=6)  
+
+theme_set(theme_bw() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1), hjust = 1 ),
+                axis.title.y = element_text(size = rel(1), 
+                                            angle = 0,
+                                            margin = margin(0,10,0,0)))
+          )
+
+```
+
+<!-- \begin{center}\large\bfseries -->
+<!-- \textsf{Spring 2025, SUNY Geneseo, DANL 210-01} -->
+<!-- \vspace*{-.5cm} -->
+<!-- \end{center} -->
+
+<!-- \begin{center}\huge\bfseries -->
+<!-- \textsf{Midterm Exam I} -->
+<!-- \vspace*{-.5cm} -->
+<!-- \end{center} -->
+
+<!-- \begin{center}\large\bfseries -->
+<!-- \textsf{Make-up Version} -->
+<!-- \end{center} -->
+
+<!-- \begin{center}\large -->
+<!-- {March 5, 2025} -->
+<!-- \end{center} -->
+
+
+<!-- # Honor Pledges -->
+
+<!-- I solemnly swear that I will not cheat or engage in any form of academic dishonesty during this exam.  -->
+
+<!-- I will not communicate with other students or use unauthorized materials.  -->
+
+<!-- I will uphold the integrity of this exam and demonstrate my own knowledge and abilities. -->
+
+<!-- By taking this pledge, I acknowledge that academic dishonesty undermines the academic process and is a violation of the trust placed in me as a student.  -->
+
+<!-- I accept the consequences of any violation of this promise. -->
+
+<!-- - Student's Name:  -->
+<!-- - Student's Signature:  -->
+
+<!-- <br><br> -->
+
+```{r}
+#| include: false
+#| eval: true
+
+library(tidyverse)
+```
+
+
+
+# Descriptive Statistics
+
+
+The distribution of scores for Midterm Exam I is shown below:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-210-s25-exam-1-dist.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+The distribution of scores for Section 1 in Midterm Exam I is shown below:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-210-s25-exam-1-dist-py.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+The distribution of scores for Section 2 in Midterm Exam I is shown below:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-210-s25-exam-1-dist-pandas.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+<br>
+
+The following provides the descriptive statistics for each part of the Midterm Exam I:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-exam1-stat.csv")
+DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
+```
+
+<br>
+
+
+# Section 1. Python Basics - Multiple Choice Questions (Questions 1-6)
+
+
+## Question 1
+What is the output of the following code?
+
+```{python}
+#| eval: false
+#| code-fold: false
+name_lst = ['Alice', 'David', 'Ethan']
+print(name_lst[-1][1])
+```
+
+
+**A.** `a`
+
+**B.** `v`
+
+**C.** `t`
+
+**D.** `h`
+
+**E.** `d`
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+C
+```
+
+
+<br><br>
+
+
+
+
+## Question 2
+How many times will the following loop execute the `print()` statement?
+
+```{python}
+#| eval: false
+#| code-fold: false
+a = 2
+
+while True:
+  if a == 6:
+    print("Number", a, "reached")
+    break
+  elif a < 6:
+    a += 2
+    print("Adding 2... Reached", a)
+  else:
+    a = a - 1
+    print("Subtracting 1... Reached", a)
+```
+
+**A.** 1
+
+**B.** 2
+
+**C.** 3
+
+**D.** 4
+
+**E.** 5
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+C
+```
+
+
+
+
+<br><br>
+
+## Question 3
+What is the output of the following code?
+
+```{python}
+#| eval: false
+#| code-fold: false
+numbers = [2, 3, 4, 11, 5]
+i = 0
+total = 0
+
+while i < len (numbers) :
+  if numbers[i] == 11:
+    break
+  else:
+    total += numbers[i]
+    i = i + 1
+    
+print (total)
+```
+
+
+**A.** `0`
+
+**B.** `8`
+
+**C.** `9`
+
+**D.** `10`
+
+**E.** `11`
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+C
+```
+
+
+<br><br>
+
+## Question 4
+What is the output of the following code?
+
+```{python}
+#| eval: false
+#| code-fold: false
+data = {"x": 10, "y": 20, "z": 30}
+keys = ["y", "a", "x", "z"]
+result = 10
+
+for key in keys:
+    try:
+        if key == "x":
+            result = result - data[key] * 2
+            break
+        elif key == "z":
+            result = result + data[key] 
+        else:
+            result = result - data[key] 
+    except KeyError:
+        result = result + 10
+
+print(result)
+```
+
+
+**A.** `0`
+
+**B.** `10`
+
+**C.** `-10`
+
+**D.** `20`
+
+**E.** `-20`
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+E
+```
+
+
+<br><br>
+
+## Question 5
+What is the output of the following code?
+
+```{python}
+#| eval: false
+#| code-fold: false
+result = []
+for i in range(5):
+    if i == 2:
+        continue
+    elif i == 4:
+        pass
+    result.append(i)
+
+print(result)
+```
+
+**A.** `[0, 1, 3, 4]`
+
+**B.** `[0, 1, 2, 3, 4]`
+
+**C.** `[0, 1, 3]`
+
+**D.** `[0, 1, 3, 4, 5]`
+
+**E.** `Error`
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+A
+```
+
+<br><br>
+
+## Question 6
+```{python}
+#| eval: false
+#| code-fold: false
+result = []
+for i in range(0, 5):
+  if i ** 2 < 10:
+    result.append(i * 2)
+```
+
+Which of the following list comprehensions produces the same output as the above code?
+
+**A.**
+```{python}
+#| eval: false
+#| code-fold: false
+
+result = [i * 2 for i in range(5) if i * i < 9]
+```
+
+**B.**
+```{python}
+#| eval: false
+#| code-fold: false
+result = [i * 2 for i in range(5) if i in [0, 1, 2, 3, 4]]
+```
+
+**C.** 
+```{python}
+#| eval: false
+#| code-fold: false
+result = [i * 2 for i in range(5) if i ** 2 != 32]
+```
+
+**D.** 
+```{python}
+#| eval: false
+#| code-fold: false
+result = [i * 2 for i in range(5) if i ** 2 < 10]
+```
+
+**E.** 
+```{python}
+#| eval: false
+#| code-fold: false
+result = [i * 2 for i in range(5) if i ** 2 <= 8]
+```
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+D
+```
+
+<br><br>
+
+
+
+# Section 2. Pandas Basics – Coding Questions (Questions 7-17)
+
+```{python}
+#| eval: true
+#| code-fold: false
+#| message: false
+#| warning: false
+import pandas as pd
+import numpy as np
+```
+
+
+```{python}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+categories = pd.read_csv('https://bcdanl.github.io/data/gourmet-Categories.csv')
+customers = pd.read_csv('https://bcdanl.github.io/data/gourmet-Customers2.csv')
+orders = pd.read_csv('https://bcdanl.github.io/data/gourmet-Orders2.csv')
+order_details = pd.read_csv('https://bcdanl.github.io/data/gourmet-OrderDetails2.csv')
+products = pd.read_csv('https://bcdanl.github.io/data/gourmet-Products2.csv')
+
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+categories <- read_csv('https://bcdanl.github.io/data/gourmet-Categories.csv')
+customers <- read_csv('https://bcdanl.github.io/data/gourmet-Customers2.csv')
+orders <- read_csv('https://bcdanl.github.io/data/gourmet-Orders2.csv')
+order_details <- read_csv('https://bcdanl.github.io/data/gourmet-OrderDetails2.csv')
+products <- read_csv('https://bcdanl.github.io/data/gourmet-Products2.csv')
+
+```
+
+
+<!-- $\vspace{.1cm}$ -->
+
+For this Section, use the above Python libraries and the following four DataFrames from **Global Gourmet Selections**, which represent the company's operations:
+
+1. `customers`– Contains customer-related information, including unique customer IDs, names, and contact details.
+2. `orders`– Provides an overview of order details, including relevant transaction information.
+3. `order_details`– Records individual order line items by linking each product to a specific order.
+4. `products`– Stores product-related details, such as product IDs, names, and pricing.
+
+<!-- $\vspace{.1cm}$ -->
+
+```{r}
+#| eval: true
+#| echo: false
+#| out.width: "80%"
+#| fig-align: center
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/dsc4all-fig5-1.png")
+```
+
+Additionally, the `categories` DataFrame offers metadata on product categories, including unique identifiers, names, and descriptions.
+
+<br><br>
+
+### DataFrames
+#### 0. `categories` DataFrame (containing 8 observations)
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+categories <- read_csv('https://bcdanl.github.io/data/gourmet-Categories.csv')
+
+knitr::kable(categories)
+```
+
+- `CategoryID` (`int64`):
+Unique identifier for each product category in the `categories` DataFrame.
+- `CategoryName` (`object`):
+The name of the category.
+- `Description` (`object`):
+A textual description providing details about the category.
+
+<!-- $\vspace{1cm}$ -->
+
+<br><br>
+
+
+#### 1. `customers` DataFrame with its first 15 observations
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+customers <- read_csv('https://bcdanl.github.io/data/gourmet-Customers2.csv')
+
+knitr::kable(customers |> head(15))
+```
+
+- `CustID` (`int64`):
+Unique identifier for each customer in the `customers` DataFrame.
+- `CustName` (`object`):
+The name of the customer’s company.
+- `ContactName` (`object`):
+The name of the primary contact person at the company.
+- `City` (`object`):
+The city where the customer is located.
+- `PostalCode` (`object`):
+The postal or ZIP code of the customer’s address.
+- `Country` (`object`):
+The country of the customer.
+
+
+<!-- $\vspace{1cm}$ -->
+
+<br><br>
+
+#### 2. `orders` DataFrame with its first 15 rows
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+orders <- read_csv('https://bcdanl.github.io/data/gourmet-Orders2.csv')
+
+knitr::kable(orders |> head(15))
+```
+
+- `OrderID` (`int64`):
+Unique identifier for each order in the `orders` DataFrame.
+- `CustID` (`int64`):
+Identifier linking to the customer who placed the order in the `customers` DataFrame.
+- `EmployeeID` (`int64`):
+Identifier for the employee handling the order.
+- `OrderDate` (`object`):
+The date when the order was placed.
+
+<!-- $\vspace{1cm}$ -->
+
+<br><br>
+
+#### 3. `order_details` DataFrame with its first 15 observations
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+order_details <- read_csv('https://bcdanl.github.io/data/gourmet-OrderDetails2.csv')
+
+knitr::kable(order_details |> head(15))
+```
+- `OrderDetail_ID` (`int64`):
+Unique identifier for each record in the `order_details` DataFrame.
+- `OrderID` (`int64`):
+Identifier linking each record to a specific order in the `orders` DataFrame.
+- `ProductID` (`int64`):
+Identifier linking the record to a product in the `products` DataFrame.
+- `Quantity` (`int64`):
+The number of units ordered.
+
+<!-- $\vspace{1cm}$ -->
+
+<br><br>
+
+#### 4. `products` DataFrame with its first 15 observations
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+products <- read_csv('https://bcdanl.github.io/data/gourmet-Products2.csv')
+
+knitr::kable(products |> head(15))
+```
+
+- `ProductID` (`int64`):
+Unique identifier for each product in the `products` DataFrame.
+- `ProductName` (`object`):
+The name of the product.
+- `CategoryID` (`int64`):
+Identifier linking the product to a category in the `categories` DataFrame.
+- `Unit` (`object`):
+The packaging or standard unit in which the product is sold
+- `Price` (`float`):
+The cost of a single unit of the product (in USD)
+
+
+
+<br><br>
+
+
+
+## Question 7
+
+- Write a three-line code snippet to display the following summaries of the `orders` DataFrame:
+```{python}
+#| eval: true
+#| echo: false
+#| code-fold: false
+#| message: false
+#| warning: false
+
+orders.info()
+orders['OrderDate'] = orders['OrderDate'].astype('datetime64[ns]')
+orders.info()
+```
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+orders.info()
+orders['OrderDate'] = orders['OrderDate'].astype('datetime64[ns]')
+orders.info()
+```
+
+<br><br>
+
+
+## Question 8
+
+Write a code snippet to produce the following output of descriptive statistics:
+
+```{python}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+products[['ProductName', 'Price']].describe(include="all")
+```
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+products[['ProductName', 'Price']].describe(include="all")
+```
+
+<br><br>
+
+
+
+## Question 9
+Fill in the blank to count the number of observations from the `customers` DataFrame where the customer's **Country** is not **_USA_**.
+
+```{python}
+#| eval: false
+#| echo: false
+#| message: false
+#| warning: false
+
+customers[customers['Country'] != 'USA'].shape[0]
+```
+
+```{python}
+#| eval: false
+#| code-fold: false
+#| message: false
+#| warning: false
+
+customers[_______________________________________________].shape[0]
+```
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+customers[customers['Country'] != 'USA'].shape[0]
+```
+
+<br><br>
+
+
+
+## Question 10
+Fill in the blank to count the number of observations from the `customers` DataFrame where the customer's **ContactName** starts with **_B_** or **_P_**.
+```{python}
+#| eval: false
+#| code-fold: false
+#| message: false
+#| warning: false
+
+customers[_______________________________________________]
+
+```
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+customers[customers['ContactName'].between('B', 'C') | customers['ContactName'].between('P', 'Q') ]
+```
+
+<br><br>
+
+
+
+
+## Question 11
+Write a code snippet to identify the country or countries with the highest number of missing values in the **PostalCode** variable of the `customers` DataFrame.
+
+```{python}
+#| eval: false
+#| echo: false
+#| message: false
+#| warning: false
+
+(
+  customers[customers['PostalCode'].isna()]['Country']
+  .value_counts()
+  .reset_index()
+  .nlargest(1, 'count', keep = 'all')
+)
+
+
+```
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+(
+  customers[customers['PostalCode'].isna()]['Country']
+  .value_counts()
+  .reset_index()
+  .nlargest(1, 'count', keep = 'all')
+)
+
+```
+
+<br><br>
+
+
+
+
+## Question 12
+
+Write a code snippet using the `order_details` DataFrame to count the number of unique products ordered.
+
+```{python}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+q12 = order_details['ProductID'].nunique()
+print(f"The total number of distinct products ordered is {q12}.")
+```
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+order_details['ProductID'].nunique()
+```
+
+<br><br>
+
+
+
+
+
+## Question 13
+Write a code snippet to reshape the `order_details` DataFrame so that each **OrderID** is a row and each **ProductID** becomes a column with values equal to the corresponding **Quantity**.
+
+<!-- -	The resulting DataFrame contains (1) one column for **OrderID** and (2) additional columns equal to the number of unique **ProductID** values in the `order_details` DataFrame. -->
+
+```{python}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+order_details.pivot(index='OrderID', columns='ProductID', values='Quantity').reset_index().rename_axis(index=None, columns=None)
+
+```
+
+- The following displays the first 10 rows and the first 6 columns of the resulting DataFrame:
+
+```{r}
+#| eval: true
+#| echo: false
+#| out.width: "50%"
+#| fig-align: center
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/danl-210-pivot2.png")
+```
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+(
+  order_details
+  .pivot(index='OrderID', 
+         columns='ProductID', 
+         values='Quantity')
+  .reset_index()
+)
+```
+
+<br><br>
+
+
+
+## Question 14
+Write a code snippet to display the following new DataFrame showing each category along with the number of unique products in the `products` DataFrame.
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+knitr::kable(
+  products |> 
+    left_join(categories) |> 
+    count(CategoryName) |> 
+    rename(count = n) |> 
+    arrange(-count)
+)
+```
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+(
+  products
+  .merge(categories, on="CategoryID", how="left")[['CategoryName']]
+  .value_counts()
+  .reset_index()
+)
+```
+
+
+
+
+<br><br>
+
+
+## Question 15
+Write a code snippet to create the following new DataFrame, `ProductID_11`, showing the **Quantity** ordered for **ProductID** **_11_**. Then, write a one-line Pandas code to compute the total quantity of this product ordered using the `ProductID_11` DataFrame.
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+knitr::kable(
+  order_details |> 
+    left_join(products) |> 
+    filter(ProductID == 11) |> 
+    select(OrderDetail_ID, OrderID, ProductID, ProductName, Quantity)
+)
+```
+
+```{python}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+ProductID_11 = (
+    order_details.merge(products, on="ProductID", how="left")
+            .query('ProductID == 11')[['OrderDetail_ID', 'OrderID', 'ProductID', 'ProductName', 'Quantity']]
+)
+
+print(f"The total quantity ordered for ProductID 11 is {ProductID_11['Quantity'].sum()}.")
+```
+
+Note that 182 is calculated as follows:
+$$
+182 = 12 + 12 + 50 + 12 + 24 + 30 + 6 + 30 + 6
+$$
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+ProductID_11 = (
+    order_details
+    .merge(products, 
+           on="ProductID", 
+           how="left")
+    .query('ProductID == 11')
+    [['OrderDetail_ID', 'OrderID', 'ProductID', 'ProductName', 'Quantity']]
+)
+
+ProductID_11['Quantity'].sum()
+```
+
+
+<br><br>
+
+
+
+
+## Question 16
+- Write a code snippet to determine how many unique **CustomerID-EmployeeID** pairs exist in the `orders` DataFrame. Then, count how many times each **EmployeeID** appears in these unique pairs and return the resulting DataFrame as below:
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+knitr::kable(
+  orders |> 
+    count(EmployeeID, CustID) |> 
+    count(EmployeeID) |> 
+    rename(count = n)
+)
+```
+
+```{python}
+#| eval: false
+#| echo: false
+#| message: false
+#| warning: false
+
+(
+    orders[['EmployeeID', 'CustID']]
+    .value_counts()
+    .reset_index()[['EmployeeID']]
+    .value_counts()
+    .reset_index()
+)
+
+```
+
+- What does this `count` variable above tell us?
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+(
+  orders[['EmployeeID', 'CustID']]
+  .value_counts()
+  .reset_index()[['EmployeeID']]
+  .value_counts()
+  .reset_index()
+)
+
+# `count` variable tells us the number of customers whose orders are handled by each employee.
+```
+
+
+<br><br>
+
+
+
+
+## Question 17
+- Write a code snippet to compute the total order cost for customers in Mexico, expressed in Mexican Pesos (MXN).  
+  - Begin by adding a new variable, **PriceMXN**, to the `products` DataFrame, which converts the **Price** to pesos by multiplying it by 20.604.
+
+```{python}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+products['PriceMXN'] = products['Price'] * 20.604
+
+q17 = (
+  order_details
+  .merge(products, on="ProductID", how="left")
+  .merge(orders, on="OrderID", how="left")
+  .merge(customers, on="CustID", how="left")
+  .query('Country == "Mexico"')
+)
+
+q17['Cost'] = q17['PriceMXN'] * q17['Quantity']
+total_cost_peso = q17['Cost'].sum()
+
+print(f"Total cost of orders made by customers in Mexico: {total_cost_peso:.2f} MXN")
+```
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+products['PriceMXN'] = products['Price'] * 20.604
+
+q17 = (
+  order_details
+  .merge(products, on="ProductID", how="left")
+  .merge(orders, on="OrderID", how="left")
+  .merge(customers, on="CustID", how="left")
+  .query('Country == "Mexico"')
+)
+
+q17['Cost'] = q17['PriceMXN'] * q17['Quantity']
+q17['Cost'].sum()
+```
+
+
+<br><br>
+
+
+
