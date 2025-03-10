@@ -226,8 +226,14 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Store the table in the following webpage as a <code>pandas</code>’ <code>DataFrame</code>:
 <ul>
-<li><a href="https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php">https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php</a></li>
-<li>To convert the abbreviated-month-and-year <code>string</code> into <code>datetime</code>, we can use the <code>format='%b-%y'</code> option in the <code>pd.to_datetime()</code> method</li>
+<li><a href="https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php">Gasoline Pump Components History</a>
+<ul>
+<li>Convert the abbreviated month-year string to datetime using <code>pd.to_datetime()</code> with <code>format='%b-%y'</code>.</li>
+</ul></li>
+<li>If necessary, use the <code>Series.str.replace()</code> method.
+<ul>
+<li>For example, <code>Series.str.replace('A', 'B')</code> replaces “A” with “B” in <code>Series</code>.</li>
+</ul></li>
 </ul></li>
 </ul>
 <ul>
@@ -239,17 +245,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="question-2." class="level1">
 <h1>Question 2.</h1>
 <ul>
-<li>Store each table in the following webpage as a <code>pandas</code>’ <code>DataFrame</code>:
+<li><p>Store each table in the following webpage as a <code>pandas</code>’ <code>DataFrame</code>:</p>
 <ul>
 <li><a href="https://www.geneseo.edu/business/student%20outcomes">https://www.geneseo.edu/business/student%20outcomes</a></li>
 </ul></li>
-<li>To clean the table data, the following attribute and methods can be useful:
-<ul>
-<li><code>DataFrame.iloc[0]</code> locates the first observation in <code>DataFrame</code>.</li>
-<li><code>DataFrame.drop( index = DataFrame.index[0] )</code> drops the first observation in <code>DataFrame</code>.</li>
-<li><code>Series.str.replace('A', 'B')</code> replaces “A” with “B” in <code>Series</code>.</li>
-</ul></li>
-<li>Export the <code>DataFrame</code> as a CSV file.</li>
+<li><p>Ensure each table has appropriate column names and properly structured observations.</p></li>
+<li><p>Export the <code>DataFrame</code> as a CSV file.</p></li>
 </ul>
 <p><em>Answer</em>:</p>
 <p><br><br></p>

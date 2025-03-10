@@ -23,8 +23,11 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 # Question 1.
 
 - Store the table in the following webpage as a `pandas`' `DataFrame`:
-  - [https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
-  - To convert the abbreviated-month-and-year `string` into `datetime`, we can use the `format='%b-%y'` option in the `pd.to_datetime()` method
+  - [Gasoline Pump Components History](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
+	-	Convert the abbreviated month-year string to datetime using `pd.to_datetime()` with `format='%b-%y'`.
+  - If necessary, use the `Series.str.replace()` method.
+    - For example, `Series.str.replace('A', 'B')` replaces "A" with "B" in `Series`.
+
 
 ```{python}
 #| eval: false
@@ -45,10 +48,7 @@ Series = pd.to_datetime(Series, format='%b-%y')
 - Store each table in the following webpage as a `pandas`' `DataFrame`:
   - [https://www.geneseo.edu/business/student%20outcomes](https://www.geneseo.edu/business/student%20outcomes)
 
-- To clean the table data, the following attribute and methods can be useful:
-  - `DataFrame.iloc[0]` locates the first observation in `DataFrame`.
-  - `DataFrame.drop( index = DataFrame.index[0] )` drops the first observation in `DataFrame`.
-  - `Series.str.replace('A', 'B')` replaces "A" with "B" in `Series`.
+- Ensure each table has appropriate column names and properly structured observations.
 
 - Export the `DataFrame` as a CSV file.
 
