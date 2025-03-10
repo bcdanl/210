@@ -8,6 +8,7 @@ execute:
 format:
   html:
     code-fold: true
+css: styles.css
 
 language: 
   code-summary: "Click to Check the Answer!"
@@ -386,3 +387,14 @@ math.sqrt(81)
 ```
 
 <br><br>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+});
+</script>
