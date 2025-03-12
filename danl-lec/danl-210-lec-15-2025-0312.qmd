@@ -1,0 +1,1068 @@
+---
+title: Lecture 15
+subtitle: "Primer on Web-scrapping"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-03-12
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+# **Premier on Web-scrapping** {background-color="#1c4982"}
+
+
+## Ethical considerations
+
+> *"If you can see things in your web browser, you can scrape them."*
+
+- Just because you can scrape them doesn't mean you should.
+  - In US, it is currently legal to scrape data from the web using automated tools, as long as the data are publicly available.
+    - [**hiQ Labs vs. LinkedIn Corp. court ruling**](https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn).
+ 
+
+- It is important to realize that the web scrapping tools are very powerful.
+  - It is pretty straightforward to write up a program that can overwhelm a host server.
+  - The host server tends to have built-in safeguards that will block you in case of a suspected malicious attack.
+
+
+
+
+## Ethical considerations
+
+- Respect for website owners' **terms of service**.
+- Respect for copyright and intellectual property.
+- Respect for client servers.
+- Respect for privacy.
+
+
+
+## Clients and servers
+
+:::: {.columns}
+::: {.column width="40%"}
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/webscrapping-client_server.png" width="450px">
+</p>
+
+:::
+::: {.column width="60%"}
+<div style="display:block; margin:50px;"></div>
+
+- Computers connected to the web are called **clients** and **servers**.
+
+:::
+::::
+
+- **Clients** are the typical web user's internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).
+- **Servers** are computers that store webpages, sites, or apps.
+
+
+- When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser.
+
+
+
+## Hypertext Transfer Protocol Secure (HTTPS)
+
+- **Hypertext Transfer Protocol (HTTP)** is a language for clients and servers to speak to each other.
+- **Hypertext Transfer Protocol Secure (HTTPS)** is an encrypted version of HTTP that provides secure communication between them.
+
+- When we type a web address with "https://" into our browser:
+	1.	The browser finds the address of the server that hosts the website.
+	2.	The browser and server establish a **secure connection**.
+	3.	The browser sends an **HTTPS request** to the server, asking for the website’s content.
+	4.	If the server approves the request, it responds with a **200 OK** message and sends the encrypted website data to the client.
+	5.	The browser **decrypts and displays** the website securely.
+  
+## HTTP Status Codes
+
+```{.python}
+# library for making HTTPS requests in Python
+import requests  
+```
+
+<div style="display:block; margin:30px;"></div>
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{.python}
+p = 'https://bcdanl.github.io/210'
+response = requests.get(p)  
+print(response.status_code)  
+print(response.reason)      
+
+```
+
+-	**200 OK** → The request is successful, and the server sends the requested content.
+
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+p = 'https://bcdanl.github.io/2100'
+response = requests.get(p)  
+print(response.status_code)  
+print(response.reason)       
+```
+
+-	**404 Not Found** → The server cannot find the requested webpage. 
+  - This may happen due to a broken link, mistyped URL, or deleted page.
+
+:::
+
+::::
+
+
+
+
+## URL
+
+```{r, echo=FALSE, eval = T, out.width = '75%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
+```
+
+- An **uniform resource locator (URL)**—commonly know as a “web address”, specifies the location of a resource (such as a web page) on the internet.
+
+- An URL is usually composed of 5 parts
+  - The 4th part, the “**query string**”, contains one or more parameters — in this case, there are two parameters: `id` and `cat`. 
+  - The 5th part, the “**fragment**”, is an internal page reference and may not be present.
+
+
+
+## HTML
+
+- **Hyper Text Markup Language (HTML)** is the standard markup language for creating Web pages. 
+  - HTML describes the structure of a Web page.  
+  - HTML consists of a series of elements. 
+  - HTML elements tell the browser how to display the content.
+
+
+- HTML elements label pieces of content such as “this is a heading”, “this is a paragraph”, “this is a link”, etc.
+
+
+## HTML Example
+
+:::{.nonincremental}
+
+- Below is a simple HTML document:
+
+:::
+
+```{.html}
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Page Title</title>
+    </head>
+    <body>
+      <h1>My First Heading</h1>
+      <p>My first paragraph.</p>
+    </body>
+  </html>
+```
+
+
+
+
+## HTML Elements
+### tagname
+:::{.nonincremental}
+
+- An HTML element is defined by a start tag, some content, and an end tag:
+
+:::
+```{.html}
+<tagname>Content goes here...</tagname>
+```
+
+
+## HTML Elements
+- `<!DOCTYPE html>` declaration defines that this document is an HTML document. 
+- `<html>` element is the root element of an HTML page. 
+- `<head>` element contains meta information about the HTML page. 
+- `<title>` element specifies a title for the HTML page.
+  - `<title>` is shown in the browser’s title bar or in the page’s tab.
+- `<body>` element defines the document’s body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc. 
+  - `<h1>` element defines a large heading. 
+  - `<p>` element defines a paragraph.
+
+
+
+## HTML body
+
+
+
+#### `<a>`
+
+```{.html}
+<a href="https://www.w3schools.com">This is a link</a>
+```
+
+- The `<a>` tag defines an HTML link.
+
+
+
+#### `<img>`
+
+```{.html}
+<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+```
+
+- The `<img>` tag defines an HTML image.
+
+
+
+
+
+## HTML Tables
+
+- `<table>` tag defines an HTML table.
+  - `<tr>` tag defines each table row.
+  - `<th>` tag defines each table header.
+  - `<td>` tag defines each data/cell.
+
+## HTML Table Examples
+
+:::{.nonincremental}
+- Below is the example HTML table:
+
+:::
+
+```{.html}
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+```
+
+
+
+
+## HTML Lists
+### Unordered lists
+```{.html}
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+```
+
+
+- `<ul>` tag defines an unordered lists.
+  - `<li>` tag defines each list item.
+  - The list items will be marked with bullets (small black circles) by default.
+
+
+
+
+
+## HTML Lists
+### Ordered lists
+
+```{.html}
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+```
+
+- `<ol>` tag defines an ordered lists.
+  - `<li>` tag defines each list item.
+  - The list items will be marked with numbers by default.
+
+
+## `<div>` – Block-Level Container
+
+
+```{.html}
+<div style="background-color:black;color:white;padding:20px;">
+  <h2>London</h2>
+  <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+</div>
+```
+
+
+-	**Block-level element** → Starts on a **new line** and stretches to the full width.
+	-	Used as a **container** for structuring content.
+	-	Has **no required attributes**, but `style`, `class`, and `id` are commonly used.
+
+- `<div>` is used when grouping multiple elements together.
+
+## `<span>` – Inline Container
+
+```{.html}
+<p>My mother has <span style="color:blue;font-weight:bold">blue</span> eyes and my father has <span style="color:darkolivegreen;font-weight:bold">dark green</span> eyes.</p>
+```
+
+-	**Inline element** → Does not start on a new line; only takes up as much space as necessary.
+	-	Used to apply styling or scripting to specific text portions.
+	-	Has no required attributes, but style, class, and id are commonly used.
+
+- `<span>` is used when styling or modifying a small part of text inside a block.
+
+
+## HTML source code
+
+
+- HTML elements can be nested (this means that elements can contain other elements). 
+  - All HTML documents consist of nested HTML elements. 
+
+
+- We can view HTML source for web page.
+  - Hit **F12** key (in Chrome or FireFox).
+  - Right-click in an HTML page and select `View Page Source` (in Chrome), or similar in other browsers. 
+  - Right-click on an element (or a blank area), and choose `Inspect` or `Inspect Element` to see what elements are made up of. 
+
+
+
+## HTML Source Code: DOM
+
+- To parse HTML, it is convenient to represent our HTML document as a tree-like structure that contains information in **nodes** and links information through **branches**. 
+
+
+- This tree-like structure is called the **Document Object Model (DOM)**.
+  - DOM is a cross-platform and language-independent interface that treats an XML (eXtensible Markup Language) or HTML document as a tree structure wherein each node is an object representing a part of the document.
+
+
+
+
+## HTML Source Code: DOM
+
+```{r, echo=FALSE, eval = T, out.width = '40%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/DOM.png")
+```
+
+
+
+## HTML Source Code: DOM
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r, echo=FALSE, eval = T, out.width = '75%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+```{r, echo=FALSE, eval = T, out.width = '50%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-web.png")
+```
+
+:::
+::::
+
+## JavaScript (JS) – Adding Interactivity
+
+- **JavaScript (JS)** is a **client-side programming language** that enhances web interactivity.
+  - It runs **directly in the user's browser**, reducing server load.
+  - JS is often used with **third-party libraries** to expand website functionality.
+  - It enables dynamic content, user interactions, and animations.
+
+## Cascading Style Sheets (CSS) – Styling the Web
+
+- **CSS** is used to **design and format** the layout of a webpage.
+  - It controls **colors, fonts, text size, background, spacing, and display properties**.
+  - **Analogy:**  
+    - **HTML** = The structure of a house (walls, roof, foundation).  
+    - **CSS** = The decoration (paint, carpet, wallpapers).  
+    - **JS** = The interactive elements (automatic doors, lights, smart devices).  
+
+- ✅ **Together, HTML, CSS, and JS form the foundation of modern web development.**
+
+
+
+# Web-scrapping with Python `selenium` {background-color="#1c4982"}
+
+
+
+## WebDriver
+:::: {.nonincremental}
+::: {.panel-tabset}
+## WebDriver
+
+- **WebDriver** is an wire protocol that defines a language-neutral interface for controlling the behavior of web browsers. 
+
+
+- Selenium WebDriver refers to both the language bindings and the implementations of the individual browser controlling code and commonly referred as WebDriver.
+
+
+- Each browser is backed by a specific WebDriver implementation, called a driver (or a browser driver). 
+
+
+
+## Driver
+
+- The **driver** is the component responsible for delegating down to the browser, and handles communication to and from Selenium WebDriver and the browser. 
+
+- The driver is browser-specific:
+  - ChromeDriver for Chrome;
+  - GeckoDriver for FireFox.
+
+- The recent version of Python `selenium` does NOT require for downloading the ChromeDriver/GeckoDriver file.
+
+
+## Interaction
+
+- A simplified diagram of how WebDriver interacts with browser might look like this:
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/driver.png" width="400px">
+</p>
+
+
+
+
+- WebDriver talks to a browser through a driver and the communication is two way:
+  - WebDriver sends commands to the browser through the driver, and receives information back via the same route.
+
+
+::: 
+:::: 
+
+
+## Setting up
+
+- Install the Chrome or FireFox web-browser if you do not have either of them.
+  - I will use the Chrome.
+  
+- Install Selenium using `pip`:
+  -  On the Spyder Console, run the following: 
+    - `pip install selenium`
+
+- [Selenium with Python](https://selenium-python.readthedocs.io/index.html) is a well-documented reference.
+
+
+## Setting up
+:::: {.nonincremental}
+::: {.panel-tabset}
+
+## `webdriver.Chrome()`
+
+- To begin with, we import (1) `webdriver` from `selenium` and (2) the `By` and `Options` classes.
+  - `webdriver.Chrome()` opens the Chrome browser that is being controlled by automated test software, `selenium`.
+
+
+```{.python}
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("window-size=1400,1200") # to set the window size
+
+driver = [?](options = options)
+```
+
+
+
+
+## `get()`
+- `get()` from `webdriver` with a URL opens Google Chrome. 
+  - In your browser, you may the message, "Chrome is being controlled by automated test software."
+- `close()` terminates the loaded browser window. 
+- `quit()` ends the `webdriver` application.
+```{.python}
+form_url = "https://qavbox.github.io/demo/webtable/"
+driver.[?](form_url)
+driver.close()
+driver.quit()
+```
+
+
+::: 
+:::: 
+
+
+
+## Locating Web Elements by `Inspect`-`find_element()`
+
+
+- After the new Google Chrome window is loaded with the URL provided, we can find the elements that we need to act on. 
+  - The easiest way to identify the information is to `Inspect` pages using developer tools.
+
+- Place the cursor anywhere on the webpage, *right-click* to open a pop-up menu, then *select* the **Inspect** option.
+  - In the `Elements` window, move the cursor over the DOM structure of the page until it reaches the desired element. 
+  - We then need to find information such as what HTML tag is used for the *element*, the defined *attribute*, and the *values* for the attributes and the structure of the page.
+
+
+
+
+## Locating Web Elements by `Inspect`-`find_element()`
+
+:::{.nonincremental}
+- There are various strategies to locate elements in a page.
+  
+:::
+
+```{.html}
+find_element(By.ID, "id")
+find_element(By.CLASS_NAME, "class name")
+find_element(By.NAME, "name")
+find_element(By.CSS_SELECTOR, "css selector")
+find_element(By.TAG_NAME, "tag name")
+find_element(By.LINK_TEXT, "link text")
+find_element(By.PARTIAL_LINK_TEXT, "partial link text")
+find_element(By.XPATH, "xpath")
+```
+
+
+- Selenium provides the `find_element()` method to locate elements in a page.
+
+- To find multiple elements (these methods will return a **list**):
+  - `find_elements()`
+
+
+## Locating Web Elements by `find_element(By.ID, "")`
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- `find_element(By.ID, "")` & `find_elements(By.ID, "")`:
+  - Return element(s) that have matching ID attribute values.
+
+
+- Here is the HTML code for main part of the web-page with an ID attribute value defined as `form1`:
+
+```{.html}
+<form id="form1">...</form>
+```
+
+
+
+
+## (2)
+- Here is an example that uses the `find_element(By.ID, "")` method to find the form table.
+
+
+```{.python}
+form = driver.find_element(By.ID, "form1")
+form.text  # text attribute if there is any
+```
+
+
+
+::: 
+:::: 
+
+## Locating Web Elements by `find_element(By.CLASS_NAME, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- `find_element(By.CLASS_NAME, "")` & `find_elements(By.CLASS_NAME, "")`:
+  - Return element(s) that have matching class attribute value(s).
+
+
+- Here is the HTML code for the home button with a class attribute value defined as `homebtn`:
+
+```{.html}
+<div class="homebtn" align="center">...</div>
+```
+
+
+
+## (2)
+- Here is an example that uses the `find_element(By.CLASS_NAME, "")` method to find the home button.
+
+
+```{.python}
+home_button = driver.find_element(By.CLASS_NAME, "homebtn")
+home_button.click() # click the home_button object
+driver.back() # back to the previous page
+```
+
+::: 
+::::  
+
+
+## Locating Web Elements by `find_element(By.NAME, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.NAME, "")` & `find_elements(By.NAME, "")`:
+  - Return element(s) that have matching name attribute value(s).
+
+
+
+- Here is the HTML code for the home button with a name attribute value defined as `home`:
+
+
+```{.html}
+<input type="button" class="btn" name="home" value="Home" />
+```
+
+
+
+
+## (2)
+- Here is an example that uses the `find_element(By.NAME, "")` method to find the home button.
+
+
+```{.python}
+home_button2 = driver.find_element(By.NAME, "home")
+home_button2.click()
+driver.back()
+```
+
+::: 
+:::: 
+
+## Locating Web Elements by `find_element(By.CSS_SELECTOR, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- `find_element(By.CSS_SELECTOR, "")` & `find_elements(By.CSS_SELECTOR, "")`:
+  - Return element(s) that are found by the specified CSS selector. 
+  
+  
+## (2)
+
+- To find the CSS selector of the search button, we `Inspect` the example site, in the *Elements* window, move the cursor over its DOM structure and find the search element. 
+  - We then right-click and choose *Copy Selector* from the pop-up menu. 
+  - We obtain the following CSS selector of this element:
+  
+```{.python}
+home_button3 = driver.find_element(By.CSS_SELECTOR, "body > div > a > input")
+home_button3.click()
+driver.back()
+```
+
+
+::: 
+::::
+
+
+
+## Locating Web Elements by `find_element(By.TAG_NAME, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.TAG_NAME, "")` & `find_elements(By.TAG_NAME, "")`:
+  - Return element(s) that are found by the specified tag. 
+
+
+## (2)
+
+:::: {.columns}
+::: {.column width="50%"}
+- The following example page displays a table which has several form fields to fill in.
+  -  Each form field name is implemented using an `<th>` or table header cell tag inside a `<tr>` or table row tag:
+
+:::
+
+::: {.column width="50%"}
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/find_tag1.png" width="400px">
+</p>
+
+:::
+::::
+
+
+
+## (3)
+- Here is an example that uses the `find_element(By.TAG_NAME, "")` method to find the head of the table.
+
+
+```{.python}
+table01 = driver.find_element(By.ID, "table01")
+thead = table01.find_element(By.TAG_NAME, "thead")
+thead.text
+```
+
+
+
+
+::: 
+:::: 
+
+
+
+
+
+
+## Locating Web Elements by `find_element(By.LINK_TEXT, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.LINK_TEXT, "")` & `find_elements(By.LINK_TEXT, "")`:
+  - Find link(s) using the text displayed for the link. 
+
+
+
+## (2)
+- For example, we may want to get the **Selenium** displayed on the example site. 
+  - Here is the HTML code for the **Selenium** implemented as the `<a>`, or anchor tag, with text **"Selenium"**:
+
+
+```{.html}
+<a href="http://www.selenium.dev/">Selenium</a>
+```
+
+
+
+
+## (3)
+-  Here is an example that uses the `find_element(By.LINK_TEXT, "")` method to find **Selenium**.
+
+
+```{.python}
+selenium_link = driver.find_element(By.LINK_TEXT, "Selenium")
+selenium_link.click()
+```
+
+
+::: 
+::::
+
+
+
+## Locating Web Elements by `find_element()`
+### `find_element(By.PARTIAL_LINK_TEXT, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- Sometimes, there can be several link texts that contain a common word in the webpage.
+
+
+- `find_element(By.PARTIAL_LINK_TEXT, "")` & `find_elements(By.PARTIAL_LINK_TEXT, "")`:
+  - Find link(s) using partial text. 
+
+
+
+
+## (2)
+- Let us use this method to find these links using the `"qav"` text and check whether we have two of these links available on the page.
+
+```{.python}
+Selen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, "qav")
+print(len(Selen_links))
+Selen_links[0].click()
+driver.back()
+```
+
+
+
+::: 
+::::
+
+
+## Locating Web Elements by `find_element(By.XPATH, "")`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- `find_element(By.XPATH, "")` & `find_elements(By.XPATH, "")`:
+  - Return element(s) that are found by the specified XPath query. 
+
+
+- XPath is a query language used to search and locate nodes in a XML document.
+  - All major web browsers support XPath. 
+  - Selenium can leverage and use powerful XPath queries to find elements on a web page. 
+  - One of the advantages of using XPath is when we can't find a suitable ID, name, or class attribute value for the element. 
+
+## (2)
+Basic Xpath Syntax
+
+
+```{.html}
+//tag_name[@attribute=’value’]
+```
+
+- `//`: Stands current node
+- `tag_name`: HTML tag name example `input`, `div`, `span`, etc.
+- `@attribute`: Name of the attribute `class`, `id`, `aria-label`, etc.
+- `value`: value of the attribute
+
+
+## (3)
+- We can use *XPath* to either find the element in *absolute* terms (*full XPath*) or *relative* to an element that does have an ID or name attribute.
+
+
+- We can also use defined attributes other than the ID, name, or class with *XPath* queries. 
+
+
+
+## (4)
+
+- For example, we want to get the second table. 
+
+  - The body of this table consists of a series of `<tr>` tags, but does not have the ID, name, or class attributes defined.
+  
+  - Also, we cannot use the `find_element(By.TAG_NAME, "")` method as there are multiple `<tr>` and `<th>` tags defined on the page.
+
+
+
+## (5)
+
+- To find the XPath of this element, we `Inspect` the example site, in the Elements window, move the cursor over its DOM structure and find the desired element. 
+
+  - We then right-click and choose copy XPath from the pop-up menu. 
+  
+  - We obtain the following XPath of the first row and the first column of the table body:
+
+
+```{.html}
+//*[@id="table02"]/tbody/tr[1]/td[1]
+/html/body/form/fieldset/div/div/table/tbody/tr[1]/td[1]
+```
+
+
+
+
+## (6)
+- We then pass this XPath to the `find_element(By.XPATH, "")` method as an argument:
+  - Find the XPath for "Tiger Nixon" in the second table.
+
+```{.python}
+elt = driver.find_element(By.XPATH, '//*[@id="table02"]/tbody/tr[1]/td[1]')
+elt.text
+```
+
+
+
+## (7)
+- We typically use the XPath method when there exists an element with a unique id on the path to the desired element. 
+  - Otherwise, this method is not reliable.
+
+
+::: 
+::::
+
+
+
+## Getting the value of attribute with `get_attribute()`
+:::{.nonincremental}
+- `get_attribute()` retrieves the value of any attribute from a DOM element. 
+  - This is particularly useful when we need to extract properties from elements that are NOT directly visible as text on the webpage.
+
+:::
+```{.html}
+<a href="https://www.selenium.dev/">Selenium</a>
+<input id="btn" class="btn" type="button" onclick="change_text(this)" value="Delete">
+```
+
+<br>
+
+```{.python}
+driver.find_element(By.XPATH, '//*[@id="table01"]/tbody/tr[2]/td[3]/a').get_attribute('href')
+driver.find_element(By.XPATH, '//*[@id="btn"]').get_attribute('value')
+```
+
+
+## Web-scrapping with Python `selenium`
+
+Let's do [**Classwork 9**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-09.html)!
+
+
+
+# `NoSuchElementException` and `WebDriverWait` {background-color="#1c4982"}
+
+## `NoSuchElementException` and `try-except` blocks
+
+```{.python}
+from selenium.common.exceptions import NoSuchElementException
+try:
+    elem = driver.find_element(By.XPATH, "element_xpath")
+    elem.click()
+except NoSuchElementException:
+    pass
+```
+
+
+- When a web element is not found, it throws the `NoSuchElementException`.
+  - `try-except` can be used to avoid the termination of the selenium code.
+
+- This solution is to address the **inconsistency** in the DOM among the seemingly same pages.
+
+
+
+## `WebDriverWait` with `expected_conditions`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- If the element is not present/visible in the HTML DOM immediately, induce `WebDriverWait` with `expected_conditions` set to the proper method as follows:
+
+- To wait for `presence_of_element_located`:
+
+```{.python}
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# example webpage
+url = "https://qavbox.github.io/demo/delay/"
+driver.get(url)
+```
+
+
+
+
+
+## (2)
+- If the element is not present/visible in the HTML DOM immediately, induce `WebDriverWait` with `expected_conditions` set to the proper method as follows:
+
+- To wait for `presence_of_element_located`:
+
+```{.python}
+element = (  # 10 is timeout in seconds when an expectation is called
+  WebDriverWait(driver, 10)
+  .until(
+    EC.presence_of_element_located(
+      (By.XPATH, "element_xpath")
+      )
+    )
+) 
+```
+
+
+## (3)
+- To wait for `visibility_of_element_located`:
+
+```{.python}
+element = (
+  WebDriverWait(driver, 20)
+  .until(
+    EC.visibility_of_element_located(
+      (By.CSS_SELECTOR, "element_css")
+      )
+  )
+)
+```
+
+
+
+
+
+## (4)
+- To wait for `element_to_be_clickable`:
+
+```{.python}
+element = (
+  WebDriverWait(driver, 20)
+  .until(
+    EC.element_to_be_clickable(
+      (By.LINK_TEXT, "element_link_text")
+      )
+    )
+)
+```
+
+
+
+::: 
+::::
+
+
+## `WebDriverWait` with `expected_conditions`
+
+```{.python}
+import time
+
+driver.find_element(By.XPATH, '//*[@id="one"]/input').click()
+time.sleep(5)
+element = driver.find_element(By.XPATH, '//*[@id="two"]')
+element.text
+```
+
+
+-  The `time.sleep()` method is an explicit wait to set the condition to be an exact time period to wait.
+
+- A more efficient solution than `time.sleep()` would be to make `WebDriver()` wait only as long as required. 
+
+
+
+
+## `WebDriverWait` with `expected_conditions`
+
+```{.python}
+driver.find_element(By.XPATH, '//*[@id="oneMore"]/input[1]').click()
+driver.implicitly_wait(5)
+element2 = driver.find_element(By.ID, 'delay')
+```
+
+
+- Implicit wait with `implicitly_wait()` directs the `webdriver` to wait for a certain measure of time before throwing an exception. 
+
+- Once this time is set, `webdriver` will wait for the element before the exception occurs.
+
+
+
+## Web-scrapping with Python `selenium`
+
+Let's do [**Classwork 10**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-10.html)!
+
+
+

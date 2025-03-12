@@ -1,6 +1,6 @@
 ---
 title: Classwork 8
-subtitle: Scrapping Web-tables
+subtitle: Scrapping Web-tables with `pd.read_html()`
 date: 2025-03-10
 execute: 
   eval: false
@@ -20,7 +20,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
 
-# Question 1.
+# Question 1
 
 - Store the table in the following webpage as a `pandas`' `DataFrame`:
   - [Gasoline Pump Components History](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
@@ -44,7 +44,7 @@ Series = pd.to_datetime(Series, format='%b-%y')
 
 <br><br>
 
-# Question 2.
+# Question 2
 - Store each table in the following webpage as a `pandas`' `DataFrame`:
   - [https://www.geneseo.edu/business/student%20outcomes](https://www.geneseo.edu/business/student%20outcomes)
 
