@@ -230,6 +230,40 @@ df_0 = df_0[1:].reset_index(drop=True)  # Remove the first row & reset index
 	
 
 
+## Finding the Absolute Path of a File/Folder
+
+::::{.nonincremental}
+:::: {.columns}
+
+::: {.column width="63%"}
+
+#### Windows 11
+
+- **Step 1:** Navigate to your folder using <u>File Explorer</u>.
+- **Step 2:** Right-click the desired file or folder.
+- **Step 3:** Click **Copy as path**.
+- **Step 4:** Paste the path into your Python script (**Ctrl + V**).
+- **Step 5:** Adjust backslashes in the path:
+  - **Option 1:** Replace backslashes (`\`) with forward slashes (`/`).
+  - **Option 2:** Replace single backslashes (`\`) with double backslashes (`\\`).
+
+:::
+
+::: {.column width="37%"}
+
+#### Mac
+
+- **Step 1:** Navigate to your folder using <u>Finder</u>.
+- **Step 2:** Select the file or folder by clicking on it.
+- **Step 3:** Press **Option + Command + C**.
+- **Step 4:** Paste the path into your Python script (**Command + V**).
+
+:::
+
+::::
+::::
+
+
 ## Exporting a `DataFrame` as a **CSV** File with `to_csv()`
 
 :::{.nonincremental}
@@ -244,7 +278,7 @@ df_0 = df_0[1:].reset_index(drop=True)  # Remove the first row & reset index
 import os  
 
 # Set the working directory path
-wd_path = '/Users/bchoe/My Drive/suny-geneseo/spring2025/lecture-code'
+wd_path = 'PATH_TO_YOUR_DATA_FOLDER' # Do not choose your personal website folder
 os.chdir(wd_path)  # Change the current working directory to wd_path
 os.getcwd()  # Retrieve and return the current working directory
 

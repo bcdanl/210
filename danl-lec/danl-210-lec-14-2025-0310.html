@@ -590,6 +590,35 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
+<section id="finding-the-absolute-path-of-a-filefolder" class="slide level2">
+<h2>Finding the Absolute Path of a File/Folder</h2>
+<div>
+<div class="columns">
+<div class="column" style="width:63%;">
+<h4 id="windows-11">Windows 11</h4>
+<ul>
+<li><strong>Step 1:</strong> Navigate to your folder using <u>File Explorer</u>.</li>
+<li><strong>Step 2:</strong> Right-click the desired file or folder.</li>
+<li><strong>Step 3:</strong> Click <strong>Copy as path</strong>.</li>
+<li><strong>Step 4:</strong> Paste the path into your Python script (<strong>Ctrl + V</strong>).</li>
+<li><strong>Step 5:</strong> Adjust backslashes in the path:
+<ul>
+<li><strong>Option 1:</strong> Replace backslashes (<code>\</code>) with forward slashes (<code>/</code>).</li>
+<li><strong>Option 2:</strong> Replace single backslashes (<code>\</code>) with double backslashes (<code>\\</code>).</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:37%;">
+<h4 id="mac">Mac</h4>
+<ul>
+<li><strong>Step 1:</strong> Navigate to your folder using <u>Finder</u>.</li>
+<li><strong>Step 2:</strong> Select the file or folder by clicking on it.</li>
+<li><strong>Step 3:</strong> Press <strong>Option + Command + C</strong>.</li>
+<li><strong>Step 4:</strong> Paste the path into your Python script (<strong>Command + V</strong>).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section id="exporting-a-dataframe-as-a-csv-file-with-to_csv" class="slide level2">
 <h2>Exporting a <code>DataFrame</code> as a <strong>CSV</strong> File with <code>to_csv()</code></h2>
 <div>
@@ -605,7 +634,7 @@ Byeong-Hak Choe
 <span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> os  </span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Set the working directory path</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>wd_path <span class="op">=</span> <span class="st">'/Users/bchoe/My Drive/suny-geneseo/spring2025/lecture-code'</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>wd_path <span class="op">=</span> <span class="st">'PATH_TO_YOUR_DATA_FOLDER'</span> <span class="co"># Do not choose your personal website folder</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
 <span id="cb4-7"><a href="#cb4-7"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a></span>
