@@ -1,0 +1,680 @@
+---
+title: Make-up Homework 2
+subtitle: Pandas Basics
+date: last-modified
+from: markdown+emoji
+# format:
+#   html:
+#     code-fold: true
+execute: 
+  eval: true
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+
+```{r}
+#| eval: true
+#| echo: false
+
+library(tidyverse)
+```
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+```{python}
+import pandas as pd
+from itables import init_notebook_mode, show # for displaying an interactive DataFrame
+```
+
+# Direction
+
+- Please email your **Jupyter Notebook** for **Part 1 and Part 2 in Homework 2** to Prof. Choe at [bchoe@geneseo.edu](mailto::bchoe@geneseo.edu) with the name below:
+
+  - `danl_210_hw2_makeupLASTNAME_FIRSTNAME.ipynb`\
+  ( e.g., `danl_210_hw2_makeup_choe_byeonghak.ipynb` )
+
+- The due is March 31, 2025, 10:30 A.M.
+
+- Please send an email to Prof. Choe ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
+
+<br><br><br>
+
+
+
+
+# Part 1. Health Insurance
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/health_ins.png" width="500px">
+</p>
+
+<br>
+
+Below is the `health_ins` DataFrame that loads data from the file **health_ins.csv**, which contains information about health insurance customers.
+
+```{python}
+#| code-fold: false
+health_ins = pd.read_csv('https://bcdanl.github.io/data/custdata_rev2.csv')
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/custdata_rev2.csv'),
+                       options = list(rows.print = 25))
+```
+
+
+## Variable Description
+| Variable         | Description                                      | Data Type  |
+|-----------------|--------------------------------------------------|-----------|
+| `custid`        | Unique customer identifier                      | String    |
+| `sex`           | Biological geneder of the customer (Male/Female)   | String    |
+| `is_employed`   | Employment status (e.g., Employed, Out_of_labor_force) | String    |
+| `income`        | Annual income of the customer (in dollars)      | Integer   |
+| `marital_status`| Marital status of the customer                  | String    |
+| `housing_type`  | Type of housing the customer lives in           | String    |
+| `recent_move`   | Whether the customer has recently moved (0 = No, 1 = Yes) | Integer   |
+| `num_vehicles`  | Number of vehicles owned by the customer       | Integer   |
+| `age`           | Age of the customer                             | Integer   |
+| `state_of_res`  | State of residence of the customer             | String    |
+| `gas_usage`     | Monthly gas usage                              | String   |
+| `health_ins`    | Whether the customer has health insurance (0 = No, 1 = Yes) | Integer   |
+
+
+<br><br>
+
+## Question 1
+Select the columns **custid**, **sex**, **income**, and **age**. Then sort the DataFrame by **income** in descending order and display the top 10 entries.
+
+
+
+*Answer*
+
+```{python}
+
+```
+
+
+<br><br>
+
+
+## Question 2
+Using `set_index()`, change the DataFrame’s index to **custid**. Then locate the data for a specific customer, for example **000260181_01**, and display their **is_employed**, **income**, and **marital_status**.
+
+
+
+*Answer*
+```{python}
+
+```
+
+
+<br><br>
+
+
+## Question 3
+Find the 5 customers with the highest **income** and calculate their average **age**. (Reset the index if it was previously changed.)
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 4
+Sort the DataFrame by **state_of_res** (alphabetically) and **income** (in descending order). Then set **custid** as the index and use the `loc` accessor to retrieve the **income** for a specific customer, say **_000331510_01_**.
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 5
+Create a new variable called **Wealth_Score** defined as the sum of **income** and 10,000 multiplied by **num_vehicles**. Then sort the DataFrame first by **housing_type** alphabetically, and within each housing type, by **Wealth_Score** in descending order.
+
+
+*Answer*
+```{python}
+
+```
+
+
+<br><br>
+
+
+
+
+## Question 6
+Select customers with an **income** greater than 50,000. For these customers, calculate a new variable **income_per_age** (defined as **income** divided by **age**), and then find the customer with the highest **income_per_age**. Display their **custid** and **income_per_age**.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 7
+Create a new DataFrame that includes only customers who are Employed. Select the variables **custid**, **sex**, **income**, **marital_status**, and **state_of_res**. Additionally, include a new variable **Employment_Status** that duplicates the **is_employed** variable.
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+## Question 8
+
+Determine how many customers have an **income** within the top 10% of the DataFrame.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 9
+Filter the DataFrame for customers who have **recent_move** equal to _1_ and also have health insurance (i.e., **health_ins** equals _1_).
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+## Question 10
+Find the unique values of **gas_usage** and count how many unique gas usage patterns there are in the DataFrame.
+
+
+*Answer*
+```{python}
+
+```
+
+
+
+<br><br>
+
+
+## Question 11
+Identify the customer(s) with the highest number of vehicles (i.e., the highest **num_vehicles**). Display their **custid**, **sex**, and **num_vehicles**.
+
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br>
+
+
+## Question 12
+Calculate the percentage of missing values for each variable in the DataFrame.
+
+
+*Answer*
+```{python}
+
+```
+
+
+<br><br>
+
+
+
+## Question 13
+Fill missing values in the **marital_status** column with the string **Unknown**.
+
+
+*Answer*
+```{python}
+
+```
+
+<br><br><br>
+
+
+# Part 2. NBA 
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/nba.png" width="500px">
+</p>
+
+<br>
+
+The following lists data frames about NBA for the 2022-23 season:
+
+- `nba_games`: NBA Game Logs
+- `nba_adv`: NBA Advanced Statistics
+- `nba_ff`: NBA Four Factors---(1) Effective field goal percentage, (2) Turnovers committed per possession, (3) Offensive rebounding percentage, and (4) Free throw rate
+
+
+
+
+## NBA Game Logs (`nba_games`)
+
+- `nba_games`: NBA Game Logs
+  - A data frame with 2460 observations and 29 variables:
+
+```{r}
+nba_games <- read_csv("http://bcdanl.github.io/data/nba_games2.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_games)
+```
+
+<br>
+
+`season_id`
+Season in which the game was played (YYYY)
+
+`team_id`
+Team ID on nba.com
+
+`team_abbreviation`
+Team abbreviation on nba.com
+
+`team_name`
+Team name on nba.com
+
+`game_id`
+Game ID on nba.com
+
+`game_date`
+Date in YYYY-MM-DD
+
+`matchup`
+Team One vs. Team Two
+
+`wl`
+Win or Loss
+
+`min`
+Minutes in the game
+
+`fgm`
+Team Field goals made
+
+`fga`
+Team Field goal attempts
+
+
+`fg_pct`
+Team field goal percentage
+
+`fg3m`
+Team three point field goals made
+
+`fg3a`
+Team three point field goal attempts
+
+`fg3_pct`
+Team three point field goal percentage
+
+`efg`
+Effective field goal percentage
+`efg = (fg2m + 1.5*fg3m)/(fga)`
+It adjusts the traditional field goal percentage to account for the fact that three-point field goals are worth more than two-point field goals.
+
+
+`ftm`
+Team free throws made
+
+`fta`
+Team free throw attempts
+
+`ftr`
+Free throw rate (FTR). The ratio of free throw attempts (`fta`) to field goal attempts (`fga`) `ftr = fta / fga`
+
+`ft_pct`
+Team free throw percentage
+
+`oreb`
+Team offensive rebounds
+
+`dreb`
+Team defensive rebounds
+
+`reb`
+Team total rebounds
+
+`ast`
+Team total assists
+
+`stl`
+Team total steals
+
+`blk`
+Team total blocks
+
+`tov`
+Team total turnovers
+
+`pf`
+Team total personal fouls
+
+`pts`
+Team total points scored
+
+`plus_minus`
+Margin of game as Team score minus Opponent score
+
+`video_available`
+Logical if game video exists
+
+
+<br>
+
+## NBA Advanced Statistics (`nba_adv`)
+- `nba_adv`: NBA Advanced Statistics
+  - A data frame with 2460 observations and 29 variables
+
+```{r}
+nba_adv <- read_csv("http://bcdanl.github.io/data/nba_adv2.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_adv)
+```
+
+<br>
+
+`game_id`
+Game ID on nba.com
+
+`team_id`
+Team ID on nba.com
+
+`team_name`
+Team name
+
+`team_abbreviation`
+Team abbreviation
+
+`team_city`
+Team city
+
+`min`
+Total minutes in the game
+
+`e_off_rating`
+Offensive rating (effective ?)
+
+`off_rating`
+Offensive rating
+
+`e_def_rating`
+Defensive rating (effective ?)
+
+`def_rating`
+Defensive rating
+
+`e_net_rating`
+Net rating (effective ?)
+
+`net_rating`
+Net rating
+
+`ast_pct`
+Assist percentage
+
+`ast_tov`
+Assists to turnover ratio
+
+`ast_ratio`
+Assist ratio
+
+`oreb_pct`
+Offensive rebound percentage
+
+`dreb_pct`
+Defensive rebound percentage
+
+`reb_pct`
+Total rebound percentage
+
+`e_tm_tov_pct`
+Turnover percentage (effective?)
+
+`tm_tov_pct`
+Turnover percentage
+
+`efg_pct`
+Effective field goal percentage
+
+`ts_pct`
+True Shooting percentage
+
+`usg_pct`
+Usage percentage
+
+`e_usg_pct`
+Usage percentage (effective?)
+
+`e_pace`
+Pace (effective ?)
+
+`pace`
+Pace
+
+`pace_per40`
+Pace per forty minutes
+
+`poss`
+Team possessions in game
+
+`pie`
+Player impact estimate
+
+
+
+<br>
+
+
+## NBA Four Factors (`nba_ff`)
+
+- `nba_ff`: NBA Team-level Four Factors---(1) Effective field goal percentage, (2) Turnovers committed per possession, (3) Offensive rebounding percentage, and (4) Free throw rate
+  - A data frame with 2460 observations and 14 variables
+
+```{r}
+nba_ff <- read_csv("http://bcdanl.github.io/data/nba_ff.csv")
+```
+
+```{r}
+#| echo: false
+rmarkdown::paged_table(nba_ff)
+```
+
+<br>
+
+`game_id`
+Game ID on nba.com
+
+`team_id`
+Team ID on nba.com
+
+`team_name`
+Team name on nba.com
+
+`team_abbreviation`
+Team abbreviation on nba.com
+
+`team_city`
+Team city
+
+`min`
+Minutes in the game
+
+`efg_pct`
+Effective field goal percentage
+
+`fta_rate`
+Free throw rate of team
+
+`tm_tov_pct`
+Turnover percentage of opponent
+
+`oreb_pct`
+Offensive rebound percentage of opponent
+
+`opp_efg_pct`
+Effective field goal percentage of opponent
+
+`opp_fta_rate`
+Free throw rate of opponent
+
+`opp_tov_pct`
+Turnover percentage of opponent
+
+`opp_oreb_pct`
+Offensive rebound percentage of opponent
+
+<br>
+
+## Question 14
+In the DataFrame, `nba_games`, remove observations for which the value of **game_date** is missing.
+
+*Answer*: 
+
+```{python}
+
+```
+
+<br>
+
+
+## Question 15
+- From `nba_games`, calculate the mean value of **pts** (points scored) for the _**NYK**_ team when all the following conditions hold:
+	1.	**wl** (win or loss) is _"W"_;
+	2.	**fga** (field goal attempts) is greater than _80_; and
+	3.	**team_abbreviation** is _"NYK"_.
+
+*Answer*: 
+
+```{python}
+
+
+```
+
+<br>
+
+
+## Question 16
+- Consider the DataFrame, `nba_adv`, containing NBA advanced statistics. Create a new DataFrame, `nba_games_adv`, that includes:
+	1.	All the variables and observations from the DataFrame, `nba_games`; and
+	2.	The variables **e_off_rating**, **off_rating**, and **def_rating** from the DataFrame, `nba_adv` by joining the two DataFrames.
+
+In the resulting DataFrame, `nba_games_adv`, remove observations with missing values in **off_rating**.
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+
+## Question 17
+- Reshape the `nba_ff` DataFrame into a DataFrame called `nba_ff_long` that includes the variables **game_id**, **team_id**, **team_name**, **team_abbreviation**, **team_city**, and **min**, along with two new variables:
+	-	**factor**: indicates the statistic from the following columns: _efg_pct_, _fta_rate_, _tm_tov_pct_, _oreb_pct_, _opp_efg_pct_, _opp_fta_rate_, _opp_tov_pct_, _opp_oreb_pct_;
+	-	**value**: contains the corresponding values for the factor.
+
+Finally, sort `nba_ff_long` by _game_id_, _team_id_, and _Factor_ in ascending order.
+  
+
+*Answer:*
+
+```{python}
+
+```
+
+
+
+<br><br><br>
+
+# Part 3. Jupyter Notebook Blogging
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/spotify.png" width="400px">
+</p>
+
+<br>
+
+Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
+
+```{.python}
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),
+                       options = list(rows.print = 25))
+```
+
+<br>
+
+## Variable Description
+
+- `pid`: playlist ID; unique ID for playlist
+- `playlist_name`: a name of playlist
+- `pos`: a position of the track within a playlist (starting from 0)
+- `artist_name`: name of the track’s primary artist
+- `track_name`: name of the track
+- `duration_ms`: duration of the track in milliseconds
+- `album_name`: name of the track’s album
+
+<br>
+
+
+- Write a blog post about your favorite artist(s) in the `spotify` DataFrame using Jupyter Notebook, and add it to your online blog.
+  - In your blog post, utilize counting, sorting, indexing, and filtering methods.
+  
+<br>
+

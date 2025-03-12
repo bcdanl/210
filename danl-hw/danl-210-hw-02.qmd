@@ -33,7 +33,7 @@ from itables import init_notebook_mode, show # for displaying an interactive Dat
 
 - The due is March 3, 2025, 10:30 A.M.
 
-- Please send Byeong-Hak an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
+- Please send Prof. Choe an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
 
 <br><br><br>
 
@@ -251,8 +251,6 @@ top10
 
 nyc_payroll[ nyc_payroll['Base_Salary'] >= top10 ].shape[0]
 ```
-
-<br><br>
 
 <br><br>
 
