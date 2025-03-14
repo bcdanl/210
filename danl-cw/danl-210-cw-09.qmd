@@ -28,9 +28,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 
 Below is to set up the web scrapping environment with Python `selenium`:
 
-```{python}
-#| echo: true
-#| eval: false
+```{.python}
 import pandas as pd
 import os
 import time
@@ -39,7 +37,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-wd_path = 'PATHNAME_FOR_YOUR_WORKING_DIRECTORY'   # 'YOUR_WORKING_DIRECTORY'
+wd_path = 'PATHNAME_FOR_YOUR_DATA_DIRECTORY'   # 'YOUR_DATA_DIRECTORY'
 os.chdir(wd_path)
 ```
 
@@ -51,6 +49,15 @@ os.chdir(wd_path)
   - [https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
   
 - Export the `DataFrame` as a CSV file.
+
+- Tip: Consider using loop over a XPath f-string:
+
+```{.python}
+for i in range(1, 10):
+    xpath = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[1]'
+    print(xpath)
+```
+
 
 *Answer*:
 ```{python}

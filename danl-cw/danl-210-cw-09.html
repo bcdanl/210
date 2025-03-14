@@ -246,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 11, 2025</p>
+      <p class="date-modified">March 14, 2025</p>
     </div>
   </div>
     
@@ -265,8 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Below is to set up the web scrapping environment with Python <code>selenium</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
@@ -274,19 +273,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'PATHNAME_FOR_YOUR_WORKING_DIRECTORY'</span>   <span class="co"># 'YOUR_WORKING_DIRECTORY'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'PATHNAME_FOR_YOUR_DATA_DIRECTORY'</span>   <span class="co"># 'YOUR_DATA_DIRECTORY'</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p><br></p>
 <section id="question-1" class="level1">
 <h1>Question 1</h1>
 <ul>
-<li>Use Python Selenium to scrap the table in the following webpage as a <code>pandas</code>’ <code>DataFrame</code>:
+<li><p>Use Python Selenium to scrap the table in the following webpage as a <code>pandas</code>’ <code>DataFrame</code>:</p>
 <ul>
 <li><a href="https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php">https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php</a></li>
 </ul></li>
-<li>Export the <code>DataFrame</code> as a CSV file.</li>
+<li><p>Export the <code>DataFrame</code> as a CSV file.</p></li>
+<li><p>Tip: Consider using loop over a XPath f-string:</p></li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    xpath <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[1]'</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(xpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Answer</em>:</p>
 <p><br><br></p>
 </section>
