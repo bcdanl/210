@@ -49,20 +49,37 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 <br>
 
 ## Project Data
-- Below is the `esg_proj` DataFrame, which provides a list of companies and associated information
+- Below is the `esg_proj_2024_data` DataFrame and the `esg_proj_2025` DataFrame.
+  - `esg_proj_2024_data` DataFrame which provides a list of companies and associated information, including ESG scores.
+  - `esg_proj_2025` DataFrame provides a list of companies and associated information.
 
 ```{python}
 #| eval: false
 import pandas as pd
-esg_proj = pd.read_csv("https://bcdanl.github.io/data/stock_esg_list.csv")
+esg_proj_2024_data = pd.read_csv("https://bcdanl.github.io/data/esg_proj_2024_data.csv")
 ```
 
 ```{r}
 #| echo: false
 #| results: asis
 
-esg_proj <- read_csv("https://bcdanl.github.io/data/stock_esg_list.csv")
-DT::datatable(esg_proj, rownames = F)
+esg_proj_2024_data <- read_csv("https://bcdanl.github.io/data/esg_proj_2024_data.csv")
+DT::datatable(esg_proj_2024_data, rownames = F)
+```
+
+<br>
+
+```{python}
+#| eval: false
+esg_proj_2025 = pd.read_csv("https://bcdanl.github.io/data/")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+esg_proj_2025 <- read_csv("https://bcdanl.github.io/data/esg_proj_2025.csv")
+DT::datatable(esg_proj_2025, rownames = F)
 ```
 
 #### Variable Description
@@ -74,6 +91,8 @@ DT::datatable(esg_proj, rownames = F)
 - `Country`: a country a company belongs to;
 - `Market Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
   - A company's market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.
+- `IPO_Year`: the year a company first went public by offering its shares to be traded on a stock exchange.
+
 
 
 <br><br>
@@ -81,6 +100,18 @@ DT::datatable(esg_proj, rownames = F)
 ## Project Tasks
 
 ### Data Collection
+- For data collection, consider the `esg_proj_2025` DataFrame.
+
+### `selenium`
+- Employ the Python `selenium` library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
+  - [Agilent Technologies (A)](https://finance.yahoo.com/quote/A/sustainability)
+  - [Alcoa Corporation (AA)](https://finance.yahoo.com/quote/AA/sustainability)
+  
+- Ensure robust error and exception handling during data collection from the Sustainability Section on [Yahoo! Finance](https://finance.yahoo.com):
+  1. To avoid being blocked by [Yahoo! Finance](https://finance.yahoo.com) for automated browsing activities, please manage the Chrome driver by using  `time.sleep(random.uniform(x,y))` for each visit of the Sustainability Section webpage.
+  2. Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.
+
+
 
 ### `yfinance`
 - Utilize the `yfinance` library, an unofficial API for accessing [Yahoo! Finance](https://finance.yahoo.com) data.
@@ -89,56 +120,6 @@ DT::datatable(esg_proj, rownames = F)
     - Quarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).
     - Quarterly balance sheets for the same period as the income statements.
 
-### `selenium`
-- Employ the Python `selenium` library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
-  - [Agilent Technologies (A)](https://finance.yahoo.com/quote/A/sustainability)
-  - [Alcoa Corporation (AA)](https://finance.yahoo.com/quote/AA/sustainability)
-  
-- Ensure robust error and exception handling during data collection from the Sustainability Section on [Yahoo! Finance](https://finance.yahoo.com):
-  1. To avoid being blocked by [Yahoo! Finance](https://finance.yahoo.com) for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies' Sustainability Sections.
-  2. Use `time.sleep()` for each visit of the Sustainability Section webpage.
-  3. Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.
-  4. [Yahoo! Finance](https://finance.yahoo.com) intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.
-  - You can check the new and classic layouts of [Yahoo! Finance](https://finance.yahoo.com) by selecting the corresponding options from the navigation bar on their website.
-  
-::::{.columns}
-
-::: {.column width="31%"}
-![](https://bcdanl.github.io/lec_figs/yf-old.png)
-:::
-
-
-::: {.column width="15%"}
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="34%"}
-![](https://bcdanl.github.io/lec_figs/yf-new.png)
-:::
-
-::: {.column width="15%"}
-:::
-
-::::
-
-<!-- ::::{.columns} -->
-
-<!-- ::: {.column width="46%"} -->
-<!-- ![](https://bcdanl.github.io/lec_figs/yf-old-layout.png) -->
-<!-- ::: -->
-
-
-<!-- ::: {.column width="5%"} -->
-<!-- ::: -->
-
-<!-- ::: {.column width="49%"} -->
-<!-- ![](https://bcdanl.github.io/lec_figs/yf-new-layout.png) -->
-<!-- ::: -->
-
-
-<!-- :::: -->
 
 
 <br>
@@ -200,7 +181,8 @@ plt.show()
 
 
   5. **Exploratory Data Analysis**:
-     - List the questions you aim to answer.
+     - Explore the trend of ESG scores from 2024 to 2025.
+     - Additionally, list the questions you aim to answer.
      - Address the questions through data visualization with `seaborn` (or `lets-plot`) and `pandas` methods and attributes.
   
   6. **Significance of the Project**:
@@ -218,8 +200,16 @@ plt.show()
 
 ## Rubric for the Project
 
-- Here is the [link](https://bcdanl.github.io/210/danl-210-rubric-project.pdf) to the PDF file of the rubric for the project web-page.
+| **Attribute** | **Very Deficient (1)** | **Somewhat Deficient (2)** | **Acceptable (3)** | **Very Good (4)** | **Outstanding (5)** |
+|--------------|-------------------------|-----------------------------|--------------------|-------------------|----------------------|
+| **1. Quality of research questions** | • Not stated or very unclear<br>• Entirely derivative<br>• Anticipate no contribution | • Stated somewhat confusingly<br>• Slightly interesting, but largely derivative<br>• Anticipate minor contributions | • Stated explicitly<br>• Somewhat interesting and creative<br>• Anticipate limited contributions | • Stated explicitly and clearly<br>• Clearly interesting and creative<br>• Anticipate at least one good contribution | • Articulated very clearly<br>• Highly interesting and creative<br>• Anticipate several important contributions |
+| **2. Quality of data visualization** | • Very poorly visualized<br>• Unclear<br>• Unable to interpret figures | • Somewhat visualized<br>• Somewhat unclear<br>• Difficulty interpreting figures | • Mostly well visualized<br>• Mostly clear<br>• Acceptably interpretable | • Well organized<br>• Well thought-out visualization<br>• Almost all figures clearly interpretable | • Very well visualized<br>• Outstanding visualization<br>• All figures clearly interpretable |
+| **3. Quality of exploratory data analysis** | • Little or no critical thinking<br>• Little or no understanding of data analytics concepts with Python | • Rudimentary critical thinking<br>• Somewhat shaky understanding of data analytics concepts with Python | • Average critical thinking<br>• Understanding of data analytics concepts with Python | • Mature critical thinking<br>• Clear understanding of data analytics concepts with Python | • Sophisticated critical thinking<br>• Superior understanding of data analytics concepts with Python |
+| **4. Quality of business/economic analysis** | • Little or no critical thinking<br>• Little or no understanding of business/economic concepts | • Rudimentary critical thinking<br>• Somewhat shaky understanding of business/economic concepts | • Average critical thinking<br>• Understanding of business/economic concepts | • Mature critical thinking<br>• Clear understanding of business/economic concepts | • Sophisticated critical thinking<br>• Superior understanding of business/economic concepts |
+| **5. Quality of writing** | • Very poorly organized<br>• Very difficult to read<br>• Many typos and grammatical errors | • Somewhat disorganized<br>• Somewhat difficult to read<br>• Numerous typos and grammatical errors | • Mostly well organized<br>• Mostly easy to read<br>• Some typos and grammatical errors | • Well organized<br>• Easy to read<br>• Very few typos or grammatical errors | • Very well organized<br>• Very easy to read<br>• No typos or grammatical errors |
+| **6. Quality of Jupyter Notebook usage** | • Very poorly organized<br>• Many redundant warning/error messages<br>• Inappropriate code to produce outputs | • Somewhat disorganized<br>• Numerous warning/error messages<br>• Misses important code | • Mostly well organized<br>• Some warning/error messages<br>• Provides appropriate code | • Well organized<br>• Very few warning/error messages<br>• Provides advanced code | • Very well organized<br>• No warning/error messages<br>• Proposes highly advanced code |
 
+<br>
 
 ### Rubric for Quality of Data Collection
 

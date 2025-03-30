@@ -1,0 +1,260 @@
+---
+title: Homework 3
+subtitle: Pandas Basics
+date: last-modified
+from: markdown+emoji
+format:
+  html:
+    code-fold: true
+execute: 
+  eval: false
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+```{python}
+import pandas as pd
+from itables import init_notebook_mode, show # for displaying an interactive DataFrame
+```
+
+# Direction
+
+- Please submit your **Jupyter Notebook** for **Part 1, Part 2, and Part 3 in Homework 2** to Brightspace with the name below:
+
+  - `danl_210_hw2_LASTNAME_FIRSTNAME.ipynb`\
+  ( e.g., `danl_210_hw2_choe_byeonghak.ipynb` )
+
+- The due is March 3, 2025, 10:30 A.M.
+
+- Please send Prof. Choe an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
+
+<br><br><br>
+
+
+
+# Question 1. Collecting the IMDB Data using Python `Selenium`
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/IMDB_Logo.png" width="600px">
+</p>
+
+<br>
+
+- Go to the following IMDB webpage for 
+  - [Top 200 Family Movies and TV Shows (sorted by Popularity)](https://www.imdb.com/search/title/?genres=family&sort=popularity,desc&count=200).
+ 
+- Provide your Python Selenium code to scrape the following information about **Top 200 Family Movies and TV Shows by Popularity**. 
+  - You should create the following variables in the DataFrame:
+    - `ranking`	(e.g., 1, 2, 3)
+    - `title`	(e.g., *Snow White, Freakier Friday*)
+    - `year`	(e.g., 2025, 2025-)
+    - `runtime`	(e.g., 1h 56m, 1h 40m)
+    - `rating` (e.g., PG, TV-G, G)
+    - `imdb_score` (e.g., 7.6, 6.5)
+    - `votes` (e.g., 1.4k, 70k)
+    - `metascore`	(e.g., 56, 74)
+    - `plot` (e.g., *A princess joins forces with seven dwarfs to liberate her kingdom from her cruel stepmother the Evil Queen.*)
+
+
+- Suppose `ranking` and `title` are initially combined in a single column called `ranking_title`, with values like:
+  - "1. Snow White"
+  - "2. Freakier Friday"
+- You can split this column into `ranking` and `title` using the following code:
+
+```{.python}
+# Split the 'ranking_title' column into two new variables, 'ranking' and 'title'
+# by the first occurrence of a period (dot). 
+
+# n=1 ensures the split to be limited to the first dot.
+# expand=True tells pandas to return the results in a DataFrame
+  # If expand were False, the result would be a Series of lists.
+
+df[['ranking', 'title']] = df['ranking_title'].str.split('.', n=1, expand=True)
+df = df.drop(columns=['ranking_title'])
+```
+
+- Finally, export the resulting DataFrame to the CSV file.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+
+<br><br>
+
+
+
+
+# Question 2. Pandas Basic
+
+<br>
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/spotify.png" width="400px">
+</p>
+
+<br>
+
+Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
+
+```{.python}
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),
+                       options = list(rows.print = 25))
+```
+
+<br>
+
+## Variable Description
+
+- `pid`: playlist ID; unique ID for playlist
+- `playlist_name`: a name of playlist
+- `pos`: a position of the track within a playlist (starting from 0)
+- `artist_name`: name of the track’s primary artist
+- `track_name`: name of the track
+- `duration_ms`: duration of the track in milliseconds
+- `album_name`: name of the track’s album
+
+
+## Definition of a Song
+- In Question 2, a **song** is defined as a combination of a `artist_name` value and a `track_name` value.
+
+- E.g., the following provides the 12 difference songs with the same `track_name`---**I Love You**:
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+
+rmarkdown::paged_table(
+  read_csv('https://bcdanl.github.io/data/spotify_all.csv') |> 
+  count(artist_name, track_name) |> 
+  filter(track_name == 'I Love You') |> 
+  select(-n), 
+  options = list(rows.print = 12)
+)
+```
+
+<br>
+
+## Q2a
+
+- Write a Python code to identify the top five songs with the highest frequency of appearances in the `spotify` DataFrame.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+## Q2b
+
+- Write a Python code to create a DataFrame that contains information about how often each song occurs within the `spotify` DataFrame.
+  - In this new DataFrame, each observation should represent a distinct song.
+
+- Then, write a Python code to identify top 5% songs based on their frequency of appearances.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+
+<br>
+
+
+## Q2c
+- Write a Python code to list all artists who have more than 50 unique songs in the `sportify` DataFrame.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+
+
+
+## Q2d
+- Write a Python code to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.
+
+
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+## Q2e
+- Write a Python code to identify the longest and shortest duration songs (based on `duration_ms`) for each unique artist.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+
+
+## Q2f
+- Write a Python code to find the same song(s) appearing more than once in the same playlist.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+
+
+## Q2g
+- Write a Python code to filter all songs that appear in more than 100 different playlists.
+
+
+*Answer*:
+
+```{python}
+
+```
+
+<br>
+
+

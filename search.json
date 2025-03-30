@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPandas Basics\n\n\nMarch 30, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-210-hw-02-makeup.html",
@@ -284,7 +284,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 2\n\n\nMarch 12, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nHomework 3\n\n\nMarch 30, 2025\n\n\n\n\nHomework 2\n\n\nMarch 12, 2025\n\n\n\n\nHomework 1\n\n\nFebruary 5, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -466,7 +466,7 @@
     "href": "listing-danl-210-rw.html",
     "title": "DANL 210 - Project",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nJanuary 22, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nMarch 30, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "posts/py-basic/blog-python-basics.html",
@@ -3014,21 +3014,21 @@
     "href": "danl-rw/danl-210-project.html#project-data",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "Project Data",
-    "text": "Project Data\n\nBelow is the esg_proj DataFrame, which provides a list of companies and associated information\n\n\nimport pandas as pd\nesg_proj = pd.read_csv(\"https://bcdanl.github.io/data/stock_esg_list.csv\")\n\n\n\n\n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price."
+    "text": "Project Data\n\nBelow is the esg_proj_2024_data DataFrame and the esg_proj_2025 DataFrame.\n\nesg_proj_2024_data DataFrame which provides a list of companies and associated information, including ESG scores.\nesg_proj_2025 DataFrame provides a list of companies and associated information.\n\n\n\nimport pandas as pd\nesg_proj_2024_data = pd.read_csv(\"https://bcdanl.github.io/data/esg_proj_2024_data.csv\")\n\n\n\n\n\n\n\n\nesg_proj_2025 = pd.read_csv(\"https://bcdanl.github.io/data/\")\n\n\n\n\n\n\n\nVariable Description\n\nSymbol: a company’s ticker;\nCompany Name: a company name;\nSector: a sector a company belongs to;\nIndustry: an industry a company belongs to;\nCountry: a country a company belongs to;\nMarket Cap: a company’s market capitalization as of December 20, 2024 (Source: Nasdaq’s Stock Screener).\n\nA company’s market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.\n\nIPO_Year: the year a company first went public by offering its shares to be traded on a stock exchange."
   },
   {
     "objectID": "danl-rw/danl-210-project.html#project-tasks",
     "href": "danl-rw/danl-210-project.html#project-tasks",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "Project Tasks",
-    "text": "Project Tasks\n\nData Collection\n\n\nyfinance\n\nUtilize the yfinance library, an unofficial API for accessing Yahoo! Finance data.\n\nFor each company listed in the esg_proj DataFrame, you should retrieve the following:\n\nDaily historical stock data spanning from January 1, 2024, to March 31, 2025.\nQuarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).\nQuarterly balance sheets for the same period as the income statements.\n\n\n\n\n\nselenium\n\nEmploy the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company’s webpage on Yahoo! Finance, such as:\n\nAgilent Technologies (A)\nAlcoa Corporation (AA)\n\nEnsure robust error and exception handling during data collection from the Sustainability Section on Yahoo! Finance:\n\nTo avoid being blocked by Yahoo! Finance for automated browsing activities, please manage the Chrome driver by launching and quitting it after processing every 20 companies’ Sustainability Sections.\nUse time.sleep() for each visit of the Sustainability Section webpage.\nSome companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.\nYahoo! Finance intermittently switches between its new and classic website layouts, affecting the HTML DOM structure of the Sustainability Section.\n\n\nYou can check the new and classic layouts of Yahoo! Finance by selecting the corresponding options from the navigation bar on their website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python yfinance and selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nList the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
+    "text": "Project Tasks\n\nData Collection\n\nFor data collection, consider the esg_proj_2025 DataFrame.\n\n\n\nselenium\n\nEmploy the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company’s webpage on Yahoo! Finance, such as:\n\nAgilent Technologies (A)\nAlcoa Corporation (AA)\n\nEnsure robust error and exception handling during data collection from the Sustainability Section on Yahoo! Finance:\n\nTo avoid being blocked by Yahoo! Finance for automated browsing activities, please manage the Chrome driver by using time.sleep(random.uniform(x,y)) for each visit of the Sustainability Section webpage.\nSome companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.\n\n\n\n\nyfinance\n\nUtilize the yfinance library, an unofficial API for accessing Yahoo! Finance data.\n\nFor each company listed in the esg_proj DataFrame, you should retrieve the following:\n\nDaily historical stock data spanning from January 1, 2024, to March 31, 2025.\nQuarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).\nQuarterly balance sheets for the same period as the income statements.\n\n\n\n\n\n\nData Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python yfinance and selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nExplore the trend of ESG scores from 2024 to 2025.\nAdditionally, list the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
   },
   {
     "objectID": "danl-rw/danl-210-project.html#rubric-for-the-project",
     "href": "danl-rw/danl-210-project.html#rubric-for-the-project",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "Rubric for the Project",
-    "text": "Rubric for the Project\n\nHere is the link to the PDF file of the rubric for the project web-page.\n\n\nRubric for Quality of Data Collection\n\n\n\n\n\n\n\n\nEvaluation\nDescription\nCriteria\n\n\n\n\n1 (Very Deficient)\n- Very poorly implemented- Data is unreliable.\n- Ineffective use of yfinance, resulting in incomplete or inaccurate financial data.- Poor web scraping practices with selenium, leading to unreliable or incorrect data from Yahoo Finance.- Inadequate use of pandas, resulting in poorly structured DataFrames.\n\n\n2 (Somewhat Deficient)\n- Somewhat effective implementation- Data has minor reliability issues.\n- Basic use of yfinance with minor inaccuracies in data retrieval.- Basic web scraping with selenium that sometimes fails to capture all relevant data accurately.- Basic use of pandas, but with occasional issues in data structuring.\n\n\n3 (Acceptable)\n- Competently implemented- Data is mostly reliable.\n- Competent use of yfinance to retrieve most financial data accurately.- Effective web scraping with selenium, capturing most required data from Yahoo Finance.- Adequate use of pandas to structure data in a mostly logical format.\n\n\n4 (Very Good)\n- Well-implemented and organized- Data is reliable.\n- Advanced use of yfinance to reliably and accurately fetch financial data.- Thorough web scraping with selenium that consistently captures accurate and complete data from Yahoo Finance.- Skillful use of pandas for clear and logical data structuring.\n\n\n5 (Outstanding)\n- Exceptionally implemented- Data is highly reliable.\n- Expert use of yfinance to obtain comprehensive and precise financial data.- Expert web scraping with selenium, capturing detailed and accurate data from Yahoo Finance without fail.- Expert use of pandas to create exceptionally well-organized DataFrames that facilitate easy analysis."
+    "text": "Rubric for the Project\n\n\n\n\n\n\n\n\n\n\n\nAttribute\nVery Deficient (1)\nSomewhat Deficient (2)\nAcceptable (3)\nVery Good (4)\nOutstanding (5)\n\n\n\n\n1. Quality of research questions\n• Not stated or very unclear• Entirely derivative• Anticipate no contribution\n• Stated somewhat confusingly• Slightly interesting, but largely derivative• Anticipate minor contributions\n• Stated explicitly• Somewhat interesting and creative• Anticipate limited contributions\n• Stated explicitly and clearly• Clearly interesting and creative• Anticipate at least one good contribution\n• Articulated very clearly• Highly interesting and creative• Anticipate several important contributions\n\n\n2. Quality of data visualization\n• Very poorly visualized• Unclear• Unable to interpret figures\n• Somewhat visualized• Somewhat unclear• Difficulty interpreting figures\n• Mostly well visualized• Mostly clear• Acceptably interpretable\n• Well organized• Well thought-out visualization• Almost all figures clearly interpretable\n• Very well visualized• Outstanding visualization• All figures clearly interpretable\n\n\n3. Quality of exploratory data analysis\n• Little or no critical thinking• Little or no understanding of data analytics concepts with Python\n• Rudimentary critical thinking• Somewhat shaky understanding of data analytics concepts with Python\n• Average critical thinking• Understanding of data analytics concepts with Python\n• Mature critical thinking• Clear understanding of data analytics concepts with Python\n• Sophisticated critical thinking• Superior understanding of data analytics concepts with Python\n\n\n4. Quality of business/economic analysis\n• Little or no critical thinking• Little or no understanding of business/economic concepts\n• Rudimentary critical thinking• Somewhat shaky understanding of business/economic concepts\n• Average critical thinking• Understanding of business/economic concepts\n• Mature critical thinking• Clear understanding of business/economic concepts\n• Sophisticated critical thinking• Superior understanding of business/economic concepts\n\n\n5. Quality of writing\n• Very poorly organized• Very difficult to read• Many typos and grammatical errors\n• Somewhat disorganized• Somewhat difficult to read• Numerous typos and grammatical errors\n• Mostly well organized• Mostly easy to read• Some typos and grammatical errors\n• Well organized• Easy to read• Very few typos or grammatical errors\n• Very well organized• Very easy to read• No typos or grammatical errors\n\n\n6. Quality of Jupyter Notebook usage\n• Very poorly organized• Many redundant warning/error messages• Inappropriate code to produce outputs\n• Somewhat disorganized• Numerous warning/error messages• Misses important code\n• Mostly well organized• Some warning/error messages• Provides appropriate code\n• Well organized• Very few warning/error messages• Provides advanced code\n• Very well organized• No warning/error messages• Proposes highly advanced code\n\n\n\n\n\nRubric for Quality of Data Collection\n\n\n\n\n\n\n\n\nEvaluation\nDescription\nCriteria\n\n\n\n\n1 (Very Deficient)\n- Very poorly implemented- Data is unreliable.\n- Ineffective use of yfinance, resulting in incomplete or inaccurate financial data.- Poor web scraping practices with selenium, leading to unreliable or incorrect data from Yahoo Finance.- Inadequate use of pandas, resulting in poorly structured DataFrames.\n\n\n2 (Somewhat Deficient)\n- Somewhat effective implementation- Data has minor reliability issues.\n- Basic use of yfinance with minor inaccuracies in data retrieval.- Basic web scraping with selenium that sometimes fails to capture all relevant data accurately.- Basic use of pandas, but with occasional issues in data structuring.\n\n\n3 (Acceptable)\n- Competently implemented- Data is mostly reliable.\n- Competent use of yfinance to retrieve most financial data accurately.- Effective web scraping with selenium, capturing most required data from Yahoo Finance.- Adequate use of pandas to structure data in a mostly logical format.\n\n\n4 (Very Good)\n- Well-implemented and organized- Data is reliable.\n- Advanced use of yfinance to reliably and accurately fetch financial data.- Thorough web scraping with selenium that consistently captures accurate and complete data from Yahoo Finance.- Skillful use of pandas for clear and logical data structuring.\n\n\n5 (Outstanding)\n- Exceptionally implemented- Data is highly reliable.\n- Expert use of yfinance to obtain comprehensive and precise financial data.- Expert web scraping with selenium, capturing detailed and accurate data from Yahoo Finance without fail.- Expert use of pandas to create exceptionally well-organized DataFrames that facilitate easy analysis."
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -3827,5 +3827,82 @@
     "title": "Lecture 16",
     "section": "(2)",
     "text": "(2)\ndriver.find_element(By.XPATH, '//*[@id=\"table01\"]/tbody/tr[2]/td[3]/a').get_attribute('href')\ndriver.find_element(By.XPATH, '//*[@id=\"btn\"]').get_attribute('value')"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html",
+    "href": "danl-hw/danl-210-hw-03.html",
+    "title": "Homework 3",
+    "section": "",
+    "text": "Click to Check the Answer!\nimport pandas as pd\nfrom itables import init_notebook_mode, show # for displaying an interactive DataFrame"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#question-1",
+    "href": "danl-hw/danl-210-hw-03.html#question-1",
+    "title": "Homework 3",
+    "section": "Question 1",
+    "text": "Question 1\n\nProvide your Python Selenium code to scrape the following information about Top 200 Family Movies and TV Shows by Popularity.\n\nYou should create the following variables in the DataFrame:\n\nranking (e.g., 1, 2, 3)\ntitle (e.g., Snow White, Freakier Friday)\nyear (e.g., 2025, 2025-)\nruntime (e.g., 1h 56m, 1h 40m)\nrating (e.g., PG, TV-G, G)\nimdb_score (e.g., 7.6, 6.5)\nvotes (e.g., 1.4k, 70k)\nmetascore (e.g., 56, 74)\nplot (e.g., A princess joins forces with seven dwarfs to liberate her kingdom from her cruel stepmother the Evil Queen.)\n\n\nSuppose ranking and title are initially combined in a single column called ranking_title, with values like:\n“1. Snow White”\n“2. Freakier Friday”\nYou can split this column into ranking and title using the following code:\n\n# Split the 'ranking_title' column into two new variables, 'ranking' and 'title'\n# by the first occurrence of a period (dot). \n\n# n=1 ensures the split to be limited to the first dot.\n# expand=True tells pandas to return the results in a DataFrame\n  # If expand were False, the result would be a Series of lists.\n\ndf[['ranking', 'title']] = df['ranking_title'].str.split('.', n=1, expand=True)\ndf = df.drop(columns=['ranking_title'])\n\nFinally, export the resulting DataFrame to the CSV file.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#variable-description",
+    "href": "danl-hw/danl-210-hw-03.html#variable-description",
+    "title": "Homework 3",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds\nalbum_name: name of the track’s album"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2a",
+    "href": "danl-hw/danl-210-hw-03.html#q2a",
+    "title": "Homework 3",
+    "section": "Q2a",
+    "text": "Q2a\n\nWrite a Python code to identify the top five songs with the highest frequency of appearances in the spotify DataFrame.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2b",
+    "href": "danl-hw/danl-210-hw-03.html#q2b",
+    "title": "Homework 3",
+    "section": "Q2b",
+    "text": "Q2b\n\nWrite a Python code to create a DataFrame that contains information about how often each song occurs within the spotify DataFrame.\n\nIn this new DataFrame, each observation should represent a distinct song.\n\nThen, write a Python code to identify top 5% songs based on their frequency of appearances.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2c",
+    "href": "danl-hw/danl-210-hw-03.html#q2c",
+    "title": "Homework 3",
+    "section": "Q2c",
+    "text": "Q2c\n\nWrite a Python code to list all artists who have more than 50 unique songs in the sportify DataFrame.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#definition-of-a-song",
+    "href": "danl-hw/danl-210-hw-03.html#definition-of-a-song",
+    "title": "Homework 3",
+    "section": "Definition of a Song",
+    "text": "Definition of a Song\n\nIn Question 2, a song is defined as a combination of a artist_name value and a track_name value.\nE.g., the following provides the 12 difference songs with the same track_name—I Love You:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2d",
+    "href": "danl-hw/danl-210-hw-03.html#q2d",
+    "title": "Homework 3",
+    "section": "Q2d",
+    "text": "Q2d\n\nWrite a Python code to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2e",
+    "href": "danl-hw/danl-210-hw-03.html#q2e",
+    "title": "Homework 3",
+    "section": "Q2e",
+    "text": "Q2e\n\nWrite a Python code to identify the longest and shortest duration songs (based on duration_ms) for each unique artist.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2f",
+    "href": "danl-hw/danl-210-hw-03.html#q2f",
+    "title": "Homework 3",
+    "section": "Q2f",
+    "text": "Q2f\n\nWrite a Python code to find the same song(s) appearing more than once in the same playlist.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#q2g",
+    "href": "danl-hw/danl-210-hw-03.html#q2g",
+    "title": "Homework 3",
+    "section": "Q2g",
+    "text": "Q2g\n\nWrite a Python code to filter all songs that appear in more than 100 different playlists.\n\nAnswer:"
   }
 ]
