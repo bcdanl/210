@@ -26,12 +26,12 @@ from itables import init_notebook_mode, show # for displaying an interactive Dat
 
 # Direction
 
-- Please submit your **Jupyter Notebook** for **Part 1, Part 2, and Part 3 in Homework 2** to Brightspace with the name below:
+- Please submit your **Python Script** for **Part 1 and Part 2 in Homework 3** to Brightspace with the name below:
 
-  - `danl_210_hw2_LASTNAME_FIRSTNAME.ipynb`\
-  ( e.g., `danl_210_hw2_choe_byeonghak.ipynb` )
+  - `danl_210_hw3_LASTNAME_FIRSTNAME.py`\
+  ( e.g., `danl_210_hw3_choe_byeonghak.py` )
 
-- The due is March 3, 2025, 10:30 A.M.
+- The due is April 9, 2025, 10:30 A.M.
 
 - Please send Prof. Choe an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
 
@@ -39,7 +39,7 @@ from itables import init_notebook_mode, show # for displaying an interactive Dat
 
 
 
-# Question 1. Collecting the IMDB Data using Python `Selenium`
+# Part 1. Collecting the IMDb Data using Python `Selenium`
 
 <br>
 
@@ -49,7 +49,8 @@ from itables import init_notebook_mode, show # for displaying an interactive Dat
 
 <br>
 
-- Go to the following IMDB webpage for 
+## Question 1
+- Go to the following Internet Movie Database (IMDb) webpage for 
   - [Top 200 Family Movies and TV Shows (sorted by Popularity)](https://www.imdb.com/search/title/?genres=family&sort=popularity,desc&count=200).
  
 - Provide your Python Selenium code to scrape the following information about **Top 200 Family Movies and TV Shows by Popularity**. 
@@ -97,7 +98,7 @@ df = df.drop(columns=['ranking_title'])
 
 
 
-# Question 2. Pandas Basic
+# Part 2. Pandas Basic
 
 <br>
 <p align="center">
@@ -158,7 +159,7 @@ rmarkdown::paged_table(
 
 <br>
 
-## Q2a
+## Question 2
 
 - Write a Python code to identify the top five songs with the highest frequency of appearances in the `spotify` DataFrame.
 
@@ -171,7 +172,7 @@ rmarkdown::paged_table(
 
 <br>
 
-## Q2b
+## Question 3
 
 - Write a Python code to create a DataFrame that contains information about how often each song occurs within the `spotify` DataFrame.
   - In this new DataFrame, each observation should represent a distinct song.
@@ -189,7 +190,7 @@ rmarkdown::paged_table(
 <br>
 
 
-## Q2c
+## Question 4
 - Write a Python code to list all artists who have more than 50 unique songs in the `sportify` DataFrame.
 
 
@@ -204,7 +205,7 @@ rmarkdown::paged_table(
 
 
 
-## Q2d
+## Question 5
 - Write a Python code to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.
 
 
@@ -217,7 +218,7 @@ rmarkdown::paged_table(
 
 <br>
 
-## Q2e
+## Question 6
 - Write a Python code to identify the longest and shortest duration songs (based on `duration_ms`) for each unique artist.
 
 
@@ -231,7 +232,7 @@ rmarkdown::paged_table(
 
 
 
-## Q2f
+## Question 7
 - Write a Python code to find the same song(s) appearing more than once in the same playlist.
 
 
@@ -245,7 +246,7 @@ rmarkdown::paged_table(
 
 
 
-## Q2g
+## Question 8
 - Write a Python code to filter all songs that appear in more than 100 different playlists.
 
 
@@ -255,6 +256,105 @@ rmarkdown::paged_table(
 
 ```
 
+<br><br>
+
+
+
+# Part 3. Jupyter Notebook Blogging
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/christmas_movies.jpg" width="600px">
+</p>
+
 <br>
 
 
+
+```{.python}
+holiday_movies = pd.read_csv("https://bcdanl.github.io/data/holiday_movies.csv")
+```
+
+
+- The DataFrame `holiday_movies` comes from the IMDb. 
+
+
+- The following is the DataFrame, `holiday_movies`.
+```{r, results = 'asis'}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(read_csv("https://bcdanl.github.io/data/holiday_movies.csv"),
+                       options = list(rows.print = 20,
+                                      cols.print = 6,
+                                      pages.print = 0,
+                                      paged.print = F
+                                      )) 
+```
+
+
+## Variable description
+
+- **tconst**: alphanumeric unique identifier of the title
+
+- **title_type**: the type/format of the title 
+  - (**movie**, **video**, or **tvMovie**)
+
+- **primary_title**: the more popular title / the title used by the filmmakers on promotional materials at the point of release
+
+- **simple_title**: the title in lowercase, with punctuation removed, for easier filtering and grouping
+
+- **year**: the release year of a title
+
+- **runtime_minutes**: primary runtime of the title, in minutes
+
+- **average_rating**: weighted average of all the individual user ratings on IMDb
+
+- **num_votes**: number of votes the title has received on IMDb (titles with fewer than 10 votes were not included in this dataset)
+
+<br>
+
+
+<br>
+
+
+- The following is another DataFrame `holiday_movie_genres` that is related with the DataFrame `holiday_movies`:
+
+
+```{.python}
+holiday_movie_genres = pd.read_csv("https://bcdanl.github.io/data/holiday_movies.csv")
+```
+
+
+
+```{r, results = 'asis'}
+#| eval: true
+#| echo: false
+
+
+holiday_movie_genres <- read_csv("https://bcdanl.github.io/data/holiday_movie_genres.csv")
+rmarkdown::paged_table(holiday_movie_genres,
+                       options = list(rows.print = 20,
+                                      cols.print = 6,
+                                      pages.print = 0,
+                                      paged.print = F
+                                      )) 
+```
+
+- The DataFrame `holiday_movie_genres` include up to three genres associated with the titles that appear in the DataFrame.
+
+
+## Variable description
+
+  - **tconst**: alphanumeric unique identifier of the title
+  - **genres**: genres associated with the title, one row per genre
+
+
+<br>
+
+-	Using the provided DataFrames, write a blog post about Christmas movies in a Jupyter Notebook and publish it on your online blog.
+	-	In your analysis, make use of counting, sorting, indexing, filtering, and joining techniques.
+	
+<br>
+
+  
