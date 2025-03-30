@@ -139,7 +139,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_al
 ## Definition of a Song
 - In Question 2, a **song** is defined as a combination of a `artist_name` value and a `track_name` value.
 
-- E.g., the following provides the 12 difference songs with the same `track_name`---**I Love You**:
+- E.g., the following provides the 12 distinct songs with the same `track_name`---**I Love You**:
 
 ```{r}
 #| eval: true
