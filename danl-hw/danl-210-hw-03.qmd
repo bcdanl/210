@@ -19,7 +19,7 @@ language:
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
-```{python}
+```{.python}
 import pandas as pd
 from itables import init_notebook_mode, show # for displaying an interactive DataFrame
 ```
