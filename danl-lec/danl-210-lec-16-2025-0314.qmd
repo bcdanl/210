@@ -511,6 +511,7 @@ Let's do [**Classwork 9**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-09.h
 
 # `NoSuchElementException` and `WebDriverWait` {background-color="#1c4982"}
 
+
 ## `NoSuchElementException` and `try-except` blocks
 
 ```{.python}
@@ -529,37 +530,72 @@ except NoSuchElementException:
 - This solution is to address the **inconsistency** in the DOM among the seemingly same pages.
 
 
-
-## `WebDriverWait` with `expected_conditions`
-
-:::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
-- If the element is not present/visible in the HTML DOM immediately, induce `WebDriverWait` with `expected_conditions` set to the proper method as follows:
-
-- To wait for `presence_of_element_located`:
+## Explicit wait with `time.sleep()`
 
 ```{.python}
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import time
 
 # example webpage
 url = "https://qavbox.github.io/demo/delay/"
 driver.get(url)
+
+driver.find_element(By.XPATH, '//*[@id="one"]/input').click()
+time.sleep(5)
+element = driver.find_element(By.XPATH, '//*[@id="two"]')
+element.text
 ```
 
 
+-  The `time.sleep()` method is an explicit wait to set the condition to be an exact time period to wait.
+
+- In general, a more efficient solution than `time.sleep()` would be to make `WebDriver()` wait only as long as required. 
 
 
 
-## (2)
-- If the element is not present/visible in the HTML DOM immediately, induce `WebDriverWait` with `expected_conditions` set to the proper method as follows:
+
+
+## Implicit wait with `implicitly_wait()`
+
+```{.python}
+driver.find_element(By.XPATH, '//*[@id="oneMore"]/input[1]').click()
+driver.implicitly_wait(10)  # Wait up to 10 seconds for elements to appear
+element2 = driver.find_element(By.ID, 'delay')
+element2.text
+```
+
+
+- Implicit wait with `implicitly_wait()` directs the `webdriver` to wait for a certain measure of time before throwing an exception. 
+  - Applies globally for the lifetime of the driver session.
+
+- Once this time is set, `webdriver` will wait for the element before the exception occurs.
+
+
+
+
+
+## Explicit wait with  `WebDriverWait` and `EC`
+
+:::: {.nonincremental}
+::: {.panel-tabset}
+## (0)
+
+- An explicit wait allows you to **wait for a specific condition** before continuing.
+- Uses:
+  - Wait for elements to **appear**, **be visible**, or **be clickable**.
+  - More precise than implicit waits.
+
+```{.python}
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+```
+
+## (1)
 
 - To wait for `presence_of_element_located`:
 
 ```{.python}
-element = (  # 10 is timeout in seconds when an expectation is called
-  WebDriverWait(driver, 10)
+element = ( 
+  WebDriverWait(driver, 20)  # 20 is timeout in seconds when an expectation is called
   .until(
     EC.presence_of_element_located(
       (By.XPATH, "element_xpath")
@@ -569,7 +605,7 @@ element = (  # 10 is timeout in seconds when an expectation is called
 ```
 
 
-## (3)
+## (2)
 - To wait for `visibility_of_element_located`:
 
 ```{.python}
@@ -587,7 +623,7 @@ element = (
 
 
 
-## (4)
+## (3)
 - To wait for `element_to_be_clickable`:
 
 ```{.python}
@@ -606,38 +642,6 @@ element = (
 ::: 
 ::::
 
-
-## `WebDriverWait` with `expected_conditions`
-
-```{.python}
-import time
-
-driver.find_element(By.XPATH, '//*[@id="one"]/input').click()
-time.sleep(5)
-element = driver.find_element(By.XPATH, '//*[@id="two"]')
-element.text
-```
-
-
--  The `time.sleep()` method is an explicit wait to set the condition to be an exact time period to wait.
-
-- A more efficient solution than `time.sleep()` would be to make `WebDriver()` wait only as long as required. 
-
-
-
-
-## `WebDriverWait` with `expected_conditions`
-
-```{.python}
-driver.find_element(By.XPATH, '//*[@id="oneMore"]/input[1]').click()
-driver.implicitly_wait(5)
-element2 = driver.find_element(By.ID, 'delay')
-```
-
-
-- Implicit wait with `implicitly_wait()` directs the `webdriver` to wait for a certain measure of time before throwing an exception. 
-
-- Once this time is set, `webdriver` will wait for the element before the exception occurs.
 
 
 

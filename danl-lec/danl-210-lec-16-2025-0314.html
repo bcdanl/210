@@ -899,90 +899,97 @@ Byeong-Hak Choe
 <li class="fragment">This solution is to address the <strong>inconsistency</strong> in the DOM among the seemingly same pages.</li>
 </ul>
 </section>
-<section id="webdriverwait-with-expected_conditions" class="slide level2">
-<h2><code>WebDriverWait</code> with <code>expected_conditions</code></h2>
+<section id="explicit-wait-with-time.sleep" class="slide level2">
+<h2>Explicit wait with <code>time.sleep()</code></h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">import</span> time</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># example webpage</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>url <span class="op">=</span> <span class="st">"https://qavbox.github.io/demo/delay/"</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>driver.get(url)</span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
+<span id="cb21-8"><a href="#cb21-8"></a>time.sleep(<span class="dv">5</span>)</span>
+<span id="cb21-9"><a href="#cb21-9"></a>element <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="two"]'</span>)</span>
+<span id="cb21-10"><a href="#cb21-10"></a>element.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><p>The <code>time.sleep()</code> method is an explicit wait to set the condition to be an exact time period to wait.</p></li>
+<li class="fragment"><p>In general, a more efficient solution than <code>time.sleep()</code> would be to make <code>WebDriver()</code> wait only as long as required.</p></li>
+</ul>
+</section>
+<section id="implicit-wait-with-implicitly_wait" class="slide level2">
+<h2>Implicit wait with <code>implicitly_wait()</code></h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="oneMore"]/input[1]'</span>).click()</span>
+<span id="cb22-2"><a href="#cb22-2"></a>driver.implicitly_wait(<span class="dv">10</span>)  <span class="co"># Wait up to 10 seconds for elements to appear</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>element2 <span class="op">=</span> driver.find_element(By.ID, <span class="st">'delay'</span>)</span>
+<span id="cb22-4"><a href="#cb22-4"></a>element2.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Implicit wait with <code>implicitly_wait()</code> directs the <code>webdriver</code> to wait for a certain measure of time before throwing an exception.
+<ul>
+<li class="fragment">Applies globally for the lifetime of the driver session.</li>
+</ul></li>
+<li class="fragment">Once this time is set, <code>webdriver</code> will wait for the element before the exception occurs.</li>
+</ul>
+</section>
+<section id="explicit-wait-with-webdriverwait-and-ec" class="slide level2">
+<h2>Explicit wait with <code>WebDriverWait</code> and <code>EC</code></h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">(1)</a></li><li><a href="#tabset-9-2">(2)</a></li><li><a href="#tabset-9-3">(3)</a></li><li><a href="#tabset-9-4">(4)</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">(0)</a></li><li><a href="#tabset-9-2">(1)</a></li><li><a href="#tabset-9-3">(2)</a></li><li><a href="#tabset-9-4">(3)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1">
 <ul>
-<li><p>If the element is not present/visible in the HTML DOM immediately, induce <code>WebDriverWait</code> with <code>expected_conditions</code> set to the proper method as follows:</p></li>
-<li><p>To wait for <code>presence_of_element_located</code>:</p></li>
+<li>An explicit wait allows you to <strong>wait for a specific condition</strong> before continuing.</li>
+<li>Uses:
+<ul>
+<li>Wait for elements to <strong>appear</strong>, <strong>be visible</strong>, or <strong>be clickable</strong>.</li>
+<li>More precise than implicit waits.</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span>
-<span id="cb21-3"><a href="#cb21-3"></a></span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="co"># example webpage</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a>url <span class="op">=</span> <span class="st">"https://qavbox.github.io/demo/delay/"</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a>driver.get(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-9-2">
 <ul>
-<li><p>If the element is not present/visible in the HTML DOM immediately, induce <code>WebDriverWait</code> with <code>expected_conditions</code> set to the proper method as follows:</p></li>
-<li><p>To wait for <code>presence_of_element_located</code>:</p></li>
+<li>To wait for <code>presence_of_element_located</code>:</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>element <span class="op">=</span> (  <span class="co"># 10 is timeout in seconds when an expectation is called</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>  WebDriverWait(driver, <span class="dv">10</span>)</span>
-<span id="cb22-3"><a href="#cb22-3"></a>  .until(</span>
-<span id="cb22-4"><a href="#cb22-4"></a>    EC.presence_of_element_located(</span>
-<span id="cb22-5"><a href="#cb22-5"></a>      (By.XPATH, <span class="st">"element_xpath"</span>)</span>
-<span id="cb22-6"><a href="#cb22-6"></a>      )</span>
-<span id="cb22-7"><a href="#cb22-7"></a>    )</span>
-<span id="cb22-8"><a href="#cb22-8"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>element <span class="op">=</span> ( </span>
+<span id="cb24-2"><a href="#cb24-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)  <span class="co"># 20 is timeout in seconds when an expectation is called</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  .until(</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    EC.presence_of_element_located(</span>
+<span id="cb24-5"><a href="#cb24-5"></a>      (By.XPATH, <span class="st">"element_xpath"</span>)</span>
+<span id="cb24-6"><a href="#cb24-6"></a>      )</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    )</span>
+<span id="cb24-8"><a href="#cb24-8"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-9-3">
 <ul>
 <li>To wait for <code>visibility_of_element_located</code>:</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>element <span class="op">=</span> (</span>
-<span id="cb23-2"><a href="#cb23-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a>  .until(</span>
-<span id="cb23-4"><a href="#cb23-4"></a>    EC.visibility_of_element_located(</span>
-<span id="cb23-5"><a href="#cb23-5"></a>      (By.CSS_SELECTOR, <span class="st">"element_css"</span>)</span>
-<span id="cb23-6"><a href="#cb23-6"></a>      )</span>
-<span id="cb23-7"><a href="#cb23-7"></a>  )</span>
-<span id="cb23-8"><a href="#cb23-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>element <span class="op">=</span> (</span>
+<span id="cb25-2"><a href="#cb25-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)</span>
+<span id="cb25-3"><a href="#cb25-3"></a>  .until(</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    EC.visibility_of_element_located(</span>
+<span id="cb25-5"><a href="#cb25-5"></a>      (By.CSS_SELECTOR, <span class="st">"element_css"</span>)</span>
+<span id="cb25-6"><a href="#cb25-6"></a>      )</span>
+<span id="cb25-7"><a href="#cb25-7"></a>  )</span>
+<span id="cb25-8"><a href="#cb25-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-9-4">
 <ul>
 <li>To wait for <code>element_to_be_clickable</code>:</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>element <span class="op">=</span> (</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)</span>
-<span id="cb24-3"><a href="#cb24-3"></a>  .until(</span>
-<span id="cb24-4"><a href="#cb24-4"></a>    EC.element_to_be_clickable(</span>
-<span id="cb24-5"><a href="#cb24-5"></a>      (By.LINK_TEXT, <span class="st">"element_link_text"</span>)</span>
-<span id="cb24-6"><a href="#cb24-6"></a>      )</span>
-<span id="cb24-7"><a href="#cb24-7"></a>    )</span>
-<span id="cb24-8"><a href="#cb24-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>element <span class="op">=</span> (</span>
+<span id="cb26-2"><a href="#cb26-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>  .until(</span>
+<span id="cb26-4"><a href="#cb26-4"></a>    EC.element_to_be_clickable(</span>
+<span id="cb26-5"><a href="#cb26-5"></a>      (By.LINK_TEXT, <span class="st">"element_link_text"</span>)</span>
+<span id="cb26-6"><a href="#cb26-6"></a>      )</span>
+<span id="cb26-7"><a href="#cb26-7"></a>    )</span>
+<span id="cb26-8"><a href="#cb26-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="webdriverwait-with-expected_conditions-1" class="slide level2">
-<h2><code>WebDriverWait</code> with <code>expected_conditions</code></h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">import</span> time</span>
-<span id="cb25-2"><a href="#cb25-2"></a></span>
-<span id="cb25-3"><a href="#cb25-3"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
-<span id="cb25-4"><a href="#cb25-4"></a>time.sleep(<span class="dv">5</span>)</span>
-<span id="cb25-5"><a href="#cb25-5"></a>element <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="two"]'</span>)</span>
-<span id="cb25-6"><a href="#cb25-6"></a>element.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><p>The <code>time.sleep()</code> method is an explicit wait to set the condition to be an exact time period to wait.</p></li>
-<li class="fragment"><p>A more efficient solution than <code>time.sleep()</code> would be to make <code>WebDriver()</code> wait only as long as required.</p></li>
-</ul>
-</section>
-<section id="webdriverwait-with-expected_conditions-2" class="slide level2">
-<h2><code>WebDriverWait</code> with <code>expected_conditions</code></h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="oneMore"]/input[1]'</span>).click()</span>
-<span id="cb26-2"><a href="#cb26-2"></a>driver.implicitly_wait(<span class="dv">5</span>)</span>
-<span id="cb26-3"><a href="#cb26-3"></a>element2 <span class="op">=</span> driver.find_element(By.ID, <span class="st">'delay'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><p>Implicit wait with <code>implicitly_wait()</code> directs the <code>webdriver</code> to wait for a certain measure of time before throwing an exception.</p></li>
-<li class="fragment"><p>Once this time is set, <code>webdriver</code> will wait for the element before the exception occurs.</p></li>
-</ul>
 </section>
 <section id="web-scrapping-with-python-selenium-2" class="slide level2">
 <h2>Web-scrapping with Python <code>selenium</code></h2>

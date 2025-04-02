@@ -3967,5 +3967,26 @@
     "title": "Homework 3",
     "section": "Variable description",
     "text": "Variable description\n\ntconst: alphanumeric unique identifier of the title\ngenres: genres associated with the title, one row per genre\n\n\n\nUsing the provided DataFrames, write a blog post about Christmas movies in a Jupyter Notebook and publish it on your online blog.\n\nIn your analysis, make use of counting, sorting, indexing, filtering, and joining techniques."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-16-2025-0314.html#explicit-wait-with-time.sleep",
+    "href": "danl-lec/danl-210-lec-16-2025-0314.html#explicit-wait-with-time.sleep",
+    "title": "Lecture 16",
+    "section": "Explicit wait with time.sleep()",
+    "text": "Explicit wait with time.sleep()\nimport time\n\n# example webpage\nurl = \"https://qavbox.github.io/demo/delay/\"\ndriver.get(url)\n\ndriver.find_element(By.XPATH, '//*[@id=\"one\"]/input').click()\ntime.sleep(5)\nelement = driver.find_element(By.XPATH, '//*[@id=\"two\"]')\nelement.text\n\nThe time.sleep() method is an explicit wait to set the condition to be an exact time period to wait.\nIn general, a more efficient solution than time.sleep() would be to make WebDriver() wait only as long as required."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-16-2025-0314.html#implicit-wait-with-implicitly_wait",
+    "href": "danl-lec/danl-210-lec-16-2025-0314.html#implicit-wait-with-implicitly_wait",
+    "title": "Lecture 16",
+    "section": "Implicit wait with implicitly_wait()",
+    "text": "Implicit wait with implicitly_wait()\ndriver.find_element(By.XPATH, '//*[@id=\"oneMore\"]/input[1]').click()\ndriver.implicitly_wait(10)  # Wait up to 10 seconds for elements to appear\nelement2 = driver.find_element(By.ID, 'delay')\nelement2.text\n\nImplicit wait with implicitly_wait() directs the webdriver to wait for a certain measure of time before throwing an exception.\n\nApplies globally for the lifetime of the driver session.\n\nOnce this time is set, webdriver will wait for the element before the exception occurs."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-16-2025-0314.html#explicit-wait-with-webdriverwait-and-ec",
+    "href": "danl-lec/danl-210-lec-16-2025-0314.html#explicit-wait-with-webdriverwait-and-ec",
+    "title": "Lecture 16",
+    "section": "Explicit wait with WebDriverWait and EC",
+    "text": "Explicit wait with WebDriverWait and EC\n\n\n(0)(1)(2)(3)\n\n\n\nAn explicit wait allows you to wait for a specific condition before continuing.\nUses:\n\nWait for elements to appear, be visible, or be clickable.\nMore precise than implicit waits.\n\n\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n\n\nTo wait for presence_of_element_located:\n\nelement = ( \n  WebDriverWait(driver, 20)  # 20 is timeout in seconds when an expectation is called\n  .until(\n    EC.presence_of_element_located(\n      (By.XPATH, \"element_xpath\")\n      )\n    )\n) \n\n\n\nTo wait for visibility_of_element_located:\n\nelement = (\n  WebDriverWait(driver, 20)\n  .until(\n    EC.visibility_of_element_located(\n      (By.CSS_SELECTOR, \"element_css\")\n      )\n  )\n)\n\n\n\nTo wait for element_to_be_clickable:\n\nelement = (\n  WebDriverWait(driver, 20)\n  .until(\n    EC.element_to_be_clickable(\n      (By.LINK_TEXT, \"element_link_text\")\n      )\n    )\n)"
   }
 ]
