@@ -582,7 +582,7 @@ element2.text
 - An explicit wait allows you to **wait for a specific condition** before continuing.
 - Uses:
   - Wait for elements to **appear**, **be visible**, or **be clickable**.
-  - More precise than implicit waits.
+  - More flexible and precise than implicit waits.
 
 ```{.python}
 from selenium.webdriver.support.ui import WebDriverWait
