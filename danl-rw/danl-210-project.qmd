@@ -39,7 +39,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 <br>
 
-## Project
+# Project
 
 - Publish the webpage of your data analysis project on your website, hosted on GitHub. 
   - Your data analysis should focus on the agenda, **"Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis"**. 
@@ -48,7 +48,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 <br>
 
-## Project Data
+# Project Data
 - Below is the `esg_proj_2024_data` DataFrame and the `esg_proj_2025` DataFrame.
   - `esg_proj_2024_data` DataFrame which provides a list of companies and associated information, including ESG scores.
   - `esg_proj_2025` DataFrame provides a list of companies and associated information.
@@ -82,7 +82,7 @@ esg_proj_2025 <- read_csv("https://bcdanl.github.io/data/esg_proj_2025.csv")
 DT::datatable(esg_proj_2025, rownames = F)
 ```
 
-#### Variable Description
+## Variable Description
 
 - `Symbol`: a company's ticker;
 - `Company Name`: a company name;
@@ -97,35 +97,37 @@ DT::datatable(esg_proj_2025, rownames = F)
 
 <br><br>
 
-## Project Tasks
+# Project Tasks
 
-### Data Collection
+## Data Collection
 - For data collection, consider the `esg_proj_2025` DataFrame.
 
 ### `selenium`
 - Employ the Python `selenium` library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
   - [Agilent Technologies (A)](https://finance.yahoo.com/quote/A/sustainability)
   - [Alcoa Corporation (AA)](https://finance.yahoo.com/quote/AA/sustainability)
-  
-- Ensure robust error and exception handling during data collection from the Sustainability Section on [Yahoo! Finance](https://finance.yahoo.com):
-  1. To avoid being blocked by [Yahoo! Finance](https://finance.yahoo.com) for automated browsing activities, please manage the Chrome driver by using  `time.sleep(random.uniform(x,y))` for each visit of the Sustainability Section webpage.
-  2. Some companies may lack available data on Environmental Risk Score, Social Risk Score, Governance Risk Score, and/or Controversy Level.
+
+- Tips for Collecting Data from [Yahoo! Finance](https://finance.yahoo.com)’s Sustainability Section:
+  1.	To avoid getting blocked for automated activity, use `time.sleep(random.uniform(x, y))` between page visits.
+	2.	Use explicit waits to ensure elements load before scraping.
+	3.	Be aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.
 
 
 
 ### `yfinance`
-- Utilize the `yfinance` library, an unofficial API for accessing [Yahoo! Finance](https://finance.yahoo.com) data.
-  - For each company listed in the `esg_proj` DataFrame, you should retrieve the following:
-    - Daily historical stock data spanning from January 1, 2024, to March 31, 2025.
-    - Quarterly income statements covering the period from March 31, 2024, to March 31, 2025 (encompassing five quarters).
-    - Quarterly balance sheets for the same period as the income statements.
+	-	`yfinance` is an unofficial API for retrieving financial data from [Yahoo! Finance](https://finance.yahoo.com).
+	-	For each company in the `esg_proj_2025` DataFrame, collect the following:
+	-	Daily stock prices from January 1, 2024, to March 31, 2025.
+	-	Quarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024).
+	-	Quarterly balance sheets for the same five-quarter period.
+
 
 
 
 <br>
 
 
-### Data Analysis
+## Data Analysis
 
 - Below are the key components in the data analysis webpage.
 
@@ -198,7 +200,8 @@ plt.show()
 
 <br>
 
-## Rubric for the Project
+# Rubric
+## Project Write-up
 
 | **Attribute** | **Very Deficient (1)** | **Somewhat Deficient (2)** | **Acceptable (3)** | **Very Good (4)** | **Outstanding (5)** |
 |--------------|-------------------------|-----------------------------|--------------------|-------------------|----------------------|
@@ -211,7 +214,7 @@ plt.show()
 
 <br>
 
-### Rubric for Quality of Data Collection
+## Data Collection
 
 | Evaluation | Description | Criteria |
 |-------|-------------|----------|
