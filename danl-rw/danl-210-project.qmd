@@ -50,8 +50,10 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 # Project Data
 - Below is the `esg_proj_2024_data` DataFrame and the `esg_proj_2025` DataFrame.
-  - `esg_proj_2024_data` DataFrame which provides a list of companies and associated information, including ESG scores.
-  - `esg_proj_2025` DataFrame provides a list of companies and associated information.
+
+## 1. `esg_proj_2024_data`
+
+- `esg_proj_2024_data` DataFrame which provides a list of companies and associated information, including ESG scores.
 
 ```{python}
 #| eval: false
@@ -69,6 +71,28 @@ DT::datatable(esg_proj_2024_data, rownames = F)
 
 <br>
 
+
+### Variable Description
+
+- `Symbol`: a company's ticker;
+- `Company Name`: a company name;
+- `Sector`: a sector a company belongs to;
+- `Industry`: an industry a company belongs to;
+- `Country`: a country a company belongs to;
+- `Market Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
+  - A company's market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.
+- `IPO_Year`: the year a company first went public by offering its shares to be traded on a stock exchange.
+-	`total_ESG`: The overall ESG (Environmental, Social, and Governance) risk score, summarizing the company’s exposure to ESG-related risks. A lower score indicates lower risk.
+-	`Environmental`: The company’s exposure to environmental risks (e.g., emissions, energy use, environmental policy).
+-	`Social`: The company’s exposure to social risks (e.g., labor practices, human rights, diversity, and customer relations).
+-	`Governance`: The company’s exposure to governance-related risks (e.g., board structure, executive pay, shareholder rights, transparency).
+-	`Controversy`: A score reflecting the severity of recent ESG-related controversies involving the company. Higher scores typically indicate greater or more serious controversies.
+
+<br><br>
+
+## 2. `esg_proj_2025`
+
+- `esg_proj_2025` DataFrame provides a list of companies and associated information.
 ```{python}
 #| eval: false
 esg_proj_2025 = pd.read_csv("https://bcdanl.github.io/data/")
@@ -82,17 +106,6 @@ esg_proj_2025 <- read_csv("https://bcdanl.github.io/data/esg_proj_2025.csv")
 DT::datatable(esg_proj_2025, rownames = F)
 ```
 
-## Variable Description
-
-- `Symbol`: a company's ticker;
-- `Company Name`: a company name;
-- `Sector`: a sector a company belongs to;
-- `Industry`: an industry a company belongs to;
-- `Country`: a country a company belongs to;
-- `Market Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
-  - A company's market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.
-- `IPO_Year`: the year a company first went public by offering its shares to be traded on a stock exchange.
-
 
 
 <br><br>
@@ -102,7 +115,7 @@ DT::datatable(esg_proj_2025, rownames = F)
 ## Data Collection
 - For data collection, consider the `esg_proj_2025` DataFrame.
 
-### `selenium`
+### 1. `selenium`
 - Employ the Python `selenium` library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
   - [Agilent Technologies (A)](https://finance.yahoo.com/quote/A/sustainability)
   - [Alcoa Corporation (AA)](https://finance.yahoo.com/quote/AA/sustainability)
@@ -114,12 +127,12 @@ DT::datatable(esg_proj_2025, rownames = F)
 
 
 
-### `yfinance`
-	-	`yfinance` is an unofficial API for retrieving financial data from [Yahoo! Finance](https://finance.yahoo.com).
-	-	For each company in the `esg_proj_2025` DataFrame, collect the following:
-	-	Daily stock prices from January 1, 2024, to March 31, 2025.
-	-	Quarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024).
-	-	Quarterly balance sheets for the same five-quarter period.
+### 2. `yfinance`
+-	`yfinance` is an unofficial API for retrieving financial data from [Yahoo! Finance](https://finance.yahoo.com).
+-	For each company in the `esg_proj_2025` DataFrame, collect the following:
+-	Daily stock prices from January 1, 2024, to March 31, 2025.
+-	Quarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024).
+-	Quarterly balance sheets for the same five-quarter period.
 
 
 
