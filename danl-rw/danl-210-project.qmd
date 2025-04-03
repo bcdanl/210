@@ -4,12 +4,12 @@ subtitle: DANL 210 Project
 author: Byeong-Hak Choe
 institute: SUNY Geneseo
 date: last-modified
-format: 
-  html
-    # toc: true
-    # toc-depth: 2
-    # toc-expand: true
-    # toc-title: Contents
+
+toc: true
+toc-depth: 2
+toc-expand: true
+toc-title: Contents
+
 code-fold: false
 
 execute:
@@ -41,10 +41,15 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 # Project
 
-- Publish the webpage of your data analysis project on your website, hosted on GitHub. 
-  - Your data analysis should focus on the agenda, **"Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis"**. 
-  - Use either a Jupyter Notebook or a Quarto document to present your work.
-  - The due for the project is May 16, 2025, Friday, 11:59 P.M.
+1. Collect the following data from [Yahoo! Finance](https://finance.yahoo.com):  
+   - Environmental, Social, and Governance (ESG) data  
+   - Stock market data  
+
+2. Publish a webpage presenting your data analysis project on your personal website, hosted via GitHub.  
+   - Your analysis should center around the agenda: **"Unifying ESG Metrics with Financial Analysis"**
+
+- Present your work using a **Jupyter Notebook**.
+- **Due Date:** <u>May 16, 2025 (Friday) by 11:59 P.M.</u>
 
 <br>
 
@@ -58,7 +63,8 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```{python}
 #| eval: false
 import pandas as pd
-esg_proj_2024_data = pd.read_csv("https://bcdanl.github.io/data/esg_proj_2024_data.csv")
+url_2024 = "https://bcdanl.github.io/data/esg_proj_2024_data.csv"
+esg_proj_2024_data = pd.read_csv(url_2024)
 ```
 
 ```{r}
@@ -90,12 +96,15 @@ DT::datatable(esg_proj_2024_data, rownames = F)
 
 <br><br>
 
+
 ## 2. `esg_proj_2025`
 
 - `esg_proj_2025` DataFrame provides a list of companies and associated information.
 ```{python}
 #| eval: false
-esg_proj_2025 = pd.read_csv("https://bcdanl.github.io/data/")
+
+url_2025 = "https://bcdanl.github.io/data/esg_proj_2025.csv"
+esg_proj_2025 = pd.read_csv(url_2025)
 ```
 
 ```{r}
@@ -112,13 +121,16 @@ DT::datatable(esg_proj_2025, rownames = F)
 
 # Project Tasks
 
-## Data Collection
+
+## 1. Data Collection
 - For data collection, consider the `esg_proj_2025` DataFrame.
 
 ### 1. `selenium`
-- Employ the Python `selenium` library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability Section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
-  - [Agilent Technologies (A)](https://finance.yahoo.com/quote/A/sustainability)
-  - [Alcoa Corporation (AA)](https://finance.yahoo.com/quote/AA/sustainability)
+
+- For each company in the `esg_proj_2025` DataFrame, employ the Python `selenium` library to gather **ESG Risk Ratings**, along with the **Controversy Level** from the **Sustainability** section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
+  - [Apple Inc. (AAPL)](https://finance.yahoo.com/quote/AAPL/sustainability)
+  - [Microsoft Corporation (MSFT)](https://finance.yahoo.com/quote/MSFT/sustainability)
+  
 
 - Tips for Collecting Data from [Yahoo! Finance](https://finance.yahoo.com)’s Sustainability Section:
   1.	To avoid getting blocked for automated activity, use `time.sleep(random.uniform(x, y))` between page visits.
@@ -128,8 +140,7 @@ DT::datatable(esg_proj_2025, rownames = F)
 
 
 ### 2. `yfinance`
-- `yfinance` is an unofficial API for retrieving financial data from [Yahoo! Finance](https://finance.yahoo.com).
-- For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, retrieve:
+- For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, employ the `yfinance` library to retrieve:
   - Daily stock prices from January 1, 2024, to March 31, 2025
   - Quarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024)
   - Quarterly balance sheets for the same five-quarter period
@@ -139,7 +150,7 @@ DT::datatable(esg_proj_2025, rownames = F)
 <br>
 
 
-## Data Analysis
+## 2. Data Analysis
 
 - Below are the key components in the data analysis webpage.
 
@@ -208,12 +219,85 @@ plt.show()
      - Indicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.
      - Clearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated.
 
+<br>
+
+## 🧾 Interpreting ESG Data on Yahoo Finance
+
+In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s sustainability profile and exposure to long-term environmental, social, and governance risks. Here's how to interpret each metric:
+
+
+### 🔢 **Total ESG Risk Score**
+- **What it means**: A composite score reflecting the company’s overall **exposure to ESG-related risks**.
+- **How to interpret**:  
+  - **Lower score = lower risk** → Better ESG performance.  
+  - **Higher score = higher risk** → More vulnerable to ESG-related issues.  
+  - *Example*: A company with **total_ESG = 20** is considered to have **lower ESG risk** than one with **total_ESG = 45**.
+
+
+### 🌍 **Environmental Risk Score**
+- **What it measures**: Exposure to **environmental risks** such as:
+  - Carbon emissions  
+  - Energy efficiency  
+  - Waste management  
+  - Climate change strategy  
+- **Interpretation**:
+  - Lower score → better environmental practices.
+  - Higher score → more environmental liabilities or poor sustainability measures.
+
+
+### 👥 **Social Risk Score**
+- **What it measures**: Exposure to **social risks**, including:
+  - Labor practices  
+  - Human rights  
+  - Diversity and inclusion  
+  - Customer and community relations  
+- **Interpretation**:
+  - Lower score = better social responsibility.
+  - Higher score = more risk from labor issues, PR problems, etc.
+
+
+### 🏛 **Governance Risk Score**
+- **What it measures**: Exposure to **governance-related risks**, such as:
+  - Board structure and independence  
+  - Executive compensation  
+  - Shareholder rights  
+  - Transparency and ethics  
+- **Interpretation**:
+  - Lower score suggests better corporate oversight.
+  - Higher score suggests poor governance structures.
+
+
+### 🚨 **Controversy Level**
+- **What it measures**: Reflects **recent ESG-related controversies** involving the company.
+- **Scale**: Usually ranges from **0 (no controversies)** to **5 (severe and ongoing issues)**.
+- **Interpretation**:
+  - **Low score (0–1)**: Minimal or no controversies.
+  - **High score (4–5)**: Major controversies — potential reputational or legal risks.
+  - *Note*: A company may have good ESG scores but still be flagged due to a high controversy score.
+
+
+
+### 🧠 ESG Score Summary
+
+| **Metric**        | **Good Score** | **Bad Score** |
+|-------------------|----------------|---------------|
+| **total_ESG**     | Low            | High          |
+| **Environmental** | Low            | High          |
+| **Social**        | Low            | High          |
+| **Governance**    | Low            | High          |
+| **Controversy**   | 0–1            | 4–5           |
+
+
+<br>
+
 
 
 <br>
 
 # Rubric
 ## Project Write-up
+
+<div style="font-size: 65%; max-width: 6.75in;">
 
 | **Attribute** | **Very Deficient (1)** | **Somewhat Deficient (2)** | **Acceptable (3)** | **Very Good (4)** | **Outstanding (5)** |
 |--------------|-------------------------|-----------------------------|--------------------|-------------------|----------------------|
@@ -224,9 +308,13 @@ plt.show()
 | **5. Quality of writing** | • Very poorly organized<br>• Very difficult to read<br>• Many typos and grammatical errors | • Somewhat disorganized<br>• Somewhat difficult to read<br>• Numerous typos and grammatical errors | • Mostly well organized<br>• Mostly easy to read<br>• Some typos and grammatical errors | • Well organized<br>• Easy to read<br>• Very few typos or grammatical errors | • Very well organized<br>• Very easy to read<br>• No typos or grammatical errors |
 | **6. Quality of Jupyter Notebook usage** | • Very poorly organized<br>• Many redundant warning/error messages<br>• Inappropriate code to produce outputs | • Somewhat disorganized<br>• Numerous warning/error messages<br>• Misses important code | • Mostly well organized<br>• Some warning/error messages<br>• Provides appropriate code | • Well organized<br>• Very few warning/error messages<br>• Provides advanced code | • Very well organized<br>• No warning/error messages<br>• Proposes highly advanced code |
 
+</div>
+
 <br>
 
 ## Data Collection
+
+<div style="font-size: 65%; max-width: 6.75in;">
 
 | Evaluation | Description | Criteria |
 |-------|-------------|----------|
@@ -235,4 +323,6 @@ plt.show()
 | 3 (Acceptable) | - Competently implemented<br>- Data is mostly reliable. | - Competent use of `yfinance` to retrieve most financial data accurately.<br>- Effective web scraping with `selenium`, capturing most required data from Yahoo Finance.<br>- Adequate use of `pandas` to structure data in a mostly logical format. |
 | 4 (Very Good) | - Well-implemented and organized<br>- Data is reliable. | - Advanced use of `yfinance` to reliably and accurately fetch financial data.<br>- Thorough web scraping with `selenium` that consistently captures accurate and complete data from Yahoo Finance.<br>- Skillful use of `pandas` for clear and logical data structuring. |
 | 5 (Outstanding) | - Exceptionally implemented<br>- Data is highly reliable. | - Expert use of `yfinance` to obtain comprehensive and precise financial data.<br>- Expert web scraping with `selenium`, capturing detailed and accurate data from Yahoo Finance without fail.<br>- Expert use of `pandas` to create exceptionally well-organized DataFrames that facilitate easy analysis. |
+
+</div>
 
