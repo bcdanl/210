@@ -17,10 +17,10 @@ listing:
   - id: danl-210-lec
     contents: "danl-lec/danl-210*.qmd"
     type: table
-    fields: [title, date]
+    fields: [title, subtitle, date]
     sort: 
-      - "date desc"
-      - "title desc"
+      - "date"
+      - "title"
     sort-ui: false
     filter-ui: false
     page-size: 36
@@ -28,20 +28,20 @@ listing:
   - id: danl-210-cw
     contents: "danl-cw/danl-210*.qmd"
     type: table
-    fields: [title, date]
+    fields: [title, subtitle, date]
     sort: 
-      - "date desc"
-      - "subtitle desc"
+      - "date"
+      - "title"
     sort-ui: false
     filter-ui: false
     page-size: 36
   - id: danl-210-hw
     contents: "danl-hw/danl-210*.qmd"
     type: table
-    fields: [title, date]
+    fields: [title, subtitle, date]
     sort: 
-      - "title desc"
-      - "date desc"
+      - "date"
+      - "title"
     sort-ui: false
     filter-ui: false
     page-size: 36
@@ -90,23 +90,13 @@ format:
 
 
 
-:::: {.columns}
-
-::: {.column width="45%"}
 ## $\bullet\,$ Lecture Slides :rocket:
 
 :::{#danl-210-lec}
 :::
 
 
-:::
 
-::: {.column width="10%"}
-
-:::
-
-
-::: {.column width="45%"}
 ## $\bullet\,$ Classwork  :keyboard:
 
 :::{#danl-210-cw}
@@ -116,8 +106,4 @@ format:
 
 :::{#danl-210-hw}
 :::
-
-:::
-
-::::
 

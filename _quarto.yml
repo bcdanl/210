@@ -18,48 +18,51 @@ website:
       #   href: danlml.qmd
       # - text: Research
       #   href: index-home.qmd
-      - text: Blog
-        href: blog-listing.qmd
+
+      - text: Project
+        href: danl-rw/danl-210-project.qmd
       # - text: "Teaching {{< fa external-link >}}"
       #   href: https://bcdanl.github.io
       #   target: _blank
       - text: Class Code
         href: https://github.com/bcdanl/210-code
         target: _blank
+      - text: Blog
+        href: blog-listing.qmd
       - text: " "
     
-  sidebar:
-    title: "Welcome!"
-    logo: img/geneseo-logo-squared.png
-    style: docked
-    search: false
-    # collapse-level: 0
-    # pinned: true
-    # border: true
-    # type: light
-    contents:
-      - text: <a href="./index.html"><font size ="6" ><b>Welcome! </b></font><font size ="5" color="#194493"> <i class="fa fa-sun" aria-hidden="true"></i></font></a>
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Lecture </b></font><font size ="5" color="#194493">{{< fa solid laptop >}}</font>
-        href: listing-danl-210-lec.qmd
-      - text: &nbsp;
-      # - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-      #   href: listing-danl-210-qa.qmd
-      # - text: &nbsp;
-      - text: <font size ="5" ><b>- Classwork </b></font><font size ="5" color="#194493">{{< fa solid keyboard >}}</font>
-        href: listing-danl-210-cw.qmd
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
-        href: listing-danl-210-hw.qmd
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Exam </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-        href: listing-danl-210-ex.qmd
-      - text: &nbsp;
-      - text: <font size ="5" ><b>- Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
-        href: danl-rw/danl-210-project.qmd
-      # - text: &nbsp;
-      # - text: <font size ="5" ><b>- Class Notes </b></font><font size ="5" color="#194493">{{< fa solid pencil >}}</font>
-      #   href: listing-danl-210-class.qmd
+  # sidebar:
+  #   title: "Welcome!"
+  #   logo: img/geneseo-logo-squared.png
+  #   style: docked
+  #   search: false
+  #   # collapse-level: 0
+  #   # pinned: true
+  #   # border: true
+  #   # type: light
+  #   contents:
+  #     - text: <a href="./index.html"><font size ="6" ><b>Welcome! </b></font><font size ="5" color="#194493"> <i class="fa fa-sun" aria-hidden="true"></i></font></a>
+  #     - text: &nbsp;
+  #     - text: <font size ="5" ><b>- Lecture </b></font><font size ="5" color="#194493">{{< fa solid laptop >}}</font>
+  #       href: listing-danl-210-lec.qmd
+  #     - text: &nbsp;
+  #     # - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
+  #     #   href: listing-danl-210-qa.qmd
+  #     # - text: &nbsp;
+  #     - text: <font size ="5" ><b>- Classwork </b></font><font size ="5" color="#194493">{{< fa solid keyboard >}}</font>
+  #       href: listing-danl-210-cw.qmd
+  #     - text: &nbsp;
+  #     - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
+  #       href: listing-danl-210-hw.qmd
+  #     - text: &nbsp;
+  #     - text: <font size ="5" ><b>- Exam </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
+  #       href: listing-danl-210-ex.qmd
+  #     - text: &nbsp;
+  #     - text: <font size ="5" ><b>- Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
+  #       href: danl-rw/danl-210-project.qmd
+  #     # - text: &nbsp;
+  #     # - text: <font size ="5" ><b>- Class Notes </b></font><font size ="5" color="#194493">{{< fa solid pencil >}}</font>
+  #     #   href: listing-danl-210-class.qmd
         
   page-footer: 
     border: false
