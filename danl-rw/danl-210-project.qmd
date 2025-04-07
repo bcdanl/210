@@ -136,7 +136,32 @@ DT::datatable(esg_proj_2025, rownames = F)
   1.	To avoid getting blocked for automated activity, use `time.sleep(random.uniform(x, y))` between page visits.
 	2.  Explicit waits are not required, but they are helpful for ensuring elements load before scraping.
 	3.	Be aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.
+  4.  Consider starting with the following setup for Selenium web-scrapping
+  
+```{.python}
+# Loading liabries and modules
+import time
+import random
+import pandas as pd
+import os
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
+# Setup WebDriver with options
+options = Options()
+options.add_argument("window-size=1400,1200")  # Set window size
+options.add_argument('--disable-blink-features=AutomationControlled')  # Prevent detection of automation by disabling blink features
+options.page_load_strategy = 'eager'  # Load only essential content first, skipping non-critical resources
+
+driver = webdriver.Chrome(options=options)
+
+# Setting a working directory
+wd_path = 'PATHNAME_OF_YOUR_WORKING_DIRECTORY'
+os.chdir(wd_path)
+```
 
 
 ### 2. `yfinance`
