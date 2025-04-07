@@ -322,7 +322,7 @@ rmarkdown::paged_table(read_csv("https://bcdanl.github.io/data/holiday_movies.cs
 
 
 ```{.python}
-holiday_movie_genres = pd.read_csv("https://bcdanl.github.io/data/holiday_movies.csv")
+holiday_movie_genres = pd.read_csv("https://bcdanl.github.io/data/holiday_movie_genres.csv")
 ```
 
 

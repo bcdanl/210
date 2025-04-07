@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nMarch 30, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 7, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-210-hw-02-makeup.html",
@@ -249,7 +249,7 @@
     "href": "danl-hw/danl-210-hw-03.html#variable-description-1",
     "title": "Homework 3",
     "section": "Variable description",
-    "text": "Variable description\n\ntconst: alphanumeric unique identifier of the title\ntitle_type: the type/format of the title\n\n(movie, video, or tvMovie)\n\nprimary_title: the more popular title / the title used by the filmmakers on promotional materials at the point of release\nsimple_title: the title in lowercase, with punctuation removed, for easier filtering and grouping\nyear: the release year of a title\nruntime_minutes: primary runtime of the title, in minutes\naverage_rating: weighted average of all the individual user ratings on IMDb\nnum_votes: number of votes the title has received on IMDb (titles with fewer than 10 votes were not included in this dataset)\n\n\n\n\nThe following is another DataFrame holiday_movie_genres that is related with the DataFrame holiday_movies:\n\nholiday_movie_genres = pd.read_csv(\"https://bcdanl.github.io/data/holiday_movies.csv\")\n\n\n\n  \n\n\n\nThe DataFrame holiday_movie_genres include up to three genres associated with the titles that appear in the DataFrame."
+    "text": "Variable description\n\ntconst: alphanumeric unique identifier of the title\ntitle_type: the type/format of the title\n\n(movie, video, or tvMovie)\n\nprimary_title: the more popular title / the title used by the filmmakers on promotional materials at the point of release\nsimple_title: the title in lowercase, with punctuation removed, for easier filtering and grouping\nyear: the release year of a title\nruntime_minutes: primary runtime of the title, in minutes\naverage_rating: weighted average of all the individual user ratings on IMDb\nnum_votes: number of votes the title has received on IMDb (titles with fewer than 10 votes were not included in this dataset)\n\n\n\n\nThe following is another DataFrame holiday_movie_genres that is related with the DataFrame holiday_movies:\n\nholiday_movie_genres = pd.read_csv(\"https://bcdanl.github.io/data/holiday_movie_genres.csv\")\n\n\n\n  \n\n\n\nThe DataFrame holiday_movie_genres include up to three genres associated with the titles that appear in the DataFrame."
   },
   {
     "objectID": "danl-hw/danl-210-hw-03.html#variable-description-2",
@@ -3434,7 +3434,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nMarch 30, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 7, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-cw.html",
