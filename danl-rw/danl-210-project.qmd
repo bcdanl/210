@@ -139,7 +139,10 @@ DT::datatable(esg_proj_2025, rownames = F)
   4.  Consider starting with the following setup for Selenium web-scrapping
   
 ```{.python}
-# Loading liabries and modules
+# %%
+# =============================================================================
+# Setup libraries
+# =============================================================================
 import time
 import random
 import pandas as pd
@@ -150,17 +153,24 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+# %%
+# =============================================================================
+# Setup working directory
+# =============================================================================
+wd_path = 'PATHNAME_OF_YOUR_WORKING_DIRECTORY'
+os.chdir(wd_path)
+
+
+# %%
+# =============================================================================
 # Setup WebDriver with options
+# =============================================================================
 options = Options()
 options.add_argument("window-size=1400,1200")  # Set window size
 options.add_argument('--disable-blink-features=AutomationControlled')  # Prevent detection of automation by disabling blink features
 options.page_load_strategy = 'eager'  # Load only essential content first, skipping non-critical resources
 
 driver = webdriver.Chrome(options=options)
-
-# Setting a working directory
-wd_path = 'PATHNAME_OF_YOUR_WORKING_DIRECTORY'
-os.chdir(wd_path)
 ```
 
 
