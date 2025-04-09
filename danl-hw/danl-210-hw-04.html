@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2025-03-28">
+<meta name="dcterms.date" content="2025-04-09">
 
-<title>Classwork 10 | Byeong-Hak Choe</title>
+<title>Homework 4 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,8 +100,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
-<meta property="og:title" content="Classwork 10 | Byeong-Hak Choe">
-<meta property="og:description" content="Advanced Techniques for Python selenium">
+<meta property="og:title" content="Homework 4 | Byeong-Hak Choe">
+<meta property="og:description" content="Python selenium, APIs, &amp; Pandas Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 <meta property="og:site-name" content="Home">
 </head>
@@ -157,11 +157,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#direction" id="toc-direction" class="nav-link active" data-scroll-target="#direction">Direction</a></li>
+  <li><a href="#part-1.-data-collection" id="toc-part-1.-data-collection" class="nav-link" data-scroll-target="#part-1.-data-collection">Part 1. Data Collection</a>
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  </ul></li>
+  <li><a href="#part-2.-pandas-basics" id="toc-part-2.-pandas-basics" class="nav-link" data-scroll-target="#part-2.-pandas-basics">Part 2. Pandas Basics</a>
+  <ul>
+  <li><a href="#variable-description" id="toc-variable-description" class="nav-link" data-scroll-target="#variable-description">Variable Description</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12">Question 12</a></li>
+  <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -170,8 +186,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Classwork 10</h1>
-<p class="subtitle lead">Advanced Techniques for Python <code>selenium</code></p>
+<h1 class="title">Homework 4</h1>
+<p class="subtitle lead">Python <code>selenium</code>, APIs, &amp; Pandas Basics</p>
 </div>
 
 
@@ -188,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 28, 2025</p>
+      <p class="date">April 9, 2025</p>
     </div>
   </div>
   
@@ -204,78 +220,241 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="question-1" class="level1">
-<h1>Question 1</h1>
+<section id="direction" class="level1">
+<h1>Direction</h1>
 <ul>
-<li>Use selenium to get to <a href="https://qavbox.github.io/demo/delay/" target="_blank">https://qavbox.github.io/demo/delay/</a>.
-<ol type="1">
-<li>Use selenium to click the button with “Click me!”</li>
-<li>Use selenium to locate the text element that will be displayed after 5 seconds using <code>WebDriverWait</code> with <code>EC.presence_of_element_located</code>.</li>
-</ol>
+<li><p>Please submit your <strong>Python Script</strong> for <strong>Part 1 and Part 2 in Homework 4</strong> to Brightspace with the name below:</p>
 <ul>
-<li>Its XPath is <code>'//*[@id="two"]'</code></li>
+<li><code>danl_210_hw4_LASTNAME_FIRSTNAME.py</code><br>
+( e.g., <code>danl_210_hw4_choe_byeonghak.py</code> )</li>
+</ul></li>
+<li><p>The due is April 18, 2025, 10:30 A.M.</p></li>
+<li><p>Please send Prof.&nbsp;Choe an email (<a href="mailto::bchoe@geneseo.edu">bchoe@geneseo.edu</a>) if you have any questions.</p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="part-1.-data-collection" class="level1">
+<h1>Part 1. Data Collection</h1>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<ul>
+<li><p>Go to the following webpage: <a href="https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page">https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page</a></p></li>
+<li><p>Provide a Python Selenium code to download all the MS Excel files in the webpage above.</p>
+<ul>
+<li>In your code, please code properly, so that you do not download any PDF files.</li>
 </ul></li>
 </ul>
 <p><em>Answer</em>:</p>
 <p><br><br></p>
 </section>
-<section id="question-2" class="level1">
-<h1>Question 2</h1>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>Provide a Python code to get New York City air quality surveillance data using the following API endpoint:</p>
+<p><a href="https://data.cityofnewyork.us/resource/c3uy-2p5r.json">https://data.cityofnewyork.us/resource/c3uy-2p5r.json</a></p>
+<p><em>Answer</em>:</p>
+<p><br><br><br></p>
+</section>
+</section>
+<section id="part-2.-pandas-basics" class="level1">
+<h1>Part 2. Pandas Basics</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The following describes the context of DataFrame in Part 2.</p>
+<p>Open Payments, which is managed by the Centers for Medicare &amp; Medicaid Services (CMS), is a national disclosure program created by the Affordable Care Act (ACA). The program promotes transparency and accountability by helping consumers understand the financial relationships between pharmaceutical and medical device industries, physicians, and non-physician practitioners (NPP). Non-physician practitioners (NPPs) collectively refers to physician assistants, nurse practitioners, clinical nurse specialists, certified registered nurse anesthetists/anesthesiologists and certified nurse-midwives provider types.</p>
+<p>These financial relationships may include consulting fees, research grants, travel reimbursements, and payments made from the industry to medical practitioners. It is important to note that financial ties between the health care industry and health care providers do not necessarily indicate an improper relationship.</p>
 <ul>
-<li>Use selenium to download all the Excel files in the following Census page:
+<li>Let us consider the CMS’ Open Payments data for selected cities in <strong>New York state</strong> in <strong>year 2022</strong>, the <code>cms_ny_2022</code> DataFrame:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cms_ny_2022 <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/cms-2022-cities-all.zip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="variable-description" class="level2">
+<h2 class="anchored" data-anchor-id="variable-description">Variable Description</h2>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 25%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">type</th>
+<th style="text-align: left;">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>Record_ID</code></td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Unique identifier for a transaction between a manufacturer and a physician or an NPP</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Month</code></td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Month</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Day</code></td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Amount_of_Payment</code></td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">US dollar amount of payment to a physician or NPP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Product</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">An indicator showing if the product is a <code>Drug</code>, <code>Device</code>, <code>Biological</code>, or <code>Medical Supply</code>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Product_Manufacturer</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">Manufacturer making the payment to a physician/NPP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>NPI</code></td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">National Provider Identifier, a unique identification number for a physician/NPP receiving the payment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Physician_or_NPP</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">An indicator showing if the recipient of the payment is a physician or non-physician practitioner (NPP)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>First_Name</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">First name of physician/NPP in New York state</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Last_Name</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">Last name of physician/NPP in New York state</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>City</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">City of the physician/NPP in New York state</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Type</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">Type of physician/NPP (e.g., <code>Medical Doctor</code>, <code>Doctor of Optometry</code>, <code>Nurse Practitioner</code>, <code>Physician Assistant</code>, and more)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Taxonomy</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">Standardized taxonomy of medical service provider (e.g., <code>Allopathic &amp; Osteopathic Physicians</code>, <code>Chiropractic Providers</code>, <code>Dental Providers</code>, <code>Physician Assistants &amp; Advanced Practice Nursing Providers</code>, and more)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Specialty</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">A specialty chosen within the standardized taxonomy (e.g., <code>Psychiatry &amp; Neurology</code>, <code>Physician Assistant</code>, <code>Chiropractor</code>, <code>Dentist</code>, <code>Family Medicine</code>, <code>Neurological Surgery</code>, and more)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Specialty_Detail</code></td>
+<td style="text-align: left;">chracter</td>
+<td style="text-align: left;">Detail in the specialty if any (e.g., <code>Family</code>, <code>Gastroenterology</code>, <code>Cardiovascular Disease</code>, <code>Neurology</code>, <code>Psychiatry</code>, and more)</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><a href="https://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/" target="_blank">https://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/</a></li>
+<li>Note that each physician/NPP corresponds to one single <code>Specialty_Detail</code> value.</li>
+</ul>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<ul>
+<li>Write a Python code to convert the <strong>string</strong> type <code>Physician_or_NPP</code> variable into the <strong>category</strong> type variable.</li>
+</ul>
+</section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<ul>
+<li>Write a Python code to replace the <strong>NA</strong> value of the <code>Specialty_Detail</code> variable with the value of the <code>Specialty</code> variable.
+<ul>
+<li>For example, the following shows that
+<ul>
+<li>All the <strong>NA</strong> values in the <code>Specialty_Detail</code> variable for the value of <strong>Physician Assistant</strong> in the <code>Specialty</code> variable are replaced with <strong>Physician Assistant</strong>:</li>
+</ul></li>
 </ul></li>
 </ul>
-<p><em>Answer</em>:</p>
-<p><br><br></p>
 </section>
-<section id="question-3" class="level1">
-<h1>Question 3</h1>
-<ul>
-<li>Provide your Python Selenium code to scrape the following information for each book in <a href="http://books.toscrape.com" target="_blank">this website</a>.
-<ul>
-<li><code>category</code>: category of a book</li>
-<li><code>title</code>: title of a book</li>
-<li><code>price</code>: price of a book</li>
-</ul></li>
-<li>Find the most expensive book</li>
-<li>Find the category with the most number of books.</li>
-</ul>
-<p><em>Answer</em>:</p>
-<p><br><br></p>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>Write a Python code to count the number of transactions in which the payment amount (i.e., <code>Amount_of_Payment</code>) falls in the top 10% of all payments in the DataFrame.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cms_ny_2022[_______________________________________________].shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="question-4" class="level1">
-<h1>Question 4</h1>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>Write a Python code to identify the city or cities with the highest number of non-missing values in the <code>Specialty_Detail</code> variable of the <code>cms_ny_2022</code> DataFrame.</p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <ul>
-<li>Use a for loop to collect historical stock price data for AAPL, MSFT, and NVDA, store it as a DataFrame, and export it as a CSV file.
+<li>Write a Python code to count the number of occurrences of each unique value in <code>Specialty_Detail</code> for each unique value in <code>Taxonomy</code>.
 <ul>
-<li>Add a variable of <code>Symbol</code> to the resulting DataFrame.</li>
-<li>Date ranges from 2024-01-01 to 2025-03-31.</li>
+<li>For example, the following displays the number of occurrences of each unique in <code>Specialty_Detail</code> for the <strong>Dental Providers</strong> <code>Taxonomy</code> value.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="op">=</span> [<span class="st">'AAPL'</span>, <span class="st">'MSFT'</span>, <span class="st">'NVDA'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Answer</em>:</p>
-<p><br><br></p>
 </section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
-<p><font size="5">Welcome to our Classwork 10 Discussion Board! 👋 </font></p>
-<p>This space is designed for you to engage with your classmates about the material covered in Classwork 10.</p>
-<p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
-<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 10 materials or need clarification on any points, don’t hesitate to ask here.</p>
-<p>Let’s collaborate and learn from each other!</p>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<ul>
+<li>Write a Python code to count the number of unique <code>Specialty_Detail</code> values for the value <strong>“Dental Providers”</strong> in <code>Taxonomy</code>.</li>
+</ul>
+</section>
+<section id="question-9" class="level2">
+<h2 class="anchored" data-anchor-id="question-9">Question 9</h2>
+<ul>
+<li>Write a Python code (1) to count the number of missing values and (2) to calculate mean, standard deviation, minimum, first quartile, median, third quartile, and maximum of the <code>Amount_of_Payment</code> variable for the value <strong>Dermatology</strong> in the <code>Specialty</code> variable.</li>
+</ul>
+</section>
+<section id="question-10" class="level2">
+<h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
+<ul>
+<li>Write a Python code to replicate the following DataFrame, which calculate (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.
+<ul>
+<li>Ensure that the sum of the percentages of physicians and NPPs within each city is 100.</li>
+<li>Ensure that the observations are sorted by <code>Total_Count</code> and <code>City</code> in descending and ascending orders, respectively.</li>
+</ul></li>
+</ul>
+</section>
+<section id="question-11" class="level2">
+<h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
+<ul>
+<li>Write a Python code to calculate:
+<ul>
+<li>The total <code>Amount_of_Payment</code> the <code>Product_Manufacturer</code> <strong>AbbVie Inc.</strong> paid to physicians and non-physician practitioners (NPPs) in <code>Cities</code> of <strong>Rochester</strong>, <strong>Buffalo</strong>, and <strong>Syracuse</strong>.</li>
+<li>How many times the <code>Product_Manufacturer</code> <strong>AbbVie Inc.</strong> paid to physicians and non-physician practitioners (NPPs) in in <code>Cities</code> of <strong>Rochester</strong>, <strong>Buffalo</strong>, and <strong>Syracuse</strong>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="question-12" class="level2">
+<h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
+<ul>
+<li>Consider the following two DataFrames, <code>cms_ny_2022_npi</code> and <code>cms_ny_2022_records</code>:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cms_ny_2022_npi <span class="op">&lt;-</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/cms-2022-cities-npi.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>cms_ny_2022_npi</code>: This DataFrame is created from <code>cms_ny_2022</code> by selecting only the columns <code>NPI</code>, <code>Physician_or_NPP</code>, <code>First_Name</code>, <code>Last_Name</code>, <code>City</code>, <code>Type</code>, <code>Taxonomy</code>, <code>Specialty</code>, and <code>Specialty_Detail.</code></li>
+<li>In addition, it contains only unique observations (i.e., there are no duplicate rows).</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cms_ny_2022_records <span class="op">&lt;-</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/cms-2022-cities-records.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><code>cms_ny_2022_records</code>: This DataFrame is derived from <code>cms_ny_2022</code> by including every observation but only retaining the columns <code>Record_ID</code>, <code>Month</code>, <code>Day</code>, <code>Amount_of_Payment</code>, <code>Product</code>, <code>Product_Manufacturer</code>, and <code>NPI</code>.</p></li>
+<li><p>Write a Python code to create the <code>cms_ny_2022</code> DataFrame by using the <code>cms_ny_2022_npi</code> and <code>cms_ny_2022_records</code> DataFrames.</p></li>
+</ul>
+</section>
+<section id="question-13" class="level2">
+<h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<ul>
+<li>Write a Python code to create the following DataFrame, <code>City_Physician_or_NPP</code>, which counts the number of physicians and the non-physician practitioners (NPPs) in each city.</li>
+</ul>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -640,8 +819,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<script src="https://giscus.app/client.js" data-repo="bcdanl/210" data-repo-id="R_kgDONtZLMA" data-category="General" data-category-id="DIC_kwDONtZLMM4CmNQM" data-mapping="title" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">

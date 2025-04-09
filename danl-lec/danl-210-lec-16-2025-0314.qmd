@@ -642,8 +642,67 @@ element = (
 ::: 
 ::::
 
+# Selenium with `pd.read_html()` for Table Scrapping {background-color="#1c4982"}
+
+## Selenium with `pd.read_html()` for Table Scrapping
+- Yahoo! Finance has probably renewed its database system, so that `yfinance` does not work now.
+
+- [Yahoo! Finance](https://finance.yahoo.com/quote/NVDA/history/?p=NVDA&period1=1672531200&period2=1743379200) uses web table to display historical data about a company's stock.
+
+- Let's use Selenium with `pd.read_html()` to collect stock price data!
 
 
+## Selenium with `pd.read_html()` for Yahoo! Finance Data
+
+::: {.panel-tabset}
+## Setup
+```{.python}
+import pandas as pd
+import os, time, random
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from io import StringIO
+
+# Set working directory
+os.chdir('/Users/bchoe/.../lecture-code/')
+
+# Launch Chrome browser
+driver = webdriver.Chrome()
+
+```
+
+- `StringIO` turns that string into a file-like object, which is what `pd.read_json()` expects moving forward.
+
+
+## URL
+
+```{.python}
+
+# Load content page
+url = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1743379200'
+driver.get(url)
+time.sleep(random.uniform(3, 5))  # wait for table to load
+```
+
+- `period1` and `period2` values for Yahoo Finance URLs uses **Unix timestamps** (number of seconds since January 1, 1970), 
+  - 1672531200 → 2023-01-01
+  - 1743379200 → 2025-03-31
+
+## `get_attribute("outerHTML")`
+
+```{.python}
+# Extract the <table> HTML element
+table_html = driver.find_element(By.TAG_NAME, 'table').get_attribute("outerHTML")
+
+# Parse the HTML table into a pandas DataFrame
+df = pd.read_html(StringIO(table_html))[0]
+```
+
+- `.get_attribute("outerHTML")`: gets the entire HTML from the WebElement.
+
+- `pd.read_html()` parses HTML tables from a given URL or from raw HTML content, and returns a list of DataFrames.
+
+:::
 
 ## Web-scrapping with Python `selenium`
 

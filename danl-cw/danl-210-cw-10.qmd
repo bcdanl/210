@@ -64,8 +64,26 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/giphy-hacking-start.g
 
 ```
 
+<br><br>
+
+# Question 4
+- Use a for loop to collect historical stock price data for AAPL, MSFT, and NVDA, store it as a DataFrame, and export it as a CSV file.
+  - Add a variable of `Symbol` to the resulting DataFrame.
+  - Date ranges from 2024-01-01 to 2025-03-31.
+
+```{.python}
+symbols = ['AAPL', 'MSFT', 'NVDA']
+```
+
+*Answer*:
+```{python}
+
+```
+
 
 <br><br>
+
+
 
 # Discussion
 

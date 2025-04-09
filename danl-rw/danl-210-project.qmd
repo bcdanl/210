@@ -125,7 +125,7 @@ DT::datatable(esg_proj_2025, rownames = F)
 ## 1. Data Collection
 - For data collection, consider the `esg_proj_2025` DataFrame.
 
-### 1. `selenium`
+### 1. ESG Data
 
 - For each company in the `esg_proj_2025` DataFrame, employ the Python `selenium` library to gather **ESG Risk Ratings**, along with the **Controversy Level** from the **Sustainability** section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
   - [Apple Inc. (AAPL)](https://finance.yahoo.com/quote/AAPL/sustainability)
@@ -174,8 +174,8 @@ driver = webdriver.Chrome(options=options)
 ```
 
 
-### 2. `yfinance`
-- For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, employ the `yfinance` library to retrieve:
+### 2. Historical Stock Data
+- For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, employ the `selenium` library to retrieve:
   - Daily stock prices from January 1, 2024, to March 31, 2025
   - Quarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024)
   - Quarterly balance sheets for the same five-quarter period
@@ -195,7 +195,7 @@ driver = webdriver.Chrome(options=options)
      - **Background**: Provide context for the research questions, explaining why they are significant, relevant, or interesting.
      - **Statement of the Problem**: Clearly articulate the specific problem or issue the project will address.
 
-  3. **Data Collection**: Use a Python script (`*.py`) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python `yfinance` and `selenium`.
+  3. **Data Collection**: Use a Python script (`*.py`) to write the code and the comment on how to retrieve ESG data and historical stock data using Python `selenium`.
      - Do NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.
 
   4. **Descriptive Statistics**

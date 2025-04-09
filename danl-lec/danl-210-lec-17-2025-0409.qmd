@@ -1,0 +1,403 @@
+---
+title: Lecture 17
+subtitle: "Data Collection with APIs"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-04-09
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+## Spyder IDE
+### Keyboard Shortcuts
+  
+- To set your keyboard shortcuts,
+  - Preferences > Keyboard Shortcuts > Search "run" and/or "comment"
+  - Set the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; (4) blockcomment; and (5) unblockcomment
+  
+- Default shortcuts
+  - Run selection (a current line): F9
+  - Run cell: Ctrl + Enter
+    - `# %%` defines a coding cell
+  - Comment (`#`): Ctrl/command + 1
+  - Block-comment: Ctrl/command + 4
+  - Unblock-comment: Ctrl/command + 5
+
+
+
+
+
+
+# API {background-color="#1c4982"}
+
+
+
+## API
+### Key Concepts
+::: {.incremental}
+
+- API stands for **Application Programming Interface**.
+  - It enables data transmission between **client** and **server**.
+
+
+- **Methods**: The "verbs" that clients use to talk with a server.
+  - The main one that we’ll be using is `GET` (i.e. ask a server to retrieve information). Other common methods are `POST`, `PUT` and `DELETE`.
+  
+  
+- **Requests**: What the client asks of the server.
+- **Response**: The server’s response, which includes 
+  - Status Code (e.g. "404" if not found, or "200" if successful);
+  - Header (i.e. meta-information about the response); 
+  - Body (i.e the actual content that we’re interested in.
+
+:::
+
+
+## API
+### API endpoints
+::: {.incremental}
+- In the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).
+  - These URLs are known as an **API endpoints**.
+
+- Navigate your browser to an API endpoint and you’ll just see a load of the following format of texts:
+  - JSON (JavaScript Object Notation) or 
+  - XML (Extensible Markup Language).
+
+- We can add a **JSONView**, a browser extension that renders JSON output nicely in Chrome or Firefox.
+  - [https://jsonview.com/](https://jsonview.com/)
+
+:::
+
+## API
+### NYC Open Data
+
+::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+
+- **NYC Open Data** ([https://opendata.cityofnewyork.us](https://opendata.cityofnewyork.us)) is free
+public data published by NYC agencies and other partners.
+
+
+- Many metropolitan cities have the open data websites too:
+  - [https://data.lacity.org](https://data.lacity.org)
+  - [https://opendata.dc.gov](https://opendata.dc.gov)
+  - [https://data.cityofchicago.org](https://data.cityofchicago.org)
+
+
+
+## (2)
+- Let’s get the NYC's Payroll Data.
+  1. Open the web page
+[https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e) in your
+browser.
+  2. Click the "Actions", and then "API"
+  3. Copy the API endpoint that appears in the popup box.
+
+
+
+
+## (3)
+```{.python}
+import requests
+import pandas as pd
+from io import StringIO
+
+endpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint
+response_API = requests.get(endpoint)
+data = StringIO(response_API.text)
+df = pd.read_json(data)
+```
+
+- The `request.get()` method sends a `GET` request to the specified URL.
+
+- `pd.read_json()` automatically convert JSON data into DataFrame. 
+  - JSON objects have the same format as Python dictionaries.
+
+:::
+:::
+
+
+## API
+### Federal Reserve Economic Data (FRED)
+
+::: {.nonincremental}
+::: {.panel-tabset}
+## (1)
+- Most API interfaces will only let you access and download data after you have registered an API key with them.
+
+- Let’s download economic data from the FRED [https://fred.stlouisfed.org](https://fred.stlouisfed.org) using its API.
+
+- You need to create an account [https://fredaccount.stlouisfed.org/login/](https://fredaccount.stlouisfed.org/login/) to get an API key for your FRED account.
+
+
+
+## (2)
+- As with all APIs, a good place to start is the FRED API developer docs [https://fred.stlouisfed.org/docs/api/fred/](https://fred.stlouisfed.org/docs/api/fred/).
+
+- We are interested in *series/observations* [https://fred.stlouisfed.org/docs/api/fred/series_observations.html](https://fred.stlouisfed.org/docs/api/fred/series_observations.html)
+  
+- The parameters that we will use are `api_key`, `file_type`, and `series_id`.
+
+- Replace "YOUR_API_KEY" with your actual API key in the following web address: [https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json](https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json)
+
+
+
+
+## (3)
+- We’re going to go through the `requests`, `json`, and `pandas` libraries.
+  - `requests` comes with a variety of features that allow us to interact more flexibly and securely with web APIs.
+  
+```{.python}
+import requests
+import json
+import pandas as pd
+params = {
+  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key
+  'file_type': 'json',
+  'series_id': 'GDPC1'   ## ID for US real GDP
+}
+endpoint = "series/observations"
+url = "https://api.stlouisfed.org/"
+response = requests.get(url + "fred/" + endpoint, params = params)
+```
+
+
+
+## (4)
+- To actually extract the content (i.e. data) from of the response, we’ll use the `.content.decode('utf-8')`.
+- We can convert JSON into a Python dictionary object using then `json.loads()` function.
+  
+```{.python}
+# Extract the response content (i.e. text).
+content = response.content.decode('utf-8')
+
+# Convert JSON response to Python dictionary.
+fred = json.loads(content) 
+
+# Extract the "observations" list element.
+observations = pd.DataFrame( fred['observations'] )
+observations = observations.astype({'value': float})
+```
+  
+
+:::
+:::
+
+
+
+
+# Using the New York Times API {background-color="#1c4982"}
+
+
+## Using the New York Times API
+::: {.panel-tabset}
+## Step 1: Sign Up and Sign In
+
+- Sign up at [NYTimes Developer Portal](https://developer.nytimes.com/) 
+- Verify your NYT Developer account via email you use. 
+- Sign in.
+
+
+## Step 2: Register apps
+
+1. Select My Apps from the user drop-down at the navigation bar.
+2. Click + New App to create a new app.
+3. Enter a name and description for the app in the New App dialog.
+4. Click Create.
+5. Click the APIs tab.
+6. Click the access toggle to enable or disable access to an API product from the app.
+
+- Follow steps in (Get Started)[https://developer.nytimes.com/get-started]
+
+
+## Step 3: Access the API keys
+
+1. Select My Apps from th user drop-down.
+2. Click the app in the list.
+3. View the API key on the App Details tab.
+4. Confirm that the status of the API key is Approved.
+
+
+## Step 4: Collect Data with `pynytimes`
+
+- While [NYTimes Developer Portal APIs](https://developer.nytimes.com/apis) provides API documentation, it is time consuming to go through the documentation.
+
+- There is a Python library for more user-friendly NYTimes API, called `pynytimes`: 
+
+```{.python}
+pip install pynytimes
+```
+
+- To get started, check out [Introduction to pynytimes](https://pynytimes.michadenheijer.com).
+
+
+:::
+
+
+# Hidden API {background-color="#1c4982"}
+
+
+## Hidden API
+- Most industry-scale websites display data from their database servers.
+  - Many of them do not provide official APIs to retrieve data.
+
+- Sometimes, it is possible to find their hidden APIs to retrieve data!
+
+- Examples:
+  - [Premier League Stats](https://www.premierleague.com/stats)
+  - [Nordstrom](https://www.nordstrom.com)
+
+
+
+## Hidden API
+### How can we find a hidden API?
+- On a web-browser (FireFox is recommended)
+  1. F12 -> Network -> XHR (**X**ML**H**ttp**R**equest)
+  2. Refresh the webpage that loads data
+  3. Find `json` type response that seems to have data
+  4. Right-click that response -> Copy as cURL
+
+- On an API tool such as [Insomnia](https://insomnia.rest)
+  5. Make a new request 
+  6. Paste the cURL to the address bar, and then click "Send" button.
+  7. Click the right most part of "New Request" (default name)
+  8. Click "</> Generate Code"; Choose "Python" and "Requests"
+  9. Copy a Python `requests` code, and run it on your IDE.
+
+
+
+
+## FYI on Web-Data Collection Approaches
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/data-collection_decision_tree.png" width="900px">
+</p>
+
+
+
+
+## Data Collection with APIs
+
+
+Let's do [**Classwork 11**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-11.html)!
+
+
+
+
+<!-- # Unofficial API: Using Alpha Vantage API for Stock Market Data -->
+
+<!-- ## Alpha Vantage Overview -->
+
+<!-- - Provides free stock, forex, cryptocurrency, and ETF data -->
+<!-- - Useful for historical and real-time data retrieval -->
+<!-- - Requires free API key registration at [Alpha Vantage](https://www.alphavantage.co/) -->
+<!--   - It  -->
+
+
+<!-- ## Installation -->
+
+<!-- Install required libraries: -->
+
+<!-- ```{.python} -->
+<!-- pip install alpha_vantage pandas -->
+<!-- ``` -->
+
+
+
+<!-- ## Retrieve Stock Data into DataFrame -->
+
+<!-- ```{.python} -->
+<!-- import pandas as pd -->
+<!-- from alpha_vantage.timeseries import TimeSeries -->
+
+<!-- # Initialize with your API key -->
+<!-- ts = TimeSeries(key='YOUR_API_KEY', output_format='pandas') -->
+
+<!-- # Retrieve daily stock data (e.g., Apple) -->
+<!-- # Set outputsize to 'compact' for latest 100 data points or 'full' for full historical data -->
+<!-- df, meta_data = ts.get_daily(symbol='AAPL', outputsize='compact') -->
+<!-- ``` -->
+
+
+<!-- ## Quick Tips on Date Information -->
+<!-- - `ts.get_daily()` provide **date** as an index of DataFrame. -->
+<!--   - We can convert this meaningful index to a `date` variable using `reset_index(names = 'date')`: -->
+
+<!-- ```{.python} -->
+<!-- df.reset_index(names='date') -->
+<!-- ``` -->
+
+
+
+<!-- ## Loop Over Multiple Companies! -->
+
+<!-- ```{.python} -->
+<!-- symbols = ['AAPL', 'MSFT', 'GOOGL'] -->
+<!-- df_list = [] -->
+
+<!-- for symbol in symbols: -->
+<!--     df, meta_data = ts.get_daily(symbol=symbol, outputsize='full') -->
+<!--     df.columns = ['open', 'high', 'low', 'close', 'volume'] -->
+<!--     df = df.reset_index(names='date') -->
+<!--     df['company'] = symbol     -->
+<!--     df_list.append(df) -->
+
+<!-- # Combine into a single long-form DataFrame -->
+<!-- df_all = pd.concat(df_list, ignore_index=True) -->
+
+<!-- # Change column positions -->
+<!-- df_all = df_all[ ['company', 'date', 'open', 'high', 'low', 'close', 'volume'] ] -->
+<!-- ``` -->
+
+
+

@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 8, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 8, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 9, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-210-hw-02-makeup.html",
@@ -522,7 +522,7 @@
     "href": "danl-cw/danl-210-cw-10.html",
     "title": "Classwork 10",
     "section": "",
-    "text": "Question 1\n\nUse selenium to get to https://qavbox.github.io/demo/delay/.\n\nUse selenium to click the button with “Click me!”\nUse selenium to locate the text element that will be displayed after 5 seconds using WebDriverWait with EC.presence_of_element_located.\n\n\nIts XPath is '//*[@id=\"two\"]'\n\n\nAnswer:\n\n\n\nQuestion 2\n\nUse selenium to download all the Excel files in the following Census page:\n\nhttps://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/\n\n\nAnswer:\n\n\n\nQuestion 3\n\nProvide your Python Selenium code to scrape the following information for each book in this website.\n\ncategory: category of a book\ntitle: title of a book\nprice: price of a book\n\nFind the most expensive book\nFind the category with the most number of books.\n\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 10 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 10.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 10 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
+    "text": "Question 1\n\nUse selenium to get to https://qavbox.github.io/demo/delay/.\n\nUse selenium to click the button with “Click me!”\nUse selenium to locate the text element that will be displayed after 5 seconds using WebDriverWait with EC.presence_of_element_located.\n\n\nIts XPath is '//*[@id=\"two\"]'\n\n\nAnswer:\n\n\n\nQuestion 2\n\nUse selenium to download all the Excel files in the following Census page:\n\nhttps://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/\n\n\nAnswer:\n\n\n\nQuestion 3\n\nProvide your Python Selenium code to scrape the following information for each book in this website.\n\ncategory: category of a book\ntitle: title of a book\nprice: price of a book\n\nFind the most expensive book\nFind the category with the most number of books.\n\nAnswer:\n\n\n\nQuestion 4\n\nUse a for loop to collect historical stock price data for AAPL, MSFT, and NVDA, store it as a DataFrame, and export it as a CSV file.\n\nAdd a variable of Symbol to the resulting DataFrame.\nDate ranges from 2024-01-01 to 2025-03-31.\n\n\nsymbols = ['AAPL', 'MSFT', 'NVDA']\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 10 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 10.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 10 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-05.html",
@@ -592,14 +592,14 @@
     "href": "danl-rw/danl-210-project.html#data-collection",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "1. Data Collection",
-    "text": "1. Data Collection\n\nFor data collection, consider the esg_proj_2025 DataFrame.\n\n\n1. selenium\n\nFor each company in the esg_proj_2025 DataFrame, employ the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability section of each company’s webpage on Yahoo! Finance, such as:\n\nApple Inc. (AAPL)\nMicrosoft Corporation (MSFT)\n\nTips for Collecting Data from Yahoo! Finance’s Sustainability Section:\n\nTo avoid getting blocked for automated activity, use time.sleep(random.uniform(x, y)) between page visits.\nExplicit waits are not required, but they are helpful for ensuring elements load before scraping.\nBe aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.\nConsider starting with the following setup for Selenium web-scrapping\n\n\n# %%\n# =============================================================================\n# Setup libraries\n# =============================================================================\nimport time\nimport random\nimport pandas as pd\nimport os\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.chrome.options import Options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# %%\n# =============================================================================\n# Setup working directory\n# =============================================================================\nwd_path = 'PATHNAME_OF_YOUR_WORKING_DIRECTORY'\nos.chdir(wd_path)\n\n\n# %%\n# =============================================================================\n# Setup WebDriver with options\n# =============================================================================\noptions = Options()\noptions.add_argument(\"window-size=1400,1200\")  # Set window size\noptions.add_argument('--disable-blink-features=AutomationControlled')  # Prevent detection of automation by disabling blink features\noptions.page_load_strategy = 'eager'  # Load only essential content first, skipping non-critical resources\n\ndriver = webdriver.Chrome(options=options)\n\n\n2. yfinance\n\nFor each company found in both the esg_proj_2024_data and esg_proj_2025 DataFrames, employ the yfinance library to retrieve:\n\nDaily stock prices from January 1, 2024, to March 31, 2025\nQuarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024)\nQuarterly balance sheets for the same five-quarter period"
+    "text": "1. Data Collection\n\nFor data collection, consider the esg_proj_2025 DataFrame.\n\n\n1. ESG Data\n\nFor each company in the esg_proj_2025 DataFrame, employ the Python selenium library to gather ESG Risk Ratings, along with the Controversy Level from the Sustainability section of each company’s webpage on Yahoo! Finance, such as:\n\nApple Inc. (AAPL)\nMicrosoft Corporation (MSFT)\n\nTips for Collecting Data from Yahoo! Finance’s Sustainability Section:\n\nTo avoid getting blocked for automated activity, use time.sleep(random.uniform(x, y)) between page visits.\nExplicit waits are not required, but they are helpful for ensuring elements load before scraping.\nBe aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.\nConsider starting with the following setup for Selenium web-scrapping\n\n\n# %%\n# =============================================================================\n# Setup libraries\n# =============================================================================\nimport time\nimport random\nimport pandas as pd\nimport os\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.chrome.options import Options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# %%\n# =============================================================================\n# Setup working directory\n# =============================================================================\nwd_path = 'PATHNAME_OF_YOUR_WORKING_DIRECTORY'\nos.chdir(wd_path)\n\n\n# %%\n# =============================================================================\n# Setup WebDriver with options\n# =============================================================================\noptions = Options()\noptions.add_argument(\"window-size=1400,1200\")  # Set window size\noptions.add_argument('--disable-blink-features=AutomationControlled')  # Prevent detection of automation by disabling blink features\noptions.page_load_strategy = 'eager'  # Load only essential content first, skipping non-critical resources\n\ndriver = webdriver.Chrome(options=options)\n\n\n2. Historical Stock Data\n\nFor each company found in both the esg_proj_2024_data and esg_proj_2025 DataFrames, employ the selenium library to retrieve:\n\nDaily stock prices from January 1, 2024, to March 31, 2025\nQuarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024)\nQuarterly balance sheets for the same five-quarter period"
   },
   {
     "objectID": "danl-rw/danl-210-project.html#data-analysis",
     "href": "danl-rw/danl-210-project.html#data-analysis",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "2. Data Analysis",
-    "text": "2. Data Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve financial, accounting, and ESG data using Python yfinance and selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nExplore the trend of ESG scores from 2024 to 2025.\nAdditionally, list the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
+    "text": "2. Data Analysis\n\nBelow are the key components in the data analysis webpage.\n\nTitle: A clear and concise title that gives an idea of the project topics.\nIntroduction:\n\nBackground: Provide context for the research questions, explaining why they are significant, relevant, or interesting.\nStatement of the Problem: Clearly articulate the specific problem or issue the project will address.\n\nData Collection: Use a Python script (*.py) to write the code and the comment on how to retrieve ESG data and historical stock data using Python selenium.\n\nDo NOT provide your code for data collection in your webpage. You should submit your Python script for data collection to Brightspace.\n\nDescriptive Statistics\n\n\nProvide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data\nProvide correlation heat maps using corr() and seaborn.heatmap(). Below provides the Python code for creating a correlation heatmap.\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Sample DataFrame with varied correlations\ndata = {\n    'Revenue': [100, 200, 300, 400, 500],  \n    'Profit': [20, 40, 60, 80, 100],       \n    'n_Employee': [50, 45, 40, 35, 30], \n    'n_Customer': [10, 11, 12, 13, 14]  \n}\n\n# Create a DataFrame from the dictionary\ndf = pd.DataFrame(data)\n\n# Calculate the correlation matrix of the DataFrame\ncorr = df.corr()\n\n# Set up the matplotlib figure size\nplt.figure(figsize=(8, 6))\n\n# Generate a heatmap in seaborn:\n# - 'corr' is the correlation matrix\n# - 'annot=True' enables annotations inside the squares with the correlation values\n# - 'cmap=\"coolwarm\"' assigns a color map from cool to warm (blue to red)\n# - 'fmt=\".2f\"' formats the annotations to two decimal places\n# - 'linewidths=.5' adds lines between each cell\nsns.heatmap(corr, annot=True, cmap='coolwarm', fmt=\".2f\", linewidths=.5)\n\n# Title of the heatmap\nplt.title('Correlation Heatmap with Varied Correlations')\n\n# Display the heatmap\nplt.show()\n\n\n\n\n\nExploratory Data Analysis:\n\nExplore the trend of ESG scores from 2024 to 2025.\nAdditionally, list the questions you aim to answer.\nAddress the questions through data visualization with seaborn (or lets-plot) and pandas methods and attributes.\n\nSignificance of the Project:\n\nExplain its implications for real-world applications, business strategies, or public policy.\n\nReferences\n\nList all sources cited in the project.\nLeave a web address of the reference if that is from the web.\nIndicate if the code and the write-up are guided by generative AI, such as ChatGPT. There will be no penalties on using any generative AI.\nClearly state if the code and the write-up result from collaboration with colleagues. There will be no penalties for collaboration, provided that the shared portions are clearly indicated."
   },
   {
     "objectID": "danl-rw/danl-210-project.html#interpreting-esg-data-on-yahoo-finance",
@@ -3231,7 +3231,7 @@
     "href": "listing-danl-210-rw.html",
     "title": "DANL 210 - Project",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nApril 8, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nUnifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis\n\n\nApril 9, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-08.html",
@@ -3406,7 +3406,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\nLecture 17\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nLecture 17\n\n\nWeb-scrapping with Python selenium\n\n\nApril 9, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -3420,28 +3420,28 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\nLecture 17\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nLecture 17\n\n\nWeb-scrapping with Python selenium\n\n\nApril 9, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\nClasswork 11\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nClasswork 12\n\n\nData Visualization with seaborn\n\n\nApril 16, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 8, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 8, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 9, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-cw.html",
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\nClasswork 11\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nClasswork 12\n\n\nData Visualization with seaborn\n\n\nApril 16, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "econml.html",
@@ -3694,5 +3694,495 @@
     "title": "DANL 210 - Q & A",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nDANL 210 - Discussion and Q & A Board\n\n\nundefined\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html",
+    "href": "danl-hw/danl-210-hw-04.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Please submit your Python Script for Part 1 and Part 2 in Homework 4 to Brightspace with the name below:\n\ndanl_210_hw4_LASTNAME_FIRSTNAME.py\n( e.g., danl_210_hw4_choe_byeonghak.py )\n\nThe due is April 18, 2025, 10:30 A.M.\nPlease send Prof. Choe an email (bchoe@geneseo.edu) if you have any questions."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-1",
+    "href": "danl-hw/danl-210-hw-04.html#question-1",
+    "title": "Homework 4",
+    "section": "Question 1",
+    "text": "Question 1\n\nGo to the following webpage: https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page\nProvide a Python Selenium code to download all the MS Excel files in the webpage above.\n\nIn your code, please code properly, so that you do not download any PDF files.\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-2",
+    "href": "danl-hw/danl-210-hw-04.html#question-2",
+    "title": "Homework 4",
+    "section": "Question 2",
+    "text": "Question 2\nProvide a Python code to get New York City air quality surveillance data using the following API endpoint:\nhttps://data.cityofnewyork.us/resource/c3uy-2p5r.json\nAnswer:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#variable-description",
+    "href": "danl-hw/danl-210-hw-04.html#variable-description",
+    "title": "Homework 4",
+    "section": "Variable Description",
+    "text": "Variable Description\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nRecord_ID\nnumeric\nUnique identifier for a transaction between a manufacturer and a physician or an NPP\n\n\nMonth\nnumeric\nMonth\n\n\nDay\nnumeric\nYear\n\n\nAmount_of_Payment\nnumeric\nUS dollar amount of payment to a physician or NPP\n\n\nProduct\nchracter\nAn indicator showing if the product is a Drug, Device, Biological, or Medical Supply.\n\n\nProduct_Manufacturer\nchracter\nManufacturer making the payment to a physician/NPP\n\n\nNPI\nnumeric\nNational Provider Identifier, a unique identification number for a physician/NPP receiving the payment\n\n\nPhysician_or_NPP\nchracter\nAn indicator showing if the recipient of the payment is a physician or non-physician practitioner (NPP)\n\n\nFirst_Name\nchracter\nFirst name of physician/NPP in New York state\n\n\nLast_Name\nchracter\nLast name of physician/NPP in New York state\n\n\nCity\nchracter\nCity of the physician/NPP in New York state\n\n\nType\nchracter\nType of physician/NPP (e.g., Medical Doctor, Doctor of Optometry, Nurse Practitioner, Physician Assistant, and more)\n\n\nTaxonomy\nchracter\nStandardized taxonomy of medical service provider (e.g., Allopathic & Osteopathic Physicians, Chiropractic Providers, Dental Providers, Physician Assistants & Advanced Practice Nursing Providers, and more)\n\n\nSpecialty\nchracter\nA specialty chosen within the standardized taxonomy (e.g., Psychiatry & Neurology, Physician Assistant, Chiropractor, Dentist, Family Medicine, Neurological Surgery, and more)\n\n\nSpecialty_Detail\nchracter\nDetail in the specialty if any (e.g., Family, Gastroenterology, Cardiovascular Disease, Neurology, Psychiatry, and more)\n\n\n\n\nNote that each physician/NPP corresponds to one single Specialty_Detail value."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-7",
+    "href": "danl-hw/danl-210-hw-04.html#question-7",
+    "title": "Homework 4",
+    "section": "Question 7",
+    "text": "Question 7\n\nWrite a Python code to count the number of occurrences of each unique value in Specialty_Detail for each unique value in Taxonomy.\n\nFor example, the following displays the number of occurrences of each unique in Specialty_Detail for the Dental Providers Taxonomy value."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-8",
+    "href": "danl-hw/danl-210-hw-04.html#question-8",
+    "title": "Homework 4",
+    "section": "Question 8",
+    "text": "Question 8\n\nWrite a Python code to count the number of unique Specialty_Detail values for the value “Dental Providers” in Taxonomy."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-9",
+    "href": "danl-hw/danl-210-hw-04.html#question-9",
+    "title": "Homework 4",
+    "section": "Question 9",
+    "text": "Question 9\n\nWrite a Python code (1) to count the number of missing values and (2) to calculate mean, standard deviation, minimum, first quartile, median, third quartile, and maximum of the Amount_of_Payment variable for the value Dermatology in the Specialty variable."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-10",
+    "href": "danl-hw/danl-210-hw-04.html#question-10",
+    "title": "Homework 4",
+    "section": "Question 10",
+    "text": "Question 10\n\nWrite a Python code to replicate the following DataFrame, which calculate (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.\n\nEnsure that the sum of the percentages of physicians and NPPs within each city is 100.\nEnsure that the observations are sorted by Total_Count and City in descending and ascending orders, respectively."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-11",
+    "href": "danl-hw/danl-210-hw-04.html#question-11",
+    "title": "Homework 4",
+    "section": "Question 11",
+    "text": "Question 11\n\nWrite a Python code to calculate:\n\nThe total Amount_of_Payment the Product_Manufacturer AbbVie Inc. paid to physicians and non-physician practitioners (NPPs) in Cities of Rochester, Buffalo, and Syracuse.\nHow many times the Product_Manufacturer AbbVie Inc. paid to physicians and non-physician practitioners (NPPs) in in Cities of Rochester, Buffalo, and Syracuse."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-12",
+    "href": "danl-hw/danl-210-hw-04.html#question-12",
+    "title": "Homework 4",
+    "section": "Question 12",
+    "text": "Question 12\n\nConsider the following two DataFrames, cms_ny_2022_npi and cms_ny_2022_records:\n\ncms_ny_2022_npi &lt;- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')\n\ncms_ny_2022_npi: This DataFrame is created from cms_ny_2022 by selecting only the columns NPI, Physician_or_NPP, First_Name, Last_Name, City, Type, Taxonomy, Specialty, and Specialty_Detail.\nIn addition, it contains only unique observations (i.e., there are no duplicate rows).\n\ncms_ny_2022_records &lt;- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')\n\ncms_ny_2022_records: This DataFrame is derived from cms_ny_2022 by including every observation but only retaining the columns Record_ID, Month, Day, Amount_of_Payment, Product, Product_Manufacturer, and NPI.\nWrite a Python code to create the cms_ny_2022 DataFrame by using the cms_ny_2022_npi and cms_ny_2022_records DataFrames."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-13",
+    "href": "danl-hw/danl-210-hw-04.html#question-13",
+    "title": "Homework 4",
+    "section": "Question 13",
+    "text": "Question 13\n\nWrite a Python code to create the following DataFrame, City_Physician_or_NPP, which counts the number of physicians and the non-physician practitioners (NPPs) in each city."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-14",
+    "href": "danl-hw/danl-210-hw-04.html#question-14",
+    "title": "Homework 4",
+    "section": "Question 14",
+    "text": "Question 14\n\nWrite a Python code to replicate the following DataFrame, which calculate (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.\n\nEnsure that the sum of the percentages of physicians and NPPs within each city is 100.\nEnsure that the observations are sorted by Total_Count and City in descending and ascending orders, respectively."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-15",
+    "href": "danl-hw/danl-210-hw-04.html#question-15",
+    "title": "Homework 4",
+    "section": "Question 15",
+    "text": "Question 15\n\nWrite a Python code to calculate:\n\nThe total Amount_of_Payment the Product_Manufacturer AbbVie Inc. paid to physicians and non-physician practitioners (NPPs) in Cities of Rochester, Buffalo, and Syracuse.\nHow many times the Product_Manufacturer AbbVie Inc. paid to physicians and non-physician practitioners (NPPs) in in Cities of Rochester, Buffalo, and Syracuse."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-16",
+    "href": "danl-hw/danl-210-hw-04.html#question-16",
+    "title": "Homework 4",
+    "section": "Question 16",
+    "text": "Question 16\n\nConsider the following two DataFrames, cms_ny_2022_npi and cms_ny_2022_records:\n\ncms_ny_2022_npi &lt;- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')\n\ncms_ny_2022_npi: This DataFrame is created from cms_ny_2022 by selecting only the columns NPI, Physician_or_NPP, First_Name, Last_Name, City, Type, Taxonomy, Specialty, and Specialty_Detail.\nIn addition, it contains only unique observations (i.e., there are no duplicate rows).\n\ncms_ny_2022_records &lt;- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')\n\ncms_ny_2022_records: This DataFrame is derived from cms_ny_2022 by including every observation but only retaining the columns Record_ID, Month, Day, Amount_of_Payment, Product, Product_Manufacturer, and NPI.\nWrite a Python code to create the cms_ny_2022 DataFrame by using the cms_ny_2022_npi and cms_ny_2022_records DataFrames."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-17",
+    "href": "danl-hw/danl-210-hw-04.html#question-17",
+    "title": "Homework 4",
+    "section": "Question 17",
+    "text": "Question 17\n\nWrite a Python code to create the following DataFrame, City_Physician_or_NPP, which counts the number of physicians and the non-physician practitioners (NPPs) in each city."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-3",
+    "href": "danl-hw/danl-210-hw-04.html#question-3",
+    "title": "Homework 4",
+    "section": "Question 3",
+    "text": "Question 3\n\nWrite a Python code to convert the string type Physician_or_NPP variable into the category type variable."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-4",
+    "href": "danl-hw/danl-210-hw-04.html#question-4",
+    "title": "Homework 4",
+    "section": "Question 4",
+    "text": "Question 4\n\nWrite a Python code to replace the NA value of the Specialty_Detail variable with the value of the Specialty variable.\n\nFor example, the following shows that\n\nAll the NA values in the Specialty_Detail variable for the value of Physician Assistant in the Specialty variable are replaced with Physician Assistant:"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-5",
+    "href": "danl-hw/danl-210-hw-04.html#question-5",
+    "title": "Homework 4",
+    "section": "Question 5",
+    "text": "Question 5\nWrite a Python code to count the number of transactions in which the payment amount (i.e., Amount_of_Payment) falls in the top 10% of all payments in the DataFrame.\ncms_ny_2022[_______________________________________________].shape[0]"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-04.html#question-6",
+    "href": "danl-hw/danl-210-hw-04.html#question-6",
+    "title": "Homework 4",
+    "section": "Question 6",
+    "text": "Question 6\nWrite a Python code to identify the city or cities with the highest number of non-missing values in the Specialty_Detail variable of the cms_ny_2022 DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#visualizing-dataframes-with-seaborn-1",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#visualizing-dataframes-with-seaborn-1",
+    "title": "Lecture 17",
+    "section": "Visualizing DataFrames with seaborn",
+    "text": "Visualizing DataFrames with seaborn\n\n\n\n\n\n\n\n\nGraphs and charts let us explore and learn about the structure of the information we have in DataFrame.\nGood data visualizations make it easier to communicate our ideas and findings to other people."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#key-points-in-data-visualization",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#key-points-in-data-visualization",
+    "title": "Lecture 17",
+    "section": "Key Points in Data Visualization",
+    "text": "Key Points in Data Visualization\n\nA graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.\nStrive for clarity.\n\nMake the data stand out.\n\nAvoid too many superimposed elements (e.g., too many curves in the same graphing space).\nAvoid having the data all skewed to one side or the other of your graph.\n\n\nVisualization is an iterative process.\n\nWe should try making data visualization informative as much as we can."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#getting-started-with-seaborn",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#getting-started-with-seaborn",
+    "title": "Lecture 17",
+    "section": "Getting started with seaborn",
+    "text": "Getting started with seaborn\n\n\n\n\n\nseaborn is a Python data visualization library based on matplotlib.\n\nIt allows us to easily create beautiful but complex graphics using a simple interface.\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#fyi-python-version-of-rs-ggplot---letsplot",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#fyi-python-version-of-rs-ggplot---letsplot",
+    "title": "Lecture 17",
+    "section": "FYI: Python version of R’s ggplot - letsplot",
+    "text": "FYI: Python version of R’s ggplot - letsplot\n\n\n\n\n\nletsplot is a Python data visualization library based on the Grammar of Graphics.\n\nIt is pretty much the same as R’s ggplot."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#categorical-vs.-continuous-variables",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#categorical-vs.-continuous-variables",
+    "title": "Lecture 17",
+    "section": "Categorical vs. Continuous Variables",
+    "text": "Categorical vs. Continuous Variables\n\n\nCategoricalContinuousInteger\n\n\n\nA categorical variable is a variable whose value is obtained by counting.\n\nNumber of red marbles in a jar\nNumber of heads when flipping three coins\nStudents’ letter grade\nUS state/county\n\nCategorical variables should be category or string (object in DataFrame).\n\n\n\n\nA continuous variable is a variable whose value is obtained by measuring and can have a decimal or fractional value.\n\nHeight/weight of students\nTime it takes to get to school\nFuel efficiency of a vehicle (e.g., miles per gallon)\n\nContinuous variables should be float.\n\nWe can use astype('float') to make a variable float.\n\n\n\n\n\nFor data visualization, integer-type variables could be treated as either categorical or continuous, depending on the context of analysis.\nIf the values of an integer-type variable means an intensity or an order, the integer variable could be continuous.\n\nA variable of age integers (18, 19, 20, 21, …) could be continuous.\nA variable of integer-valued MPG (27, 28, 29, 30, …) could be continuous.\n\nIf not, the integer variable is categorical.\n\nA variable of month integers (1, ,2, …, 12) is categorical.\n\nWe can use astype('int') to make a variable int."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#making-discoveries-from-a-data-set",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#making-discoveries-from-a-data-set",
+    "title": "Lecture 17",
+    "section": "Making Discoveries from a Data Set",
+    "text": "Making Discoveries from a Data Set\n\n\nDistributionRelationshipTypesSummary Stat.\n\n\n\nFrom the distribution plots, we want to see the variation, the tendency of the values of a variable to change.\n\nWhich values are the most common? Why?\nHow normal is the data? How many peaks are there in the distribution?\nWhich values are rare?\n\n\n\n\n\nFrom the plots with two or more variables, we want to see co-variation, the tendency for the values of two or more variables to vary together in a related way.\nWhat type of co-variation occurs between variables?\n\nAre they positively associated?\nAre they negatively associated?\nAre there no association between them?\n\n\n\n\n\nA distribution of a categorical variable (e.g., bar charts and more)\nA distribution of a continuous variable (e.g., histograms and more)\nA relationship between two continuous variables (e.g., scatter plots and more)\nA time trend of a variable (e.g., line plots and more)\n\n\n\n\nUse DataFrame.describe() to know:\n\nMean (Average, Expected Value);\nStandard Deviation (SD)\nMinimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#data-visualization-workflow",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#data-visualization-workflow",
+    "title": "Lecture 17",
+    "section": "Data Visualization Workflow",
+    "text": "Data Visualization Workflow\n\n\nStep 1Step 2Step 3Step 4Step 5\n\n\n\nRead the descriptions of variables in a DataFrame if available.\nCheck the unit of an observation: Are all values in one single observation measured for:\n\nOne organization (e.g., university, company)?\nOne geographic unit (e.g., zip code, county, state, country)?\nOne person?\nOne person in a specific point of time (e.g., year, month, week)?\nOne geographic unit in a specific point of time?\nOne organization in a specific point of time?\n\n\n\n\n\nPrepare a DataFrame for visualization.\n\nAdding new variables\nFiltering observations\nGroup operations\n\n\n\n\n\nFigure out whether variables of interests are categorical or continuous.\n\nCheck what types of the variables are (e.g., float, int, datetime64, object, category).\nUse astype(DTYPE) if needed.\n\n\n\n\n\nChoose appropriate\n\nGeometric objects (e.g., sns.histplot, sns.scatterplot)\nAesthetic mappings ((x = , y = , color = , hue = ))\nFaceting (FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES) or col/row in the function of geometric object)\n\n\n\n\n\nPay attention to the unit of x andy axes.\nIf needed, transform a given DataFrame (e.g., subset of observations, new variables, summarized DataFrame)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#getting-started-with-seaborn-1",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#getting-started-with-seaborn-1",
+    "title": "Lecture 17",
+    "section": "Getting started with seaborn",
+    "text": "Getting started with seaborn\n\n\nLet’s get the names of DataFrames provided by the seaborn library:\n\nsns.get_dataset_names() \n\nMatplotlib provides plot styles:\n\nplt.style.available\nplt.style.use('STYLE_YOU_WANT_TO_USE')\n\nLet’s use the titanic and tips DataFrames:\n\ntitanic = sns.load_dataset('titanic')\ntips = sns.load_dataset('tips')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#bar-chart",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#bar-chart",
+    "title": "Lecture 17",
+    "section": "Bar Chart",
+    "text": "Bar Chart\n\n\nsns.countplot(data = titanic,\n              x =  'sex')\n\n\nMapping\n\ndata: DataFrame.\nx: Name of a categorical variable (column) in DataFrame\n\n\n\n\n\nA bar chart is used to plot the frequency of the different categories.\n\nIt is useful to visualize how values of a categorical variable are distributed.\nA variable is categorical if it can only take one of a small set of values.\n\nWe use sns.countplot() function to plot a bar chart"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#bar-chart-1",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#bar-chart-1",
+    "title": "Lecture 17",
+    "section": "Bar Chart",
+    "text": "Bar Chart\n\n\nsns.countplot(data = titanic,\n              x = 'sex',\n              hue = 'survived')\n\n\nMapping\n\nhue: Name of a categorical variable\n\n\n\n\n\nWe can further break up the bars in the bar chart based on another categorical variable.\n\nThis is useful to visualize the relationship between the two categorical variables."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#histogram",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#histogram",
+    "title": "Lecture 17",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nsns.histplot(data = titanic,\n             x =  'age', \n             bins = 5)\n\n\nMapping\n\nbins: Number of bins\nbinwidth: Width of each bin\n\n\n\n\n\nA histogram is a continuous version of a bar chart.\n\nIt is used to plot the frequency of the different values.\nIt is useful to visualize how values of a continuous variable are distributed.\n\nWe use sns.histplot() function to plot a histogram"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#histogram-1",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#histogram-1",
+    "title": "Lecture 17",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nsns.boxplot(data = tips,\n            y = 'total_bill')\n\nsns.boxplot(data = tips,\n            x = 'time', \n            y = 'total_bill')\n\n\n\nA boxplot computes a summary of the distribution and then display a specially formatted box.\n\nIt is useful to visualize how values of a continuous variable are distributed across different values of another (categorical) variable.\n\nWe use sns.histplot() function to plot a histogram."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#scatter-plot",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#scatter-plot",
+    "title": "Lecture 17",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip')\n\n\nMapping\n\nx: Name of a continuous variable on the horizontal axis\ny: Name of a continuous variable on the vertical axis\n\n\n\n\n\nA scatter plot is used to display the relationship between two continuous variables.\n\nWe can see co-variation as a pattern in the scattered points.\n\nWe use sns.scatterplot() function to plot a scatter plot."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#scatter-plot-1",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#scatter-plot-1",
+    "title": "Lecture 17",
+    "section": "Scatter plot",
+    "text": "Scatter plot\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip',\n                hue = 'smoker')\n\nTo the scatter plot, we can add a hue-VARIABLE mapping to display how the relationship between two continuous variables varies by VARIABLE.\nSuppose we are interested in the following question:\n\nQ. Does a smoker and a non-smoker have a difference in tipping behavior?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#fitted-line",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#fitted-line",
+    "title": "Lecture 17",
+    "section": "Fitted line",
+    "text": "Fitted line\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip')\n\nFrom the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.\n\nsns.lmplot() adds a line that fits well into the scattered points.\nOn average, the fitted line describes the relationship between two continuous variables."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#transparency-with-alpha",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#transparency-with-alpha",
+    "title": "Lecture 17",
+    "section": "Transparency with alpha",
+    "text": "Transparency with alpha\n\n\nsns.scatterplot(data = tips,\n                x = 'total_bill', \n                y = 'tip',\n                alpha = .25)\n\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip',\n           scatter_kws = {'alpha' : 0.2})\n\n\n\nIn a scatter plot, adding transparency with alpha helps address many data points on the same location.\n\nWe can map alpha to number between 0 and 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#scatter-plot-2",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#scatter-plot-2",
+    "title": "Lecture 17",
+    "section": "Scatter plot",
+    "text": "Scatter plot\nsns.lmplot(data = tips,\n           x = 'total_bill', \n           y = 'tip',\n           hue = 'smoker',\n           scatter_kws = {'alpha' : 0.5})\n\nTo the scatter plot, we can add a hue-VARIABLE mapping to display how the relationship between two continuous variables varies by VARIABLE.\nUsing the fitted lines, let’s answer the following question:\n\nQ. Does a smoker and a non-smoker have a difference in tipping behavior?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#line-cahrt",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#line-cahrt",
+    "title": "Lecture 17",
+    "section": "Line cahrt",
+    "text": "Line cahrt\n\n\npath_csv = 'https://bcdanl.github.io/data/dji.csv'\ndow = pd.read_csv(path_csv)\ndow['Date'] = dow['Date'].astype('datetime64')\n\nsns.lineplot(data = dow,\n             x =  'Date', \n             y =  'Close')\n\n\nMapping\n\nx: Name of a continuous variable (often time variable) on the horizontal axis\ny: Name of a continuous variable on the vertical axis\n\n\n\n\n\nA line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.\n\nIt draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.\n\nWe use sns.lineplot() function to plot a line plot."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#line-cahrt-1",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#line-cahrt-1",
+    "title": "Lecture 17",
+    "section": "Line cahrt",
+    "text": "Line cahrt\nhealthexp = ( \n  sns.load_dataset(\"healthexp\")\n  .sort_values([\"Country\", \"Year\"])\n  .query(\"Year &lt;= 2020\")\n  )\n\nsns.lineplot(data = healthexp,\n             x =  'Year', \n             y =  'Life_Expectancy',\n             hue = 'Country')\n\nFor line charts, we often need to group or connect observations to visualize the number of distinct lines."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#faceting",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#faceting",
+    "title": "Lecture 17",
+    "section": "Faceting",
+    "text": "Faceting\n\n\nFaceting allows us to plot subsets (facets) of our data across subplots.\n\n\nFacetingFacetGrid().map()Alternative?\n\n\n\nFirst, we create a .FacetGrid() object with the data we will be using and define how it will be subset with the row and col arguments:\nSecond, we then use the .map() method to run a plotting function on each of the subsets, passing along any necessary arguments.\n\n\n\n(\n sns.FacetGrid(\n       data = titanic,\n       row='class',\n       col='sex')\n .map(sns.histplot, 'age')\n )\n\n\n\nSome geometric object, such as sns.lmplot, does not work well with sns.FacetGrid().\n\nInstead, sns.lmplot supports mapping, col = 'VAR' and row = 'VAR' to facet the plot.\n\n\nsns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',\n           scatter_kws = {'alpha' : 0.5},\n           col = 'smoker')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-18-2025-0416.html#visualizing-dataframes-with-seaborn-2",
+    "href": "danl-lec/danl-210-lec-18-2025-0416.html#visualizing-dataframes-with-seaborn-2",
+    "title": "Lecture 17",
+    "section": "Visualizing DataFrames with seaborn",
+    "text": "Visualizing DataFrames with seaborn\nLet’s do Classwork 12!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#spyder-ide",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#spyder-ide",
+    "title": "Lecture 17",
+    "section": "Spyder IDE",
+    "text": "Spyder IDE\nKeyboard Shortcuts\n\nTo set your keyboard shortcuts,\n\nPreferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”\nSet the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; (4) blockcomment; and (5) unblockcomment\n\nDefault shortcuts\n\nRun selection (a current line): F9\nRun cell: Ctrl + Enter\n\n# %% defines a coding cell\n\nComment (#): Ctrl/command + 1\nBlock-comment: Ctrl/command + 4\nUnblock-comment: Ctrl/command + 5"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-1",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-1",
+    "title": "Lecture 17",
+    "section": "API",
+    "text": "API\nKey Concepts\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between client and server.\n\nMethods: The “verbs” that clients use to talk with a server.\n\nThe main one that we’ll be using is GET (i.e. ask a server to retrieve information). Other common methods are POST, PUT and DELETE.\n\nRequests: What the client asks of the server.\nResponse: The server’s response, which includes\n\nStatus Code (e.g. “404” if not found, or “200” if successful);\nHeader (i.e. meta-information about the response);\nBody (i.e the actual content that we’re interested in."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-2",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-2",
+    "title": "Lecture 17",
+    "section": "API",
+    "text": "API\nAPI endpoints\n\n\nIn the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).\n\nThese URLs are known as an API endpoints.\n\nNavigate your browser to an API endpoint and you’ll just see a load of the following format of texts:\n\nJSON (JavaScript Object Notation) or\nXML (Extensible Markup Language).\n\nWe can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-3",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-3",
+    "title": "Lecture 17",
+    "section": "API",
+    "text": "API\nNYC Open Data\n\n\n(1)(2)(3)\n\n\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nMany metropolitan cities have the open data websites too:\n\nhttps://data.lacity.org\nhttps://opendata.dc.gov\nhttps://data.cityofchicago.org\n\n\n\n\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nCopy the API endpoint that appears in the popup box.\n\n\n\n\nimport requests\nimport pandas as pd\nfrom io import StringIO\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse_API = requests.get(endpoint)\ndata = StringIO(response_API.text)\ndf = pd.read_json(data)\n\nThe request.get() method sends a GET request to the specified URL.\npd.read_json() automatically convert JSON data into DataFrame.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-4",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-4",
+    "title": "Lecture 17",
+    "section": "API",
+    "text": "API\nFederal Reserve Economic Data (FRED)\n\n\n(1)(2)(3)(4)\n\n\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account.\n\n\n\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json\n\n\n\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs.\n\n\nimport requests\nimport json\nimport pandas as pd\nparams = {\n  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n  'file_type': 'json',\n  'series_id': 'GDPC1'   ## ID for US real GDP\n}\nendpoint = \"series/observations\"\nurl = \"https://api.stlouisfed.org/\"\nresponse = requests.get(url + \"fred/\" + endpoint, params = params)\n\n\n\nTo actually extract the content (i.e. data) from of the response, we’ll use the .content.decode('utf-8').\nWe can convert JSON into a Python dictionary object using then json.loads() function.\n\n# Extract the response content (i.e. text).\ncontent = response.content.decode('utf-8')\n\n# Convert JSON response to Python dictionary.\nfred = json.loads(content) \n\n# Extract the \"observations\" list element.\nobservations = pd.DataFrame( fred['observations'] )\nobservations = observations.astype({'value': float})"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#unofficial-api",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#unofficial-api",
+    "title": "Lecture 17",
+    "section": "Unofficial API",
+    "text": "Unofficial API\n\n\nSome developers build their own version of API, and make it open-source.\nHere is one example of an unofficial API, yfinance:\n\nyfinance is an unofficial API for Yahoo! Finance\n\nhttps://pypi.org/project/yfinance\nIt offers a threaded and Pythonic way to download stock market data from Yahoo Finance.\n\n\n\n\npip install yfinance"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nTicker() and history()\n\nOne of the most critical use cases of yfinance is the possibility to access stocks (and some crypto currencies’) historical data.\n\nThese include Open, High, Low, Close, Volume, and also Dividends payments, and Stock Splits.\n\n\nimport yfinance as yf\nfrom datetime import datetime\n\n# Create the ticker for Nvidia\nnvda = yf.Ticker(\"NVDA\")\n\n# Get today's date and convert it to a string with YYYY-MM-DD format\n  # (yfinance expects that format)\nend_date = datetime.now().strftime('%Y-%m-%d')\n\nnvda_hist = nvda.history(start='2024-01-01', end=end_date)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-1",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-1",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nhistory(interval = ..., period = ...)\nnvda_hist_min = nvda.history(end = end_date, interval = '1m', period = 'max')\n\n\nBy default, yfinance returns daily data, but we can also set the time interval.\n\nDifferent time interval have different limitations regarding how far back we can go in time.\nRequesting an interval (start – end) greater than the limitations will result in an error.\nWe can avoid this error by only asking for the maximum allowed days of data.\n\nThis is done by setting the parameter period to ‘max’, in addition to either “end” or “start” (but not both)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-2",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-2",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nTickers()\n\nIt is also possible to retrieve historical data of more than one company’s stock with a single request.\n\nThis can be done by instantiating a Tickers object (plural instead of singular).\n\n\ncompanies = ['AMZN', 'APPL', 'GOOG', 'MSFT', 'NVDA', 'TSLA', 'META'] \ntickers = yf.Tickers(companies)\ntickers_hist = tickers.history(period='max', end=end_date, interval='1m',)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-3",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-3",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nTickers() and Dealing with MultiLevel Index\n\nNotice that the returned DataFrame has a MultiLevel Index, which is an undesired structure for most purposes.\n\ntickers_hist_long = (\n    tickers_hist\n    .stack()   # stacking, similar to DataFrame.melt()\n    .rename_axis(['Date', 'Ticker']) # rename row index\n    .reset_index()\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-4",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-4",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nMore on history()\n\nThe history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\nperiodintervalstart and end\n\n\n\nperiod: Especially useful is the value \"max\".\n\nThe following are the valid values: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max.\n\n\n\n\n\ninterval: Defines the size of each interval.\n\nSmaller interval sizes have more strict limitations, and only 7 days of 1-minute data can be retrieved.\nThe following are the valid values: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo\n\n\n\n\n\nstart: Start date. The server expects a string formatted as YYYY-MM-DD.\nend: End date. The server expects a string formatted as YYYY-MM-DD."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-5",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-5",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nMore on history()\n\nThe history() method includes several parameters, and knowing them is important in order to make most out of yfinance.\n\n\n\nrepostauto_adjust\n\n\n\nrepost: Defines whether to include or not data not corresponding to regular trading hours. Default value is False\n\n\n\n\nauto_adjust: whether to adjust prices to stock splits and dividend payments. The default value is True."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-6",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-6",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information\n\nYahoo Finance also allows fetching a multitude of financial information, such as balance sheet data, historical events, and commonly used ratios.\nHowever, yfinance does not currently work well with fetching these information.\nLet’s work with Microsoft page in Yahoo! Finance.\n\nmsft = yf.Ticker(\"MSFT\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-7",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-7",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ninfohistory_metadataget_shares_full\n\n\n# get all stock info\nmsft.info \n\n\n# show meta information about the history (requires history() to be called first)\nmsft.history_metadata\n\n\n# show share count\n# - accurate time-series count:\nmsft.get_shares_full(start=\"2022-01-01\", end=None)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-8",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-8",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\nincome_stmtbalance_sheetcashflow*_holders\n\n\n# show financials:\n# - income statement\nmsft.income_stmt\nmsft.quarterly_income_stmt\n\n\n# - balance sheet\nmsft.balance_sheet\nmsft.quarterly_balance_sheet\n\n\n# - cash flow statement\nmsft.cashflow\nmsft.quarterly_cashflow\n  # see `Ticker.get_income_stmt()` for more options\n\n\n# show holders\nmsft.major_holders\nmsft.institutional_holders\nmsft.mutualfund_holders"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-9",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#yahoo-finance-with-yfinance-9",
+    "title": "Lecture 17",
+    "section": "Yahoo! Finance with yfinance",
+    "text": "Yahoo! Finance with yfinance\nFetch financial information about Microsoft\n\n\ncalendarearnings_datesoptionsnews\n\n\n# show next event (earnings, etc)\nmsft.calendar\n\n\n# Show future and historic earnings dates, \n# returns at most next 4 quarters and last 8 quarters by default. \n# Note: If more are needed use msft.get_earnings_dates(limit=XX) with increased limit argument.\nmsft.earnings_dates\nmsft.get_earnings_dates()\n\n\n# show options expirations\nmsft.options\n\n\n# show news\nmsft.news"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-1",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-1",
+    "title": "Lecture 17",
+    "section": "Hidden API",
+    "text": "Hidden API\n\nMost industry-scale websites display data from their database servers.\n\nMany of them do not provide official APIs to retrieve data.\n\nSometimes, it is possible to find their hidden APIs to retrieve data!\nExamples:\n\nPremier League Stats\nNordstrom"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-2",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-2",
+    "title": "Lecture 17",
+    "section": "Hidden API",
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Insomnia\n\nMake a new request\nPaste the cURL to the address bar, and then click “Send” button.\nClick the right most part of “New Request” (default name)\nClick “&lt;/&gt; Generate Code”; Choose “Python” and “Requests”\nCopy a Python requests code, and run it on your IDE."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#fyi-on-web-data-collection-approaches",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#fyi-on-web-data-collection-approaches",
+    "title": "Lecture 17",
+    "section": "FYI on Web-Data Collection Approaches",
+    "text": "FYI on Web-Data Collection Approaches"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#data-collection-with-apis",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#data-collection-with-apis",
+    "title": "Lecture 17",
+    "section": "Data Collection with APIs",
+    "text": "Data Collection with APIs\nLet’s do Classwork 11!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#step-1-sign-up-and-sign-in",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#step-1-sign-up-and-sign-in",
+    "title": "Lecture 17",
+    "section": "Step 1: Sign Up and Sign In",
+    "text": "Step 1: Sign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#step-2-register-apps",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#step-2-register-apps",
+    "title": "Lecture 17",
+    "section": "Step 2: Register apps",
+    "text": "Step 2: Register apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\nFollow steps in (Get Started)[https://developer.nytimes.com/get-started]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#step-3-access-the-api-keys",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#step-3-access-the-api-keys",
+    "title": "Lecture 17",
+    "section": "Step 3: Access the API keys",
+    "text": "Step 3: Access the API keys\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#step-4-collect-data-with-pynytimes",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#step-4-collect-data-with-pynytimes",
+    "title": "Lecture 17",
+    "section": "Step 4: Collect Data with pynytimes",
+    "text": "Step 4: Collect Data with pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time consuming to go through the documentation.\nThere is a Python library for more user-friendly NYTimes API, called pynytimes:\n\npip install pynytimes\n\nTo get started, check out Introduction to pynytimes."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#using-the-new-york-times-api-1",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#using-the-new-york-times-api-1",
+    "title": "Lecture 17",
+    "section": "Using the New York Times API",
+    "text": "Using the New York Times API\n\nStep 1: Sign Up and Sign InStep 2: Register appsStep 3: Access the API keysStep 4: Collect Data with pynytimes\n\n\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in.\n\n\n\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\nFollow steps in (Get Started)[https://developer.nytimes.com/get-started]\n\n\n\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved.\n\n\n\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time consuming to go through the documentation.\nThere is a Python library for more user-friendly NYTimes API, called pynytimes:\n\npip install pynytimes\n\nTo get started, check out Introduction to pynytimes."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-11.html",
+    "href": "danl-cw/danl-210-cw-11.html",
+    "title": "Classwork 11",
+    "section": "",
+    "text": "Question 1\nProvide a Python code to get New York City air quality surveillance data using the following API endpoint:\nhttps://data.cityofnewyork.us/resource/c3uy-2p5r.json\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 11 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 11.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 11 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-12.html",
+    "href": "danl-cw/danl-210-cw-12.html",
+    "title": "Classwork 12",
+    "section": "",
+    "text": "#| echo: true\nbeer_mkt = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n  \n\n\n\n\n\n\nProvide (1) seaborn or ggplot code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand.\n\nAnswer:\n\n\n\n\n\nProvide (1) seaborn or ggplot code and (2) a simple comment to describe how the relationship between log(price_per_floz) and log(beer_floz) varies by brand.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-12.html#question-1",
+    "href": "danl-cw/danl-210-cw-12.html#question-1",
+    "title": "Classwork 12",
+    "section": "",
+    "text": "Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-12.html#question-2",
+    "href": "danl-cw/danl-210-cw-12.html#question-2",
+    "title": "Classwork 12",
+    "section": "",
+    "text": "Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the relationship between log(price_per_floz) and log(beer_floz) varies by brand.\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-12.html#question-3",
+    "href": "danl-cw/danl-210-cw-12.html#question-3",
+    "title": "Classwork 12",
+    "section": "Question 3",
+    "text": "Question 3\n\nProvide (1) seaborn or ggplot code and (2) a simple comment to describe how the daily trend of Close varies by company.\n\nAnswer:"
   }
 ]

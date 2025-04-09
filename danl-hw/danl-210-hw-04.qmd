@@ -1,0 +1,388 @@
+---
+title: Homework 4
+subtitle: Python `selenium`, APIs, & Pandas Basics
+date: last-modified
+from: markdown+emoji
+format:
+  html:
+    code-fold: true
+execute: 
+  eval: false
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+
+```{r}
+#| include: false
+#| eval: true
+
+library(tidyverse)
+```
+
+
+# Direction
+
+- Please submit your **Python Script** for **Part 1 and Part 2 in Homework 4** to Brightspace with the name below:
+
+  - `danl_210_hw4_LASTNAME_FIRSTNAME.py`\
+  ( e.g., `danl_210_hw4_choe_byeonghak.py` )
+
+- The due is April 18, 2025, 10:30 A.M.
+
+- Please send Prof. Choe an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
+
+<br>
+
+# Part 1. Data Collection
+
+## Question 1
+- Go to the following webpage:
+[https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page](https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page)
+
+- Provide a Python Selenium code to download all the MS Excel files in the webpage above.
+  - In your code, please code properly, so that you do not download any PDF files.
+
+*Answer*:
+```{python}
+
+```
+
+
+<br><br>
+
+
+## Question 2
+Provide a Python code to get New York City air quality surveillance data using the following API endpoint:
+
+[https://data.cityofnewyork.us/resource/c3uy-2p5r.json](https://data.cityofnewyork.us/resource/c3uy-2p5r.json)
+
+
+*Answer*:
+```{python}
+
+```
+
+
+
+<br><br><br>
+
+# Part 2. Pandas Basics
+
+```{.python}
+import pandas as pd
+import numpy as np
+```
+
+
+
+The following describes the context of DataFrame in Part 2.
+
+Open Payments, which is managed by the Centers for Medicare & Medicaid Services (CMS), is a national disclosure program created by the Affordable Care Act (ACA). The program promotes transparency and accountability by helping consumers understand the financial relationships between pharmaceutical and medical device industries, physicians, and non-physician practitioners (NPP). Non-physician practitioners (NPPs) collectively refers to physician assistants, nurse practitioners, clinical nurse specialists, certified registered nurse anesthetists/anesthesiologists and certified nurse-midwives provider types. 
+
+These financial relationships may include consulting fees, research grants, travel reimbursements, and payments made from the industry to medical practitioners. It is important to note that financial ties between the health care industry and health care providers do not necessarily indicate an improper relationship.
+
+- Let us consider the CMS' Open Payments data for selected cities in **New York state** in **year 2022**, the `cms_ny_2022` DataFrame:
+
+```{.python}
+cms_ny_2022 = pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-all.zip')
+```
+
+## Variable Description
+
+|variable       |type     |description    |
+|:--------------|:---------|:--------------|
+|`Record_ID`    |numeric | Unique identifier for a transaction between a manufacturer and a physician or an NPP |
+|`Month`        |numeric |Month          |
+|`Day`          |numeric   |Year           |
+|`Amount_of_Payment`  |numeric | US dollar amount of payment to a physician or NPP          |
+|`Product`         |chracter    |An indicator showing if the product is a `Drug`, `Device`, `Biological`, or `Medical Supply`.         |
+|`Product_Manufacturer`         |chracter    |Manufacturer making the payment to a physician/NPP |
+|`NPI` |numeric    |National Provider Identifier, a unique identification number for a physician/NPP receiving the payment |
+|`Physician_or_NPP`    |chracter    |An indicator showing if the recipient of the payment is a physician or non-physician practitioner (NPP) |
+|`First_Name` |chracter    |First name of physician/NPP in New York state |
+|`Last_Name`   |chracter    |Last name of physician/NPP in New York state |
+|`City`    |chracter    |City of the physician/NPP in New York state |
+|`Type`       |chracter    |Type of physician/NPP (e.g., `Medical Doctor`, `Doctor of Optometry`, `Nurse Practitioner`, `Physician Assistant`, and more) |
+|`Taxonomy`    |chracter    |Standardized taxonomy of medical service provider (e.g., `Allopathic & Osteopathic Physicians`, `Chiropractic Providers`, `Dental Providers`, `Physician Assistants & Advanced Practice Nursing Providers`, and more)    |
+|`Specialty`   |chracter    |A specialty chosen within the standardized taxonomy (e.g., `Psychiatry & Neurology`, `Physician Assistant`, `Chiropractor`, `Dentist`, `Family Medicine`, `Neurological Surgery`, and more) |
+|`Specialty_Detail`   |chracter    |Detail in the specialty if any (e.g., `Family`, `Gastroenterology`, `Cardiovascular Disease`, `Neurology`, `Psychiatry`, and more) |
+
+
+- Note that each physician/NPP corresponds to one single `Specialty_Detail` value.
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+cms_ny_2022 <- read_csv('/Users/bchoe/My Drive/lecture-data/cms-2022-cities-all.csv')
+```
+
+```{r}
+#| results: asis
+#| echo: false
+
+knitr::kable(cms_ny_2022)
+```
+
+
+
+## Question 3
+- Write a Python code to convert the **string** type `Physician_or_NPP` variable into the **category** type variable.
+
+```{r}
+
+```
+
+
+
+
+## Question 4
+- Write a Python code to replace the **NA** value of the `Specialty_Detail` variable with the value of the `Specialty` variable.
+  - For example, the following shows that
+    - All the **NA** values in the `Specialty_Detail` variable for the value of **Physician Assistant** in the `Specialty` variable are replaced with **Physician Assistant**:
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+cms_ny_2022 <- cms_ny_2022 |> 
+  mutate(Specialty_Detail = ifelse(is.na(Specialty_Detail), Specialty, Specialty_Detail))
+
+df <- cms_ny_2022 |> 
+  mutate(Specialty_Detail = ifelse(is.na(Specialty_Detail), Specialty, Specialty_Detail)) |> 
+  head(8) |> 
+  select(Specialty, Specialty_Detail)
+
+knitr::kable(df)
+```
+
+
+
+## Question 5
+Write a Python code to count the number of transactions in which the payment amount (i.e., `Amount_of_Payment`) falls in the top 10% of all payments in the DataFrame. 
+
+
+```{.python}
+cms_ny_2022[_______________________________________________].shape[0]
+```
+
+
+
+
+
+## Question 6
+Write a Python code to identify the city or cities with the highest number of non-missing values in the `Specialty_Detail` variable of the `cms_ny_2022` DataFrame.
+
+
+
+
+
+## Question 7
+- Write a Python code to count the number of occurrences of each unique value in `Specialty_Detail` for each unique value in `Taxonomy`.
+  - For example, the following displays the number of occurrences of each unique in `Specialty_Detail` for the **Dental Providers** `Taxonomy` value.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+df <- cms_ny_2022 |> 
+  filter(Taxonomy == 'Dental Providers') |> 
+  group_by(Specialty_Detail) |> 
+  count()
+
+knitr::kable(df)
+```
+
+
+
+
+
+
+## Question 8
+- Write a Python code to count the number of unique `Specialty_Detail` values for the value **"Dental Providers"** in `Taxonomy`.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+df <- cms_ny_2022 |> 
+  filter(Taxonomy == "Dental Providers") |> 
+  summarise(n_unique = n_unique(Specialty_Detail))
+
+knitr::kable(df)
+
+```
+
+
+
+
+
+## Question 9
+- Write a Python code (1) to count the number of missing values and (2) to calculate mean, standard deviation, minimum, first quartile, median, third quartile, and maximum of the `Amount_of_Payment` variable for the value **Dermatology** in the `Specialty` variable.
+
+
+```{r}
+
+```
+
+
+
+
+
+## Question 10
+- Write a Python code to replicate the following DataFrame, which calculate (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.
+  - Ensure that the sum of the percentages of physicians and NPPs within each city is 100.
+  - Ensure that the observations are sorted by `Total_Count` and `City` in descending and ascending orders, respectively.
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+df <- cms_ny_2022 |> 
+  select(City, Physician_or_NPP, NPI) |> 
+  distinct() |> 
+  group_by(City, Physician_or_NPP) |> 
+  summarise(count = n()) |> 
+  mutate(Total_Count = sum(count),
+            Percent = round(100 * count / Total_Count, 2)) |> 
+  arrange(-Total_Count, City)
+
+knitr::kable(df)
+
+```
+
+
+
+
+## Question 11
+- Write a Python code to calculate:
+  - The total `Amount_of_Payment` the `Product_Manufacturer` **AbbVie Inc.** paid to physicians and non-physician practitioners (NPPs) in `Cities` of **Rochester**, **Buffalo**, and **Syracuse**.
+  - How many times the `Product_Manufacturer` **AbbVie Inc.** paid to physicians and non-physician practitioners (NPPs) in  in `Cities` of **Rochester**, **Buffalo**, and **Syracuse**.
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+df_producer_city <- cms_ny_2022 |> 
+  filter(City %in% c('Rochester', 'Buffalo', 'Syracuse'),
+         Product_Manufacturer == "AbbVie Inc.") |> 
+  summarise(Total_Amount_of_Payment = round(sum(Amount_of_Payment, na.rm = T), 2),
+            count = n())
+
+knitr::kable(df_producer_city)
+
+```
+
+
+
+
+## Question 12
+- Consider the following two DataFrames, `cms_ny_2022_npi` and `cms_ny_2022_records`:
+
+```{.python}
+cms_ny_2022_npi <- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')
+```
+
+-	`cms_ny_2022_npi`: This DataFrame is created from `cms_ny_2022` by selecting only the columns `NPI`, `Physician_or_NPP`, `First_Name`, `Last_Name`, `City`, `Type`, `Taxonomy`, `Specialty`, and `Specialty_Detail.` 
+  - In addition, it contains only unique observations (i.e., there are no duplicate rows).
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+cms_ny_2022_npi <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+knitr::kable(cms_ny_2022_npi |> 
+               select(NPI:Physician_or_NPP) |> 
+  head(20))
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+knitr::kable(cms_ny_2022_npi |> 
+                              select(First_Name:Last_Name) |> 
+  head(20))
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+knitr::kable(cms_ny_2022_npi |> 
+                              select(Type:Specialty_Detail) |> 
+  head(20))
+
+```
+
+
+```{.python}
+cms_ny_2022_records <- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')
+```
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+cms_ny_2022_records <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')
+```
+
+-	`cms_ny_2022_records`: This DataFrame is derived from `cms_ny_2022` by including every observation but only retaining the columns `Record_ID`, `Month`, `Day`, `Amount_of_Payment`, `Product`, `Product_Manufacturer`, and `NPI`.
+
+
+- Write a Python code to create the `cms_ny_2022` DataFrame by using the `cms_ny_2022_npi` and `cms_ny_2022_records` DataFrames. 
+
+```{r}
+
+```
+
+
+
+
+## Question 13
+- Write a Python code to create the following DataFrame, `City_Physician_or_NPP`, which counts the number of physicians and the non-physician practitioners (NPPs) in each city.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+City_Physician_or_NPP <- cms_ny_2022 |>
+  count(City, Physician_or_NPP) |>    
+  pivot_wider(names_from = Physician_or_NPP, values_from = n)
+
+
+knitr::kable(City_Physician_or_NPP)
+```
+
+
+
+
+
