@@ -91,6 +91,14 @@ DT::datatable(df)
 
 <br>
 
+- To iterate over the `id` values in `df_housing`, you can convert the variable to a list using `.tolist()`:
+
+```{.python}
+for val in df_housing['id'].tolist():
+   # do something with val
+```
+
+
 - Below replaces 'Home Price Index (' with '' (empty string) in the `title` column:
 
 ```{.python}
