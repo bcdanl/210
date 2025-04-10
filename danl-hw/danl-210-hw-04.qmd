@@ -7,7 +7,7 @@ format:
   html:
     code-fold: true
 execute: 
-  eval: false
+  eval: true
 language: 
   code-summary: "Click to Check the Answer!"
 ---
@@ -40,7 +40,7 @@ library(tidyverse)
 [https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page](https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page)
 
 - Provide a Python Selenium code to download all the MS Excel files in the webpage above.
-  - In your code, please code properly, so that you do not download any PDF files.
+  - Please make sure that you do not download any PDF files.
 
 *Answer*:
 ```{python}
@@ -52,9 +52,80 @@ library(tidyverse)
 
 
 ## Question 2
-Provide a Python code to get New York City air quality surveillance data using the following API endpoint:
+The `series_housing_price` DataFrame contains FRED series `id`s for the Home Price Index across 16 metropolitan statistical areas, each categorized into three price tiers: low, middle, and high.
 
-[https://data.cityofnewyork.us/resource/c3uy-2p5r.json](https://data.cityofnewyork.us/resource/c3uy-2p5r.json)
+```{.python}
+url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
+series_housing_price = pd.read_csv(url)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df <- read_csv('https://bcdanl.github.io/data/fred_api_series_housing_price.csv')
+DT::datatable(df)
+```
+
+<br>
+
+For more information regarding the index, please visit [Standard & Poor's](https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-corelogic-cs-home-price-indices.pdf). There is more information about home price sales pairs in the Methodology section. Copyright, 2016, Standard & Poor's Financial Services LLC. 
+
+
+Provide a Python code (excluding your FRED API key) to construct the following DataFrame:
+
+<!-- ```{.python} -->
+<!-- url = 'https://bcdanl.github.io/data/home_price_index_2025_01_01.csv' -->
+<!-- home_price = pd.read_csv(url) -->
+<!-- ``` -->
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df <- read_csv('https://bcdanl.github.io/data/home_price_index_2025_01_01.csv')
+DT::datatable(df)
+```
+
+<br>
+
+- Below replaces 'Home Price Index (' with '' (empty string) in the `title` column:
+
+```{.python}
+df_all['title'] = df_all['title'].str.replace('Home Price Index (', '')
+```
+
+
+- The `title` column can split into the `tier` and `city` variables using the following code:
+
+```{.python}
+# Split the 'title' column into two new variables, 'ranking' and 'title'
+# by the first occurrence of " Tier) for ". 
+
+# expand=True tells pandas to return the results in a DataFrame
+  # If expand were False, the result would be a Series of lists.
+
+# Use \) to escape the closing parenthesis, which has special meaning in regex
+df_all[['tier', 'city']] = df_all['title'].str.split(' Tier\) for ', expand=True)  
+```
+
+
+- The DataFrame is sorted first by `state`, then by `city` within each `state`, then by `date` in descending order within each `city`, and finally by `tier` within each `city`-`date` group.
+  - To sort observations in a custom order (like Low, Middle, High), you can convert the `tier` variable to a categorical variable with an explicit order, and then sort.
+
+```{.python}
+df = pd.DataFrame({
+    'tier': ['Middle', 'High', 'Low', 'Middle', 'Low'],
+    'city': ['NY', 'LA', 'CHI', 'SF', 'SEA']
+})
+
+tier_order = ['Low', 'Middle', 'High']
+df['tier'] = pd.Categorical(df['tier'], categories=tier_order, ordered=True)
+
+df_sorted = df.sort_values('tier')
+```
 
 
 *Answer*:
@@ -77,7 +148,7 @@ import numpy as np
 
 The following describes the context of DataFrame in Part 2.
 
-Open Payments, which is managed by the Centers for Medicare & Medicaid Services (CMS), is a national disclosure program created by the Affordable Care Act (ACA). The program promotes transparency and accountability by helping consumers understand the financial relationships between pharmaceutical and medical device industries, physicians, and non-physician practitioners (NPP). Non-physician practitioners (NPPs) collectively refers to physician assistants, nurse practitioners, clinical nurse specialists, certified registered nurse anesthetists/anesthesiologists and certified nurse-midwives provider types. 
+[Open Payments](https://openpaymentsdata.cms.gov), which is managed by the Centers for Medicare & Medicaid Services (CMS), is a national disclosure program created by the Affordable Care Act (ACA). The program promotes transparency and accountability by helping consumers understand the financial relationships between pharmaceutical and medical device industries, physicians, and non-physician practitioners (NPP). Non-physician practitioners (NPPs) collectively refers to physician assistants, nurse practitioners, clinical nurse specialists, certified registered nurse anesthetists/anesthesiologists and certified nurse-midwives provider types. 
 
 These financial relationships may include consulting fees, research grants, travel reimbursements, and payments made from the industry to medical practitioners. It is important to note that financial ties between the health care industry and health care providers do not necessarily indicate an improper relationship.
 
@@ -124,7 +195,7 @@ cms_ny_2022 <- read_csv('/Users/bchoe/My Drive/lecture-data/cms-2022-cities-all.
 #| results: asis
 #| echo: false
 
-knitr::kable(cms_ny_2022)
+rmarkdown::paged_table(cms_ny_2022)
 ```
 
 
@@ -137,13 +208,12 @@ knitr::kable(cms_ny_2022)
 ```
 
 
-
+<br>
 
 ## Question 4
-- Write a Python code to replace the **NA** value of the `Specialty_Detail` variable with the value of the `Specialty` variable.
+- Write a Python code to replace the **NaN** value of the `Specialty_Detail` variable with the value of the `Specialty` variable.
   - For example, the following shows that
-    - All the **NA** values in the `Specialty_Detail` variable for the value of **Physician Assistant** in the `Specialty` variable are replaced with **Physician Assistant**:
-
+    - All **NaN** values in the `Specialty_Detail` variable, where the `Specialty` is **Physician Assistant**, are replaced with **Physician Assistant**.
 
 ```{r}
 #| echo: false
@@ -154,23 +224,30 @@ cms_ny_2022 <- cms_ny_2022 |>
 
 df <- cms_ny_2022 |> 
   mutate(Specialty_Detail = ifelse(is.na(Specialty_Detail), Specialty, Specialty_Detail)) |> 
-  head(8) |> 
-  select(Specialty, Specialty_Detail)
+  select(Specialty, Specialty_Detail) |> 
+  filter(Specialty == Specialty_Detail, Specialty == "Physician Assistant")
 
-knitr::kable(df)
+rmarkdown::paged_table(df)
 ```
 
 
+*Answer*:
+```{python}
+
+```
+
+<br>
 
 ## Question 5
 Write a Python code to count the number of transactions in which the payment amount (i.e., `Amount_of_Payment`) falls in the top 10% of all payments in the DataFrame. 
 
 
-```{.python}
-cms_ny_2022[_______________________________________________].shape[0]
+*Answer*:
+```{python}
+
 ```
 
-
+<br>
 
 
 
@@ -178,7 +255,12 @@ cms_ny_2022[_______________________________________________].shape[0]
 Write a Python code to identify the city or cities with the highest number of non-missing values in the `Specialty_Detail` variable of the `cms_ny_2022` DataFrame.
 
 
+*Answer*:
+```{python}
 
+```
+
+<br>
 
 
 ## Question 7
@@ -195,11 +277,16 @@ df <- cms_ny_2022 |>
   group_by(Specialty_Detail) |> 
   count()
 
-knitr::kable(df)
+rmarkdown::paged_table(df)
 ```
 
 
+*Answer*:
+```{python}
 
+```
+
+<br>
 
 
 
@@ -213,30 +300,35 @@ knitr::kable(df)
 #| message: false
 df <- cms_ny_2022 |> 
   filter(Taxonomy == "Dental Providers") |> 
-  summarise(n_unique = n_unique(Specialty_Detail))
+  summarise(n_unique = n_distinct(Specialty_Detail))
 
-knitr::kable(df)
+rmarkdown::paged_table(df)
 
 ```
 
 
+*Answer*:
+```{python}
 
+```
+
+<br>
 
 
 ## Question 9
 - Write a Python code (1) to count the number of missing values and (2) to calculate mean, standard deviation, minimum, first quartile, median, third quartile, and maximum of the `Amount_of_Payment` variable for the value **Dermatology** in the `Specialty` variable.
 
 
-```{r}
+*Answer*:
+```{python}
 
 ```
 
-
-
+<br>
 
 
 ## Question 10
-- Write a Python code to replicate the following DataFrame, which calculate (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.
+- Write a Python code to replicate the following DataFrame, which calculates (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.
   - Ensure that the sum of the percentages of physicians and NPPs within each city is 100.
   - Ensure that the observations are sorted by `Total_Count` and `City` in descending and ascending orders, respectively.
 
@@ -255,11 +347,16 @@ df <- cms_ny_2022 |>
             Percent = round(100 * count / Total_Count, 2)) |> 
   arrange(-Total_Count, City)
 
-knitr::kable(df)
+rmarkdown::paged_table(df, options = list(rows.print = nrow(df)))
 
 ```
 
+*Answer*:
+```{python}
 
+```
+
+<br>
 
 
 ## Question 11
@@ -279,11 +376,15 @@ df_producer_city <- cms_ny_2022 |>
   summarise(Total_Amount_of_Payment = round(sum(Amount_of_Payment, na.rm = T), 2),
             count = n())
 
-knitr::kable(df_producer_city)
+rmarkdown::paged_table(df_producer_city)
+```
+
+*Answer*:
+```{python}
 
 ```
 
-
+<br>
 
 
 ## Question 12
@@ -292,11 +393,6 @@ knitr::kable(df_producer_city)
 ```{.python}
 cms_ny_2022_npi <- pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')
 ```
-
--	`cms_ny_2022_npi`: This DataFrame is created from `cms_ny_2022` by selecting only the columns `NPI`, `Physician_or_NPP`, `First_Name`, `Last_Name`, `City`, `Type`, `Taxonomy`, `Specialty`, and `Specialty_Detail.` 
-  - In addition, it contains only unique observations (i.e., there are no duplicate rows).
-
-
 ```{r}
 #| echo: false
 #| eval: true
@@ -311,33 +407,12 @@ cms_ny_2022_npi <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.c
 #| warning: false
 #| message: false
 
-knitr::kable(cms_ny_2022_npi |> 
-               select(NPI:Physician_or_NPP) |> 
-  head(20))
+rmarkdown::paged_table(cms_ny_2022_npi)
 
 ```
+-	`cms_ny_2022_npi`: This DataFrame is created from `cms_ny_2022` by selecting only the columns `NPI`, `Physician_or_NPP`, `First_Name`, `Last_Name`, `City`, `Type`, `Taxonomy`, `Specialty`, and `Specialty_Detail.` 
+  - In addition, it contains only unique observations (i.e., there are no duplicate rows).
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-knitr::kable(cms_ny_2022_npi |> 
-                              select(First_Name:Last_Name) |> 
-  head(20))
-
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-knitr::kable(cms_ny_2022_npi |> 
-                              select(Type:Specialty_Detail) |> 
-  head(20))
-
-```
 
 
 ```{.python}
@@ -354,17 +429,28 @@ cms_ny_2022_records <- pd.read_csv('https://bcdanl.github.io/data/cms-2022-citie
 cms_ny_2022_records <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')
 ```
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+rmarkdown::paged_table(cms_ny_2022_records)
+
+```
+
 -	`cms_ny_2022_records`: This DataFrame is derived from `cms_ny_2022` by including every observation but only retaining the columns `Record_ID`, `Month`, `Day`, `Amount_of_Payment`, `Product`, `Product_Manufacturer`, and `NPI`.
 
 
 - Write a Python code to create the `cms_ny_2022` DataFrame by using the `cms_ny_2022_npi` and `cms_ny_2022_records` DataFrames. 
 
-```{r}
+
+*Answer*:
+```{python}
 
 ```
 
 
-
+<br>
 
 ## Question 13
 - Write a Python code to create the following DataFrame, `City_Physician_or_NPP`, which counts the number of physicians and the non-physician practitioners (NPPs) in each city.
@@ -379,9 +465,13 @@ City_Physician_or_NPP <- cms_ny_2022 |>
   pivot_wider(names_from = Physician_or_NPP, values_from = n)
 
 
-knitr::kable(City_Physician_or_NPP)
+rmarkdown::paged_table(City_Physician_or_NPP, options = list(rows.print = nrow(City_Physician_or_NPP)))
 ```
 
+*Answer*:
+```{python}
+
+```
 
 
 

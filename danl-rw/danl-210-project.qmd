@@ -353,11 +353,11 @@ In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s su
 
 | Evaluation | Description | Criteria |
 |-------|-------------|----------|
-| 1 (Very Deficient) | - Very poorly implemented<br>- Data is unreliable. | - Ineffective use of `yfinance`, resulting in incomplete or inaccurate financial data.<br>- Poor web scraping practices with `selenium`, leading to unreliable or incorrect data from Yahoo Finance.<br>- Inadequate use of `pandas`, resulting in poorly structured DataFrames. |
-| 2 (Somewhat Deficient) | - Somewhat effective implementation<br>- Data has minor reliability issues. | - Basic use of `yfinance` with minor inaccuracies in data retrieval.<br>- Basic web scraping with `selenium` that sometimes fails to capture all relevant data accurately.<br>- Basic use of `pandas`, but with occasional issues in data structuring. |
-| 3 (Acceptable) | - Competently implemented<br>- Data is mostly reliable. | - Competent use of `yfinance` to retrieve most financial data accurately.<br>- Effective web scraping with `selenium`, capturing most required data from Yahoo Finance.<br>- Adequate use of `pandas` to structure data in a mostly logical format. |
-| 4 (Very Good) | - Well-implemented and organized<br>- Data is reliable. | - Advanced use of `yfinance` to reliably and accurately fetch financial data.<br>- Thorough web scraping with `selenium` that consistently captures accurate and complete data from Yahoo Finance.<br>- Skillful use of `pandas` for clear and logical data structuring. |
-| 5 (Outstanding) | - Exceptionally implemented<br>- Data is highly reliable. | - Expert use of `yfinance` to obtain comprehensive and precise financial data.<br>- Expert web scraping with `selenium`, capturing detailed and accurate data from Yahoo Finance without fail.<br>- Expert use of `pandas` to create exceptionally well-organized DataFrames that facilitate easy analysis. |
+| 1 (Very Deficient) | - Very poorly implemented<br>- Data is unreliable. | - Poor web scraping practices with `selenium`, leading to unreliable or incorrect data from Yahoo Finance.<br>- Inadequate use of `pandas`, resulting in poorly structured DataFrames. |
+| 2 (Somewhat Deficient) | - Somewhat effective implementation<br>- Data has minor reliability issues. | - Basic web scraping with `selenium` that sometimes fails to capture all relevant data accurately.<br>- Basic use of `pandas`, but with occasional issues in data structuring. |
+| 3 (Acceptable) | - Effective web scraping with `selenium`, capturing most required data from Yahoo Finance.<br>- Adequate use of `pandas` to structure data in a mostly logical format. |
+| 4 (Very Good) | - Well-implemented and organized<br>- Data is reliable. | - Thorough web scraping with `selenium` that consistently captures accurate and complete data from Yahoo Finance.<br>- Skillful use of `pandas` for clear and logical data structuring. |
+| 5 (Outstanding) | - Exceptionally implemented<br>- Data is highly reliable. | - Expert web scraping with `selenium`, capturing detailed and accurate data from Yahoo Finance without fail.<br>- Expert use of `pandas` to create exceptionally well-organized DataFrames that facilitate easy analysis. |
 
 </div>
 
