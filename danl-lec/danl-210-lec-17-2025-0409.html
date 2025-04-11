@@ -434,46 +434,174 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
+<section id="web-scrapping-tips" class="slide level2">
+<h2>Web-scrapping Tips</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="mac">Mac</h4>
+<ul>
+<li class="fragment"><p>Use a full screen mode for your Spyder IDE.</p></li>
+<li class="fragment"><p>Use a trackpad gesture with three fingers to move across screens, or <strong>command+tab</strong> to move between a Chrome web browser and a Spyder IDE.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="windows">Windows</h4>
+<ul>
+<li class="fragment">Use <strong>Alt + Tab</strong> to move between a Chrome web browser and a Spyder IDE.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="web-scraping-tips" class="slide level2">
+<h2>Web Scraping Tips</h2>
+<div class="columns">
+<div class="column" style="width:“50%”;">
+<h4 id="on-mac">On Mac</h4>
+<ul>
+<li class="fragment">Use full-screen mode in your Spyder IDE for a distraction‑free environment.</li>
+<li class="fragment">Use a <strong>three‑finger swipe</strong> on your trackpad or press <strong>Command+Tab</strong> to quickly switch between Chrome and Spyder IDE.</li>
+</ul>
+</div><div class="column" style="width:“50%”;">
+<h4 id="on-windows">On Windows</h4>
+<ul>
+<li class="fragment">Press <strong>Alt+Tab</strong> to efficiently switch between your Chrome browser and Spyder.</li>
+</ul>
+</div>
+</div>
+</section>
 <section>
-<section id="api" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1>API</h1>
+<section id="apis" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>APIs</h1>
 
 </section>
-<section id="api-1" class="slide level2">
-<h2>API</h2>
-<h3 id="key-concepts">Key Concepts</h3>
+<section id="clients-and-servers" class="slide level2">
+<h2>Clients and servers</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/webscrapping-client_server.png" width="450px">
+</p>
+</div><div class="column" style="width:60%;">
+<div style="display:block; margin:50px;">
+
+</div>
+<ul>
+<li class="fragment">Computers connected to the web are called <strong>clients</strong> and <strong>servers</strong>.</li>
+</ul>
+</div>
+</div>
+<ul>
+<li class="fragment"><p><strong>Clients</strong> are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).</p></li>
+<li class="fragment"><p><strong>Servers</strong> are computers that store webpages, sites, or apps.</p></li>
+<li class="fragment"><p>When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user’s web browser.</p></li>
+</ul>
+</section>
+<section id="hypertext-transfer-protocol-secure-https" class="slide level2">
+<h2>Hypertext Transfer Protocol Secure (HTTPS)</h2>
+<ul>
+<li class="fragment"><p><strong>Hypertext Transfer Protocol (HTTP)</strong> is a language for clients and servers to speak to each other.</p></li>
+<li class="fragment"><p><strong>Hypertext Transfer Protocol Secure (HTTPS)</strong> is an encrypted version of HTTP that provides secure communication between them.</p></li>
+<li class="fragment"><p>When we type a web address with “https://” into our browser:</p>
+<ol type="1">
+<li class="fragment">The browser finds the address of the server that hosts the website.</li>
+<li class="fragment">The browser and server establish a <strong>secure connection</strong>.</li>
+<li class="fragment">The browser sends an <strong>HTTPS request</strong> to the server, asking for the website’s content.</li>
+<li class="fragment">If the server approves the request, it responds with a <strong>200 OK</strong> message and sends the encrypted website data to the client.</li>
+<li class="fragment">The browser <strong>decrypts and displays</strong> the website securely.</li>
+</ol></li>
+</ul>
+</section>
+<section id="http-status-codes" class="slide level2">
+<h2>HTTP Status Codes</h2>
+<div>
+<ul>
+<li>The <code>requests</code> library is the de facto standard for making HTTP requests in Python.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># library for making HTTPS requests in Python</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> requests  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="display:block; margin:30px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>p <span class="op">=</span> <span class="st">'https://bcdanl.github.io/210'</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>response <span class="op">=</span> requests.get(p)  </span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(response.status_code)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>200</strong> → The request is successful, and the server sends the requested content.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>p <span class="op">=</span> <span class="st">'https://bcdanl.github.io/2100'</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>response <span class="op">=</span> requests.get(p)  </span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(response.status_code)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>404 Not Found</strong> → The server cannot find the requested webpage.</li>
+<li class="fragment">This may happen due to a broken link, mistyped URL, or deleted page.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="api-key-concepts" class="slide level2">
+<h2>API: Key Concepts</h2>
 <div>
 <ul>
 <li class="fragment">API stands for <strong>Application Programming Interface</strong>.
 <ul>
-<li class="fragment">It enables data transmission between <strong>client</strong> and <strong>server</strong>.</li>
+<li class="fragment">It enables <u>data transmission</u> between <strong>client</strong> and <strong>server</strong>.</li>
 </ul></li>
 <li class="fragment"><strong>Methods</strong>: The “verbs” that clients use to talk with a server.
 <ul>
-<li class="fragment">The main one that we’ll be using is <code>GET</code> (i.e.&nbsp;ask a server to retrieve information). Other common methods are <code>POST</code>, <code>PUT</code> and <code>DELETE</code>.</li>
+<li class="fragment">The main one that we’ll be using is <code>GET</code> (i.e., asking a server to retrieve information). Other common methods include <code>POST</code>, <code>PUT</code>, and <code>DELETE</code>.</li>
 </ul></li>
-<li class="fragment"><strong>Requests</strong>: What the client asks of the server.</li>
-<li class="fragment"><strong>Response</strong>: The server’s response, which includes
+<li class="fragment"><strong>Requests</strong>: What the <strong>client</strong> asks of the server.</li>
+<li class="fragment"><strong>Response</strong>: The <strong>server</strong>’s response, which includes
 <ul>
-<li class="fragment">Status Code (e.g.&nbsp;“404” if not found, or “200” if successful);</li>
-<li class="fragment">Header (i.e.&nbsp;meta-information about the response);</li>
-<li class="fragment">Body (i.e the actual content that we’re interested in.</li>
+<li class="fragment">Status Code (e.g., “404” if not found, or “200” if successful);</li>
+<li class="fragment">Content (i.e.&nbsp;the content that we’re interested in);</li>
+<li class="fragment">Header (i.e., meta-information about the response).</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="api-2" class="slide level2">
-<h2>API</h2>
-<h3 id="api-endpoints">API endpoints</h3>
+<section id="understanding-the-requests-method" class="slide level2">
+<h2>Understanding the <code>requests</code> Method</h2>
+<ul>
+<li class="fragment"><strong>What is <code>requests</code>?</strong>
+<ul>
+<li class="fragment">A Python library used to make HTTP requests to APIs and websites.</li>
+<li class="fragment">Supports methods like <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, etc.</li>
+</ul></li>
+<li class="fragment"><strong>Using <code>requests.get()</code>:</strong>
+<ul>
+<li class="fragment">Sends a <code>GET</code> request to retrieve data from a specified URL.</li>
+<li class="fragment">Commonly used when fetching data from APIs.</li>
+</ul></li>
+<li class="fragment"><strong>Syntax:</strong></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> requests</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>url <span class="op">=</span> <span class="st">'https://www.example.com/.....'</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>param_dicts <span class="op">=</span> {.....}  <span class="co"># Optional, but we often need this</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>response <span class="op">=</span> requests.get(url, params<span class="op">=</span>param_dicts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>Parameters:</strong>
+<ul>
+<li class="fragment"><code>url</code>: <strong>API endpoint</strong> where data is requested.</li>
+<li class="fragment"><code>param_dicts</code>: Dictionary of <strong>query parameters</strong> sent with the request.</li>
+</ul></li>
+</ul>
+</section>
+<section id="api-endpoints" class="slide level2">
+<h2>API Endpoints</h2>
 <div>
 <ul>
-<li class="fragment">In the case of web APIs, we can access information directly from the API database if we can specify the correct URL(s).
+<li class="fragment">In the case of web APIs, we can access information directly from the API database if we specify the correct URL(s).
 <ul>
-<li class="fragment">These URLs are known as an <strong>API endpoints</strong>.</li>
+<li class="fragment">These URLs are known as <strong>API endpoints</strong>.</li>
 </ul></li>
-<li class="fragment">Navigate your browser to an API endpoint and you’ll just see a load of the following format of texts:
+<li class="fragment">Navigate your browser to an API endpoint and we’ll just see a load of the following format of texts:
 <ul>
-<li class="fragment">JSON (JavaScript Object Notation) or</li>
+<li class="fragment"><strong>JSON</strong> (JavaScript Object Notation), or</li>
 <li class="fragment">XML (Extensible Markup Language).</li>
 </ul></li>
 <li class="fragment">We can add a <strong>JSONView</strong>, a browser extension that renders JSON output nicely in Chrome or Firefox.
@@ -482,10 +610,32 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </div>
+<!-- ## Common HTTP Methods -->
+<!-- ::: {.incremental} -->
+<!-- - **GET**: Retrieve data from a server. -->
+<!-- - **POST**: Submit data to create a new resource on the server. -->
+<!-- - **PUT**: Update an existing resource (or create it if it doesn’t exist). -->
+<!-- - **DELETE**: Remove a resource on the server. -->
+<!-- ::: -->
 </section>
-<section id="api-3" class="slide level2">
-<h2>API</h2>
-<h3 id="nyc-open-data">NYC Open Data</h3>
+<section id="inspecting-the-response-object" class="slide level2">
+<h2>Inspecting the Response Object</h2>
+<ul>
+<li class="fragment"><strong>Key attributes and methods:</strong>
+<ul>
+<li class="fragment"><code>response.status_code</code>: Returns HTTP status code (e.g., 200 for success).</li>
+<li class="fragment"><code>response.json()</code>: Converts JSON format data into a Python dictionary.</li>
+<li class="fragment"><code>response.text</code>: Decoded text version of the <code>response.content</code></li>
+</ul></li>
+<li class="fragment"><strong>Best practices:</strong>
+<ul>
+<li class="fragment">Always check <code>status_code</code> before processing the response.</li>
+<li class="fragment">Use <code>response.json()</code> for easier handling of JSON data.</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-nyc-open-data" class="slide level2">
+<h2>Example: NYC Open Data</h2>
 <div>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">(1)</a></li><li><a href="#tabset-1-2">(2)</a></li><li><a href="#tabset-1-3">(3)</a></li></ul>
@@ -493,7 +643,7 @@ Byeong-Hak Choe
 <div id="tabset-1-1">
 <ul>
 <li><p><strong>NYC Open Data</strong> (<a href="https://opendata.cityofnewyork.us">https://opendata.cityofnewyork.us</a>) is free public data published by NYC agencies and other partners.</p></li>
-<li><p>Many metropolitan cities have the open data websites too:</p>
+<li><p>Many metropolitan cities have the Open Data websites too:</p>
 <ul>
 <li><a href="https://data.lacity.org">https://data.lacity.org</a></li>
 <li><a href="https://opendata.dc.gov">https://opendata.dc.gov</a></li>
@@ -512,17 +662,16 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-1-3">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>endpoint <span class="op">=</span> <span class="st">'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'</span>  <span class="co">## API endpoint</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>response_API <span class="op">=</span> requests.get(endpoint)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>data <span class="op">=</span> StringIO(response_API.text)</span>
-<span id="cb1-8"><a href="#cb1-8"></a>df <span class="op">=</span> pd.read_json(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> requests</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a>endpoint <span class="op">=</span> <span class="st">'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'</span>  <span class="co">## API endpoint</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>response <span class="op">=</span> requests.get(endpoint)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>content <span class="op">=</span> response.json() <span class="co"># to convert JSON response data to a dictionary</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>df <span class="op">=</span> pd.DataFrame(content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>The <code>request.get()</code> method sends a <code>GET</code> request to the specified URL.</p></li>
-<li><p><code>pd.read_json()</code> automatically convert JSON data into DataFrame.</p>
+<li>The <code>request.get()</code> method sends a <code>GET</code> request to the specified URL.</li>
+<li><code>response.json()</code> automatically convert JSON data into a dictionary.
 <ul>
 <li>JSON objects have the same format as Python dictionaries.</li>
 </ul></li>
@@ -532,16 +681,15 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="api-4" class="slide level2">
-<h2>API</h2>
-<h3 id="federal-reserve-economic-data-fred">Federal Reserve Economic Data (FRED)</h3>
+<section id="example-federal-reserve-economic-data-fred" class="slide level2">
+<h2>Example: Federal Reserve Economic Data (FRED)</h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">(1)</a></li><li><a href="#tabset-2-2">(2)</a></li><li><a href="#tabset-2-3">(3)</a></li><li><a href="#tabset-2-4">(4)</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">(1)</a></li><li><a href="#tabset-2-2">(2)</a></li><li><a href="#tabset-2-3">(3)</a></li><li><a href="#tabset-2-4">(4)</a></li><li><a href="#tabset-2-5">(5)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <ul>
-<li><p>Most API interfaces will only let you access and download data after you have registered an API key with them.</p></li>
+<li><p>Most API interfaces will only let you access and download data after you have registered an <strong>API key</strong> with them.</p></li>
 <li><p>Let’s download economic data from the FRED <a href="https://fred.stlouisfed.org">https://fred.stlouisfed.org</a> using its API.</p></li>
 <li><p>You need to create an account <a href="https://fredaccount.stlouisfed.org/login/">https://fredaccount.stlouisfed.org/login/</a> to get an API key for your FRED account.</p></li>
 </ul>
@@ -561,32 +709,39 @@ Byeong-Hak Choe
 <li><code>requests</code> comes with a variety of features that allow us to interact more flexibly and securely with web APIs.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> requests</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> json</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-4"><a href="#cb2-4"></a>params <span class="op">=</span> {</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="st">'api_key'</span>: <span class="st">'YOUR_FRED_API_KEY'</span>, <span class="co">## Change to your own key</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="st">'file_type'</span>: <span class="st">'json'</span>,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="st">'series_id'</span>: <span class="st">'GDPC1'</span>   <span class="co">## ID for US real GDP</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>}</span>
-<span id="cb2-9"><a href="#cb2-9"></a>endpoint <span class="op">=</span> <span class="st">"series/observations"</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>url <span class="op">=</span> <span class="st">"https://api.stlouisfed.org/"</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>response <span class="op">=</span> requests.get(url <span class="op">+</span> <span class="st">"fred/"</span> <span class="op">+</span> endpoint, params <span class="op">=</span> params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> requests  <span class="co"># to handle API requests</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> json      <span class="co"># to parse JSON response data</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-4"><a href="#cb6-4"></a>param_dicts <span class="op">=</span> {</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="st">'api_key'</span>: <span class="st">'YOUR_FRED_API_KEY'</span>, <span class="co">## Change to your own key</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="st">'file_type'</span>: <span class="st">'json'</span>,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="st">'series_id'</span>: <span class="st">'GDPC1'</span>    <span class="co">## ID for US real GDP</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>}</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>url <span class="op">=</span> <span class="st">"https://api.stlouisfed.org/"</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>endpoint <span class="op">=</span> <span class="st">"series/observations"</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>api_endpoint <span class="op">=</span> url <span class="op">+</span> <span class="st">"fred/"</span> <span class="op">+</span> endpoint   <span class="co"># sum of strings</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>response <span class="op">=</span> requests.get(api_endpoint, params <span class="op">=</span> param_dicts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-4">
 <ul>
-<li>To actually extract the content (i.e.&nbsp;data) from of the response, we’ll use the <code>.content.decode('utf-8')</code>.</li>
-<li>We can convert JSON into a Python dictionary object using then <code>json.loads()</code> function.</li>
+<li><code>response.content.decode('utf-8')</code>: Extracts the content (i.e.&nbsp;data) from the <code>response</code>.</li>
+<li><code>json.loads()</code>: Converts JSON into a Python dictionary object.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Extract the response content (i.e. text).</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>content <span class="op">=</span> response.content.decode(<span class="st">'utf-8'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Convert JSON response to Python dictionary.</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>fred <span class="op">=</span> json.loads(content) </span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Extract the "observations" list element.</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>observations <span class="op">=</span> pd.DataFrame( fred[<span class="st">'observations'</span>] )</span>
-<span id="cb3-9"><a href="#cb3-9"></a>observations <span class="op">=</span> observations.astype({<span class="st">'value'</span>: <span class="bu">float</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Convert JSON response to Python dictionary.</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>content <span class="op">=</span> response.json() <span class="co"># to parse JSON response data</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Extract the "observations" list element.</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>df <span class="op">=</span> pd.DataFrame( content[<span class="st">'observations'</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-5">
+<ul>
+<li>By default, all columns in the DataFrame from <code>content</code> are <code>string</code>-type.
+<ul>
+<li>So, we need to convert their types properly.</li>
+<li>The DataFrame may also contains columns we do not need.</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
@@ -600,16 +755,18 @@ Byeong-Hak Choe
 <section id="using-the-new-york-times-api-1" class="slide level2">
 <h2>Using the New York Times API</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Step 1: Sign Up and Sign In</a></li><li><a href="#tabset-3-2">Step 2: Register apps</a></li><li><a href="#tabset-3-3">Step 3: Access the API keys</a></li><li><a href="#tabset-3-4">Step 4: Collect Data with <code>pynytimes</code></a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Step 1</a></li><li><a href="#tabset-3-2">Step 2</a></li><li><a href="#tabset-3-3">Step 3</a></li><li><a href="#tabset-3-4">Step 4</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
+<h3 id="sign-up-and-sign-in">Sign Up and Sign In</h3>
 <ul>
-<li class="fragment">Sign up at <a href="https://developer.nytimes.com/">NYTimes Developer Portal</a></li>
+<li class="fragment">Sign up at <a href="https://developer.nytimes.com/"><strong>NYTimes Developer Portal</strong></a></li>
 <li class="fragment">Verify your NYT Developer account via email you use.</li>
 <li class="fragment">Sign in.</li>
 </ul>
 </div>
 <div id="tabset-3-2">
+<h3 id="register-apps">Register apps</h3>
 <ol type="1">
 <li class="fragment">Select My Apps from the user drop-down at the navigation bar.</li>
 <li class="fragment">Click + New App to create a new app.</li>
@@ -618,11 +775,10 @@ Byeong-Hak Choe
 <li class="fragment">Click the APIs tab.</li>
 <li class="fragment">Click the access toggle to enable or disable access to an API product from the app.</li>
 </ol>
-<ul>
-<li class="fragment">Follow steps in (Get Started)[https://developer.nytimes.com/get-started]</li>
-</ul>
+<!-- - Follow steps in [**Get Started**](https://developer.nytimes.com/get-started) -->
 </div>
 <div id="tabset-3-3">
+<h3 id="access-the-api-keys">Access the API keys</h3>
 <ol type="1">
 <li class="fragment">Select My Apps from th user drop-down.</li>
 <li class="fragment">Click the app in the list.</li>
@@ -631,13 +787,14 @@ Byeong-Hak Choe
 </ol>
 </div>
 <div id="tabset-3-4">
+<h3 id="collect-data-with-pynytimes">Collect Data with <code>pynytimes</code></h3>
 <ul>
-<li class="fragment"><p>While <a href="https://developer.nytimes.com/apis">NYTimes Developer Portal APIs</a> provides API documentation, it is time consuming to go through the documentation.</p></li>
-<li class="fragment"><p>There is a Python library for more user-friendly NYTimes API, called <code>pynytimes</code>:</p></li>
+<li class="fragment"><p>While <a href="https://developer.nytimes.com/apis"><strong>NYTimes Developer Portal APIs</strong></a> provides API documentation, it is time consuming to go through the documentation.</p></li>
+<li class="fragment"><p>There is an <strong>unofficial</strong> Python library called <code>pynytimes</code> that provides a more user-friendly interface for working with the NYTimes API.</p></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>pip install pynytimes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>pip install pynytimes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">To get started, check out <a href="https://pynytimes.michadenheijer.com">Introduction to pynytimes</a>.</li>
+<li class="fragment">To get started, check out <a href="https://pynytimes.michadenheijer.com"><strong>Introduction to pynytimes</strong></a>.</li>
 </ul>
 </div>
 </div>
@@ -651,11 +808,11 @@ Byeong-Hak Choe
 <section id="hidden-api-1" class="slide level2">
 <h2>Hidden API</h2>
 <ul>
-<li class="fragment"><p>Most industry-scale websites display data from their database servers.</p>
+<li class="fragment"><p>Most industry-scale websites display data from their <u>database servers</u>.</p>
 <ul>
-<li class="fragment">Many of them do not provide official APIs to retrieve data.</li>
+<li class="fragment">Many of them do NOT provide <u>official APIs</u> to retrieve data.</li>
 </ul></li>
-<li class="fragment"><p>Sometimes, it is possible to find their hidden APIs to retrieve data!</p></li>
+<li class="fragment"><p>Sometimes, it is possible to find their <strong>hidden APIs</strong> to retrieve data!</p></li>
 <li class="fragment"><p>Examples:</p>
 <ul>
 <li class="fragment"><a href="https://www.premierleague.com/stats">Premier League Stats</a></li>
@@ -667,21 +824,29 @@ Byeong-Hak Choe
 <h2>Hidden API</h2>
 <h3 id="how-can-we-find-a-hidden-api">How can we find a hidden API?</h3>
 <ul>
-<li class="fragment">On a web-browser (FireFox is recommended)
+<li class="fragment">On a web-browser (<strong>FireFox</strong> is recommended)
 <ol type="1">
 <li class="fragment">F12 -&gt; Network -&gt; XHR (<strong>X</strong>ML<strong>H</strong>ttp<strong>R</strong>equest)</li>
 <li class="fragment">Refresh the webpage that loads data</li>
 <li class="fragment">Find <code>json</code> type response that seems to have data</li>
 <li class="fragment">Right-click that response -&gt; Copy as cURL</li>
 </ol></li>
-<li class="fragment">On an API tool such as <a href="https://insomnia.rest">Insomnia</a>
+<li class="fragment">On an API tool such as Python <a href="https://curlconverter.com/python/">curlconverter</a>,
 <ol start="5" type="1">
-<li class="fragment">Make a new request</li>
-<li class="fragment">Paste the cURL to the address bar, and then click “Send” button.</li>
-<li class="fragment">Click the right most part of “New Request” (default name)</li>
-<li class="fragment">Click “&lt;/&gt; Generate Code”; Choose “Python” and “Requests”</li>
-<li class="fragment">Copy a Python <code>requests</code> code, and run it on your IDE.</li>
+<li class="fragment">Paste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.</li>
+<li class="fragment">Paste it on your Python script, and run it.</li>
 </ol></li>
+</ul>
+</section>
+<section id="details-on-requests-methods" class="slide level2">
+<h2>Details on <code>requests</code> methods</h2>
+<ul>
+<li class="fragment"><p>Our course contents are limited to the very very basics of the <code>requests</code> methods.</p></li>
+<li class="fragment"><p>For those who are interested in the Python’s <code>requests</code>, I recommend the following references:</p>
+<ul>
+<li class="fragment"><a href="https://realpython.com/python-requests/">Python’s Requests Library (Guide)</a></li>
+<li class="fragment"><a href="https://requests.readthedocs.io/en/latest/">Requests: HTTP for Humans™</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="fyi-on-web-data-collection-approaches" class="slide level2">

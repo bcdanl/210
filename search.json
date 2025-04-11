@@ -2160,21 +2160,21 @@
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#using-the-new-york-times-api-1",
     "title": "Lecture 17",
     "section": "Using the New York Times API",
-    "text": "Using the New York Times API\n\nStep 1: Sign Up and Sign InStep 2: Register appsStep 3: Access the API keysStep 4: Collect Data with pynytimes\n\n\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in.\n\n\n\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\nFollow steps in (Get Started)[https://developer.nytimes.com/get-started]\n\n\n\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved.\n\n\n\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time consuming to go through the documentation.\nThere is a Python library for more user-friendly NYTimes API, called pynytimes:\n\npip install pynytimes\n\nTo get started, check out Introduction to pynytimes."
+    "text": "Using the New York Times API\n\nStep 1Step 2Step 3Step 4\n\n\nSign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in.\n\n\n\nRegister apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\n\n\nAccess the API keys\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved.\n\n\n\nCollect Data with pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time consuming to go through the documentation.\nThere is an unofficial Python library called pynytimes that provides a more user-friendly interface for working with the NYTimes API.\n\npip install pynytimes\n\nTo get started, check out Introduction to pynytimes."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-1",
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-1",
     "title": "Lecture 17",
     "section": "Hidden API",
-    "text": "Hidden API\n\nMost industry-scale websites display data from their database servers.\n\nMany of them do not provide official APIs to retrieve data.\n\nSometimes, it is possible to find their hidden APIs to retrieve data!\nExamples:\n\nPremier League Stats\nNordstrom"
+    "text": "Hidden API\n\nMost industry-scale websites display data from their database servers.\n\nMany of them do NOT provide official APIs to retrieve data.\n\nSometimes, it is possible to find their hidden APIs to retrieve data!\nExamples:\n\nPremier League Stats\nNordstrom"
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-2",
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-2",
     "title": "Lecture 17",
     "section": "Hidden API",
-    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Insomnia\n\nMake a new request\nPaste the cURL to the address bar, and then click “Send” button.\nClick the right most part of “New Request” (default name)\nClick “&lt;/&gt; Generate Code”; Choose “Python” and “Requests”\nCopy a Python requests code, and run it on your IDE."
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#fyi-on-web-data-collection-approaches",
@@ -4065,5 +4065,103 @@
     "title": "DANL 210 - Q & A",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nDANL 210 - Discussion and Q & A Board\n\n\nundefined\n\n\nJanuary 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#key-concepts",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#key-concepts",
+    "title": "Lecture 17",
+    "section": "Key Concepts",
+    "text": "Key Concepts\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between client and server.\n\nMethods: The “verbs” that clients use to talk with a server.\n\nThe main one that we’ll be using is GET (i.e., asking a server to retrieve information). Other common methods include POST, PUT, and DELETE.\n\nRequests: What the client asks of the server.\nResponse: The server’s response, which includes\n\nStatus Code (e.g., “404” if not found, or “200” if successful);\nHeader (i.e., meta-information about the response);\nContent (i.e. the content that we’re interested in)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-endpoints",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-endpoints",
+    "title": "Lecture 17",
+    "section": "API Endpoints",
+    "text": "API Endpoints\n\n\nIn the case of web APIs, we can access information directly from the API database if we specify the correct URL(s).\n\nThese URLs are known as API endpoints.\n\nNavigate your browser to an API endpoint and we’ll just see a load of the following format of texts:\n\nJSON (JavaScript Object Notation), or\nXML (Extensible Markup Language).\n\nWe can add a JSONView, a browser extension that renders JSON output nicely in Chrome or Firefox.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#understanding-the-requests-method",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#understanding-the-requests-method",
+    "title": "Lecture 17",
+    "section": "Understanding the requests Method",
+    "text": "Understanding the requests Method\n\nWhat is requests?\n\nA Python library used to make HTTP requests to APIs and websites.\nSupports methods like GET, POST, PUT, DELETE, etc.\n\nUsing requests.get():\n\nSends a GET request to retrieve data from a specified URL.\nCommonly used when fetching data from APIs.\n\nSyntax:\n\nimport requests\n\nurl = 'https://www.example.com/.....'\nparam_dicts = {.....}  # Optional, but we often need this\nresponse = requests.get(url, params=param_dicts)\n\nParameters:\n\nurl: API endpoint where data is requested.\nparam_dicts: Dictionary of query parameters sent with the request."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#common-http-methods",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#common-http-methods",
+    "title": "Lecture 17",
+    "section": "Common HTTP Methods",
+    "text": "Common HTTP Methods\n\n\nGET: Retrieve data from a server.\nPOST: Submit data to create a new resource on the server.\nPUT: Update an existing resource (or create it if it doesn’t exist).\nDELETE: Remove a resource on the server."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#inspecting-the-response-object",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#inspecting-the-response-object",
+    "title": "Lecture 17",
+    "section": "Inspecting the Response Object",
+    "text": "Inspecting the Response Object\n\nKey attributes and methods:\n\nresponse.status_code: Returns HTTP status code (e.g., 200 for success).\nresponse.json(): Converts JSON format data into a Python dictionary.\nresponse.text: Decoded text version of the response.content\n\nBest practices:\n\nAlways check status_code before processing the response.\nUse response.json() for easier handling of JSON data."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#example-nyc-open-data",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#example-nyc-open-data",
+    "title": "Lecture 17",
+    "section": "Example: NYC Open Data",
+    "text": "Example: NYC Open Data\n\n\n(1)(2)(3)\n\n\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nMany metropolitan cities have the Open Data websites too:\n\nhttps://data.lacity.org\nhttps://opendata.dc.gov\nhttps://data.cityofchicago.org\n\n\n\n\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nCopy the API endpoint that appears in the popup box.\n\n\n\n\nimport requests\nimport pandas as pd\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse = requests.get(endpoint)\ncontent = response.json() # to convert JSON response data to a dictionary\ndf = pd.DataFrame(content)\n\nThe request.get() method sends a GET request to the specified URL.\nresponse.json() automatically convert JSON data into a dictionary.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#example-federal-reserve-economic-data-fred",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#example-federal-reserve-economic-data-fred",
+    "title": "Lecture 17",
+    "section": "Example: Federal Reserve Economic Data (FRED)",
+    "text": "Example: Federal Reserve Economic Data (FRED)\n\n\n(1)(2)(3)(4)(5)\n\n\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account.\n\n\n\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json\n\n\n\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs.\n\n\nimport requests  # to handle API requests\nimport json      # to parse JSON response data\nimport pandas as pd\nparam_dicts = {\n  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n  'file_type': 'json',\n  'series_id': 'GDPC1'    ## ID for US real GDP\n}\n\nurl = \"https://api.stlouisfed.org/\"\nendpoint = \"series/observations\"\napi_endpoint = url + \"fred/\" + endpoint   # sum of strings\nresponse = requests.get(api_endpoint, params = param_dicts)\n\n\n\nresponse.content.decode('utf-8'): Extracts the content (i.e. data) from the response.\njson.loads(): Converts JSON into a Python dictionary object.\n\n# Convert JSON response to Python dictionary.\ncontent = response.json() # to parse JSON response data\n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\n\n\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contains columns we do not need."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#hypertext-transfer-protocol-secure-https",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#hypertext-transfer-protocol-secure-https",
+    "title": "Lecture 17",
+    "section": "Hypertext Transfer Protocol Secure (HTTPS)",
+    "text": "Hypertext Transfer Protocol Secure (HTTPS)\n\nHypertext Transfer Protocol (HTTP) is a language for clients and servers to speak to each other.\nHypertext Transfer Protocol Secure (HTTPS) is an encrypted version of HTTP that provides secure communication between them.\nWhen we type a web address with “https://” into our browser:\n\nThe browser finds the address of the server that hosts the website.\nThe browser and server establish a secure connection.\nThe browser sends an HTTPS request to the server, asking for the website’s content.\nIf the server approves the request, it responds with a 200 OK message and sends the encrypted website data to the client.\nThe browser decrypts and displays the website securely."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#http-status-codes",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#http-status-codes",
+    "title": "Lecture 17",
+    "section": "HTTP Status Codes",
+    "text": "HTTP Status Codes\n\n\nThe requests library is the de facto standard for making HTTP requests in Python.\n\n\n# library for making HTTPS requests in Python\nimport requests  \n\n\n\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)  \nprint(response.status_code)  \n\n200 → The request is successful, and the server sends the requested content.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)  \nprint(response.status_code)  \n\n404 Not Found → The server cannot find the requested webpage.\nThis may happen due to a broken link, mistyped URL, or deleted page."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#details-on-requests-methods",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#details-on-requests-methods",
+    "title": "Lecture 17",
+    "section": "Details on requests methods",
+    "text": "Details on requests methods\n\nOur course contents are limited to the very very basics of the requests methods.\nFor those who are interested in the Python’s requests, I recommend the following references:\n\nPython’s Requests Library (Guide)\nRequests: HTTP for Humans™"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#clients-and-servers",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#clients-and-servers",
+    "title": "Lecture 17",
+    "section": "Clients and servers",
+    "text": "Clients and servers\n\n\n\n\n\n\n\n\n\n\nComputers connected to the web are called clients and servers.\n\n\n\n\nClients are the typical web user’s internet-connected devices (e.g., a computer connected to Wi-Fi) and web-accessing software available on those devices (e.g., Firefox, Chrome).\nServers are computers that store webpages, sites, or apps.\nWhen a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user’s web browser."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-key-concepts",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-key-concepts",
+    "title": "Lecture 17",
+    "section": "API: Key Concepts",
+    "text": "API: Key Concepts\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between client and server.\n\nMethods: The “verbs” that clients use to talk with a server.\n\nThe main one that we’ll be using is GET (i.e., asking a server to retrieve information). Other common methods include POST, PUT, and DELETE.\n\nRequests: What the client asks of the server.\nResponse: The server’s response, which includes\n\nStatus Code (e.g., “404” if not found, or “200” if successful);\nContent (i.e. the content that we’re interested in);\nHeader (i.e., meta-information about the response)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#web-scrapping-tips",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#web-scrapping-tips",
+    "title": "Lecture 17",
+    "section": "Web-scrapping Tips",
+    "text": "Web-scrapping Tips\n\n\nMac\n\nUse a full screen mode for your Spyder IDE.\nUse a trackpad gesture with three fingers to move across screens, or command+tab to move between a Chrome web browser and a Spyder IDE.\n\n\nWindows\n\nUse Alt + Tab to move between a Chrome web browser and a Spyder IDE."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#web-scraping-tips",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#web-scraping-tips",
+    "title": "Lecture 17",
+    "section": "Web Scraping Tips",
+    "text": "Web Scraping Tips\n\n\nOn Mac\n\nUse full-screen mode in your Spyder IDE for a distraction‑free environment.\nUse a three‑finger swipe on your trackpad or press Command+Tab to quickly switch between Chrome and Spyder IDE.\n\n\nOn Windows\n\nPress Alt+Tab to efficiently switch between your Chrome browser and Spyder."
   }
 ]
