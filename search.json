@@ -4163,5 +4163,61 @@
     "title": "Lecture 17",
     "section": "Web Scraping Tips",
     "text": "Web Scraping Tips\n\n\nOn Mac\n\nUse full-screen mode in your Spyder IDE for a distraction‑free environment.\nUse a three‑finger swipe on your trackpad or press Command+Tab to quickly switch between Chrome and Spyder IDE.\n\n\nOn Windows\n\nPress Alt+Tab to efficiently switch between your Chrome browser and Spyder."
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nComparing Benefits and Costs Across Time\n\nTime is an important factor in many environmental and resource policy decisions\nPresent value concept allows comparison of benefits and costs across time\nPresent value incorporates the time value of money\nPresent value interpretation:\n\nAmount needed now to generate the future stream of net benefit\nMakes future values comparable to current values"
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-1",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-1",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nComparing Benefits and Costs Across Time\n\n\nPresent value of a one-time net benefit (\\(NB_{n}\\)) received \\(n\\) years from now is \\[\nPV[NB_{n}] \\,=\\, \\frac{NB_{n}}{(1 \\,+\\, r)^{n}}\n\\] \\(\\quad\\) - \\(r\\): the interest rate\n\\(\\quad\\) - \\(B_{0}\\): the amount of net benefits received immediately"
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-2",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-2",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nComparing Benefits and Costs Across Time\n\n\nThe funds used to purchase Manhattan Island for $24 in 1626!"
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-3",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-3",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nComparing Benefits and Costs Across Time\n\n\nThe present value of a stream of net benefit \\(\\{NB_{0}, \\cdots , NB_{n} \\}\\) received over a period of \\(n\\) years is\n\n\\[\nPV[NB_{0},\\cdots,NB_{n}] \\,=\\, \\sum_{i=0}^{n}\\frac{NB_{i}}{(1 \\,+\\, r)^{i}}\n\\]\n\\(\\quad\\) - \\(r\\): the appropirate interest rate\n\\(\\quad\\) - \\(B_{i}\\): the amount of net benefits received in the \\(i^{\\text{th}}\\) period\n\n\nDiscounting: process of calculating present value\n\nThe rate \\(r\\) is referred to as the discount rate."
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-4",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-4",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nComparing Benefits and Costs Across Time\n\nDecision rule for evaluating actions:\n\nCalculate present value of net benefits\nIf present value &gt; 0, support the action\nIf present value &lt; 0, do not support the action\n\nPresent value allows for rational comparison of different time-based scenarios in economic decision-making"
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-5",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-5",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nComparing Benefits and Costs Across Time"
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-6",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-6",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nDynamic Efficiency\n\nAn allocation of resources is said to satisfy the static efficiency criterion if the economic surplus from the use of those resources is maximized by that allocation.\nAn allocation of resources across \\(n\\) time periods satisfies the dynamic efficiency criterion if it maximizes the present value of net benefits that could be received from all the possible ways of allocating those resources over the \\(n\\) periods.\nAllows for comparison and optimization of resource use over time, rather than just at a single point in time\nHelps in making decisions about resource use that have long-term implications"
+  },
+  {
+    "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-7",
+    "href": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making-7",
+    "title": "Lecture 9",
+    "section": "Normative Criteria for Decision Making",
+    "text": "Normative Criteria for Decision Making\nDynamic Efficiency\n\n\nQuestion\n\nConsider the role of discount rates in problems involving long time horizons such as climate change.\nSuppose that a particular emissions abatement strategy would result in a $500 billion reduction in damages 50 years into the future.\nGiven the following two present values of such damage, which one corresponds to the 2 percent discount rate, and which one to the 10 percent discount rate?\n\n\n\n\n$4,259,275,640\n$185,763,941,063"
   }
 ]
