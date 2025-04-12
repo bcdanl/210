@@ -23,7 +23,6 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 # Part 1
 
 ```{.python}
-#| echo: true
 beer_mkt = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 ```
 
