@@ -223,19 +223,15 @@ print(response.status_code)
   - Sends a `GET` request to retrieve data from a specified URL.
   - Commonly used when fetching data from APIs.
 
-- **Syntax:**
-
 ```{.python}
 import requests
-
 url = 'https://www.example.com/.....'
 param_dicts = {.....}  # Optional, but we often need this
 response = requests.get(url, params=param_dicts)
 ```
 
-- **Parameters:**
-  - `url`: **API endpoint** where data is requested.
-  - `param_dicts`: Dictionary of **query parameters** sent with the request.
+- `url`: **API endpoint** where data is requested.
+- `param_dicts`: Dictionary of **query parameters** sent with the request.
 
 
 
@@ -362,7 +358,6 @@ param_dicts = {
   'file_type': 'json',
   'series_id': 'GDPC1'    ## ID for US real GDP
 }
-
 url = "https://api.stlouisfed.org/"
 endpoint = "series/observations"
 api_endpoint = url + "fred/" + endpoint   # sum of strings
@@ -372,12 +367,11 @@ response = requests.get(api_endpoint, params = param_dicts)
 
 
 ## (4)
-- `response.content.decode('utf-8')`: Extracts the content (i.e. data) from the `response`.
-- `json.loads()`: Converts JSON into a Python dictionary object.
+- `json()`: Converts JSON into a Python dictionary object.
   
 ```{.python}
 # Convert JSON response to Python dictionary.
-content = response.json() # to parse JSON response data
+content = response.json() 
 
 # Extract the "observations" list element.
 df = pd.DataFrame( content['observations'] )

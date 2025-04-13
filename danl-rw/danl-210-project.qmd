@@ -125,18 +125,11 @@ DT::datatable(esg_proj_2025, rownames = F)
 ## 1. Data Collection
 - For data collection, consider the `esg_proj_2025` DataFrame.
 
-### 1. ESG Data
-
-- For each company in the `esg_proj_2025` DataFrame, employ the Python `selenium` library to gather **ESG Risk Ratings**, along with the **Controversy Level** from the **Sustainability** section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
-  - [Apple Inc. (AAPL)](https://finance.yahoo.com/quote/AAPL/sustainability)
-  - [Microsoft Corporation (MSFT)](https://finance.yahoo.com/quote/MSFT/sustainability)
-  
-
-- Tips for Collecting Data from [Yahoo! Finance](https://finance.yahoo.com)’s Sustainability Section:
-  1.	To avoid getting blocked for automated activity, use `time.sleep(random.uniform(x, y))` between page visits.
-	2.  Explicit waits are not required, but they are helpful for ensuring elements load before scraping.
-	3.	Be aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.
-  4.  Consider starting with the following setup for Selenium web-scrapping
+- Tips for Collecting Data from [Yahoo! Finance](https://finance.yahoo.com):
+  1. To respect their server, use `time.sleep(random.uniform(x, y))` between page visits.
+	2. The method of explicit waits are not required, but they are helpful for ensuring elements load before scraping.
+	3. Be aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.
+  4. Consider starting with the following setup for Selenium web-scrapping
   
 ```{.python}
 # %%
@@ -173,6 +166,12 @@ options.page_load_strategy = 'eager'  # Load only essential content first, skipp
 driver = webdriver.Chrome(options=options)
 ```
 
+### 1. ESG Data
+
+- For each company in the `esg_proj_2025` DataFrame, employ the Python `selenium` library to gather **ESG Risk Ratings**, along with the **Controversy Level** from the **Sustainability** section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
+  - [Apple Inc. (AAPL)](https://finance.yahoo.com/quote/AAPL/sustainability)
+  - [Microsoft Corporation (MSFT)](https://finance.yahoo.com/quote/MSFT/sustainability)
+  
 
 ### 2. Historical Stock Data
 - For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, employ the `selenium` library to retrieve:
