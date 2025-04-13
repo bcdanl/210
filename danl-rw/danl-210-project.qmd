@@ -123,10 +123,14 @@ DT::datatable(esg_proj_2025, rownames = F)
 
 
 ## 1. Data Collection
-- For data collection, consider the `esg_proj_2025` DataFrame.
+For data collection, include only the companies that are common to both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames.
+
+-	Scraping web data falls into a legal gray area. In the U.S., scraping publicly available information isn’t automatically illegal, but it is not always clearly allowed either.
+	-	Most companies do not go after individuals for minor or non-commercial violations of their Terms of Service (ToS). Still, if the scraping causes harm, it can lead to legal trouble.
+
 
 - Tips for Collecting Data from [Yahoo! Finance](https://finance.yahoo.com):
-  1. To respect their server, use `time.sleep(random.uniform(x, y))` between page visits.
+  1. Scrape at a reasonable and moderate rate. To avoid overloading servers, use `time.sleep(random.uniform(5, y))` between page visits.
 	2. The method of explicit waits are not required, but they are helpful for ensuring elements load before scraping.
 	3. Be aware that some companies may not have data available for Environmental, Social, or Governance Risk Scores, or Controversy Level.
   4. Consider starting with the following setup for Selenium web-scrapping
@@ -176,9 +180,13 @@ driver = webdriver.Chrome(options=options)
 ### 2. Historical Stock Data
 - For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, employ the `selenium` library to retrieve:
   - Daily stock prices from January 1, 2024, to March 31, 2025
-  - Quarterly income statements for the five quarters ending March 31, 2025 (starting from Q1 2024)
-  - Quarterly balance sheets for the same five-quarter period
+      - e.g., [https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1704067200&period2=1743446400](https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1704067200&period2=1743446400)
+      - 1704067200 = January 1, 2024
+      - 1743446400 = March 31, 2025
 
+- **Note**: [GOOGLEFINANCE](https://support.google.com/docs/answer/3093281?hl=en) function in [Google Sheets](https://workspace.google.com/products/sheets/) is freely available for retrieving current or historical stock data.
+  - Although our course does not cover Google Sheets, you are welcome to use it to collect historical stock data if you prefer.
+  - If you choose Google Sheets' `GOOGLEFINANCE()` for collecting historical stock data, please share your Google Sheets with Prof. Choe.
 
 
 <br>
@@ -199,7 +207,7 @@ driver = webdriver.Chrome(options=options)
 
   4. **Descriptive Statistics**
     - Provide both grouped and un-grouped descriptive statistics and distribution plots for the ESG data and the finance/accounting data
-    - Provide correlation heat maps using `corr()` and `seaborn.heatmap()`. Below provides the Python code for creating a correlation heatmap.
+    - Optionally, provide correlation heat maps using `corr()` and `seaborn.heatmap()`. Below provides the Python code for creating a correlation heatmap.
 
 ```{python}
 import pandas as pd
