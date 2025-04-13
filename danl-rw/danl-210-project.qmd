@@ -125,7 +125,7 @@ DT::datatable(esg_proj_2025, rownames = F)
 ## 1. Data Collection
 For data collection, include only the companies that are common to both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames.
 
--	Scraping web data falls into a legal gray area. In the U.S., scraping publicly available information isn’t automatically illegal, but it is not always clearly allowed either.
+-	Scraping web data falls into a legal gray area. In the U.S., scraping publicly available information is not illegal, but it is not always clearly allowed either.
 	-	Most companies do not go after individuals for minor or non-commercial violations of their Terms of Service (ToS). Still, if the scraping causes harm, it can lead to legal trouble.
 
 
