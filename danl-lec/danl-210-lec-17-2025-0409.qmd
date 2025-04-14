@@ -393,8 +393,10 @@ df = pd.DataFrame( content['observations'] )
 
 
 ## Using the New York Times API
+
+::::{.nonincremental}
 ::: {.panel-tabset}
-## Step 1
+## **Step 1**
 
 ### Sign Up and Sign In
 - Sign up at [**NYTimes Developer Portal**](https://developer.nytimes.com/)
@@ -402,7 +404,7 @@ df = pd.DataFrame( content['observations'] )
 - Sign in.
 
 
-## Step 2
+## **Step 2**
 
 ### Register apps
 1. Select My Apps from the user drop-down at the navigation bar.
@@ -415,7 +417,7 @@ df = pd.DataFrame( content['observations'] )
 <!-- - Follow steps in [**Get Started**](https://developer.nytimes.com/get-started) -->
 
 
-## Step 3
+## **Step 3**
 
 ### Access the API keys
 1. Select My Apps from th user drop-down.
@@ -424,21 +426,71 @@ df = pd.DataFrame( content['observations'] )
 4. Confirm that the status of the API key is Approved.
 
 
-## Step 4
+## **Step 4**
 
 ### Collect Data with `pynytimes`
-- While [**NYTimes Developer Portal APIs**](https://developer.nytimes.com/apis) provides API documentation, it is time consuming to go through the documentation.
-
--	There is an **unofficial** Python library called `pynytimes` that provides a more user-friendly interface for working with the NYTimes API.
 
 ```{.python}
 pip install pynytimes
 ```
 
+- While [**NYTimes Developer Portal APIs**](https://developer.nytimes.com/apis) provides API documentation, it is time-consuming to go through the documentation.
+
+-	There is an **unofficial** Python library called `pynytimes` that provides a more user-friendly interface for working with the NYTimes API.
+
 - To get started, check out [**Introduction to pynytimes**](https://pynytimes.michadenheijer.com).
 
 
+## **Examples**
+
+```{.python}
+# Settings
+from pynytimes import NYTAPI
+
+# Initialize API with your key
+nyt = NYTAPI("YOUR_NYTIMES_API_KEY", parse_dates=True)
+```
+
+```{.python}
+# Top Stories
+top_stories = nyt.top_stories()
+
+# Get all the top stories from a specific category
+top_climate_stories = nyt.top_stories(section = "climate")
+```
+
+```{.python}
+# Most Viewed
+most_viewed = nyt.most_viewed()
+
+# Get most viewed articles of last 7 or 30 days
+most_viewed = nyt.most_viewed(days = 7)
+most_viewed = nyt.most_viewed(days = 30)
+```
+
+
+## **Article Search**
+```{.python}
+from datetime import datetime
+
+# Define the date range
+start = datetime(2024, 1, 1)
+end = datetime(2024, 12, 31)
+
+# Search articles related to climate within a date range
+  # This return only up to 10 articles.
+articles = nyt.article_search(
+    query="climate",
+    dates={"begin": start, "end": end},
+)
+```
+
+
+
 :::
+::::
+
+
 
 
 # Hidden API {background-color="#1c4982"}

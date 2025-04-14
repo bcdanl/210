@@ -2124,8 +2124,8 @@
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#spyder-ide",
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#spyder-ide",
     "title": "Lecture 17",
-    "section": "",
-    "text": "To set your keyboard shortcuts,\n\nPreferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”\nSet the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; (4) blockcomment; and (5) unblockcomment\n\nDefault shortcuts\n\nRun selection (a current line): F9\nRun cell: Ctrl + Enter\n\n# %% defines a coding cell\n\nComment (#): Ctrl/command + 1\nBlock-comment: Ctrl/command + 4\nUnblock-comment: Ctrl/command + 5"
+    "section": "Spyder IDE",
+    "text": "Spyder IDE\nKeyboard Shortcuts\n\nTo set your keyboard shortcuts,\n\nPreferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”\nSet the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; (4) blockcomment; and (5) unblockcomment\n\nDefault shortcuts\n\nRun selection (a current line): F9\nRun cell: Ctrl + Enter\n\n# %% defines a coding cell\n\nComment (#): Ctrl/command + 1\nBlock-comment: Ctrl/command + 4\nUnblock-comment: Ctrl/command + 5"
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-1",
@@ -2160,7 +2160,7 @@
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#using-the-new-york-times-api-1",
     "title": "Lecture 17",
     "section": "Using the New York Times API",
-    "text": "Using the New York Times API\n\nStep 1Step 2Step 3Step 4\n\n\n\nSign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in.\n\n\n\n\n\nRegister apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\n\n\n\n\nAccess the API keys\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved.\n\n\n\n\n\nCollect Data with pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time consuming to go through the documentation.\nThere is an unofficial Python library called pynytimes that provides a more user-friendly interface for working with the NYTimes API.\n\npip install pynytimes\n\nTo get started, check out Introduction to pynytimes."
+    "text": "Using the New York Times API\n\n\nStep 1Step 2Step 3Step 4ExamplesArticle Search\n\n\nSign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in.\n\n\n\nRegister apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\n\n\nAccess the API keys\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved.\n\n\n\nCollect Data with pynytimes\npip install pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time-consuming to go through the documentation.\nThere is an unofficial Python library called pynytimes that provides a more user-friendly interface for working with the NYTimes API.\nTo get started, check out Introduction to pynytimes.\n\n\n\n# Settings\nfrom pynytimes import NYTAPI\n\n# Initialize API with your key\nnyt = NYTAPI(\"YOUR_NYTIMES_API_KEY\", parse_dates=True)\n# Top Stories\ntop_stories = nyt.top_stories()\n\n# Get all the top stories from a specific category\ntop_climate_stories = nyt.top_stories(section = \"climate\")\n# Most Viewed\nmost_viewed = nyt.most_viewed()\n\n# Get most viewed articles of last 7 or 30 days\nmost_viewed = nyt.most_viewed(days = 7)\nmost_viewed = nyt.most_viewed(days = 30)\n\n\nfrom datetime import datetime\n\n# Define the date range\nstart = datetime(2024, 1, 1)\nend = datetime(2024, 12, 31)\n\n# Search articles related to climate within a date range\n  # This return only up to 10 articles.\narticles = nyt.article_search(\n    query=\"climate\",\n    dates={\"begin\": start, \"end\": end},\n)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-1",
@@ -2174,7 +2174,7 @@
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-2",
     "title": "Lecture 17",
     "section": "Hidden API",
-    "text": "Hidden API\n\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#fyi-on-web-data-collection-approaches",
@@ -3483,7 +3483,7 @@
     "href": "danl-cw/danl-210-cw-11.html",
     "title": "Classwork 11",
     "section": "",
-    "text": "Question 1\nProvide a Python code to get New York City air quality surveillance data using the following API endpoint:\nhttps://data.cityofnewyork.us/resource/c3uy-2p5r.json\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 11 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 11.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 11 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
+    "text": "Question 1\nProvide a Python code to get New York City air quality surveillance data using the following API endpoint:\nhttps://data.cityofnewyork.us/resource/c3uy-2p5r.json\n\nUse the following query parameter dictionary in your request, which sets the “$limit” to control how many rows are returned:\n\n# query parameters (e.g., limit rows)\nparam_dict = {\n    \"$limit\": 100   # You can increase this to get more observations\n}\nAnswer:\n\n\n\nQuestion 2\n\nUse the FRED API to retrieve two macroeconomic indicators:\n\nU.S. Real GDP (series_id = “GDPC1”)\nU.S. Unemployment Rate (series_id = “UNRATE”)\n\nThen, use pandas to replicate the following DataFrame:\n\n\n\n\n\n\n\n\n\n\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 11 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 11.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 11 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-04.html",
@@ -4155,14 +4155,14 @@
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#web-scrapping-tips",
     "title": "Lecture 17",
     "section": "Web-scrapping Tips",
-    "text": "Web-scrapping Tips\n\n\n\nMac\n\nUse a full screen mode for your Spyder IDE.\nUse a trackpad gesture with three fingers to move across screens, or command+tab to move between a Chrome web browser and a Spyder IDE.\n\n\n\n\nWindows\n\nUse Alt + Tab to move between a Chrome web browser and a Spyder IDE."
+    "text": "Web-scrapping Tips\n\n\nMac\n\nUse a full screen mode for your Spyder IDE.\nUse a trackpad gesture with three fingers to move across screens, or command+tab to move between a Chrome web browser and a Spyder IDE.\n\n\nWindows\n\nUse Alt + Tab to move between a Chrome web browser and a Spyder IDE."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#web-scraping-tips",
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#web-scraping-tips",
     "title": "Lecture 17",
     "section": "Web Scraping Tips",
-    "text": "Web Scraping Tips\n\n\n\nOn Mac\n\nUse full-screen mode in your Spyder IDE for a distraction‑free environment.\nUse a three‑finger swipe on your trackpad or press Command+Tab to quickly switch between Chrome and Spyder IDE.\n\n\n\n\nOn Windows\n\nPress Alt+Tab to efficiently switch between your Chrome browser and Spyder."
+    "text": "Web Scraping Tips\n\n\nOn Mac\n\nUse full-screen mode in your Spyder IDE for a distraction‑free environment.\nUse a three‑finger swipe on your trackpad or press Command+Tab to quickly switch between Chrome and Spyder IDE.\n\n\nOn Windows\n\nPress Alt+Tab to efficiently switch between your Chrome browser and Spyder."
   },
   {
     "objectID": "econ-341-lec-09-2024-0916.html#normative-criteria-for-decision-making",

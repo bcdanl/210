@@ -30,11 +30,51 @@ Provide a Python code to get New York City air quality surveillance data using t
 
 [https://data.cityofnewyork.us/resource/c3uy-2p5r.json](https://data.cityofnewyork.us/resource/c3uy-2p5r.json)
 
+-	Use the following query parameter dictionary in your request, which sets the **"$limit"** to control how many rows are returned:
+
+```{.python}
+# query parameters (e.g., limit rows)
+param_dict = {
+    "$limit": 100   # You can increase this to get more observations
+}
+```
+
 
 *Answer*:
 ```{python}
 
 ```
+
+
+
+<br><br>
+
+# Question 2
+- Use the FRED API to retrieve two macroeconomic indicators:
+	1.	U.S. Real GDP (`series_id` = "GDPC1")
+	2.	U.S. Unemployment Rate (`series_id` = "UNRATE")
+
+- Then, use pandas to replicate the following DataFrame:
+
+<br>
+
+```{r}
+#| echo: false
+#| eval: true
+DT::datatable(
+  readr::read_csv("https://bcdanl.github.io/data/fred_rgdp_unemp.csv"),
+  rownames = FALSE
+)
+```
+
+<br>
+
+
+*Answer*:
+```{python}
+
+```
+
 
 
 <br><br>
