@@ -282,8 +282,9 @@ df['year_end'] = np.where(df['year_end'] == '', 'present', df['year_end'])
 
 # df.columns
 df = df[['ranking', 'title', 'year', 'year_start', 'year_end', 'runtime', 'rating', 'metascore', 'type_movie', 'imdb_score', 'vote', 'plot']]
-df.to_csv('data/imdb_family_2025_0415.csv', index = False, encoding = 'utf-8-sig')
 
+# Export df as CSV
+df.to_csv('data/imdb_family_2025_0415.csv', index = False, encoding = 'utf-8-sig')
 ```
 
 
