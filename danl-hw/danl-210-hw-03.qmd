@@ -21,6 +21,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 ```{.python}
 import pandas as pd
+from itables import init_notebook_mode, show # for displaying an interactive DataFrame
 ```
 
 # Direction
@@ -85,206 +86,10 @@ df = df.drop(columns=['ranking_title'])
 - Finally, export the resulting DataFrame to the CSV file.
 
 
+*Answer*:
+
 ```{python}
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 15 14:05:39 2025
 
-@author: bchoe
-"""
-
-# %%
-# =============================================================================
-# libraries
-# =============================================================================
-
-import pandas as pd
-import numpy as np
-import os
-import time
-import random
-# from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-# from selenium.webdriver.chrome.service import Service
-# %%
-# =============================================================================
-# working directory
-# =============================================================================
-
-wd_path = '/Users/bchoe/My Drive/suny-geneseo/spring2025/lecture-code'
-os.chdir(wd_path)
-# os.getcwd()
-
-# %%
-# =============================================================================
-# Selenium driver
-# =============================================================================
-
-driver = webdriver.Chrome()
-url = 'https://www.imdb.com/search/title/?genres=family&sort=popularity,desc&count=200'
-driver.get(url)
-time.sleep(random.uniform(5,8))
-
-# %%
-# =============================================================================
-# Ranking & Title
-# =============================================================================
-
-# <h3 class="ipc-title__text">1. A Minecraft Movie</h3>
-# ranking_titles[0].text
-# ranking_titles[1].text
-# ranking_titles[200].text
-
-# //*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[1]/div/div/div/div[1]/div[2]/div[2]/span[1]
-# //*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[2]/div/div/div/div[1]/div[2]/div[2]/span[1]
-
-# <span class="ipc-rating-star--rating">7.2</span>
-# <span class="ipc-rating-star--voteCount">&nbsp;(<!-- -->149K<!-- -->)</span>
-
-# <div class="ipc-html-content-inner-div" role="presentation">A princess joins forces with seven dwarfs and a group of rebels to liberate her kingdom from her cruel stepmother the Evil Queen.</div>
-# plots[0].text
-# plots[199].text
-
-# class_imdb_scores = "ipc-rating-star--rating"
-# imdb_scores = driver.find_elements(By.CLASS_NAME, class_imdb_scores)
-# <span aria-label="IMDb rating: 6.6" class="ipc-rating-star ipc-rating-star--base ipc-rating-star--imdb ratingGroup--imdb-rating" data-testid="ratingGroup--imdb-rating"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ipc-icon ipc-icon--star-inline" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg><span class="ipc-rating-star--rating">6.6</span><span class="ipc-rating-star--voteCount">&nbsp;(<!-- -->100K<!-- -->)</span></span>
-# <span                               class="ipc-rating-star ipc-rating-star--base ipc-rating-star--placeholder ratingGroup--placeholder standalone-star" data-testid="ratingGroup--placeholder" aria-hidden="true"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ipc-icon ipc-icon--star-inline" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg></span>
-# class_imdb_scores = "ipc-rating-star--base"
-# imdb_scores = driver.find_elements(By.CLASS_NAME, class_imdb_scores)
-# imdb_scores[0].text
-
-# class_votes = "ipc-rating-star--voteCount"
-# votes = driver.find_elements(By.CLASS_NAME, class_votes)
-
-
-class_ranking_titles = "ipc-title__text"
-ranking_titles = driver.find_elements(By.CLASS_NAME, class_ranking_titles)
-
-class_plots = "ipc-html-content-inner-div"
-plots = driver.find_elements(By.CLASS_NAME, class_plots)
-
-df = pd.DataFrame()
-for item in range(1, len(ranking_titles)-1):
-    
-    ranking_title = ranking_titles[item].text
-    
-    xpath_year = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[1]'
-    year = driver.find_element(By.XPATH, xpath_year).text
-    
-    xpath_items = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]'
-    items_txt = driver.find_element(By.XPATH, xpath_items).text
-    
-    if "TV Series" in items_txt:
-        runtime = pd.NA
-        
-        xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'
-        rating = driver.find_element(By.XPATH, xpath_rating).text
-        
-        metascore = pd.NA
-        
-        type_movie = "TV Series"
-        
-    elif "TV Movie" in items_txt:
-        xpath_runtime = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'
-        runtime = driver.find_element(By.XPATH, xpath_runtime).text
-        
-        xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[3]'
-        runtime = driver.find_element(By.XPATH, xpath_runtime).text 
-        
-        metascore = pd.NA
-        
-        type_movie = "TV Movie"
-        
-    else:
-        
-        try:
-            xpath_runtime = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'
-            runtime = driver.find_element(By.XPATH, xpath_runtime).text
-        except:
-            runtime = pd.NA
-            
-        try:
-            xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[3]'
-            rating = driver.find_element(By.XPATH, xpath_rating).text
-        except:
-            rating = pd.NA
-        
-        try:
-            xpath_metascore = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[4]/span[1]'
-            metascore = driver.find_element(By.XPATH, xpath_metascore).text
-        except:
-            metascore = pd.NA
-        
-        type_movie = "Movie"
-        
-    
-    try:
-        xpath_imdb_score = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/span/div/span/span[1]'
-        imdb_score = driver.find_element(By.XPATH, xpath_imdb_score).text
-    except:
-        imdb_score = pd.NA
-    
-    try:
-        xpath_vote = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/span/div/span/span[2]'
-        vote = driver.find_element(By.XPATH, xpath_vote).text
-    except:
-        vote = pd.NA
-
-    plot = plots[item-1].text
-    
-    lst = [ranking_title, year, runtime, rating, metascore, type_movie, imdb_score, vote, plot]
-    obs = pd.DataFrame([lst])
-    df = pd.concat([df, obs], ignore_index=True)
-    
-    
-df.columns = ['ranking_title', 'year', 'runtime', 'rating', 'metascore', 'type_movie', 'imdb_score', 'vote', 'plot']
-
-
-# %%
-# =============================================================================
-# Cleaning
-# =============================================================================
-
-df[['ranking', 'title']] = df['ranking_title'].str.split('.', n=1, expand=True)
-df = df.drop(columns=['ranking_title'])
-df['ranking'] = df['ranking'].astype('int')
-
-df['vote'] = df['vote'].str.replace(' (', '')
-df['vote'] = df['vote'].str.replace(')', '')
-
-df[['runtime_h', 'runtime_m']] = df['runtime'].str.split(' ', n=1, expand=True)
-df['runtime_h'] = df['runtime_h'].str.replace('h', '')
-df['runtime_m'] = df['runtime_m'].str.replace('m', '')
-
-df['runtime_h'] = pd.to_numeric(df['runtime_h'], errors='coerce')
-df['runtime_m'] = pd.to_numeric(df['runtime_m'], errors='coerce')
-
-df['runtime'] = df['runtime_h'] * 60 + df['runtime_m']
-df = df.drop(columns=['runtime_h', 'runtime_m'])
-
-df['metascore'] = pd.to_numeric(df['metascore'], errors='coerce') # errors='coerce' to avoid an error
-df['imdb_score'] = pd.to_numeric(df['imdb_score'], errors='coerce')
-
-df['is_k'] = df['vote'].str.endswith('K')
-df['is_m'] = df['vote'].str.endswith('M')
-df['vote'] = df['vote'].str.replace('K', '').str.replace('M', '')
-df['vote'] = pd.to_numeric(df['vote'], errors='coerce')
-df['vote'] = np.where(df['is_k'] == True, df['vote'] * 1000, df['vote'])
-df['vote'] = np.where(df['is_m'] == True, df['vote'] * 1000000, df['vote'])
-df = df.drop(columns=['is_k', 'is_m'])
-
-
-df[['year_start', 'year_end']] = df['year'].str.split('–', n=1, expand=True)
-df['year_start'] = df['year_start'].astype('int')
-df['year_end'] = np.where(df['year_end'] == '', 'present', df['year_end'])
-
-# df.columns
-df = df[['ranking', 'title', 'year', 'year_start', 'year_end', 'runtime', 'rating', 'metascore', 'type_movie', 'imdb_score', 'vote', 'plot']]
-
-# Export df as CSV
-df.to_csv('data/imdb_family_2025_0415.csv', index = False, encoding = 'utf-8-sig')
 ```
 
 
@@ -359,13 +164,10 @@ rmarkdown::paged_table(
 - Write a Python code to identify the top five songs with the highest frequency of appearances in the `spotify` DataFrame.
 
 
+*Answer*:
+
 ```{python}
-songs_top_5 = (
-    spotify[['artist_name', 'track_name']]
-    .value_counts()
-    .reset_index()
-    .nlargest(5, 'count', keep="all")
-    )
+
 ```
 
 <br>
@@ -378,17 +180,10 @@ songs_top_5 = (
 - Then, write a Python code to identify top 5% songs based on their frequency of appearances.
 
 
-
+*Answer*:
 
 ```{python}
-songs_freq = (
-    spotify[['artist_name', 'track_name']]
-    .value_counts()
-    .reset_index()
-    )
 
-cond = songs_freq['count'] >= songs_freq['count'].quantile(.95)
-songs_top_5_pct = songs_freq[ cond ]
 ```
 
 
@@ -399,17 +194,10 @@ songs_top_5_pct = songs_freq[ cond ]
 - Write a Python code to list all artists who have more than 50 unique songs in the `sportify` DataFrame.
 
 
-
+*Answer*:
 
 ```{python}
-artists_50_songs = (
-    spotify[['artist_name', 'track_name']]
-    .value_counts()
-    .reset_index()['artist_name']
-    .value_counts()
-    .reset_index()
-    .query('count > 50')
-    )
+
 ```
 
 <br>
@@ -421,15 +209,11 @@ artists_50_songs = (
 - Write a Python code to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.
 
 
-```{python}
-playlist_onedance = (
-    spotify
-    .query('artist_name == "Drake" & track_name == "One Dance"')
-    )
 
-playlist_songs_w_onedance = (
-    spotify[ spotify['pid'].isin(playlist_onedance['pid']) ]
-    )
+*Answer*:
+
+```{python}
+
 ```
 
 <br>
@@ -438,22 +222,10 @@ playlist_songs_w_onedance = (
 - Write a Python code to identify the longest and shortest duration songs (based on `duration_ms`) for each unique artist.
 
 
-
+*Answer*:
 
 ```{python}
-# Shortest song per artist
-shortest_songs = (
-    spotify
-    .sort_values(["artist_name", "duration_ms"])
-    .drop_duplicates(subset=["artist_name"], keep="first")
-    )
 
-# Longest song per artist
-longest_songs = (
-    spotify
-    .sort_values(["artist_name", "duration_ms"])
-    .drop_duplicates(subset=["artist_name"], keep="last")
-)
 ```
 
 <br>
@@ -461,25 +233,13 @@ longest_songs = (
 
 
 ## Question 7
-Write a Python code to find the same song(s) appearing more than once in the same playlist.
+- Write a Python code to find the same song(s) appearing more than once in the same playlist.
 
 
-- Using `drop_duplicates()` with index-based filtering.
-
-```{python}
-non_dup = spotify.drop_duplicates(subset=["pid", "artist_name", "track_name"], keep=False)
-dup_T = ~spotify.index.isin( non_dup.index )
-duplicates = spotify[ dup_T ]
-```
-
-- Using `duplicated()` with standard filtering.
-  - The `subset` and `keep` parameters work similarly to those in `drop_duplicates()`
+*Answer*:
 
 ```{python}
-dup_T = spotify.duplicated(subset=["pid", "artist_name", "track_name"], keep = False)
-duplicates = (
-    spotify[ dup_T ]
-    )
+
 ```
 
 <br>
@@ -490,16 +250,10 @@ duplicates = (
 - Write a Python code to filter all songs that appear in more than 100 different playlists.
 
 
-
+*Answer*:
 
 ```{python}
-songs_100_plist = (
-    spotify
-    .drop_duplicates(subset=["pid", "artist_name", "track_name"], keep=False)[['artist_name', 'track_name']]
-    .value_counts()
-    .reset_index()
-    .query('count > 100')
-    )
+
 ```
 
 <br><br>
