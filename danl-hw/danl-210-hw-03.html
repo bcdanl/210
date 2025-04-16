@@ -391,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    items_txt <span class="op">=</span> driver.find_element(By.XPATH, xpath_items).text</span>
 <span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"TV Series"</span> <span class="kw">in</span> items_txt:</span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>        runtime <span class="op">=</span> pd.NA</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>        runtime <span class="op">=</span> pd.NA <span class="co"># This is a missing value; Empty string ('') can also be used instead.</span></span>
 <span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>        xpath_rating <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]/span[2]'</span></span>
 <span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>        rating <span class="op">=</span> driver.find_element(By.XPATH, xpath_rating).text</span>
