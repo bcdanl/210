@@ -73,7 +73,7 @@ DT::datatable(df)
 For more information regarding the index, please visit [Standard & Poor's](https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-corelogic-cs-home-price-indices.pdf). There is more information about home price sales pairs in the Methodology section. Copyright, 2016, Standard & Poor's Financial Services LLC. 
 
 
-Provide a Python code (excluding your FRED API key) to construct the following DataFrame:
+Provide a Python code (**excluding your FRED API key**) to construct the following DataFrame:
 
 <!-- ```{.python} -->
 <!-- url = 'https://bcdanl.github.io/data/home_price_index_2025_01_01.csv' -->
