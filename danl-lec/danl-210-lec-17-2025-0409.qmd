@@ -388,6 +388,10 @@ df = pd.DataFrame( content['observations'] )
 
 
 
+## Data Collection with APIs
+
+Let's do [**Classwork 11**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-11.html)!
+
 
 # Using the New York Times API {background-color="#1c4982"}
 
@@ -493,6 +497,7 @@ articles = nyt.article_search(
 
 
 
+
 # Hidden API {background-color="#1c4982"}
 
 
@@ -539,78 +544,104 @@ articles = nyt.article_search(
 
 
 
-## Data Collection with APIs
+# **Using [Hugging Face](https://huggingface.co)'s Free LLM API** {background-color="#1c4982"}
+
+## What is [Hugging Face](https://huggingface.co)?
+- A platform hosting thousands of open-source **Language Models (LLMs)**, including text classification, summarization, question-answering, etc.
+- **Free to use** for many models via the [**Inference API**](https://huggingface.co/inference-api).
 
 
-Let's do [**Classwork 11**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-11.html)!
+## How to Get a Free Token
+1. **Create a Hugging Face account** at [**huggingface.co**](https://huggingface.co/).
+2. Go to your **Profile** → **Settings** → **Access Tokens**.
+3. Click **New token** → Give it a name → Choose **Read** role.
+4. Copy the generated token (looks like: `hf_xxx...`). Keep your API token private.
 
 
+## Editing API Token Permissions
+1. On the **Access Tokens** page, you'll see a list of your existing tokens.
+2. Typically, you can select a token and look for an **Edit** or **...** (ellipsis) option to change its permissions.
+3. **If you do not see an option to edit permissions**:
+   - You may need to **create a new token** with the desired permissions. Some tokens are fixed after creation.
+4. Check that you’ve granted the following if you need summarization:
+   - **Inference**: “Make calls to Inference Providers”
+   - **Repositories (Read)**: “Read access to contents of all repos under your personal namespace”
+   - Optionally: other read privileges, if your project needs them.
+   
+   
 
-
-<!-- # Unofficial API: Using Alpha Vantage API for Stock Market Data -->
-
-<!-- ## Alpha Vantage Overview -->
-
-<!-- - Provides free stock, forex, cryptocurrency, and ETF data -->
-<!-- - Useful for historical and real-time data retrieval -->
-<!-- - Requires free API key registration at [Alpha Vantage](https://www.alphavantage.co/) -->
-<!--   - It  -->
-
-
-<!-- ## Installation -->
-
-<!-- Install required libraries: -->
-
-<!-- ```{.python} -->
-<!-- pip install alpha_vantage pandas -->
-<!-- ``` -->
-
-
-
-<!-- ## Retrieve Stock Data into DataFrame -->
-
-<!-- ```{.python} -->
-<!-- import pandas as pd -->
-<!-- from alpha_vantage.timeseries import TimeSeries -->
-
-<!-- # Initialize with your API key -->
-<!-- ts = TimeSeries(key='YOUR_API_KEY', output_format='pandas') -->
-
-<!-- # Retrieve daily stock data (e.g., Apple) -->
-<!-- # Set outputsize to 'compact' for latest 100 data points or 'full' for full historical data -->
-<!-- df, meta_data = ts.get_daily(symbol='AAPL', outputsize='compact') -->
-<!-- ``` -->
-
-
-<!-- ## Quick Tips on Date Information -->
-<!-- - `ts.get_daily()` provide **date** as an index of DataFrame. -->
-<!--   - We can convert this meaningful index to a `date` variable using `reset_index(names = 'date')`: -->
-
-<!-- ```{.python} -->
-<!-- df.reset_index(names='date') -->
-<!-- ``` -->
+## API Endpoint
+- **Inference API URL**: Each model has a unique endpoint.
+- For example, **facebook/bart-large-cnn** (a summarization model) uses:  
+	https://api-inference.huggingface.co/models/facebook/bart-large-cnn
 
 
 
-<!-- ## Loop Over Multiple Companies! -->
 
-<!-- ```{.python} -->
-<!-- symbols = ['AAPL', 'MSFT', 'GOOGL'] -->
-<!-- df_list = [] -->
+## What Does This API Do?
+1. **Takes your text** as an input (prompt).
+2. **Returns a summarized version** of that text (or some other transformation, depending on the model).
+3. **Example**: Summarizing multiple movie plots into one concise paragraph.
 
-<!-- for symbol in symbols: -->
-<!--     df, meta_data = ts.get_daily(symbol=symbol, outputsize='full') -->
-<!--     df.columns = ['open', 'high', 'low', 'close', 'volume'] -->
-<!--     df = df.reset_index(names='date') -->
-<!--     df['company'] = symbol     -->
-<!--     df_list.append(df) -->
 
-<!-- # Combine into a single long-form DataFrame -->
-<!-- df_all = pd.concat(df_list, ignore_index=True) -->
 
-<!-- # Change column positions -->
-<!-- df_all = df_all[ ['company', 'date', 'open', 'high', 'low', 'close', 'volume'] ] -->
-<!-- ``` -->
+## Example Code Snippet
 
+
+::: {.nonincremental}
+::: {.panel-tabset}
+
+
+## **Prompt**
+
+```{.python}
+# Text you'd like to summarize
+text_to_summarize = """
+Summarize the following movie plot in a sentence.
+Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. 
+To get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.
+"""
+```
+
+
+## **Setup**
+```{.python}
+import requests
+# Your Hugging Face token (replace with your real token)
+HF_API_TOKEN = "hf_your_real_token_here"
+
+# The summarization model's API URL
+API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
+
+# Add your token to the request headers
+headers = {"Authorization": f"Bearer {HF_API_TOKEN}"}
+payload = {"inputs": text_to_summarize}
+```
+
+1.	`headers`: The "Authorization": "Bearer ..." header lets Hugging Face know you have permission to use their API.
+2.	`payload`: The {"inputs": <YOUR_TEXT>} tells the model what text to summarize.
+3.	`requests.post()`: Sends your text to the model's endpoint.
+
+
+## **POST request**
+
+```{.python}
+# Send POST request
+response = requests.post(API_URL, headers=headers, json=payload)
+
+# Check response and extract the summary
+if response.status_code == 200:
+    output = response.json()
+    summary = output[0]["summary_text"]
+    print("\nSummary from Hugging Face Inference API:")
+    print(summary)
+else:
+    print(f"\nAPI request failed with status code {response.status_code}:")
+    print(response.text)
+```
+
+
+:::
+:::
 
 

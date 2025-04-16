@@ -739,6 +739,10 @@ Byeong-Hak Choe
 </div>
 </div>
 </div>
+</section>
+<section id="data-collection-with-apis" class="slide level2">
+<h2>Data Collection with APIs</h2>
+<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-11.html"><strong>Classwork 11</strong></a>!</p>
 </section></section>
 <section>
 <section id="using-the-new-york-times-api" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -879,52 +883,109 @@ Byeong-Hak Choe
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/data-collection_decision_tree.png" width="900px">
 </p>
+</section></section>
+<section>
+<section id="using-hugging-faces-free-llm-api" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Using <a href="https://huggingface.co">Hugging Face</a>’s Free LLM API</strong></h1>
+
 </section>
-<section id="data-collection-with-apis" class="slide level2">
-<h2>Data Collection with APIs</h2>
-<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-11.html"><strong>Classwork 11</strong></a>!</p>
-<!-- # Unofficial API: Using Alpha Vantage API for Stock Market Data -->
-<!-- ## Alpha Vantage Overview -->
-<!-- - Provides free stock, forex, cryptocurrency, and ETF data -->
-<!-- - Useful for historical and real-time data retrieval -->
-<!-- - Requires free API key registration at [Alpha Vantage](https://www.alphavantage.co/) -->
-<!--   - It  -->
-<!-- ## Installation -->
-<!-- Install required libraries: -->
-<!-- ```{.python} -->
-<!-- pip install alpha_vantage pandas -->
-<!-- ``` -->
-<!-- ## Retrieve Stock Data into DataFrame -->
-<!-- ```{.python} -->
-<!-- import pandas as pd -->
-<!-- from alpha_vantage.timeseries import TimeSeries -->
-<!-- # Initialize with your API key -->
-<!-- ts = TimeSeries(key='YOUR_API_KEY', output_format='pandas') -->
-<!-- # Retrieve daily stock data (e.g., Apple) -->
-<!-- # Set outputsize to 'compact' for latest 100 data points or 'full' for full historical data -->
-<!-- df, meta_data = ts.get_daily(symbol='AAPL', outputsize='compact') -->
-<!-- ``` -->
-<!-- ## Quick Tips on Date Information -->
-<!-- - `ts.get_daily()` provide **date** as an index of DataFrame. -->
-<!--   - We can convert this meaningful index to a `date` variable using `reset_index(names = 'date')`: -->
-<!-- ```{.python} -->
-<!-- df.reset_index(names='date') -->
-<!-- ``` -->
-<!-- ## Loop Over Multiple Companies! -->
-<!-- ```{.python} -->
-<!-- symbols = ['AAPL', 'MSFT', 'GOOGL'] -->
-<!-- df_list = [] -->
-<!-- for symbol in symbols: -->
-<!--     df, meta_data = ts.get_daily(symbol=symbol, outputsize='full') -->
-<!--     df.columns = ['open', 'high', 'low', 'close', 'volume'] -->
-<!--     df = df.reset_index(names='date') -->
-<!--     df['company'] = symbol     -->
-<!--     df_list.append(df) -->
-<!-- # Combine into a single long-form DataFrame -->
-<!-- df_all = pd.concat(df_list, ignore_index=True) -->
-<!-- # Change column positions -->
-<!-- df_all = df_all[ ['company', 'date', 'open', 'high', 'low', 'close', 'volume'] ] -->
-<!-- ``` -->
+<section id="what-is-hugging-face" class="slide level2">
+<h2>What is <a href="https://huggingface.co">Hugging Face</a>?</h2>
+<ul>
+<li class="fragment">A platform hosting thousands of open-source <strong>Language Models (LLMs)</strong>, including text classification, summarization, question-answering, etc.</li>
+<li class="fragment"><strong>Free to use</strong> for many models via the <a href="https://huggingface.co/inference-api"><strong>Inference API</strong></a>.</li>
+</ul>
+</section>
+<section id="how-to-get-a-free-token" class="slide level2">
+<h2>How to Get a Free Token</h2>
+<ol type="1">
+<li class="fragment"><strong>Create a Hugging Face account</strong> at <a href="https://huggingface.co/"><strong>huggingface.co</strong></a>.</li>
+<li class="fragment">Go to your <strong>Profile</strong> → <strong>Settings</strong> → <strong>Access Tokens</strong>.</li>
+<li class="fragment">Click <strong>New token</strong> → Give it a name → Choose <strong>Read</strong> role.</li>
+<li class="fragment">Copy the generated token (looks like: <code>hf_xxx...</code>). Keep your API token private.</li>
+</ol>
+</section>
+<section id="editing-api-token-permissions" class="slide level2">
+<h2>Editing API Token Permissions</h2>
+<ol type="1">
+<li class="fragment">On the <strong>Access Tokens</strong> page, you’ll see a list of your existing tokens.</li>
+<li class="fragment">Typically, you can select a token and look for an <strong>Edit</strong> or <strong>…</strong> (ellipsis) option to change its permissions.</li>
+<li class="fragment"><strong>If you do not see an option to edit permissions</strong>:
+<ul>
+<li class="fragment">You may need to <strong>create a new token</strong> with the desired permissions. Some tokens are fixed after creation.</li>
+</ul></li>
+<li class="fragment">Check that you’ve granted the following if you need summarization:
+<ul>
+<li class="fragment"><strong>Inference</strong>: “Make calls to Inference Providers”</li>
+<li class="fragment"><strong>Repositories (Read)</strong>: “Read access to contents of all repos under your personal namespace”</li>
+<li class="fragment">Optionally: other read privileges, if your project needs them.</li>
+</ul></li>
+</ol>
+</section>
+<section id="api-endpoint" class="slide level2">
+<h2>API Endpoint</h2>
+<ul>
+<li class="fragment"><strong>Inference API URL</strong>: Each model has a unique endpoint.</li>
+<li class="fragment">For example, <strong>facebook/bart-large-cnn</strong> (a summarization model) uses:<br>
+https://api-inference.huggingface.co/models/facebook/bart-large-cnn</li>
+</ul>
+</section>
+<section id="what-does-this-api-do" class="slide level2">
+<h2>What Does This API Do?</h2>
+<ol type="1">
+<li class="fragment"><strong>Takes your text</strong> as an input (prompt).</li>
+<li class="fragment"><strong>Returns a summarized version</strong> of that text (or some other transformation, depending on the model).</li>
+<li class="fragment"><strong>Example</strong>: Summarizing multiple movie plots into one concise paragraph.</li>
+</ol>
+</section>
+<section id="example-code-snippet" class="slide level2">
+<h2>Example Code Snippet</h2>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><strong>Prompt</strong></a></li><li><a href="#tabset-4-2"><strong>Setup</strong></a></li><li><a href="#tabset-4-3"><strong>POST request</strong></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Text you'd like to summarize</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>text_to_summarize <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="st">Summarize the following movie plot in a sentence.</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="st">Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. </span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="st">To get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-2">
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="im">import</span> requests</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># Your Hugging Face token (replace with your real token)</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>HF_API_TOKEN <span class="op">=</span> <span class="st">"hf_your_real_token_here"</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="co"># The summarization model's API URL</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>API_URL <span class="op">=</span> <span class="st">"https://api-inference.huggingface.co/models/facebook/bart-large-cnn"</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="co"># Add your token to the request headers</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a>headers <span class="op">=</span> {<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>HF_API_TOKEN<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb14-10"><a href="#cb14-10"></a>payload <span class="op">=</span> {<span class="st">"inputs"</span>: text_to_summarize}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li><code>headers</code>: The “Authorization”: “Bearer …” header lets Hugging Face know you have permission to use their API.</li>
+<li><code>payload</code>: The {“inputs”: <your_text>} tells the model what text to summarize.</your_text></li>
+<li><code>requests.post()</code>: Sends your text to the model’s endpoint.</li>
+</ol>
+</div>
+<div id="tabset-4-3">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Send POST request</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>response <span class="op">=</span> requests.post(API_URL, headers<span class="op">=</span>headers, json<span class="op">=</span>payload)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># Check response and extract the summary</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    output <span class="op">=</span> response.json()</span>
+<span id="cb15-7"><a href="#cb15-7"></a>    summary <span class="op">=</span> output[<span class="dv">0</span>][<span class="st">"summary_text"</span>]</span>
+<span id="cb15-8"><a href="#cb15-8"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Summary from Hugging Face Inference API:"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9"></a>    <span class="bu">print</span>(summary)</span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="cf">else</span>:</span>
+<span id="cb15-11"><a href="#cb15-11"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">API request failed with status code </span><span class="sc">{</span>response<span class="sc">.</span>status_code<span class="sc">}</span><span class="ss">:"</span>)</span>
+<span id="cb15-12"><a href="#cb15-12"></a>    <span class="bu">print</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 

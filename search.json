@@ -4233,5 +4233,47 @@
     "title": "Lecture 17",
     "section": "",
     "text": "To set your keyboard shortcuts,\n\nPreferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”\nSet the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; (4) blockcomment; and (5) unblockcomment\n\nDefault shortcuts\n\nRun selection (a current line): F9\nRun cell: Ctrl + Enter\n\n# %% defines a coding cell\n\nComment (#): Ctrl/command + 1\nBlock-comment: Ctrl/command + 4\nUnblock-comment: Ctrl/command + 5"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#what-is-hugging-face",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#what-is-hugging-face",
+    "title": "Lecture 17",
+    "section": "What is Hugging Face?",
+    "text": "What is Hugging Face?\n\nA platform hosting thousands of open-source Language Models (LLMs), including text classification, summarization, question-answering, etc.\nFree to use for many models via the Inference API."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#how-to-get-a-free-token",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#how-to-get-a-free-token",
+    "title": "Lecture 17",
+    "section": "How to Get a Free Token",
+    "text": "How to Get a Free Token\n\nCreate a Hugging Face account at huggingface.co.\nGo to your Profile → Settings → Access Tokens.\nClick New token → Give it a name → Choose Read role.\nCopy the generated token (looks like: hf_xxx...). Keep your API token private."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#api-endpoint",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#api-endpoint",
+    "title": "Lecture 17",
+    "section": "API Endpoint",
+    "text": "API Endpoint\n\nInference API URL: Each model has a unique endpoint.\nFor example, facebook/bart-large-cnn (a summarization model) uses:\nhttps://api-inference.huggingface.co/models/facebook/bart-large-cnn"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#what-does-this-api-do",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#what-does-this-api-do",
+    "title": "Lecture 17",
+    "section": "What Does This API Do?",
+    "text": "What Does This API Do?\n\nTakes your text as an input (prompt).\nReturns a summarized version of that text (or some other transformation, depending on the model).\nExample: Summarizing multiple movie plots into one concise paragraph."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#example-code-snippet",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#example-code-snippet",
+    "title": "Lecture 17",
+    "section": "Example Code Snippet",
+    "text": "Example Code Snippet\n\n\nPromptSetupPOST request\n\n\n# Text you'd like to summarize\ntext_to_summarize = \"\"\"\nSummarize the following movie plot in a sentence.\nFour misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. \nTo get back home they'll have to master this world while embarking on a quest with an unexpected expert crafter.\n\"\"\"\n\n\nimport requests\n# Your Hugging Face token (replace with your real token)\nHF_API_TOKEN = \"hf_your_real_token_here\"\n\n# The summarization model's API URL\nAPI_URL = \"https://api-inference.huggingface.co/models/facebook/bart-large-cnn\"\n\n# Add your token to the request headers\nheaders = {\"Authorization\": f\"Bearer {HF_API_TOKEN}\"}\npayload = {\"inputs\": text_to_summarize}\n\nheaders: The “Authorization”: “Bearer …” header lets Hugging Face know you have permission to use their API.\npayload: The {“inputs”: } tells the model what text to summarize.\nrequests.post(): Sends your text to the model’s endpoint.\n\n\n\n# Send POST request\nresponse = requests.post(API_URL, headers=headers, json=payload)\n\n# Check response and extract the summary\nif response.status_code == 200:\n    output = response.json()\n    summary = output[0][\"summary_text\"]\n    print(\"\\nSummary from Hugging Face Inference API:\")\n    print(summary)\nelse:\n    print(f\"\\nAPI request failed with status code {response.status_code}:\")\n    print(response.text)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#editing-api-token-permissions",
+    "href": "danl-lec/danl-210-lec-17-2025-0409.html#editing-api-token-permissions",
+    "title": "Lecture 17",
+    "section": "Editing API Token Permissions",
+    "text": "Editing API Token Permissions\n\nOn the Access Tokens page, you’ll see a list of your existing tokens.\nTypically, you can select a token and look for an Edit or … (ellipsis) option to change its permissions.\nIf you do not see an option to edit permissions:\n\nYou may need to create a new token with the desired permissions. Some tokens are fixed after creation.\n\nCheck that you’ve granted the following if you need summarization:\n\nInference: “Make calls to Inference Providers”\nRepositories (Read): “Read access to contents of all repos under your personal namespace”\nOptionally: other read privileges, if your project needs them."
   }
 ]
