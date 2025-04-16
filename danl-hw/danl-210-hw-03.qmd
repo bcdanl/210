@@ -129,7 +129,7 @@ time.sleep(random.uniform(5,8))
 
 # %%
 # =============================================================================
-# Ranking & Title
+# Patterns
 # =============================================================================
 
 # <h3 class="ipc-title__text">1. A Minecraft Movie</h3>
@@ -158,6 +158,13 @@ time.sleep(random.uniform(5,8))
 # class_votes = "ipc-rating-star--voteCount"
 # votes = driver.find_elements(By.CLASS_NAME, class_votes)
 
+
+
+
+# %%
+# =============================================================================
+# Loop
+# =============================================================================
 
 class_ranking_titles = "ipc-title__text"
 ranking_titles = driver.find_elements(By.CLASS_NAME, class_ranking_titles)
