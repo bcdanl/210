@@ -445,7 +445,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 10, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 15, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 15, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 10, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -2174,7 +2174,7 @@
     "href": "danl-lec/danl-210-lec-17-2025-0409.html#hidden-api-2",
     "title": "Lecture 17",
     "section": "Hidden API",
-    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL (Client URL)\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
   },
   {
     "objectID": "danl-lec/danl-210-lec-17-2025-0409.html#fyi-on-web-data-collection-approaches",

@@ -113,7 +113,7 @@ theme_set(theme_fivethirtyeight()+
 :::
 ::::
 
-# APIs {background-color="#1c4982"}
+# **APIs** {background-color="#1c4982"}
 
 
 ## Clients and servers
@@ -393,7 +393,7 @@ df = pd.DataFrame( content['observations'] )
 Let's do [**Classwork 11**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-11.html)!
 
 
-# Using the New York Times API {background-color="#1c4982"}
+# **Using the New York Times API** {background-color="#1c4982"}
 
 
 ## Using the New York Times API
@@ -498,7 +498,7 @@ articles = nyt.article_search(
 
 
 
-# Hidden API {background-color="#1c4982"}
+# **Hidden API** {background-color="#1c4982"}
 
 
 ## Hidden API
@@ -519,10 +519,10 @@ articles = nyt.article_search(
   1. F12 -> Network -> XHR (**X**ML**H**ttp**R**equest)
   2. Refresh the webpage that loads data
   3. Find `json` type response that seems to have data
-  4. Right-click that response -> Copy as cURL
+  4. Right-click that response -> Copy as **cURL** (Client URL)
 
 - On an API tool such as Python [curlconverter](https://curlconverter.com/python/),
-  5. Paste the cURL to the curl command textbox, and then click "Copy to clipboard" right below the code cell.
+  5. Paste the cURL to the *curl command textbox*, and then click "Copy to clipboard" right below the code cell.
   6. Paste it on your Python script, and run it.
 
 ## Details on `requests` methods
