@@ -91,10 +91,12 @@ DT::datatable(df)
 
 <br>
 
-- To iterate over the `id` values in `df_housing`, you can convert the variable to a list using `.tolist()`:
+-	Note that the `id` variable in the `series_housing_price` DataFrame corresponds to the `series_id` key used in the parameter dictionary (`param_dicts`) used for making requests to the FRED API.
+	
+- To iterate over the `id` values in the  `series_housing_price` DataFrame, you can convert the variable to a list using `.tolist()`:
 
 ```{.python}
-for val in df_housing['id'].tolist():
+for val in series_housing_price['id'].tolist():
    # do something with val
 ```
 
