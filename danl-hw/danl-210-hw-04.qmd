@@ -189,7 +189,7 @@ import pandas as pd
 url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
 series_housing_price = pd.read_csv(url)
 
-api_key = '80657885ed24a6137d5f63590c0e5c4a'
+api_key = 'YOUR_API_KEY'
 endpoint = "series/observations"
 url = "https://api.stlouisfed.org/"
 
