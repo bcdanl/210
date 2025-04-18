@@ -203,9 +203,6 @@ for val in series_housing_price['id'].tolist():
     response = requests.get(url + "fred/" + endpoint, 
                             params = params)
     
-    # Extract the response content (i.e. text).
-    # content = response.content.decode('utf-8')
-    
     # Convert JSON response to Python dictionary.
     fred = response.json() 
     
