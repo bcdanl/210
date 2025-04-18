@@ -471,6 +471,7 @@ rmarkdown::paged_table(cms_ny_2022_records)
 #| message: false
 
 City_Physician_or_NPP <- cms_ny_2022 |>
+  distinct(City, Physician_or_NPP, NPI) |> 
   count(City, Physician_or_NPP) |>    
   pivot_wider(names_from = Physician_or_NPP, values_from = n)
 

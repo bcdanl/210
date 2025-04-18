@@ -492,6 +492,59 @@ duplicates = (
     )
 ```
 
+
+### Understanding `duplicated()` in Pandas
+
+The `duplicated()` function returns a **boolean Series** indicating whether each row is a **duplicate** based on specified columns.
+
+#### Parameters:
+- `subset`: Columns to consider when identifying duplicates
+- `keep`:
+  - `'first'` (default): Marks duplicates **after the first** as `True`
+  - `'last'`: Marks duplicates **before the last** as `True`
+  - `False`: Marks **all duplicates** as `True`
+
+
+#### 🔢 Example DataFrame
+
+```{.python}
+df = pd.DataFrame({
+    "pid": [1, 1, 2, 2, 2, 3],
+    "artist_name": ["A", "A", "B", "B", "B", "C"],
+    "track_name": ["x", "x", "y", "y", "y", "z"]
+})
+
+df.duplicated(subset=["pid", "artist_name", "track_name"], keep='first')
+df.duplicated(subset=["pid", "artist_name", "track_name"], keep='last')
+df.duplicated(subset=["pid", "artist_name", "track_name"], keep=False)
+```
+
+
+### Understanding `drop_duplicates()` in Pandas
+
+The `drop_duplicates()` function removes duplicate rows based on specified columns. The behavior is controlled by the `keep` parameter.
+
+#### Parameters:
+- `subset`: Columns to consider when identifying duplicates
+- `keep`:
+  - `'first'` (default): Keeps the **first occurrence**, removes the rest
+  - `'last'`: Keeps the **last occurrence**, removes the rest
+  - `False`: Removes **all duplicates**, keeping only unique entries
+
+
+#### 🔢 Example DataFrame
+
+```{.python}
+df = pd.DataFrame({
+    "pid": [1, 1, 2, 2, 2, 3],
+    "artist_name": ["A", "A", "B", "B", "B", "C"],
+    "track_name": ["x", "x", "y", "y", "y", "z"]
+})
+
+df.drop_duplicates(subset=["pid", "artist_name", "track_name"], keep='first')
+df.drop_duplicates(subset=["pid", "artist_name", "track_name"], keep='last')
+df.drop_duplicates(subset=["pid", "artist_name", "track_name"], keep=False)
+```
 <br>
 
 

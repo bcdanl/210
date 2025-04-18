@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2025-04-16">
+<meta name="dcterms.date" content="2025-04-18">
 
 <title>Homework 3 | Byeong-Hak Choe</title>
 <style>
@@ -178,7 +178,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a>
+  <ul>
+  <li><a href="#understanding-duplicated-in-pandas" id="toc-understanding-duplicated-in-pandas" class="nav-link" data-scroll-target="#understanding-duplicated-in-pandas">Understanding <code>duplicated()</code> in Pandas</a>
+  <ul>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters:</a></li>
+  <li><a href="#example-dataframe" id="toc-example-dataframe" class="nav-link" data-scroll-target="#example-dataframe">🔢 Example DataFrame</a></li>
+  </ul></li>
+  <li><a href="#understanding-drop_duplicates-in-pandas" id="toc-understanding-drop_duplicates-in-pandas" class="nav-link" data-scroll-target="#understanding-drop_duplicates-in-pandas">Understanding <code>drop_duplicates()</code> in Pandas</a>
+  <ul>
+  <li><a href="#parameters-1" id="toc-parameters-1" class="nav-link" data-scroll-target="#parameters-1">Parameters:</a></li>
+  <li><a href="#example-dataframe-1" id="toc-example-dataframe-1" class="nav-link" data-scroll-target="#example-dataframe-1">🔢 Example DataFrame</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   </ul></li>
   <li><a href="#part-3.-jupyter-notebook-blogging" id="toc-part-3.-jupyter-notebook-blogging" class="nav-link" data-scroll-target="#part-3.-jupyter-notebook-blogging">Part 3. Jupyter Notebook Blogging</a>
@@ -212,14 +224,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 16, 2025</p>
+      <p class="date">April 18, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 16, 2025</p>
+      <p class="date-modified">April 18, 2025</p>
     </div>
   </div>
     
@@ -693,7 +705,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<section id="understanding-duplicated-in-pandas" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-duplicated-in-pandas">Understanding <code>duplicated()</code> in Pandas</h3>
+<p>The <code>duplicated()</code> function returns a <strong>boolean Series</strong> indicating whether each row is a <strong>duplicate</strong> based on specified columns.</p>
+<section id="parameters" class="level4">
+<h4 class="anchored" data-anchor-id="parameters">Parameters:</h4>
+<ul>
+<li><code>subset</code>: Columns to consider when identifying duplicates</li>
+<li><code>keep</code>:
+<ul>
+<li><code>'first'</code> (default): Marks duplicates <strong>after the first</strong> as <code>True</code></li>
+<li><code>'last'</code>: Marks duplicates <strong>before the last</strong> as <code>True</code></li>
+<li><code>False</code>: Marks <strong>all duplicates</strong> as <code>True</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="example-dataframe" class="level4">
+<h4 class="anchored" data-anchor-id="example-dataframe">🔢 Example DataFrame</h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pid"</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"artist_name"</span>: [<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>],</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"track_name"</span>: [<span class="st">"x"</span>, <span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"y"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>df.duplicated(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="st">'first'</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>df.duplicated(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="st">'last'</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>df.duplicated(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="understanding-drop_duplicates-in-pandas" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-drop_duplicates-in-pandas">Understanding <code>drop_duplicates()</code> in Pandas</h3>
+<p>The <code>drop_duplicates()</code> function removes duplicate rows based on specified columns. The behavior is controlled by the <code>keep</code> parameter.</p>
+<section id="parameters-1" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-1">Parameters:</h4>
+<ul>
+<li><code>subset</code>: Columns to consider when identifying duplicates</li>
+<li><code>keep</code>:
+<ul>
+<li><code>'first'</code> (default): Keeps the <strong>first occurrence</strong>, removes the rest</li>
+<li><code>'last'</code>: Keeps the <strong>last occurrence</strong>, removes the rest</li>
+<li><code>False</code>: Removes <strong>all duplicates</strong>, keeping only unique entries</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-dataframe-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-dataframe-1">🔢 Example DataFrame</h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pid"</span>: [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"artist_name"</span>: [<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>],</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"track_name"</span>: [<span class="st">"x"</span>, <span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"y"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="st">'first'</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="st">'last'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
+</section>
+</section>
 </section>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
@@ -703,13 +771,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Click to Check the Answer!</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>songs_100_plist <span class="op">=</span> (</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    .drop_duplicates(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="va">False</span>)[[<span class="st">'artist_name'</span>, <span class="st">'track_name'</span>]]</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    .value_counts()</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    .reset_index()</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'count &gt; 100'</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>songs_100_plist <span class="op">=</span> (</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    .drop_duplicates(subset<span class="op">=</span>[<span class="st">"pid"</span>, <span class="st">"artist_name"</span>, <span class="st">"track_name"</span>], keep<span class="op">=</span><span class="va">False</span>)[[<span class="st">'artist_name'</span>, <span class="st">'track_name'</span>]]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    .value_counts()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    .reset_index()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'count &gt; 100'</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><br><br></p>
@@ -722,7 +790,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <img src="https://bcdanl.github.io/lec_figs/christmas_movies.jpg" width="600px">
 </p>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>holiday_movies <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/holiday_movies.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>holiday_movies <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/holiday_movies.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>The DataFrame <code>holiday_movies</code> comes from the IMDb.</p></li>
 <li><p>The following is the DataFrame, <code>holiday_movies</code>.</p></li>
@@ -755,7 +823,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The following is another DataFrame <code>holiday_movie_genres</code> that is related with the DataFrame <code>holiday_movies</code>:</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>holiday_movie_genres <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/holiday_movie_genres.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>holiday_movie_genres <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/holiday_movie_genres.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
