@@ -222,20 +222,20 @@ for val in series_housing_price['id'].tolist():
 # Join
 df_all = df_all.merge(df_housing, on = 'id', how = 'left')
 
-df_all = df_all[['title', 'date', 'value']]
-
+# String operations
 df_all['title'] = df_all['title'].str.replace('Home Price Index (', '')
 df_all[['tier', 'city']] = df_all['title'].str.split(' Tier\) for ', expand=True)
-
-df_all = df_all[['city', 'tier', 'date', 'value']]
 df_all[['city', 'state']] = df_all['city'].str.split(', ', expand=True)
+
+# Selecting variables
 df_all = df_all[['city', 'state', 'tier', 'date', 'value']]
+
+# Renaming
 df_all = df_all.rename( columns = { "value": "home_price_index" } )
 
 # Converting Data Types
 df_all = df_all.astype({'value': 'float',
                         'date': 'datetime64[ns]'})
-
 tier_order = ['Low', 'Middle', 'High']  # your desired order
 df_all['tier'] = pd.Categorical(df_all['tier'], categories=tier_order, ordered=True)
 
