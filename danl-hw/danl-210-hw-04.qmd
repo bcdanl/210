@@ -105,6 +105,7 @@ series_housing_price = pd.read_csv(url)
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 
@@ -126,6 +127,7 @@ Provide a Python code (**excluding your FRED API key**) to construct the followi
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 
