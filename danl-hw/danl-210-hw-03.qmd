@@ -317,7 +317,7 @@ for item in range(1, len(ranking_titles)-1):
         runtime = driver.find_element(By.XPATH, xpath_runtime).text
         
         xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[3]'
-        runtime = driver.find_element(By.XPATH, xpath_runtime).text 
+        rating = driver.find_element(By.XPATH, xpath_rating).text 
         
         metascore = pd.NA
         
