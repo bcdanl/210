@@ -185,7 +185,7 @@ df_sorted = df.sort_values('tier')
 
 <br>
 
-- Making requests to the FRED API
+Making requests to the FRED API
 ```{python}
 import requests
 import pandas as pd
@@ -220,7 +220,7 @@ for val in series_housing_price['id'].tolist():
 
 <br>
 
-- Cleaning raw data
+Cleaning raw data
 ```{python}
 # Join
 df_all = df_all.merge(df_housing, on = 'id', how = 'left')
@@ -337,6 +337,7 @@ cms_ny_2022['Physician_or_NPP'] = cms_ny_2022['Physician_or_NPP'].astype('catego
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 cms_ny_2022 <- cms_ny_2022 |> 
@@ -401,6 +402,7 @@ Write a Python code to identify the city or cities with the highest number of no
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 df <- cms_ny_2022 |> 
@@ -432,6 +434,7 @@ rmarkdown::paged_table(df)
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 df <- cms_ny_2022 |> 
@@ -501,6 +504,7 @@ sum(x)
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 df <- cms_ny_2022 |> 
@@ -596,6 +600,7 @@ df_grouped = (
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 df_producer_city <- cms_ny_2022 |> 
@@ -652,6 +657,7 @@ cms_ny_2022_npi <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.c
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 
@@ -679,6 +685,7 @@ cms_ny_2022_records <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-r
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 
@@ -694,7 +701,7 @@ rmarkdown::paged_table(cms_ny_2022_records)
 
 <br>
 
-- Below is the many-to-many join. Therefore, the `cms_ny_2022_new` DataFrame has more observations than `cms_ny_2022`.
+Below is the many-to-many join. Therefore, the `cms_ny_2022_new` DataFrame has more observations than `cms_ny_2022`.
 ```{python}
 cms_ny_2022_new = cms_ny_2022_records.merge(cms_ny_2022_npi, on = 'NPI', how = 'left')
 ```
@@ -702,7 +709,7 @@ cms_ny_2022_new = cms_ny_2022_records.merge(cms_ny_2022_npi, on = 'NPI', how = '
 
 <br>
 
-- This happens because `NPI` variable in the `cms_ny_2022_npi` DataFrame has duplicate values.
+This happens because `NPI` variable in the `cms_ny_2022_npi` DataFrame has duplicate values.
 
 ```{python}
 # Dividing `cms_ny_2022_npi` into the two DataFrames
@@ -728,6 +735,7 @@ cms_ny_2022_new2 = cms_ny_2022_records.merge(cms_ny_2022_npi_unique_all, on = 'N
 
 ```{r}
 #| echo: false
+#| eval: true
 #| warning: false
 #| message: false
 
