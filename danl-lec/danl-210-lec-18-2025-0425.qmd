@@ -14,7 +14,7 @@ author:
   - name: Byeong-Hak Choe
     email: bchoe@geneseo.edu
     affiliations: SUNY Geneseo
-date: 2025-04-16
+date: 2025-04-25
 execute: 
   eval: true
   echo: true
@@ -57,10 +57,10 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-# Data Visualization with `seaborn`   {background-color="#1c4982"}
+# Data Visualization  {background-color="#1c4982"}
 
 
-## Visualizing `DataFrames` with `seaborn`
+## Data Visualization 
 
 :::: {.columns} 
 ::: {.column width="50%"}
@@ -100,6 +100,117 @@ theme_set(theme_fivethirtyeight()+
   - We should try making data visualization informative as much as we can.
 
 
+
+<!-- ## FYI: Python version of R's ggplot - `letsplot` -->
+
+<!-- <p align="center"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" width="300px"> -->
+<!-- </p> -->
+
+<!-- :::{.nonincremental} -->
+<!-- - [`letsplot`](https://lets-plot.org) is a Python data visualization library based on the [**Grammar of Graphics**](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).  -->
+<!--   - It is pretty much the same as R's `ggplot`. -->
+
+<!-- ::: -->
+
+
+
+
+## Categorical vs. Continuous Variables
+
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## **Categorical**
+- A **categorical variable** is a variable whose value is obtained by *counting*.
+  - Number of red marbles in a jar
+  - Number of heads when flipping three coins 
+  - Students’ letter grade
+  - US state/county
+  
+  
+- Categorical variables should be `category` or `string` (`object` in `DataFrame`).
+
+
+## **Continuous**
+- A **continuous variable** is a variable whose value is obtained by *measuring*  and can have a decimal or fractional value.
+  - Height/weight of students
+  - Time it takes to get to school
+  - Fuel efficiency of a vehicle (e.g., miles per gallon)
+
+
+- Continuous variables should be `float`.
+  - We can use `astype('float')` to make a variable `float`.
+
+
+
+## **Integer**
+
+- For data visualization, `integer`-type variables could be treated as either categorical or continuous, depending on the context of analysis.
+
+
+- If the values of an integer-type variable means an intensity or an order, the integer variable could be treated as continuous.
+  - A variable of **age** integers (18, 19, 20, 21, ...) could be continuous.
+  - A variable of integer-valued **MPG** (27, 28, 29, 30, ...) could be continuous.
+  
+  
+- Otherwise, the integer variable is categorical.
+  - A variable of month integers (1, ,2, ..., 12) is categorical.
+
+
+- We can use `astype('int')` to make a variable `int`.
+
+:::
+:::
+
+## Making Discoveries from a Data Set
+
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## **Distribution**
+- From the distribution plots, we want to see the **variation**, the tendency of the values of a variable to change.
+  - Which values are the most common? Why?
+  - How *normal* is the data? How many peaks are there in the distribution?
+  - Which values are rare? 
+
+
+
+## **Relationship**
+- From the plots with two or more variables, we want to see **co-variation**, the tendency for the values of two or more variables to vary together in a **related** way. 
+
+
+- What type of **co-variation** occurs between variables?
+  - Are they *positively* associated?
+  - Are they *negatively* associated?
+  - Are there *no association* between them?
+
+
+
+
+## **Types**
+
+  - A distribution of a *categorical* variable (e.g., bar charts and more)
+  - A distribution of a *continuous* variable (e.g., histograms and more)
+  - A relationship between *two continuous* variables (e.g., scatter plots and more)
+  - A time trend of a variable (e.g., line plots and more)
+  
+
+
+## **Descriptive Stat.**
+
+- Use `DataFrame.describe()` to know:
+  - Mean (Average, Expected Value);
+  - Standard Deviation (SD)
+  - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
+
+:::
+:::
+
+
+
+# Getting started with `seaborn`   {background-color="#1c4982"}
+
 ## Getting started with `seaborn`
 
 <p align="center">
@@ -118,122 +229,15 @@ import matplotlib.pyplot as plt
 ```
 
 
-## FYI: Python version of R's ggplot - `letsplot`
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" width="300px">
-</p>
-
-:::{.nonincremental}
-- [`letsplot`](https://lets-plot.org) is a Python data visualization library based on the [**Grammar of Graphics**](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448). 
-  - It is pretty much the same as R's `ggplot`.
-
-:::
-
-
-
-
-## Categorical vs. Continuous Variables
+## Data Visualization Workflow with `seaborn`
 
 :::{.nonincremental}
 ::: {.panel-tabset}
-
-## Categorical
-- A **categorical variable** is a variable whose value is obtained by *counting*.
-  - Number of red marbles in a jar
-  - Number of heads when flipping three coins 
-  - Students’ letter grade
-  - US state/county
-  
-  
-- Categorical variables should be `category` or `string` (`object` in `DataFrame`).
-
-
-## Continuous
-- A **continuous variable** is a variable whose value is obtained by *measuring*  and can have a decimal or fractional value.
-  - Height/weight of students
-  - Time it takes to get to school
-  - Fuel efficiency of a vehicle (e.g., miles per gallon)
-
-
-- Continuous variables should be `float`.
-  - We can use `astype('float')` to make a variable `float`.
-
-
-
-## Integer
-
-- For data visualization, `integer`-type variables could be treated as either categorical or continuous, depending on the context of analysis.
-
-
-- If the values of an integer-type variable means an intensity or an order, the integer variable could be continuous.
-  - A variable of age integers (18, 19, 20, 21, ...) could be continuous.
-  - A variable of integer-valued MPG (27, 28, 29, 30, ...) could be continuous.
-  
-  
-- If not, the integer variable is categorical.
-  - A variable of month integers (1, ,2, ..., 12) is categorical.
-
-
-- We can use `astype('int')` to make a variable `int`.
-
-:::
-:::
-
-## Making Discoveries from a Data Set
-
-:::{.nonincremental}
-::: {.panel-tabset}
-
-## Distribution
-- From the distribution plots, we want to see the **variation**, the tendency of the values of a variable to change.
-  - Which values are the most common? Why?
-  - How *normal* is the data? How many peaks are there in the distribution?
-  - Which values are rare? 
-
-
-
-## Relationship
-- From the plots with two or more variables, we want to see **co-variation**, the tendency for the values of two or more variables to vary together in a **related** way. 
-
-
-- What type of **co-variation** occurs between variables?
-  - Are they positively associated?
-  - Are they negatively associated?
-  - Are there no association between them?
-
-
-
-
-## Types
-
-  - A distribution of a categorical variable (e.g., bar charts and more)
-  - A distribution of a continuous variable (e.g., histograms and more)
-  - A relationship between two continuous variables (e.g., scatter plots and more)
-  - A time trend of a variable (e.g., line plots and more)
-  
-
-
-## Summary Stat.
-
-- Use `DataFrame.describe()` to know:
-  - Mean (Average, Expected Value);
-  - Standard Deviation (SD)
-  - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
-
-:::
-:::
-
-
-## Data Visualization Workflow
-
-:::{.nonincremental}
-::: {.panel-tabset}
-## Step 1
+## **Step 1**
 - Read the descriptions of variables in a `DataFrame` if available.
 
 
-- Check the unit of an observation: Are all values in one single observation measured for:
+- Check the **unit of an observation**: Are all values in one single observation measured for:
   - One organization (e.g., university, company)?
   - One geographic unit (e.g., zip code, county, state, country)?
   - One person?
@@ -241,37 +245,38 @@ import matplotlib.pyplot as plt
   - One geographic unit in a specific point of time?
   - One organization in a specific point of time?
 
-## Step 2
+## **Step 2**
 - Prepare a DataFrame for visualization.
   - Adding new variables
   - Filtering observations
+  - Making `DataFrame` longer/wider
   - Group operations
 
 
-## Step 3
+## **Step 3**
 - Figure out whether variables of interests are **categorical** or **continuous**.
   - Check what types of the variables are (e.g., `float`, `int`, `datetime64`, `object`, `category`).
   - Use `astype(DTYPE)`  if needed.
 
 
-## Step 4
+## **Step 4**
 - Choose appropriate
   - Geometric objects (e.g., `sns.histplot`, `sns.scatterplot`)
   - Aesthetic mappings (`(x = , y = , color = , hue = )`) 
-  - Faceting (`FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)` or `col`/`row` in the function of geometric object) 
+  - Faceting (`FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)` or `col`/`row` parameters in the function of geometric object) 
 
 
-## Step 5
+## **Step 5**
 - Pay attention to the unit of `x` and`y` axes.
 
-- If needed, transform a given `DataFrame` (e.g., subset of observations, new variables, summarized DataFrame).
+- Repeat the process until you are satisfied with the visualization output.
 
 :::
 :::
 
 
 
-## Getting started with `seaborn`
+## Datasets and Plot Styles in `seaborn`
 
 :::{.nonincremental}
 
@@ -302,6 +307,10 @@ tips = sns.load_dataset('tips')
 ## Bar Chart 
 
 
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## **Example**
 :::: {.columns}
 ::: {.column width="50%"}
 ```{.python}
@@ -330,7 +339,7 @@ sns.countplot(data = titanic,
 
 
 
-## Bar Chart 
+## `hue`
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -354,10 +363,13 @@ sns.countplot(data = titanic,
 
 - We can further break up the bars in the bar chart based on another categorical variable. 
 
-  - This is useful to visualize the relationship between the two categorical variables.
+  - This is useful to visualize how the distribution of a categorical variable varies by another categorical variable.
 
+:::
+:::
 
 ## Histogram 
+
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -385,9 +397,12 @@ sns.histplot(data = titanic,
 
   
 - We use `sns.histplot()` function to plot a histogram
+  - Use either `bins` or `binwidth`.
+- The shape of a histogram is sensitive to `bins`/`binwidth`
+  - We should experiment on `bins`/`binwidth`.
+  
 
-
-## Histogram 
+## Boxplot 
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -410,16 +425,20 @@ sns.boxplot(data = tips,
 
 
 - A boxplot computes a summary of the distribution and then display a specially formatted box.
-  - It is useful to visualize how values of a **continuous variable** are distributed across different values of another (categorical) variable.
+  - It is useful to visualize how values of a **continuous variable** are distributed across different values of a **categorical variable**.
   
   
-- We use `sns.histplot()` function to plot a histogram.
+- We use `sns.boxplot()` function to plot a boxplot.
 
 
 
 
 ## Scatter plot 
 
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## **Example**
 :::: {.columns}
 ::: {.column width="50%"}
 ```{.python}
@@ -448,8 +467,7 @@ sns.scatterplot(data = tips,
 
 
 
-## Scatter plot 
-
+## `hue`
 ```{.python}
 sns.scatterplot(data = tips,
                 x = 'total_bill', 
@@ -465,7 +483,7 @@ sns.scatterplot(data = tips,
   - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
 
 
-## Fitted line 
+## `lmplot()`
   
 
 ```{.python}
@@ -484,7 +502,7 @@ sns.lmplot(data = tips,
 
 
 
-## Transparency with `alpha`
+## `alpha`
   
 :::: {.columns}
 ::: {.column width="45%"}
@@ -509,12 +527,12 @@ sns.lmplot(data = tips,
 
 
 
-- In a scatter plot, adding transparency with `alpha` helps address many data points on the same location.
+- In a scatter plot, adding **transparency** with `alpha` helps address many data points on the same location.
   - We can map `alpha` to number between 0 and 1.
   
   
 
-## Scatter plot 
+## `lmplot()` Example
 
 ```{.python}
 sns.lmplot(data = tips,
@@ -531,7 +549,17 @@ sns.lmplot(data = tips,
   - **Q**. Does a smoker and a non-smoker have a difference in tipping behavior?
 
 
+
+:::
+:::
+
 ## Line cahrt 
+
+
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## **Example**
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -556,12 +584,13 @@ sns.lineplot(data = dow,
 
 
 
-- A line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.
-  - It draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.
-- We use `sns.lineplot()` function to plot a line plot.
+- A line chart is used to display the trend in a continuous variable or the change in a continuous variable over a categorical variable.
+  - `sns.lineplot()` draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.
+  
+<!-- - We use `sns.lineplot()` function to plot a line plot. -->
 
 
-## Line cahrt 
+## `hue`
 
 
 ```{.python}
@@ -579,7 +608,8 @@ sns.lineplot(data = healthexp,
 
 - For line charts, we often need to group or connect observations to visualize the number of distinct lines.
 
-
+:::
+:::
 
 ## Faceting
 
@@ -587,7 +617,7 @@ sns.lineplot(data = healthexp,
 - Faceting allows us to plot subsets (facets) of our data across subplots. 
 
 ::: {.panel-tabset}
-## Faceting
+## **Faceting**
 - First, we create a `.FacetGrid()` object with the data we will be using and define how it will be subset with the `row` and `col` arguments: 
 
 - Second, we then use the `.map()` method to run a plotting function on each of the subsets, passing along any necessary arguments.
@@ -604,9 +634,9 @@ sns.lineplot(data = healthexp,
  )
 ```
 
-## Alternative?
-- Some geometric object, such as `sns.lmplot`, does not work well with `sns.FacetGrid()`.
-  - Instead, `sns.lmplot` supports mapping, `col = 'VAR'` and `row = 'VAR'` to facet the plot.
+## `col`/`row`
+- Some geometric object, such as `sns.lmplot()`, does not work well with `sns.FacetGrid()`.
+  - Instead, `sns.lmplot()` supports mapping, `col = 'VAR'` and `row = 'VAR'` to facet the plot.
   
 ```{.python}
 sns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',

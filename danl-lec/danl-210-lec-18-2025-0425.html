@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Byeong-Hak Choe">
-  <meta name="dcterms.date" content="2025-04-16">
+  <meta name="dcterms.date" content="2025-04-25">
   <title>Home - Lecture 18</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -410,15 +410,15 @@ Byeong-Hak Choe
     </div>
 </div>
 
-  <p class="date">April 16, 2025</p>
+  <p class="date">April 25, 2025</p>
 </section>
 <section>
-<section id="data-visualization-with-seaborn" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1>Data Visualization with <code>seaborn</code></h1>
+<section id="data-visualization" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Data Visualization</h1>
 
 </section>
-<section id="visualizing-dataframes-with-seaborn" class="slide level2">
-<h2>Visualizing <code>DataFrames</code> with <code>seaborn</code></h2>
+<section id="data-visualization-1" class="slide level2">
+<h2>Data Visualization</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p align="center">
@@ -450,42 +450,20 @@ Byeong-Hak Choe
 <li class="fragment">We should try making data visualization informative as much as we can.</li>
 </ul></li>
 </ul>
-</section>
-<section id="getting-started-with-seaborn" class="slide level2">
-<h2>Getting started with <code>seaborn</code></h2>
-<p align="center">
-<img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png" width="200px">
-</p>
-<div>
-<ul>
-<li><code>seaborn</code> is a Python data visualization library based on <code>matplotlib</code>.
-<ul>
-<li>It allows us to easily create beautiful but complex graphics using a simple interface.</li>
-</ul></li>
-</ul>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="fyi-python-version-of-rs-ggplot---letsplot" class="slide level2">
-<h2>FYI: Python version of R’s ggplot - <code>letsplot</code></h2>
-<p align="center">
-<img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" width="300px">
-</p>
-<div>
-<ul>
-<li><a href="https://lets-plot.org"><code>letsplot</code></a> is a Python data visualization library based on the <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448"><strong>Grammar of Graphics</strong></a>.
-<ul>
-<li>It is pretty much the same as R’s <code>ggplot</code>.</li>
-</ul></li>
-</ul>
-</div>
+<!-- ## FYI: Python version of R's ggplot - `letsplot` -->
+<!-- <p align="center"> -->
+<!--   <img src="https://bcdanl.github.io/lec_figs/grammar-of-graphics.png" width="300px"> -->
+<!-- </p> -->
+<!-- :::{.nonincremental} -->
+<!-- - [`letsplot`](https://lets-plot.org) is a Python data visualization library based on the [**Grammar of Graphics**](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).  -->
+<!--   - It is pretty much the same as R's `ggplot`. -->
+<!-- ::: -->
 </section>
 <section id="categorical-vs.-continuous-variables" class="slide level2">
 <h2>Categorical vs.&nbsp;Continuous Variables</h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Categorical</a></li><li><a href="#tabset-1-2">Continuous</a></li><li><a href="#tabset-1-3">Integer</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><strong>Categorical</strong></a></li><li><a href="#tabset-1-2"><strong>Continuous</strong></a></li><li><a href="#tabset-1-3"><strong>Integer</strong></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
@@ -516,12 +494,12 @@ Byeong-Hak Choe
 <div id="tabset-1-3">
 <ul>
 <li><p>For data visualization, <code>integer</code>-type variables could be treated as either categorical or continuous, depending on the context of analysis.</p></li>
-<li><p>If the values of an integer-type variable means an intensity or an order, the integer variable could be continuous.</p>
+<li><p>If the values of an integer-type variable means an intensity or an order, the integer variable could be treated as continuous.</p>
 <ul>
-<li>A variable of age integers (18, 19, 20, 21, …) could be continuous.</li>
-<li>A variable of integer-valued MPG (27, 28, 29, 30, …) could be continuous.</li>
+<li>A variable of <strong>age</strong> integers (18, 19, 20, 21, …) could be continuous.</li>
+<li>A variable of integer-valued <strong>MPG</strong> (27, 28, 29, 30, …) could be continuous.</li>
 </ul></li>
-<li><p>If not, the integer variable is categorical.</p>
+<li><p>Otherwise, the integer variable is categorical.</p>
 <ul>
 <li>A variable of month integers (1, ,2, …, 12) is categorical.</li>
 </ul></li>
@@ -536,7 +514,7 @@ Byeong-Hak Choe
 <h2>Making Discoveries from a Data Set</h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Distribution</a></li><li><a href="#tabset-2-2">Relationship</a></li><li><a href="#tabset-2-3">Types</a></li><li><a href="#tabset-2-4">Summary Stat.</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><strong>Distribution</strong></a></li><li><a href="#tabset-2-2"><strong>Relationship</strong></a></li><li><a href="#tabset-2-3"><strong>Types</strong></a></li><li><a href="#tabset-2-4"><strong>Descriptive Stat.</strong></a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <ul>
@@ -553,17 +531,17 @@ Byeong-Hak Choe
 <li><p>From the plots with two or more variables, we want to see <strong>co-variation</strong>, the tendency for the values of two or more variables to vary together in a <strong>related</strong> way.</p></li>
 <li><p>What type of <strong>co-variation</strong> occurs between variables?</p>
 <ul>
-<li>Are they positively associated?</li>
-<li>Are they negatively associated?</li>
-<li>Are there no association between them?</li>
+<li>Are they <em>positively</em> associated?</li>
+<li>Are they <em>negatively</em> associated?</li>
+<li>Are there <em>no association</em> between them?</li>
 </ul></li>
 </ul>
 </div>
 <div id="tabset-2-3">
 <ul>
-<li>A distribution of a categorical variable (e.g., bar charts and more)</li>
-<li>A distribution of a continuous variable (e.g., histograms and more)</li>
-<li>A relationship between two continuous variables (e.g., scatter plots and more)</li>
+<li>A distribution of a <em>categorical</em> variable (e.g., bar charts and more)</li>
+<li>A distribution of a <em>continuous</em> variable (e.g., histograms and more)</li>
+<li>A relationship between <em>two continuous</em> variables (e.g., scatter plots and more)</li>
 <li>A time trend of a variable (e.g., line plots and more)</li>
 </ul>
 </div>
@@ -580,17 +558,38 @@ Byeong-Hak Choe
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="getting-started-with-seaborn" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Getting started with <code>seaborn</code></h1>
+
 </section>
-<section id="data-visualization-workflow" class="slide level2">
-<h2>Data Visualization Workflow</h2>
+<section id="getting-started-with-seaborn-1" class="slide level2">
+<h2>Getting started with <code>seaborn</code></h2>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png" width="200px">
+</p>
+<div>
+<ul>
+<li><code>seaborn</code> is a Python data visualization library based on <code>matplotlib</code>.
+<ul>
+<li>It allows us to easily create beautiful but complex graphics using a simple interface.</li>
+</ul></li>
+</ul>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data-visualization-workflow-with-seaborn" class="slide level2">
+<h2>Data Visualization Workflow with <code>seaborn</code></h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Step 1</a></li><li><a href="#tabset-3-2">Step 2</a></li><li><a href="#tabset-3-3">Step 3</a></li><li><a href="#tabset-3-4">Step 4</a></li><li><a href="#tabset-3-5">Step 5</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1"><strong>Step 1</strong></a></li><li><a href="#tabset-3-2"><strong>Step 2</strong></a></li><li><a href="#tabset-3-3"><strong>Step 3</strong></a></li><li><a href="#tabset-3-4"><strong>Step 4</strong></a></li><li><a href="#tabset-3-5"><strong>Step 5</strong></a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
 <ul>
 <li><p>Read the descriptions of variables in a <code>DataFrame</code> if available.</p></li>
-<li><p>Check the unit of an observation: Are all values in one single observation measured for:</p>
+<li><p>Check the <strong>unit of an observation</strong>: Are all values in one single observation measured for:</p>
 <ul>
 <li>One organization (e.g., university, company)?</li>
 <li>One geographic unit (e.g., zip code, county, state, country)?</li>
@@ -607,6 +606,7 @@ Byeong-Hak Choe
 <ul>
 <li>Adding new variables</li>
 <li>Filtering observations</li>
+<li>Making <code>DataFrame</code> longer/wider</li>
 <li>Group operations</li>
 </ul></li>
 </ul>
@@ -626,22 +626,22 @@ Byeong-Hak Choe
 <ul>
 <li>Geometric objects (e.g., <code>sns.histplot</code>, <code>sns.scatterplot</code>)</li>
 <li>Aesthetic mappings (<code>(x = , y = , color = , hue = )</code>)</li>
-<li>Faceting (<code>FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)</code> or <code>col</code>/<code>row</code> in the function of geometric object)</li>
+<li>Faceting (<code>FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)</code> or <code>col</code>/<code>row</code> parameters in the function of geometric object)</li>
 </ul></li>
 </ul>
 </div>
 <div id="tabset-3-5">
 <ul>
 <li><p>Pay attention to the unit of <code>x</code> and<code>y</code> axes.</p></li>
-<li><p>If needed, transform a given <code>DataFrame</code> (e.g., subset of observations, new variables, summarized DataFrame).</p></li>
+<li><p>Repeat the process until you are satisfied with the visualization output.</p></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="getting-started-with-seaborn-1" class="slide level2">
-<h2>Getting started with <code>seaborn</code></h2>
+<section id="datasets-and-plot-styles-in-seaborn" class="slide level2">
+<h2>Datasets and Plot Styles in <code>seaborn</code></h2>
 <div>
 <ul>
 <li>Let’s get the names of <code>DataFrame</code>s provided by the <code>seaborn</code> library:</li>
@@ -661,31 +661,35 @@ Byeong-Hak Choe
 </section>
 <section id="bar-chart" class="slide level2">
 <h2>Bar Chart</h2>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><strong>Example</strong></a></li><li><a href="#tabset-4-2"><code>hue</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>sns.countplot(data <span class="op">=</span> titanic,</span>
 <span id="cb5-2"><a href="#cb5-2"></a>              x <span class="op">=</span>  <span class="st">'sex'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Mapping
+<li>Mapping
 <ul>
-<li class="fragment"><code>data</code>: DataFrame.</li>
-<li class="fragment"><code>x</code>: Name of a categorical variable (column) in DataFrame</li>
+<li><code>data</code>: DataFrame.</li>
+<li><code>x</code>: Name of a categorical variable (column) in DataFrame</li>
 </ul></li>
 </ul>
 </div>
 </div>
 <ul>
-<li class="fragment">A bar chart is used to plot the frequency of the different categories.
+<li>A bar chart is used to plot the frequency of the different categories.
 <ul>
-<li class="fragment">It is useful to visualize how values of a <strong>categorical variable</strong> are distributed.</li>
-<li class="fragment">A variable is <strong>categorical</strong> if it can only take one of a small set of values.</li>
+<li>It is useful to visualize how values of a <strong>categorical variable</strong> are distributed.</li>
+<li>A variable is <strong>categorical</strong> if it can only take one of a small set of values.</li>
 </ul></li>
-<li class="fragment">We use <code>sns.countplot()</code> function to plot a bar chart</li>
+<li>We use <code>sns.countplot()</code> function to plot a bar chart</li>
 </ul>
-</section>
-<section id="bar-chart-1" class="slide level2">
-<h2>Bar Chart</h2>
+</div>
+<div id="tabset-4-2">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>sns.countplot(data <span class="op">=</span> titanic,</span>
@@ -693,19 +697,23 @@ Byeong-Hak Choe
 <span id="cb6-3"><a href="#cb6-3"></a>              hue <span class="op">=</span> <span class="st">'survived'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Mapping
+<li>Mapping
 <ul>
-<li class="fragment"><code>hue</code>: Name of a categorical variable</li>
+<li><code>hue</code>: Name of a categorical variable</li>
 </ul></li>
 </ul>
 </div>
 </div>
 <ul>
-<li class="fragment"><p>We can further break up the bars in the bar chart based on another categorical variable.</p>
+<li><p>We can further break up the bars in the bar chart based on another categorical variable.</p>
 <ul>
-<li class="fragment">This is useful to visualize the relationship between the two categorical variables.</li>
+<li>This is useful to visualize how the distribution of a categorical variable varies by another categorical variable.</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="histogram" class="slide level2">
 <h2>Histogram</h2>
@@ -730,11 +738,18 @@ Byeong-Hak Choe
 <li class="fragment">It is used to plot the frequency of the different values.</li>
 <li class="fragment">It is useful to visualize how values of a <strong>continuous variable</strong> are distributed.</li>
 </ul></li>
-<li class="fragment">We use <code>sns.histplot()</code> function to plot a histogram</li>
+<li class="fragment">We use <code>sns.histplot()</code> function to plot a histogram
+<ul>
+<li class="fragment">Use either <code>bins</code> or <code>binwidth</code>.</li>
+</ul></li>
+<li class="fragment">The shape of a histogram is sensitive to <code>bins</code>/<code>binwidth</code>
+<ul>
+<li class="fragment">We should experiment on <code>bins</code>/<code>binwidth</code>.</li>
+</ul></li>
 </ul>
 </section>
-<section id="histogram-1" class="slide level2">
-<h2>Histogram</h2>
+<section id="boxplot" class="slide level2">
+<h2>Boxplot</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
@@ -748,13 +763,18 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">A boxplot computes a summary of the distribution and then display a specially formatted box.
 <ul>
-<li class="fragment">It is useful to visualize how values of a <strong>continuous variable</strong> are distributed across different values of another (categorical) variable.</li>
+<li class="fragment">It is useful to visualize how values of a <strong>continuous variable</strong> are distributed across different values of a <strong>categorical variable</strong>.</li>
 </ul></li>
-<li class="fragment">We use <code>sns.histplot()</code> function to plot a histogram.</li>
+<li class="fragment">We use <code>sns.boxplot()</code> function to plot a boxplot.</li>
 </ul>
 </section>
 <section id="scatter-plot" class="slide level2">
 <h2>Scatter plot</h2>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><strong>Example</strong></a></li><li><a href="#tabset-5-2"><code>hue</code></a></li><li><a href="#tabset-5-3"><code>lmplot()</code></a></li><li><a href="#tabset-5-4"><code>alpha</code></a></li><li><a href="#tabset-5-5"><code>lmplot()</code> Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
@@ -762,51 +782,48 @@ Byeong-Hak Choe
 <span id="cb10-3"><a href="#cb10-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Mapping
+<li>Mapping
 <ul>
-<li class="fragment"><code>x</code>: Name of a continuous variable on the horizontal axis</li>
-<li class="fragment"><code>y</code>: Name of a continuous variable on the vertical axis</li>
+<li><code>x</code>: Name of a continuous variable on the horizontal axis</li>
+<li><code>y</code>: Name of a continuous variable on the vertical axis</li>
 </ul></li>
 </ul>
 </div>
 </div>
 <ul>
-<li class="fragment"><p>A scatter plot is used to display the relationship between two continuous variables.</p>
+<li><p>A scatter plot is used to display the relationship between two continuous variables.</p>
 <ul>
-<li class="fragment">We can see co-variation as a pattern in the scattered points.</li>
+<li>We can see co-variation as a pattern in the scattered points.</li>
 </ul></li>
-<li class="fragment"><p>We use <code>sns.scatterplot()</code> function to plot a scatter plot.</p></li>
+<li><p>We use <code>sns.scatterplot()</code> function to plot a scatter plot.</p></li>
 </ul>
-</section>
-<section id="scatter-plot-1" class="slide level2">
-<h2>Scatter plot</h2>
+</div>
+<div id="tabset-5-2">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
 <span id="cb11-2"><a href="#cb11-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
 <span id="cb11-3"><a href="#cb11-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>,</span>
 <span id="cb11-4"><a href="#cb11-4"></a>                hue <span class="op">=</span> <span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p>To the scatter plot, we can add a <code>hue</code>-<code>VARIABLE</code> mapping to display how the relationship between two continuous variables varies by <code>VARIABLE</code>.</p></li>
-<li class="fragment"><p>Suppose we are interested in the following question:</p>
+<li><p>To the scatter plot, we can add a <code>hue</code>-<code>VARIABLE</code> mapping to display how the relationship between two continuous variables varies by <code>VARIABLE</code>.</p></li>
+<li><p>Suppose we are interested in the following question:</p>
 <ul>
-<li class="fragment"><strong>Q</strong>. Does a smoker and a non-smoker have a difference in tipping behavior?</li>
+<li><strong>Q</strong>. Does a smoker and a non-smoker have a difference in tipping behavior?</li>
 </ul></li>
 </ul>
-</section>
-<section id="fitted-line" class="slide level2">
-<h2>Fitted line</h2>
+</div>
+<div id="tabset-5-3">
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
 <span id="cb12-2"><a href="#cb12-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
 <span id="cb12-3"><a href="#cb12-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p>From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.</p>
+<li><p>From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.</p>
 <ul>
-<li class="fragment"><p><code>sns.lmplot()</code> adds a line that fits well into the scattered points.</p></li>
-<li class="fragment"><p>On average, the fitted line describes the relationship between two continuous variables.</p></li>
+<li><p><code>sns.lmplot()</code> adds a line that fits well into the scattered points.</p></li>
+<li><p>On average, the fitted line describes the relationship between two continuous variables.</p></li>
 </ul></li>
 </ul>
-</section>
-<section id="transparency-with-alpha" class="slide level2">
-<h2>Transparency with <code>alpha</code></h2>
+</div>
+<div id="tabset-5-4">
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
@@ -821,29 +838,37 @@ Byeong-Hak Choe
 </div>
 </div>
 <ul>
-<li class="fragment">In a scatter plot, adding transparency with <code>alpha</code> helps address many data points on the same location.
+<li>In a scatter plot, adding <strong>transparency</strong> with <code>alpha</code> helps address many data points on the same location.
 <ul>
-<li class="fragment">We can map <code>alpha</code> to number between 0 and 1.</li>
+<li>We can map <code>alpha</code> to number between 0 and 1.</li>
 </ul></li>
 </ul>
-</section>
-<section id="scatter-plot-2" class="slide level2">
-<h2>Scatter plot</h2>
+</div>
+<div id="tabset-5-5">
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
 <span id="cb15-2"><a href="#cb15-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
 <span id="cb15-3"><a href="#cb15-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>,</span>
 <span id="cb15-4"><a href="#cb15-4"></a>           hue <span class="op">=</span> <span class="st">'smoker'</span>,</span>
 <span id="cb15-5"><a href="#cb15-5"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.5</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p>To the scatter plot, we can add a <code>hue</code>-<code>VARIABLE</code> mapping to display how the relationship between two continuous variables varies by <code>VARIABLE</code>.</p></li>
-<li class="fragment"><p>Using the fitted lines, let’s answer the following question:</p>
+<li><p>To the scatter plot, we can add a <code>hue</code>-<code>VARIABLE</code> mapping to display how the relationship between two continuous variables varies by <code>VARIABLE</code>.</p></li>
+<li><p>Using the fitted lines, let’s answer the following question:</p>
 <ul>
-<li class="fragment"><strong>Q</strong>. Does a smoker and a non-smoker have a difference in tipping behavior?</li>
+<li><strong>Q</strong>. Does a smoker and a non-smoker have a difference in tipping behavior?</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="line-cahrt" class="slide level2">
 <h2>Line cahrt</h2>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><strong>Example</strong></a></li><li><a href="#tabset-6-2"><code>hue</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>path_csv <span class="op">=</span> <span class="st">'https://bcdanl.github.io/data/dji.csv'</span></span>
@@ -855,24 +880,23 @@ Byeong-Hak Choe
 <span id="cb16-7"><a href="#cb16-7"></a>             y <span class="op">=</span>  <span class="st">'Close'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Mapping
+<li>Mapping
 <ul>
-<li class="fragment"><code>x</code>: Name of a continuous variable (often time variable) on the horizontal axis</li>
-<li class="fragment"><code>y</code>: Name of a continuous variable on the vertical axis</li>
+<li><code>x</code>: Name of a continuous variable (often time variable) on the horizontal axis</li>
+<li><code>y</code>: Name of a continuous variable on the vertical axis</li>
 </ul></li>
 </ul>
 </div>
 </div>
 <ul>
-<li class="fragment">A line chart is used to display the trend in a continuous variable or the change in a continuous variable over other variable.
+<li>A line chart is used to display the trend in a continuous variable or the change in a continuous variable over a categorical variable.
 <ul>
-<li class="fragment">It draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.</li>
+<li><code>sns.lineplot()</code> draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.</li>
 </ul></li>
-<li class="fragment">We use <code>sns.lineplot()</code> function to plot a line plot.</li>
 </ul>
-</section>
-<section id="line-cahrt-1" class="slide level2">
-<h2>Line cahrt</h2>
+<!-- - We use `sns.lineplot()` function to plot a line plot. -->
+</div>
+<div id="tabset-6-2">
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>healthexp <span class="op">=</span> ( </span>
 <span id="cb17-2"><a href="#cb17-2"></a>  sns.load_dataset(<span class="st">"healthexp"</span>)</span>
 <span id="cb17-3"><a href="#cb17-3"></a>  .sort_values([<span class="st">"Country"</span>, <span class="st">"Year"</span>])</span>
@@ -884,8 +908,12 @@ Byeong-Hak Choe
 <span id="cb17-9"><a href="#cb17-9"></a>             y <span class="op">=</span>  <span class="st">'Life_Expectancy'</span>,</span>
 <span id="cb17-10"><a href="#cb17-10"></a>             hue <span class="op">=</span> <span class="st">'Country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">For line charts, we often need to group or connect observations to visualize the number of distinct lines.</li>
+<li>For line charts, we often need to group or connect observations to visualize the number of distinct lines.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="faceting" class="slide level2">
 <h2>Faceting</h2>
@@ -894,15 +922,15 @@ Byeong-Hak Choe
 <li>Faceting allows us to plot subsets (facets) of our data across subplots.</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Faceting</a></li><li><a href="#tabset-4-2"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-4-3">Alternative?</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><strong>Faceting</strong></a></li><li><a href="#tabset-7-2"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-7-3"><code>col</code>/<code>row</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-7-1">
 <ul>
 <li><p>First, we create a <code>.FacetGrid()</code> object with the data we will be using and define how it will be subset with the <code>row</code> and <code>col</code> arguments:</p></li>
 <li><p>Second, we then use the <code>.map()</code> method to run a plotting function on each of the subsets, passing along any necessary arguments.</p></li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-7-2">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>(</span>
 <span id="cb18-2"><a href="#cb18-2"></a> sns.FacetGrid(</span>
 <span id="cb18-3"><a href="#cb18-3"></a>       data <span class="op">=</span> titanic,</span>
@@ -911,11 +939,11 @@ Byeong-Hak Choe
 <span id="cb18-6"><a href="#cb18-6"></a> .<span class="bu">map</span>(sns.histplot, <span class="st">'age'</span>)</span>
 <span id="cb18-7"><a href="#cb18-7"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-7-3">
 <ul>
-<li>Some geometric object, such as <code>sns.lmplot</code>, does not work well with <code>sns.FacetGrid()</code>.
+<li>Some geometric object, such as <code>sns.lmplot()</code>, does not work well with <code>sns.FacetGrid()</code>.
 <ul>
-<li>Instead, <code>sns.lmplot</code> supports mapping, <code>col = 'VAR'</code> and <code>row = 'VAR'</code> to facet the plot.</li>
+<li>Instead, <code>sns.lmplot()</code> supports mapping, <code>col = 'VAR'</code> and <code>row = 'VAR'</code> to facet the plot.</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>sns.lmplot(data <span class="op">=</span> tips, x <span class="op">=</span> <span class="st">'total_bill'</span>, y <span class="op">=</span> <span class="st">'tip'</span>, hue <span class="op">=</span> <span class="st">'smoker'</span>,</span>
@@ -926,7 +954,7 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="visualizing-dataframes-with-seaborn-1" class="slide level2">
+<section id="visualizing-dataframes-with-seaborn" class="slide level2">
 <h2>Visualizing <code>DataFrames</code> with <code>seaborn</code></h2>
 <p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-12.html"><strong>Classwork 12</strong></a>!</p>
 
