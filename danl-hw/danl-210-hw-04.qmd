@@ -183,6 +183,8 @@ df['tier'] = pd.Categorical(df['tier'], categories=tier_order, ordered=True)
 df_sorted = df.sort_values('tier')
 ```
 
+<br>
+
 - Making requests to the FRED API
 ```{python}
 import requests
@@ -215,6 +217,8 @@ for val in series_housing_price['id'].tolist():
     df_all = pd.concat([df_all, df], ignore_index=True)
 
 ```
+
+<br>
 
 - Cleaning raw data
 ```{python}
@@ -308,11 +312,12 @@ cms_ny_2022 <- read_csv('/Users/bchoe/My Drive/lecture-data/cms-2022-cities-all.
 ```{r}
 #| results: asis
 #| echo: false
+#| eval: true
 
 rmarkdown::paged_table(cms_ny_2022)
 ```
 
-
+<br>
 
 ## Question 3
 - Write a Python code to convert the **string** type `Physician_or_NPP` variable into the **category** type variable.
@@ -512,7 +517,10 @@ rmarkdown::paged_table(df, options = list(rows.print = nrow(df)))
 ```
 
 
-- Using for-loop with dictionary container
+<br>
+
+
+Using for-loop with dictionary container
 ```{python}
 cms_ny_2022.shape[0]
 cms_ny_2022['NPI'].nunique()
@@ -537,7 +545,10 @@ df['Percent'] = 100 * df['count'] / df['Total_Count']
 df = df.sort_values(['Total_Count', 'City'], ascending = [False, True])
 ```
 
-- Group operation with `groupby()`
+
+<br>
+
+Group operation with `groupby()`
 ```{python}
 df_grouped = (
  cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
@@ -553,7 +564,9 @@ df_grouped = df_grouped.sort_values(['Total_Count', 'City'], ascending = [False,
 ```
 
 
-- Group operation with `assign()` and `lambda`
+<br>
+
+Group operation with `assign()` and `lambda`
 ```{python}
 df_grouped = (
     cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
@@ -595,6 +608,8 @@ rmarkdown::paged_table(df_producer_city)
 ```
 
 
+<br>
+
 ```{python}
 (
  cms_ny_2022.query(
@@ -604,6 +619,8 @@ rmarkdown::paged_table(df_producer_city)
  )
 ```
 
+
+<br>
 
 ```{python}
 (
@@ -675,12 +692,15 @@ rmarkdown::paged_table(cms_ny_2022_records)
 - Write a Python code to create the `cms_ny_2022` DataFrame by using the `cms_ny_2022_npi` and `cms_ny_2022_records` DataFrames. 
 
 
-
+<br>
 
 - Below is the many-to-many join. Therefore, the `cms_ny_2022_new` DataFrame has more observations than `cms_ny_2022`.
 ```{python}
 cms_ny_2022_new = cms_ny_2022_records.merge(cms_ny_2022_npi, on = 'NPI', how = 'left')
 ```
+
+
+<br>
 
 - This happens because `NPI` variable in the `cms_ny_2022_npi` DataFrame has duplicate values.
 
@@ -721,8 +741,10 @@ rmarkdown::paged_table(City_Physician_or_NPP, options = list(rows.print = nrow(C
 ```
 
 
+<br>
 
-- Below is correct:
+
+Below is correct:
 ```{python}
 City_Physician_or_NPP = (
     cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
@@ -737,7 +759,10 @@ City_Physician_or_NPP = (
     )
 ```
 
-- Below is incorrect:
+
+<br>
+
+Below is incorrect:
 ```{python}
 City_Physician_or_NPP = (
     cms_ny_2022[['City', 'Physician_or_NPP']]
