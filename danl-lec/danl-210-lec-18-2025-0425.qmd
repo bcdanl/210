@@ -217,7 +217,7 @@ theme_set(theme_fivethirtyeight()+
   - Standard Deviation (SD)
   - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
 
-- Filtered or grouped DataFrames can be useful to see how such descriptive statistics varies by categories.
+- **Filtered** or **grouped** `DataFrames` can be useful to see **how such descriptive statistics varies by categories.**
 
 # **Getting started with `seaborn`**   {background-color="#1c4982"}
 
@@ -504,9 +504,7 @@ sns.lmplot(data = tips,
 
 
 - From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
-
   - `sns.lmplot()` adds a line that fits well into the scattered points.
-  
   - On average, the fitted line describes the relationship between two continuous variables.
 
 
@@ -542,7 +540,7 @@ sns.lmplot(data = tips,
   
   
 
-## `lmplot()` Example
+## `lmplot()` **Example**
 
 ```{.python}
 sns.lmplot(data = tips,
@@ -627,11 +625,6 @@ sns.lineplot(data = healthexp,
 - Faceting allows us to plot subsets (facets) of our data across subplots. 
 
 ::: {.panel-tabset}
-## **Faceting**
-- First, we create a `.FacetGrid()` object with the data we will be using and define how it will be subset with the `row` and `col` arguments: 
-
-- Second, we then use the `.map()` method to run a plotting function on each of the subsets, passing along any necessary arguments.
-
 
 ## `FacetGrid().map()`
 ```{.python}
@@ -643,6 +636,10 @@ sns.lineplot(data = healthexp,
  .map(sns.histplot, 'age')
  )
 ```
+
+1. We create a `.FacetGrid()` object with the data we will be using and define how it will be subset with the `row` and `col` arguments: 
+2. We then use the `.map()` method to run a plotting function on each of the subsets, passing along any necessary arguments.
+
 
 ## `col`/`row`
 - Some geometric object, such as `sns.lmplot()`, does not work well with `sns.FacetGrid()`.

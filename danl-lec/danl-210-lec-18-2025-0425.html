@@ -577,7 +577,7 @@ Byeong-Hak Choe
 <li class="fragment">Standard Deviation (SD)</li>
 <li class="fragment">Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.</li>
 </ul></li>
-<li class="fragment">Filtered or grouped DataFrames can be useful to see how such descriptive statistics varies by categories.</li>
+<li class="fragment"><strong>Filtered</strong> or <strong>grouped</strong> <code>DataFrames</code> can be useful to see <strong>how such descriptive statistics varies by categories.</strong></li>
 </ul>
 </section></section>
 <section>
@@ -793,7 +793,7 @@ Byeong-Hak Choe
 <h2>Scatter plot</h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><strong>Example</strong></a></li><li><a href="#tabset-5-2"><code>hue</code></a></li><li><a href="#tabset-5-3"><code>lmplot()</code></a></li><li><a href="#tabset-5-4"><code>alpha</code></a></li><li><a href="#tabset-5-5"><code>lmplot()</code> Example</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><strong>Example</strong></a></li><li><a href="#tabset-5-2"><code>hue</code></a></li><li><a href="#tabset-5-3"><code>lmplot()</code></a></li><li><a href="#tabset-5-4"><code>alpha</code></a></li><li><a href="#tabset-5-5"><code>lmplot()</code> <strong>Example</strong></a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="columns">
@@ -837,10 +837,10 @@ Byeong-Hak Choe
 <span id="cb12-2"><a href="#cb12-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
 <span id="cb12-3"><a href="#cb12-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.</p>
+<li>From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
 <ul>
-<li><p><code>sns.lmplot()</code> adds a line that fits well into the scattered points.</p></li>
-<li><p>On average, the fitted line describes the relationship between two continuous variables.</p></li>
+<li><code>sns.lmplot()</code> adds a line that fits well into the scattered points.</li>
+<li>On average, the fitted line describes the relationship between two continuous variables.</li>
 </ul></li>
 </ul>
 </div>
@@ -943,15 +943,9 @@ Byeong-Hak Choe
 <li>Faceting allows us to plot subsets (facets) of our data across subplots.</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><strong>Faceting</strong></a></li><li><a href="#tabset-7-2"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-7-3"><code>col</code>/<code>row</code></a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-7-2"><code>col</code>/<code>row</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1">
-<ul>
-<li><p>First, we create a <code>.FacetGrid()</code> object with the data we will be using and define how it will be subset with the <code>row</code> and <code>col</code> arguments:</p></li>
-<li><p>Second, we then use the <code>.map()</code> method to run a plotting function on each of the subsets, passing along any necessary arguments.</p></li>
-</ul>
-</div>
-<div id="tabset-7-2">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>(</span>
 <span id="cb18-2"><a href="#cb18-2"></a> sns.FacetGrid(</span>
 <span id="cb18-3"><a href="#cb18-3"></a>       data <span class="op">=</span> titanic,</span>
@@ -959,8 +953,12 @@ Byeong-Hak Choe
 <span id="cb18-5"><a href="#cb18-5"></a>       col<span class="op">=</span><span class="st">'sex'</span>)</span>
 <span id="cb18-6"><a href="#cb18-6"></a> .<span class="bu">map</span>(sns.histplot, <span class="st">'age'</span>)</span>
 <span id="cb18-7"><a href="#cb18-7"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>We create a <code>.FacetGrid()</code> object with the data we will be using and define how it will be subset with the <code>row</code> and <code>col</code> arguments:</li>
+<li>We then use the <code>.map()</code> method to run a plotting function on each of the subsets, passing along any necessary arguments.</li>
+</ol>
 </div>
-<div id="tabset-7-3">
+<div id="tabset-7-2">
 <ul>
 <li>Some geometric object, such as <code>sns.lmplot()</code>, does not work well with <code>sns.FacetGrid()</code>.
 <ul>
