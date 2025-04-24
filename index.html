@@ -147,6 +147,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-danl-210-ex .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-danl-210-ex'] = new List('listing-danl-210-ex', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <style>
 #toc-welcome {
@@ -719,6 +747,44 @@ Date
 </td>
 <td>
 <span class="listing-date">April 10, 2025</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="bullet-exam" class="level2">
+<h2 class="anchored" data-anchor-id="bullet-exam"><span class="math inline">\(\bullet\,\)</span> Exam <span class="emoji" data-emoji="pencil">📝</span></h2>
+<div id="listing-danl-210-ex" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Subtitle
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1741150800000" data-listing-file-modified-sort="1741482095904" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Midterm Exam I" data-listing-filename-sort="danl-210-exam-1-a.qmd">
+<td>
+<a href="./danl-ex/danl-210-exam-1-a.html" class="title listing-title">Midterm Exam I</a>
+</td>
+<td>
+<span class="listing-subtitle">Spring 2025, DANL 210-01</span>
+</td>
+<td>
+<span class="listing-date">March 5, 2025</span>
 </td>
 </tr>
 </tbody>
