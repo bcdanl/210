@@ -57,7 +57,7 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-# Data Visualization  {background-color="#1c4982"}
+# **Data Visualization**  {background-color="#1c4982"}
 
 
 ## Data Visualization 
@@ -75,7 +75,7 @@ theme_set(theme_fivethirtyeight()+
 
 <br>
 
-- Graphs and charts let us explore and learn about the structure of the information we have in `DataFrame`. 
+- **Graphs and charts** let us explore and learn about the structure of the information we have in `DataFrame`. 
 
 - Good data visualizations make it easier to communicate our ideas and findings to other people. 
 
@@ -87,16 +87,16 @@ theme_set(theme_fivethirtyeight()+
 ## Key Points in Data Visualization
 
 
-- A graphic should display as much information as it can, with the lowest possible cognitive strain to the viewer.
+- A graphic should display as much information as it can, with **the lowest possible cognitive strain to the viewer**.
 
 
-- Strive for clarity. 
+- Strive for **clarity**. 
   - Make the data stand out.
-    - Avoid too many superimposed elements (e.g., too many curves in the same graphing space).
+    - **Avoid too many superimposed elements** (e.g., too many curves in the same graphing space).
     - Avoid having the data all skewed to one side or the other of your graph.
 
 
-- Visualization is an iterative process. 
+- Visualization is an **iterative process**. 
   - We should try making data visualization informative as much as we can.
 
 
@@ -122,7 +122,7 @@ theme_set(theme_fivethirtyeight()+
 ::: {.panel-tabset}
 
 ## **Categorical**
-- A **categorical variable** is a variable whose value is obtained by *counting*.
+- A **categorical variable** is a variable whose value is obtained by <u>*counting*</u>.
   - Number of red marbles in a jar
   - Number of heads when flipping three coins 
   - Students’ letter grade
@@ -133,7 +133,7 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## **Continuous**
-- A **continuous variable** is a variable whose value is obtained by *measuring*  and can have a decimal or fractional value.
+- A **continuous variable** is a variable whose value is obtained by <u>*measuring*</u>  and can have a decimal or fractional value.
   - Height/weight of students
   - Time it takes to get to school
   - Fuel efficiency of a vehicle (e.g., miles per gallon)
@@ -146,16 +146,16 @@ theme_set(theme_fivethirtyeight()+
 
 ## **Integer**
 
-- For data visualization, `integer`-type variables could be treated as either categorical or continuous, depending on the context of analysis.
+- For data visualization, `integer`-type variables could be treated as **either categorical or continuous**, depending on the context of analysis.
 
 
-- If the values of an integer-type variable means an intensity or an order, the integer variable could be treated as continuous.
+- If the values of an integer-type variable means **an intensity or an order**, the integer variable could be treated as **continuous**.
   - A variable of **age** integers (18, 19, 20, 21, ...) could be continuous.
   - A variable of integer-valued **MPG** (27, 28, 29, 30, ...) could be continuous.
   
   
-- Otherwise, the integer variable is categorical.
-  - A variable of month integers (1, ,2, ..., 12) is categorical.
+- Otherwise, the integer variable is **categorical**.
+  - A variable of **month** integers (1, ,2, ..., 12) is categorical.
 
 
 - We can use `astype('int')` to make a variable `int`.
@@ -163,7 +163,7 @@ theme_set(theme_fivethirtyeight()+
 :::
 :::
 
-## Making Discoveries from a Data Set
+## Making Discoveries from **Visualization**
 
 :::{.nonincremental}
 ::: {.panel-tabset}
@@ -186,30 +186,40 @@ theme_set(theme_fivethirtyeight()+
   - Are there *no association* between them?
 
 
+## **Time Trend**
+- From time-series plots, we want to see the **evolution** of a variable over time.  
+  - Is there an overall upward or downward **trend**?  
+  - Does the trend look **linear** or **non-linear**?  
+  - Are there **seasonal** or **cyclical** patterns (e.g., yearly, weekly)?  
+  - Do we observe any **outliers**, **shocks**, or **structural breaks** that merit closer inspection?  
 
 
-## **Types**
+## **Types of Viz**
 
-  - A distribution of a *categorical* variable (e.g., bar charts and more)
-  - A distribution of a *continuous* variable (e.g., histograms and more)
-  - A relationship between *two continuous* variables (e.g., scatter plots and more)
-  - A time trend of a variable (e.g., line plots and more)
-  
+- A **distribution** of a variable 
+  - *Categorical* (e.g., **bar charts** and more)
+  - *Continuous*  (e.g., **histograms**, **box plots**, and more)
+- A **relationship** between *two continuous* variables (e.g., **scatter plots**, **best fitting lines**)
+- A **time trend** of a variable (e.g., **line plots**, **best fitting lines** and more)
+
+- Exploring **how distributions, relationships, and time trends vary across categories** can reveal important patterns and insights.
+- Please check out [**general tips on data Visualization**](https://bcdanl.github.io/210/danl-rw/danl-210-project.html#general-tips-on-data-visualization) in the project page.
+
+:::
+:::
 
 
-## **Descriptive Stat.**
+
+## Making Discoveries from **Descriptive Statistics**
 
 - Use `DataFrame.describe()` to know:
   - Mean (Average, Expected Value);
   - Standard Deviation (SD)
   - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
 
-:::
-:::
+- Filtered or grouped DataFrames can be useful to see how such descriptive statistics varies by categories.
 
-
-
-# Getting started with `seaborn`   {background-color="#1c4982"}
+# **Getting started with `seaborn`**   {background-color="#1c4982"}
 
 ## Getting started with `seaborn`
 

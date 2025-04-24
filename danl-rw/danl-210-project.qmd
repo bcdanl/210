@@ -335,12 +335,20 @@ In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s su
 
 ## 📈 General Tips on Data Visualization
 ### Distribution
-- When describing the distribution of a variable, we are typically interested in several key characteristics:
-	1. **Center**: The central tendency of the data, such as the **mean** or **median**, which indicates the **typical or average value**.
-	2. **Spread**: How spread the values are within the variable, showing the **range** and **standard deviation** of values.
-	2. **Common Values**: Identifying frequent values and the **mode**.
-	3. **Rare Values**: Recognizing unusual or infrequent values.
-	4. **Shape**: The overall shape of the distribution, such as whether it’s symmetric, skewed left or right, or having multiple groups with multiple peaks.
+When describing the distribution of a variable, we are typically interested in several key characteristics:
+
+1. **Center**: The central tendency of the data, such as the **mean** or **median**, which indicates the **typical or average value**.
+2. **Spread**: How spread the values are within the variable, showing the **range** and **standard deviation** of values.
+2. **Common Values**: Identifying frequent values and the **mode**.
+3. **Rare Values**: Recognizing unusual or infrequent values.
+4. **Shape**: The overall shape of the distribution, such as whether it’s symmetric, skewed left or right, or having multiple groups with multiple peaks.
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/skewness.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
 
 -	**Add Narration if Available**: If possible, connect the distribution to real-world phenomena and/or your idea that could help explain it, adding insight into what is happening.
 
@@ -379,14 +387,22 @@ In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s su
 <br>
 
 ### Time Trend of a Variable
-- Here are some general tips for describing the time trend of a variable:
-	1.	**Start with Identifying the Overall Trend**: Look for **the general direction of the trend over time**.
+
+Here are some general tips for describing the time trend of a variable:
+
+1.	**Start with Identifying the Overall Trend**: Look for **the general direction of the trend over time**.
   - Is it moving **upward**, **downward**, or **remaining relatively constant**? 
   - **Be specific**: A comment like "The trend shows the evolution of hitting techniques in the MLB over time" simply rephrases the question, and does not actually answer it at all.
   
-	2.	**Note Patterns and Cycles**: Identify any repeating patterns, such as **seasonal fluctuations** (e.g., monthly or quarterly changes) or **long-term cycles**. These patterns can indicate regular influences on the variable over time.
-	3.	**Highlight Any Significant Fluctuations**: Describe any **sharp increases, decreases**, or **irregular spikes** in the data. 
-  4.	**Add Narration if Available**: If possible, connect trends to real-world events or factors and/or your idea that could explain them, helping to interpret why the trend behaves a certain way over time.
+2.	**Note Patterns and Cycles**: Identify any repeating patterns, such as **seasonal fluctuations** (e.g., monthly or quarterly changes) or **long-term cycles**. These patterns can indicate regular influences on the variable over time.
+3.	**Highlight Any Significant Fluctuations**: Describe any **sharp increases, decreases**, or **irregular spikes** in the data. 
+4.	**Add Narration if Available**: If possible, connect trends to real-world events or factors and/or your idea that could explain them, helping to interpret why the trend behaves a certain way over time.
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/time-series-summary.jpg" style="width: 100%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
 
 
@@ -395,7 +411,7 @@ In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s su
 # Rubric
 ## Project Write-up
 
-<div style="font-size: 70%; max-width: 8in;">
+<div style="font-size: 73.33%; max-width: 8.33in;">
 
 | **Attribute** | **Very Deficient (1)** | **Somewhat Deficient (2)** | **Acceptable (3)** | **Very Good (4)** | **Outstanding (5)** |
 |--------------|-------------------------|-----------------------------|--------------------|-------------------|----------------------|
@@ -412,7 +428,7 @@ In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s su
 
 ## Data Collection
 
-<div style="font-size: 70%; max-width: 8in;">
+<div style="font-size: 73.33%; max-width: 8.33in;">
 
 | Evaluation | Description | Criteria |
 |-------|-------------|----------|
