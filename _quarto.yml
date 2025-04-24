@@ -19,10 +19,17 @@ website:
       # - text: Research
       #   href: index-home.qmd
 
+      - text: Lecture
+        href: listing-danl-210-lec.qmd
+      - text: Classwork
+        href: listing-danl-210-cw.qmd
+      - text: Homework
+        href: listing-danl-210-hw.qmd
       - text: Exam
         href: danl-ex/danl-210-exam-1-a.qmd
       - text: Project
         href: danl-rw/danl-210-project.qmd
+      
       # - text: "Teaching {{< fa external-link >}}"
       #   href: https://bcdanl.github.io
       #   target: _blank
