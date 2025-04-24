@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nApril 24, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-210-hw-02-makeup.html",
@@ -172,7 +172,7 @@
     "href": "danl-hw/danl-210-hw-02.html",
     "title": "Homework 2",
     "section": "",
-    "text": "Click to Check the Answer!\nimport pandas as pd\nfrom itables import init_notebook_mode, show # for displaying an interactive DataFrame"
+    "text": "import pandas as pd\nfrom itables import init_notebook_mode, show # for displaying an interactive DataFrame"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description",
@@ -445,7 +445,7 @@
     "href": "index.html#bullet-homework",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Homework 💻",
-    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nMarch 12, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Homework 💻\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nSurvey, Personal Website, and Python Basics\n\n\nFebruary 5, 2025\n\n\n\n\nHomework 2\n\n\nPandas Basics\n\n\nApril 24, 2025\n\n\n\n\nHomework 3\n\n\nPython selenium & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\nHomework 4\n\n\nPython selenium, APIs, & Pandas Basics\n\n\nApril 18, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -501,28 +501,28 @@
     "href": "danl-cw/danl-210-cw-12.html",
     "title": "Classwork 12",
     "section": "",
-    "text": "beer_mkt = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n  \n\n\n\n\n\n\nProvide (1) seaborn or ggplot code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand.\n\nAnswer:\n\n\n\n\n\nProvide (1) seaborn or ggplot code and (2) a simple comment to describe how the relationship between log(price_per_floz) and log(beer_floz) varies by brand.\n\nAnswer:"
+    "text": "beer_mkt = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n  \n\n\n\n\n\n\nProvide (1) seaborn code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand.\n\nAnswer:\n\n\n\n\n\nProvide (1) seaborn code and (2) a simple comment to describe how the relationship between log(price_per_floz) and log(beer_floz) varies by brand.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-12.html#question-1",
     "href": "danl-cw/danl-210-cw-12.html#question-1",
     "title": "Classwork 12",
     "section": "",
-    "text": "Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand.\n\nAnswer:"
+    "text": "Provide (1) seaborn code and (2) a simple comment to describe how the distribution of price_per_floz varies by brand.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-12.html#question-2",
     "href": "danl-cw/danl-210-cw-12.html#question-2",
     "title": "Classwork 12",
     "section": "",
-    "text": "Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the relationship between log(price_per_floz) and log(beer_floz) varies by brand.\n\nAnswer:"
+    "text": "Provide (1) seaborn code and (2) a simple comment to describe how the relationship between log(price_per_floz) and log(beer_floz) varies by brand.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-12.html#question-3",
     "href": "danl-cw/danl-210-cw-12.html#question-3",
     "title": "Classwork 12",
     "section": "Question 3",
-    "text": "Question 3\n\nProvide (1) seaborn or ggplot code and (2) a simple comment to describe how the daily trend of Close varies by company.\n\nAnswer:"
+    "text": "Question 3\n\nProvide (1) seaborn code and (2) a simple comment to describe how the daily trend of Close varies by company.\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-10.html",

@@ -38,7 +38,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/beer_marke
 
 ## Question 1
 
-- Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the distribution of `price_per_floz` varies by `brand`.
+- Provide (1) seaborn code and (2) a simple comment to describe how the distribution of `price_per_floz` varies by `brand`.
 
 
 *Answer:*
@@ -50,7 +50,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/beer_marke
 
 ## Question 2
 
-- Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the relationship between `log(price_per_floz)` and `log(beer_floz)` varies by `brand`.
+- Provide (1) seaborn code and (2) a simple comment to describe how the relationship between `log(price_per_floz)` and `log(beer_floz)` varies by `brand`.
 
 *Answer:*
 ```{python}
@@ -77,7 +77,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/stock_2023
 
 ## Question 3
 
-- Provide (1) seaborn or ggplot code and (2) a simple comment to describe how the daily trend of `Close` varies by `company`.
+- Provide (1) seaborn code and (2) a simple comment to describe how the daily trend of `Close` varies by `company`.
 
 
 *Answer:*
