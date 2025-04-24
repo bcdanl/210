@@ -364,13 +364,17 @@ When describing the distribution of a variable, we are typically interested in s
 </div>
 
 <br>
+
+2. **Input on the x-axis; output on the y-axis**
+  - By convention, the input (or predictor) variable is plotted on the x-axis, and the output (or response) variable on the y-axis.
+  - This helps visualize potential relationships—though it shows correlation, not necessarily causation.
+  - Correlation does not necessarily mean causation.
   
-  
-2. When a question asks you to describe how the relationship varies by another variable, examine both **the direction of the slope** (negative, positive, or none) from the fitted line and **the steepness of the slope** (steep or shallow).
+3. When a question asks you to describe how the relationship varies by another categorical variable, examine both **the direction of the slope** (negative, positive, or none) from the fitted line and **the steepness of the slope** (steep or shallow).
   - The slope of the fitted straight line is the rate at which the “y” variable (like grades) changes as the “x” variable (like study hours) changes. In simple terms, it shows how much one thing goes up or down when the other thing changes.
   - For example, a comment such as, "The plot shows a negative relationship between sales and price" does not address how the relationship differs by brand.
   
-3.	**The focus is on the relationship, not the distribution.**
+4.	**The focus is on the relationship, not the distribution.**
   -	While adding a comment on the distribution of a single variable can be helpful, the question is primarily about the relationship between the two variables.
   
 
@@ -380,9 +384,8 @@ When describing the distribution of a variable, we are typically interested in s
 
 Here are some general tips for describing the time trend of a variable:
 
-1.	**Start with Identifying the Overall Trend**: Look for **the general direction of the trend over time**.
+1.	**Start with Identifying the overall Trend**: Look for **the general direction of the trend over time**.
   - Is it moving **upward**, **downward**, or **remaining relatively constant**? 
-  - **Be specific**: A comment like "The trend shows the evolution of hitting techniques in the MLB over time" simply rephrases the question, and does not actually answer it at all.
   
 2.	**Note Patterns and Cycles**: Identify any repeating patterns, such as **seasonal fluctuations** (e.g., monthly or quarterly changes) or **long-term cycles**. These patterns can indicate regular influences on the variable over time.
 3.	**Highlight Any Significant Fluctuations**: Describe any **sharp increases, decreases**, or **irregular spikes** in the data. 
@@ -399,7 +402,10 @@ Here are some general tips for describing the time trend of a variable:
 ### Interpreting Visualization
 
 - **Be specific.**
-	-	Avoid vague statements. For example, saying “The plot shows how the time trend of a stock price varies across sectors, with each sector having a unique best fitting line and scatter pattern,” does not actually explain what the trends or patterns are. Clearly describe what is the pattern—and how it differs across categories.
+	-	Avoid vague statements. Below examples do not actually explain what the patterns are.
+	    - “The plot shows how the time trend of a stock price varies across sectors, with each sector having a unique best fitting line and scatter pattern”
+	    - "The trend shows the evolution of stock price in the market over time"
+	- Clearly describe what is the pattern—and how it differs across categories.
 
 -	**Add Narration**: 
     - Connect the visualization to real-world phenomena and/or your idea that could help explain it, adding insight into what is happening.
