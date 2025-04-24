@@ -23,6 +23,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 # Part 1
 
 ```{.python}
+import pandas as pd
 beer_mkt = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 ```
 
@@ -51,6 +52,14 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/beer_marke
 ## Question 2
 
 - Provide (1) seaborn code and (2) a simple comment to describe how the relationship between `log(price_per_floz)` and `log(beer_floz)` varies by `brand`.
+  - Below adds `log(price_per_floz)` and `log(beer_floz)` to the `beer_mkt` DataFrame using `numpy`'s `log()` function:
+
+```{.python}
+import numpy as np
+beer_mkt['log_price_per_floz'] = np.log( beer_mkt['price_per_floz'] )
+beer_mkt['log_beer_floz'] = np.log( beer_mkt['beer_floz'] )
+```
+
 
 *Answer:*
 ```{python}

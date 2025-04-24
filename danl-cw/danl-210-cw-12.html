@@ -218,7 +218,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="part-1" class="level1">
 <h1>Part 1</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>beer_mkt <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/beer_markets.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>beer_mkt <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/beer_markets.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -240,8 +241,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <ul>
-<li>Provide (1) seaborn code and (2) a simple comment to describe how the relationship between <code>log(price_per_floz)</code> and <code>log(beer_floz)</code> varies by <code>brand</code>.</li>
+<li>Provide (1) seaborn code and (2) a simple comment to describe how the relationship between <code>log(price_per_floz)</code> and <code>log(beer_floz)</code> varies by <code>brand</code>.
+<ul>
+<li>Below adds <code>log(price_per_floz)</code> and <code>log(beer_floz)</code> to the <code>beer_mkt</code> DataFrame using <code>numpy</code>’s <code>log()</code> function:</li>
+</ul></li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>beer_mkt[<span class="st">'log_price_per_floz'</span>] <span class="op">=</span> np.log( beer_mkt[<span class="st">'price_per_floz'</span>] )</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>beer_mkt[<span class="st">'log_beer_floz'</span>] <span class="op">=</span> np.log( beer_mkt[<span class="st">'beer_floz'</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Answer:</em></p>
 <p><br><br><br></p>
 </section>
@@ -249,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="part-2" class="level1">
 <h1>Part 2</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/stock_2023_2025.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/stock_2023_2025.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
