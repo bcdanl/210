@@ -56,8 +56,31 @@ theme_set(theme_fivethirtyeight()+
 ```
 
 
+# **Exploratory Data Analysis**  {background-color="#1c4982"}
 
-# **Data Visualization**  {background-color="#1c4982"}
+
+## Exploratory Data Analysis (EDA)
+
+- EDA combines **descriptive statistics, data transformation, and data visualization** to help you:
+	1.	**Generate meaningful questions** about your data
+	2.	**Explore answers** through visualizations, transformations, and descriptive statistics
+	3.	**Refine your understanding** by iterating on your questions and exploring new ones
+
+-	While descriptive statistics and data transformations are useful for exploring data, **visualizations often reveal patterns in data more clearly**.
+
+
+<!-- ## Making Discoveries from **Descriptive Statistics** and Data Transformation -->
+
+<!-- - Use `DataFrame.describe()` to know: -->
+<!--   - Mean (Average, Expected Value); -->
+<!--   - Standard Deviation (SD) -->
+<!--   - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum. -->
+
+<!-- - **Filtered** or **grouped** `DataFrames` can be useful to see **how such descriptive statistics varies by categories.** -->
+
+
+
+<!-- # Making Discoveries from **Data Visualization**  {background-color="#1c4982"} -->
 
 
 ## Data Visualization 
@@ -133,7 +156,7 @@ theme_set(theme_fivethirtyeight()+
 
 
 ## **Continuous**
-- A **continuous variable** is a variable whose value is obtained by <u>*measuring*</u>  and can have a decimal or fractional value.
+- A **continuous variable** is a variable whose value is obtained by <u>*measuring*</u> and can have a decimal or fractional value.
   - Height/weight of students
   - Time it takes to get to school
   - Fuel efficiency of a vehicle (e.g., miles per gallon)
@@ -210,14 +233,6 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-## Making Discoveries from **Descriptive Statistics**
-
-- Use `DataFrame.describe()` to know:
-  - Mean (Average, Expected Value);
-  - Standard Deviation (SD)
-  - Minimum, First Quartile (Q1), Median (Q2), Third Quartile (Q3), and Maximum.
-
-- **Filtered** or **grouped** `DataFrames` can be useful to see **how such descriptive statistics varies by categories.**
 
 # **Getting started with `seaborn`**   {background-color="#1c4982"}
 
