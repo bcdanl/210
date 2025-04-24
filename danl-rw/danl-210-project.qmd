@@ -334,6 +334,7 @@ In **Yahoo Finance**, the **ESG data** helps investors evaluate a company’s su
 
 
 ## 📈 General Tips on Data Visualization
+  
 ### Distribution
 When describing the distribution of a variable, we are typically interested in several key characteristics:
 
@@ -348,9 +349,6 @@ When describing the distribution of a variable, we are typically interested in s
   <img src="https://bcdanl.github.io/lec_figs/skewness.jpg" style="width: 100%; margin-bottom: -20px;">
   <p style="font-weight: bold;"></p>
 </div>
-
-
--	**Add Narration if Available**: If possible, connect the distribution to real-world phenomena and/or your idea that could help explain it, adding insight into what is happening.
 
 
 <br>
@@ -372,17 +370,9 @@ When describing the distribution of a variable, we are typically interested in s
   - The slope of the fitted straight line is the rate at which the “y” variable (like grades) changes as the “x” variable (like study hours) changes. In simple terms, it shows how much one thing goes up or down when the other thing changes.
   - For example, a comment such as, "The plot shows a negative relationship between sales and price" does not address how the relationship differs by brand.
   
-  
-3. **Be specific.**
-  - For example, a comment such as, “The plot illustrates how the relationship between the natural log of sales and the natural log of price varies across brands, with each brand showing a unique regression line and scatter pattern,” simply rephrases the question, and does not actually answer it at all.
-  
-  
-4.	**The focus is on the relationship, not the distribution.**
+3.	**The focus is on the relationship, not the distribution.**
   -	While adding a comment on the distribution of a single variable can be helpful, the question is primarily about the relationship between the two variables.
   
-  
-5.	**Add Narration if Available**: If possible, connect the relationship to real-world phenomena and/or your idea that could help explain it, adding insight into what is happening.
-
 
 <br>
 
@@ -396,13 +386,23 @@ Here are some general tips for describing the time trend of a variable:
   
 2.	**Note Patterns and Cycles**: Identify any repeating patterns, such as **seasonal fluctuations** (e.g., monthly or quarterly changes) or **long-term cycles**. These patterns can indicate regular influences on the variable over time.
 3.	**Highlight Any Significant Fluctuations**: Describe any **sharp increases, decreases**, or **irregular spikes** in the data. 
-4.	**Add Narration if Available**: If possible, connect trends to real-world events or factors and/or your idea that could explain them, helping to interpret why the trend behaves a certain way over time.
 
 
 <div style="text-align: center; width: 100%; margin: auto;">
   <img src="https://bcdanl.github.io/lec_figs/time-series-summary.jpg" style="width: 100%; margin-bottom: -20px;">
   <p style="font-weight: bold;"></p>
 </div>
+
+
+<br>
+
+### Interpreting Visualization
+
+- **Be specific.**
+	-	Avoid vague statements. For example, saying “The plot shows how the time trend of a stock price varies across sectors, with each sector having a unique best fitting line and scatter pattern,” does not actually explain what the trends or patterns are. Clearly describe what is increasing, decreasing, or staying constant—and how it differs across categories.
+
+-	**Add Narration**: 
+    - Connect the visualization to real-world phenomena and/or your idea that could help explain it, adding insight into what is happening.
 
 
 
