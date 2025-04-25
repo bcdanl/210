@@ -313,7 +313,7 @@ Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and
 ```{python}
 (
     nyc_payroll
-    .nlargest(1, 'Total_OT_Paid', keep="all")[['First_Name', 'Last_Name']]
+    .nlargest(1, 'Total_OT_Paid', keep="all")[['First_Name', 'Last_Name', 'Total_OT_Paid']]
 )
 ```
 

@@ -256,7 +256,7 @@
     "href": "danl-hw/danl-210-hw-02.html#question-11",
     "title": "Homework 2",
     "section": "Question 11",
-    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total_OT_Paid” in the DataFrame.\n\nInclude their “First_Name”, “Last_Name”, and “Total_OT_Paid”.\n\n\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .nlargest(1, 'Total_OT_Paid', keep=\"all\")[['First_Name', 'Last_Name']]\n)\n\n\n     First_Name  Last_Name\n1228     DANIEL  HOCK, JR."
+    "text": "Question 11\n\nIdentify the employee(s) with the highest “Total_OT_Paid” in the DataFrame.\n\nInclude their “First_Name”, “Last_Name”, and “Total_OT_Paid”.\n\n\nAnswer\n\n\nClick to Check the Answer!\n(\n    nyc_payroll\n    .nlargest(1, 'Total_OT_Paid', keep=\"all\")[['First_Name', 'Last_Name', 'Total_OT_Paid']]\n)\n\n\n     First_Name  Last_Name  Total_OT_Paid\n1228     DANIEL  HOCK, JR.      123664.33"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#question-12",
