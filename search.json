@@ -4057,7 +4057,7 @@
     "href": "danl-hw/danl-210-hw-03.html#question-6",
     "title": "Homework 3",
     "section": "Question 6",
-    "text": "Question 6\n\nWrite a Python code to identify the longest and shortest duration songs (based on duration_ms) for each unique artist.\n\n\n\nClick to Check the Answer!\n# Shortest song per artist\nshortest_songs = (\n    spotify\n    .sort_values([\"artist_name\", \"duration_ms\"])\n    .drop_duplicates(subset=[\"artist_name\"], keep=\"first\")\n    )\n\n# Longest song per artist\nlongest_songs = (\n    spotify\n    .sort_values([\"artist_name\", \"duration_ms\"])\n    .drop_duplicates(subset=[\"artist_name\"], keep=\"last\")\n)"
+    "text": "Question 6\n\nWrite a Python code to identify the longest and shortest duration songs (based on duration_ms) for each unique artist.\n\n\n\nClick to Check the Answer!\n# Shortest song per artist\nshortest_songs = (\n    spotify\n    .sort_values([\"artist_name\", \"duration_ms\"])\n    .drop_duplicates(subset=[\"artist_name\"], keep=\"first\")\n    [['artist_name', 'track_name', 'duration_ms']]\n    )\n\n# Longest song per artist\nlongest_songs = (\n    spotify\n    .sort_values([\"artist_name\", \"duration_ms\"])\n    .drop_duplicates(subset=[\"artist_name\"], keep=\"last\")\n    [['artist_name', 'track_name', 'duration_ms']]\n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-03.html#question-7",

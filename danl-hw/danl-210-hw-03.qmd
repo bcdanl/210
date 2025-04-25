@@ -572,6 +572,7 @@ shortest_songs = (
     spotify
     .sort_values(["artist_name", "duration_ms"])
     .drop_duplicates(subset=["artist_name"], keep="first")
+    [['artist_name', 'track_name', 'duration_ms']]
     )
 
 # Longest song per artist
@@ -579,6 +580,7 @@ longest_songs = (
     spotify
     .sort_values(["artist_name", "duration_ms"])
     .drop_duplicates(subset=["artist_name"], keep="last")
+    [['artist_name', 'track_name', 'duration_ms']]
 )
 ```
 
