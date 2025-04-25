@@ -653,7 +653,7 @@ Byeong-Hak Choe
 <li>Choose appropriate
 <ul>
 <li>Geometric objects (e.g., <code>sns.histplot</code>, <code>sns.scatterplot</code>)</li>
-<li>Aesthetic mappings (<code>(x = , y = , color = , hue = )</code>)</li>
+<li>Aesthetic mappings (<code>(x = , y = , hue = )</code>)</li>
 <li>Faceting (<code>FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)</code> or <code>col</code>/<code>row</code> parameters in the function of geometric object)</li>
 </ul></li>
 </ul>
@@ -687,8 +687,8 @@ Byeong-Hak Choe
 <span id="cb4-2"><a href="#cb4-2"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">'tips'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="bar-chart" class="slide level2">
-<h2>Bar Chart</h2>
+<section id="bar-chart-with-sns.countplot" class="slide level2">
+<h2>Bar Chart with <code>sns.countplot()</code></h2>
 <div>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><strong>Example</strong></a></li><li><a href="#tabset-4-2"><code>hue</code></a></li></ul>
@@ -743,8 +743,8 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="histogram" class="slide level2">
-<h2>Histogram</h2>
+<section id="histogram-with-sns.histplot" class="slide level2">
+<h2>Histogram with <code>sns.histplot()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>sns.histplot(data <span class="op">=</span> titanic,</span>
@@ -766,18 +766,21 @@ Byeong-Hak Choe
 <li class="fragment">It is used to plot the frequency of the different values.</li>
 <li class="fragment">It is useful to visualize how values of a <strong>continuous variable</strong> are distributed.</li>
 </ul></li>
-<li class="fragment">We use <code>sns.histplot()</code> function to plot a histogram
+<li class="fragment">We use <code>sns.histplot()</code> function to plot a histogram</li>
+<li class="fragment">Use either <code>bins</code> or <code>binwidth</code>.
 <ul>
-<li class="fragment">Use either <code>bins</code> or <code>binwidth</code>.</li>
-</ul></li>
-<li class="fragment">The shape of a histogram is sensitive to <code>bins</code>/<code>binwidth</code>
-<ul>
+<li class="fragment">The shape of a histogram is sensitive to <code>bins</code>/<code>binwidth</code></li>
 <li class="fragment">We should experiment on <code>bins</code>/<code>binwidth</code>.</li>
 </ul></li>
 </ul>
 </section>
-<section id="boxplot" class="slide level2">
-<h2>Boxplot</h2>
+<section id="boxplot-with-sns.boxplot" class="slide level2">
+<h2>Boxplot with <code>sns.boxplot()</code></h2>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><strong>Example</strong></a></li><li><a href="#tabset-5-2"><code>hue</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
@@ -789,25 +792,50 @@ Byeong-Hak Choe
 </div>
 </div>
 <ul>
-<li class="fragment">A boxplot computes a summary of the distribution and then display a specially formatted box.
+<li>A boxplot computes a summary of the distribution and then display a specially formatted box.
 <ul>
-<li class="fragment">It is useful to visualize how values of a <strong>continuous variable</strong> are distributed across different values of a <strong>categorical variable</strong>.</li>
+<li>It is useful to visualize how values of a <strong>continuous variable</strong> are distributed across different values of a <strong>categorical variable</strong>.</li>
 </ul></li>
-<li class="fragment">We use <code>sns.boxplot()</code> function to plot a boxplot.</li>
+<li>We use <code>sns.boxplot()</code> function to plot a boxplot.</li>
 </ul>
-</section>
-<section id="scatter-plot" class="slide level2">
-<h2>Scatter plot</h2>
-<div>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><strong>Example</strong></a></li><li><a href="#tabset-5-2"><code>hue</code></a></li><li><a href="#tabset-5-3"><code>lmplot()</code></a></li><li><a href="#tabset-5-4"><code>alpha</code></a></li><li><a href="#tabset-5-5"><code>lmplot()</code> <strong>Example</strong></a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
+</div>
+<div id="tabset-5-2">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
-<span id="cb10-2"><a href="#cb10-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
-<span id="cb10-3"><a href="#cb10-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
+<span id="cb10-2"><a href="#cb10-2"></a>            x <span class="op">=</span> <span class="st">'time'</span>, </span>
+<span id="cb10-3"><a href="#cb10-3"></a>            y <span class="op">=</span> <span class="st">'total_bill'</span>,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>            hue <span class="op">=</span> <span class="st">'time'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>sns.boxplot(data <span class="op">=</span> tips,</span>
+<span id="cb11-2"><a href="#cb11-2"></a>            x <span class="op">=</span> <span class="st">'time'</span>, </span>
+<span id="cb11-3"><a href="#cb11-3"></a>            y <span class="op">=</span> <span class="st">'total_bill'</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>            hue <span class="op">=</span> <span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li>Mapping
+<ul>
+<li><code>hue</code>: Name of a categorical variable</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="scatter-plot-with-sns.scatterplot-and-sns.lmplot" class="slide level2">
+<h2>Scatter plot with <code>sns.scatterplot()</code> and <code>sns.lmplot()</code></h2>
+<div>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><strong>Example</strong></a></li><li><a href="#tabset-6-2"><code>hue</code></a></li><li><a href="#tabset-6-3"><code>lmplot()</code></a></li><li><a href="#tabset-6-4"><code>alpha</code></a></li><li><a href="#tabset-6-5"><code>lmplot()</code> <strong>Example</strong></a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
+<span id="cb12-3"><a href="#cb12-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Mapping
@@ -826,11 +854,11 @@ Byeong-Hak Choe
 <li><p>We use <code>sns.scatterplot()</code> function to plot a scatter plot.</p></li>
 </ul>
 </div>
-<div id="tabset-5-2">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
-<span id="cb11-2"><a href="#cb11-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
-<span id="cb11-3"><a href="#cb11-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>,</span>
-<span id="cb11-4"><a href="#cb11-4"></a>                hue <span class="op">=</span> <span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-6-2">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
+<span id="cb13-2"><a href="#cb13-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
+<span id="cb13-3"><a href="#cb13-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>                hue <span class="op">=</span> <span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>To the scatter plot, we can add a <code>hue</code>-<code>VARIABLE</code> mapping to display how the relationship between two continuous variables varies by <code>VARIABLE</code>.</p></li>
 <li><p>Suppose we are interested in the following question:</p>
@@ -839,30 +867,30 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </div>
-<div id="tabset-5-3">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
-<span id="cb12-2"><a href="#cb12-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
-<span id="cb12-3"><a href="#cb12-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-6-3">
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
+<span id="cb14-2"><a href="#cb14-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
+<span id="cb14-3"><a href="#cb14-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
 <ul>
 <li><code>sns.lmplot()</code> adds a line that fits well into the scattered points.</li>
-<li>On average, the fitted line describes the relationship between two continuous variables.</li>
+<li>The best fitting line describes the <em>overall</em> relationship between two continuous variables.</li>
 </ul></li>
 </ul>
 </div>
-<div id="tabset-5-4">
+<div id="tabset-6-4">
 <div class="columns">
 <div class="column" style="width:45%;">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
-<span id="cb13-2"><a href="#cb13-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
-<span id="cb13-3"><a href="#cb13-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>,</span>
-<span id="cb13-4"><a href="#cb13-4"></a>                alpha <span class="op">=</span> <span class="fl">.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>sns.scatterplot(data <span class="op">=</span> tips,</span>
+<span id="cb15-2"><a href="#cb15-2"></a>                x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
+<span id="cb15-3"><a href="#cb15-3"></a>                y <span class="op">=</span> <span class="st">'tip'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4"></a>                alpha <span class="op">=</span> <span class="fl">.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:55%;">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
-<span id="cb14-2"><a href="#cb14-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
-<span id="cb14-3"><a href="#cb14-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>,</span>
-<span id="cb14-4"><a href="#cb14-4"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
+<span id="cb16-2"><a href="#cb16-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
+<span id="cb16-3"><a href="#cb16-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -872,12 +900,12 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </div>
-<div id="tabset-5-5">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
-<span id="cb15-2"><a href="#cb15-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
-<span id="cb15-3"><a href="#cb15-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>,</span>
-<span id="cb15-4"><a href="#cb15-4"></a>           hue <span class="op">=</span> <span class="st">'smoker'</span>,</span>
-<span id="cb15-5"><a href="#cb15-5"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.5</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-6-5">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>sns.lmplot(data <span class="op">=</span> tips,</span>
+<span id="cb17-2"><a href="#cb17-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, </span>
+<span id="cb17-3"><a href="#cb17-3"></a>           y <span class="op">=</span> <span class="st">'tip'</span>,</span>
+<span id="cb17-4"><a href="#cb17-4"></a>           hue <span class="op">=</span> <span class="st">'smoker'</span>,</span>
+<span id="cb17-5"><a href="#cb17-5"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.5</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>To the scatter plot, we can add a <code>hue</code>-<code>VARIABLE</code> mapping to display how the relationship between two continuous variables varies by <code>VARIABLE</code>.</p></li>
 <li><p>Using the fitted lines, let’s answer the following question:</p>
@@ -890,22 +918,22 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="line-cahrt" class="slide level2">
-<h2>Line cahrt</h2>
+<section id="line-cahrt-with-sns.lineplot" class="slide level2">
+<h2>Line cahrt with <code>sns.lineplot()</code></h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><strong>Example</strong></a></li><li><a href="#tabset-6-2"><code>hue</code></a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><strong>Example</strong></a></li><li><a href="#tabset-7-2"><code>hue</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>path_csv <span class="op">=</span> <span class="st">'https://bcdanl.github.io/data/dji.csv'</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>dow <span class="op">=</span> pd.read_csv(path_csv)</span>
-<span id="cb16-3"><a href="#cb16-3"></a>dow[<span class="st">'Date'</span>] <span class="op">=</span> dow[<span class="st">'Date'</span>].astype(<span class="st">'datetime64'</span>)</span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a>sns.lineplot(data <span class="op">=</span> dow,</span>
-<span id="cb16-6"><a href="#cb16-6"></a>             x <span class="op">=</span>  <span class="st">'Date'</span>, </span>
-<span id="cb16-7"><a href="#cb16-7"></a>             y <span class="op">=</span>  <span class="st">'Close'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>path_csv <span class="op">=</span> <span class="st">'https://bcdanl.github.io/data/dji.csv'</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>dow <span class="op">=</span> pd.read_csv(path_csv)</span>
+<span id="cb18-3"><a href="#cb18-3"></a>dow[<span class="st">'Date'</span>] <span class="op">=</span> dow[<span class="st">'Date'</span>].astype(<span class="st">'datetime64'</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a>sns.lineplot(data <span class="op">=</span> dow,</span>
+<span id="cb18-6"><a href="#cb18-6"></a>             x <span class="op">=</span>  <span class="st">'Date'</span>, </span>
+<span id="cb18-7"><a href="#cb18-7"></a>             y <span class="op">=</span>  <span class="st">'Close'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Mapping
@@ -924,17 +952,17 @@ Byeong-Hak Choe
 </ul>
 <!-- - We use `sns.lineplot()` function to plot a line plot. -->
 </div>
-<div id="tabset-6-2">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>healthexp <span class="op">=</span> ( </span>
-<span id="cb17-2"><a href="#cb17-2"></a>  sns.load_dataset(<span class="st">"healthexp"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3"></a>  .sort_values([<span class="st">"Country"</span>, <span class="st">"Year"</span>])</span>
-<span id="cb17-4"><a href="#cb17-4"></a>  .query(<span class="st">"Year &lt;= 2020"</span>)</span>
-<span id="cb17-5"><a href="#cb17-5"></a>  )</span>
-<span id="cb17-6"><a href="#cb17-6"></a></span>
-<span id="cb17-7"><a href="#cb17-7"></a>sns.lineplot(data <span class="op">=</span> healthexp,</span>
-<span id="cb17-8"><a href="#cb17-8"></a>             x <span class="op">=</span>  <span class="st">'Year'</span>, </span>
-<span id="cb17-9"><a href="#cb17-9"></a>             y <span class="op">=</span>  <span class="st">'Life_Expectancy'</span>,</span>
-<span id="cb17-10"><a href="#cb17-10"></a>             hue <span class="op">=</span> <span class="st">'Country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-7-2">
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>healthexp <span class="op">=</span> ( </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  sns.load_dataset(<span class="st">"healthexp"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3"></a>  .sort_values([<span class="st">"Country"</span>, <span class="st">"Year"</span>])</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  .query(<span class="st">"Year &lt;= 2020"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>  )</span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a>sns.lineplot(data <span class="op">=</span> healthexp,</span>
+<span id="cb19-8"><a href="#cb19-8"></a>             x <span class="op">=</span>  <span class="st">'Year'</span>, </span>
+<span id="cb19-9"><a href="#cb19-9"></a>             y <span class="op">=</span>  <span class="st">'Life_Expectancy'</span>,</span>
+<span id="cb19-10"><a href="#cb19-10"></a>             hue <span class="op">=</span> <span class="st">'Country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>For line charts, we often need to group or connect observations to visualize the number of distinct lines.</li>
 </ul>
@@ -950,31 +978,33 @@ Byeong-Hak Choe
 <li>Faceting allows us to plot subsets (facets) of our data across subplots.</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-7-2"><code>col</code>/<code>row</code></a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-8-2"><code>col</code>/<code>row</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>(</span>
-<span id="cb18-2"><a href="#cb18-2"></a> sns.FacetGrid(</span>
-<span id="cb18-3"><a href="#cb18-3"></a>       data <span class="op">=</span> titanic,</span>
-<span id="cb18-4"><a href="#cb18-4"></a>       row<span class="op">=</span><span class="st">'class'</span>,</span>
-<span id="cb18-5"><a href="#cb18-5"></a>       col<span class="op">=</span><span class="st">'sex'</span>)</span>
-<span id="cb18-6"><a href="#cb18-6"></a> .<span class="bu">map</span>(sns.histplot, <span class="st">'age'</span>)</span>
-<span id="cb18-7"><a href="#cb18-7"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-8-1">
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>(</span>
+<span id="cb20-2"><a href="#cb20-2"></a> sns.FacetGrid(</span>
+<span id="cb20-3"><a href="#cb20-3"></a>       data <span class="op">=</span> titanic,</span>
+<span id="cb20-4"><a href="#cb20-4"></a>       row<span class="op">=</span><span class="st">'class'</span>,</span>
+<span id="cb20-5"><a href="#cb20-5"></a>       col<span class="op">=</span><span class="st">'sex'</span>)</span>
+<span id="cb20-6"><a href="#cb20-6"></a> .<span class="bu">map</span>(sns.histplot, <span class="st">'age'</span>)</span>
+<span id="cb20-7"><a href="#cb20-7"></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
 <li>We create a <code>.FacetGrid()</code> object with the data we will be using and define how it will be subset with the <code>row</code> and <code>col</code> arguments:</li>
 <li>We then use the <code>.map()</code> method to run a plotting function on each of the subsets, passing along any necessary arguments.</li>
 </ol>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-8-2">
 <ul>
 <li>Some geometric object, such as <code>sns.lmplot()</code>, does not work well with <code>sns.FacetGrid()</code>.
 <ul>
 <li>Instead, <code>sns.lmplot()</code> supports mapping, <code>col = 'VAR'</code> and <code>row = 'VAR'</code> to facet the plot.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>sns.lmplot(data <span class="op">=</span> tips, x <span class="op">=</span> <span class="st">'total_bill'</span>, y <span class="op">=</span> <span class="st">'tip'</span>, hue <span class="op">=</span> <span class="st">'smoker'</span>,</span>
-<span id="cb19-2"><a href="#cb19-2"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.5</span>},</span>
-<span id="cb19-3"><a href="#cb19-3"></a>           col <span class="op">=</span> <span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>sns.lmplot(data <span class="op">=</span> tips, </span>
+<span id="cb21-2"><a href="#cb21-2"></a>           x <span class="op">=</span> <span class="st">'total_bill'</span>, y <span class="op">=</span> <span class="st">'tip'</span>, </span>
+<span id="cb21-3"><a href="#cb21-3"></a>           hue <span class="op">=</span> <span class="st">'smoker'</span>,</span>
+<span id="cb21-4"><a href="#cb21-4"></a>           scatter_kws <span class="op">=</span> {<span class="st">'alpha'</span> : <span class="fl">0.5</span>},</span>
+<span id="cb21-5"><a href="#cb21-5"></a>           col <span class="op">=</span> <span class="st">'smoker'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

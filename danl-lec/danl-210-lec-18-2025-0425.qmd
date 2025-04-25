@@ -287,7 +287,7 @@ import matplotlib.pyplot as plt
 ## **Step 4**
 - Choose appropriate
   - Geometric objects (e.g., `sns.histplot`, `sns.scatterplot`)
-  - Aesthetic mappings (`(x = , y = , color = , hue = )`) 
+  - Aesthetic mappings (`(x = , y = , hue = )`) 
   - Faceting (`FacetGrid(DATA, row = , col = ).map(GEOMETRIC_OBJECT, VARIABLES)` or `col`/`row` parameters in the function of geometric object) 
 
 
@@ -329,7 +329,7 @@ tips = sns.load_dataset('tips')
 
 
 
-## Bar Chart 
+## Bar Chart with `sns.countplot()`
 
 
 :::{.nonincremental}
@@ -393,7 +393,7 @@ sns.countplot(data = titanic,
 :::
 :::
 
-## Histogram 
+## Histogram with `sns.histplot()`
 
 
 :::: {.columns}
@@ -422,12 +422,18 @@ sns.histplot(data = titanic,
 
   
 - We use `sns.histplot()` function to plot a histogram
-  - Use either `bins` or `binwidth`.
-- The shape of a histogram is sensitive to `bins`/`binwidth`
+- Use either `bins` or `binwidth`.
+  - The shape of a histogram is sensitive to `bins`/`binwidth`
   - We should experiment on `bins`/`binwidth`.
   
 
-## Boxplot 
+## Boxplot with `sns.boxplot()`
+
+
+:::{.nonincremental}
+::: {.panel-tabset}
+
+## **Example**
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -455,10 +461,40 @@ sns.boxplot(data = tips,
   
 - We use `sns.boxplot()` function to plot a boxplot.
 
+## `hue`
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+sns.boxplot(data = tips,
+            x = 'time', 
+            y = 'total_bill',
+            hue = 'time')
+```
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+sns.boxplot(data = tips,
+            x = 'time', 
+            y = 'total_bill',
+            hue = 'smoker')
+```
+
+:::
+
+::::
 
 
+- Mapping
+  - `hue`:  Name of a categorical variable
 
-## Scatter plot 
+:::
+:::
+
+
+## Scatter plot with `sns.scatterplot()` and `sns.lmplot()`
 
 :::{.nonincremental}
 ::: {.panel-tabset}
@@ -520,7 +556,7 @@ sns.lmplot(data = tips,
 
 - From the scatter plot, it is often difficult to clearly see the relationship between two continuous variables.
   - `sns.lmplot()` adds a line that fits well into the scattered points.
-  - On average, the fitted line describes the relationship between two continuous variables.
+  - The best fitting line describes the *overall* relationship between two continuous variables.
 
 
 
@@ -576,7 +612,7 @@ sns.lmplot(data = tips,
 :::
 :::
 
-## Line cahrt 
+## Line cahrt with `sns.lineplot()`
 
 
 :::{.nonincremental}
@@ -661,7 +697,9 @@ sns.lineplot(data = healthexp,
   - Instead, `sns.lmplot()` supports mapping, `col = 'VAR'` and `row = 'VAR'` to facet the plot.
   
 ```{.python}
-sns.lmplot(data = tips, x = 'total_bill', y = 'tip', hue = 'smoker',
+sns.lmplot(data = tips, 
+           x = 'total_bill', y = 'tip', 
+           hue = 'smoker',
            scatter_kws = {'alpha' : 0.5},
            col = 'smoker')
 ```
