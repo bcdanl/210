@@ -588,6 +588,8 @@ sns.lmplot(data = tips,
 
 - In a scatter plot, adding **transparency** with `alpha` helps address many data points on the same location.
   - We can map `alpha` to number between 0 and 1.
+      - `alpha = 0`: Full transparency
+      - `alpha = 1`: No transparency
   
   
 
