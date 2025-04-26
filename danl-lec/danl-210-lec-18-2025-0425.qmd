@@ -655,6 +655,7 @@ sns.lineplot(data = dow,
 
 
 ```{.python}
+# New data
 healthexp = ( 
   sns.load_dataset("healthexp")
   .sort_values(["Country", "Year"])
@@ -679,7 +680,7 @@ sns.lineplot(data = healthexp,
 
 ::: {.panel-tabset}
 
-## `FacetGrid().map()`
+## `FacetGrid(col/row).map()`
 ```{.python}
 (
  sns.FacetGrid(

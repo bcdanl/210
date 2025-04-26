@@ -957,16 +957,17 @@ Byeong-Hak Choe
 <!-- - We use `sns.lineplot()` function to plot a line plot. -->
 </div>
 <div id="tabset-7-2">
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>healthexp <span class="op">=</span> ( </span>
-<span id="cb19-2"><a href="#cb19-2"></a>  sns.load_dataset(<span class="st">"healthexp"</span>)</span>
-<span id="cb19-3"><a href="#cb19-3"></a>  .sort_values([<span class="st">"Country"</span>, <span class="st">"Year"</span>])</span>
-<span id="cb19-4"><a href="#cb19-4"></a>  .query(<span class="st">"Year &lt;= 2020"</span>)</span>
-<span id="cb19-5"><a href="#cb19-5"></a>  )</span>
-<span id="cb19-6"><a href="#cb19-6"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a>sns.lineplot(data <span class="op">=</span> healthexp,</span>
-<span id="cb19-8"><a href="#cb19-8"></a>             x <span class="op">=</span>  <span class="st">'Year'</span>, </span>
-<span id="cb19-9"><a href="#cb19-9"></a>             y <span class="op">=</span>  <span class="st">'Life_Expectancy'</span>,</span>
-<span id="cb19-10"><a href="#cb19-10"></a>             hue <span class="op">=</span> <span class="st">'Country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># New data</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>healthexp <span class="op">=</span> ( </span>
+<span id="cb19-3"><a href="#cb19-3"></a>  sns.load_dataset(<span class="st">"healthexp"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  .sort_values([<span class="st">"Country"</span>, <span class="st">"Year"</span>])</span>
+<span id="cb19-5"><a href="#cb19-5"></a>  .query(<span class="st">"Year &lt;= 2020"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6"></a>  )</span>
+<span id="cb19-7"><a href="#cb19-7"></a></span>
+<span id="cb19-8"><a href="#cb19-8"></a>sns.lineplot(data <span class="op">=</span> healthexp,</span>
+<span id="cb19-9"><a href="#cb19-9"></a>             x <span class="op">=</span>  <span class="st">'Year'</span>, </span>
+<span id="cb19-10"><a href="#cb19-10"></a>             y <span class="op">=</span>  <span class="st">'Life_Expectancy'</span>,</span>
+<span id="cb19-11"><a href="#cb19-11"></a>             hue <span class="op">=</span> <span class="st">'Country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>For line charts, we often need to group or connect observations to visualize the number of distinct lines.</li>
 </ul>
@@ -982,7 +983,7 @@ Byeong-Hak Choe
 <li>Faceting allows us to plot subsets (facets) of our data across subplots.</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1"><code>FacetGrid().map()</code></a></li><li><a href="#tabset-8-2"><code>col</code>/<code>row</code></a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1"><code>FacetGrid(col/row).map()</code></a></li><li><a href="#tabset-8-2"><code>col</code>/<code>row</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-8-1">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>(</span>
