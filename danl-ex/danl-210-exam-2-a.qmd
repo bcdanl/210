@@ -414,8 +414,11 @@ b. A client requests data, and a server responds with data.
 - Fill in the following 5 blanks to make a request to the FRED API for collecting the U.S. unemployment rate (`series_id` = "**UNRATE**")
 
 ```{python}
-#| echo: true
 #| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
 
 import requests
 import pandas as pd
