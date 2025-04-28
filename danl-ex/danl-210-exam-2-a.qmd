@@ -129,7 +129,7 @@ The following provides the descriptive statistics for each part of the Midterm E
 ```{r}
 #| echo: false
 #| eval: true
-sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-exam1-stat.csv")
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-exam2-stat.csv")
 DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
 ```
 
