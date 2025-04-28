@@ -23,7 +23,7 @@ lec_dates <- c('0122',
 lec_n <- length(lec_dates)
 
 lec_nos <- 1:lec_n
-lec_nos <- sprintf("%02d", lec_nos)
+lec_nos <- sprintf("%02d", lec_nos) 
 
 for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]
