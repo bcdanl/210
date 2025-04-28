@@ -172,7 +172,7 @@
     "href": "danl-hw/danl-210-hw-02.html",
     "title": "Homework 2",
     "section": "",
-    "text": "import pandas as pd\nfrom itables import init_notebook_mode, show # for displaying an interactive DataFrame"
+    "text": "The following provides the descriptive statistics for each part of the Homework 2:\n\n\n\n\n\n\n\n\n\nimport pandas as pd\nfrom itables import init_notebook_mode, show # for displaying an interactive DataFrame"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#variable-description",
@@ -417,7 +417,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\nClasswork 11\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nClasswork 12\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\nClasswork 11\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nClasswork 12\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\nClasswork 13\n\n\nGroup Operation I\n\n\nApril 27, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -431,14 +431,14 @@
     "href": "index.html#bullet-lecture-slides",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Lecture Slides 🚀",
-    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\nLecture 17\n\n\nData Collection with APIs\n\n\nApril 11, 2025\n\n\n\n\nLecture 18\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Lecture Slides 🚀\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\nLecture 17\n\n\nData Collection with APIs\n\n\nApril 11, 2025\n\n\n\n\nLecture 18\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\nLecture 19\n\n\nGroup Operations\n\n\nApril 28, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-classwork",
     "href": "index.html#bullet-classwork",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Classwork ⌨️",
-    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\nClasswork 11\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nClasswork 12\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Classwork ⌨️\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nBuilding a Personal Website using Git, GitHub, and RStudio with Quarto\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 24, 2025\n\n\n\n\nClasswork 3\n\n\nQuarto Website Basics\n\n\nJanuary 27, 2025\n\n\n\n\nClasswork 4\n\n\nPython Basics\n\n\nJanuary 29, 2025\n\n\n\n\nClasswork 5\n\n\nPandas Basics - Loading, Summarizing, Selecting, Counting, Sorting, and Indexing Data\n\n\nFebruary 12, 2025\n\n\n\n\nClasswork 6\n\n\nPandas Basics - Convering Data Types; Filtering Data; Dealing with Missing Values/Duplicates\n\n\nFebruary 17, 2025\n\n\n\n\nClasswork 7\n\n\nPandas Basics - Reshaping DataFrames; Joining DataFrames; Concatenating Rows and Columns\n\n\nFebruary 24, 2025\n\n\n\n\nClasswork 8\n\n\nScrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nClasswork 9\n\n\nScrapping Data with Python selenium\n\n\nMarch 24, 2025\n\n\n\n\nClasswork 10\n\n\nAdvanced Techniques for Python selenium\n\n\nMarch 28, 2025\n\n\n\n\nClasswork 11\n\n\nData Collection with APIs\n\n\nApril 9, 2025\n\n\n\n\nClasswork 12\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\nClasswork 13\n\n\nGroup Operation I\n\n\nApril 27, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#bullet-homework",
@@ -452,7 +452,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\nLecture 17\n\n\nData Collection with APIs\n\n\nApril 11, 2025\n\n\n\n\nLecture 18\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus, Course Outline, and Introduction\n\n\nJanuary 22, 2025\n\n\n\n\nLecture 2\n\n\nPrologue; DANL Tools; Building a Website; Markdown\n\n\nJanuary 24, 2025\n\n\n\n\nLecture 3\n\n\nGetting Started with Jupyter Notebook and Quarto\n\n\nJanuary 27, 2025\n\n\n\n\nLecture 4\n\n\nPython Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers\n\n\nJanuary 31, 2025\n\n\n\n\nLecture 5\n\n\nPython Basics - if-else Chains; Slicing; Functions; while & for loops; List & Dictionary Methods; try-except Blocks\n\n\nFebruary 3, 2025\n\n\n\n\nLecture 6\n\n\npandas Basics - Loading Data\n\n\nFebruary 10, 2025\n\n\n\n\nLecture 7\n\n\npandas Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods\n\n\nFebruary 12, 2025\n\n\n\n\nLecture 8\n\n\npandas Basics - Sorting Methods; Setting a New Index; Locating Observations/Values\n\n\nFebruary 14, 2025\n\n\n\n\nLecture 9\n\n\npandas Basics - Mathematical & Vectorized Operations; Adding, Removing, & Renaming Variables; Data Types\n\n\nFebruary 17, 2025\n\n\n\n\nLecture 10\n\n\npandas Basics - Filtering by a Condition\n\n\nFebruary 19, 2025\n\n\n\n\nLecture 11\n\n\npandas Basics - Missing Values; Duplicates\n\n\nFebruary 21, 2025\n\n\n\n\nLecture 12\n\n\npandas Basics - Reshaping DataFrames\n\n\nFebruary 24, 2025\n\n\n\n\nLecture 13\n\n\npandas Basics - Joining DataFrames; Concatenating DataFrames\n\n\nFebruary 26, 2025\n\n\n\n\nLecture 14\n\n\nSpyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nMarch 10, 2025\n\n\n\n\nLecture 15\n\n\nPrimer on Web-scrapping\n\n\nMarch 12, 2025\n\n\n\n\nLecture 16\n\n\nWeb-scrapping with Python selenium\n\n\nMarch 14, 2025\n\n\n\n\nLecture 17\n\n\nData Collection with APIs\n\n\nApril 11, 2025\n\n\n\n\nLecture 18\n\n\nData Visualization with seaborn\n\n\nApril 25, 2025\n\n\n\n\nLecture 19\n\n\nGroup Operations\n\n\nApril 28, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html",
@@ -3602,7 +3602,7 @@
     "href": "listing-danl-210-ex.html",
     "title": "DANL 210 - Exam",
     "section": "",
-    "text": "Title\n\n\nDate\n\n\n\n\n\n\nMidterm Exam I\n\n\nMarch 5, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nDate\n\n\n\n\n\n\nMidterm Exam I\n\n\nMarch 5, 2025\n\n\n\n\nMidterm Exam II\n\n\nApril 21, 2025\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
@@ -3861,7 +3861,7 @@
     "href": "danl-ex/danl-210-exam-1-a.html",
     "title": "Midterm Exam I",
     "section": "",
-    "text": "The distribution of scores for Midterm Exam I is shown below:\n\n\n\n\n\nThe distribution of scores for Section 1 in Midterm Exam I is shown below:\n\n\n\n\n\nThe distribution of scores for Section 2 in Midterm Exam I is shown below:\n\n\n\n\n\n\nThe following provides the descriptive statistics for each part of the Midterm Exam I:"
+    "text": "The distribution of scores for Midterm Exam I is shown below:\n\n\n\n\n\nThe distribution of raw scores for Section 1 in Midterm Exam I is shown below:\n\n\n\n\n\nThe distribution of raw scores for Section 2 in Midterm Exam I is shown below:\n\n\n\n\n\n\nThe following provides the descriptive statistics for each part of the Midterm Exam I:"
   },
   {
     "objectID": "danl-ex/danl-210-exam-1-a.html#question-1",
@@ -3987,7 +3987,7 @@
     "href": "danl-hw/danl-210-hw-03.html",
     "title": "Homework 3",
     "section": "",
-    "text": "import pandas as pd"
+    "text": "The following provides the descriptive statistics for each part of the Homework 3:\n\n\n\n\n\n\n\n\nimport pandas as pd"
   },
   {
     "objectID": "danl-hw/danl-210-hw-03.html#duplicated",
@@ -4092,7 +4092,7 @@
     "href": "danl-hw/danl-210-hw-04.html",
     "title": "Homework 4",
     "section": "",
-    "text": "Please submit your Python Script for Part 1 and Part 2 in Homework 4 to Brightspace with the name below:\n\ndanl_210_hw4_LASTNAME_FIRSTNAME.py\n( e.g., danl_210_hw4_choe_byeonghak.py )\n\nThe due is April 18, 2025, 10:30 A.M.\nPlease send Prof. Choe an email (bchoe@geneseo.edu) if you have any questions."
+    "text": "The following provides the descriptive statistics for each part of the Homework 4:"
   },
   {
     "objectID": "danl-hw/danl-210-hw-04.html#question-1",
@@ -4127,7 +4127,7 @@
     "href": "danl-hw/danl-210-hw-04.html#question-4",
     "title": "Homework 4",
     "section": "Question 4",
-    "text": "Question 4\n\nWrite a Python code to replace the NaN value of the Specialty_Detail variable with the value of the Specialty variable.\n\nFor example, the following shows that\n\nAll NaN values in the Specialty_Detail variable, where the Specialty is Physician Assistant, are replaced with Physician Assistant.\n\n\n\n\n\n\n\n  \n\n\n\n\n\nClick to Check the Answer!\nq4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]\nq4['Specialty_Detail'] = np.where(q4['Specialty_Detail'].isna(),\n                                  q4['Specialty'],\n                                  q4['Specialty_Detail']\n                                  )"
+    "text": "Question 4\n\nWrite a Python code to replace the NaN value of the Specialty_Detail variable with the value of the Specialty variable.\n\nFor example, the following shows that\n\nAll NaN values in the Specialty_Detail variable, where the Specialty is Physician Assistant, are replaced with Physician Assistant.\n\n\n\n\n\n\n\n  \n\n\n\nnp.where()\n\n\nClick to Check the Answer!\nq4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]\nq4['Specialty_Detail'] = np.where(q4['Specialty_Detail'].isna(),\n                                  q4['Specialty'],\n                                  q4['Specialty_Detail']\n                                  )\n\n\nfillna()\n\n\nClick to Check the Answer!\nq4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]\nq4['Specialty_Detail']=q4['Specialty_Detail'].fillna(q4['Specialty'])"
   },
   {
     "objectID": "danl-hw/danl-210-hw-04.html#question-5",
@@ -4148,7 +4148,7 @@
     "href": "danl-hw/danl-210-hw-04.html#question-7",
     "title": "Homework 4",
     "section": "Question 7",
-    "text": "Question 7\n\nWrite a Python code to count the number of occurrences of each unique value in Specialty_Detail for each unique value in Taxonomy.\n\nFor example, the following displays the number of occurrences of each unique in Specialty_Detail for the Dental Providers Taxonomy value.\n\n\n\n\n\n\n  \n\n\n\n\n\nClick to Check the Answer!\n(\n cms_ny_2022[['Taxonomy', 'Specialty_Detail']]\n .value_counts()\n .reset_index()\n .sort_values(['Taxonomy', 'Specialty_Detail'])\n )"
+    "text": "Question 7\n\nWrite a Python code to count the number of occurrences of each unique value in Specialty_Detail for each unique value in Taxonomy.\n\nFor example, the following displays the number of occurrences of each unique value in Specialty_Detail for the Dental Providers Taxonomy value.\n\n\n\n\n\n\n  \n\n\n\n\n\nClick to Check the Answer!\n(\n cms_ny_2022[['Taxonomy', 'Specialty_Detail']]\n .value_counts()\n .reset_index()\n .sort_values(['Taxonomy', 'Specialty_Detail'])\n )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-04.html#question-8",
@@ -4169,7 +4169,7 @@
     "href": "danl-hw/danl-210-hw-04.html#question-10",
     "title": "Homework 4",
     "section": "Question 10",
-    "text": "Question 10\n\nWrite a Python code to replicate the following DataFrame, which calculates (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.\n\nEnsure that the sum of the percentages of physicians and NPPs within each city is 100.\nEnsure that the observations are sorted by Total_Count and City in descending and ascending orders, respectively.\n\n\n\n\n\n\n  \n\n\n\n\nUsing for-loop with dictionary container\n\n\nClick to Check the Answer!\ncms_ny_2022.shape[0]\ncms_ny_2022['NPI'].nunique()\n\ndf = (\n cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n .drop_duplicates()[['City', 'Physician_or_NPP']]\n .value_counts()\n .reset_index()\n )\n\nd = {}\nfor city in cms_ny_2022['City'].unique():\n    val = df[ df['City'] == city ]['count'].sum()\n    d[ city ] = val\n    \ndf_tot = pd.DataFrame([d]).T.reset_index()\ndf_tot.columns = ['City', 'Total_Count']\n\ndf = df.merge(df_tot, on='City', how = 'left')\ndf['Percent'] = 100 * df['count'] / df['Total_Count']\ndf = df.sort_values(['Total_Count', 'City'], ascending = [False, True])\n\n\n\nGroup operation with groupby()\n\n\nClick to Check the Answer!\ndf_grouped = (\n cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n .drop_duplicates()\n .groupby(['City', 'Physician_or_NPP'])\n .size()  # number of observations in each group\n .reset_index(name='count')\n )\n\ndf_grouped['Total_Count'] = df_grouped.groupby('City')['count'].transform('sum')\ndf_grouped['Percent'] = (100 * df_grouped['count'] / df_grouped['Total_Count'])\ndf_grouped = df_grouped.sort_values(['Total_Count', 'City'], ascending = [False, True])\n\n\n\nGroup operation with assign() and lambda\n\n\nClick to Check the Answer!\ndf_grouped = (\n    cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n    .drop_duplicates()\n    .groupby(['City', 'Physician_or_NPP'])\n    .size()\n    .reset_index(name = 'count')\n    .assign(\n        Total_Count = lambda df: df.groupby('City')['count'].transform('sum'),\n        Percent = lambda df: 100 * df['count'] / df['Total_Count']\n    )\n    .sort_values(['Total_Count', 'City'], ascending=[False, True])\n)"
+    "text": "Question 10\n\nWrite a Python code to replicate the following DataFrame, which calculates (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.\n\nEnsure that the sum of the percentages of physicians and NPPs within each city is 100.\nEnsure that the observations are sorted by Total_Count and City in descending and ascending orders, respectively.\n\n\n\n\n\n\n  \n\n\n\n Using join\n\n\nClick to Check the Answer!\ndf = (\n      cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n      .drop_duplicates()[['City', 'Physician_or_NPP']]\n      .value_counts()\n      .reset_index()\n      )\n\ndf_1 = (\n        cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n        .drop_duplicates()['City']\n        .value_counts()\n        .reset_index()\n        .rename( columns = {'count' : 'Total_Count'})\n        )\n\ndf = (\n      df\n      .merge(df_1, on = 'City', how = 'left')\n      .sort_values(['Total_Count', 'Physician_or_NPP'], ascending = [False, True])\n      )\n      \ndf['Percent'] = 100 * df['count'] / df['Total_Count']\n\n\n\nUsing for-loop with dictionary container\n\n\nClick to Check the Answer!\ncms_ny_2022.shape[0]\ncms_ny_2022['NPI'].nunique()\n\ndf = (\n cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n .drop_duplicates()[['City', 'Physician_or_NPP']]\n .value_counts()\n .reset_index()\n )\n\nd = {}\nfor city in cms_ny_2022['City'].unique():\n    val = df[ df['City'] == city ]['count'].sum()\n    d[ city ] = val\n    \ndf_tot = pd.DataFrame([d]).T.reset_index()\ndf_tot.columns = ['City', 'Total_Count']\n\ndf = df.merge(df_tot, on='City', how = 'left')\ndf['Percent'] = 100 * df['count'] / df['Total_Count']\ndf = df.sort_values(['Total_Count', 'City'], ascending = [False, True])\n\n\n\nGroup operation with groupby()\n\n\nClick to Check the Answer!\ndf_grouped = (\n cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n .drop_duplicates()\n .groupby(['City', 'Physician_or_NPP'])\n .size()  # number of observations in each group\n .reset_index(name='count')\n )\n\ndf_grouped['Total_Count'] = df_grouped.groupby('City')['count'].transform('sum')\ndf_grouped['Percent'] = (100 * df_grouped['count'] / df_grouped['Total_Count'])\ndf_grouped = df_grouped.sort_values(['Total_Count', 'City'], ascending = [False, True])\n\n\n\nGroup operation with assign() and lambda\n\n\nClick to Check the Answer!\ndf_grouped = (\n    cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]\n    .drop_duplicates()\n    .groupby(['City', 'Physician_or_NPP'])\n    .size()\n    .reset_index(name = 'count')\n    .assign(\n        Total_Count = lambda df: df.groupby('City')['count'].transform('sum'),\n        Percent = lambda df: 100 * df['count'] / df['Total_Count']\n    )\n    .sort_values(['Total_Count', 'City'], ascending=[False, True])\n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-04.html#question-11",
@@ -4204,7 +4204,7 @@
     "href": "index.html#bullet-exam",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Exam 📝",
-    "text": "\\(\\bullet\\,\\) Exam 📝\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nMidterm Exam I\n\n\nSpring 2025, DANL 210-01\n\n\nMarch 5, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Exam 📝\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nMidterm Exam I\n\n\nSpring 2025, DANL 210-01\n\n\nMarch 5, 2025\n\n\n\n\nMidterm Exam II\n\n\nSpring 2025, DANL 210-01\n\n\nApril 21, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-lec/danl-210-lec-18-2025-0425.html#exploratory-data-analysis-eda",
@@ -4254,5 +4254,712 @@
     "title": "Lecture 18",
     "section": "Line cahrt with sns.lineplot()",
     "text": "Line cahrt with sns.lineplot()\n\n\nExamplehue\n\n\n\n\npath_csv = 'https://bcdanl.github.io/data/dji.csv'\ndow = pd.read_csv(path_csv)\ndow['Date'] = dow['Date'].astype('datetime64')\n\nsns.lineplot(data = dow,\n             x =  'Date', \n             y =  'Close')\n\n\nMapping\n\nx: Name of a continuous variable (often time variable) on the horizontal axis\ny: Name of a continuous variable on the vertical axis\n\n\n\n\n\nA line chart is used to display the trend in a continuous variable or the change in a continuous variable over a categorical variable.\n\nsns.lineplot() draws a line by connecting the scattered points in order of the variable on the x-axis, so that it highlights exactly when changes occur.\n\n\n\n\n\n# New data\nhealthexp = ( \n  sns.load_dataset(\"healthexp\")\n  .sort_values([\"Country\", \"Year\"])\n  .query(\"Year &lt;= 2020\")\n  )\n\nsns.lineplot(data = healthexp,\n             x =  'Year', \n             y =  'Life_Expectancy',\n             hue = 'Country')\n\nFor line charts, we often need to group or connect observations to visualize the number of distinct lines."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#fortune-1000-dataset",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#fortune-1000-dataset",
+    "title": "Lecture 19",
+    "section": "Fortune 1000 Dataset",
+    "text": "Fortune 1000 Dataset\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune1000_2024.csv file is a collection of Fortune 1000 companies in 2024\n\n\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune1000_2024.csv\")\n\nfortune1000.columns\n\nfortune = fortune1000[['Rank', 'Company', 'Sector', 'Industry', 'Revenues_M', 'Profits_M', 'Number_of_Employees']]\n\nA sector can have many companies; An industry is a subcategory within a sector.\nLet’s explore the fortune.\n\nHow many unique sectors are in fortune?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#creating-a-groupby-object-from-a-dataset",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#creating-a-groupby-object-from-a-dataset",
+    "title": "Lecture 19",
+    "section": "Creating a GroupBy object from a dataset",
+    "text": "Creating a GroupBy object from a dataset\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\n\nThe DataFrameGroupBy object implicitly organizes observations into groups based on shared values in a categorical variable.\nWe can count the number of groups in sectors by passing the GroupBy object into the Python’s built-in len() function\nThe size() method on the GroupBy object returns a Series with an alphabetical list of the groups and their observation counts."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#creating-a-groupby-object-from-a-dataset-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#creating-a-groupby-object-from-a-dataset-1",
+    "title": "Lecture 19",
+    "section": "Creating a GroupBy object from a dataset",
+    "text": "Creating a GroupBy object from a dataset\nsectors = fortune.groupby(\"Sector\")\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\n\nThe GroupBy object implicitly organizes observations into groups based on shared values in a categorical variable.\nWe can count the number of groups in sectors by passing the GroupBy object into the Python’s built-in len() function\nThe size() method on the GroupBy object returns a Series with an alphabetical list of the groups and their observation counts."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a GroupBy object",
+    "text": "Attributes and methods of a GroupBy object\nsectors.groups\n\nThe groups attribute stores a dictionary with associations of group-to-observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-1",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a GroupBy object",
+    "text": "Attributes and methods of a GroupBy object\n\n\nWhat if we want to find the highest-performing company (by revenue) within each sector?\n\n\nsectors.first()\nsectors.last()\n\nThe GroupBy object’s first()/last() method extracts the first/last observation listed for each group in a DataFrame.\n\nSince our fortune DataFrame is sorted by Revenue_M, the first company pulled out for each sector will be the highest-performing company within that sector."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-2",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a GroupBy object",
+    "text": "Attributes and methods of a GroupBy object\nsectors.nth(0)\nsectors.nth(1)\nfortune[fortune[\"Sector\"] == \"Apparel\"]\n\nThe nth() method is used with a GroupBy object to select the nth observation from each group.\n\nHere we can confirm the output is correct by filtering for the “Apparel” observations in fortune."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-3",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a GroupBy object",
+    "text": "Attributes and methods of a GroupBy object\nsectors.head(2)\nsectors.tail(2)\n\nThe head(n)/tail(n) method extracts the first/last n observations from each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-groupby-object-4",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a GroupBy object",
+    "text": "Attributes and methods of a GroupBy object\nsectors.get_group(\"Energy\")\ntype( sectors.get_group(\"Energy\") )\n\nWe can use the get_group() method to extract all observations in a given group.\n\nThe method returns a DataFrame containing the observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation",
+    "title": "Lecture 19",
+    "section": "Aggregation",
+    "text": "Aggregation\n\n\nWe can invoke methods on the DataFrameGroupBy object to apply aggregate operations to every group.\n\nAggregation is the process of taking multiple values and returning a single value.\n\n\n\nsectors.sum()\nsectors.mean()"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-1",
+    "title": "Lecture 19",
+    "section": "Aggregation",
+    "text": "Aggregation\nsectors[\"Revenues_M\"]\nsectors[\"Revenues_M\"].sum()\nsectors[\"Revenues_M\"].mean()\nsectors[\"Revenues_M\"].max()\nsectors[\"Revenues_M\"].min()\n\nWe can target a single variable by passing its name inside square brackets after the DataFrameGroupBy object.\n\nPandas returns a new object, a SeriesGroupBy."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-2",
+    "title": "Lecture 19",
+    "section": "Aggregation",
+    "text": "Aggregation\nsectors[\"Revenues_M\"]  # this is a SeriesGroupBy object\nsectors[\"Revenues_M\"].agg('sum')\nsectors[\"Revenues_M\"].agg('mean')\nsectors[\"Revenues_M\"].agg('max')\nsectors[\"Revenues_M\"].agg('min')\n\nThe agg() method can also be used on a SeriesGroupBy.\nInstead of directly calling the aggregation method, we can call the agg() method, and pass the aggregation method we want in there."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-3",
+    "title": "Lecture 19",
+    "section": "Aggregation",
+    "text": "Aggregation\nsectors.agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Revenues_M\", \"mean\")\n)\n\nThe agg() method can apply multiple aggregate operations to different variables and can accept a tuple as its argument."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#aggregation-4",
+    "title": "Lecture 19",
+    "section": "Aggregation",
+    "text": "Aggregation\n\nWe pass in whatever aggregation we want.\n\nSome common options are provided here.\n\n\n\n\n\nAggregation\nDescription\n\n\n\n\ncount()\nNumber of items\n\n\nfirst(), last()\nFirst and last item\n\n\nmean(), median()\nMean and median\n\n\nmin(), max()\nMinimum and maximum\n\n\nstd(), var()\nStandard deviation and variance\n\n\nmad()\nMean absolute deviation\n\n\nprod()\nProduct of all items\n\n\nsum()\nSum of all items\n\n\nvalue_counts()\nCounts of unique values"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#add-a-new-variable-with-groupby.transform",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#add-a-new-variable-with-groupby.transform",
+    "title": "Lecture 19",
+    "section": "Add a New Variable with GroupBy.transform()",
+    "text": "Add a New Variable with GroupBy.transform()\n\n\nJust like the agg() method, the transform() method can accept the aggregation method (e.g., 'sum', 'mean').\nUnlike the agg() method, the transform() method does not collapse DataFrame and goes back to the original index.\n\n\nsectors['Revenues_M'].transform('min')\nsectors['Profits_M'].transform('max')\nsectors['Number_of_employees'].transform('mean')"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#add-a-new-variable-with-groupby.transform-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#add-a-new-variable-with-groupby.transform-1",
+    "title": "Lecture 19",
+    "section": "Add a New Variable with GroupBy.transform()",
+    "text": "Add a New Variable with GroupBy.transform()\nfortune['Revenues_M_min'] = sectors['Revenues_M'].transform('min')\nfortune['Profits_M_max'] = sectors['Profits_M'].transform('max')\nfortune['Number_of_employees_mean'] = sectors['Number_of_employees'].transform('mean')\n\nSince the transform() method returns a Series with the index label that is the same as in the original DataFrame, it can be used to add a new variable to the original DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#add-new-variables-with-assign-and-groupby.transform",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#add-new-variables-with-assign-and-groupby.transform",
+    "title": "Lecture 19",
+    "section": "Add New Variables with assign() and GroupBy.transform()",
+    "text": "Add New Variables with assign() and GroupBy.transform()\nsectors = fortune.groupby(\"Sector\")\n\nfortune = fortune.assign(\n    Revenues_M_min = sectors['Revenues_M'].transform('min'),\n    Profits_M_max = sectors['Profits_M'].transform('max'),\n    Number_of_employees_mean = sectors['Number_of_employees'].transform('mean')\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#agg-vs.-transform",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#agg-vs.-transform",
+    "title": "Lecture 19",
+    "section": "agg() vs. transform()",
+    "text": "agg() vs. transform()\n\nUse .agg() with .groupby() when you want to take multiple values and return a single (aggregated) value for each group.\n\nGroups become the new index labels.\n\nUse .transform() with .groupby() when you want to perform computations on your groups but you want to return a single (aggregated) value for each observation.\n\nThat is, .transform() does not collapse the DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations",
+    "title": "Lecture 19",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Questions 1-6 in Classwork 13!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-1",
+    "title": "Lecture 19",
+    "section": "Grouping by Multiple Variables",
+    "text": "Grouping by Multiple Variables\nsector_and_industry = fortune.groupby([\"Sector\", \"Industry\"])\n\nWe can create DataFrameGroupBy object with values from multiple variables.\n\nThis operation is optimal when a combination of variables serves as the best identifier for a group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-2",
+    "title": "Lecture 19",
+    "section": "Grouping by Multiple Variables",
+    "text": "Grouping by Multiple Variables\n(\n    sector_and_industry\n    .size()\n    .reset_index(name = \"n\")\n)\n\nThe DataFrameGroupBy object’s size() method now returns a MultiIndex Series with a count of observations for each internal group.\nThe reset_index() method can be used to convert a Series into a DataFrame.\n\nThe name option renames a variable of index when resetting index."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-3",
+    "title": "Lecture 19",
+    "section": "Grouping by Multiple Variables",
+    "text": "Grouping by Multiple Variables\nsector_and_industry.get_group((\"Business Services\", \"Financial Data Services\"))\n\nThe get_group() method requires a tuple of values to extract a nested DataFrame from the GroupBy collection."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#grouping-by-multiple-variables-4",
+    "title": "Lecture 19",
+    "section": "Grouping by Multiple Variables",
+    "text": "Grouping by Multiple Variables\nsector_and_industry.sum()\nsector_and_industry[\"Revenues_M\"].mean()\n\n(\n    sector_and_industry[\"Revenues_M\"]\n    .mean()\n    .reset_index()\n)\n\nFor all aggregations, pandas returns a MultiIndex DataFrame with the calculations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-1",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nsample(frac=1): This samples 100% of the observations from the DataFrame, effectively shuffling it.\n\nThe frac parameter specifies the fraction of observations to return in the random sample, so frac=1 means “return all observations”."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-2",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nSuppose that we want to apply a custom operation to each group in a GroupBy object.\n\nFor practice, let’s now shuffle observations in fortune.\n\n\n\nfortune_shuffled = (\n    fortune\n    .sample( frac = 1 )\n    .reset_index( drop = True )\n)\n\nreset_index(): This resets the index of the DataFrame.\n\nThe drop = True option is used to prevent the old index from being added as a variable in the new DataFrame."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-3",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\nHow can we identify top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-4",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a custom function that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the custom function.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\n# labmda function\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-5",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-5",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nTo rewrite the get_largest_obs function as a lambda function, we would define it as follows:\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-6",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-6",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-7",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-7",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nHow can we apply a custom function with multiple parameters to a GroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a custom function with multiple parameters to a GroupBy object, we need to provide the rest of arguments to the apply() method."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-8",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-custom-operation-to-all-groups-8",
+    "title": "Lecture 19",
+    "section": "Applying a Custom Operation to All Groups",
+    "text": "Applying a Custom Operation to All Groups\n\n\nCan we apply a lambda function with multiple parameters to a GroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-1",
+    "title": "Lecture 19",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 7 of Classwork 13!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-2",
+    "title": "Lecture 19",
+    "section": "Group Operations",
+    "text": "Group Operations\nLet’s do Question 8 of Classwork 13!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-with-groupby-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-with-groupby-1",
+    "title": "Lecture 19",
+    "section": "Group Operations with groupby()",
+    "text": "Group Operations with groupby()\n\nThe pandas library’s DataFrameGroupBy object is a storage container for grouping observations into buckets.\nIt provides a set of methods to aggregate and analyze each independent group in the collection.\nIt allows us to extract observations at specific index positions within each group.\nIt also offers a convenient way to iterate over the groups of observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#why-group-operations",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#why-group-operations",
+    "title": "Lecture 19",
+    "section": "Why Group Operations?",
+    "text": "Why Group Operations?\n\n\nSuppose that we are interested in calculating the average revenue for each sector.\nLet’s pull out all companies with a Sector value of \"Retailing\".\n\nThen, calculate the Retailing sector’s average revenue:\n\n\n\nfortune[\"Sector\"].unique()\n\nin_retailing =  fortune[\"Sector\"] == \"Retailing\" \nretail_companies = fortune[ in_retailing ]\nretail_companies[\"Revenues_M\"].mean()\n\nWithout a group operation, we may need to write a lot of additional code to apply the same logic to the other 20 sectors in fortune.\n\nPandas’ DataFrameGroupBy object offers the best solution out of the box."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html",
+    "href": "danl-cw/danl-210-cw-13.html",
+    "title": "Classwork 13",
+    "section": "",
+    "text": "The dataset ,cereals_oatmeal.csv,(with its pathname https://bcdanl.github.io/data/cereals_oatmeal.csv) is a listing of 77 popular breakfast cereals and oatmeal.\n\ncereal = pd.read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#direction",
+    "href": "danl-cw/danl-210-cw-13.html#direction",
+    "title": "Classwork 13",
+    "section": "",
+    "text": "The dataset ,cereals_oatmeal.csv,(with its pathname https://bcdanl.github.io/data/cereals_oatmeal.csv) is a listing of 77 popular breakfast cereals and oatmeal.\n\ncereal = pd.read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-1",
+    "href": "danl-cw/danl-210-cw-13.html#question-1",
+    "title": "Classwork 13",
+    "section": "Question 1",
+    "text": "Question 1\nGroup the cereals_oatmeal, using the Manufacturer variable.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-2",
+    "href": "danl-cw/danl-210-cw-13.html#question-2",
+    "title": "Classwork 13",
+    "section": "Question 2",
+    "text": "Question 2\nDetermine the total number of groups, and the number of cereals per group.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-3",
+    "href": "danl-cw/danl-210-cw-13.html#question-3",
+    "title": "Classwork 13",
+    "section": "Question 3",
+    "text": "Question 3\nExtract the cereals that belong to the manufacturer \"Kellogg's\".\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-4",
+    "href": "danl-cw/danl-210-cw-13.html#question-4",
+    "title": "Classwork 13",
+    "section": "Question 4",
+    "text": "Question 4\nCalculate the average of values in the Calories, Fiber, and Sugars variables for each manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-5",
+    "href": "danl-cw/danl-210-cw-13.html#question-5",
+    "title": "Classwork 13",
+    "section": "Question 5",
+    "text": "Question 5\nFind the maximum value in the Sugars variable for each manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-6",
+    "href": "danl-cw/danl-210-cw-13.html#question-6",
+    "title": "Classwork 13",
+    "section": "Question 6",
+    "text": "Question 6\nFind the minimum value in the Fiber variable for each manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-7",
+    "href": "danl-cw/danl-210-cw-13.html#question-7",
+    "title": "Classwork 13",
+    "section": "Question 7",
+    "text": "Question 7\n\nCalculate a ‘Normalized_Sugars’ variable for each product by Manufacturer, where the normalization formula is\n\n\\[\n\\text{Normalized\\_Sugars} = \\frac{\\text{Sugars} - \\text{mean(Sugars)}}{\\text{std(Sugars)}}\n\\]\nfor each Manufacturer group. This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-13.html#question-8",
+    "href": "danl-cw/danl-210-cw-13.html#question-8",
+    "title": "Classwork 13",
+    "section": "Question 8",
+    "text": "Question 8\nExtract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.\nAnswer:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions-udfs-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions-udfs-1",
+    "title": "Lecture 19",
+    "section": "Primer on User-Defined Functions (UDFs)",
+    "text": "Primer on User-Defined Functions (UDFs)\n\nA function can take any number and type of input parameters and return any number and type of output results.\nWe can do two things with a function:\n\nDefine it\nCall it"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions",
+    "title": "Lecture 19",
+    "section": "Primer on User-Defined Functions",
+    "text": "Primer on User-Defined Functions\n\n\nTo define a Python function, we type def, the function name, parentheses enclosing any input parameters to the function, and then finally, a colon (:).\nLet’s define a very simple function my_half() that has a parameter x and returns a value x / 2.\n\n\ndef my_half(x):\n    return x / 2\n    \nmy_half(2)\n\nThe values we pass into the function when we call it are known as arguments.\nWhen we call a function with arguments, the values of those arguments are copied to their corresponding parameters inside the function."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions---lambda-functions",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions---lambda-functions",
+    "title": "Lecture 19",
+    "section": "Primer on User-Defined Functions - Lambda Functions",
+    "text": "Primer on User-Defined Functions - Lambda Functions\n\n\nA Python lambda function is an anonymous function expressed as a single statement.\n\nIt is defined with the lambda keyword, which has no meaning other than “we are declaring an anonymous function”:\n\n\n\ndef my_half(x):\n    return x / 2\n    \nequiv_my_half = lambda x: x / 2\n\nmy_half(2)\nequiv_my_half(2)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions---positional-arguments",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#primer-on-user-defined-functions---positional-arguments",
+    "title": "Lecture 19",
+    "section": "Primer on User-Defined Functions - Positional Arguments",
+    "text": "Primer on User-Defined Functions - Positional Arguments\n\n\nPositional arguments in Python functions are arguments that need to be included in the correct position or order.\n\nWhen we call the function, we need to provide the corresponding inputs in the same order.\n\n\ndef my_ratio(x, y):\n    return x / y\n    \nequiv_my_ratio = lambda x, y: x / y\n\nmy_ratio(4, 2)\nmy_ratio(2, 4)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-1",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nHow can we apply the nlargest() method to each group?\n\nFirst, define a UDF that accepts a single argument: a DataFrame.\nSecond, pass the apply() method the UDF.\n\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(get_largest_obs)\n\n# labmda function\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-2",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nTo rewrite the get_largest_obs function as a lambda function, we would define it as follows:\n\n\ndef get_largest_obs(df):\n    return df.nlargest(1, \"Revenues_M\", keep=\"all\")\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nWe can use the apply() method when pandas does not support a custom aggregation we would like to apply to each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-3",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-4",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nHow can we apply a UDF with multiple parameters to DataFrameGroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a UDF with multiple parameters to DataFrameGroupBy object, we need to provide the rest of arguments to the apply() method."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-5",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-5",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nCan we apply a lambda function with multiple parameters to DataFrameGroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-6",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-6",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nTo rewrite our get_largest_obs function as a lambda function with the apply() method, we can do the following.\n\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-7",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-7",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nHow can we apply a UDF with multiple parameters to DataFrameGroupBy object?\n\n\ndef get_nlargest_obs(df, n, var):\n  return df.nlargest(n, var, keep = \"all\")\n\nsectors.apply(get_nlargest_obs, 2, \"Revenues_M\")\n\nWhen applying a UDF with multiple parameters to DataFrameGroupBy object, we need to provide the rest of arguments to the apply() method."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-8",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups-8",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nCan we apply a lambda function with multiple parameters to DataFrameGroupBy object?\n\n\nsectors.apply(lambda df: df.nlargest(2, \"Revenues_M\", keep=\"all\"))\n\nLambda functions do not support passing additional parameters directly in the apply() method!\n\nWe would typically need to provide arguments to additional parameters within the lambda function."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#creating-a-dataframegroupby-object-from-a-dataset",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#creating-a-dataframegroupby-object-from-a-dataset",
+    "title": "Lecture 19",
+    "section": "Creating a DataFrameGroupBy object from a dataset",
+    "text": "Creating a DataFrameGroupBy object from a dataset\nsectors = fortune.groupby(\"Sector\")\nsectors['Revenues_M'].mean()\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\n\nThe DataFrameGroupBy object implicitly organizes observations into groups based on shared values in a categorical variable.\nWe can count the number of groups in sectors by passing the DataFrameGroupBy object into the Python’s built-in len() function\nThe size() method on the DataFrameGroupBy object returns a Series with an alphabetical list of the groups and their observation counts."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a DataFrameGroupBy object",
+    "text": "Attributes and methods of a DataFrameGroupBy object\nsectors.groups\n\nThe groups attribute stores a dictionary with associations of group-to-observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-1",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a DataFrameGroupBy object",
+    "text": "Attributes and methods of a DataFrameGroupBy object\n\n\nWhat if we want to find the highest-performing company (by revenue) within each sector?\n\n\nsectors.first()\nsectors.last()\n\nThe DataFrameGroupBy object’s first()/last() method extracts the first/last observation listed for each group in a DataFrame.\n\nSince our fortune DataFrame is sorted by Revenue_M, the first company pulled out for each sector will be the highest-performing company within that sector."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-2",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a DataFrameGroupBy object",
+    "text": "Attributes and methods of a DataFrameGroupBy object\nsectors.nth(0)\nsectors.nth(1)\nfortune[fortune[\"Sector\"] == \"Apparel\"]\n\nThe nth() method is used with a DataFrameGroupBy object to select the nth observation from each group.\n\nHere we can confirm the output is correct by filtering for the “Apparel” observations in fortune."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-3",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a DataFrameGroupBy object",
+    "text": "Attributes and methods of a DataFrameGroupBy object\nsectors.head(2)\nsectors.tail(2)\n\nThe head(n)/tail(n) method extracts the first/last n observations from each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributes-and-methods-of-a-dataframegroupby-object-4",
+    "title": "Lecture 19",
+    "section": "Attributes and methods of a DataFrameGroupBy object",
+    "text": "Attributes and methods of a DataFrameGroupBy object\nsectors.get_group(\"Energy\")\ntype( sectors.get_group(\"Energy\") )\n\nWe can use the get_group() method to extract all observations in a given group.\n\nThe method returns a DataFrame containing the observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of a DataFrameGroupBy object",
+    "text": "Attributes/Methods of a DataFrameGroupBy object\nsectors.groups\n\nThe groups attribute stores a dictionary with associations of group-to-observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-1",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of a DataFrameGroupBy object",
+    "text": "Attributes/Methods of a DataFrameGroupBy object\n\n\nWhat if we want to find the highest-performing company (by revenue) within each sector?\n\n\nsectors.first()\nsectors.last()\n\nThe DataFrameGroupBy object’s first()/last() method extracts the first/last observation listed for each group in a DataFrame.\n\nSince our fortune DataFrame is sorted by Revenue_M, the first company pulled out for each sector will be the highest-performing company within that sector."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-2",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of a DataFrameGroupBy object",
+    "text": "Attributes/Methods of a DataFrameGroupBy object\nsectors.nth(0)\nsectors.nth(1)\nfortune[fortune[\"Sector\"] == \"Apparel\"]\n\nThe nth() method is used with a DataFrameGroupBy object to select the nth observation from each group.\n\nHere we can confirm the output is correct by filtering for the “Apparel” observations in fortune."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-3",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of a DataFrameGroupBy object",
+    "text": "Attributes/Methods of a DataFrameGroupBy object\nsectors.head(2)\nsectors.tail(2)\n\nThe head(n)/tail(n) method extracts the first/last n observations from each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-a-dataframegroupby-object-4",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of a DataFrameGroupBy object",
+    "text": "Attributes/Methods of a DataFrameGroupBy object\nsectors.get_group(\"Energy\")\ntype( sectors.get_group(\"Energy\") )\n\nWe can use the get_group() method to extract all observations in a given group.\n\nThe method returns a DataFrame containing the observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#creating-dataframegroupby-object-from-a-dataset",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#creating-dataframegroupby-object-from-a-dataset",
+    "title": "Lecture 19",
+    "section": "Creating DataFrameGroupBy object from a dataset",
+    "text": "Creating DataFrameGroupBy object from a dataset\nsectors = fortune.groupby(\"Sector\")\nsectors['Revenues_M'].mean()\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\n\nThe DataFrameGroupBy object implicitly organizes observations into groups based on shared values in a categorical variable.\nWe can count the number of groups in sectors by passing the DataFrameGroupBy object into the Python’s built-in len() function\nThe size() method on the DataFrameGroupBy object returns a Series with an alphabetical list of the groups and their observation counts."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of DataFrameGroupBy object",
+    "text": "Attributes/Methods of DataFrameGroupBy object\nsectors.groups\n\nThe groups attribute stores a dictionary with associations of group-to-observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-1",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of DataFrameGroupBy object",
+    "text": "Attributes/Methods of DataFrameGroupBy object\n\n\nWhat if we want to find the highest-performing company (by revenue) within each sector?\n\n\nsectors.first()\nsectors.last()\n\nThe DataFrameGroupBy object’s first()/last() method extracts the first/last observation listed for each group in a DataFrame.\n\nSince our fortune DataFrame is sorted by Revenue_M, the first company pulled out for each sector will be the highest-performing company within that sector."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-2",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-2",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of DataFrameGroupBy object",
+    "text": "Attributes/Methods of DataFrameGroupBy object\nsectors.nth(0)\nsectors.nth(1)\nfortune[fortune[\"Sector\"] == \"Apparel\"]\n\nThe nth() method is used with DataFrameGroupBy object to select the nth observation from each group.\n\nHere we can confirm the output is correct by filtering for the “Apparel” observations in fortune."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-3",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-3",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of DataFrameGroupBy object",
+    "text": "Attributes/Methods of DataFrameGroupBy object\nsectors.head(2)\nsectors.tail(2)\n\nThe head(n)/tail(n) method extracts the first/last n observations from each group."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-4",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#attributesmethods-of-dataframegroupby-object-4",
+    "title": "Lecture 19",
+    "section": "Attributes/Methods of DataFrameGroupBy object",
+    "text": "Attributes/Methods of DataFrameGroupBy object\nsectors.get_group(\"Energy\")\ntype( sectors.get_group(\"Energy\") )\n\nWe can use the get_group() method to extract all observations in a given group.\n\nThe method returns a DataFrame containing the observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-with-dataframegroupby-1",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#group-operations-with-dataframegroupby-1",
+    "title": "Lecture 19",
+    "section": "Group Operations with DataFrameGroupBy",
+    "text": "Group Operations with DataFrameGroupBy\n\nThe pandas library’s DataFrameGroupBy object is a storage container for grouping observations into buckets.\nIt provides a set of methods to aggregate and analyze each independent group in the collection.\nIt allows us to extract observations at specific index positions within each group.\nIt also offers a convenient way to iterate over the groups of observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#creating-dataframegroupby-object",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#creating-dataframegroupby-object",
+    "title": "Lecture 19",
+    "section": "Creating DataFrameGroupBy Object",
+    "text": "Creating DataFrameGroupBy Object\nsectors = fortune.groupby(\"Sector\")\nsectors['Revenues_M'].mean()\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\nsectors.describe()\n\nThe DataFrameGroupBy object implicitly organizes observations into groups based on shared values in a categorical variable.\nWe can count the number of groups in sectors by passing the DataFrameGroupBy object into the Python’s built-in len() function\nThe size() method on the DataFrameGroupBy object returns a Series with an alphabetical list of the groups and their observation counts."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#useful-aggregation",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#useful-aggregation",
+    "title": "Lecture 19",
+    "section": "Useful Aggregation",
+    "text": "Useful Aggregation\n\n\n\n\n\n\n\nAggregation\nDescription\n\n\n\n\nsize()\nNumber of observations in each group\n\n\ncount()\nNumber of non-missing values in each group\n\n\nnunique()\nNumber of unique/distinct values in each group\n\n\nvalue_counts()\nCount of unique values for a categorical variable within each group\n\n\nmean(), median()\nMean and median values\n\n\nmin(), max()\nMinimum and maximum values\n\n\nstd()\nStandard deviation\n\n\nsum()\nSum of all values\n\n\n\n\nWe pass in whatever aggregation we want."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#growth-rate",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#growth-rate",
+    "title": "Lecture 19",
+    "section": "Growth Rate",
+    "text": "Growth Rate\n# Example data\ndata = {\n    'company': ['A', 'A', 'A', 'B', 'B', 'B'],\n    'year': [2023, 2022, 2021, 2023, 2022, 2021],\n    'revenue': [150, 120, 100, 100, 90, 80]\n}\ndf = pd.DataFrame(data)\n\n# DataFrame is already sorted company ascending, year descending\ndf = df.sort_values(['company', 'year'], ascending=[True, False])\n\n# Calculate growth rate\ndf['revenue_last_year'] = df.groupby('company')['revenue'].shift(-1)\ndf['growth_rate'] = (df['revenue'] - df['revenue_last_year']) / df['revenue_last_year']"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#dataframegroupby.transform-with-shift",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#dataframegroupby.transform-with-shift",
+    "title": "Lecture 19",
+    "section": "DataFrameGroupBy.transform() with shift()",
+    "text": "DataFrameGroupBy.transform() with shift()\n\n\nDatashift()Growth Rate\n\n\n\nfortune_2021_2024 contains 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.\n\nfortune_2021_2024 = pd.read_csv(\"https://bcdanl.github.io/data/fortune741_2021_2024.csv\")\n\nHere we are interested in calculating the yearly revenue growth rate for each company in fortune_2021_2024 using the following formula: \\[\n\\text{GrowthRateOfRevenue}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]\n\n\n\ndf['Revenues_M_last_year'] = df.groupby('Company')['Revenues_M'].shift(-1)\n\nWhat shift() does in pandas:\n\nshift() moves values up or down along the index (rows).\nIt shifts the data by a number of periods (default is 1 period down).\nIt is often used to compare a row with a previous (or future) row. - shift(1): shift down (default) - shift(-1): shift up\n\n\n\n\n# Calculate yearly growth rate of revenue\ndf['GrowthRate_Revenue'] = (df['Revenues_M'] - df['Revenues_M_last_year']) / df['Revenues_M_last_year']"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#groupby.transform-with-shift",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#groupby.transform-with-shift",
+    "title": "Lecture 19",
+    "section": "GroupBy.transform() with shift()",
+    "text": "GroupBy.transform() with shift()\n\n\nDatashift()Growth Rate\n\n\n\nfortune_2021_2024 contains 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.\n\nfortune_2021_2024 = pd.read_csv(\"https://bcdanl.github.io/data/fortune741_2021_2024.csv\")\n\nHere we are interested in calculating the yearly revenue growth rate for each company in fortune_2021_2024 using the following formula: \\[\n\\text{(Revenue Growth Rate)}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]\n\n\n\ndf['Revenues_M_last_year'] = df.groupby('Company')['Revenues_M'].shift(-1)\n\nWhat shift() does in pandas:\n\nshift() moves values up or down along the index (rows).\nIt shifts the data by a number of periods (default is 1 period down).\nIt is often used to compare a row with a previous (or future) row.\n\nshift(1): shift down (default)\nshift(-1): shift up\n\n\n\n\n\ndf['GrowthRate_Revenue'] = (df['Revenues_M'] - df['Revenues_M_last_year']) / df['Revenues_M_last_year']\n\\[\n\\text{(Revenue Growth Rate)}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html",
+    "title": "Lecture 19",
+    "section": "",
+    "text": "The pandas library’s DataFrameGroupBy object is a storage container for grouping observations into buckets.\nIt provides a set of methods to aggregate and analyze each independent group in the collection.\nIt allows us to extract observations at specific index positions within each group.\nIt also offers a convenient way to iterate over the groups of observations.\n\n\n\n\n\n\nThe Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.\n\nThe list is updated annually by the business magazine Fortune.\nThe fortune1000_2024.csv file is a collection of Fortune 1000 companies in 2024\n\n\n\nfortune1000 = pd.read_csv(\"https://bcdanl.github.io/data/fortune1000_2024.csv\")\n\nfortune1000.columns\n\nfortune = fortune1000[['Rank', 'Company', 'Sector', 'Industry', 'Revenues_M', 'Profits_M', 'Number_of_Employees']]\n\nA sector can have many companies; An industry is a subcategory within a sector.\nLet’s explore the fortune.\n\nHow many unique sectors are in fortune?\n\n\n\n\n\n\n\nSuppose that we are interested in calculating the average revenue for each sector.\nLet’s pull out all companies with a Sector value of \"Retailing\".\n\nThen, calculate the Retailing sector’s average revenue:\n\n\n\nfortune[\"Sector\"].unique()\n\nin_retailing =  fortune[\"Sector\"] == \"Retailing\" \nretail_companies = fortune[ in_retailing ]\nretail_companies[\"Revenues_M\"].mean()\n\nWithout a group operation, we may need to write a lot of additional code to apply the same logic to the other 20 sectors in fortune.\n\nPandas’ DataFrameGroupBy object offers the best solution out of the box.\n\n\n\n\n\nsectors = fortune.groupby(\"Sector\")\nsectors['Revenues_M'].mean()\nlen(sectors)    # fortune[\"Sector\"].nunique()\nsectors.size()\nsectors.describe()\n\nThe DataFrameGroupBy object implicitly organizes observations into groups based on shared values in a categorical variable.\nWe can count the number of groups in sectors by passing the DataFrameGroupBy object into the Python’s built-in len() function\nThe size() method on the DataFrameGroupBy object returns a Series with an alphabetical list of the groups and their observation counts.\n\n\n\n\nsectors.groups\n\nThe groups attribute stores a dictionary with associations of group-to-observations.\n\n\n\n\n\n\nWhat if we want to find the highest-performing company (by revenue) within each sector?\n\n\nsectors.first()\nsectors.last()\n\nThe DataFrameGroupBy object’s first()/last() method extracts the first/last observation listed for each group in a DataFrame.\n\nSince our fortune DataFrame is sorted by Revenue_M, the first company pulled out for each sector will be the highest-performing company within that sector.\n\n\n\n\n\nsectors.nth(0)\nsectors.nth(1)\nfortune[fortune[\"Sector\"] == \"Apparel\"]\n\nThe nth() method is used with DataFrameGroupBy object to select the nth observation from each group.\n\nHere we can confirm the output is correct by filtering for the “Apparel” observations in fortune.\n\n\n\n\n\nsectors.head(2)\nsectors.tail(2)\n\nThe head(n)/tail(n) method extracts the first/last n observations from each group.\n\n\n\n\nsectors.get_group(\"Energy\")\ntype( sectors.get_group(\"Energy\") )\n\nWe can use the get_group() method to extract all observations in a given group.\n\nThe method returns a DataFrame containing the observations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups",
+    "href": "danl-lec/danl-210-lec-19-2025-0428.html#applying-a-udf-to-all-groups",
+    "title": "Lecture 19",
+    "section": "Applying a UDF to All Groups",
+    "text": "Applying a UDF to All Groups\n\n\nSuppose that we want to apply a UDF to each group in DataFrameGroupBy object.\n\nFor practice, let’s consider the fortune_shuffled DataFrame, where the observations in fortune are shuffled.\n\n\n\nfortune_shuffled = pd.read_csv(\"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv\")\n\nHow can we get a DataFrame with top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html",
+    "href": "danl-ex/danl-210-exam-2-a.html",
+    "title": "Midterm Exam II",
+    "section": "",
+    "text": "The distribution of scores for Midterm Exam II is shown below:\n\n\n\n\n\nThe distribution of raw scores for Data Collection in Midterm Exam II is shown below:\n\n\n\n\n\nThe distribution of raw scores for Pandas in Midterm Exam II is shown below:\n\n\n\n\n\n\nThe following provides the descriptive statistics for each part of the Midterm Exam II:"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-1-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-1-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 1 (Points: 4)",
+    "text": "Question 1 (Points: 4)\n\nWrite pandas code that reads the HTML table from the front page of the website URL stored in url into a DataFrame called df.\n\n\n\nClick to Check the Answer!\ndf = pd.read_html(url)[0]"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-2-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-2-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 2 (Points: 4)",
+    "text": "Question 2 (Points: 4)\n\nWrite code to load the first/front page of the website for the url on the Chrome browser that is being controlled by automated test software, called selenium.\n\n\n\nClick to Check the Answer!\ndriver.get(url)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-3-points-20",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-3-points-20",
+    "title": "Midterm Exam II",
+    "section": "Question 3 (Points: 20)",
+    "text": "Question 3 (Points: 20)\n\nWrite Python code to scrape every quote from a paginated website (unknown number of pages, 10 quotes per page) by repeatedly clicking the Next button until it disappears.\n\nOn each page, extract each quote and its author into a column quote_author and its associated tags into tags, appending them to a DataFrame named df_clean.\nAfter loading each page, pause execution for a random 1–2 second interval.\nExamine below XPath examples for quote_author (rows 2, 4, 6, …) and tags (rows 3, 5, 7, …), identify that pattern of even vs. odd row numbers, and use it to build your f-strings for locating each element.\n\n\n\n# Table body - quote with author\nxpath_quote_author_01 = '/html/body/div/table/tbody/tr[2]/td'\nxpath_quote_author_02 = '/html/body/div/table/tbody/tr[4]/td'\nxpath_quote_author_03 = '/html/body/div/table/tbody/tr[6]/td'\nxpath_quote_author_04 = '/html/body/div/table/tbody/tr[8]/td'\nxpath_quote_author_05 = '/html/body/div/table/tbody/tr[10]/td'\nxpath_quote_author_06 = '/html/body/div/table/tbody/tr[12]/td'\nxpath_quote_author_07 = '/html/body/div/table/tbody/tr[14]/td'\nxpath_quote_author_08 = '/html/body/div/table/tbody/tr[16]/td'\nxpath_quote_author_09 = '/html/body/div/table/tbody/tr[18]/td'\nxpath_quote_author_10 = '/html/body/div/table/tbody/tr[20]/td'\n\n# Table body - tags\nxpath_tags_01 = '/html/body/div/table/tbody/tr[3]/td'\nxpath_tags_02 = '/html/body/div/table/tbody/tr[5]/td'\nxpath_tags_03 = '/html/body/div/table/tbody/tr[7]/td'\nxpath_tags_04 = '/html/body/div/table/tbody/tr[9]/td'\nxpath_tags_05 = '/html/body/div/table/tbody/tr[11]/td'\nxpath_tags_06 = '/html/body/div/table/tbody/tr[13]/td'\nxpath_tags_07 = '/html/body/div/table/tbody/tr[15]/td'\nxpath_tags_08 = '/html/body/div/table/tbody/tr[17]/td'\nxpath_tags_09 = '/html/body/div/table/tbody/tr[19]/td'\nxpath_tags_10 = '/html/body/div/table/tbody/tr[21]/td'\n\n\n\nClick to Check the Answer!\ndf_clean = pd.DataFrame()\nwhile True:\n    \n    try:\n        btn = driver.find_element(By.PARTIAL_LINK_TEXT, \"Next\")\n    except:\n        btn = []\n\n    for i in range(1,11):\n        j = i*2\n        k = i*2+1\n        \n        xpath_quote_author = f'/html/body/div/table/tbody/tr[{j}]/td'\n        xpath_tags = f'/html/body/div/table/tbody/tr[{k}]/td'\n        \n        quote_author = driver.find_element(By.XPATH, xpath_quote_author).text\n        tags = driver.find_element(By.XPATH, xpath_tags).text\n        \n        lst = [quote_author, tags]\n        obs = pd.DataFrame([lst])\n        df_clean = pd.concat([df_clean, obs])\n    \n    if btn != []:\n        btn.click()\n        time.sleep(random.uniform(1,2))\n    else:\n        break\n      \ndf_clean.columns = ['quote_author', 'tags']"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-4-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-4-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 4 (Points: 4)",
+    "text": "Question 4 (Points: 4)\n\nWrite one-line code to export the df_clean DataFrame as a CSV file named table_quotes.csv inside the data subfolder of the current working directory given by wd_path.\n\nEnsure that the CSV does not include row index of the df_clean DataFrame.\n\n\n\n\nClick to Check the Answer!\ndf_clean.to_csv('data/quotes_table.csv', index=False, encoding = 'utf-8-sig')"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-5-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-5-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 5 (Points: 4)",
+    "text": "Question 5 (Points: 4)\n\nWrite a one-line code to quit the Chrome browser that is being controlled by automated test software, called selenium.\n\n\n\nClick to Check the Answer!\ndriver.quit()"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-6-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-6-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 6 (Points: 4)",
+    "text": "Question 6 (Points: 4)\n\nIn the client–server model of the web, which statement is true?\n\n\nA client hosts webpages, and a server displays them to users.\nA client requests data, and a server responds with data.\nClients and servers are the same machine communicating via HTTPS.\nA server initiates requests, and a client responds with data.\n\n\n\nClick to Check the Answer!\nb. A client requests data, and a server responds with data."
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-7-points-10",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-7-points-10",
+    "title": "Midterm Exam II",
+    "section": "Question 7 (Points: 10)",
+    "text": "Question 7 (Points: 10)\n\nFill in the following 5 blanks to make a request to the FRED API for collecting the U.S. unemployment rate (series_id = “UNRATE”)\n\n\n\nClick to Check the Answer!\nimport requests\nimport pandas as pd\nparam_dicts = {\n  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n  'file_type': 'json',\n  'series_id': ___BLANK_1___    ## ID for series data from the FRED\n}\napi_endpoint = \"https://api.stlouisfed.org/fred/series/observations\"\nresponse = ___BLANK_2___\n\n# Check if the server successfully sends the requested content\nif ___BLANK_3___:\n    # Convert JSON response to Python dictionary.\n    content = ___BLANK_4___\n\n    # Create a DataFrame of key 'observations's value from the content dictionary\n    df = pd.DataFrame( ___BLANK_5___ )\nelse:\n    print(\"The server cannot find the requested content\")\n\n\nkey-value pairs in the content dictionary\n\n\n\n\n\n\nAnswer for ___BLANK_1___:\n\n\nClick to Check the Answer!\n\"UNRATE\"\n\n\n\nAnswer for ___BLANK_2___:\n\n\nClick to Check the Answer!\nrequests.get(api_endpoint, params=param_dicts)\n\n\n\nAnswer for ___BLANK_3___:\n\n\nClick to Check the Answer!\nresponse.status_code == 200\n\n\n\nAnswer for ___BLANK_4___:\n\n\nClick to Check the Answer!\nresponse.json()\n\n\n\nAnswer for ___BLANK_5___:\n\n\nClick to Check the Answer!\ncontent['observations']"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#variable-description",
+    "href": "danl-ex/danl-210-exam-2-a.html#variable-description",
+    "title": "Midterm Exam II",
+    "section": "Variable Description",
+    "text": "Variable Description\n\npid: playlist ID; unique ID for playlist\nplaylist_name: a name of playlist\npos: a position of the track within a playlist (starting from 0)\nartist_name: name of the track’s primary artist\ntrack_name: name of the track\nduration_ms: duration of the track in milliseconds"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#definition-of-a-song",
+    "href": "danl-ex/danl-210-exam-2-a.html#definition-of-a-song",
+    "title": "Midterm Exam II",
+    "section": "Definition of a Song",
+    "text": "Definition of a Song\n\nIn Section 1, a song is defined as a combination of a artist_name value and a track_name value.\nE.g., the following provides the 12 distinct songs with the same track_name—I Love You:\n\n\n\n\n\n\nIndex\nartist_name\ntrack_name\n\n\n\n\n0\nAlex & Sierra\nI Love You\n\n\n1\nAlex Clare\nI Love You\n\n\n2\nAxwell /\\ Ingrosso\nI Love You\n\n\n3\nBeat Happening\nI Love You\n\n\n4\nClimax Blues Band\nI Love You\n\n\n5\nCéline Dion\nI Love You\n\n\n6\nDonna Summer\nI Love You\n\n\n7\nEli Young Band\nI Love You\n\n\n8\nFaith Evans\nI Love You\n\n\n9\nMary J. Blige\nI Love You\n\n\n10\nOMFG\nI Love You\n\n\n11\nSaid The Whale\nI Love You"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-8-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-8-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 8 (Points: 4)",
+    "text": "Question 8 (Points: 4)\n\nComplete the following line so that num_columns is assigned the total number of columns in the spotify DataFrame as an integer:\n\nnum_columns = spotify._______________________________________________\n\n\nClick to Check the Answer!\nnum_columns = spotify.shape[1]"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-9-points-4",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-9-points-4",
+    "title": "Midterm Exam II",
+    "section": "Question 9 (Points: 4)",
+    "text": "Question 9 (Points: 4)\n\nWrite code to count how many tracks each playlist contains.\n\n\n\nClick to Check the Answer!\nspotify[['pid', 'playlist_name']].value_counts().reset_index()"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-10-points-5",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-10-points-5",
+    "title": "Midterm Exam II",
+    "section": "Question 10 (Points: 5)",
+    "text": "Question 10 (Points: 5)\n\nWrite code to identify playlists that include at least 100 different artists.\n\n\n\nClick to Check the Answer!\nplist_100 = (\n spotify[['pid', 'playlist_name', 'artist_name']]\n .drop_duplicates()\n .value_counts()\n .reset_index()[['pid', 'playlist_name']]\n .value_counts()\n .reset_index()\n .query('count &gt;= 100')\n )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-11-points-5",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-11-points-5",
+    "title": "Midterm Exam II",
+    "section": "Question 11 (Points: 5)",
+    "text": "Question 11 (Points: 5)\n\nWrite code to calculate the proportion of playlists in spotify that contain at least one duplicated song, i.e. (the number of playlists with at least 1 duplicate song) divided by (the total number of distinct playlists)\n\n\n\nClick to Check the Answer!\ndup_T = spotify.duplicated(subset=[\"pid\", \"artist_name\", \"track_name\"])\nduplicate_plist = (\n    spotify[ dup_T ]\n    .drop_duplicates(subset = ['pid', 'playlist_name'])\n    )\n\n\nall_plists = (\n    spotify\n    .drop_duplicates(subset = ['pid', 'playlist_name'])\n    )\n    \nduplicate_plist.shape[0] / all_plist.shape[0]"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-12-points-6",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-12-points-6",
+    "title": "Midterm Exam II",
+    "section": "Question 12 (Points: 6)",
+    "text": "Question 12 (Points: 6)\n\nWrite code to add a new column, duration_cat, to the spotify DataFrame that categorizes duration_ms into:\n\n“short” for tracks under 3 minutes (&lt;180000 ms)\n“medium” for tracks between 3 and 5 minutes (180000–300000 ms)\n“long” for tracks over 5 minutes (&gt;300000 ms)\n\n\n\n\nClick to Check the Answer!\nspotify['duration_cat'] = np.where(spotify['duration_ms'] &lt; 180*1000,\n                                   \"short\", \n                                   \"\")\n\nspotify['duration_cat'] = np.where(spotify['duration_ms'] &gt; 300*1000,\n                                   \"long\", \n                                   spotify['duration_cat'])\n\nspotify['duration_cat'] = np.where(spotify['duration_cat'] == '',\n                                   \"medium\", \n                                   spotify['duration_cat'])"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-13-points-7",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-13-points-7",
+    "title": "Midterm Exam II",
+    "section": "Question 13 (Points: 7)",
+    "text": "Question 13 (Points: 7)\n\nWrite code to find the second most frequently appearing song(s) across all playlists that include “Viva La Vida” (track_name) by “Coldplay” (artist_name).\n\n\n\nClick to Check the Answer!\ncoldplay_list = (\n    spotify.query('artist_name == \"Coldplay\" & track_name == \"Viva La Vida\"')\n    )\n\nafter_coldplay = (\n    spotify[ spotify['pid'].isin(coldplay_list['pid']) ]\n    [ ['artist_name', 'track_name'] ]\n    .value_counts()\n    .reset_index()\n    .nlargest(2, 'count', keep=\"all\")\n    )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-14-points-7",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-14-points-7",
+    "title": "Midterm Exam II",
+    "section": "Question 14 (Points: 7)",
+    "text": "Question 14 (Points: 7)\n\nConsider a DataFrame called songs, derived from spotify, that adds a new variable song by concatenating each row’s artist_name and track_name:\n\n\n\n\n\n\nIndex\npid\nplaylist_name\nsong\n\n\n\n\n0\n0\nThrowbacks\nMissy Elliott - Lose Control (feat. Ciara & Fat Man Scoop)\n\n\n1\n0\nThrowbacks\nBritney Spears - Toxic\n\n\n2\n0\nThrowbacks\nBeyoncé - Crazy In Love\n\n\n\n\n.....\n\n\n\n\n\n\n\n\n\nNote that the songs DataFrame has only the three variables—pid, playlist_name, and song, as shown above.\nWrite code to determine which two different songs appear together in playlists more often than any other pair, as shown below.\n\n(Hint: self‑merge the songs DataFrame on pid to get song_x-song_y pairs, which is a many-to-many join.)\n\n\n\n\n\n\n\nIndex\nsong_x\nsong_y\ncount\n\n\n\n\n76\nKendrick Lamar – HUMBLE.\nLil Uzi Vert – XO TOUR Llif3\n67\n\n\n\n\n\n\n\nBelow is how songs DataFrame is created:\n\nsongs = (\n    spotify\n    .drop_duplicates(subset = ['pid', 'playlist_name', 'artist_name', 'track_name'])\n    [['pid', 'playlist_name', 'artist_name', 'track_name']]\n    )\n\nsongs['song'] = songs['artist_name'] + ' – ' + songs['track_name']\nsongs = songs[['pid', 'playlist_name', 'song']]\n\n\n\nClick to Check the Answer!\npairs = songs.merge(songs, on='pid')\n\npair_counts = (\n    pairs[['song_x','song_y']]\n    .value_counts()\n    .reset_index()\n    .query('song_x != song_y')\n    .nlargest(1, 'count', keep = \"all\")  \n)\n\n# Note: Lexicographic filtering is necessary to treat (song_x, song_y) and (song_y, song_x) as the same pair."
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#variable-description-1",
+    "href": "danl-ex/danl-210-exam-2-a.html#variable-description-1",
+    "title": "Midterm Exam II",
+    "section": "Variable Description",
+    "text": "Variable Description\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nid\nUnique identifier for the product\n\n\nbrandId\nUnique identifier for the brand\n\n\nbrandName\nName of the brand\n\n\nname\nProduct name or title\n\n\nreviewCount\nNumber of customer reviews\n\n\nreviewStarRating\nAverage star rating from customer reviews\n\n\ncurrent_p\nCurrent price\n\n\nclearance_p\nClearance price (NA if not available for clearance)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-15-points-5",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-15-points-5",
+    "title": "Midterm Exam II",
+    "section": "Question 15 (Points: 5)",
+    "text": "Question 15 (Points: 5)\n\nWrite code to identify the top deal product(s), where a deal is defined by all of the following:\n\nOn clearance: the product’s current_p equals its clearance_p.\nHighly reviewed: reviewCount is at or above the 95th percentile of all reviewCount values.\nBest rated: among these clearance, highly‑reviewed products, it has the maximum reviewStarRating (including any ties).\n\n\n\n\n\n\n\nIndex\nid\nbrandId\nbrandName\nname\nreviewCount\nreviewStarRating\ncurrernt_p\nclearance_p\n\n\n\n\n92\n6545910\n9423\nTory Burch\nBallet Loafer\n1008\n4.8\n178\n178\n\n\n393\n7248724\n9423\nTory Burch\nHowell Court Sneaker\n1044\n4.8\n88\n88\n\n\n6318\n5654262\n15361\nSee Kai Run\nStevie II Sneaker\n113\n4.8\n35\n35\n\n\n\n\n\n\n\n\n\nClick to Check the Answer!\nreview_top5 = shoes['reviewCount'].quantile(.95)\nshoes_promo = (\n    shoes[(shoes['clearance_p'] == shoes['currernt_p']) & (shoes['reviewCount'] &gt;= review_top5) ]\n    .nlargest(1, 'reviewStarRating', keep = 'all')\n    )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-2-a.html#question-16-points-7",
+    "href": "danl-ex/danl-210-exam-2-a.html#question-16-points-7",
+    "title": "Midterm Exam II",
+    "section": "Question 16 (Points: 7)",
+    "text": "Question 16 (Points: 7)\n\nWrite pandas code to:\n\nCount products per brand: determine how many items each brand offers.\nFind the 90th‑percentile threshold of those brand‑level counts.\nSelect “popular” brands whose product counts exceed that threshold.\nCompute clearance rates for each of these popular brands: the fraction of their items with a non‑missing clearance_p.\nList the top five brands by clearance rate, reporting each brand and its rate, as shown in below DataFrame.\n\n\n\n\n\n\n\nIndex\nbrandName\ncount_x\ncount_y\nrate\n\n\n\n\n4\nMIA\n51\n76\n0.6710526\n\n\n1\nFly London\n76\n125\n0.6080000\n\n\n8\nVince Camuto\n41\n77\n0.5324675\n\n\n13\nKeds®\n37\n70\n0.5285714\n\n\n12\nCole Haan\n37\n85\n0.4352941\n\n\n\n\n\n\n\n\n\nClick to Check the Answer!\n# 1. Count total products per brand\ntotal_per_brand = shoes['brandName'].value_counts().reset_index()\n\ntotal_per_brand_n = total_per_brand['count'].quantile(.9)\ntotal_per_brand = total_per_brand[total_per_brand['count'] &gt;= total_per_brand_n]\n\n# 2. Count total products per brand\nshoes['clearance_available'] = shoes['clearance_p'].notna()\n\ntotal_per_brand_c = (\n    shoes\n    .query('clearance_available == True')['brandName']\n    .value_counts()\n    .reset_index()\n    )\n\n# 3. Join\ndf = total_per_brand_c.merge(total_per_brand, on='brandName', how = 'left')\ndf = df[~df['count_y'].isna()]\ndf['rate'] = df['count_x'] / df['count_y'] \ndf_top5 = df.nlargest(5, 'rate', keep = 'all')"
   }
 ]

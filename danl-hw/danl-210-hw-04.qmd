@@ -20,6 +20,21 @@ library(tidyverse)
 ```
 
 
+
+# Descriptive Statistics
+
+The following provides the descriptive statistics for each part of the Homework 4:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-hw4-stat.csv")
+DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
+```
+
+<br>
+
+
 # Direction
 
 - Please submit your **Python Script** for **Part 1 and Part 2 in Homework 4** to Brightspace with the name below:
@@ -352,7 +367,7 @@ rmarkdown::paged_table(df)
 ```
 
 
-
+`np.where()`
 ```{python}
 q4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]
 q4['Specialty_Detail'] = np.where(q4['Specialty_Detail'].isna(),
@@ -360,6 +375,12 @@ q4['Specialty_Detail'] = np.where(q4['Specialty_Detail'].isna(),
                                   q4['Specialty_Detail']
                                   )
 
+```
+
+`fillna()`
+```{r}
+q4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]
+q4['Specialty_Detail']=q4['Specialty_Detail'].fillna(q4['Specialty'])
 ```
 
 <br>
@@ -397,7 +418,7 @@ Write a Python code to identify the city or cities with the highest number of no
 
 ## Question 7
 - Write a Python code to count the number of occurrences of each unique value in `Specialty_Detail` for each unique value in `Taxonomy`.
-  - For example, the following displays the number of occurrences of each unique in `Specialty_Detail` for the **Dental Providers** `Taxonomy` value.
+  - For example, the following displays the number of occurrences of each unique value in `Specialty_Detail` for the **Dental Providers** `Taxonomy` value.
 
 
 ```{r}
@@ -522,7 +543,33 @@ rmarkdown::paged_table(df, options = list(rows.print = nrow(df)))
 
 
 <br>
+Using join
+```{python}
+df = (
+      cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+      .drop_duplicates()[['City', 'Physician_or_NPP']]
+      .value_counts()
+      .reset_index()
+      )
 
+df_1 = (
+        cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+        .drop_duplicates()['City']
+        .value_counts()
+        .reset_index()
+        .rename( columns = {'count' : 'Total_Count'})
+        )
+
+df = (
+      df
+      .merge(df_1, on = 'City', how = 'left')
+      .sort_values(['Total_Count', 'Physician_or_NPP'], ascending = [False, True])
+      )
+      
+df['Percent'] = 100 * df['count'] / df['Total_Count']
+```
+
+<br>
 
 Using for-loop with dictionary container
 ```{python}

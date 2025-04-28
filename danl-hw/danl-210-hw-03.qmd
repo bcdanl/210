@@ -19,6 +19,21 @@ language:
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
+
+
+# Descriptive Statistics
+
+The following provides the descriptive statistics for each part of the Homework 3:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-hw3-stat.csv")
+DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
+```
+
+<br>
+
 ```{.python}
 import pandas as pd
 ```

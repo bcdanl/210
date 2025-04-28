@@ -1,0 +1,155 @@
+---
+title: Classwork 13
+subtitle: Group Operation I
+date: 2025-04-27
+execute: 
+  eval: false
+  echo: false
+  warning: false
+  message: false
+  
+from: markdown+emoji
+---
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+
+## Direction
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/cereals.png" width="700px">
+</p>
+
+<br>
+
+The dataset ,`cereals_oatmeal.csv`,(with its pathname `https://bcdanl.github.io/data/cereals_oatmeal.csv`) is a listing of 77 popular breakfast cereals and oatmeal.
+
+
+```{python}
+#| echo: true
+#| eval: false
+cereal = pd.read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/cereals_oatmeal.csv')
+          )
+```
+
+
+## Question 1
+Group the `cereals_oatmeal`, using the `Manufacturer` variable.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 2
+Determine the total number of groups, and the number of cereals per group.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 3 
+Extract the cereals that belong to the manufacturer `"Kellogg's"`.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 4 
+Calculate the average of values in the `Calories`, `Fiber`, and `Sugars` variables for each manufacturer.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 5 
+Find the maximum value in the `Sugars` variable for each manufacturer.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 6 
+Find the minimum value in the `Fiber` variable for each manufacturer.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+## Question 7 
+- Calculate a '`Normalized_Sugars`' variable for each product by `Manufacturer`, where the normalization formula is 
+
+$$
+\text{Normalized\_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
+$$
+
+for each `Manufacturer` group. This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+## Question 8 
+Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.
+
+*Answer:*
+```{python}
+
+```
+
+<br><br>
+
+
+
+
+
+# Discussion
+
+
+<font size = "5">Welcome to our Classwork 13 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 13.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 13 materials or need clarification on any points, don't hesitate to ask here. 
+
+Let's collaborate and learn from each other!
+
