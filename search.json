@@ -4995,7 +4995,7 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#aggregation",
     "title": "Lecture 19",
     "section": "Aggregation",
-    "text": "Aggregation\nfortune.groupby(\"Sector\").agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_employees_mean = (\"Number_of_employees\", \"mean\")\n)\n\nThe agg() method can apply multiple aggregate operations to different variables and can accept a tuple as its argument.\n\nDataFrameGroupBy.agg(VARIABLE_NAME_1 = (\"VARIABLE_1\", \"STATISTICS\"), ...)"
+    "text": "Aggregation\nfortune.groupby(\"Sector\").agg(\n  Revenues_M_min = (\"Revenues_M\", \"min\"),\n  Profits_M_max = (\"Profits_M\", \"max\"),\n  Number_of_Employees_mean = (\"Number_of_Employees\", \"mean\")\n)\n\nThe agg() method can apply multiple aggregate operations to different variables and can accept a tuple as its argument.\n\nDataFrameGroupBy.agg(VARIABLE_NAME_1 = (\"VARIABLE_1\", \"STATISTICS\"), )"
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#aggregation-1",
@@ -5240,14 +5240,14 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#useful-built-in-functions",
     "title": "Lecture 19",
     "section": "Useful Built-in Functions",
-    "text": "Useful Built-in Functions\n\n\n\n\n\n\n\nAggregation\nDescription\n\n\n\n\nsize()\nNumber of observations in each group\n\n\ncount()\nNumber of non-missing values in each group\n\n\nnunique()\nNumber of unique/distinct values in each group\n\n\nvalue_counts()\nCount of unique values for a categorical variable within each group\n\n\nmean(), median()\nMean and median values\n\n\nmin(), max()\nMinimum and maximum values\n\n\nstd()\nStandard deviation\n\n\nsum()\nSum of all values\n\n\n\n\nWe pass in whatever aggregation we want."
+    "text": "Useful Built-in Functions\n\n\n\n\n\n\n\nAggregation\nDescription\n\n\n\n\nsize()\nNumber of observations in each group\n\n\ncount()\nNumber of non-missing values in each group\n\n\nnunique()\nNumber of unique/distinct values in each group\n\n\nvalue_counts()\nCount of unique values for a variable within each group\n\n\nmean(), median()\nMean and median values\n\n\nmin(), max()\nMinimum and maximum values\n\n\nstd()\nStandard deviation\n\n\nsum()\nSum of all values\n\n\n\n\nWe pass in whatever aggregation we want."
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#agg-with-a-lambda-udf",
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#agg-with-a-lambda-udf",
     "title": "Lecture 19",
     "section": "agg() with a lambda UDF",
-    "text": "agg() with a lambda UDF\nSome built‑in function cannot be directly passed to agg(). We can then supply a lambda function that receives a Series and returns a single value:\nfortune.groupby(\"Sector\").agg(\n    Revenue_IQR = (\"Revenues_M\", lambda s: s.quantile(0.75) - s.quantile(0.25) )\n)\n\nAny one‑line function can be supplied inline as lambda s: ….\nThe function must return one value per group."
+    "text": "agg() with a lambda UDF\n\n\nSome built‑in function cannot be directly passed to agg().\nWe can then supply a lambda function that receives a Series and returns a single value:\n\n\nfortune.groupby(\"Sector\").agg(\n    Revenue_IQR = (\"Revenues_M\", lambda s: s.quantile(0.75) - s.quantile(0.25) )\n)\n\nAny one‑line function can be supplied inline as lambda s: ….\nThe function must return one value per group."
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#transform-return-to-original-shape",
@@ -5345,7 +5345,7 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#group-operations-with-groupby-split-apply-combine",
     "title": "Lecture 19",
     "section": "Group Operations with groupby() : Split-Apply-Combine",
-    "text": "Group Operations with groupby() : Split-Apply-Combine\n\n\n\n\n\n\n\nThe DataFrame.groupby() method creates a DataFrameGroupBy object that facilitates split-apply-combine operations:\n\nSplit the DataFrame into separate groups based on unique values in one or more columns.\nApply functions independently to each group (e.g., calculate sums, averages, or custom metrics).\nCombine results into a single summarized DataFrame."
+    "text": "Group Operations with groupby() : Split-Apply-Combine\n\n\n\n\n\n\n\n\n\n\nThe DataFrame.groupby() method creates a DataFrameGroupBy object that facilitates split-apply-combine operations:\n\nSplit the DataFrame into separate groups based on unique values in one or more columns.\nApply a method or UDF independently to each group (e.g., calculate sums, averages, or custom metrics).\nCombine results into a single summarized DataFrame."
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#transform-with-shift",

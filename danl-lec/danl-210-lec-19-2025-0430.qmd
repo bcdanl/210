@@ -133,16 +133,17 @@ my_ratio(2, 4)
 
 ## Group Operations with `groupby()` : Split-Apply-Combine
 
-<div style="display:block; margin:-50px;"></div>
+<div style="display:block; margin:-80px;"></div>
 
 <p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/pandas-group.png" width="500">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-group.png" width="600">
 </p>
 
+<div style="display:block; margin:-25px;"></div>
 
 -	The `DataFrame.groupby()` method creates a `DataFrameGroupBy` object that facilitates split-apply-combine operations:
 	-	**Split** the `DataFrame` into separate groups based on unique values in one or more columns.
-	-	**Apply** functions independently to each group (e.g., calculate sums, averages, or custom metrics).
+	-	**Apply** a <u>method or UDF</u> independently to each group (e.g., calculate sums, averages, or custom metrics).
 	-	**Combine** results into a single summarized `DataFrame`.
 
 
@@ -272,12 +273,12 @@ fortune.groupby("Sector")["Revenues_M"].agg('min')
 fortune.groupby("Sector").agg(
   Revenues_M_min = ("Revenues_M", "min"),
   Profits_M_max = ("Profits_M", "max"),
-  Number_of_employees_mean = ("Number_of_employees", "mean")
+  Number_of_Employees_mean = ("Number_of_Employees", "mean")
 )
 ```
 
 - The `agg()` method can apply multiple aggregate operations to different variables and can accept a **tuple** as its argument.
-  - `DataFrameGroupBy.agg(VARIABLE_NAME_1 = ("VARIABLE_1", "STATISTICS"), ...)`
+  - `DataFrameGroupBy.agg(VARIABLE_NAME_1 = ("VARIABLE_1", "STATISTICS"), )`
 
 
 ## Useful Built-in Functions
@@ -287,7 +288,7 @@ fortune.groupby("Sector").agg(
 | `size()`          | Number of observations in each group  |
 | `count()`          | Number of non-missing values in each group  |
 | `nunique()`          | Number of unique/distinct values in each group  |
-| `value_counts()`    | Count of unique values for a categorical variable within each group  |
+| `value_counts()`    | Count of unique values for a variable within each group  |
 | `mean()`, `median()` | Mean and median values       |
 | `min()`, `max()`  | Minimum and maximum values     |
 | `std()`           | Standard deviation  |
@@ -297,8 +298,11 @@ fortune.groupby("Sector").agg(
 
 
 ## `agg()` with a `lambda` UDF
-Some built‑in function cannot be directly passed to `agg()`. We can then supply a `lambda` function that receives a **Series** and returns a single value:
+:::{.nonincremental}
+- Some built‑in function cannot be directly passed to `agg()`. 
+- We can then supply a `lambda` function that receives a **Series** and returns a single value:
 
+:::
 ```{.python}
 fortune.groupby("Sector").agg(
     Revenue_IQR = ("Revenues_M", lambda s: s.quantile(0.75) - s.quantile(0.25) )
@@ -585,6 +589,11 @@ fortune.groupby("Sector").apply(lambda x: x.nlargest(3, "Revenues_M", keep="all"
 | `apply()`     | Complex processing      | Varies with function   | Get **top *N*** companies in each sector         |
 
 
+## Group Operations
+
+Let's do **Questions 5-6** in [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)!
+
+
 
 # **Grouping by Multiple Variables** {background-color="#1c4982"}
 
@@ -657,8 +666,4 @@ def above_median(df):
 
 <!-- Let's do Question 8 of [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)! -->
 
-
-## Group Operations
-
-Let's do **Questions 5-6** in [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)!
 

@@ -481,17 +481,20 @@ Byeong-Hak Choe
 </section>
 <section id="group-operations-with-groupby-split-apply-combine" class="slide level2">
 <h2>Group Operations with <code>groupby()</code> : Split-Apply-Combine</h2>
-<div style="display:block; margin:-50px;">
+<div style="display:block; margin:-80px;">
 
 </div>
 <p align="center">
-<img src="https://bcdanl.github.io/lec_figs/pandas-group.png" width="500">
+<img src="https://bcdanl.github.io/lec_figs/pandas-group.png" width="600">
 </p>
+<div style="display:block; margin:-25px;">
+
+</div>
 <ul>
 <li class="fragment">The <code>DataFrame.groupby()</code> method creates a <code>DataFrameGroupBy</code> object that facilitates split-apply-combine operations:
 <ul>
 <li class="fragment"><strong>Split</strong> the <code>DataFrame</code> into separate groups based on unique values in one or more columns.</li>
-<li class="fragment"><strong>Apply</strong> functions independently to each group (e.g., calculate sums, averages, or custom metrics).</li>
+<li class="fragment"><strong>Apply</strong> a <u>method or UDF</u> independently to each group (e.g., calculate sums, averages, or custom metrics).</li>
 <li class="fragment"><strong>Combine</strong> results into a single summarized <code>DataFrame</code>.</li>
 </ul></li>
 </ul>
@@ -605,12 +608,12 @@ Byeong-Hak Choe
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>fortune.groupby(<span class="st">"Sector"</span>).agg(</span>
 <span id="cb10-2"><a href="#cb10-2"></a>  Revenues_M_min <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="st">"min"</span>),</span>
 <span id="cb10-3"><a href="#cb10-3"></a>  Profits_M_max <span class="op">=</span> (<span class="st">"Profits_M"</span>, <span class="st">"max"</span>),</span>
-<span id="cb10-4"><a href="#cb10-4"></a>  Number_of_employees_mean <span class="op">=</span> (<span class="st">"Number_of_employees"</span>, <span class="st">"mean"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  Number_of_Employees_mean <span class="op">=</span> (<span class="st">"Number_of_Employees"</span>, <span class="st">"mean"</span>)</span>
 <span id="cb10-5"><a href="#cb10-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>agg()</code> method can apply multiple aggregate operations to different variables and can accept a <strong>tuple</strong> as its argument.
 <ul>
-<li class="fragment"><code>DataFrameGroupBy.agg(VARIABLE_NAME_1 = ("VARIABLE_1", "STATISTICS"), ...)</code></li>
+<li class="fragment"><code>DataFrameGroupBy.agg(VARIABLE_NAME_1 = ("VARIABLE_1", "STATISTICS"), )</code></li>
 </ul></li>
 </ul>
 </section>
@@ -642,7 +645,7 @@ Byeong-Hak Choe
 </tr>
 <tr class="even">
 <td><code>value_counts()</code></td>
-<td>Count of unique values for a categorical variable within each group</td>
+<td>Count of unique values for a variable within each group</td>
 </tr>
 <tr class="odd">
 <td><code>mean()</code>, <code>median()</code></td>
@@ -668,7 +671,12 @@ Byeong-Hak Choe
 </section>
 <section id="agg-with-a-lambda-udf" class="slide level2">
 <h2><code>agg()</code> with a <code>lambda</code> UDF</h2>
-<p>Some built‑in function cannot be directly passed to <code>agg()</code>. We can then supply a <code>lambda</code> function that receives a <strong>Series</strong> and returns a single value:</p>
+<div>
+<ul>
+<li>Some built‑in function cannot be directly passed to <code>agg()</code>.</li>
+<li>We can then supply a <code>lambda</code> function that receives a <strong>Series</strong> and returns a single value:</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fortune.groupby(<span class="st">"Sector"</span>).agg(</span>
 <span id="cb11-2"><a href="#cb11-2"></a>    Revenue_IQR <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="kw">lambda</span> s: s.quantile(<span class="fl">0.75</span>) <span class="op">-</span> s.quantile(<span class="fl">0.25</span>) )</span>
 <span id="cb11-3"><a href="#cb11-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -938,6 +946,10 @@ Byeong-Hak Choe
 </tr>
 </tbody>
 </table>
+</section>
+<section id="group-operations-2" class="slide level2">
+<h2>Group Operations</h2>
+<p>Let’s do <strong>Questions 5-6</strong> in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
 </section></section>
 <section>
 <section id="grouping-by-multiple-variables" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -993,10 +1005,6 @@ Byeong-Hak Choe
 <span id="cb29-9"><a href="#cb29-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!-- ## Group Operations -->
 <!-- Let's do Question 8 of [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)! -->
-</section>
-<section id="group-operations-2" class="slide level2">
-<h2>Group Operations</h2>
-<p>Let’s do <strong>Questions 5-6</strong> in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
 
 <div class="footer footer-default">
 
