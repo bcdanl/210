@@ -1,0 +1,664 @@
+---
+title: Lecture 19
+subtitle: Group Operations
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-04-30
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+# **Primer on User-Defined Functions (UDFs)** {background-color="#1c4982"}
+
+
+## What *is* a User-Defined Function?
+
+-	A **function** accepts one or more *parameters* and returns *results*.
+
+
+- Two key actions:
+  - *Define* the function
+  - *Call* (execute) the function
+
+
+
+## Defining a **Function**
+
+:::{.nonincremental}
+
+- Begin with `def`, add the function name, parentheses for parameters, and finish the line with a colon `:`.
+  - Example: a function `my_half()` that returns half of its input.
+
+:::
+
+```{.python}
+def my_half(x):
+    return x / 2
+    
+my_half(2)
+```
+
+- The value supplied when calling the function is an **argument**. 
+- Inside the function that value is copied to the matching **parameter**.
+
+
+
+
+## Anonymous (Lambda) Functions
+
+:::{.nonincremental}
+
+- A **lambda** function is an *anonymous* one‑liner.
+- Syntax: `lambda <params>: <expression>`
+
+:::
+
+```{.python}
+equiv_my_half = lambda x: x / 2
+equiv_my_half(2)
+```
+
+
+
+## Positional Arguments
+:::{.nonincremental}
+
+-	**Positional arguments** must be supplied in the order the function expects.
+  - Reordering them changes the meaning.
+
+:::
+
+```{.python}
+def my_ratio(x, y):
+    return x / y
+    
+equiv_my_ratio = lambda x, y: x / y
+
+my_ratio(4, 2)
+my_ratio(2, 4)
+```
+
+
+
+# **Group Operations with `DataFrameGroupBy`** {background-color="#1c4982"}
+
+
+## Group Operations with `groupby()` : Split-Apply-Combine
+
+<div style="display:block; margin:-50px;"></div>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-group.png" width="500">
+</p>
+
+
+-	The `DataFrame.groupby()` method creates a `DataFrameGroupBy` object that facilitates split-apply-combine operations:
+	-	**Split** the `DataFrame` into separate groups based on unique values in one or more columns.
+	-	**Apply** functions independently to each group (e.g., calculate sums, averages, or custom metrics).
+	-	**Combine** results into a single summarized `DataFrame`.
+
+
+## Fortune 1000 Dataset
+
+:::{.nonincremental}
+
+- *Fortune 1000* lists the 1,000 largest U.S. companies by revenue.  
+  - Updated annually by *Fortune* magazine.  
+  - The file `fortune1000_2024.csv` contains the 2024 list.
+
+:::
+
+```{.python}
+import pandas as pd
+fortune1000 = pd.read_csv("https://bcdanl.github.io/data/fortune1000_2024.csv")
+
+fortune = fortune1000[[
+    "Rank", "Company", "Sector", "Industry",
+    "Revenues_M", "Profits_M", "Number_of_Employees"
+]]
+```
+
+- A **Sector** can have many companies; an **Industry** is a sub‑category within a sector.
+
+
+
+## Why Group Operations?
+
+:::{.nonincremental}
+
+
+- Suppose we want the **total revenue by sector**.
+- Without group operations we would have to filter sector‑by‑sector:
+  
+:::
+
+```{.python}
+fortune["Sector"].unique()
+
+in_retailing =  fortune["Sector"] == "Retailing" 
+retail_companies = fortune[ in_retailing ]
+retail_companies["Revenues_M"].sum()
+```
+
+- Doing this for *every* sector is tedious — `groupby()` does it for us in one line.
+
+
+
+## `DataFrameGroupBy` Methods and Attributes
+
+```{.python}
+sectors = fortune.groupby("Sector")
+
+sectors.groups
+len(sectors)   
+sectors.describe()
+```
+
+
+- `groups` — dictionary mapping each group label to the underlying row‑labels.
+- `describe()` — one‑shot descriptive statistics within each group.
+
+<!-- - The `size()` method on the `DataFrameGroupBy` object returns a `Series` with an alphabetical list of the groups and their observation counts. -->
+
+
+
+
+# **`groupby()` with `agg()`** {background-color="#1c4982"}
+
+## Quick Aggregations
+
+:::{.nonincremental}
+- We can invoke methods on the `DataFrameGroupBy` object to apply aggregate operations to every group.
+  -  Aggregation is the process of taking multiple values and returning a single value.
+
+:::
+
+```{.python}
+fortune.groupby("Sector").size()
+fortune.groupby("Sector").mean()
+fortune.groupby("Sector").median()
+fortune.groupby("Sector").max()
+fortune.groupby("Sector").min()
+fortune.groupby("Sector").sum()
+```
+
+- The `size()` method on the `DataFrameGroupBy` object returns a `Series` with an alphabetical list of the groups and their observation counts.
+
+
+## Column‑wise Aggregations
+
+
+```{.python}
+fortune.groupby("Sector")["Revenues_M"].mean()
+fortune.groupby("Sector")["Revenues_M"].median()
+fortune.groupby("Sector")["Revenues_M"].max()
+fortune.groupby("Sector")["Revenues_M"].min()
+fortune.groupby("Sector")["Revenues_M"].sum()
+```
+
+- We can target a single variable by passing its name inside square brackets after the `DataFrameGroupBy` object. 
+  - Pandas returns a new object, a `SeriesGroupBy`.
+
+
+
+
+## The `agg()` Method
+
+```{.python}
+fortune.groupby("Sector")["Revenues_M"]  # this is a SeriesGroupBy object
+fortune.groupby("Sector")["Revenues_M"].agg('sum')
+fortune.groupby("Sector")["Revenues_M"].agg('mean')
+fortune.groupby("Sector")["Revenues_M"].agg('max')
+fortune.groupby("Sector")["Revenues_M"].agg('min')
+```
+
+- The `agg()` method can also be used on a `SeriesGroupBy`.
+- Instead of directly calling the aggregation method, we can call the `agg()` method, and pass the aggregation method we want in there.
+
+
+
+## Aggregation
+
+
+```{.python}
+fortune.groupby("Sector").agg(
+  Revenues_M_min = ("Revenues_M", "min"),
+  Profits_M_max = ("Profits_M", "max"),
+  Number_of_employees_mean = ("Number_of_employees", "mean")
+)
+```
+
+- The `agg()` method can apply multiple aggregate operations to different variables and can accept a **tuple** as its argument.
+  - `DataFrameGroupBy.agg(VARIABLE_NAME_1 = ("VARIABLE_1", "STATISTICS"), ...)`
+
+
+## Useful Built-in Functions
+
+| Aggregation       | Description                     |
+|-------------------|----------------------------------|
+| `size()`          | Number of observations in each group  |
+| `count()`          | Number of non-missing values in each group  |
+| `nunique()`          | Number of unique/distinct values in each group  |
+| `value_counts()`    | Count of unique values for a categorical variable within each group  |
+| `mean()`, `median()` | Mean and median values       |
+| `min()`, `max()`  | Minimum and maximum values     |
+| `std()`           | Standard deviation  |
+| `sum()`           | Sum of all values       |
+
+- We pass in whatever aggregation we want. 
+
+
+## `agg()` with a `lambda` UDF
+Some built‑in function cannot be directly passed to `agg()`. We can then supply a `lambda` function that receives a **Series** and returns a single value:
+
+```{.python}
+fortune.groupby("Sector").agg(
+    Revenue_IQR = ("Revenues_M", lambda s: s.quantile(0.75) - s.quantile(0.25) )
+)
+
+```
+
+- Any one‑line function can be supplied inline as `lambda s: …`.
+- The function must return **one** value per group.
+
+
+
+## Group Operations
+
+Let's do **Questions 1-3** in [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)!
+
+
+
+# **`groupby()` with `transform()`** {background-color="#1c4982"}
+
+## `transform()` – Return to Original Shape
+
+:::{.nonincremental}
+- Just like the `agg()` method, the `transform()` method can accept the built-in functions (e.g., `'sum'`, `'mean'`).
+
+:::
+
+```{.python}
+fortune["Sector_rev_mean"] = (
+    fortune.groupby("Sector")["Revenues_M"].transform("mean")
+)
+```
+
+- Unlike the `agg()` method, the `transform()` method does not collapse `DataFrame` and goes back to the original index.
+
+
+## `transform()` with a `lambda` UDF
+
+```{.python}
+fortune["Rev_centered"] = (
+    fortune.groupby("Sector")["Revenues_M"]
+           .transform(lambda s: s - s.mean())
+)
+```
+
+- Each group's mean is subtracted from its members, yielding a *de‑meaned* revenue variable.
+
+
+
+
+## `DataFrame.assign()` and `DataFrameGroupBy.transform()` 
+
+```{.python}
+sectors = fortune.groupby("Sector")
+
+fortune_new = fortune.assign(
+    Year = 2024,
+    nCompanies = sectors.size(),
+    Revenues_M_min = sectors['Revenues_M'].transform('min'),
+    Profits_M_max = sectors['Profits_M'].transform('max'),
+    Number_of_Employees_mean = sectors['Number_of_Employees'].transform('mean')
+)
+```
+
+- `assign()` can be used to add a new variable to a `DataFrame`.
+  - `assign()` is a `DataFrame` method, not a `DataFrameGroupBy` method.
+
+
+
+##  `transform()` with `shift()`
+
+
+:::{.nonincremental}
+::: {.panel-tabset}
+## **Data**
+
+- `fortune_2021_2024` contains 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.
+
+```{.python}
+fortune_2021_2024 = pd.read_csv("https://bcdanl.github.io/data/fortune741_2021_2024.csv")
+```
+
+- Here we are interested in calculating the yearly revenue growth rate for each company in `fortune_2021_2024` using the following formula:
+$$
+\text{(Revenue Growth Rate)}_{year} = \frac{\text{Revenue}_{year} - \text{Revenue}_{year-1}}{\text{Revenue}_{year-1}}
+$$
+
+
+##  `shift()`
+```{.python}
+df['Revenues_M_last_year'] = df.groupby('Company')['Revenues_M'].shift(-1)
+```
+
+- What `shift()` does in pandas:
+	-	`shift()` moves values up or down along the index (rows).
+	-	It shifts the data by a number of periods (default is 1 period down).
+	-	It is often used to compare a row with a previous (or future) row.
+	    -	`shift(1)`: shift down (default)
+	    -	`shift(-1)`: shift up
+
+
+
+##  **Percentage Changes**
+```{.python}
+df['GrowthRate_Revenue'] = (df['Revenues_M'] - df['Revenues_M_last_year']) / df['Revenues_M_last_year']
+```
+
+$$
+\text{(Revenue Growth Rate)}_{year} = \frac{\text{Revenue}_{year} - \text{Revenue}_{year-1}}{\text{Revenue}_{year-1}}
+$$
+
+:::
+:::
+
+
+
+## Group Operations
+
+Let's do **Question 4** in [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)!
+
+
+
+# **`groupby()` with `apply()`** {background-color="#1c4982"}
+
+
+## Applying a UDF to All Groups
+
+:::{.nonincremental}
+- Sometimes we need something neither `agg()` nor `transform()` can do, like “top‑3 by revenue in each sector”. 
+  - Use `apply()` and provide a method that operates on each group's `DataFrame`.
+
+:::
+
+```{.python}
+fortune_shuffled = pd.read_csv("https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv")
+```
+
+- How can we get a DataFrame with top 5 companies in each sector?
+  1. `sort_values()` with `groupby()`
+  2. `nlargest()` with `groupby()`
+
+- However, `DataFrameGroupBy` has no methods `sort_values()` or `nlargest()`.
+
+
+
+## Applying a `lambda` UDF with `.apply()`
+:::{.nonincremental}
+
+- We can directly apply a custom function (UDF) using a lambda expression with `.apply()`:
+
+:::
+
+```{.python}
+sectors.apply(lambda df: df.nlargest(1, "Revenues_M", keep="all"))
+```
+
+- This returns the largest observation(s) within each group.
+
+
+## Passing Additional Parameters
+
+:::{.nonincremental}
+- How can we apply a UDF with multiple parameters to `DataFrameGroupBy` object?
+
+:::
+
+```{.python}
+def get_nlargest_obs(df, n, var):
+  return df.nlargest(n, var, keep = "all")
+
+sectors.apply(get_nlargest_obs, 2, "Revenues_M")
+```
+
+- When applying a UDF with multiple parameters to `DataFrameGroupBy` object, we need to provide the rest of arguments to the `apply()` method.
+
+
+
+## Passing Additional Parameters
+:::{.nonincremental}
+
+- Suppose we want to filter groups based on a threshold for a given variable:
+:::
+
+```{.python}
+def filter_by_threshold(df, column, threshold):
+    return df[ df[column] > threshold ]
+
+sectors.apply(filter_by_threshold, "Revenues_M", 5000)
+```
+
+- In this example, the arguments `"Revenues_M"` and `5000` are passed to filter rows within each group.
+
+
+
+<!-- ## Applying a UDF to All Groups -->
+
+<!-- :::{.nonincremental} -->
+<!-- - To rewrite our `get_largest_obs` function as a lambda function with the `apply()` method, we can do the following.  -->
+
+<!-- ::: -->
+
+<!-- ```{.python} -->
+<!-- sectors.apply(lambda df: df.nlargest(1, "Revenues_M", keep="all")) -->
+<!-- ``` -->
+
+
+
+<!-- ## Applying a UDF to All Groups -->
+
+
+<!-- :::{.nonincremental} -->
+<!-- - How can we apply a UDF with multiple parameters to `DataFrameGroupBy` object? -->
+
+<!-- ::: -->
+
+<!-- ```{.python} -->
+<!-- def get_nlargest_obs(df, n, var): -->
+<!--   return df.nlargest(n, var, keep = "all") -->
+
+<!-- sectors.apply(get_nlargest_obs, 2, "Revenues_M") -->
+<!-- ``` -->
+
+
+
+
+
+
+## Applying a UDF to All Groups
+
+:::{.nonincremental}
+- Can we apply a lambda function with multiple parameters to `DataFrameGroupBy` object?
+  
+:::
+
+```{.python}
+sectors.apply(lambda df: df.nlargest(2, "Revenues_M", keep="all"))
+```
+
+- Lambda functions do not support passing additional parameters directly in the `apply()` method!
+  -  We would typically need to provide arguments to additional parameters within the lambda function.  
+
+
+
+## `agg()` vs. `transform()` vs. `apply()`
+
+:::{.nonincremental}
+- Use **`agg()`** with `.groupby()` when summarizing multiple values into a **single aggregated value per group**.
+  - Groups become the new index labels.
+
+```{.python}
+fortune.groupby("Sector").agg(Revenue_mean = ("Revenues_M", "mean"))
+```
+
+- Use **`transform()`** with `.groupby()` when computing **one aggregated value per observation**.
+  - Does **not** collapse the `DataFrame`.
+
+```{.python}
+fortune["Revenue_diff_mean"] = fortune["Revenues_M"] - fortune.groupby("Sector")["Revenues_M"].transform("mean")
+```
+
+- Use **`apply()`** with `.groupby()` for **custom operations** returning **multiple observations per group**.
+
+```{.python}
+fortune.groupby("Sector").apply(lambda x: x.nlargest(3, "Revenues_M", keep="all") )
+```
+
+:::
+
+
+## `agg()` vs. `transform()` vs `apply()`
+
+<!-- - Use `agg()` with `.groupby()` when we want to take multiple values and return a single (aggregated) value for *each group*. -->
+<!--   - Groups become the new index labels. -->
+
+<!-- - Use `transform()` with `.groupby()` when we want to perform computations on our groups but we want to return a single (aggregated) value for *each observation*. -->
+<!--   -  That is, `transform()` does not collapse the `DataFrame`. -->
+
+<br>
+
+| **Method**        | **Purpose**                 | **Result Shape**           | **Example Use Case**                                 |
+|---------------|-------------------------|------------------------|--------------------------------------------------|
+| `agg()`       | Summarize groups        | One row per group      | Calculate **average revenue** by sector          |
+| `transform()` | Broadcast group-level metrics | Same shape as original `DataFrame` | **Add a column** that repeats each sector’s average revenue for every row |
+| `apply()`     | Complex processing      | Varies with function   | Get **top *N*** companies in each sector         |
+
+
+
+# **Grouping by Multiple Variables** {background-color="#1c4982"}
+
+## Grouping by Multiple Variables
+
+
+```{.python}
+sector_and_industry = fortune.groupby(["Sector", "Industry"])
+
+sector_and_industry.groups
+len(sector_and_industry)   
+sector_and_industry.describe()
+```
+
+
+- We can create `DataFrameGroupBy` object with values from multiple variables. 
+  - This operation is optimal when a combination of variables serves as the best identifier for a group.
+  
+- Grouping on two or more columns gives us a **MultiIndex** whose levels correspond exactly to those grouping columns.
+
+
+
+## Aggregation with `agg()`
+
+```{.python}
+agg_tbl = (
+    fortune
+    .groupby(["Sector", "Industry"])
+    .agg(
+        n_companies = ("Company",   "size"),
+        avg_rev     = ("Revenues_M","mean"),
+        tot_rev     = ("Revenues_M","sum")
+    )
+    .reset_index()  # Flattens the MultiIndex into ordinary columns
+)
+```
+
+
+## Adding New Variables with `transform()`
+
+
+```{.python}
+fortune['pct_of_industry_rev'] = (
+        fortune
+        .groupby(["Sector", "Industry"])["Revenues_M"]
+        .transform(lambda x: x / x.sum() * 100)
+)
+```
+
+
+
+## Custom group logic with `apply()`
+
+```{.python}
+def above_median(df):
+    med = df["Revenues_M"].median()
+    return df[ df["Revenues_M"] > med ]      
+
+(
+    fortune
+    .groupby(["Sector", "Industry"])
+    .apply(above_median)      
+)
+```
+
+
+
+
+<!-- ## Group Operations -->
+
+<!-- Let's do Question 8 of [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)! -->
+
+
+## Group Operations
+
+Let's do **Questions 5-6** in [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)!
+

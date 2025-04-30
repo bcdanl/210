@@ -185,8 +185,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
-  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
@@ -221,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 26, 2025</p>
+      <p class="date-modified">April 30, 2025</p>
     </div>
   </div>
     
@@ -254,55 +252,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>Group the <code>cereals_oatmeal</code>, using the <code>Manufacturer</code> variable.</p>
+<p>Group the data by Manufacturer, and determine the number of groups and the number of cereals per group.</p>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>Determine the total number of groups, and the number of cereals per group.</p>
+<p>Calculate the mean of the <code>Calories</code>, <code>Fiber</code>, and <code>Sugars</code> for every manufacturer.</p>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Extract the cereals that belong to the manufacturer <code>"Kellogg's"</code>.</p>
+<p>Create a new DataFrame that includes the maximum <code>Sugars</code> and the minimum <code>Fiber</code> per manufacturer.</p>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>Calculate the average of values in the <code>Calories</code>, <code>Fiber</code>, and <code>Sugars</code> variables for each manufacturer.</p>
+<p>Add a <code>Normalized_Sugars</code> variable to the <code>cereal</code> DataFrame that standardizes each cereal’s sugar content within its manufacturer group.</p>
+<p><span class="math display">\[
+\text{Normalized\_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
+\]</span></p>
+<p>This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.</p>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p>Find the maximum value in the <code>Sugars</code> variable for each manufacturer.</p>
+<p>Put the two highest-sugar cereals for every manufacturer in a new DataFrame.</p>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
-<p>Find the minimum value in the <code>Fiber</code> variable for each manufacturer.</p>
-<p><em>Answer:</em></p>
-<p><br><br></p>
-</section>
-<section id="question-7" class="level2">
-<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <ul>
-<li>Calculate a ‘<code>Normalized_Sugars</code>’ variable for each product by <code>Manufacturer</code>, where the normalization formula is</li>
+<li>Compute the correlation between <code>Calories</code> and <code>Sugars</code> for each manufacturer.
+<ul>
+<li><code>corr()</code> calculates the correlation between <code>SERIES_1</code> and <code>SERIES_2</code>.</li>
+</ul></li>
 </ul>
-<p><span class="math display">\[
-\text{Normalized\_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
-\]</span></p>
-<p>for each <code>Manufacturer</code> group. This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.</p>
-<p><em>Answer:</em></p>
-<p><br><br></p>
-</section>
-<section id="question-8" class="level2">
-<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
-<p>Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cereal[<span class="st">"Calories"</span>].corr( cereal[<span class="st">"Sugars"</span>] ) <span class="co"># returns a correlation value</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cereal[[<span class="st">"Calories"</span>, <span class="st">"Sugars"</span>]].corr() <span class="co"># returns a DataFrame of correlation matrix</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cereal[[<span class="st">"Calories"</span>, <span class="st">"Sugars"</span>, <span class="st">"Fiber"</span>]].corr() <span class="co"># returns a DataFrame of correlation matrix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><em>Answer:</em></p>
 <p><br><br></p>
 </section>

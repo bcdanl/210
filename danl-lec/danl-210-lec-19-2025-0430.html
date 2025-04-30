@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Byeong-Hak Choe">
-  <meta name="dcterms.date" content="2025-04-28">
+  <meta name="dcterms.date" content="2025-04-30">
   <title>Home - Lecture 19</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -410,143 +410,152 @@ Byeong-Hak Choe
     </div>
 </div>
 
-  <p class="date">April 28, 2025</p>
+  <p class="date">April 30, 2025</p>
 </section>
+<section>
+<section id="primer-on-user-defined-functions-udfs" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Primer on User-Defined Functions (UDFs)</strong></h1>
+
+</section>
+<section id="what-is-a-user-defined-function" class="slide level2">
+<h2>What <em>is</em> a User-Defined Function?</h2>
+<ul>
+<li class="fragment"><p>A <strong>function</strong> accepts one or more <em>parameters</em> and returns <em>results</em>.</p></li>
+<li class="fragment"><p>Two key actions:</p>
+<ul>
+<li class="fragment"><em>Define</em> the function</li>
+<li class="fragment"><em>Call</em> (execute) the function</li>
+</ul></li>
+</ul>
+</section>
+<section id="defining-a-function" class="slide level2">
+<h2>Defining a <strong>Function</strong></h2>
+<div>
+<ul>
+<li>Begin with <code>def</code>, add the function name, parentheses for parameters, and finish the line with a colon <code>:</code>.
+<ul>
+<li>Example: a function <code>my_half()</code> that returns half of its input.</li>
+</ul></li>
+</ul>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> my_half(x):</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="cf">return</span> x <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    </span>
+<span id="cb1-4"><a href="#cb1-4"></a>my_half(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The value supplied when calling the function is an <strong>argument</strong>.</li>
+<li class="fragment">Inside the function that value is copied to the matching <strong>parameter</strong>.</li>
+</ul>
+</section>
+<section id="anonymous-lambda-functions" class="slide level2">
+<h2>Anonymous (Lambda) Functions</h2>
+<div>
+<ul>
+<li>A <strong>lambda</strong> function is an <em>anonymous</em> one‑liner.</li>
+<li>Syntax: <code>lambda &lt;params&gt;: &lt;expression&gt;</code></li>
+</ul>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>equiv_my_half <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>equiv_my_half(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="positional-arguments" class="slide level2">
+<h2>Positional Arguments</h2>
+<div>
+<ul>
+<li><strong>Positional arguments</strong> must be supplied in the order the function expects.</li>
+<li>Reordering them changes the meaning.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> my_ratio(x, y):</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">return</span> x <span class="op">/</span> y</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    </span>
+<span id="cb3-4"><a href="#cb3-4"></a>equiv_my_ratio <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">/</span> y</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>my_ratio(<span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a>my_ratio(<span class="dv">2</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
 <section>
 <section id="group-operations-with-dataframegroupby" class="title-slide slide level1 center" data-background-color="#1c4982">
 <h1><strong>Group Operations with <code>DataFrameGroupBy</code></strong></h1>
 
 </section>
-<section id="group-operations-with-dataframegroupby-1" class="slide level2">
-<h2>Group Operations with <code>DataFrameGroupBy</code></h2>
+<section id="group-operations-with-groupby-split-apply-combine" class="slide level2">
+<h2>Group Operations with <code>groupby()</code> : Split-Apply-Combine</h2>
+<div style="display:block; margin:-50px;">
+
+</div>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/pandas-group.png" width="500">
+</p>
 <ul>
-<li class="fragment"><p>The pandas library’s <code>DataFrameGroupBy</code> object is a storage container for grouping observations into buckets.</p></li>
-<li class="fragment"><p>It provides a set of methods to aggregate and analyze each independent group in the collection.</p></li>
-<li class="fragment"><p>It allows us to extract observations at specific index positions within each group.</p></li>
-<li class="fragment"><p>It also offers a convenient way to iterate over the groups of observations.</p></li>
+<li class="fragment">The <code>DataFrame.groupby()</code> method creates a <code>DataFrameGroupBy</code> object that facilitates split-apply-combine operations:
+<ul>
+<li class="fragment"><strong>Split</strong> the <code>DataFrame</code> into separate groups based on unique values in one or more columns.</li>
+<li class="fragment"><strong>Apply</strong> functions independently to each group (e.g., calculate sums, averages, or custom metrics).</li>
+<li class="fragment"><strong>Combine</strong> results into a single summarized <code>DataFrame</code>.</li>
+</ul></li>
 </ul>
 </section>
 <section id="fortune-1000-dataset" class="slide level2">
 <h2>Fortune 1000 Dataset</h2>
 <div>
 <ul>
-<li>The Fortune 1000 is a listing of the 1,000 largest companies in the United States by revenue.
+<li><em>Fortune 1000</em> lists the 1,000 largest U.S. companies by revenue.
 <ul>
-<li>The list is updated annually by the business magazine <em>Fortune</em>.</li>
-<li>The <code>fortune1000_2024.csv</code> file is a collection of Fortune 1000 companies in 2024</li>
+<li>Updated annually by <em>Fortune</em> magazine.<br>
+</li>
+<li>The file <code>fortune1000_2024.csv</code> contains the 2024 list.</li>
 </ul></li>
 </ul>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>fortune1000 <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune1000_2024.csv"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>fortune1000.columns</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>fortune <span class="op">=</span> fortune1000[[<span class="st">'Rank'</span>, <span class="st">'Company'</span>, <span class="st">'Sector'</span>, <span class="st">'Industry'</span>, <span class="st">'Revenues_M'</span>, <span class="st">'Profits_M'</span>, <span class="st">'Number_of_Employees'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2"></a>fortune1000 <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune1000_2024.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>fortune <span class="op">=</span> fortune1000[[</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="st">"Rank"</span>, <span class="st">"Company"</span>, <span class="st">"Sector"</span>, <span class="st">"Industry"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="st">"Revenues_M"</span>, <span class="st">"Profits_M"</span>, <span class="st">"Number_of_Employees"</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">A sector can have many companies; An industry is a subcategory within a sector.</li>
-<li class="fragment">Let’s explore the <code>fortune</code>.
-<ul>
-<li class="fragment">How many unique sectors are in <code>fortune</code>?</li>
-</ul></li>
+<li class="fragment">A <strong>Sector</strong> can have many companies; an <strong>Industry</strong> is a sub‑category within a sector.</li>
 </ul>
 </section>
 <section id="why-group-operations" class="slide level2">
 <h2>Why Group Operations?</h2>
 <div>
 <ul>
-<li><p>Suppose that we are interested in calculating the average revenue for each sector.</p></li>
-<li><p>Let’s pull out all companies with a <code>Sector</code> value of <code>"Retailing"</code>.</p>
-<ul>
-<li>Then, calculate the Retailing sector’s average revenue:</li>
-</ul></li>
+<li>Suppose we want the <strong>total revenue by sector</strong>.</li>
+<li>Without group operations we would have to filter sector‑by‑sector:</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>fortune[<span class="st">"Sector"</span>].unique()</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>in_retailing <span class="op">=</span>  fortune[<span class="st">"Sector"</span>] <span class="op">==</span> <span class="st">"Retailing"</span> </span>
-<span id="cb2-4"><a href="#cb2-4"></a>retail_companies <span class="op">=</span> fortune[ in_retailing ]</span>
-<span id="cb2-5"><a href="#cb2-5"></a>retail_companies[<span class="st">"Revenues_M"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fortune[<span class="st">"Sector"</span>].unique()</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>in_retailing <span class="op">=</span>  fortune[<span class="st">"Sector"</span>] <span class="op">==</span> <span class="st">"Retailing"</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>retail_companies <span class="op">=</span> fortune[ in_retailing ]</span>
+<span id="cb5-5"><a href="#cb5-5"></a>retail_companies[<span class="st">"Revenues_M"</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Without a group operation, we may need to write a lot of additional code to apply the same logic to the other 20 sectors in <code>fortune</code>.
-<ul>
-<li class="fragment">Pandas’ <code>DataFrameGroupBy</code> object offers the best solution out of the box.</li>
-</ul></li>
+<li class="fragment">Doing this for <em>every</em> sector is tedious — <code>groupby()</code> does it for us in one line.</li>
 </ul>
 </section>
-<section id="creating-dataframegroupby-object" class="slide level2">
-<h2>Creating <code>DataFrameGroupBy</code> Object</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>sectors <span class="op">=</span> fortune.groupby(<span class="st">"Sector"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>sectors[<span class="st">'Revenues_M'</span>].mean()</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">len</span>(sectors)    <span class="co"># fortune["Sector"].nunique()</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>sectors.size()</span>
-<span id="cb3-5"><a href="#cb3-5"></a>sectors.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="dataframegroupby-methods-and-attributes" class="slide level2">
+<h2><code>DataFrameGroupBy</code> Methods and Attributes</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>sectors <span class="op">=</span> fortune.groupby(<span class="st">"Sector"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>sectors.groups</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="bu">len</span>(sectors)   </span>
+<span id="cb6-5"><a href="#cb6-5"></a>sectors.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p>The <code>DataFrameGroupBy</code> object implicitly organizes observations into groups based on shared values in a categorical variable.</p></li>
-<li class="fragment"><p>We can count the number of groups in sectors by passing the <code>DataFrameGroupBy</code> object into the Python’s built-in <code>len()</code> function</p></li>
-<li class="fragment"><p>The <code>size()</code> method on the <code>DataFrameGroupBy</code> object returns a <code>Series</code> with an alphabetical list of the groups and their observation counts.</p></li>
+<li class="fragment"><code>groups</code> — dictionary mapping each group label to the underlying row‑labels.</li>
+<li class="fragment"><code>describe()</code> — one‑shot descriptive statistics within each group.</li>
 </ul>
-</section>
-<section id="attributesmethods-of-dataframegroupby-object" class="slide level2">
-<h2>Attributes/Methods of <code>DataFrameGroupBy</code> object</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>sectors.groups</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>groups</code> attribute stores a dictionary with associations of group-to-observations.</li>
-</ul>
-</section>
-<section id="attributesmethods-of-dataframegroupby-object-1" class="slide level2">
-<h2>Attributes/Methods of <code>DataFrameGroupBy</code> object</h2>
-<div>
-<ul>
-<li>What if we want to find the highest-performing company (by revenue) within each sector?</li>
-</ul>
-</div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>sectors.first()</span>
-<span id="cb5-2"><a href="#cb5-2"></a>sectors.last()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>DataFrameGroupBy</code> object’s <code>first()/last()</code> method extracts the first/last observation listed for each group in a <code>DataFrame</code>.
-<ul>
-<li class="fragment">Since our <code>fortune</code> <code>DataFrame</code> is sorted by <code>Revenue_M</code>, the first company pulled out for each sector will be the highest-performing company within that sector.</li>
-</ul></li>
-</ul>
-</section>
-<section id="attributesmethods-of-dataframegroupby-object-2" class="slide level2">
-<h2>Attributes/Methods of <code>DataFrameGroupBy</code> object</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>sectors.nth(<span class="dv">0</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>sectors.nth(<span class="dv">1</span>)</span>
-<span id="cb6-3"><a href="#cb6-3"></a>fortune[fortune[<span class="st">"Sector"</span>] <span class="op">==</span> <span class="st">"Apparel"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>nth()</code> method is used with <code>DataFrameGroupBy</code> object to select the nth observation from each group.
-<ul>
-<li class="fragment">Here we can confirm the output is correct by filtering for the “Apparel” observations in <code>fortune</code>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="attributesmethods-of-dataframegroupby-object-3" class="slide level2">
-<h2>Attributes/Methods of <code>DataFrameGroupBy</code> object</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>sectors.head(<span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>sectors.tail(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>head(n)/tail(n)</code> method extracts the first/last <code>n</code> observations from each group.</li>
-</ul>
-</section>
-<section id="attributesmethods-of-dataframegroupby-object-4" class="slide level2">
-<h2>Attributes/Methods of <code>DataFrameGroupBy</code> object</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>sectors.get_group(<span class="st">"Energy"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">type</span>( sectors.get_group(<span class="st">"Energy"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">We can use the <code>get_group()</code> method to extract all observations in a given group.
-<ul>
-<li class="fragment">The method returns a <code>DataFrame</code> containing the observations.</li>
-</ul></li>
-</ul>
+<!-- - The `size()` method on the `DataFrameGroupBy` object returns a `Series` with an alphabetical list of the groups and their observation counts. -->
 </section></section>
 <section>
-<section id="groupby-with-agg-and-transform" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong><code>groupby()</code> with <code>agg()</code> and <code>transform()</code></strong></h1>
+<section id="groupby-with-agg" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong><code>groupby()</code> with <code>agg()</code></strong></h1>
 
 </section>
-<section id="aggregation" class="slide level2">
-<h2>Aggregation</h2>
+<section id="quick-aggregations" class="slide level2">
+<h2>Quick Aggregations</h2>
 <div>
 <ul>
 <li>We can invoke methods on the <code>DataFrameGroupBy</code> object to apply aggregate operations to every group.
@@ -555,16 +564,23 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>sectors.<span class="bu">sum</span>()</span>
-<span id="cb9-2"><a href="#cb9-2"></a>sectors.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>fortune.groupby(<span class="st">"Sector"</span>).size()</span>
+<span id="cb7-2"><a href="#cb7-2"></a>fortune.groupby(<span class="st">"Sector"</span>).mean()</span>
+<span id="cb7-3"><a href="#cb7-3"></a>fortune.groupby(<span class="st">"Sector"</span>).median()</span>
+<span id="cb7-4"><a href="#cb7-4"></a>fortune.groupby(<span class="st">"Sector"</span>).<span class="bu">max</span>()</span>
+<span id="cb7-5"><a href="#cb7-5"></a>fortune.groupby(<span class="st">"Sector"</span>).<span class="bu">min</span>()</span>
+<span id="cb7-6"><a href="#cb7-6"></a>fortune.groupby(<span class="st">"Sector"</span>).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">The <code>size()</code> method on the <code>DataFrameGroupBy</code> object returns a <code>Series</code> with an alphabetical list of the groups and their observation counts.</li>
+</ul>
 </section>
-<section id="aggregation-1" class="slide level2">
-<h2>Aggregation</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>sectors[<span class="st">"Revenues_M"</span>]</span>
-<span id="cb10-2"><a href="#cb10-2"></a>sectors[<span class="st">"Revenues_M"</span>].<span class="bu">sum</span>()</span>
-<span id="cb10-3"><a href="#cb10-3"></a>sectors[<span class="st">"Revenues_M"</span>].mean()</span>
-<span id="cb10-4"><a href="#cb10-4"></a>sectors[<span class="st">"Revenues_M"</span>].<span class="bu">max</span>()</span>
-<span id="cb10-5"><a href="#cb10-5"></a>sectors[<span class="st">"Revenues_M"</span>].<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="columnwise-aggregations" class="slide level2">
+<h2>Column‑wise Aggregations</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].mean()</span>
+<span id="cb8-2"><a href="#cb8-2"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].median()</span>
+<span id="cb8-3"><a href="#cb8-3"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].<span class="bu">max</span>()</span>
+<span id="cb8-4"><a href="#cb8-4"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].<span class="bu">min</span>()</span>
+<span id="cb8-5"><a href="#cb8-5"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">We can target a single variable by passing its name inside square brackets after the <code>DataFrameGroupBy</code> object.
 <ul>
@@ -572,31 +588,34 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
-<section id="aggregation-2" class="slide level2">
-<h2>Aggregation</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>sectors[<span class="st">"Revenues_M"</span>]  <span class="co"># this is a SeriesGroupBy object</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>sectors[<span class="st">"Revenues_M"</span>].agg(<span class="st">'sum'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3"></a>sectors[<span class="st">"Revenues_M"</span>].agg(<span class="st">'mean'</span>)</span>
-<span id="cb11-4"><a href="#cb11-4"></a>sectors[<span class="st">"Revenues_M"</span>].agg(<span class="st">'max'</span>)</span>
-<span id="cb11-5"><a href="#cb11-5"></a>sectors[<span class="st">"Revenues_M"</span>].agg(<span class="st">'min'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-agg-method" class="slide level2">
+<h2>The <code>agg()</code> Method</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>]  <span class="co"># this is a SeriesGroupBy object</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].agg(<span class="st">'sum'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].agg(<span class="st">'mean'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].agg(<span class="st">'max'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5"></a>fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].agg(<span class="st">'min'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>agg()</code> method can also be used on a <code>SeriesGroupBy</code>.</li>
 <li class="fragment">Instead of directly calling the aggregation method, we can call the <code>agg()</code> method, and pass the aggregation method we want in there.</li>
 </ul>
 </section>
-<section id="aggregation-3" class="slide level2">
+<section id="aggregation" class="slide level2">
 <h2>Aggregation</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>sectors.agg(</span>
-<span id="cb12-2"><a href="#cb12-2"></a>  Revenues_M_min <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="st">"min"</span>),</span>
-<span id="cb12-3"><a href="#cb12-3"></a>  Profits_M_max <span class="op">=</span> (<span class="st">"Profits_M"</span>, <span class="st">"max"</span>),</span>
-<span id="cb12-4"><a href="#cb12-4"></a>  Number_of_employees_mean <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="st">"mean"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>fortune.groupby(<span class="st">"Sector"</span>).agg(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  Revenues_M_min <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="st">"min"</span>),</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  Profits_M_max <span class="op">=</span> (<span class="st">"Profits_M"</span>, <span class="st">"max"</span>),</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  Number_of_employees_mean <span class="op">=</span> (<span class="st">"Number_of_employees"</span>, <span class="st">"mean"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">The <code>agg()</code> method can apply multiple aggregate operations to different variables and can accept a tuple as its argument.</li>
+<li class="fragment">The <code>agg()</code> method can apply multiple aggregate operations to different variables and can accept a <strong>tuple</strong> as its argument.
+<ul>
+<li class="fragment"><code>DataFrameGroupBy.agg(VARIABLE_NAME_1 = ("VARIABLE_1", "STATISTICS"), ...)</code></li>
+</ul></li>
 </ul>
 </section>
-<section id="useful-aggregation" class="slide level2">
-<h2>Useful Aggregation</h2>
+<section id="useful-built-in-functions" class="slide level2">
+<h2>Useful Built-in Functions</h2>
 <table>
 <colgroup>
 <col style="width: 35%">
@@ -647,52 +666,79 @@ Byeong-Hak Choe
 <li class="fragment">We pass in whatever aggregation we want.</li>
 </ul>
 </section>
+<section id="agg-with-a-lambda-udf" class="slide level2">
+<h2><code>agg()</code> with a <code>lambda</code> UDF</h2>
+<p>Some built‑in function cannot be directly passed to <code>agg()</code>. We can then supply a <code>lambda</code> function that receives a <strong>Series</strong> and returns a single value:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fortune.groupby(<span class="st">"Sector"</span>).agg(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    Revenue_IQR <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="kw">lambda</span> s: s.quantile(<span class="fl">0.75</span>) <span class="op">-</span> s.quantile(<span class="fl">0.25</span>) )</span>
+<span id="cb11-3"><a href="#cb11-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Any one‑line function can be supplied inline as <code>lambda s: …</code>.</li>
+<li class="fragment">The function must return <strong>one</strong> value per group.</li>
+</ul>
+</section>
 <section id="group-operations" class="slide level2">
 <h2>Group Operations</h2>
-<p>Let’s do Questions 1-6 in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
+<p>Let’s do <strong>Questions 1-3</strong> in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
+</section></section>
+<section>
+<section id="groupby-with-transform" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong><code>groupby()</code> with <code>transform()</code></strong></h1>
+
 </section>
-<section id="add-a-new-variable-with-groupby.transform" class="slide level2">
-<h2>Add a New Variable with <code>GroupBy.transform()</code></h2>
+<section id="transform-return-to-original-shape" class="slide level2">
+<h2><code>transform()</code> – Return to Original Shape</h2>
 <div>
 <ul>
-<li><p>Just like the <code>agg()</code> method, the <code>transform()</code> method can accept the aggregation method (e.g., <code>'sum'</code>, <code>'mean'</code>).</p></li>
-<li><p>Unlike the <code>agg()</code> method, the <code>transform()</code> method does not collapse <code>DataFrame</code> and goes back to the original index.</p></li>
+<li>Just like the <code>agg()</code> method, the <code>transform()</code> method can accept the built-in functions (e.g., <code>'sum'</code>, <code>'mean'</code>).</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>sectors[<span class="st">'Revenues_M'</span>].transform(<span class="st">'min'</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a>sectors[<span class="st">'Profits_M'</span>].transform(<span class="st">'max'</span>)</span>
-<span id="cb13-3"><a href="#cb13-3"></a>sectors[<span class="st">'Number_of_employees'</span>].transform(<span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="add-a-new-variable-with-groupby.transform-1" class="slide level2">
-<h2>Add a New Variable with <code>GroupBy.transform()</code></h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>fortune[<span class="st">'Revenues_M_min'</span>] <span class="op">=</span> sectors[<span class="st">'Revenues_M'</span>].transform(<span class="st">'min'</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>fortune[<span class="st">'Profits_M_max'</span>] <span class="op">=</span> sectors[<span class="st">'Profits_M'</span>].transform(<span class="st">'max'</span>)</span>
-<span id="cb14-3"><a href="#cb14-3"></a>fortune[<span class="st">'Number_of_employees_mean'</span>] <span class="op">=</span> sectors[<span class="st">'Number_of_employees'</span>].transform(<span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>fortune[<span class="st">"Sector_rev_mean"</span>] <span class="op">=</span> (</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].transform(<span class="st">"mean"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Since the <code>transform()</code> method returns a <code>Series</code> with the index label that is the same as in the original <code>DataFrame</code>, it can be used to add a new variable to the original <code>DataFrame</code>.</li>
+<li class="fragment">Unlike the <code>agg()</code> method, the <code>transform()</code> method does not collapse <code>DataFrame</code> and goes back to the original index.</li>
 </ul>
 </section>
-<section id="add-new-variables-with-assign-and-groupby.transform" class="slide level2">
-<h2>Add New Variables with <code>assign()</code> and <code>GroupBy.transform()</code></h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>sectors <span class="op">=</span> fortune.groupby(<span class="st">"Sector"</span>)</span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a>fortune <span class="op">=</span> fortune.assign(</span>
-<span id="cb15-4"><a href="#cb15-4"></a>    Revenues_M_min <span class="op">=</span> sectors[<span class="st">'Revenues_M'</span>].transform(<span class="st">'min'</span>),</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    Profits_M_max <span class="op">=</span> sectors[<span class="st">'Profits_M'</span>].transform(<span class="st">'max'</span>),</span>
-<span id="cb15-6"><a href="#cb15-6"></a>    Number_of_employees_mean <span class="op">=</span> sectors[<span class="st">'Number_of_employees'</span>].transform(<span class="st">'mean'</span>)</span>
-<span id="cb15-7"><a href="#cb15-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="transform-with-a-lambda-udf" class="slide level2">
+<h2><code>transform()</code> with a <code>lambda</code> UDF</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>fortune[<span class="st">"Rev_centered"</span>] <span class="op">=</span> (</span>
+<span id="cb13-2"><a href="#cb13-2"></a>    fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>]</span>
+<span id="cb13-3"><a href="#cb13-3"></a>           .transform(<span class="kw">lambda</span> s: s <span class="op">-</span> s.mean())</span>
+<span id="cb13-4"><a href="#cb13-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Each group’s mean is subtracted from its members, yielding a <em>de‑meaned</em> revenue variable.</li>
+</ul>
 </section>
-<section id="groupby.transform-with-shift" class="slide level2">
-<h2><code>GroupBy.transform()</code> with <code>shift()</code></h2>
+<section id="dataframe.assign-and-dataframegroupby.transform" class="slide level2">
+<h2><code>DataFrame.assign()</code> and <code>DataFrameGroupBy.transform()</code></h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>sectors <span class="op">=</span> fortune.groupby(<span class="st">"Sector"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>fortune_new <span class="op">=</span> fortune.assign(</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    Year <span class="op">=</span> <span class="dv">2024</span>,</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    nCompanies <span class="op">=</span> sectors.size(),</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    Revenues_M_min <span class="op">=</span> sectors[<span class="st">'Revenues_M'</span>].transform(<span class="st">'min'</span>),</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    Profits_M_max <span class="op">=</span> sectors[<span class="st">'Profits_M'</span>].transform(<span class="st">'max'</span>),</span>
+<span id="cb14-8"><a href="#cb14-8"></a>    Number_of_Employees_mean <span class="op">=</span> sectors[<span class="st">'Number_of_Employees'</span>].transform(<span class="st">'mean'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><code>assign()</code> can be used to add a new variable to a <code>DataFrame</code>.
+<ul>
+<li class="fragment"><code>assign()</code> is a <code>DataFrame</code> method, not a <code>DataFrameGroupBy</code> method.</li>
+</ul></li>
+</ul>
+</section>
+<section id="transform-with-shift" class="slide level2">
+<h2><code>transform()</code> with <code>shift()</code></h2>
 <div>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><strong>Data</strong></a></li><li><a href="#tabset-1-2"><code>shift()</code></a></li><li><a href="#tabset-1-3"><strong>Growth Rate</strong></a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><strong>Data</strong></a></li><li><a href="#tabset-1-2"><code>shift()</code></a></li><li><a href="#tabset-1-3"><strong>Percentage Changes</strong></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
 <li><code>fortune_2021_2024</code> contains 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>fortune_2021_2024 <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune741_2021_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>fortune_2021_2024 <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune741_2021_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Here we are interested in calculating the yearly revenue growth rate for each company in <code>fortune_2021_2024</code> using the following formula: <span class="math display">\[
 \text{(Revenue Growth Rate)}_{year} = \frac{\text{Revenue}_{year} - \text{Revenue}_{year-1}}{\text{Revenue}_{year-1}}
@@ -700,7 +746,7 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-1-2">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>df[<span class="st">'Revenues_M_last_year'</span>] <span class="op">=</span> df.groupby(<span class="st">'Company'</span>)[<span class="st">'Revenues_M'</span>].shift(<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>df[<span class="st">'Revenues_M_last_year'</span>] <span class="op">=</span> df.groupby(<span class="st">'Company'</span>)[<span class="st">'Revenues_M'</span>].shift(<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>What <code>shift()</code> does in pandas:
 <ul>
@@ -715,7 +761,7 @@ Byeong-Hak Choe
 </ul>
 </div>
 <div id="tabset-1-3">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>df[<span class="st">'GrowthRate_Revenue'</span>] <span class="op">=</span> (df[<span class="st">'Revenues_M'</span>] <span class="op">-</span> df[<span class="st">'Revenues_M_last_year'</span>]) <span class="op">/</span> df[<span class="st">'Revenues_M_last_year'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>df[<span class="st">'GrowthRate_Revenue'</span>] <span class="op">=</span> (df[<span class="st">'Revenues_M'</span>] <span class="op">-</span> df[<span class="st">'Revenues_M_last_year'</span>]) <span class="op">/</span> df[<span class="st">'Revenues_M_last_year'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
 \text{(Revenue Growth Rate)}_{year} = \frac{\text{Revenue}_{year} - \text{Revenue}_{year-1}}{\text{Revenue}_{year-1}}
 \]</span></p>
@@ -724,158 +770,26 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="agg-vs.-transform" class="slide level2">
-<h2><code>agg()</code> vs.&nbsp;<code>transform()</code></h2>
-<ul>
-<li class="fragment">Use <code>.agg()</code> with <code>.groupby()</code> when you want to take multiple values and return a single (aggregated) value for <em>each group</em>.
-<ul>
-<li class="fragment">Groups become the new index labels.</li>
-</ul></li>
-<li class="fragment">Use <code>.transform()</code> with <code>.groupby()</code> when you want to perform computations on your groups but you want to return a single (aggregated) value for <em>each observation</em>.
-<ul>
-<li class="fragment">That is, <code>.transform()</code> does not collapse the <code>DataFrame</code>.</li>
-</ul></li>
-</ul>
-</section>
 <section id="group-operations-1" class="slide level2">
 <h2>Group Operations</h2>
-<p>Let’s do Question 7 of <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
+<p>Let’s do <strong>Question 4</strong> in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
 </section></section>
 <section>
-<section id="grouping-by-multiple-variables" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Grouping by Multiple Variables</strong></h1>
-
-</section>
-<section id="grouping-by-multiple-variables-1" class="slide level2">
-<h2>Grouping by Multiple Variables</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>sector_and_industry <span class="op">=</span> fortune.groupby([<span class="st">"Sector"</span>, <span class="st">"Industry"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">We can create <code>DataFrameGroupBy</code> object with values from multiple variables.
-<ul>
-<li class="fragment">This operation is optimal when a combination of variables serves as the best identifier for a group.</li>
-</ul></li>
-</ul>
-</section>
-<section id="grouping-by-multiple-variables-2" class="slide level2">
-<h2>Grouping by Multiple Variables</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>(</span>
-<span id="cb20-2"><a href="#cb20-2"></a>    sector_and_industry</span>
-<span id="cb20-3"><a href="#cb20-3"></a>    .size()</span>
-<span id="cb20-4"><a href="#cb20-4"></a>    .reset_index(name <span class="op">=</span> <span class="st">"n"</span>)</span>
-<span id="cb20-5"><a href="#cb20-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><p>The <code>DataFrameGroupBy</code> object’s <code>size()</code> method now returns a <code>MultiIndex Series</code> with a count of observations for each internal group.</p></li>
-<li class="fragment"><p>The <code>reset_index()</code> method can be used to convert a <code>Series</code> into a <code>DataFrame</code>.</p>
-<ul>
-<li class="fragment">The <code>name</code> option renames a variable of index when resetting index.</li>
-</ul></li>
-</ul>
-</section>
-<section id="grouping-by-multiple-variables-3" class="slide level2">
-<h2>Grouping by Multiple Variables</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>sector_and_industry.get_group((<span class="st">"Business Services"</span>, <span class="st">"Financial Data Services"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">The <code>get_group()</code> method requires a <em>tuple</em> of values to extract a nested <code>DataFrame</code> from the <code>GroupBy</code> collection.</li>
-</ul>
-</section>
-<section id="grouping-by-multiple-variables-4" class="slide level2">
-<h2>Grouping by Multiple Variables</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>sector_and_industry.<span class="bu">sum</span>()</span>
-<span id="cb22-2"><a href="#cb22-2"></a>sector_and_industry[<span class="st">"Revenues_M"</span>].mean()</span>
-<span id="cb22-3"><a href="#cb22-3"></a></span>
-<span id="cb22-4"><a href="#cb22-4"></a>(</span>
-<span id="cb22-5"><a href="#cb22-5"></a>    sector_and_industry[<span class="st">"Revenues_M"</span>]</span>
-<span id="cb22-6"><a href="#cb22-6"></a>    .mean()</span>
-<span id="cb22-7"><a href="#cb22-7"></a>    .reset_index()</span>
-<span id="cb22-8"><a href="#cb22-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">For all aggregations, pandas returns a <code>MultiIndex DataFrame</code> with the calculations.</li>
-</ul>
-</section></section>
-<section>
-<section id="primer-on-user-defined-functions-udfs" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Primer on User-Defined Functions (UDFs)</strong></h1>
-
-</section>
-<section id="primer-on-user-defined-functions-udfs-1" class="slide level2">
-<h2>Primer on User-Defined Functions (UDFs)</h2>
-<ul>
-<li class="fragment"><p>A function can take any number and type of input <em>parameters</em> and return any number and type of output <em>results</em>.</p></li>
-<li class="fragment"><p>We can do two things with a function:</p>
-<ul>
-<li class="fragment"><em>Define</em> it</li>
-<li class="fragment"><em>Call</em> it</li>
-</ul></li>
-</ul>
-</section>
-<section id="primer-on-user-defined-functions" class="slide level2">
-<h2>Primer on User-Defined Functions</h2>
-<div>
-<ul>
-<li><p>To define a Python function, we type <code>def</code>, the function name, parentheses enclosing any input <em>parameters</em> to the function, and then finally, a colon (<code>:</code>).</p></li>
-<li><p>Let’s define a very simple function <code>my_half()</code> that has a parameter <code>x</code> and returns a value <code>x / 2</code>.</p></li>
-</ul>
-</div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">def</span> my_half(x):</span>
-<span id="cb23-2"><a href="#cb23-2"></a>    <span class="cf">return</span> x <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>    </span>
-<span id="cb23-4"><a href="#cb23-4"></a>my_half(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><p>The values we pass into the function when we call it are known as <strong>arguments</strong>.</p></li>
-<li class="fragment"><p>When we call a function with arguments, the values of those arguments are copied to their corresponding <strong>parameters</strong> inside the function.</p></li>
-</ul>
-</section>
-<section id="primer-on-user-defined-functions---lambda-functions" class="slide level2">
-<h2>Primer on User-Defined Functions - Lambda Functions</h2>
-<div>
-<ul>
-<li>A Python <strong>lambda</strong> function is an <strong>anonymous</strong> function expressed as a single statement.
-<ul>
-<li>It is defined with the <strong>lambda</strong> keyword, which has no meaning other than “<strong>we are declaring an anonymous function</strong>”:</li>
-</ul></li>
-</ul>
-</div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">def</span> my_half(x):</span>
-<span id="cb24-2"><a href="#cb24-2"></a>    <span class="cf">return</span> x <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>    </span>
-<span id="cb24-4"><a href="#cb24-4"></a>equiv_my_half <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a></span>
-<span id="cb24-6"><a href="#cb24-6"></a>my_half(<span class="dv">2</span>)</span>
-<span id="cb24-7"><a href="#cb24-7"></a>equiv_my_half(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="primer-on-user-defined-functions---positional-arguments" class="slide level2">
-<h2>Primer on User-Defined Functions - Positional Arguments</h2>
-<div>
-<ul>
-<li><strong>Positional arguments</strong> in Python functions are arguments that need to be included in the correct position or order.<br>
-</li>
-<li>When we call the function, we need to provide the corresponding inputs in the same order.</li>
-</ul>
-</div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">def</span> my_ratio(x, y):</span>
-<span id="cb25-2"><a href="#cb25-2"></a>    <span class="cf">return</span> x <span class="op">/</span> y</span>
-<span id="cb25-3"><a href="#cb25-3"></a>    </span>
-<span id="cb25-4"><a href="#cb25-4"></a>equiv_my_ratio <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">/</span> y</span>
-<span id="cb25-5"><a href="#cb25-5"></a></span>
-<span id="cb25-6"><a href="#cb25-6"></a>my_ratio(<span class="dv">4</span>, <span class="dv">2</span>)</span>
-<span id="cb25-7"><a href="#cb25-7"></a>my_ratio(<span class="dv">2</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section>
-<section>
-<section id="group-operations-with-udfs" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Group Operations with UDFs</strong></h1>
+<section id="groupby-with-apply" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong><code>groupby()</code> with <code>apply()</code></strong></h1>
 
 </section>
 <section id="applying-a-udf-to-all-groups" class="slide level2">
 <h2>Applying a UDF to All Groups</h2>
 <div>
 <ul>
-<li>Suppose that we want to apply a UDF to each group in <code>DataFrameGroupBy</code> object.
+<li>Sometimes we need something neither <code>agg()</code> nor <code>transform()</code> can do, like “top‑3 by revenue in each sector”.
 <ul>
-<li>For practice, let’s consider the <code>fortune_shuffled</code> DataFrame, where the observations in <code>fortune</code> are shuffled.</li>
+<li>Use <code>apply()</code> and provide a method that operates on each group’s <code>DataFrame</code>.</li>
 </ul></li>
 </ul>
 </div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>fortune_shuffled <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>fortune_shuffled <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">How can we get a DataFrame with top 5 companies in each sector?
 <ol type="1">
@@ -885,75 +799,72 @@ Byeong-Hak Choe
 <li class="fragment">However, <code>DataFrameGroupBy</code> has no methods <code>sort_values()</code> or <code>nlargest()</code>.</li>
 </ul>
 </section>
-<section id="applying-a-udf-to-all-groups-1" class="slide level2">
-<h2>Applying a UDF to All Groups</h2>
+<section id="applying-a-lambda-udf-with-.apply" class="slide level2">
+<h2>Applying a <code>lambda</code> UDF with <code>.apply()</code></h2>
 <div>
 <ul>
-<li>How can we apply the <code>nlargest()</code> method to each group?
-<ul>
-<li>First, define a <em>UDF</em> that accepts a single argument: a <code>DataFrame</code>.</li>
-<li>Second, pass the <code>apply()</code> method the UDF.</li>
-</ul></li>
+<li>We can directly apply a custom function (UDF) using a lambda expression with <code>.apply()</code>:</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">def</span> get_largest_obs(df):</span>
-<span id="cb27-2"><a href="#cb27-2"></a>    <span class="cf">return</span> df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3"></a></span>
-<span id="cb27-4"><a href="#cb27-4"></a>sectors.<span class="bu">apply</span>(get_largest_obs)</span>
-<span id="cb27-5"><a href="#cb27-5"></a></span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="co"># labmda function</span></span>
-<span id="cb27-7"><a href="#cb27-7"></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">We can use the <code>apply()</code> method when pandas does not support a custom aggregation we would like to apply to each group.</li>
+<li class="fragment">This returns the largest observation(s) within each group.</li>
 </ul>
 </section>
-<section id="applying-a-udf-to-all-groups-2" class="slide level2">
-<h2>Applying a UDF to All Groups</h2>
-<div>
-<ul>
-<li>To rewrite the <code>get_largest_obs</code> function as a lambda function, we would define it as follows:</li>
-</ul>
-</div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">def</span> get_largest_obs(df):</span>
-<span id="cb28-2"><a href="#cb28-2"></a>    <span class="cf">return</span> df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>)</span>
-<span id="cb28-3"><a href="#cb28-3"></a></span>
-<span id="cb28-4"><a href="#cb28-4"></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">We can use the <code>apply()</code> method when pandas does not support a custom aggregation we would like to apply to each group.</li>
-</ul>
-</section>
-<section id="applying-a-udf-to-all-groups-3" class="slide level2">
-<h2>Applying a UDF to All Groups</h2>
-<div>
-<ul>
-<li>To rewrite our <code>get_largest_obs</code> function as a lambda function with the <code>apply()</code> method, we can do the following.</li>
-</ul>
-</div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="applying-a-udf-to-all-groups-4" class="slide level2">
-<h2>Applying a UDF to All Groups</h2>
+<section id="passing-additional-parameters" class="slide level2">
+<h2>Passing Additional Parameters</h2>
 <div>
 <ul>
 <li>How can we apply a UDF with multiple parameters to <code>DataFrameGroupBy</code> object?</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">def</span> get_nlargest_obs(df, n, var):</span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="cf">return</span> df.nlargest(n, var, keep <span class="op">=</span> <span class="st">"all"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3"></a></span>
-<span id="cb30-4"><a href="#cb30-4"></a>sectors.<span class="bu">apply</span>(get_nlargest_obs, <span class="dv">2</span>, <span class="st">"Revenues_M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">def</span> get_nlargest_obs(df, n, var):</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="cf">return</span> df.nlargest(n, var, keep <span class="op">=</span> <span class="st">"all"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a>sectors.<span class="bu">apply</span>(get_nlargest_obs, <span class="dv">2</span>, <span class="st">"Revenues_M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">When applying a UDF with multiple parameters to <code>DataFrameGroupBy</code> object, we need to provide the rest of arguments to the <code>apply()</code> method.</li>
 </ul>
 </section>
-<section id="applying-a-udf-to-all-groups-5" class="slide level2">
+<section id="passing-additional-parameters-1" class="slide level2">
+<h2>Passing Additional Parameters</h2>
+<div>
+<ul>
+<li>Suppose we want to filter groups based on a threshold for a given variable:</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">def</span> filter_by_threshold(df, column, threshold):</span>
+<span id="cb21-2"><a href="#cb21-2"></a>    <span class="cf">return</span> df[ df[column] <span class="op">&gt;</span> threshold ]</span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a>sectors.<span class="bu">apply</span>(filter_by_threshold, <span class="st">"Revenues_M"</span>, <span class="dv">5000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">In this example, the arguments <code>"Revenues_M"</code> and <code>5000</code> are passed to filter rows within each group.</li>
+</ul>
+<!-- ## Applying a UDF to All Groups -->
+<!-- :::{.nonincremental} -->
+<!-- - To rewrite our `get_largest_obs` function as a lambda function with the `apply()` method, we can do the following.  -->
+<!-- ::: -->
+<!-- ```{.python} -->
+<!-- sectors.apply(lambda df: df.nlargest(1, "Revenues_M", keep="all")) -->
+<!-- ``` -->
+<!-- ## Applying a UDF to All Groups -->
+<!-- :::{.nonincremental} -->
+<!-- - How can we apply a UDF with multiple parameters to `DataFrameGroupBy` object? -->
+<!-- ::: -->
+<!-- ```{.python} -->
+<!-- def get_nlargest_obs(df, n, var): -->
+<!--   return df.nlargest(n, var, keep = "all") -->
+<!-- sectors.apply(get_nlargest_obs, 2, "Revenues_M") -->
+<!-- ``` -->
+</section>
+<section id="applying-a-udf-to-all-groups-1" class="slide level2">
 <h2>Applying a UDF to All Groups</h2>
 <div>
 <ul>
 <li>Can we apply a lambda function with multiple parameters to <code>DataFrameGroupBy</code> object?</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">2</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">2</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Lambda functions do not support passing additional parameters directly in the <code>apply()</code> method!
 <ul>
@@ -961,9 +872,131 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
+<section id="agg-vs.-transform-vs.-apply" class="slide level2">
+<h2><code>agg()</code> vs.&nbsp;<code>transform()</code> vs.&nbsp;<code>apply()</code></h2>
+<div>
+<ul>
+<li>Use <strong><code>agg()</code></strong> with <code>.groupby()</code> when summarizing multiple values into a <strong>single aggregated value per group</strong>.
+<ul>
+<li>Groups become the new index labels.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>fortune.groupby(<span class="st">"Sector"</span>).agg(Revenue_mean <span class="op">=</span> (<span class="st">"Revenues_M"</span>, <span class="st">"mean"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Use <strong><code>transform()</code></strong> with <code>.groupby()</code> when computing <strong>one aggregated value per observation</strong>.
+<ul>
+<li>Does <strong>not</strong> collapse the <code>DataFrame</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>fortune[<span class="st">"Revenue_diff_mean"</span>] <span class="op">=</span> fortune[<span class="st">"Revenues_M"</span>] <span class="op">-</span> fortune.groupby(<span class="st">"Sector"</span>)[<span class="st">"Revenues_M"</span>].transform(<span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Use <strong><code>apply()</code></strong> with <code>.groupby()</code> for <strong>custom operations</strong> returning <strong>multiple observations per group</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>fortune.groupby(<span class="st">"Sector"</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.nlargest(<span class="dv">3</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="agg-vs.-transform-vs-apply" class="slide level2">
+<h2><code>agg()</code> vs.&nbsp;<code>transform()</code> vs <code>apply()</code></h2>
+<!-- - Use `agg()` with `.groupby()` when we want to take multiple values and return a single (aggregated) value for *each group*. -->
+<!--   - Groups become the new index labels. -->
+<!-- - Use `transform()` with `.groupby()` when we want to perform computations on our groups but we want to return a single (aggregated) value for *each observation*. -->
+<!--   -  That is, `transform()` does not collapse the `DataFrame`. -->
+<p><br></p>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Method</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Result Shape</strong></th>
+<th><strong>Example Use Case</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>agg()</code></td>
+<td>Summarize groups</td>
+<td>One row per group</td>
+<td>Calculate <strong>average revenue</strong> by sector</td>
+</tr>
+<tr class="even">
+<td><code>transform()</code></td>
+<td>Broadcast group-level metrics</td>
+<td>Same shape as original <code>DataFrame</code></td>
+<td><strong>Add a column</strong> that repeats each sector’s average revenue for every row</td>
+</tr>
+<tr class="odd">
+<td><code>apply()</code></td>
+<td>Complex processing</td>
+<td>Varies with function</td>
+<td>Get <strong>top <em>N</em></strong> companies in each sector</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="grouping-by-multiple-variables" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Grouping by Multiple Variables</strong></h1>
+
+</section>
+<section id="grouping-by-multiple-variables-1" class="slide level2">
+<h2>Grouping by Multiple Variables</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>sector_and_industry <span class="op">=</span> fortune.groupby([<span class="st">"Sector"</span>, <span class="st">"Industry"</span>])</span>
+<span id="cb26-2"><a href="#cb26-2"></a></span>
+<span id="cb26-3"><a href="#cb26-3"></a>sector_and_industry.groups</span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="bu">len</span>(sector_and_industry)   </span>
+<span id="cb26-5"><a href="#cb26-5"></a>sector_and_industry.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">We can create <code>DataFrameGroupBy</code> object with values from multiple variables.
+<ul>
+<li class="fragment">This operation is optimal when a combination of variables serves as the best identifier for a group.</li>
+</ul></li>
+<li class="fragment">Grouping on two or more columns gives us a <strong>MultiIndex</strong> whose levels correspond exactly to those grouping columns.</li>
+</ul>
+</section>
+<section id="aggregation-with-agg" class="slide level2">
+<h2>Aggregation with <code>agg()</code></h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>agg_tbl <span class="op">=</span> (</span>
+<span id="cb27-2"><a href="#cb27-2"></a>    fortune</span>
+<span id="cb27-3"><a href="#cb27-3"></a>    .groupby([<span class="st">"Sector"</span>, <span class="st">"Industry"</span>])</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    .agg(</span>
+<span id="cb27-5"><a href="#cb27-5"></a>        n_companies <span class="op">=</span> (<span class="st">"Company"</span>,   <span class="st">"size"</span>),</span>
+<span id="cb27-6"><a href="#cb27-6"></a>        avg_rev     <span class="op">=</span> (<span class="st">"Revenues_M"</span>,<span class="st">"mean"</span>),</span>
+<span id="cb27-7"><a href="#cb27-7"></a>        tot_rev     <span class="op">=</span> (<span class="st">"Revenues_M"</span>,<span class="st">"sum"</span>)</span>
+<span id="cb27-8"><a href="#cb27-8"></a>    )</span>
+<span id="cb27-9"><a href="#cb27-9"></a>    .reset_index()  <span class="co"># Flattens the MultiIndex into ordinary columns</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="adding-new-variables-with-transform" class="slide level2">
+<h2>Adding New Variables with <code>transform()</code></h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>fortune[<span class="st">'pct_of_industry_rev'</span>] <span class="op">=</span> (</span>
+<span id="cb28-2"><a href="#cb28-2"></a>        fortune</span>
+<span id="cb28-3"><a href="#cb28-3"></a>        .groupby([<span class="st">"Sector"</span>, <span class="st">"Industry"</span>])[<span class="st">"Revenues_M"</span>]</span>
+<span id="cb28-4"><a href="#cb28-4"></a>        .transform(<span class="kw">lambda</span> x: x <span class="op">/</span> x.<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="custom-group-logic-with-apply" class="slide level2">
+<h2>Custom group logic with <code>apply()</code></h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">def</span> above_median(df):</span>
+<span id="cb29-2"><a href="#cb29-2"></a>    med <span class="op">=</span> df[<span class="st">"Revenues_M"</span>].median()</span>
+<span id="cb29-3"><a href="#cb29-3"></a>    <span class="cf">return</span> df[ df[<span class="st">"Revenues_M"</span>] <span class="op">&gt;</span> med ]      </span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a>(</span>
+<span id="cb29-6"><a href="#cb29-6"></a>    fortune</span>
+<span id="cb29-7"><a href="#cb29-7"></a>    .groupby([<span class="st">"Sector"</span>, <span class="st">"Industry"</span>])</span>
+<span id="cb29-8"><a href="#cb29-8"></a>    .<span class="bu">apply</span>(above_median)      </span>
+<span id="cb29-9"><a href="#cb29-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- ## Group Operations -->
+<!-- Let's do Question 8 of [**Classwork 13**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html)! -->
+</section>
 <section id="group-operations-2" class="slide level2">
 <h2>Group Operations</h2>
-<p>Let’s do Question 8 of <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
+<p>Let’s do <strong>Questions 5-6</strong> in <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-13.html"><strong>Classwork 13</strong></a>!</p>
 
 <div class="footer footer-default">
 

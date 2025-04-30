@@ -48,7 +48,7 @@ rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/cereals_oa
 
 
 ## Question 1
-Group the `cereals_oatmeal`, using the `Manufacturer` variable.
+Group the data by Manufacturer, and determine the number of groups and the number of cereals per group.
 
 *Answer:*
 ```{python}
@@ -57,8 +57,8 @@ Group the `cereals_oatmeal`, using the `Manufacturer` variable.
 
 <br><br>
 
-## Question 2
-Determine the total number of groups, and the number of cereals per group.
+## Question 2 
+Calculate the mean of the `Calories`, `Fiber`, and `Sugars` for every manufacturer.
 
 *Answer:*
 ```{python}
@@ -68,7 +68,7 @@ Determine the total number of groups, and the number of cereals per group.
 <br><br>
 
 ## Question 3 
-Extract the cereals that belong to the manufacturer `"Kellogg's"`.
+Create a new DataFrame that includes the maximum `Sugars` and the minimum `Fiber` per manufacturer.
 
 *Answer:*
 ```{python}
@@ -76,45 +76,16 @@ Extract the cereals that belong to the manufacturer `"Kellogg's"`.
 ```
 
 <br><br>
+
 
 ## Question 4 
-Calculate the average of values in the `Calories`, `Fiber`, and `Sugars` variables for each manufacturer.
-
-*Answer:*
-```{python}
-
-```
-
-<br><br>
-
-## Question 5 
-Find the maximum value in the `Sugars` variable for each manufacturer.
-
-*Answer:*
-```{python}
-
-```
-
-<br><br>
-
-## Question 6 
-Find the minimum value in the `Fiber` variable for each manufacturer.
-
-*Answer:*
-```{python}
-
-```
-
-<br><br>
-
-## Question 7 
-- Calculate a '`Normalized_Sugars`' variable for each product by `Manufacturer`, where the normalization formula is 
+Add a `Normalized_Sugars` variable to the `cereal` DataFrame that standardizes each cereal's sugar content within its manufacturer group.
 
 $$
 \text{Normalized\_Sugars} = \frac{\text{Sugars} - \text{mean(Sugars)}}{\text{std(Sugars)}}
 $$
 
-for each `Manufacturer` group. This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.
+This formula adjusts the sugar content of each product by subtracting the mean sugar content of its manufacturer and then dividing by the standard deviation of the sugar content within its manufacturer.
 
 *Answer:*
 ```{python}
@@ -125,8 +96,8 @@ for each `Manufacturer` group. This formula adjusts the sugar content of each pr
 
 
 
-## Question 8 
-Extract the cereal with the lowest amount of grams of sugar per manufacturer in a new DataFrame.
+## Question 5 
+Put the two highest-sugar cereals for every manufacturer in a new DataFrame.
 
 *Answer:*
 ```{python}
@@ -136,8 +107,24 @@ Extract the cereal with the lowest amount of grams of sugar per manufacturer in 
 <br><br>
 
 
+## Question 6
+- Compute the correlation between `Calories` and `Sugars` for each manufacturer.
+    - `corr()` calculates the correlation between `SERIES_1` and `SERIES_2`.
+```{python}
+#| eval: false
+#| echo: true
+cereal["Calories"].corr( cereal["Sugars"] ) # returns a correlation value
+cereal[["Calories", "Sugars"]].corr() # returns a DataFrame of correlation matrix
+cereal[["Calories", "Sugars", "Fiber"]].corr() # returns a DataFrame of correlation matrix
+```
+
+*Answer:*
+```{python}
+
+```
 
 
+<br><br>
 
 # Discussion
 
