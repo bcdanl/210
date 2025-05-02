@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
 
-<title>DANL 210-01: Data Preparation and Management, Spring 2025 | Byeong-Hak Choe</title>
+<title>&lt;font style="font-family:Optima"&gt;&lt;b&gt;DANL 210-01: Data Preparation and Management, Spring 2025&lt;/b&gt;&lt;/font&gt; | Byeong-Hak Choe – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,24 +32,33 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-958fc32383290b5ef6234cdb9c3ce2d8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-00039a9b2ce3f1a1ebc67187faa3690e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-958fc32383290b5ef6234cdb9c3ce2d8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c9a35aa24558891f26e83c745823666a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ed2917f031134f99976073a3a872750f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c9a35aa24558891f26e83c745823666a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -196,24 +206,212 @@ border-radius: 5px; /* Rounds the corners */
 }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="assets/css/font.css">
 <meta property="og:title" content="DANL 210-01: Data Preparation and Management, Spring 2025 | Byeong-Hak Choe">
 <meta property="og:description" content="<div class=class=“box-body buttons-text clearfix”>">
 <meta property="og:image" content="/assets/img/posts.png">
-<meta property="og:site-name" content="Home">
+<meta property="og:site_name" content="Home">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
     </a>
@@ -222,46 +420,49 @@ border-radius: 5px; /* Rounds the corners */
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./listing-danl-210-lec.html" rel="" target="">
- <span class="menu-text">Lecture</span></a>
+    <a class="nav-link" href="./listing-danl-210-lec.html"> 
+<span class="menu-text">Lecture</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./listing-danl-210-cw.html" rel="" target="">
- <span class="menu-text">Classwork</span></a>
+    <a class="nav-link" href="./listing-danl-210-cw.html"> 
+<span class="menu-text">Classwork</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./listing-danl-210-hw.html" rel="" target="">
- <span class="menu-text">Homework</span></a>
+    <a class="nav-link" href="./listing-danl-210-hw.html"> 
+<span class="menu-text">Homework</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./listing-danl-210-ex.html" rel="" target="">
- <span class="menu-text">Exam</span></a>
+    <a class="nav-link" href="./listing-danl-210-ex.html"> 
+<span class="menu-text">Exam</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./danl-rw/danl-210-project.html" rel="" target="">
- <span class="menu-text">Project</span></a>
+    <a class="nav-link" href="./danl-rw/danl-210-project.html"> 
+<span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/bcdanl/210-code" rel="" target="_blank">
- <span class="menu-text">Class Code</span></a>
+    <a class="nav-link" href="https://github.com/bcdanl/210-code" target="_blank"> 
+<span class="menu-text">Class Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog-listing.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="./blog-listing.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
-  <li class="dropdown-header">
- <span class="menu-text"> </span></li>
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text"> </span>
+    </span>
+  </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -273,6 +474,7 @@ border-radius: 5px; /* Rounds the corners */
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><font style="font-family:Optima"><b>DANL 210-01: Data Preparation and Management, Spring 2025</b></font></h1>
@@ -281,7 +483,7 @@ border-radius: 5px; /* Rounds the corners */
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -289,7 +491,9 @@ border-radius: 5px; /* Rounds the corners */
   </div>
   
 
+
 </header>
+
 
 <div style="display:block; margin:30px;">
 
@@ -305,25 +509,29 @@ border-radius: 5px; /* Rounds the corners */
 <section id="bullet-lecture-slides" class="level2">
 <h2 class="anchored" data-anchor-id="bullet-lecture-slides"><span class="math inline">\(\bullet\,\)</span> Lecture Slides <span class="emoji" data-emoji="rocket">🚀</span></h2>
 <div id="listing-danl-210-lec" class="quarto-listing quarto-listing-container-table">
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Title
 </th>
+
 <th>
 Subtitle
 </th>
+
 <th>
 Date
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1737522000000" data-listing-file-modified-sort="1737726392637" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-title-sort="Lecture 1" data-listing-filename-sort="danl-210-lec-01-2025-0122.qmd">
+
+<tr data-index="0" data-listing-date-sort="1737522000000" data-listing-file-modified-sort="1737726392637" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4047" data-listing-title-sort="Lecture 1" data-listing-filename-sort="danl-210-lec-01-2025-0122.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-01-2025-0122.html'); return false;"" class="title listing-title">Lecture 1</a>
+<a href="./danl-lec/danl-210-lec-01-2025-0122.html" class="title listing-title">Lecture 1</a>
 </td>
 <td>
 <span class="listing-subtitle">Syllabus, Course Outline, and Introduction</span>
@@ -331,10 +539,12 @@ Date
 <td>
 <span class="listing-date">January 22, 2025</span>
 </td>
+
 </tr>
-<tr data-index="1" data-listing-date-sort="1737694800000" data-listing-file-modified-sort="1737727396800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Lecture 2" data-listing-filename-sort="danl-210-lec-02-2025-0124.qmd">
+
+<tr data-index="1" data-listing-date-sort="1737694800000" data-listing-file-modified-sort="1737727396800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1719" data-listing-title-sort="Lecture 2" data-listing-filename-sort="danl-210-lec-02-2025-0124.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-02-2025-0124.html'); return false;"" class="title listing-title">Lecture 2</a>
+<a href="./danl-lec/danl-210-lec-02-2025-0124.html" class="title listing-title">Lecture 2</a>
 </td>
 <td>
 <span class="listing-subtitle">Prologue; DANL Tools; Building a Website; Markdown</span>
@@ -342,10 +552,12 @@ Date
 <td>
 <span class="listing-date">January 24, 2025</span>
 </td>
+
 </tr>
-<tr data-index="2" data-listing-date-sort="1737954000000" data-listing-file-modified-sort="1738109778103" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Lecture 3" data-listing-filename-sort="danl-210-lec-03-2025-0127.qmd">
+
+<tr data-index="2" data-listing-date-sort="1737954000000" data-listing-file-modified-sort="1738109778103" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1323" data-listing-title-sort="Lecture 3" data-listing-filename-sort="danl-210-lec-03-2025-0127.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-03-2025-0127.html'); return false;"" class="title listing-title">Lecture 3</a>
+<a href="./danl-lec/danl-210-lec-03-2025-0127.html" class="title listing-title">Lecture 3</a>
 </td>
 <td>
 <span class="listing-subtitle">Getting Started with Jupyter Notebook and Quarto</span>
@@ -353,10 +565,12 @@ Date
 <td>
 <span class="listing-date">January 27, 2025</span>
 </td>
+
 </tr>
-<tr data-index="3" data-listing-date-sort="1738299600000" data-listing-file-modified-sort="1740644588733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Lecture 4" data-listing-filename-sort="danl-210-lec-04-2025-0131.qmd">
+
+<tr data-index="3" data-listing-date-sort="1738299600000" data-listing-file-modified-sort="1740644588733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1496" data-listing-title-sort="Lecture 4" data-listing-filename-sort="danl-210-lec-04-2025-0131.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-04-2025-0131.html'); return false;"" class="title listing-title">Lecture 4</a>
+<a href="./danl-lec/danl-210-lec-04-2025-0131.html" class="title listing-title">Lecture 4</a>
 </td>
 <td>
 <span class="listing-subtitle">Python Basics - Variables; Assignments; Data Types; Operators; Casting Values; Data Containers</span>
@@ -364,10 +578,12 @@ Date
 <td>
 <span class="listing-date">January 31, 2025</span>
 </td>
+
 </tr>
-<tr data-index="4" data-listing-date-sort="1738558800000" data-listing-file-modified-sort="1740644614035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-title-sort="Lecture 5" data-listing-filename-sort="danl-210-lec-05-2025-0203.qmd">
+
+<tr data-index="4" data-listing-date-sort="1738558800000" data-listing-file-modified-sort="1740644614035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4696" data-listing-title-sort="Lecture 5" data-listing-filename-sort="danl-210-lec-05-2025-0203.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-05-2025-0203.html'); return false;"" class="title listing-title">Lecture 5</a>
+<a href="./danl-lec/danl-210-lec-05-2025-0203.html" class="title listing-title">Lecture 5</a>
 </td>
 <td>
 <span class="listing-subtitle">Python Basics - <code>if</code>-<code>else</code> Chains; Slicing; Functions; <code>while</code> &amp; <code>for</code> loops; List &amp; Dictionary Methods; <code>try</code>-<code>except</code> Blocks</span>
@@ -375,10 +591,12 @@ Date
 <td>
 <span class="listing-date">February 3, 2025</span>
 </td>
+
 </tr>
-<tr data-index="5" data-listing-date-sort="1739163600000" data-listing-file-modified-sort="1739674392368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Lecture 6" data-listing-filename-sort="danl-210-lec-06-2025-0210.qmd">
+
+<tr data-index="5" data-listing-date-sort="1739163600000" data-listing-file-modified-sort="1739674392368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1002" data-listing-title-sort="Lecture 6" data-listing-filename-sort="danl-210-lec-06-2025-0210.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-06-2025-0210.html'); return false;"" class="title listing-title">Lecture 6</a>
+<a href="./danl-lec/danl-210-lec-06-2025-0210.html" class="title listing-title">Lecture 6</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Loading Data</span>
@@ -386,10 +604,12 @@ Date
 <td>
 <span class="listing-date">February 10, 2025</span>
 </td>
+
 </tr>
-<tr data-index="6" data-listing-date-sort="1739336400000" data-listing-file-modified-sort="1739378224961" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Lecture 7" data-listing-filename-sort="danl-210-lec-07-2025-0212.qmd">
+
+<tr data-index="6" data-listing-date-sort="1739336400000" data-listing-file-modified-sort="1739378224961" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="978" data-listing-title-sort="Lecture 7" data-listing-filename-sort="danl-210-lec-07-2025-0212.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-07-2025-0212.html'); return false;"" class="title listing-title">Lecture 7</a>
+<a href="./danl-lec/danl-210-lec-07-2025-0212.html" class="title listing-title">Lecture 7</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods</span>
@@ -397,10 +617,12 @@ Date
 <td>
 <span class="listing-date">February 12, 2025</span>
 </td>
+
 </tr>
-<tr data-index="7" data-listing-date-sort="1739509200000" data-listing-file-modified-sort="1739674218323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Lecture 8" data-listing-filename-sort="danl-210-lec-08-2025-0214.qmd">
+
+<tr data-index="7" data-listing-date-sort="1739509200000" data-listing-file-modified-sort="1739674218323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1545" data-listing-title-sort="Lecture 8" data-listing-filename-sort="danl-210-lec-08-2025-0214.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-08-2025-0214.html'); return false;"" class="title listing-title">Lecture 8</a>
+<a href="./danl-lec/danl-210-lec-08-2025-0214.html" class="title listing-title">Lecture 8</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Sorting Methods; Setting a New Index; Locating Observations/Values</span>
@@ -408,10 +630,12 @@ Date
 <td>
 <span class="listing-date">February 14, 2025</span>
 </td>
+
 </tr>
-<tr data-index="8" data-listing-date-sort="1739768400000" data-listing-file-modified-sort="1740087994923" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Lecture 9" data-listing-filename-sort="danl-210-lec-09-2025-0217.qmd">
+
+<tr data-index="8" data-listing-date-sort="1739768400000" data-listing-file-modified-sort="1740087994923" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1299" data-listing-title-sort="Lecture 9" data-listing-filename-sort="danl-210-lec-09-2025-0217.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-09-2025-0217.html'); return false;"" class="title listing-title">Lecture 9</a>
+<a href="./danl-lec/danl-210-lec-09-2025-0217.html" class="title listing-title">Lecture 9</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Mathematical &amp; Vectorized Operations; Adding, Removing, &amp; Renaming Variables; Data Types</span>
@@ -419,10 +643,12 @@ Date
 <td>
 <span class="listing-date">February 17, 2025</span>
 </td>
+
 </tr>
-<tr data-index="9" data-listing-date-sort="1739941200000" data-listing-file-modified-sort="1739984147797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Lecture 10" data-listing-filename-sort="danl-210-lec-10-2025-0219.qmd">
+
+<tr data-index="9" data-listing-date-sort="1739941200000" data-listing-file-modified-sort="1739984147797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1112" data-listing-title-sort="Lecture 10" data-listing-filename-sort="danl-210-lec-10-2025-0219.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-10-2025-0219.html'); return false;"" class="title listing-title">Lecture 10</a>
+<a href="./danl-lec/danl-210-lec-10-2025-0219.html" class="title listing-title">Lecture 10</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Filtering by a Condition</span>
@@ -430,10 +656,12 @@ Date
 <td>
 <span class="listing-date">February 19, 2025</span>
 </td>
+
 </tr>
-<tr data-index="10" data-listing-date-sort="1740114000000" data-listing-file-modified-sort="1740120556878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Lecture 11" data-listing-filename-sort="danl-210-lec-11-2025-0221.qmd">
+
+<tr data-index="10" data-listing-date-sort="1740114000000" data-listing-file-modified-sort="1740120556878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1171" data-listing-title-sort="Lecture 11" data-listing-filename-sort="danl-210-lec-11-2025-0221.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-11-2025-0221.html'); return false;"" class="title listing-title">Lecture 11</a>
+<a href="./danl-lec/danl-210-lec-11-2025-0221.html" class="title listing-title">Lecture 11</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Missing Values; Duplicates</span>
@@ -441,10 +669,12 @@ Date
 <td>
 <span class="listing-date">February 21, 2025</span>
 </td>
+
 </tr>
-<tr data-index="11" data-listing-date-sort="1740373200000" data-listing-file-modified-sort="1740543391859" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Lecture 12" data-listing-filename-sort="danl-210-lec-12-2025-0224.qmd">
+
+<tr data-index="11" data-listing-date-sort="1740373200000" data-listing-file-modified-sort="1740543391859" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1485" data-listing-title-sort="Lecture 12" data-listing-filename-sort="danl-210-lec-12-2025-0224.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-12-2025-0224.html'); return false;"" class="title listing-title">Lecture 12</a>
+<a href="./danl-lec/danl-210-lec-12-2025-0224.html" class="title listing-title">Lecture 12</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Reshaping DataFrames</span>
@@ -452,10 +682,12 @@ Date
 <td>
 <span class="listing-date">February 24, 2025</span>
 </td>
+
 </tr>
-<tr data-index="12" data-listing-date-sort="1740546000000" data-listing-file-modified-sort="1741342392880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="Lecture 13" data-listing-filename-sort="danl-210-lec-13-2025-0226.qmd">
+
+<tr data-index="12" data-listing-date-sort="1740546000000" data-listing-file-modified-sort="1741342392880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2044" data-listing-title-sort="Lecture 13" data-listing-filename-sort="danl-210-lec-13-2025-0226.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-13-2025-0226.html'); return false;"" class="title listing-title">Lecture 13</a>
+<a href="./danl-lec/danl-210-lec-13-2025-0226.html" class="title listing-title">Lecture 13</a>
 </td>
 <td>
 <span class="listing-subtitle"><code>pandas</code> Basics - Joining DataFrames; Concatenating DataFrames</span>
@@ -463,10 +695,12 @@ Date
 <td>
 <span class="listing-date">February 26, 2025</span>
 </td>
+
 </tr>
-<tr data-index="13" data-listing-date-sort="1741579200000" data-listing-file-modified-sort="1741765994137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Lecture 14" data-listing-filename-sort="danl-210-lec-14-2025-0310.qmd">
+
+<tr data-index="13" data-listing-date-sort="1741579200000" data-listing-file-modified-sort="1741765994137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1116" data-listing-title-sort="Lecture 14" data-listing-filename-sort="danl-210-lec-14-2025-0310.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-14-2025-0310.html'); return false;"" class="title listing-title">Lecture 14</a>
+<a href="./danl-lec/danl-210-lec-14-2025-0310.html" class="title listing-title">Lecture 14</a>
 </td>
 <td>
 <span class="listing-subtitle">Spyder IDE; Scrapping Web-tables with <code>pd.read_html()</code></span>
@@ -474,10 +708,12 @@ Date
 <td>
 <span class="listing-date">March 10, 2025</span>
 </td>
+
 </tr>
-<tr data-index="14" data-listing-date-sort="1741752000000" data-listing-file-modified-sort="1741930460199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Lecture 15" data-listing-filename-sort="danl-210-lec-15-2025-0312.qmd">
+
+<tr data-index="14" data-listing-date-sort="1741752000000" data-listing-file-modified-sort="1741930460199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1780" data-listing-title-sort="Lecture 15" data-listing-filename-sort="danl-210-lec-15-2025-0312.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-15-2025-0312.html'); return false;"" class="title listing-title">Lecture 15</a>
+<a href="./danl-lec/danl-210-lec-15-2025-0312.html" class="title listing-title">Lecture 15</a>
 </td>
 <td>
 <span class="listing-subtitle">Primer on Web-scrapping</span>
@@ -485,10 +721,12 @@ Date
 <td>
 <span class="listing-date">March 12, 2025</span>
 </td>
+
 </tr>
-<tr data-index="15" data-listing-date-sort="1741924800000" data-listing-file-modified-sort="1744193673666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Lecture 16" data-listing-filename-sort="danl-210-lec-16-2025-0314.qmd">
+
+<tr data-index="15" data-listing-date-sort="1741924800000" data-listing-file-modified-sort="1744193673666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2236" data-listing-title-sort="Lecture 16" data-listing-filename-sort="danl-210-lec-16-2025-0314.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-16-2025-0314.html'); return false;"" class="title listing-title">Lecture 16</a>
+<a href="./danl-lec/danl-210-lec-16-2025-0314.html" class="title listing-title">Lecture 16</a>
 </td>
 <td>
 <span class="listing-subtitle">Web-scrapping with Python <code>selenium</code></span>
@@ -496,10 +734,12 @@ Date
 <td>
 <span class="listing-date">March 14, 2025</span>
 </td>
+
 </tr>
-<tr data-index="16" data-listing-date-sort="1744344000000" data-listing-file-modified-sort="1744777622403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-title-sort="Lecture 17" data-listing-filename-sort="danl-210-lec-17-2025-0409.qmd">
+
+<tr data-index="16" data-listing-date-sort="1744344000000" data-listing-file-modified-sort="1744777622403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2582" data-listing-title-sort="Lecture 17" data-listing-filename-sort="danl-210-lec-17-2025-0409.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-17-2025-0409.html'); return false;"" class="title listing-title">Lecture 17</a>
+<a href="./danl-lec/danl-210-lec-17-2025-0409.html" class="title listing-title">Lecture 17</a>
 </td>
 <td>
 <span class="listing-subtitle">Data Collection with APIs</span>
@@ -507,10 +747,12 @@ Date
 <td>
 <span class="listing-date">April 11, 2025</span>
 </td>
+
 </tr>
-<tr data-index="17" data-listing-date-sort="1745553600000" data-listing-file-modified-sort="1745673391394" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-title-sort="Lecture 18" data-listing-filename-sort="danl-210-lec-18-2025-0425.qmd">
+
+<tr data-index="17" data-listing-date-sort="1745553600000" data-listing-file-modified-sort="1745673391394" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3003" data-listing-title-sort="Lecture 18" data-listing-filename-sort="danl-210-lec-18-2025-0425.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-18-2025-0425.html'); return false;"" class="title listing-title">Lecture 18</a>
+<a href="./danl-lec/danl-210-lec-18-2025-0425.html" class="title listing-title">Lecture 18</a>
 </td>
 <td>
 <span class="listing-subtitle">Data Visualization with <code>seaborn</code></span>
@@ -518,10 +760,12 @@ Date
 <td>
 <span class="listing-date">April 25, 2025</span>
 </td>
+
 </tr>
-<tr data-index="18" data-listing-date-sort="1745985600000" data-listing-file-modified-sort="1746004290575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Lecture 19" data-listing-filename-sort="danl-210-lec-19-2025-0430.qmd">
+
+<tr data-index="18" data-listing-date-sort="1745985600000" data-listing-file-modified-sort="1746004290575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2372" data-listing-title-sort="Lecture 19" data-listing-filename-sort="danl-210-lec-19-2025-0430.qmd">
 <td>
-<a href="#" onclick="window.open('./danl-lec/danl-210-lec-19-2025-0430.html'); return false;"" class="title listing-title">Lecture 19</a>
+<a href="./danl-lec/danl-210-lec-19-2025-0430.html" class="title listing-title">Lecture 19</a>
 </td>
 <td>
 <span class="listing-subtitle">Group Operations</span>
@@ -529,35 +773,38 @@ Date
 <td>
 <span class="listing-date">April 30, 2025</span>
 </td>
-</tr>
-</tbody>
 
+</tr>
+
+</tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="bullet-classwork" class="level2">
 <h2 class="anchored" data-anchor-id="bullet-classwork"><span class="math inline">\(\bullet\,\)</span> Classwork <span class="emoji" data-emoji="keyboard">⌨️</span></h2>
 <div id="listing-danl-210-cw" class="quarto-listing quarto-listing-container-table">
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Title
 </th>
+
 <th>
 Subtitle
 </th>
+
 <th>
 Date
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1737694800000" data-listing-file-modified-sort="1738111604176" data-listing-date-modified-sort="1738111604000" data-listing-reading-time-sort="7" data-listing-title-sort="Classwork 1" data-listing-filename-sort="danl-210-cw-01.qmd">
+
+<tr data-index="0" data-listing-date-sort="1737694800000" data-listing-file-modified-sort="1738111604176" data-listing-date-modified-sort="1738111604000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1399" data-listing-title-sort="Classwork 1" data-listing-filename-sort="danl-210-cw-01.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-01.html" class="title listing-title">Classwork 1</a>
 </td>
@@ -567,8 +814,10 @@ Date
 <td>
 <span class="listing-date">January 24, 2025</span>
 </td>
+
 </tr>
-<tr data-index="1" data-listing-date-sort="1737694800000" data-listing-file-modified-sort="1738111644956" data-listing-date-modified-sort="1738111644000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 2" data-listing-filename-sort="danl-210-cw-02.qmd">
+
+<tr data-index="1" data-listing-date-sort="1737694800000" data-listing-file-modified-sort="1738111644956" data-listing-date-modified-sort="1738111644000" data-listing-reading-time-sort="2" data-listing-word-count-sort="350" data-listing-title-sort="Classwork 2" data-listing-filename-sort="danl-210-cw-02.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-02.html" class="title listing-title">Classwork 2</a>
 </td>
@@ -578,8 +827,10 @@ Date
 <td>
 <span class="listing-date">January 24, 2025</span>
 </td>
+
 </tr>
-<tr data-index="2" data-listing-date-sort="1737954000000" data-listing-file-modified-sort="1738111606081" data-listing-date-modified-sort="1738111606000" data-listing-reading-time-sort="3" data-listing-title-sort="Classwork 3" data-listing-filename-sort="danl-210-cw-03.qmd">
+
+<tr data-index="2" data-listing-date-sort="1737954000000" data-listing-file-modified-sort="1738111606081" data-listing-date-modified-sort="1738111606000" data-listing-reading-time-sort="3" data-listing-word-count-sort="490" data-listing-title-sort="Classwork 3" data-listing-filename-sort="danl-210-cw-03.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-03.html" class="title listing-title">Classwork 3</a>
 </td>
@@ -589,8 +840,10 @@ Date
 <td>
 <span class="listing-date">January 27, 2025</span>
 </td>
+
 </tr>
-<tr data-index="3" data-listing-date-sort="1738126800000" data-listing-file-modified-sort="1738566837757" data-listing-date-modified-sort="1738566837000" data-listing-reading-time-sort="3" data-listing-title-sort="Classwork 4" data-listing-filename-sort="danl-210-cw-04.qmd">
+
+<tr data-index="3" data-listing-date-sort="1738126800000" data-listing-file-modified-sort="1738566837757" data-listing-date-modified-sort="1738566837000" data-listing-reading-time-sort="3" data-listing-word-count-sort="484" data-listing-title-sort="Classwork 4" data-listing-filename-sort="danl-210-cw-04.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-04.html" class="title listing-title">Classwork 4</a>
 </td>
@@ -600,8 +853,10 @@ Date
 <td>
 <span class="listing-date">January 29, 2025</span>
 </td>
+
 </tr>
-<tr data-index="4" data-listing-date-sort="1739336400000" data-listing-file-modified-sort="1739378658154" data-listing-date-modified-sort="1739378658000" data-listing-reading-time-sort="3" data-listing-title-sort="Classwork 5" data-listing-filename-sort="danl-210-cw-05.qmd">
+
+<tr data-index="4" data-listing-date-sort="1739336400000" data-listing-file-modified-sort="1739378658154" data-listing-date-modified-sort="1739378658000" data-listing-reading-time-sort="3" data-listing-word-count-sort="448" data-listing-title-sort="Classwork 5" data-listing-filename-sort="danl-210-cw-05.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-05.html" class="title listing-title">Classwork 5</a>
 </td>
@@ -611,8 +866,10 @@ Date
 <td>
 <span class="listing-date">February 12, 2025</span>
 </td>
+
 </tr>
-<tr data-index="5" data-listing-date-sort="1739768400000" data-listing-file-modified-sort="1739205858521" data-listing-date-modified-sort="1739205858000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 6" data-listing-filename-sort="danl-210-cw-06.qmd">
+
+<tr data-index="5" data-listing-date-sort="1739768400000" data-listing-file-modified-sort="1739205858521" data-listing-date-modified-sort="1739205858000" data-listing-reading-time-sort="2" data-listing-word-count-sort="378" data-listing-title-sort="Classwork 6" data-listing-filename-sort="danl-210-cw-06.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-06.html" class="title listing-title">Classwork 6</a>
 </td>
@@ -622,8 +879,10 @@ Date
 <td>
 <span class="listing-date">February 17, 2025</span>
 </td>
+
 </tr>
-<tr data-index="6" data-listing-date-sort="1740373200000" data-listing-file-modified-sort="1741342511717" data-listing-date-modified-sort="1741342511000" data-listing-reading-time-sort="4" data-listing-title-sort="Classwork 7" data-listing-filename-sort="danl-210-cw-07.qmd">
+
+<tr data-index="6" data-listing-date-sort="1740373200000" data-listing-file-modified-sort="1741342511717" data-listing-date-modified-sort="1741342511000" data-listing-reading-time-sort="4" data-listing-word-count-sort="776" data-listing-title-sort="Classwork 7" data-listing-filename-sort="danl-210-cw-07.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-07.html" class="title listing-title">Classwork 7</a>
 </td>
@@ -633,8 +892,10 @@ Date
 <td>
 <span class="listing-date">February 24, 2025</span>
 </td>
+
 </tr>
-<tr data-index="7" data-listing-date-sort="1741579200000" data-listing-file-modified-sort="1741740219693" data-listing-date-modified-sort="1741740219000" data-listing-reading-time-sort="1" data-listing-title-sort="Classwork 8" data-listing-filename-sort="danl-210-cw-08.qmd">
+
+<tr data-index="7" data-listing-date-sort="1741579200000" data-listing-file-modified-sort="1741740219693" data-listing-date-modified-sort="1741740219000" data-listing-reading-time-sort="1" data-listing-word-count-sort="190" data-listing-title-sort="Classwork 8" data-listing-filename-sort="danl-210-cw-08.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-08.html" class="title listing-title">Classwork 8</a>
 </td>
@@ -644,8 +905,10 @@ Date
 <td>
 <span class="listing-date">March 10, 2025</span>
 </td>
+
 </tr>
-<tr data-index="8" data-listing-date-sort="1742788800000" data-listing-file-modified-sort="1741977279792" data-listing-date-modified-sort="1741977279000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 9" data-listing-filename-sort="danl-210-cw-09.qmd">
+
+<tr data-index="8" data-listing-date-sort="1742788800000" data-listing-file-modified-sort="1741977279792" data-listing-date-modified-sort="1741977279000" data-listing-reading-time-sort="2" data-listing-word-count-sort="299" data-listing-title-sort="Classwork 9" data-listing-filename-sort="danl-210-cw-09.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-09.html" class="title listing-title">Classwork 9</a>
 </td>
@@ -655,8 +918,10 @@ Date
 <td>
 <span class="listing-date">March 24, 2025</span>
 </td>
+
 </tr>
-<tr data-index="9" data-listing-date-sort="1743134400000" data-listing-file-modified-sort="1744193779918" data-listing-date-modified-sort="1744193779000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 10" data-listing-filename-sort="danl-210-cw-10.qmd">
+
+<tr data-index="9" data-listing-date-sort="1743134400000" data-listing-file-modified-sort="1744193779918" data-listing-date-modified-sort="1744193779000" data-listing-reading-time-sort="2" data-listing-word-count-sort="266" data-listing-title-sort="Classwork 10" data-listing-filename-sort="danl-210-cw-10.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-10.html" class="title listing-title">Classwork 10</a>
 </td>
@@ -666,8 +931,10 @@ Date
 <td>
 <span class="listing-date">March 28, 2025</span>
 </td>
+
 </tr>
-<tr data-index="10" data-listing-date-sort="1744171200000" data-listing-file-modified-sort="1744616702509" data-listing-date-modified-sort="1744616702000" data-listing-reading-time-sort="1" data-listing-title-sort="Classwork 11" data-listing-filename-sort="danl-210-cw-11.qmd">
+
+<tr data-index="10" data-listing-date-sort="1744171200000" data-listing-file-modified-sort="1744616702509" data-listing-date-modified-sort="1744616702000" data-listing-reading-time-sort="1" data-listing-word-count-sort="194" data-listing-title-sort="Classwork 11" data-listing-filename-sort="danl-210-cw-11.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-11.html" class="title listing-title">Classwork 11</a>
 </td>
@@ -677,8 +944,10 @@ Date
 <td>
 <span class="listing-date">April 9, 2025</span>
 </td>
+
 </tr>
-<tr data-index="11" data-listing-date-sort="1745553600000" data-listing-file-modified-sort="1745531109719" data-listing-date-modified-sort="1745531109000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 12" data-listing-filename-sort="danl-210-cw-12.qmd">
+
+<tr data-index="11" data-listing-date-sort="1745553600000" data-listing-file-modified-sort="1746004514691" data-listing-date-modified-sort="1746004514000" data-listing-reading-time-sort="2" data-listing-word-count-sort="367" data-listing-title-sort="Classwork 12" data-listing-filename-sort="danl-210-cw-12.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-12.html" class="title listing-title">Classwork 12</a>
 </td>
@@ -688,8 +957,10 @@ Date
 <td>
 <span class="listing-date">April 25, 2025</span>
 </td>
+
 </tr>
-<tr data-index="12" data-listing-date-sort="1745726400000" data-listing-file-modified-sort="1745986434648" data-listing-date-modified-sort="1745986434000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 13" data-listing-filename-sort="danl-210-cw-13.qmd">
+
+<tr data-index="12" data-listing-date-sort="1745726400000" data-listing-file-modified-sort="1745986434648" data-listing-date-modified-sort="1745986434000" data-listing-reading-time-sort="2" data-listing-word-count-sort="301" data-listing-title-sort="Classwork 13" data-listing-filename-sort="danl-210-cw-13.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-13.html" class="title listing-title">Classwork 13</a>
 </td>
@@ -699,8 +970,10 @@ Date
 <td>
 <span class="listing-date">April 27, 2025</span>
 </td>
+
 </tr>
-<tr data-index="13" data-listing-date-sort="1746417600000" data-listing-file-modified-sort="1746004166460" data-listing-date-modified-sort="1746004166000" data-listing-reading-time-sort="5" data-listing-title-sort="Classwork 14" data-listing-filename-sort="danl-210-cw-14.qmd">
+
+<tr data-index="13" data-listing-date-sort="1746417600000" data-listing-file-modified-sort="1746004400866" data-listing-date-modified-sort="1746004400000" data-listing-reading-time-sort="5" data-listing-word-count-sort="887" data-listing-title-sort="Classwork 14" data-listing-filename-sort="danl-210-cw-14.qmd">
 <td>
 <a href="./danl-cw/danl-210-cw-14.html" class="title listing-title">Classwork 14</a>
 </td>
@@ -710,35 +983,38 @@ Date
 <td>
 <span class="listing-date">May 5, 2025</span>
 </td>
-</tr>
-</tbody>
 
+</tr>
+
+</tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="bullet-homework" class="level2">
 <h2 class="anchored" data-anchor-id="bullet-homework"><span class="math inline">\(\bullet\,\)</span> Homework <span class="emoji" data-emoji="computer">💻</span></h2>
 <div id="listing-danl-210-hw" class="quarto-listing quarto-listing-container-table">
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Title
 </th>
+
 <th>
 Subtitle
 </th>
+
 <th>
 Date
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1738731600000" data-listing-file-modified-sort="1741753188468" data-listing-date-modified-sort="1741753188000" data-listing-reading-time-sort="7" data-listing-title-sort="Homework 1" data-listing-filename-sort="danl-210-hw-01.qmd">
+
+<tr data-index="0" data-listing-date-sort="1738731600000" data-listing-file-modified-sort="1741753188468" data-listing-date-modified-sort="1741753188000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1293" data-listing-title-sort="Homework 1" data-listing-filename-sort="danl-210-hw-01.qmd">
 <td>
 <a href="./danl-hw/danl-210-hw-01.html" class="title listing-title">Homework 1</a>
 </td>
@@ -748,8 +1024,10 @@ Date
 <td>
 <span class="listing-date">February 5, 2025</span>
 </td>
+
 </tr>
-<tr data-index="1" data-listing-date-sort="1739941200000" data-listing-file-modified-sort="1745827610097" data-listing-date-modified-sort="1745827610000" data-listing-reading-time-sort="13" data-listing-title-sort="Homework 2" data-listing-filename-sort="danl-210-hw-02.qmd">
+
+<tr data-index="1" data-listing-date-sort="1739941200000" data-listing-file-modified-sort="1745827610097" data-listing-date-modified-sort="1745827610000" data-listing-reading-time-sort="13" data-listing-word-count-sort="2540" data-listing-title-sort="Homework 2" data-listing-filename-sort="danl-210-hw-02.qmd">
 <td>
 <a href="./danl-hw/danl-210-hw-02.html" class="title listing-title">Homework 2</a>
 </td>
@@ -759,8 +1037,10 @@ Date
 <td>
 <span class="listing-date">February 19, 2025</span>
 </td>
+
 </tr>
-<tr data-index="2" data-listing-date-sort="1743307200000" data-listing-file-modified-sort="1745827595452" data-listing-date-modified-sort="1745827595000" data-listing-reading-time-sort="15" data-listing-title-sort="Homework 3" data-listing-filename-sort="danl-210-hw-03.qmd">
+
+<tr data-index="2" data-listing-date-sort="1743307200000" data-listing-file-modified-sort="1745827595452" data-listing-date-modified-sort="1745827595000" data-listing-reading-time-sort="15" data-listing-word-count-sort="2995" data-listing-title-sort="Homework 3" data-listing-filename-sort="danl-210-hw-03.qmd">
 <td>
 <a href="./danl-hw/danl-210-hw-03.html" class="title listing-title">Homework 3</a>
 </td>
@@ -770,8 +1050,10 @@ Date
 <td>
 <span class="listing-date">March 30, 2025</span>
 </td>
+
 </tr>
-<tr data-index="3" data-listing-date-sort="1744257600000" data-listing-file-modified-sort="1745827576570" data-listing-date-modified-sort="1745827576000" data-listing-reading-time-sort="16" data-listing-title-sort="Homework 4" data-listing-filename-sort="danl-210-hw-04.qmd">
+
+<tr data-index="3" data-listing-date-sort="1744257600000" data-listing-file-modified-sort="1745827576570" data-listing-date-modified-sort="1745827576000" data-listing-reading-time-sort="16" data-listing-word-count-sort="3006" data-listing-title-sort="Homework 4" data-listing-filename-sort="danl-210-hw-04.qmd">
 <td>
 <a href="./danl-hw/danl-210-hw-04.html" class="title listing-title">Homework 4</a>
 </td>
@@ -781,35 +1063,51 @@ Date
 <td>
 <span class="listing-date">April 10, 2025</span>
 </td>
-</tr>
-</tbody>
 
+</tr>
+
+<tr data-index="4" data-listing-date-sort="1746072000000" data-listing-file-modified-sort="1746163790539" data-listing-date-modified-sort="1746163790000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1683" data-listing-title-sort="Homework 5" data-listing-filename-sort="danl-210-hw-05.qmd">
+<td>
+<a href="./danl-hw/danl-210-hw-05.html" class="title listing-title">Homework 5</a>
+</td>
+<td>
+<span class="listing-subtitle">Pandas Group Operations</span>
+</td>
+<td>
+<span class="listing-date">May 1, 2025</span>
+</td>
+
+</tr>
+
+</tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="bullet-exam" class="level2">
 <h2 class="anchored" data-anchor-id="bullet-exam"><span class="math inline">\(\bullet\,\)</span> Exam <span class="emoji" data-emoji="pencil">📝</span></h2>
 <div id="listing-danl-210-ex" class="quarto-listing quarto-listing-container-table">
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Title
 </th>
+
 <th>
 Subtitle
 </th>
+
 <th>
 Date
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1741150800000" data-listing-file-modified-sort="1745807117973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Midterm Exam I" data-listing-filename-sort="danl-210-exam-1-a.qmd">
+
+<tr data-index="0" data-listing-date-sort="1741150800000" data-listing-file-modified-sort="1745807117973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2400" data-listing-title-sort="Midterm Exam I" data-listing-filename-sort="danl-210-exam-1-a.qmd">
 <td>
 <a href="./danl-ex/danl-210-exam-1-a.html" class="title listing-title">Midterm Exam I</a>
 </td>
@@ -819,8 +1117,10 @@ Date
 <td>
 <span class="listing-date">March 5, 2025</span>
 </td>
+
 </tr>
-<tr data-index="1" data-listing-date-sort="1745208000000" data-listing-file-modified-sort="1745832358709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-title-sort="Midterm Exam II" data-listing-filename-sort="danl-210-exam-2-a.qmd">
+
+<tr data-index="1" data-listing-date-sort="1745208000000" data-listing-file-modified-sort="1745832358709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3705" data-listing-title-sort="Midterm Exam II" data-listing-filename-sort="danl-210-exam-2-a.qmd">
 <td>
 <a href="./danl-ex/danl-210-exam-2-a.html" class="title listing-title">Midterm Exam II</a>
 </td>
@@ -830,13 +1130,12 @@ Date
 <td>
 <span class="listing-date">April 21, 2025</span>
 </td>
-</tr>
-</tbody>
 
+</tr>
+
+</tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 
 
@@ -845,374 +1144,431 @@ No matching items
 
 </font></font><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><font size="5"><font size="5"> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
         }
-      }
-      return codeEl.innerText;
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
     }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-});
-</script>
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </font></font></div><font size="5"><font size="5"> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2025</div>
+    <div class="nav-footer-center">
+<p>powered with github, quarto, and rstudio<br>byeong-hak choe, 2025</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -1221,6 +1577,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div id="scroll-padding"></div>
 <script src="./assets/js/site.js"></script>
 <script src="./assets/js/posts.js"></script>
+
 
 
 

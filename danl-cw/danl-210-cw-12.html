@@ -178,6 +178,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a>
   <ul>
+  <li><a href="#direction" id="toc-direction" class="nav-link" data-scroll-target="#direction">Direction</a></li>
+  <li><a href="#variable-description" id="toc-variable-description" class="nav-link" data-scroll-target="#variable-description">Variable Description</a></li>
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   </ul></li>
@@ -219,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 24, 2025</p>
+      <p class="date-modified">April 30, 2025</p>
     </div>
   </div>
     
@@ -230,8 +232,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="part-1" class="level1">
 <h1>Part 1</h1>
+<section id="direction" class="level2">
+<h2 class="anchored" data-anchor-id="direction">Direction</h2>
+<p><br></p>
+<p align="center">
+<img src="https://bcdanl.github.io/lec_figs/beer_markets_brand.png" width="600px">
+</p>
+<p><br></p>
+<p>The dataset ,<code>beer_markets.csv</code>, (with its pathname <code>https://bcdanl.github.io/data/beer_markets.csv</code>) includes information about beer purchases across different markets, brands, and households.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>beer_mkt <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/beer_markets.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>beer <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/beer_markets.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -242,6 +255,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<ul>
+<li>Each observation in <code>beer</code> is a household-level transaction record for a purchase of beer.</li>
+</ul>
+</section>
+<section id="variable-description" class="level2">
+<h2 class="anchored" data-anchor-id="variable-description">Variable Description</h2>
+<ul>
+<li><code>hh</code>: an identifier of the household;</li>
+<li><code>X_purchase_desc</code>: details on the purchased item;</li>
+<li><code>quantity</code>: the number of items purchased;</li>
+<li><code>brand</code>: Bud Light, Busch Light, Coors Light, Miller Lite, or Natural Light;</li>
+<li><code>dollar_spent</code>: total dollar value of purchase;</li>
+<li><code>beer_floz</code>: total volume of beer, in fluid ounces;</li>
+<li><code>price_per_floz</code>: price per fl.oz. (i.e., beer spent/beer floz);</li>
+<li><code>container</code>: the type of container;</li>
+<li><code>promo</code>: Whether the item was promoted (coupon or otherwise);</li>
+<li><code>market</code>: Scan-track market (or state if rural);</li>
+<li>demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.</li>
+</ul>
+</section>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ul>
@@ -267,9 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-2" class="level1">
 <h1>Part 2</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/stock_2023_2025.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/stock_2023_2025.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
 

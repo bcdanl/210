@@ -69,7 +69,7 @@ DT::datatable(readr::read_csv('https://bcdanl.github.io/data/beer_markets.csv'))
 - `market`: Scan-track market (or state if rural);
 - demographic data, including gender, marital status, household income, class of work, race, education, age, the size of household, and whether or not the household has a microwave or a dishwasher.
 
-
+<br>
 
 ## Question 1
 What are the descriptive statistics (mean, count, min, max) for `dollar_spent` and `beer_floz` grouped by `brand`?
