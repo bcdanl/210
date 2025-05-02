@@ -360,7 +360,7 @@ sectors = fortune.groupby("Sector")
 
 fortune_new = fortune.assign(
     Year = 2024,
-    nCompanies = sectors.size(),
+    nCompanies = sectors.transform('size'),
     Revenues_M_min = sectors['Revenues_M'].transform('min'),
     Profits_M_max = sectors['Profits_M'].transform('max'),
     Number_of_Employees_mean = sectors['Number_of_Employees'].transform('mean')
