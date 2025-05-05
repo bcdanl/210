@@ -5373,14 +5373,14 @@
     "href": "danl-cw/danl-210-cw-14.html",
     "title": "Classwork 14",
     "section": "",
-    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
+    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
   },
   {
     "objectID": "danl-cw/danl-210-cw-14.html#direction",
     "href": "danl-cw/danl-210-cw-14.html#direction",
     "title": "Classwork 14",
     "section": "",
-    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
+    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
   },
   {
     "objectID": "danl-cw/danl-210-cw-14.html#variable-description",
@@ -5408,7 +5408,7 @@
     "href": "danl-cw/danl-210-cw-14.html#question-3",
     "title": "Classwork 14",
     "section": "Question 3",
-    "text": "Question 3\n\nFor each brand, calculate the percentage contribution of dollar_spent on the same brand to the total dollars spent by the household.\n\nIn the resulting DataFrame, keep only the following three variables—(1) hh, (2) brand, and (3) the variable for the percentage contribution of dollar_spent on each brand within a household.\nIn the resulting DataFrame, keep only one observation for one brand for each household.\n\n\nAnswer:"
+    "text": "Question 3\n\nFor each brand, calculate the percentage contribution of dollar_spent on the same brand to the total dollars spent by the household.\n\nIn the resulting DataFrame, keep only the following three variables—(1) hh, (2) brand, and (3) the variable for the percentage contribution of dollar_spent on each brand within a household.\nIn the resulting DataFrame, keep only one observation for one brand within a household.\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-14.html#question-4",
@@ -5422,7 +5422,7 @@
     "href": "danl-cw/danl-210-cw-14.html#question-5",
     "title": "Classwork 14",
     "section": "Question 5",
-    "text": "Question 5\n\nAmong households that have purchased BUD LIGHT at least once, what proportion only bought BUD LIGHT?\nAmong households that have purchased BUSCH LIGHT at least once, what proportion only bought BUSCH LIGHT?\nAmong households that have purchased COORS LIGHT at least once, what proportion only bought COORS LIGHT?\nAmong households that have purchased MILLER LITE at least once, what proportion only bought MILLER LITE?\nAmong households that have purchased NATURAL LIGHT at least once, what proportion only bought NATURAL LIGHT?\nWhich of these beer brands has the highest share of loyal customers, who purchase no other brand?\nFor example, let’s consider the following example DataFrame with the four households:\n\n\n\n\n\n\nIn this example, households 1, 2 and 3 purchased BUD at least once, and only the households 1 and 3 purchased BUD only. Therefore, among households that have purchased BUD LIGHT at least once, the proportion only bought BUD is 2/3 = 66.67%.\nAnswer:"
+    "text": "Question 5\n\nAmong households that have purchased BUD LIGHT at least once, what proportion only bought BUD LIGHT?\nAmong households that have purchased BUSCH LIGHT at least once, what proportion only bought BUSCH LIGHT?\nAmong households that have purchased COORS LIGHT at least once, what proportion only bought COORS LIGHT?\nAmong households that have purchased MILLER LITE at least once, what proportion only bought MILLER LITE?\nAmong households that have purchased NATURAL LIGHT at least once, what proportion only bought NATURAL LIGHT?\nWhich of these beer brands has the highest share of loyal customers, who purchase no other brand?\nFor example, let’s consider the following example DataFrame with the four households:\n\n\n\nIn this example, households 1, 2 and 3 purchased BUD at least once, and only the households 1 and 3 purchased BUD only. Therefore, among households that have purchased BUD LIGHT at least once, the proportion only bought BUD is 2/3 = 66.67%.\nAnswer:"
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#group-operations-3",
