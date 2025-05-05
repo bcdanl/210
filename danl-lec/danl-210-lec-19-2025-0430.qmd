@@ -485,6 +485,7 @@ Let's do **Question 4** in [**Classwork 13**](https://bcdanl.github.io/210/danl-
 
 ```{.python}
 fortune_shuffled = pd.read_csv("https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv")
+sectors = fortune_shuffled.groupby("Sector")
 ```
 
 - How can we get a DataFrame with top 5 companies in each sector?
@@ -508,7 +509,7 @@ sectors.apply(lambda df: df.nlargest(1, "Revenues_M", keep="all"))
 
 - This returns the largest observation(s) within each group.
 
-
+- When we do a `groupby().apply()`, pandas gives us a multi-level index.
 
 
 

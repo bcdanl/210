@@ -616,7 +616,8 @@ Byeong-Hak Choe
 <li>Use <code>apply()</code> and provide a method that operates on each group’s <code>DataFrame</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>fortune_shuffled <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>fortune_shuffled <span class="op">=</span> pd.read_csv(<span class="st">"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv"</span>)</span>
+<span id="cb20-2"><a></a>sectors <span class="op">=</span> fortune_shuffled.groupby(<span class="st">"Sector"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">How can we get a DataFrame with top 5 companies in each sector?
 <ol type="1">
@@ -633,7 +634,8 @@ Byeong-Hak Choe
 </ul>
 <div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">This returns the largest observation(s) within each group.</li>
+<li class="fragment"><p>This returns the largest observation(s) within each group.</p></li>
+<li class="fragment"><p>When we do a <code>groupby().apply()</code>, pandas gives us a multi-level index.</p></li>
 </ul>
 </section>
 <section id="passing-additional-parameters" class="slide level2">

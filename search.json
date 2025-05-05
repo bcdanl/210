@@ -5135,7 +5135,7 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#applying-a-udf-to-all-groups",
     "title": "Lecture 19",
     "section": "Applying a UDF to All Groups",
-    "text": "Applying a UDF to All Groups\n\nSometimes we need something neither agg() nor transform() can do, like “top‑3 by revenue in each sector”.\n\nUse apply() and provide a method that operates on each group’s DataFrame.\n\n\nfortune_shuffled = pd.read_csv(\"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv\")\n\nHow can we get a DataFrame with top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
+    "text": "Applying a UDF to All Groups\n\nSometimes we need something neither agg() nor transform() can do, like “top‑3 by revenue in each sector”.\n\nUse apply() and provide a method that operates on each group’s DataFrame.\n\n\nfortune_shuffled = pd.read_csv(\"https://bcdanl.github.io/data/fortune1000_2024_shuffled.csv\")\nsectors = fortune_shuffled.groupby(\"Sector\")\n\nHow can we get a DataFrame with top 5 companies in each sector?\n\nsort_values() with groupby()\nnlargest() with groupby()\n\nHowever, DataFrameGroupBy has no methods sort_values() or nlargest()."
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#applying-a-udf-to-all-groups-1",
@@ -5261,7 +5261,7 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#applying-a-lambda-udf-with-.apply",
     "title": "Lecture 19",
     "section": "Applying a lambda UDF with .apply()",
-    "text": "Applying a lambda UDF with .apply()\n\nWe can directly apply a custom function (UDF) using a lambda expression with .apply():\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nThis returns the largest observation(s) within each group."
+    "text": "Applying a lambda UDF with .apply()\n\nWe can directly apply a custom function (UDF) using a lambda expression with .apply():\n\nsectors.apply(lambda df: df.nlargest(1, \"Revenues_M\", keep=\"all\"))\n\nThis returns the largest observation(s) within each group.\nWhen we do a groupby().apply(), pandas gives us a multi-level index."
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#passing-additional-parameters",
