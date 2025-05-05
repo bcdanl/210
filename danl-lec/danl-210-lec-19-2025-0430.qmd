@@ -509,7 +509,7 @@ sectors.apply(lambda df: df.nlargest(1, "Revenues_M", keep="all"))
 
 - This returns the largest observation(s) within each group.
 
--	When we use `df.groupby().apply()`, pandas returns a **MultiIndex** where the first level is the *group label* and the second level is the *original row index*.
+-	When we use `DataFrame.groupby().apply()`, pandas returns a **MultiIndex** where the first level is the *group label* and the second level is the *original row index*.
 
 
 ## Passing Additional Parameters

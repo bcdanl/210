@@ -635,7 +635,7 @@ Byeong-Hak Choe
 <div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>sectors.<span class="bu">apply</span>(<span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">"Revenues_M"</span>, keep<span class="op">=</span><span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>This returns the largest observation(s) within each group.</p></li>
-<li class="fragment"><p>When we use <code>df.groupby().apply()</code>, pandas returns a <strong>MultiIndex</strong> where the first level is the <em>group label</em> and the second level is the <em>original row index</em>.</p></li>
+<li class="fragment"><p>When we use <code>DataFrame.groupby().apply()</code>, pandas returns a <strong>MultiIndex</strong> where the first level is the <em>group label</em> and the second level is the <em>original row index</em>.</p></li>
 </ul>
 </section>
 <section id="passing-additional-parameters" class="slide level2">
