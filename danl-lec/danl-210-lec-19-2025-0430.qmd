@@ -314,6 +314,27 @@ fortune.groupby("Sector").agg(
 - The function must return **one** value per group.
 
 
+## `agg()` with a Named UDF
+:::{.nonincremental}
+- We can also define a named UDF once and then reference it in your `agg()` call:
+
+:::
+```{.python}
+# 1. Define the UDF
+def iqr(series):
+    return series.quantile(0.75) - series.quantile(0.25)
+
+# 2. Use it in agg()
+(
+  fortune
+  .groupby("Sector")
+  .agg(Revenue_IQR=("Revenues_M", iqr))
+)
+
+```
+
+
+
 
 ## Group Operations
 
@@ -352,6 +373,27 @@ fortune["Rev_centered"] = (
 
 
 
+## `transform()` with a Named UDF
+
+:::{.nonincremental}
+-	Rather than an inline `lambda`, we can define a named UDF and pass it to `.transform()`:
+
+:::
+
+```{.python}
+def demean(series: pd.Series) -> pd.Series:
+    return series - series.mean()
+
+fortune["Rev_centered"] = (
+    fortune
+      .groupby("Sector")["Revenues_M"]
+      .transform(demean)
+)
+```
+	
+
+
+
 
 ## `DataFrame.assign()` and `DataFrameGroupBy.transform()` 
 
@@ -379,10 +421,10 @@ fortune_new = fortune.assign(
 ::: {.panel-tabset}
 ## **Data**
 
-- `fortune_2021_2024` contains 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.
+- `f_2021_2024` is a *long-from* DataFrame, containing 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.
 
 ```{.python}
-fortune_2021_2024 = pd.read_csv("https://bcdanl.github.io/data/fortune741_2021_2024.csv")
+f_2021_2024 = pd.read_csv("https://bcdanl.github.io/data/fortune741_2021_2024.csv")
 ```
 
 - Here we are interested in calculating the yearly revenue growth rate for each company in `fortune_2021_2024` using the following formula:
@@ -393,7 +435,7 @@ $$
 
 ##  `shift()`
 ```{.python}
-df['Revenues_M_last_year'] = df.groupby('Company')['Revenues_M'].shift(-1)
+f_2021_2024['Revenues_M_last_year'] = f_2021_2024.groupby('Company')['Revenues_M'].shift(-1)
 ```
 
 - What `shift()` does in pandas:
@@ -407,12 +449,17 @@ df['Revenues_M_last_year'] = df.groupby('Company')['Revenues_M'].shift(-1)
 
 ##  **Percentage Changes**
 ```{.python}
-df['GrowthRate_Revenue'] = (df['Revenues_M'] - df['Revenues_M_last_year']) / df['Revenues_M_last_year']
+f_2021_2024['GrowthRate_Revenue'] = (
+    (f_2021_2024['Revenues_M'] - f_2021_2024['Revenues_M_last_year']) / 
+          f_2021_2024['Revenues_M_last_year']
+)
 ```
 
 $$
 \text{(Revenue Growth Rate)}_{year} = \frac{\text{Revenue}_{year} - \text{Revenue}_{year-1}}{\text{Revenue}_{year-1}}
 $$
+
+-	Using the historical daily stock data, we can calculate each company's daily percentage change in stock price.
 
 :::
 :::
@@ -460,6 +507,9 @@ sectors.apply(lambda df: df.nlargest(1, "Revenues_M", keep="all"))
 ```
 
 - This returns the largest observation(s) within each group.
+
+
+
 
 
 ## Passing Additional Parameters

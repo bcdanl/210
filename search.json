@@ -5352,7 +5352,7 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#transform-with-shift",
     "title": "Lecture 19",
     "section": "transform() with shift()",
-    "text": "transform() with shift()\n\nDatashift()Percentage Changes\n\n\n\nfortune_2021_2024 contains 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.\n\nfortune_2021_2024 = pd.read_csv(\"https://bcdanl.github.io/data/fortune741_2021_2024.csv\")\n\nHere we are interested in calculating the yearly revenue growth rate for each company in fortune_2021_2024 using the following formula: \\[\n\\text{(Revenue Growth Rate)}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]\n\n\n\ndf['Revenues_M_last_year'] = df.groupby('Company')['Revenues_M'].shift(-1)\n\nWhat shift() does in pandas:\n\nshift() moves values up or down along the index (rows).\nIt shifts the data by a number of periods (default is 1 period down).\nIt is often used to compare a row with a previous (or future) row.\n\nshift(1): shift down (default)\nshift(-1): shift up\n\n\n\n\n\ndf['GrowthRate_Revenue'] = (df['Revenues_M'] - df['Revenues_M_last_year']) / df['Revenues_M_last_year']\n\\[\n\\text{(Revenue Growth Rate)}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]"
+    "text": "transform() with shift()\n\nDatashift()Percentage Changes\n\n\n\nf_2021_2024 is a long-from DataFrame, containing 741 companies that appeared in the Fortune 1000 list consecutively from 2021 to 2024.\n\nf_2021_2024 = pd.read_csv(\"https://bcdanl.github.io/data/fortune741_2021_2024.csv\")\n\nHere we are interested in calculating the yearly revenue growth rate for each company in fortune_2021_2024 using the following formula: \\[\n\\text{(Revenue Growth Rate)}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]\n\n\n\nf_2021_2024['Revenues_M_last_year'] = f_2021_2024.groupby('Company')['Revenues_M'].shift(-1)\n\nWhat shift() does in pandas:\n\nshift() moves values up or down along the index (rows).\nIt shifts the data by a number of periods (default is 1 period down).\nIt is often used to compare a row with a previous (or future) row.\n\nshift(1): shift down (default)\nshift(-1): shift up\n\n\n\n\n\nf_2021_2024['GrowthRate_Revenue'] = (\n    (f_2021_2024['Revenues_M'] - f_2021_2024['Revenues_M_last_year']) / \n          f_2021_2024['Revenues_M_last_year']\n)\n\\[\n\\text{(Revenue Growth Rate)}_{year} = \\frac{\\text{Revenue}_{year} - \\text{Revenue}_{year-1}}{\\text{Revenue}_{year-1}}\n\\]\n\nUsing the historical daily stock data, we can calculate each company’s daily percentage change in stock price."
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#transform-with-a-lambda-udf",
@@ -5612,5 +5612,19 @@
     "title": "Homework 5",
     "section": "Holiday Movie Blog (Homework 3)",
     "text": "Holiday Movie Blog (Homework 3)\nAdd the following section to your Holiday Movie blog:\n\nCode\n\nUse pandas to select the five genres with the highest film counts.\n\nUse numpy to add a new variable, log of num_votes.\nUse seaborn to plot the relationship between log of num_votes and average_rating, grouping by genre and coloring or faceting by title_type.\n\nDescription\nWrite 2–3 sentences describing how the log of num_votes vs. average_rating relationship varies among the top five genres and between different title_types."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#agg-with-a-named-udf",
+    "href": "danl-lec/danl-210-lec-19-2025-0430.html#agg-with-a-named-udf",
+    "title": "Lecture 19",
+    "section": "agg() with a Named UDF",
+    "text": "agg() with a Named UDF\n\nWe can also define a named UDF once and then reference it in your agg() call:\n\n# 1. Define the UDF\ndef iqr(series):\n    return series.quantile(0.75) - series.quantile(0.25)\n\n# 2. Use it in agg()\n(\n  fortune\n  .groupby(\"Sector\")\n  .agg(Revenue_IQR=(\"Revenues_M\", iqr))\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#transform-with-a-named-udf",
+    "href": "danl-lec/danl-210-lec-19-2025-0430.html#transform-with-a-named-udf",
+    "title": "Lecture 19",
+    "section": "transform() with a Named UDF",
+    "text": "transform() with a Named UDF\n\nRather than an inline lambda, we can define a named UDF and pass it to .transform():\n\ndef demean(series: pd.Series) -&gt; pd.Series:\n    return series - series.mean()\n\nfortune[\"Rev_centered\"] = (\n    fortune\n      .groupby(\"Sector\")[\"Revenues_M\"]\n      .transform(demean)\n)"
   }
 ]
