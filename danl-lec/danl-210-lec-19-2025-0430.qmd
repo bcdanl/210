@@ -376,7 +376,7 @@ fortune["Rev_centered"] = (
 ## `transform()` with a Named UDF
 
 :::{.nonincremental}
--	Rather than an inline `lambda`, we can define a named UDF and pass it to `.transform()`:
+-	Rather than an inline `lambda`, we can also define a named UDF and pass it to `.transform()`:
 
 :::
 

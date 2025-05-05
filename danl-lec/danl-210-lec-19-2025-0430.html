@@ -524,7 +524,7 @@ Byeong-Hak Choe
 <section id="transform-with-a-named-udf" class="slide level2">
 <h2><code>transform()</code> with a Named UDF</h2>
 <ul>
-<li>Rather than an inline <code>lambda</code>, we can define a named UDF and pass it to <code>.transform()</code>:</li>
+<li>Rather than an inline <code>lambda</code>, we can also define a named UDF and pass it to <code>.transform()</code>:</li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> demean(s):</span>
 <span id="cb15-2"><a></a>    <span class="cf">return</span> s <span class="op">-</span> s.mean()</span>

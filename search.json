@@ -5625,6 +5625,6 @@
     "href": "danl-lec/danl-210-lec-19-2025-0430.html#transform-with-a-named-udf",
     "title": "Lecture 19",
     "section": "transform() with a Named UDF",
-    "text": "transform() with a Named UDF\n\nRather than an inline lambda, we can define a named UDF and pass it to .transform():\n\ndef demean(s):\n    return s - s.mean()\n\nfortune[\"Rev_centered\"] = (\n    fortune\n      .groupby(\"Sector\")[\"Revenues_M\"]\n      .transform(demean)\n)"
+    "text": "transform() with a Named UDF\n\nRather than an inline lambda, we can also define a named UDF and pass it to .transform():\n\ndef demean(s):\n    return s - s.mean()\n\nfortune[\"Rev_centered\"] = (\n    fortune\n      .groupby(\"Sector\")[\"Revenues_M\"]\n      .transform(demean)\n)"
   }
 ]
