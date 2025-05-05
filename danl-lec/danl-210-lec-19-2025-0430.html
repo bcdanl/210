@@ -480,8 +480,8 @@ Byeong-Hak Choe
 <li>We can also define a named UDF once and then reference it in your <code>agg()</code> call:</li>
 </ul>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># 1. Define the UDF</span></span>
-<span id="cb12-2"><a></a><span class="kw">def</span> iqr(series):</span>
-<span id="cb12-3"><a></a>    <span class="cf">return</span> series.quantile(<span class="fl">0.75</span>) <span class="op">-</span> series.quantile(<span class="fl">0.25</span>)</span>
+<span id="cb12-2"><a></a><span class="kw">def</span> iqr(s):</span>
+<span id="cb12-3"><a></a>    <span class="cf">return</span> s.quantile(<span class="fl">0.75</span>) <span class="op">-</span> s.quantile(<span class="fl">0.25</span>)</span>
 <span id="cb12-4"><a></a></span>
 <span id="cb12-5"><a></a><span class="co"># 2. Use it in agg()</span></span>
 <span id="cb12-6"><a></a>(</span>
@@ -526,8 +526,8 @@ Byeong-Hak Choe
 <ul>
 <li>Rather than an inline <code>lambda</code>, we can define a named UDF and pass it to <code>.transform()</code>:</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> demean(series: pd.Series) <span class="op">-&gt;</span> pd.Series:</span>
-<span id="cb15-2"><a></a>    <span class="cf">return</span> series <span class="op">-</span> series.mean()</span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> demean(s):</span>
+<span id="cb15-2"><a></a>    <span class="cf">return</span> s <span class="op">-</span> s.mean()</span>
 <span id="cb15-3"><a></a></span>
 <span id="cb15-4"><a></a>fortune[<span class="st">"Rev_centered"</span>] <span class="op">=</span> (</span>
 <span id="cb15-5"><a></a>    fortune</span>

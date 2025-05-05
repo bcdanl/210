@@ -321,8 +321,8 @@ fortune.groupby("Sector").agg(
 :::
 ```{.python}
 # 1. Define the UDF
-def iqr(series):
-    return series.quantile(0.75) - series.quantile(0.25)
+def iqr(s):
+    return s.quantile(0.75) - s.quantile(0.25)
 
 # 2. Use it in agg()
 (
@@ -381,8 +381,8 @@ fortune["Rev_centered"] = (
 :::
 
 ```{.python}
-def demean(series: pd.Series) -> pd.Series:
-    return series - series.mean()
+def demean(s):
+    return s - s.mean()
 
 fortune["Rev_centered"] = (
     fortune
