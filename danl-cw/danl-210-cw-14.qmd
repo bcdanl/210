@@ -91,7 +91,8 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 	-	In the resulting DataFrame, retain only the following three variables:
     	1.	`hh` (household ID)
     	2.	`brand`
-    	3.	The calculated** percentage contribution** of spending on that brand
+    	3. total dollars spent by the household
+    	4.	The calculated** percentage contribution** of spending on that brand
 	-	Ensure the resulting DataFrame contains only one row per household–brand pair.
 
 

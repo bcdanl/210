@@ -72,7 +72,7 @@ esg_proj_2024_data = pd.read_csv(url_2024)
 #| results: asis
 
 esg_proj_2024_data <- read_csv("https://bcdanl.github.io/data/esg_proj_2024_data.csv")
-DT::datatable(esg_proj_2024_data, rownames = F)
+rmarkdown::paged_table(esg_proj_2024_data)
 ```
 
 <br>
@@ -112,7 +112,7 @@ esg_proj_2025 = pd.read_csv(url_2025)
 #| results: asis
 
 esg_proj_2025 <- read_csv("https://bcdanl.github.io/data/esg_proj_2025.csv")
-DT::datatable(esg_proj_2025, rownames = F)
+rmarkdown::paged_table(esg_proj_2025)
 ```
 
 
