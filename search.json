@@ -5373,14 +5373,14 @@
     "href": "danl-cw/danl-210-cw-14.html",
     "title": "Classwork 14",
     "section": "",
-    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
+    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nimport numpy as np\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
   },
   {
     "objectID": "danl-cw/danl-210-cw-14.html#direction",
     "href": "danl-cw/danl-210-cw-14.html#direction",
     "title": "Classwork 14",
     "section": "",
-    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
+    "text": "The dataset ,beer_markets.csv, (with its pathname https://bcdanl.github.io/data/beer_markets.csv) includes information about beer purchases across different markets, brands, and households.\n\nimport pandas as pd\nimport numpy as np\nbeer = pd.read_csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\n\n\n\nEach observation in beer is a household-level transaction record for a purchase of beer."
   },
   {
     "objectID": "danl-cw/danl-210-cw-14.html#variable-description",
