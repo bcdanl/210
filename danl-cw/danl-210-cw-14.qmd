@@ -87,9 +87,12 @@ What are the descriptive statistics (mean, count, min, max) for `dollar_spent` a
 <br><br>
 
 ## Question 3 
-- For each `brand`, calculate the percentage contribution of `dollar_spent` on the same `brand` to the total dollars spent by the household. 
-  - In the resulting DataFrame, keep only the following three variables---(1) `hh`, (2) `brand`, and (3) the variable for the percentage contribution of `dollar_spent` on each `brand` within a household.
-  - In the resulting DataFrame, keep only one observation for one brand within a household.
+- Compute the share of `dollar_spent` on each `brand` as a percentage of the total spending by each household.
+	-	In the resulting DataFrame, retain only the following three variables:
+    	1.	`hh` (household ID)
+    	2.	`brand`
+    	3.	The calculated** percentage contribution** of spending on that brand
+	-	Ensure the resulting DataFrame contains only one row per household–brand pair.
 
 
 *Answer:*

@@ -5408,7 +5408,7 @@
     "href": "danl-cw/danl-210-cw-14.html#question-3",
     "title": "Classwork 14",
     "section": "Question 3",
-    "text": "Question 3\n\nFor each brand, calculate the percentage contribution of dollar_spent on the same brand to the total dollars spent by the household.\n\nIn the resulting DataFrame, keep only the following three variables—(1) hh, (2) brand, and (3) the variable for the percentage contribution of dollar_spent on each brand within a household.\nIn the resulting DataFrame, keep only one observation for one brand within a household.\n\n\nAnswer:"
+    "text": "Question 3\n\nCompute the share of dollar_spent on each brand as a percentage of the total spending by each household.\n\nIn the resulting DataFrame, retain only the following three variables:\n\nhh (household ID)\nbrand\nThe calculated** percentage contribution** of spending on that brand\n\nEnsure the resulting DataFrame contains only one row per household–brand pair.\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-14.html#question-4",
