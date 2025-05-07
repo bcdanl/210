@@ -93,9 +93,10 @@ rmarkdown::paged_table(trashwheel ,
 |`PlasticBags`    |float    |Number of plastic bags    |
 |`Wrappers`       |float    |Number of wrappers       |
 |`SportsBalls`    |float    |Number of sports balls    |
-|`HomesPowered`   |integer    |Homes Powered - Each ton of trash equates to on average 500 kilowatts of electricity.  An average household will use 30 kilowatts per day.   |
+|`HomesPowered`   |integer    |Number of homes powered|
 
-
+- Each ton of trash equates to on average 500 kilowatts of electricity.
+- An average household will use 30 kilowatts per day.
 
 
 ## Meet the Mr. Trash Wheel Family
