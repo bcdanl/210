@@ -3602,7 +3602,7 @@
     "href": "listing-danl-210-ex.html",
     "title": "DANL 210 - Exam",
     "section": "",
-    "text": "Title\n\n\n\nDate\n\n\n\n\n\n\n\n\nMidterm Exam I\n\n\nMarch 5, 2025\n\n\n\n\n\n\nMidterm Exam II\n\n\nApril 21, 2025\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "Title\n\n\n\nDate\n\n\n\n\n\n\n\n\nMidterm Exam I\n\n\nMarch 5, 2025\n\n\n\n\n\n\nMidterm Exam II\n\n\nApril 21, 2025\n\n\n\n\n\n\nFinal Exam\n\n\nMay 6, 2025\n\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "posts/nba/nba.html#salary-distribution-among-teams",
@@ -4204,7 +4204,7 @@
     "href": "index.html#bullet-exam",
     "title": "DANL 210-01: Data Preparation and Management, Spring 2025",
     "section": "\\(\\bullet\\,\\) Exam 📝",
-    "text": "\\(\\bullet\\,\\) Exam 📝\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nMidterm Exam I\n\n\nSpring 2025, DANL 210-01\n\n\nMarch 5, 2025\n\n\n\n\n\n\nMidterm Exam II\n\n\nSpring 2025, DANL 210-01\n\n\nApril 21, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\(\\bullet\\,\\) Exam 📝\n\n\n\n\n\n\nTitle\n\n\n\nSubtitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFinal Exam\n\n\nMock-up Questions\n\n\nMay 6, 2025\n\n\n\n\n\n\nMidterm Exam I\n\n\nSpring 2025, DANL 210-01\n\n\nMarch 5, 2025\n\n\n\n\n\n\nMidterm Exam II\n\n\nSpring 2025, DANL 210-01\n\n\nApril 21, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-lec/danl-210-lec-18-2025-0425.html#exploratory-data-analysis-eda",
@@ -4939,7 +4939,7 @@
     "href": "danl-ex/danl-210-exam-2-a.html#question-14-points-7",
     "title": "Midterm Exam II",
     "section": "Question 14 (Points: 7)",
-    "text": "Question 14 (Points: 7)\n\nConsider a DataFrame called songs, derived from spotify, that adds a new variable song by concatenating each row’s artist_name and track_name:\n\n\n\n\n\n\nIndex\npid\nplaylist_name\nsong\n\n\n\n\n0\n0\nThrowbacks\nMissy Elliott - Lose Control (feat. Ciara & Fat Man Scoop)\n\n\n1\n0\nThrowbacks\nBritney Spears - Toxic\n\n\n2\n0\nThrowbacks\nBeyoncé - Crazy In Love\n\n\n\n\n.....\n\n\n\n\n\n\n\n\n\nNote that the songs DataFrame has only the three variables—pid, playlist_name, and song, as shown above.\nWrite code to determine which two different songs appear together in playlists more often than any other pair, as shown below.\n\n(Hint: self‑merge the songs DataFrame on pid to get song_x-song_y pairs, which is a many-to-many join.)\n\n\n\n\n\n\n\nIndex\nsong_x\nsong_y\ncount\n\n\n\n\n76\nKendrick Lamar – HUMBLE.\nLil Uzi Vert – XO TOUR Llif3\n67\n\n\n\n\n\n\n\nBelow is how songs DataFrame is created:\n\nsongs = (\n    spotify\n    .drop_duplicates(subset = ['pid', 'playlist_name', 'artist_name', 'track_name'])\n    [['pid', 'playlist_name', 'artist_name', 'track_name']]\n    )\n\nsongs['song'] = songs['artist_name'] + ' – ' + songs['track_name']\nsongs = songs[['pid', 'playlist_name', 'song']]\n\n\n\nClick to Check the Answer!\npairs = songs.merge(songs, on='pid')\n\npair_counts = (\n    pairs[['song_x','song_y']]\n    .value_counts()\n    .reset_index()\n    .query('song_x != song_y')\n    .nlargest(1, 'count', keep = \"all\")  \n)\n\n# Note: Lexicographic filtering is necessary to treat (song_x, song_y) and (song_y, song_x) as the same pair."
+    "text": "Question 14 (Points: 7)\n\nConsider a DataFrame called songs, derived from spotify, that adds a new variable song by concatenating each row’s artist_name and track_name:\n\n\n\n\n\n\nIndex\npid\nplaylist_name\nsong\n\n\n\n\n0\n0\nThrowbacks\nMissy Elliott - Lose Control (feat. Ciara & Fat Man Scoop)\n\n\n1\n0\nThrowbacks\nBritney Spears - Toxic\n\n\n2\n0\nThrowbacks\nBeyoncé - Crazy In Love\n\n\n\n\n.....\n\n\n\n\n\n\n\nNote that the songs DataFrame has only the three variables—pid, playlist_name, and song, as shown above.\nWrite code to determine which two different songs appear together in playlists more often than any other pair, as shown below.\n\n(Hint: self‑merge the songs DataFrame on pid to get song_x-song_y pairs, which is a many-to-many join.)\n\n\n\n\n\n\n\nIndex\nsong_x\nsong_y\ncount\n\n\n\n\n76\nKendrick Lamar – HUMBLE.\nLil Uzi Vert – XO TOUR Llif3\n67\n\n\n\n\n\nBelow is how songs DataFrame is created:\n\nsongs = (\n    spotify\n    .drop_duplicates(subset = ['pid', 'playlist_name', 'artist_name', 'track_name'])\n    [['pid', 'playlist_name', 'artist_name', 'track_name']]\n    )\n\nsongs['song'] = songs['artist_name'] + ' – ' + songs['track_name']\nsongs = songs[['pid', 'playlist_name', 'song']]\n\n\n\nClick to Check the Answer!\npairs = songs.merge(songs, on='pid')\n\npair_counts = (\n    pairs[['song_x','song_y']]\n    .value_counts()\n    .reset_index()\n    .query('song_x != song_y')\n    .nlargest(1, 'count', keep = \"all\")  \n)\n\n# Note: Lexicographic filtering is necessary to treat (song_x, song_y) and (song_y, song_x) as the same pair."
   },
   {
     "objectID": "danl-ex/danl-210-exam-2-a.html#variable-description-1",
@@ -4953,14 +4953,14 @@
     "href": "danl-ex/danl-210-exam-2-a.html#question-15-points-5",
     "title": "Midterm Exam II",
     "section": "Question 15 (Points: 5)",
-    "text": "Question 15 (Points: 5)\n\nWrite code to identify the top deal product(s), where a deal is defined by all of the following:\n\nOn clearance: the product’s current_p equals its clearance_p.\nHighly reviewed: reviewCount is at or above the 95th percentile of all reviewCount values.\nBest rated: among these clearance, highly‑reviewed products, it has the maximum reviewStarRating (including any ties).\n\n\n\n\n\n\n\nIndex\nid\nbrandId\nbrandName\nname\nreviewCount\nreviewStarRating\ncurrernt_p\nclearance_p\n\n\n\n\n92\n6545910\n9423\nTory Burch\nBallet Loafer\n1008\n4.8\n178\n178\n\n\n393\n7248724\n9423\nTory Burch\nHowell Court Sneaker\n1044\n4.8\n88\n88\n\n\n6318\n5654262\n15361\nSee Kai Run\nStevie II Sneaker\n113\n4.8\n35\n35\n\n\n\n\n\n\n\n\n\nClick to Check the Answer!\nreview_top5 = shoes['reviewCount'].quantile(.95)\nshoes_promo = (\n    shoes[(shoes['clearance_p'] == shoes['currernt_p']) & (shoes['reviewCount'] &gt;= review_top5) ]\n    .nlargest(1, 'reviewStarRating', keep = 'all')\n    )"
+    "text": "Question 15 (Points: 5)\n\nWrite code to identify the top deal product(s), where a deal is defined by all of the following:\n\nOn clearance: the product’s current_p equals its clearance_p.\nHighly reviewed: reviewCount is at or above the 95th percentile of all reviewCount values.\nBest rated: among these clearance, highly‑reviewed products, it has the maximum reviewStarRating (including any ties).\n\n\n\n\n\n\n\nIndex\nid\nbrandId\nbrandName\nname\nreviewCount\nreviewStarRating\ncurrernt_p\nclearance_p\n\n\n\n\n92\n6545910\n9423\nTory Burch\nBallet Loafer\n1008\n4.8\n178\n178\n\n\n393\n7248724\n9423\nTory Burch\nHowell Court Sneaker\n1044\n4.8\n88\n88\n\n\n6318\n5654262\n15361\nSee Kai Run\nStevie II Sneaker\n113\n4.8\n35\n35\n\n\n\n\n\n\n\nClick to Check the Answer!\nreview_top5 = shoes['reviewCount'].quantile(.95)\nshoes_promo = (\n    shoes[(shoes['clearance_p'] == shoes['currernt_p']) & (shoes['reviewCount'] &gt;= review_top5) ]\n    .nlargest(1, 'reviewStarRating', keep = 'all')\n    )"
   },
   {
     "objectID": "danl-ex/danl-210-exam-2-a.html#question-16-points-7",
     "href": "danl-ex/danl-210-exam-2-a.html#question-16-points-7",
     "title": "Midterm Exam II",
     "section": "Question 16 (Points: 7)",
-    "text": "Question 16 (Points: 7)\n\nWrite pandas code to:\n\nCount products per brand: determine how many items each brand offers.\nFind the 90th‑percentile threshold of those brand‑level counts.\nSelect “popular” brands whose product counts exceed that threshold.\nCompute clearance rates for each of these popular brands: the fraction of their items with a non‑missing clearance_p.\nList the top five brands by clearance rate, reporting each brand and its rate, as shown in below DataFrame.\n\n\n\n\n\n\n\nIndex\nbrandName\ncount_x\ncount_y\nrate\n\n\n\n\n4\nMIA\n51\n76\n0.6710526\n\n\n1\nFly London\n76\n125\n0.6080000\n\n\n8\nVince Camuto\n41\n77\n0.5324675\n\n\n13\nKeds®\n37\n70\n0.5285714\n\n\n12\nCole Haan\n37\n85\n0.4352941\n\n\n\n\n\n\n\n\n\nClick to Check the Answer!\n# 1. Count total products per brand\ntotal_per_brand = shoes['brandName'].value_counts().reset_index()\n\ntotal_per_brand_n = total_per_brand['count'].quantile(.9)\ntotal_per_brand = total_per_brand[total_per_brand['count'] &gt;= total_per_brand_n]\n\n# 2. Count total products per brand\nshoes['clearance_available'] = shoes['clearance_p'].notna()\n\ntotal_per_brand_c = (\n    shoes\n    .query('clearance_available == True')['brandName']\n    .value_counts()\n    .reset_index()\n    )\n\n# 3. Join\ndf = total_per_brand_c.merge(total_per_brand, on='brandName', how = 'left')\ndf = df[~df['count_y'].isna()]\ndf['rate'] = df['count_x'] / df['count_y'] \ndf_top5 = df.nlargest(5, 'rate', keep = 'all')"
+    "text": "Question 16 (Points: 7)\n\nWrite pandas code to:\n\nCount products per brand: determine how many items each brand offers.\nFind the 90th‑percentile threshold of those brand‑level counts.\nSelect “popular” brands whose product counts exceed that threshold.\nCompute clearance rates for each of these popular brands: the fraction of their items with a non‑missing clearance_p.\nList the top five brands by clearance rate, reporting each brand and its rate, as shown in below DataFrame.\n\n\n\n\n\n\n\nIndex\nbrandName\ncount_x\ncount_y\nrate\n\n\n\n\n4\nMIA\n51\n76\n0.6710526\n\n\n1\nFly London\n76\n125\n0.6080000\n\n\n8\nVince Camuto\n41\n77\n0.5324675\n\n\n13\nKeds®\n37\n70\n0.5285714\n\n\n12\nCole Haan\n37\n85\n0.4352941\n\n\n\n\n\n\n\nClick to Check the Answer!\n# 1. Count total products per brand\ntotal_per_brand = shoes['brandName'].value_counts().reset_index()\n\ntotal_per_brand_n = total_per_brand['count'].quantile(.9)\ntotal_per_brand = total_per_brand[total_per_brand['count'] &gt;= total_per_brand_n]\n\n# 2. Count total products per brand\nshoes['clearance_available'] = shoes['clearance_p'].notna()\n\ntotal_per_brand_c = (\n    shoes\n    .query('clearance_available == True')['brandName']\n    .value_counts()\n    .reset_index()\n    )\n\n# 3. Join\ndf = total_per_brand_c.merge(total_per_brand, on='brandName', how = 'left')\ndf = df[~df['count_y'].isna()]\ndf['rate'] = df['count_x'] / df['count_y'] \ndf_top5 = df.nlargest(5, 'rate', keep = 'all')"
   },
   {
     "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#group-operations-with-dataframegroupby-1",
@@ -5626,5 +5626,194 @@
     "title": "Lecture 19",
     "section": "transform() with a Named UDF",
     "text": "transform() with a Named UDF\n\nRather than an inline lambda, we can also define a named UDF and pass it to .transform():\n\ndef demean(s):\n    return s - s.mean()\n\nfortune[\"Rev_centered\"] = (\n    fortune\n      .groupby(\"Sector\")[\"Revenues_M\"]\n      .transform(demean)\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Mr. Trash Wheel is a semi-autonomous trash interceptor that is placed at the end of a river, stream or other outfall.\nFar too lazy to chase trash around the ocean, Mr. Trash Wheel stays put and waits for the waste to flow to him.\nSustainably powered and built to withstand the biggest storms, Mr. Trash Wheel uses a unique blend of solar and hydro power to pull hundreds of tons of trash out of the water each year.\nSee more how Mr. Trash Wheel works.\n\nThe following is the DataFrame for Part 1.\n\n\nimport pandas as pd\nimport numpy as np\ntrashwheel = pd.read_csv('https://bcdanl.github.io/data/trashwheel.csv')\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ninteger\nDumpster number over time; The Trash Wheel can have multiple dumpsters in a day\n\n\nMonth\nstring\nMonth\n\n\nYear\ninteger\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nfloat\nWeight in tons\n\n\nVolume\ninteger\nVolume in cubic yards\n\n\nPlasticBottles\nfloat\nNumber of plastic bottles\n\n\nPolystyrene\nfloat\nNumber of polystyrene items\n\n\nCigaretteButts\nfloat\nNumber of cigarette butts\n\n\nGlassBottles\nfloat\nNumber of glass bottles\n\n\nPlasticBags\nfloat\nNumber of plastic bags\n\n\nWrappers\nfloat\nNumber of wrappers\n\n\nSportsBalls\nfloat\nNumber of sports balls\n\n\nHomesPowered\ninteger\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day.\n\n\n\n\n\n\n\n\n\n\n\nMister Trash Wheel\n\n\n\n\nInstalled: May 9, 2014\nLocation: Jones Falls stream, Inner Harbor, Baltimore, MD\n\n\n\n\n\n\n\n\nProfessor Trash Wheel\n\n\n\n\nInstalled: December 4, 2016\nLocation: Harris Creek, Canton neighborhood, Baltimore, MD\n\n\n\n\n\n\n\n\nCaptain Trash Wheel\n\n\n\n\nInstalled: June 5, 2018\nLocation: Masonville Cove, Baltimore, MD\n\n\n\n\n\n\n\n\nGwynnda Trash Wheel\n\n\n\n\nInstalled: June 3, 2021\nLocation: Gwynns Falls, West Baltimore, MD\n\n\n\n\n\n\n\nWrite code to count the number of observations in the Name variable.\n\n\n\nClick to Check the Answer!\ntrashwheel['Name'].value_counts()\n\n\n\n\n\n\n\nWrite code to convert\n\nData type of Name variable to category;\nData type of Month variable to category; and\nData type of Date variable to datetimes in the trashwheel DataFrame.\n\n\n\n\nClick to Check the Answer!\ntrashwheel = (\n    trashwheel\n    .astype(\n        {\n            'Name':'category',\n            'Month':'category',\n            'Date':'datetime64',\n        }\n    )\n)\n\n\n\n\n\n\n\nWrite Python code to replace NaN values in the GlassBottles variable with the mean within each Year group of the trashwheel DataFrame.\n\n\n\nClick to Check the Answer!\ntrashwheel['GlassBottles'] = (\n    trashwheel\n    .groupby('Year')['GlassBottles']\n    .transform(lambda x: x.fillna(x.mean()))\n)\n\n\n\n\n\n\n\nWrite Python code to identify which Trash Wheel provided electricity to the greatest number of homes for each Year–Month combination..\n\nPlease make sure your code manages any ties for the top values of HomesPowered while making selections.\n\n\n\n\nClick to Check the Answer!\nq4 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['HomesPowered']]\n    .sum()\n    .reset_index()\n    .groupby(['Year', 'Month'])\n    .apply(lambda df: df.nlargest(1, 'HomesPowered', keep = \"all\"))\n    .reset_index(drop = True)\n)\n\n\n\n\n\n\n\nEach ton of trash equates to 500 kilowatts of electricity.\nWrite code to determine the average monthly electricity supplied to homes by each Trash Wheel.\n\n\n\nClick to Check the Answer!\nq5 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['Weight', 'HomesPowered']]\n    .sum()\n    .reset_index()\n    .assign(\n        electricity = lambda x: x['Weight'] * 500\n    )\n    .query('HomesPowered &gt; 0') # optional\n)\n\nq5['avg_elec_home'] = q5['electricity'] / q5['HomesPowered']"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#variable-description",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#variable-description",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "variable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ninteger\nDumpster number over time; The Trash Wheel can have multiple dumpsters in a day\n\n\nMonth\nstring\nMonth\n\n\nYear\ninteger\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nfloat\nWeight in tons\n\n\nVolume\ninteger\nVolume in cubic yards\n\n\nPlasticBottles\nfloat\nNumber of plastic bottles\n\n\nPolystyrene\nfloat\nNumber of polystyrene items\n\n\nCigaretteButts\nfloat\nNumber of cigarette butts\n\n\nGlassBottles\nfloat\nNumber of glass bottles\n\n\nPlasticBags\nfloat\nNumber of plastic bags\n\n\nWrappers\nfloat\nNumber of wrappers\n\n\nSportsBalls\nfloat\nNumber of sports balls\n\n\nHomesPowered\ninteger\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#meet-the-mr.-trash-wheel-family",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#meet-the-mr.-trash-wheel-family",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Mister Trash Wheel\n\n\n\n\nInstalled: May 9, 2014\nLocation: Jones Falls stream, Inner Harbor, Baltimore, MD\n\n\n\n\n\n\n\n\nProfessor Trash Wheel\n\n\n\n\nInstalled: December 4, 2016\nLocation: Harris Creek, Canton neighborhood, Baltimore, MD\n\n\n\n\n\n\n\n\nCaptain Trash Wheel\n\n\n\n\nInstalled: June 5, 2018\nLocation: Masonville Cove, Baltimore, MD\n\n\n\n\n\n\n\n\nGwynnda Trash Wheel\n\n\n\n\nInstalled: June 3, 2021\nLocation: Gwynns Falls, West Baltimore, MD"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-1",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-1",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Write code to count the number of observations in the Name variable.\n\n\n\nClick to Check the Answer!\ntrashwheel['Name'].value_counts()"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-2",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-2",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Write code to convert\n\nData type of Name variable to category;\nData type of Month variable to category; and\nData type of Date variable to datetimes in the trashwheel DataFrame.\n\n\n\n\nClick to Check the Answer!\ntrashwheel = (\n    trashwheel\n    .astype(\n        {\n            'Name':'category',\n            'Month':'category',\n            'Date':'datetime64',\n        }\n    )\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-3",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-3",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Write Python code to replace NaN values in the GlassBottles variable with the mean within each Year group of the trashwheel DataFrame.\n\n\n\nClick to Check the Answer!\ntrashwheel['GlassBottles'] = (\n    trashwheel\n    .groupby('Year')['GlassBottles']\n    .transform(lambda x: x.fillna(x.mean()))\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-4",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-4",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Write Python code to identify which Trash Wheel provided electricity to the greatest number of homes for each Year–Month combination..\n\nPlease make sure your code manages any ties for the top values of HomesPowered while making selections.\n\n\n\n\nClick to Check the Answer!\nq4 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['HomesPowered']]\n    .sum()\n    .reset_index()\n    .groupby(['Year', 'Month'])\n    .apply(lambda df: df.nlargest(1, 'HomesPowered', keep = \"all\"))\n    .reset_index(drop = True)\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-5",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-5",
+    "title": "Exam Practice",
+    "section": "",
+    "text": "Each ton of trash equates to 500 kilowatts of electricity.\nWrite code to determine the average monthly electricity supplied to homes by each Trash Wheel.\n\n\n\nClick to Check the Answer!\nq5 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['Weight', 'HomesPowered']]\n    .sum()\n    .reset_index()\n    .assign(\n        electricity = lambda x: x['Weight'] * 500\n    )\n    .query('HomesPowered &gt; 0') # optional\n)\n\nq5['avg_elec_home'] = q5['electricity'] / q5['HomesPowered']"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-6",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-6",
+    "title": "Exam Practice",
+    "section": "Question 6",
+    "text": "Question 6\nUsing the nyc_weather DataFrame, write code to create the weather DataFrame containing only the observations where the type variable has one of the following values: ‘PRCP’, ‘SNOW’, ‘SNWD’, ‘TMIN’, ‘TMAX’, ‘AWND’, or ‘TAVG’.\n\nBelow explains what each value means:\n\nPRCP: Precipitation (tenths of mm)\nSNOW: Snowfall (mm)\nSNWD: Snow depth (mm)\nTMAX: Maximum temperature (tenths of degrees C)\nTMIN: Minimum temperature (tenths of degrees C)\nAWND: Average daily wind speed (tenths of meters per second)\nTAVG: Average temperature (tenths of degrees C)\n\n\n\n\nClick to Check the Answer!\nweather =(\n      nyc_weather\n      .loc[nyc_weather['datatype'].isin(['PRCP', 'SNOW', 'SNWD', 'TMIN', 'TMAX', 'AWND', 'TAVG'])]\n      )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-7",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-7",
+    "title": "Exam Practice",
+    "section": "Question 7",
+    "text": "Question 7\nWrite code to calculate the monthly average value for each type at each weather station in the weather DataFrame.\n\n\nClick to Check the Answer!\nq7 = (\n       weather.groupby(['station', 'datatype', 'year', 'month'])['value']\n       .mean()\n       .reset_index(name = 'mean_value')\n       )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-8",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-8",
+    "title": "Exam Practice",
+    "section": "Question 8",
+    "text": "Question 8\n\nWrite code to identify the names of the top 10 weather stations with the highest mean ‘TMAX’ values in June, July, and August, respectively. (Here, top 10 refers to the stations with the hottest average temperatures.)\nWrite code to identify the names of the top 10 weather stations with the lowest mean ‘TMIN’ values in December, January, and February, respectively. (Here, top 10 refers to the stations with the coldest average temperatures.)\n\n\n\nClick to Check the Answer!\nq8_tmax = (\n       weather\n       .query('month &gt; 5 & month &lt; 9')\n       .query('datatype == \"TMAX\"')\n       .groupby(['month', 'station', 'name'])\n       .agg(mean_tmax = ('value', 'mean'))\n       .reset_index()\n       .groupby('month')\n       .apply(lambda x: x.nlargest(10, 'mean_tmax', keep = 'all'))\n       .reset_index(drop = True)\n       )\n\nq8_tmin = (\n       weather\n       .query('month == 11 | month == 1 | month == 2')\n       .query('datatype == \"TMIN\"')\n       .groupby(['month', 'station', 'name'])\n       .agg(mean_tmin = ('value', 'mean'))\n       .reset_index()\n       .groupby('month')\n       .apply(lambda x: x.nsmallest(10, 'mean_tmin', keep = 'all'))\n       .reset_index(drop = True)\n       )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-exam-1-s24-a.html#question-9",
+    "href": "danl-ex/danl-210-exam-1-s24-a.html#question-9",
+    "title": "Exam Practice",
+    "section": "Question 9",
+    "text": "Question 9\n\nWrite code to perform the following tasks:\n\nIdentify the names of the top 10 weather stations with the highest number of days with precipitation in each year.\nDetermine how many days experienced snow or rain at the top-ranked weather station in each year.\nFor each of the top 10 weather stations in each year, generate a summary of descriptive statistics for precipitation values.\n\n\n\n\nClick to Check the Answer!\nprcp_sorted = (\n       weather\n       .query('datatype == \"PRCP\"')\n       .query('value &gt; 0')\n       .groupby(['year', 'station'])['datatype']\n       .size()\n       .reset_index(name = \"n_days\")\n       .merge(stations,\n              left_on='station',\n              right_on = 'id',\n              how='left')\n       .sort_values('n_days', ascending = False)\n       .reset_index(drop=True)\n\n       )\n       \ntop10stations = (\n    prcp_sorted\n    .groupby('year')\n    .apply(lambda df: df.nlargest(10, 'n_days', keep = 'all')['station'])\n)\n\ntop10prcp_summary = (\n    weather\n    .loc[weather['station'].isin(top10stations)]\n    .query('datatype == \"PRCP\"')\n    .groupby(['station','year'])['value']\n    .describe()\n    )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html",
+    "href": "danl-ex/danl-210-final-exam-practice.html",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Mr. Trash Wheel is a semi-autonomous trash interceptor that is placed at the end of a river, stream or other outfall.\nFar too lazy to chase trash around the ocean, Mr. Trash Wheel stays put and waits for the waste to flow to him.\nSustainably powered and built to withstand the biggest storms, Mr. Trash Wheel uses a unique blend of solar and hydro power to pull hundreds of tons of trash out of the water each year.\nSee more how Mr. Trash Wheel works.\n\nThe following is the DataFrame for Part 1.\n\n\nimport pandas as pd\nimport numpy as np\ntrashwheel = pd.read_csv('https://bcdanl.github.io/data/trashwheel.csv')\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\nvariable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ninteger\nDumpster number over time; The Trash Wheel can have multiple dumpsters in a day\n\n\nMonth\nstring\nMonth\n\n\nYear\ninteger\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nfloat\nWeight in tons\n\n\nVolume\ninteger\nVolume in cubic yards\n\n\nPlasticBottles\nfloat\nNumber of plastic bottles\n\n\nPolystyrene\nfloat\nNumber of polystyrene items\n\n\nCigaretteButts\nfloat\nNumber of cigarette butts\n\n\nGlassBottles\nfloat\nNumber of glass bottles\n\n\nPlasticBags\nfloat\nNumber of plastic bags\n\n\nWrappers\nfloat\nNumber of wrappers\n\n\nSportsBalls\nfloat\nNumber of sports balls\n\n\nHomesPowered\ninteger\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day.\n\n\n\n\n\n\n\n\n\n\n\nMister Trash Wheel\n\n\n\n\nInstalled: May 9, 2014\nLocation: Jones Falls stream, Inner Harbor, Baltimore, MD\n\n\n\n\n\n\n\n\nProfessor Trash Wheel\n\n\n\n\nInstalled: December 4, 2016\nLocation: Harris Creek, Canton neighborhood, Baltimore, MD\n\n\n\n\n\n\n\n\nCaptain Trash Wheel\n\n\n\n\nInstalled: June 5, 2018\nLocation: Masonville Cove, Baltimore, MD\n\n\n\n\n\n\n\n\nGwynnda Trash Wheel\n\n\n\n\nInstalled: June 3, 2021\nLocation: Gwynns Falls, West Baltimore, MD\n\n\n\n\n\n\n\nWrite code to count the number of observations in the Name variable.\n\n\n\nClick to Check the Answer!\ntrashwheel['Name'].value_counts()\n\n\n\n\n\n\n\nWrite code to convert\n\nData type of Name variable to category;\nData type of Month variable to category; and\nData type of Date variable to datetimes in the trashwheel DataFrame.\n\n\n\n\nClick to Check the Answer!\ntrashwheel = (\n    trashwheel\n    .astype(\n        {\n            'Name':'category',\n            'Month':'category',\n            'Date':'datetime64',\n        }\n    )\n)\n\n\n\n\n\n\n\nWrite Python code to replace NaN values in the GlassBottles variable with the mean within each Year group of the trashwheel DataFrame.\n\n\n\nClick to Check the Answer!\ntrashwheel['GlassBottles'] = (\n    trashwheel\n    .groupby('Year')['GlassBottles']\n    .transform(lambda x: x.fillna(x.mean()))\n)\n\n\n\n\n\n\n\nWrite Python code to identify which Trash Wheel provided electricity to the greatest number of homes for each Year–Month combination..\n\nPlease make sure your code manages any ties for the top values of HomesPowered while making selections.\n\n\n\n\nClick to Check the Answer!\nq4 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['HomesPowered']]\n    .sum()\n    .reset_index()\n    .groupby(['Year', 'Month'])\n    .apply(lambda df: df.nlargest(1, 'HomesPowered', keep = \"all\"))\n    .reset_index(drop = True)\n)\n\n\n\n\n\n\n\nEach ton of trash equates to 500 kilowatts of electricity.\nWrite code to determine the average monthly electricity supplied to homes by each Trash Wheel.\n\n\n\nClick to Check the Answer!\nq5 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['Weight', 'HomesPowered']]\n    .sum()\n    .reset_index()\n    .assign(\n        electricity = lambda x: x['Weight'] * 500\n    )\n    .query('HomesPowered &gt; 0') # optional\n)\n\nq5['avg_elec_home'] = q5['electricity'] / q5['HomesPowered']"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#variable-description",
+    "href": "danl-ex/danl-210-final-exam-practice.html#variable-description",
+    "title": "Final Exam",
+    "section": "",
+    "text": "variable\ntype\ndescription\n\n\n\n\nName\nstring\nName of the Trash Wheel\n\n\nDumpster\ninteger\nDumpster number over time; The Trash Wheel can have multiple dumpsters in a day\n\n\nMonth\nstring\nMonth\n\n\nYear\ninteger\nYear\n\n\nDate\nstring\nDate (Daily)\n\n\nWeight\nfloat\nWeight in tons\n\n\nVolume\ninteger\nVolume in cubic yards\n\n\nPlasticBottles\nfloat\nNumber of plastic bottles\n\n\nPolystyrene\nfloat\nNumber of polystyrene items\n\n\nCigaretteButts\nfloat\nNumber of cigarette butts\n\n\nGlassBottles\nfloat\nNumber of glass bottles\n\n\nPlasticBags\nfloat\nNumber of plastic bags\n\n\nWrappers\nfloat\nNumber of wrappers\n\n\nSportsBalls\nfloat\nNumber of sports balls\n\n\nHomesPowered\ninteger\nHomes Powered - Each ton of trash equates to on average 500 kilowatts of electricity. An average household will use 30 kilowatts per day."
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#meet-the-mr.-trash-wheel-family",
+    "href": "danl-ex/danl-210-final-exam-practice.html#meet-the-mr.-trash-wheel-family",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Mister Trash Wheel\n\n\n\n\nInstalled: May 9, 2014\nLocation: Jones Falls stream, Inner Harbor, Baltimore, MD\n\n\n\n\n\n\n\n\nProfessor Trash Wheel\n\n\n\n\nInstalled: December 4, 2016\nLocation: Harris Creek, Canton neighborhood, Baltimore, MD\n\n\n\n\n\n\n\n\nCaptain Trash Wheel\n\n\n\n\nInstalled: June 5, 2018\nLocation: Masonville Cove, Baltimore, MD\n\n\n\n\n\n\n\n\nGwynnda Trash Wheel\n\n\n\n\nInstalled: June 3, 2021\nLocation: Gwynns Falls, West Baltimore, MD"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-1",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-1",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Write code to count the number of observations in the Name variable.\n\n\n\nClick to Check the Answer!\ntrashwheel['Name'].value_counts()"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-2",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-2",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Write code to convert\n\nData type of Name variable to category;\nData type of Month variable to category; and\nData type of Date variable to datetimes in the trashwheel DataFrame.\n\n\n\n\nClick to Check the Answer!\ntrashwheel = (\n    trashwheel\n    .astype(\n        {\n            'Name':'category',\n            'Month':'category',\n            'Date':'datetime64',\n        }\n    )\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-3",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-3",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Write Python code to replace NaN values in the GlassBottles variable with the mean within each Year group of the trashwheel DataFrame.\n\n\n\nClick to Check the Answer!\ntrashwheel['GlassBottles'] = (\n    trashwheel\n    .groupby('Year')['GlassBottles']\n    .transform(lambda x: x.fillna(x.mean()))\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-4",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-4",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Write Python code to identify which Trash Wheel provided electricity to the greatest number of homes for each Year–Month combination..\n\nPlease make sure your code manages any ties for the top values of HomesPowered while making selections.\n\n\n\n\nClick to Check the Answer!\nq4 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['HomesPowered']]\n    .sum()\n    .reset_index()\n    .groupby(['Year', 'Month'])\n    .apply(lambda df: df.nlargest(1, 'HomesPowered', keep = \"all\"))\n    .reset_index(drop = True)\n)"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-5",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-5",
+    "title": "Final Exam",
+    "section": "",
+    "text": "Each ton of trash equates to 500 kilowatts of electricity.\nWrite code to determine the average monthly electricity supplied to homes by each Trash Wheel.\n\n\n\nClick to Check the Answer!\nq5 = (\n    trashwheel\n    .groupby(['Name', 'Year', 'Month'])[['Weight', 'HomesPowered']]\n    .sum()\n    .reset_index()\n    .assign(\n        electricity = lambda x: x['Weight'] * 500\n    )\n    .query('HomesPowered &gt; 0') # optional\n)\n\nq5['avg_elec_home'] = q5['electricity'] / q5['HomesPowered']"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-6",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-6",
+    "title": "Final Exam",
+    "section": "Question 6",
+    "text": "Question 6\nUsing the nyc_weather DataFrame, write code to create the weather DataFrame containing only the observations where the type variable has one of the following values: ‘PRCP’, ‘SNOW’, ‘SNWD’, ‘TMIN’, ‘TMAX’, ‘AWND’, or ‘TAVG’.\n\nBelow explains what each value means:\n\nPRCP: Precipitation (tenths of mm)\nSNOW: Snowfall (mm)\nSNWD: Snow depth (mm)\nTMAX: Maximum temperature (tenths of degrees C)\nTMIN: Minimum temperature (tenths of degrees C)\nAWND: Average daily wind speed (tenths of meters per second)\nTAVG: Average temperature (tenths of degrees C)\n\n\n\n\nClick to Check the Answer!\nweather =(\n      nyc_weather\n      .loc[nyc_weather['type'].isin(['PRCP', 'SNOW', 'SNWD', 'TMIN', 'TMAX', 'AWND', 'TAVG'])]\n      )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-7",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-7",
+    "title": "Final Exam",
+    "section": "Question 7",
+    "text": "Question 7\nWrite code to calculate the monthly average value for each type at each weather station in the weather DataFrame.\n\n\nClick to Check the Answer!\nq7 = (\n       weather.groupby(['id', 'type', 'year', 'month'])['value']\n       .mean()\n       .reset_index(name = 'mean_value')\n       )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-8",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-8",
+    "title": "Final Exam",
+    "section": "Question 8",
+    "text": "Question 8\n\nWrite code to identify the names of the top 10 weather stations with the highest mean ‘TMAX’ values in June, July, and August, respectively. (Here, top 10 refers to the stations with the hottest average temperatures.)\nWrite code to identify the names of the top 10 weather stations with the lowest mean ‘TMIN’ values in December, January, and February, respectively. (Here, top 10 refers to the stations with the coldest average temperatures.)\n\n\n\nClick to Check the Answer!\nq8_tmax = (\n       weather\n       .query('month &gt; 5 & month &lt; 9')\n       .query('type == \"TMAX\"')\n       .groupby(['month', 'id'])\n       .agg(tmax_mean = ('value', 'mean'))\n       .reset_index()\n       .groupby('month')\n       .apply(lambda x: x.nlargest(10, 'tmax_mean', keep = 'all'))\n       .reset_index(drop = True)\n       )\n\nq8_tmin = (\n       weather\n       .query('month == 11 | month == 1 | month == 2')\n       .query('type == \"TMIN\"')\n       .groupby(['month', 'id'])\n       .agg(tmin_mean = ('value', 'mean'))\n       .reset_index()\n       .groupby('month')\n       .apply(lambda x: x.nsmallest(10, 'tmin_mean', keep = 'all'))\n       .reset_index(drop = True)\n       )"
+  },
+  {
+    "objectID": "danl-ex/danl-210-final-exam-practice.html#question-9",
+    "href": "danl-ex/danl-210-final-exam-practice.html#question-9",
+    "title": "Final Exam",
+    "section": "Question 9",
+    "text": "Question 9\nThe stations DataFrame contains information about each weather station in the NYC area, including its id (unique identifier of the weather station), name (the name of the weather station, including its lo), latitude, longitude, and elevation.\n\nstations = pd.read_csv('https://bcdanl.github.io/data/weather_stations.csv')\n\n\n  \n\n\nWrite code to perform the following tasks:\n\nIdentify the names of the top 10 weather stations with the highest number of days with precipitation in each year.\nDetermine how many days experienced snow or rain at the top-ranked weather station in each year.\nFor each of the top 10 weather stations in each year, generate a summary of descriptive statistics for precipitation values.\n\n\n\n\nClick to Check the Answer!\nprcp_sorted = (\n       weather\n       .query('type == \"PRCP\"')\n       .query('value &gt; 0') \n       .groupby(['year', 'id'])['type']\n       .size()\n       .reset_index(name = \"n_days\")\n       .merge(stations,\n              on = 'id',\n              how='left')\n       .sort_values('n_days', ascending = False)\n       .reset_index(drop=True)\n       )\n       \ntop10stations = (\n    prcp_sorted\n    .groupby('year')\n    .apply(lambda df: df.nlargest(10, 'n_days', keep = 'all')['id'])\n)\n\ntop10prcp_summary = (\n    weather\n    .loc[weather['id'].isin(top10stations)]\n    .query('type == \"PRCP\"')\n    .groupby(['station','year'])['value']\n    .describe()\n    )"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#course-summary",
+    "href": "danl-lec/danl-210-lec-19-2025-0430.html#course-summary",
+    "title": "Lecture 19",
+    "section": "Course Summary",
+    "text": "Course Summary\nStudent Course Evaluation (SCE)\n\nI have tried to improve your learning experience in this course.\nI value your feedback immensely.\nI request for your participation in the Student Course Evaluation (SCE).\n\n\n\n\n\nTake 10 minutes right now to complete the SCE.\nOn your laptop, access the SCE form for DANL 210 as follows:\n\nLog in to Knightweb\nClick on the “Surveys” option\nChoose DANL 210 (class for which you want to fill out the SCE) and then complete the SCE survey."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#what-we-learned-this-semester",
+    "href": "danl-lec/danl-210-lec-19-2025-0430.html#what-we-learned-this-semester",
+    "title": "Lecture 19",
+    "section": "What We Learned This Semester",
+    "text": "What We Learned This Semester\n\nTools & Environments\n\nUsed Quarto/Jupyter Notebooks to communicate data analysis through your personal website mangaged with git and GitHub\n\nData Manipulation & Cleaning\n\nTransformed, reshaped, merged, summarized datasets\nApplied pandas for efficient and scalable data wrangling\n\nData Collection\n\nCollected data through web scraping with selenium\nRetrieved structured data from APIs using requests\n\nStock and ESG Data Project\n\nCollect, clean, visualize, and analyze stock and ESG data\nPresent your analysis through a fully published project webpage"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-19-2025-0430.html#student-course-evaluation-sce",
+    "href": "danl-lec/danl-210-lec-19-2025-0430.html#student-course-evaluation-sce",
+    "title": "Lecture 19",
+    "section": "Student Course Evaluation (SCE)",
+    "text": "Student Course Evaluation (SCE)\n\nI have tried to improve your learning experience in this course.\nI value your feedback immensely.\nI request for your participation in the Student Course Evaluation (SCE).\n\n\n\nTake 10 minutes right now to complete the SCE.\nOn your laptop, access the SCE form for DANL 210 as follows:\n\nLog in to Knightweb\nClick on the “Surveys” option\nChoose DANL 210 and then complete the SCE survey."
   }
 ]
