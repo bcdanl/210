@@ -1,6 +1,6 @@
 ---
-title: "Final Exam"
-subtitle: "Mock-up Questions"
+title: "Final Exam Practice"
+subtitle: "Data Wrangling with `pandas`"
 author: ""
 date: 2025-05-06
 
@@ -331,7 +331,9 @@ rmarkdown::paged_table(nyc_weather,
 | `month`     | The calendar month when the weather observation was recorded (values: 1–12, where 1 = January, 12 = December).                  |
 | `day`       | The day of the month when the weather observation was recorded (values: 1–31, depending on the month).                          |
 | `id`   | The **unique identifier** of the weather station where the data was collected (e.g., `GHCND:US1CTFR0039`). This likely includes NYC area stations. |
-| `attributes`| A column containing weather observation details, possibly including temperature, precipitation, wind, time, and quality flags. Likely needs parsing. |
+| `attributes`| Weather observation details, possibly including temperature, precipitation, wind, time, and quality flags. Likely needs parsing. |
+| `type`| Type of weather measurement (e.g., PRCP for precipitation, SNOW, SNWD) |
+| `weather_value`| Measured value for the given `type` (e.g., amount of precipitation in tenths of mm (0.1 mm)) |
 
 <br>
 
@@ -342,6 +344,7 @@ Using the `nyc_weather` DataFrame, write code to create the `weather` DataFrame 
 
 - Below explains what each value means:
   - **PRCP**: Precipitation (tenths of mm)
+      -  **PRCP** covers any other form of moisture that falls to the ground (e.g., rain, snow, sleet, hail)
   - **SNOW**: Snowfall (mm)
   - **SNWD**: Snow depth (mm)
   - **TMAX**: Maximum temperature (tenths of degrees C)
@@ -460,7 +463,7 @@ rmarkdown::paged_table(stations,
 
 - Write code to perform the following tasks:
 	-	Identify the names of the top 10 weather stations with the highest number of days with precipitation in each year.
-	-	Determine how many days experienced snow or rain at the top-ranked weather station in each year.
+	    -	Determine how many days recorded measurable precipitation at the highest-ranked weather station each year.
 	-	For each of the top 10 weather stations in each year, generate a summary of descriptive statistics for precipitation values.
 
 
