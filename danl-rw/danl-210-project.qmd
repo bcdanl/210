@@ -6,7 +6,7 @@ institute: SUNY Geneseo
 date: last-modified
 
 toc: true
-toc-depth: 3
+toc-depth: 4
 toc-expand: true
 toc-title: Contents
 
@@ -187,6 +187,57 @@ driver = webdriver.Chrome(options=options)
 - **Note**: [GOOGLEFINANCE](https://support.google.com/docs/answer/3093281?hl=en) function in [Google Sheets](https://workspace.google.com/products/sheets/) is freely available for retrieving current or historical stock data.
   - Although our course does not cover Google Sheets, you are welcome to use it to collect historical stock data if you prefer.
   - If you choose Google Sheets' `GOOGLEFINANCE()` for collecting historical stock data, please share your Google Sheets with Prof. Choe.
+
+
+####  Dividend Cleaning
+
+If you scrape historical data tables from each company’s page on Yahoo Finance (e.g., [MSFT Historical Data](https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1704067200&period2=1743446400)), you can construct a DataFrame similar to the `df_all` DataFrame shown below.
+
+The `df_all` DataFrame contains stock data for Apple Inc., Microsoft, and Nvidia from the beginning of 2024 through the end of Q1 2025:
+
+```{.python}
+import pandas as pd
+df_all = pd.read_csv('https://bcdanl.github.io/data/aapl_msft_nvda_2024_2025.csv')
+```
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+df_all <- read_csv("https://bcdanl.github.io/data/aapl_msft_nvda_2024_2025.csv")
+rmarkdown::paged_table(df_all)
+```
+
+Note that some rows in the `df_all` DataFrame include dividend declarations rather than price and volume data (e.g., Apple Inc. on February 10, 2025; Microsoft on February 20, 2025). These dividend entries appear in the Open/High/Low/Close/Adj Close/Volume columns as strings like "0.25 Dividend".
+
+To separate these dividend entries from the actual stock trading data, we use the `str.contains()` method:
+```{.python}
+# Filter rows where the 'Open' column contains the word 'Dividend' (these represent dividend entries)
+df_dividend = df_all[df_all['Open'].str.contains('Dividend', na=False)]
+
+# Filter out dividend rows to keep only stock price data
+df_stock = df_all[~df_all['Open'].str.contains('Dividend', na=False)]
+```
+
+- At this point:
+	-	`df_stock` includes only daily stock trading information.
+	-	`df_dividend` includes only dividend announcements.
+	
+We now clean and format the dividend information:
+```{.python}
+# Select only relevant columns for dividend data
+df_dividend = df_dividend[['Date', 'Symbol', 'Open']]
+
+# Copy 'Open' column (which contains dividend information) into a new column named 'Dividend'
+df_dividend['Dividend'] = df_dividend['Open']
+
+# Keep only the necessary columns: Date, Symbol, and Dividend
+df_dividend = df_dividend[['Date', 'Symbol', 'Dividend']]
+
+# Remove the text " Dividend" from the Dividend column to isolate the numeric value
+df_dividend['Dividend'] = df_dividend['Dividend'].str.replace(' Dividend', '')
+```
 
 
 <br>
