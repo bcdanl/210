@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#b.-historical-stock-data" id="toc-b.-historical-stock-data" class="nav-link" data-scroll-target="#b.-historical-stock-data">b. Historical Stock Data</a>
   <ul class="collapse">
   <li><a href="#dividend-cleaning" id="toc-dividend-cleaning" class="nav-link" data-scroll-target="#dividend-cleaning">Dividend Cleaning</a></li>
-  <li><a href="#split-cleaning" id="toc-split-cleaning" class="nav-link" data-scroll-target="#split-cleaning">Split Cleaning</a></li>
+  <li><a href="#stock-split-cleaning" id="toc-stock-split-cleaning" class="nav-link" data-scroll-target="#stock-split-cleaning">Stock Split Cleaning</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">2. Data Analysis</a></li>
@@ -636,8 +636,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>df_dividend[<span class="st">'Dividend'</span>] <span class="op">=</span> df_dividend[<span class="st">'Dividend'</span>].<span class="bu">str</span>.replace(<span class="st">' Dividend'</span>, <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
-<section id="split-cleaning" class="level4">
-<h4 class="anchored" data-anchor-id="split-cleaning">Split Cleaning</h4>
+<section id="stock-split-cleaning" class="level4">
+<h4 class="anchored" data-anchor-id="stock-split-cleaning">Stock Split Cleaning</h4>
 <p>Similarly, some row in the <code>df_stock</code> DataFrame from the “Dividend Cleaning” subsection includes stock splits rather than price and volume data (e.g., Nvidia on June 10, 2024). These stock split entries appear in the Open/High/Low/Close/Adj Close/Volume columns as strings like “10:1 Stock Splits”.</p>
 <p>To separate these stock split entries from the actual stock trading data, again we use the <code>str.contains()</code> method:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows where the 'Open' column contains the word 'Split' (these represent stock split entries)</span></span>

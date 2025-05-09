@@ -246,7 +246,7 @@ df_dividend['Dividend'] = df_dividend['Dividend'].str.replace(' Dividend', '')
 
 <br>
 
-####  Split Cleaning
+####  Stock Split Cleaning
 
 Similarly, some row in the `df_stock` DataFrame from the "Dividend Cleaning" subsection includes stock splits rather than price and volume data (e.g., Nvidia on June 10, 2024). These stock split entries appear in the Open/High/Low/Close/Adj Close/Volume columns as strings like "10:1 Stock Splits".
 
