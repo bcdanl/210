@@ -170,12 +170,15 @@ options.page_load_strategy = 'eager'  # Load only essential content first, skipp
 driver = webdriver.Chrome(options=options)
 ```
 
+<br>
+
 ### a. ESG Data
 
 - For each company in the `esg_proj_2025` DataFrame, employ the Python `selenium` library to gather **ESG Risk Ratings**, along with the **Controversy Level** from the **Sustainability** section of each company's webpage on [Yahoo! Finance](https://finance.yahoo.com), such as:
   - [Apple Inc. (AAPL)](https://finance.yahoo.com/quote/AAPL/sustainability)
   - [Microsoft Corporation (MSFT)](https://finance.yahoo.com/quote/MSFT/sustainability)
   
+<br>
 
 ### b. Historical Stock Data
 - For each company found in both the `esg_proj_2024_data` and `esg_proj_2025` DataFrames, employ the `selenium` library to retrieve:
@@ -188,6 +191,7 @@ driver = webdriver.Chrome(options=options)
   - Although our course does not cover Google Sheets, you are welcome to use it to collect historical stock data if you prefer.
   - If you choose Google Sheets' `GOOGLEFINANCE()` for collecting historical stock data, please share your Google Sheets with Prof. Choe.
 
+<br>
 
 ####  Dividend Cleaning
 
@@ -221,7 +225,7 @@ df_stock = df_all[~df_all['Open'].str.contains('Dividend', na=False)]
 ```
 
 - At this point:
-	-	`df_stock` includes only daily stock trading information.
+	-	`df_stock` does not include dividend announcements.
 	-	`df_dividend` includes only dividend announcements.
 	
 We now clean and format the dividend information:
@@ -242,6 +246,42 @@ df_dividend['Dividend'] = df_dividend['Dividend'].str.replace(' Dividend', '')
 
 <br>
 
+####  Split Cleaning
+
+Similarly, some row in the `df_stock` DataFrame from the "Dividend Cleaning" subsection includes stock splits rather than price and volume data (e.g., Nvidia on June 10, 2024). These stock split entries appear in the Open/High/Low/Close/Adj Close/Volume columns as strings like "10:1 Stock Splits".
+
+To separate these stock split entries from the actual stock trading data, again we use the `str.contains()` method:
+```{.python}
+# Filter rows where the 'Open' column contains the word 'Split' (these represent stock split entries)
+df_split = df_stock[df_stock['Open'].str.contains('Split', na=False)]
+
+# Filter out dividend rows to keep only stock price data
+df_stock = df_stock[~df_stock['Open'].str.contains('Split', na=False)]
+```
+
+- At this point:
+	-	`df_stock` includes only daily stock trading information.
+	-	`df_split` includes only stock splits.
+	
+We now clean and format the split information:
+```{.python}
+# Select only relevant columns for dividend data
+df_split = df_split[['Date', 'Symbol', 'Open']]
+
+# Copy 'Open' column (which contains dividend information) into a new column named 'Split'
+df_split['Split'] = df_split['Open']
+
+# Keep only the necessary columns: Date, Symbol, and Split
+df_split = df_split[['Date', 'Symbol', 'Split']]
+
+# Remove the text " Stock Splits" from the Split column to isolate the numeric value
+df_split['Split'] = df_split['Split'].str.replace(' Stock Splits', '')
+```
+
+
+
+
+<br>
 
 ## 2. Data Analysis
 
