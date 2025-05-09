@@ -215,6 +215,8 @@ rmarkdown::paged_table(df_all)
 
 Note that some rows in the `df_all` DataFrame include dividend declarations rather than price and volume data (e.g., Apple Inc. on February 10, 2025; Microsoft on February 20, 2025). These dividend entries appear in the Open/High/Low/Close/Adj Close/Volume columns as strings like "0.25 Dividend".
 
+-	Note: Apple Inc's "0.25 Dividend" means that on that specific date, Apple Inc issued a cash dividend of $0.01 per share.
+
 To separate these dividend entries from the actual stock trading data, we use the `str.contains()` method:
 ```{.python}
 # Filter rows where the 'Open' column contains the word 'Dividend' (these represent dividend entries)
@@ -276,6 +278,24 @@ df_split = df_split[['Date', 'Symbol', 'Split']]
 
 # Remove the text " Stock Splits" from the Split column to isolate the numeric value
 df_split['Split'] = df_split['Split'].str.replace(' Stock Splits', '')
+```
+
+
+-	Note: NVDA's "10:1 Stock Split" means that each existing share was split into 10 shares.
+	-	If you owned 1 share before June 10, 2024, you would own 10 shares after the split.
+	-	To maintain consistency, Yahoo Finance retroactively adjusts all historical prices and volumes to reflect stock splits.
+  - For example, the table below shows NVDA's adjusted stock prices and volumes from June 7–11, 2024:
+
+```{r}
+#| echo: false
+#| results: asis
+
+df_all <- read_csv("https://bcdanl.github.io/data/aapl_msft_nvda_2024_2025.csv")
+rmarkdown::paged_table(df_all |> 
+                         filter(Symbol == 'NVDA',
+                                Date %in% c("11-Jun-24", "10-Jun-24", "7-Jun-24"),
+                                !str_detect(Open, "Dividend")
+                                ))
 ```
 
 

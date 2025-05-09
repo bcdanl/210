@@ -609,6 +609,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 </div>
 <p>Note that some rows in the <code>df_all</code> DataFrame include dividend declarations rather than price and volume data (e.g., Apple Inc.&nbsp;on February 10, 2025; Microsoft on February 20, 2025). These dividend entries appear in the Open/High/Low/Close/Adj Close/Volume columns as strings like “0.25 Dividend”.</p>
+<ul>
+<li>Note: Apple Inc’s “0.25 Dividend” means that on that specific date, Apple Inc issued a cash dividend of $0.01 per share.</li>
+</ul>
 <p>To separate these dividend entries from the actual stock trading data, we use the <code>str.contains()</code> method:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows where the 'Open' column contains the word 'Dividend' (these represent dividend entries)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_dividend <span class="op">=</span> df_all[df_all[<span class="st">'Open'</span>].<span class="bu">str</span>.contains(<span class="st">'Dividend'</span>, na<span class="op">=</span><span class="va">False</span>)]</span>
@@ -664,6 +667,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the text " Stock Splits" from the Split column to isolate the numeric value</span></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>df_split[<span class="st">'Split'</span>] <span class="op">=</span> df_split[<span class="st">'Split'</span>].<span class="bu">str</span>.replace(<span class="st">' Stock Splits'</span>, <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Note: NVDA’s “10:1 Stock Split” means that each existing share was split into 10 shares.
+<ul>
+<li>If you owned 1 share before June 10, 2024, you would own 10 shares after the split.</li>
+<li>To maintain consistency, Yahoo Finance retroactively adjusts all historical prices and volumes to reflect stock splits.</li>
+</ul></li>
+<li>For example, the table below shows NVDA’s adjusted stock prices and volumes from June 7–11, 2024:</li>
+</ul>
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Symbol"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Date"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Open"],"name":[3],"type":["chr"],"align":["left"]},{"label":["High"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Low"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Close"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Adj Close"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Volume"],"name":[8],"type":["chr"],"align":["left"]}],"data":[{"1":"NVDA","2":"11-Jun-24","3":"121.77","4":"122.87","5":"118.74","6":"120.91","7":"120.88","8":"222551200"},{"1":"NVDA","2":"10-Jun-24","3":"10:1 Stock Splits","4":"10:1 Stock Splits","5":"10:1 Stock Splits","6":"10:1 Stock Splits","7":"10:1 Stock Splits","8":"10:1 Stock Splits"},{"1":"NVDA","2":"10-Jun-24","3":"120.37","4":"123.1","5":"117.01","6":"121.79","7":"121.75","8":"314162700"},{"1":"NVDA","2":"7-Jun-24","3":"119.77","4":"121.69","5":"118.02","6":"120.89","7":"120.85","8":"412386000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p><br></p>
 </section>
 </section>
@@ -728,7 +744,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="danl-210-project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="danl-210-project_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
