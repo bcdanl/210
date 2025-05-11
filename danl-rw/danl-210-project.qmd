@@ -58,7 +58,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 ## 1. `esg_proj_2024_data`
 
-- `esg_proj_2024_data` DataFrame which provides a list of companies and associated information, including ESG scores.
+- The `esg_proj_2024_data` DataFrame which provides a list of companies and associated information, including ESG scores.
 
 ```{python}
 #| eval: false
@@ -99,7 +99,7 @@ rmarkdown::paged_table(esg_proj_2024_data)
 
 ## 2. `esg_proj_2025`
 
-- `esg_proj_2025` DataFrame provides a list of companies and associated information.
+- The `esg_proj_2025` DataFrame provides a list of companies and associated information.
 ```{python}
 #| eval: false
 
@@ -115,6 +115,40 @@ esg_proj_2025 <- read_csv("https://bcdanl.github.io/data/esg_proj_2025.csv")
 rmarkdown::paged_table(esg_proj_2025)
 ```
 
+
+
+<br><br>
+
+## 3. `stock_history_2023`
+
+- The `stock_history_2023` contains daily historical stock market data for the year 2023.
+```{python}
+#| eval: false
+
+url = "https://bcdanl.github.io/data/stock_history_2023.csv"
+stock_history_2023 = pd.read_csv(url)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+stock_history_2023 <- read_csv("https://bcdanl.github.io/data/stock_history_2023.csv")
+rmarkdown::paged_table(stock_history_2023)
+```
+
+### Variable Description
+
+- `Symbol`: Company’s stock ticker
+- `Date`: Trading date
+- `Year`: Trading year
+- `Open`: Opening price on the date
+- `High`: Highest price on the date
+- `Low`: Lowest price on the date
+- `Close`: Closing price on the date
+- `Volume`: Trading volume
+- `Dividend`: Cash dividend paid per share on the date (if any), as reported by Yahoo Finance
+- `Stock_Split`: The ratio of any stock split that occurred on the given date. 
 
 
 <br><br>
@@ -304,6 +338,11 @@ rmarkdown::paged_table(df_all |>
 <br>
 
 ## 2. Data Analysis
+
+-	If you were unable to complete the data collection tasks, please use the `esg_proj_2024_data` and `stock_history_2023` DataFrames for your data analysis.
+
+-	If you successfully completed the data collection tasks, you may "optionally" incorporate the `stock_history_2023` DataFrame into your analysis as an additional data source.
+
 
 - Below are the key components in the data analysis webpage.
 
