@@ -333,6 +333,28 @@ rmarkdown::paged_table(df_all |>
 ```
 
 
+<br>
+
+#### Extracting the year from a datetime variable
+
+- To extract the year from a datetime variable in a pandas DataFrame, you can use the `.dt.year` accessor.
+
+```{.python}
+# Sample DataFrame with string dates
+data = {
+    'Symbol': ['AAPL', 'MSFT', 'GOOG'],
+    'Date': ['2024-12-29', '2024-12-30', '2025-01-03'],
+    'Close': [130.21, 265.78, 122.34]
+}
+
+df = pd.DataFrame(data)
+
+# Convert 'Date' column to datetime
+df['Date'] = df['Date'].astype('datetime64[ns]')
+
+# Extract year from 'Date' variable
+df['Year'] = df['Date'].dt.year
+```
 
 
 <br>
