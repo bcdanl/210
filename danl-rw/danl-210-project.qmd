@@ -339,7 +339,7 @@ rmarkdown::paged_table(df_all |>
 
 ## 2. Data Analysis
 
--	If you were unable to complete the data collection tasks, please use the `esg_proj_2024_data` and `stock_history_2023` DataFrames for your data analysis.
+-	If you are unable to complete the data collection tasks, please use the `esg_proj_2024_data` and `stock_history_2023` DataFrames for your data analysis.
 
 -	If you successfully completed the data collection tasks, you may "optionally" incorporate the `stock_history_2023` DataFrame into your analysis as an additional data source.
 
