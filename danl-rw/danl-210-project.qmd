@@ -85,7 +85,7 @@ rmarkdown::paged_table(esg_proj_2024_data)
 - `Sector`: a sector a company belongs to;
 - `Industry`: an industry a company belongs to;
 - `Country`: a country a company belongs to;
-- `Market Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
+- `Market_Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
   - A company's market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.
 - `IPO_Year`: the year a company first went public by offering its shares to be traded on a stock exchange.
 -	`total_ESG`: The overall ESG (Environmental, Social, and Governance) risk score, summarizing the company’s exposure to ESG-related risks. A lower score indicates lower risk.
@@ -115,7 +115,11 @@ esg_proj_2025 <- read_csv("https://bcdanl.github.io/data/esg_proj_2025.csv")
 rmarkdown::paged_table(esg_proj_2025)
 ```
 
+<br>
 
+### Variable Description
+
+- `Market_Cap`: a company’s market capitalization as of March 29, 2025.
 
 <br><br>
 
