@@ -88,11 +88,11 @@ rmarkdown::paged_table(esg_proj_2024_data)
 - `Market_Cap`: a company's market capitalization as of December 20, 2024 (Source: [Nasdaq's Stock Screener](https://www.nasdaq.com/market-activity/stocks/screener)).
   - A company's market capitalization is the value of the company that is traded on the stock market, calculated by multiplying the total number of shares by the present share price.
 - `IPO_Year`: the year a company first went public by offering its shares to be traded on a stock exchange.
--	`total_ESG`: The overall ESG (Environmental, Social, and Governance) risk score, summarizing the company’s exposure to ESG-related risks. A lower score indicates lower risk.
--	`Environmental`: The company’s exposure to environmental risks (e.g., emissions, energy use, environmental policy).
--	`Social`: The company’s exposure to social risks (e.g., labor practices, human rights, diversity, and customer relations).
--	`Governance`: The company’s exposure to governance-related risks (e.g., board structure, executive pay, shareholder rights, transparency).
--	`Controversy`: A score reflecting the severity of recent ESG-related controversies involving the company. Higher scores typically indicate greater or more serious controversies.
+-	`total_ESG`: The overall ESG (Environmental, Social, and Governance) risk score, summarizing the company’s exposure to ESG-related risks. A lower score indicates lower risk as of March 31, 2024.
+-	`Environmental`: The company’s exposure to environmental risks (e.g., emissions, energy use, environmental policy) as of March 31, 2024.
+-	`Social`: The company’s exposure to social risks (e.g., labor practices, human rights, diversity, and customer relations) as of March 31, 2024.
+-	`Governance`: The company’s exposure to governance-related risks (e.g., board structure, executive pay, shareholder rights, transparency) as of March 31, 2024.
+-	`Controversy`: A score reflecting the severity of recent ESG-related controversies involving the company. Higher scores typically indicate greater or more serious controversies as of March 31, 2024.
 
 <br><br>
 
