@@ -5471,56 +5471,56 @@
     "href": "danl-hw/danl-210-hw-05.html#question-1",
     "title": "Homework 5",
     "section": "Question 1",
-    "text": "Question 1\nWrite code with pandas groupby() to calculate the total duration (in minutes) of each playlist and then sort by the total duration in descending order to identify the playlists from longest to shortest total playtime."
+    "text": "Question 1\nWrite code with pandas groupby() to calculate the total duration (in minutes) of each playlist and then sort by the total duration in descending order to identify the playlists from longest to shortest total playtime.\n\n\nClick to Check the Answer!\nq1 = (\n    spotify\n    .groupby(['pid', 'playlist_name'])['duration_ms']\n    .sum()\n    .reset_index(name='total_duration_ms')\n    .sort_values('total_duration_ms', ascending=False)\n)\n\nq1['total_duration_min'] = q1['total_duration_ms'] / 60000"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-2",
     "href": "danl-hw/danl-210-hw-05.html#question-2",
     "title": "Homework 5",
     "section": "Question 2",
-    "text": "Question 2\nWrite code with pandas groupby() to identify the top five songs with the highest frequency of appearances in the spotify DataFrame."
+    "text": "Question 2\nWrite code with pandas groupby() to identify the top five songs with the highest frequency of appearances in the spotify DataFrame.\n\n\nClick to Check the Answer!\nq2 = (\n    spotify\n    .groupby(['artist_name','track_name'])\n    .size()\n    .reset_index(name='count')\n    .nlargest(5, 'count', keep='all')\n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-3",
     "href": "danl-hw/danl-210-hw-05.html#question-3",
     "title": "Homework 5",
     "section": "Question 3",
-    "text": "Question 3\n\nWrite code with pandas groupby() to create a DataFrame that contains information about how often each song occurs within the spotify DataFrame.\n\nIn this new DataFrame, each observation should represent a distinct song.\n\nThen, identify top 5% songs based on their frequency of appearances."
+    "text": "Question 3\n\nWrite code with pandas groupby() to create a DataFrame that contains information about how often each song occurs within the spotify DataFrame.\n\nIn this new DataFrame, each observation should represent a distinct song.\n\nThen, identify top 5% songs based on their frequency of appearances.\n\n\n\nClick to Check the Answer!\nq3 = (\n    spotify\n    .groupby(['artist_name','track_name'])\n    .size()\n    .reset_index(name='count')\n)\n\nthresh = q3['count'].quantile(0.95)\n\nq3 = q3[ q3['count'] &gt;= thresh ]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-4",
     "href": "danl-hw/danl-210-hw-05.html#question-4",
     "title": "Homework 5",
     "section": "Question 4",
-    "text": "Question 4\nWrite code with pandas groupby() to list all artists who have more than 50 unique songs in the sportify DataFrame."
+    "text": "Question 4\nWrite code with pandas groupby() to list all artists who have more than 50 unique songs in the sportify DataFrame.\n\n\nClick to Check the Answer!\nq4 = (\n    spotify\n    .groupby('artist_name')['track_name']\n    .nunique()\n    .reset_index(name='unique_song_count')\n    .query('unique_song_count &gt; 50')\n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-5",
     "href": "danl-hw/danl-210-hw-05.html#question-5",
     "title": "Homework 5",
     "section": "Question 5",
-    "text": "Question 5\nWrite code with pandas groupby() to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake."
+    "text": "Question 5\nWrite code with pandas groupby() to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.\n\n\nClick to Check the Answer!\nq5 = (\n    spotify\n    .query('artist_name == \"Drake\" and track_name == \"One Dance\"')\n    .groupby(['pid','playlist_name'])\n    .size()          # size() just to collapse duplicates\n    .reset_index()[['pid','playlist_name']]\n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-6",
     "href": "danl-hw/danl-210-hw-05.html#question-6",
     "title": "Homework 5",
     "section": "Question 6",
-    "text": "Question 6\nWrite code with pandas groupby() to identify the longest and shortest duration songs (based on duration_ms) for each unique artist."
+    "text": "Question 6\nWrite code with pandas groupby() to identify the longest and shortest duration songs (based on duration_ms) for each unique artist.\n\n\nClick to Check the Answer!\nq6_shortest = (\n    spotify\n    .groupby('artist_name')\n    .apply(\n        lambda df: df.nsmallest(1, 'duration_ms', keep='all')\n        )\n    )\n\nq6_longest = (\n    spotify\n    .groupby('artist_name')\n    .apply(\n        lambda df: df.nlargest(1, 'duration_ms', keep='all')\n        )\n    )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-7",
     "href": "danl-hw/danl-210-hw-05.html#question-7",
     "title": "Homework 5",
     "section": "Question 7",
-    "text": "Question 7\nWrite code with pandas groupby() to find the same song(s) appearing more than once in the same playlist."
+    "text": "Question 7\nWrite code with pandas groupby() to find the same song(s) appearing more than once in the same playlist.\n\n\nClick to Check the Answer!\n# 1. Compute group sizes for each (pid, artist_name, track_name)\nspotify['group_sizes'] = spotify.groupby(['pid','artist_name','track_name'])['pid'].transform('size')\n\n# 2. Keep only those rows where the size &gt; 1\nq7 = spotify[spotify['group_sizes'] &gt; 1]"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-8",
     "href": "danl-hw/danl-210-hw-05.html#question-8",
     "title": "Homework 5",
     "section": "Question 8",
-    "text": "Question 8\nWrite code with pandas groupby() to filter all songs that appear in more than 100 different playlists."
+    "text": "Question 8\nWrite code with pandas groupby() to filter all songs that appear in more than 100 different playlists.\n\n\nClick to Check the Answer!\nq8 = (\n    spotify\n    .groupby(['artist_name','track_name'])\n    .agg(playlist_count = ('pid', 'nunique'))\n    .query('playlist_count &gt; 100')\n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#variable-description-1",
@@ -5534,56 +5534,56 @@
     "href": "danl-hw/danl-210-hw-05.html#question-9",
     "title": "Homework 5",
     "section": "Question 9",
-    "text": "Question 9\nAdd a new variable discount_pct to the shoes DataFrame that shows the percentage markdown for clearance items (0 % for non-clearance).\n\\[\n(\\text{Discount Percentage}) = 100 \\times \\frac{(\\text{Current Price}) - (\\text{Clearnace Price})}{(\\text{Current Price})}\n\\]"
+    "text": "Question 9\nAdd a new variable discount_pct to the shoes DataFrame that shows the percentage markdown for clearance items (0 % for non-clearance).\n\\[\n(\\text{Discount Percentage}) = 100 \\times \\frac{(\\text{Current Price}) - (\\text{Clearnace Price})}{(\\text{Current Price})}\n\\]\n\n\nClick to Check the Answer!\nshoes[\"on_clearance\"] = shoes[\"current_p\"] == shoes[\"clearance_p\"]\nshoes[\"discount_pct\"] = np.where( shoes['on_clearance'], \n                                 (shoes[\"current_p\"] - shoes[\"clearance_p\"]) / shoes[\"current_p\"] * 100, 0 ) \n\n\n\nNote that the value of discount_pct is zero for all observations."
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-10",
     "href": "danl-hw/danl-210-hw-05.html#question-10",
     "title": "Homework 5",
     "section": "Question 10",
-    "text": "Question 10\nFor each brand, compute the interquartile range (IQR) of its current_p."
+    "text": "Question 10\nFor each brand, compute the interquartile range (IQR) of its current_p.\n\n\nClick to Check the Answer!\nshoes[\"IQR\"] = (\n    shoes\n    .groupby([\"brandId\", \"brandName\"])[\"current_p\"]\n    .transform(lambda s: s.quantile(0.75) - s.quantile(0.25)) \n    )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-11",
     "href": "danl-hw/danl-210-hw-05.html#question-11",
     "title": "Homework 5",
     "section": "Question 11",
-    "text": "Question 11\nList the top 20 brands with the highest average star rating, considering only brands that have at least 1000 reviews total."
+    "text": "Question 11\nList the top 20 brands with the highest average star rating, considering only brands that have at least 1000 reviews total.\n\n\nClick to Check the Answer!\nshoes['reviewCount_tot'] = shoes.groupby([\"brandId\", \"brandName\"])['reviewCount'].transform('sum')\n\nq11 = (\n       shoes\n       .query('reviewCount_tot &gt;= 1000')\n       .groupby([\"brandId\", \"brandName\"])\n       .agg(reviewStarRating_avg = ('reviewStarRating', 'mean'))\n       .nlargest(20, 'reviewStarRating_avg', keep = 'all')\n       )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-12",
     "href": "danl-hw/danl-210-hw-05.html#question-12",
     "title": "Homework 5",
     "section": "Question 12",
-    "text": "Question 12\nFor each brand, compute the proportion of products on clearance. Return the result sorted from highest to lowest proportion."
+    "text": "Question 12\nFor each brand, compute the proportion of products on clearance. Return the result sorted from highest to lowest proportion.\n\n\nClick to Check the Answer!\nq12 = (\n       shoes\n       .groupby([\"brandId\", \"brandName\"])\n       .agg(on_clearance_prop = ('on_clearance', 'mean'))\n       .sort_values('on_clearance_prop', ascending = False)\n       )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-13",
     "href": "danl-hw/danl-210-hw-05.html#question-13",
     "title": "Homework 5",
     "section": "Question 13",
-    "text": "Question 13\nFor every brand, calculate the correlation between product price (current_p) and star rating. Keep only brands with more than 100 products."
+    "text": "Question 13\nFor every brand, calculate the correlation between product price (current_p) and star rating. Keep only brands with more than 100 products.\n\n\nClick to Check the Answer!\nshoes['nProducts'] = shoes.groupby([\"brandId\", \"brandName\"]).transform('size')\n\nq13 = (\n      shoes\n      .query('nProducts &gt; 100')\n      .groupby([\"brandId\", \"brandName\"])\n      .apply(lambda df: df['current_p'].corr( df['reviewStarRating'] ))\n      .reset_index(name='cor_p_star')\n      )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-14",
     "href": "danl-hw/danl-210-hw-05.html#question-14",
     "title": "Homework 5",
     "section": "Question 14",
-    "text": "Question 14\nIdentify “premium” products inside each brand as those priced above the 90th percentile of that brand. Among these premium items, what fraction are on clearance overall?"
+    "text": "Question 14\nIdentify “premium” products inside each brand as those priced above the 90th percentile of that brand. Among these premium items, what fraction are on clearance overall?\n\n\nClick to Check the Answer!\nshoes['price90'] = shoes.groupby([\"brandId\", \"brandName\"])[\"current_p\"].transform(lambda s: s.quantile(0.9))\n\nq14 = (\n       shoes\n       .query('current_p &gt; price90')[[\"brandId\", \"brandName\" , \"on_clearance\"]]\n       )\n\nq14['on_clearance'].mean()"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-15",
     "href": "danl-hw/danl-210-hw-05.html#question-15",
     "title": "Homework 5",
     "section": "Question 15",
-    "text": "Question 15\nAfter binning current_p into price quartiles with pd.qcut(), count the number of clearance products for each brand–quartile combination.\n\nBelow explains pd.qcut():\n\nshoes[\"price_qtile\"] = pd.qcut(shoes[\"current_p\"], 4, labels=[\"Q1\",\"Q2\",\"Q3\",\"Q4\"])\n\npd.qcut(shoes[\"current_p\"], 4, …)\n\nqcut stands for “quantile cut.”\nGiven the series of prices, it computes the 0th, 25th, 50th, 75th, and 100th percentiles.\nIt then assigns each product to one of four bins so that each bin contains (as close as possible to) the same number of products.\n\nlabels=[\"Q1\",\"Q2\",\"Q3\",\"Q4\"]\n\nInstead of getting the default interval‐notation (e.g. (10.0, 25.5]), each bin is labeled “Q1” through “Q4.”\n“Q1” will be the lowest 25% of prices, “Q2” the next 25%, and so on, up to “Q4” for the top‐priced 25%.\n\nAssignment into shoes[\"price_qtile\"]\n\nThe result is a categorical variable in your shoes DataFrame.\nYou can now easily group or filter by “Q1”, “Q2”, etc., rather than working with numeric cut‐points."
+    "text": "Question 15\nAfter binning current_p into price quartiles with pd.qcut(), count the number of clearance products for each brand–quartile combination.\n\nBelow explains pd.qcut():\n\nshoes[\"price_qtile\"] = pd.qcut(shoes[\"current_p\"], 4, labels=[\"Q1\",\"Q2\",\"Q3\",\"Q4\"])\n\npd.qcut(shoes[\"current_p\"], 4, …)\n\nqcut stands for “quantile cut.”\nGiven the series of prices, it computes the 0th, 25th, 50th, 75th, and 100th percentiles.\nIt then assigns each product to one of four bins so that each bin contains (as close as possible to) the same number of products.\n\nlabels=[\"Q1\",\"Q2\",\"Q3\",\"Q4\"]\n\nInstead of getting the default interval‐notation (e.g. (10.0, 25.5]), each bin is labeled “Q1” through “Q4.”\n“Q1” will be the lowest 25% of prices, “Q2” the next 25%, and so on, up to “Q4” for the top‐priced 25%.\n\nAssignment into shoes[\"price_qtile\"]\n\nThe result is a categorical variable in your shoes DataFrame.\nYou can now easily group or filter by “Q1”, “Q2”, etc., rather than working with numeric cut‐points.\n\n\n\n\nClick to Check the Answer!\nshoes[\"price_qtile\"] = pd.qcut(shoes[\"current_p\"], 4, labels=[\"Q1\",\"Q2\",\"Q3\",\"Q4\"]) \nshoes[\"brand\"] = shoes[\"brandId\"].astype('str') + '_' + shoes[\"brandName\"]\n\n# it is okay to use [\"brandName\", \"price_qtile\"] as group variables\nq15 = (\n    shoes\n    .query('on_clearance == True')\n    .groupby([\"brand\", \"price_qtile\"])\n    .size()    # produces a Series with a MultiIndex\n    .reset_index(name=\"count\")     # turn it into a DataFrame\n    .pivot(\n        index=\"brand\",\n        columns=\"price_qtile\",\n        values=\"count\"\n    )                               \n    .fillna(0)  \n)"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#question-16",
     "href": "danl-hw/danl-210-hw-05.html#question-16",
     "title": "Homework 5",
     "section": "Question 16",
-    "text": "Question 16\n\nFor each brand in the shoes DataFrame, add a new variable rev_scaled that re-scales reviewCount to the [0, 1] range.\n\nThe product with the highest reviewCount within its brand has a value 1 in the rev_scaled variable.\nThe product with the lowest reviewCount within its brand has a value 0 in the rev_scaled variable."
+    "text": "Question 16\n\nFor each brand in the shoes DataFrame, add a new variable rev_scaled that re-scales reviewCount to the [0, 1] range.\n\nThe product with the highest reviewCount within its brand has a value 1 in the rev_scaled variable.\nThe product with the lowest reviewCount within its brand has a value 0 in the rev_scaled variable.\n\n\n\n\nClick to Check the Answer!\ndef min_max(s):\n    return (s - s.min()) / (s.max() - s.min())\n\nshoes[\"price_scaled\"] = (\n    shoes\n    .groupby([\"brandId\", \"brandName\"])[\"current_p\"]\n    .transform(min_max)\n    )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#sportify-blog-homework-2",

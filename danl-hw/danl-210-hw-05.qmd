@@ -99,12 +99,35 @@ rmarkdown::paged_table(
 ## Question 1
 Write code with pandas `groupby()` to calculate the total duration (in minutes) of each playlist and then sort by the total duration in descending order to identify the playlists from longest to shortest total playtime.
 
+```{python}
+q1 = (
+    spotify
+    .groupby(['pid', 'playlist_name'])['duration_ms']
+    .sum()
+    .reset_index(name='total_duration_ms')
+    .sort_values('total_duration_ms', ascending=False)
+)
+
+q1['total_duration_min'] = q1['total_duration_ms'] / 60000
+```
+
+
 <br>
 
 
 ## Question 2
 
 Write code with pandas `groupby()` to identify the top five songs with the highest frequency of appearances in the `spotify` DataFrame.
+
+```{python}
+q2 = (
+    spotify
+    .groupby(['artist_name','track_name'])
+    .size()
+    .reset_index(name='count')
+    .nlargest(5, 'count', keep='all')
+)
+```
 
 
 <br>
@@ -116,6 +139,19 @@ Write code with pandas `groupby()` to identify the top five songs with the highe
 
 - Then, identify top 5% songs based on their frequency of appearances.
 
+```{python}
+q3 = (
+    spotify
+    .groupby(['artist_name','track_name'])
+    .size()
+    .reset_index(name='count')
+)
+
+thresh = q3['count'].quantile(0.95)
+
+q3 = q3[ q3['count'] >= thresh ]
+```
+
 
 
 <br>
@@ -123,6 +159,16 @@ Write code with pandas `groupby()` to identify the top five songs with the highe
 
 ## Question 4
 Write code with pandas `groupby()` to list all artists who have more than 50 unique songs in the `sportify` DataFrame.
+
+```{python}
+q4 = (
+    spotify
+    .groupby('artist_name')['track_name']
+    .nunique()
+    .reset_index(name='unique_song_count')
+    .query('unique_song_count > 50')
+)
+```
 
 
 <br>
@@ -133,12 +179,40 @@ Write code with pandas `groupby()` to list all artists who have more than 50 uni
 ## Question 5
 Write code with pandas `groupby()` to create a DataFrame that identifies all the playlists featuring the song "One Dance" by Drake.
 
+```{python}
+q5 = (
+    spotify
+    .query('artist_name == "Drake" and track_name == "One Dance"')
+    .groupby(['pid','playlist_name'])
+    .size()          # size() just to collapse duplicates
+    .reset_index()[['pid','playlist_name']]
+)
+```
+
 
 
 <br>
 
 ## Question 6
 Write code with pandas `groupby()` to identify the longest and shortest duration songs (based on `duration_ms`) for each unique artist.
+
+```{python}
+q6_shortest = (
+    spotify
+    .groupby('artist_name')
+    .apply(
+        lambda df: df.nsmallest(1, 'duration_ms', keep='all')
+        )
+    )
+
+q6_longest = (
+    spotify
+    .groupby('artist_name')
+    .apply(
+        lambda df: df.nlargest(1, 'duration_ms', keep='all')
+        )
+    )
+```
 
 
 <br>
@@ -148,6 +222,14 @@ Write code with pandas `groupby()` to identify the longest and shortest duration
 ## Question 7
 Write code with pandas `groupby()` to find the same song(s) appearing more than once in the same playlist.
 
+```{python}
+# 1. Compute group sizes for each (pid, artist_name, track_name)
+spotify['group_sizes'] = spotify.groupby(['pid','artist_name','track_name'])['pid'].transform('size')
+
+# 2. Keep only those rows where the size > 1
+q7 = spotify[spotify['group_sizes'] > 1]
+```
+
 
 
 <br>
@@ -156,6 +238,15 @@ Write code with pandas `groupby()` to find the same song(s) appearing more than 
 
 ## Question 8
 Write code with pandas `groupby()` to filter all songs that appear in more than 100 different playlists.
+
+```{python}
+q8 = (
+    spotify
+    .groupby(['artist_name','track_name'])
+    .agg(playlist_count = ('pid', 'nunique'))
+    .query('playlist_count > 100')
+)
+```
 
 
 <br><br>
@@ -233,6 +324,17 @@ $$
 (\text{Discount Percentage}) = 100 \times \frac{(\text{Current Price}) - (\text{Clearnace Price})}{(\text{Current Price})}
 $$
 
+```{python}
+shoes["on_clearance"] = shoes["current_p"] == shoes["clearance_p"]
+shoes["discount_pct"] = np.where( shoes['on_clearance'], 
+                                 (shoes["current_p"] - shoes["clearance_p"]) / shoes["current_p"] * 100, 0 ) 
+
+```
+
+- Note that the value of `discount_pct` is zero for all observations.
+
+
+
 <br>
 
 
@@ -240,16 +342,49 @@ $$
 ## Question 10
 For each brand, compute the interquartile range (IQR) of its `current_p`.
 
+```{python}
+shoes["IQR"] = (
+    shoes
+    .groupby(["brandId", "brandName"])["current_p"]
+    .transform(lambda s: s.quantile(0.75) - s.quantile(0.25)) 
+    )
+```
+
+
 <br>
 
 ## Question 11
 List the top 20 brands with the highest average star rating, considering only brands that have at least 1000 reviews total.
+
+```{python}
+shoes['reviewCount_tot'] = shoes.groupby(["brandId", "brandName"])['reviewCount'].transform('sum')
+
+q11 = (
+       shoes
+       .query('reviewCount_tot >= 1000')
+       .groupby(["brandId", "brandName"])
+       .agg(reviewStarRating_avg = ('reviewStarRating', 'mean'))
+       .nlargest(20, 'reviewStarRating_avg', keep = 'all')
+       )
+```
+
 
 
 <br>
 
 ## Question 12
 For each brand, compute the proportion of products on clearance. Return the result sorted from highest to lowest proportion.
+
+```{python}
+q12 = (
+       shoes
+       .groupby(["brandId", "brandName"])
+       .agg(on_clearance_prop = ('on_clearance', 'mean'))
+       .sort_values('on_clearance_prop', ascending = False)
+       )
+
+```
+
 
 
 <br>
@@ -258,11 +393,36 @@ For each brand, compute the proportion of products on clearance. Return the resu
 ## Question 13
 For every brand, calculate the correlation between product price (`current_p`) and star rating. Keep only brands with more than 100 products.
 
+```{python}
+shoes['nProducts'] = shoes.groupby(["brandId", "brandName"]).transform('size')
+
+q13 = (
+      shoes
+      .query('nProducts > 100')
+      .groupby(["brandId", "brandName"])
+      .apply(lambda df: df['current_p'].corr( df['reviewStarRating'] ))
+      .reset_index(name='cor_p_star')
+      )
+```
+
+
 
 <br>
 
 ## Question 14
 Identify "premium" products inside each brand as those priced above the 90th percentile of that brand. Among these premium items, what fraction are on clearance overall?
+
+```{python}
+shoes['price90'] = shoes.groupby(["brandId", "brandName"])["current_p"].transform(lambda s: s.quantile(0.9))
+
+q14 = (
+       shoes
+       .query('current_p > price90')[["brandId", "brandName" , "on_clearance"]]
+       )
+
+q14['on_clearance'].mean()
+```
+
 
 
 <br>
@@ -289,6 +449,28 @@ shoes["price_qtile"] = pd.qcut(shoes["current_p"], 4, labels=["Q1","Q2","Q3","Q4
 	-	You can now easily group or filter by "Q1", "Q2", etc., rather than working with numeric cut‐points.
 	
 
+
+```{python}
+shoes["price_qtile"] = pd.qcut(shoes["current_p"], 4, labels=["Q1","Q2","Q3","Q4"]) 
+shoes["brand"] = shoes["brandId"].astype('str') + '_' + shoes["brandName"]
+
+# it is okay to use ["brandName", "price_qtile"] as group variables
+q15 = (
+    shoes
+    .query('on_clearance == True')
+    .groupby(["brand", "price_qtile"])
+    .size()    # produces a Series with a MultiIndex
+    .reset_index(name="count")     # turn it into a DataFrame
+    .pivot(
+        index="brand",
+        columns="price_qtile",
+        values="count"
+    )                               
+    .fillna(0)  
+)
+
+```
+
 <br>
 
 ## Question 16
@@ -296,6 +478,18 @@ shoes["price_qtile"] = pd.qcut(shoes["current_p"], 4, labels=["Q1","Q2","Q3","Q4
   - The product with the highest `reviewCount` within its brand has a value 1 in the `rev_scaled` variable.
   - The product with the lowest `reviewCount` within its brand has a value 0 in the `rev_scaled` variable.
 
+
+
+```{python}
+def min_max(s):
+    return (s - s.min()) / (s.max() - s.min())
+
+shoes["price_scaled"] = (
+    shoes
+    .groupby(["brandId", "brandName"])["current_p"]
+    .transform(min_max)
+    )
+```
 
 <br><br>
 

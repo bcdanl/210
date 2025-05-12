@@ -444,7 +444,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 2, 2025</p>
+      <p class="date-modified">May 12, 2025</p>
     </div>
   </div>
     
@@ -520,11 +520,37 @@ window.Quarto = {
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>Write code with pandas <code>groupby()</code> to calculate the total duration (in minutes) of each playlist and then sort by the total duration in descending order to identify the playlists from longest to shortest total playtime.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>q1 <span class="op">=</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'pid'</span>, <span class="st">'playlist_name'</span>])[<span class="st">'duration_ms'</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">sum</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">'total_duration_ms'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">'total_duration_ms'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>q1[<span class="st">'total_duration_min'</span>] <span class="op">=</span> q1[<span class="st">'total_duration_ms'</span>] <span class="op">/</span> <span class="dv">60000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Write code with pandas <code>groupby()</code> to identify the top five songs with the highest frequency of appearances in the <code>spotify</code> DataFrame.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>q2 <span class="op">=</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'artist_name'</span>,<span class="st">'track_name'</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    .size()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    .nlargest(<span class="dv">5</span>, <span class="st">'count'</span>, keep<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-3" class="level2">
@@ -536,31 +562,111 @@ window.Quarto = {
 </ul></li>
 <li>Then, identify top 5% songs based on their frequency of appearances.</li>
 </ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>q3 <span class="op">=</span> (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'artist_name'</span>,<span class="st">'track_name'</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    .size()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>thresh <span class="op">=</span> q3[<span class="st">'count'</span>].quantile(<span class="fl">0.95</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>q3 <span class="op">=</span> q3[ q3[<span class="st">'count'</span>] <span class="op">&gt;=</span> thresh ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Write code with pandas <code>groupby()</code> to list all artists who have more than 50 unique songs in the <code>sportify</code> DataFrame.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>q4 <span class="op">=</span> (</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'artist_name'</span>)[<span class="st">'track_name'</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    .nunique()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">'unique_song_count'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'unique_song_count &gt; 50'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Write code with pandas <code>groupby()</code> to create a DataFrame that identifies all the playlists featuring the song “One Dance” by Drake.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>q5 <span class="op">=</span> (</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'artist_name == "Drake" and track_name == "One Dance"'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'pid'</span>,<span class="st">'playlist_name'</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    .size()          <span class="co"># size() just to collapse duplicates</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    .reset_index()[[<span class="st">'pid'</span>,<span class="st">'playlist_name'</span>]]</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>Write code with pandas <code>groupby()</code> to identify the longest and shortest duration songs (based on <code>duration_ms</code>) for each unique artist.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>q6_shortest <span class="op">=</span> (</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'artist_name'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">apply</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> df: df.nsmallest(<span class="dv">1</span>, <span class="st">'duration_ms'</span>, keep<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>q6_longest <span class="op">=</span> (</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'artist_name'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">apply</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> df: df.nlargest(<span class="dv">1</span>, <span class="st">'duration_ms'</span>, keep<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-7" class="level2">
 <h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p>Write code with pandas <code>groupby()</code> to find the same song(s) appearing more than once in the same playlist.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Compute group sizes for each (pid, artist_name, track_name)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>spotify[<span class="st">'group_sizes'</span>] <span class="op">=</span> spotify.groupby([<span class="st">'pid'</span>,<span class="st">'artist_name'</span>,<span class="st">'track_name'</span>])[<span class="st">'pid'</span>].transform(<span class="st">'size'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Keep only those rows where the size &gt; 1</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>q7 <span class="op">=</span> spotify[spotify[<span class="st">'group_sizes'</span>] <span class="op">&gt;</span> <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <p>Write code with pandas <code>groupby()</code> to filter all songs that appear in more than 100 different playlists.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>q8 <span class="op">=</span> (</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    spotify</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">'artist_name'</span>,<span class="st">'track_name'</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    .agg(playlist_count <span class="op">=</span> (<span class="st">'pid'</span>, <span class="st">'nunique'</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'playlist_count &gt; 100'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 </section>
 </section>
@@ -573,7 +679,7 @@ window.Quarto = {
 <p><br></p>
 <p>Below is <code>shoes</code> <code>DataFrame</code> that reads the file <code>onlinestore_shoes_simple.csv</code> containing data of “shoes” search information from an online store.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>shoes <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/onlinestore_shoes_simple.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>shoes <span class="op">=</span> pd.read_csv(<span class="st">'https://bcdanl.github.io/data/onlinestore_shoes_simple.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -643,31 +749,104 @@ window.Quarto = {
 <p><span class="math display">\[
 (\text{Discount Percentage}) = 100 \times \frac{(\text{Current Price}) - (\text{Clearnace Price})}{(\text{Current Price})}
 \]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"on_clearance"</span>] <span class="op">=</span> shoes[<span class="st">"current_p"</span>] <span class="op">==</span> shoes[<span class="st">"clearance_p"</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"discount_pct"</span>] <span class="op">=</span> np.where( shoes[<span class="st">'on_clearance'</span>], </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                                 (shoes[<span class="st">"current_p"</span>] <span class="op">-</span> shoes[<span class="st">"clearance_p"</span>]) <span class="op">/</span> shoes[<span class="st">"current_p"</span>] <span class="op">*</span> <span class="dv">100</span>, <span class="dv">0</span> ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Note that the value of <code>discount_pct</code> is zero for all observations.</li>
+</ul>
 <p><br></p>
 </section>
 <section id="question-10" class="level2">
 <h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <p>For each brand, compute the interquartile range (IQR) of its <code>current_p</code>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"IQR"</span>] <span class="op">=</span> (</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    shoes</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])[<span class="st">"current_p"</span>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    .transform(<span class="kw">lambda</span> s: s.quantile(<span class="fl">0.75</span>) <span class="op">-</span> s.quantile(<span class="fl">0.25</span>)) </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-11" class="level2">
 <h2 class="anchored" data-anchor-id="question-11">Question 11</h2>
 <p>List the top 20 brands with the highest average star rating, considering only brands that have at least 1000 reviews total.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">'reviewCount_tot'</span>] <span class="op">=</span> shoes.groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])[<span class="st">'reviewCount'</span>].transform(<span class="st">'sum'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>q11 <span class="op">=</span> (</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       shoes</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       .query(<span class="st">'reviewCount_tot &gt;= 1000'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       .agg(reviewStarRating_avg <span class="op">=</span> (<span class="st">'reviewStarRating'</span>, <span class="st">'mean'</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>       .nlargest(<span class="dv">20</span>, <span class="st">'reviewStarRating_avg'</span>, keep <span class="op">=</span> <span class="st">'all'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-12" class="level2">
 <h2 class="anchored" data-anchor-id="question-12">Question 12</h2>
 <p>For each brand, compute the proportion of products on clearance. Return the result sorted from highest to lowest proportion.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>q12 <span class="op">=</span> (</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       shoes</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       .agg(on_clearance_prop <span class="op">=</span> (<span class="st">'on_clearance'</span>, <span class="st">'mean'</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       .sort_values(<span class="st">'on_clearance_prop'</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-13" class="level2">
 <h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
 <p>For every brand, calculate the correlation between product price (<code>current_p</code>) and star rating. Keep only brands with more than 100 products.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">'nProducts'</span>] <span class="op">=</span> shoes.groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>]).transform(<span class="st">'size'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>q13 <span class="op">=</span> (</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>      shoes</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>      .query(<span class="st">'nProducts &gt; 100'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>      .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>      .<span class="bu">apply</span>(<span class="kw">lambda</span> df: df[<span class="st">'current_p'</span>].corr( df[<span class="st">'reviewStarRating'</span>] ))</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>      .reset_index(name<span class="op">=</span><span class="st">'cor_p_star'</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-14" class="level2">
 <h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
 <p>Identify “premium” products inside each brand as those priced above the 90th percentile of that brand. Among these premium items, what fraction are on clearance overall?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">'price90'</span>] <span class="op">=</span> shoes.groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])[<span class="st">"current_p"</span>].transform(<span class="kw">lambda</span> s: s.quantile(<span class="fl">0.9</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>q14 <span class="op">=</span> (</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>       shoes</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>       .query(<span class="st">'current_p &gt; price90'</span>)[[<span class="st">"brandId"</span>, <span class="st">"brandName"</span> , <span class="st">"on_clearance"</span>]]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>q14[<span class="st">'on_clearance'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-15" class="level2">
@@ -676,7 +855,7 @@ window.Quarto = {
 <ul>
 <li>Below explains <code>pd.qcut()</code>:</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"price_qtile"</span>] <span class="op">=</span> pd.qcut(shoes[<span class="st">"current_p"</span>], <span class="dv">4</span>, labels<span class="op">=</span>[<span class="st">"Q1"</span>,<span class="st">"Q2"</span>,<span class="st">"Q3"</span>,<span class="st">"Q4"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"price_qtile"</span>] <span class="op">=</span> pd.qcut(shoes[<span class="st">"current_p"</span>], <span class="dv">4</span>, labels<span class="op">=</span>[<span class="st">"Q1"</span>,<span class="st">"Q2"</span>,<span class="st">"Q3"</span>,<span class="st">"Q4"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
 <li><code>pd.qcut(shoes["current_p"], 4, …)</code>
 <ul>
@@ -695,6 +874,28 @@ window.Quarto = {
 <li>You can now easily group or filter by “Q1”, “Q2”, etc., rather than working with numeric cut‐points.</li>
 </ul></li>
 </ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"price_qtile"</span>] <span class="op">=</span> pd.qcut(shoes[<span class="st">"current_p"</span>], <span class="dv">4</span>, labels<span class="op">=</span>[<span class="st">"Q1"</span>,<span class="st">"Q2"</span>,<span class="st">"Q3"</span>,<span class="st">"Q4"</span>]) </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"brand"</span>] <span class="op">=</span> shoes[<span class="st">"brandId"</span>].astype(<span class="st">'str'</span>) <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> shoes[<span class="st">"brandName"</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># it is okay to use ["brandName", "price_qtile"] as group variables</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>q15 <span class="op">=</span> (</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    shoes</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">'on_clearance == True'</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"brand"</span>, <span class="st">"price_qtile"</span>])</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    .size()    <span class="co"># produces a Series with a MultiIndex</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">"count"</span>)     <span class="co"># turn it into a DataFrame</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    .pivot(</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        index<span class="op">=</span><span class="st">"brand"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        columns<span class="op">=</span><span class="st">"price_qtile"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        values<span class="op">=</span><span class="st">"count"</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    )                               </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    .fillna(<span class="dv">0</span>)  </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br></p>
 </section>
 <section id="question-16" class="level2">
@@ -706,6 +907,19 @@ window.Quarto = {
 <li>The product with the lowest <code>reviewCount</code> within its brand has a value 0 in the <code>rev_scaled</code> variable.</li>
 </ul></li>
 </ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to Check the Answer!</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min_max(s):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (s <span class="op">-</span> s.<span class="bu">min</span>()) <span class="op">/</span> (s.<span class="bu">max</span>() <span class="op">-</span> s.<span class="bu">min</span>())</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"price_scaled"</span>] <span class="op">=</span> (</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    shoes</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])[<span class="st">"current_p"</span>]</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    .transform(min_max)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p><br><br></p>
 </section>
 </section>
