@@ -444,7 +444,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 12, 2025</p>
+      <p class="date-modified">May 17, 2025</p>
     </div>
   </div>
     
@@ -913,9 +913,9 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min_max(s):</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (s <span class="op">-</span> s.<span class="bu">min</span>()) <span class="op">/</span> (s.<span class="bu">max</span>() <span class="op">-</span> s.<span class="bu">min</span>())</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"price_scaled"</span>] <span class="op">=</span> (</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>shoes[<span class="st">"rev_scaled"</span>] <span class="op">=</span> (</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    shoes</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])[<span class="st">"current_p"</span>]</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"brandId"</span>, <span class="st">"brandName"</span>])[<span class="st">"reviewCount"</span>]</span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    .transform(min_max)</span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>

@@ -54,7 +54,7 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 <br>
 
 # Project Data
-- Below is the `esg_proj_2024_data` DataFrame and the `esg_proj_2025` DataFrame.
+- Below is the `esg_proj_2024_data` and `esg_proj_2025` DataFrames.
 
 ## 1. `esg_proj_2024_data`
 
@@ -125,7 +125,7 @@ rmarkdown::paged_table(esg_proj_2025)
 
 ## 3. `stock_history_2023`
 
-- The `stock_history_2023` contains daily historical stock market data for the year 2023.
+- The `stock_history_2023` DataFrame contains daily historical stock market data for the year 2023.
 ```{python}
 #| eval: false
 

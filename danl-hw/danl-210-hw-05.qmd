@@ -484,9 +484,9 @@ q15 = (
 def min_max(s):
     return (s - s.min()) / (s.max() - s.min())
 
-shoes["price_scaled"] = (
+shoes["rev_scaled"] = (
     shoes
-    .groupby(["brandId", "brandName"])["current_p"]
+    .groupby(["brandId", "brandName"])["reviewCount"]
     .transform(min_max)
     )
 ```

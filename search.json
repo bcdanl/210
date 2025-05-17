@@ -5583,7 +5583,7 @@
     "href": "danl-hw/danl-210-hw-05.html#question-16",
     "title": "Homework 5",
     "section": "Question 16",
-    "text": "Question 16\n\nFor each brand in the shoes DataFrame, add a new variable rev_scaled that re-scales reviewCount to the [0, 1] range.\n\nThe product with the highest reviewCount within its brand has a value 1 in the rev_scaled variable.\nThe product with the lowest reviewCount within its brand has a value 0 in the rev_scaled variable.\n\n\n\n\nClick to Check the Answer!\ndef min_max(s):\n    return (s - s.min()) / (s.max() - s.min())\n\nshoes[\"price_scaled\"] = (\n    shoes\n    .groupby([\"brandId\", \"brandName\"])[\"current_p\"]\n    .transform(min_max)\n    )"
+    "text": "Question 16\n\nFor each brand in the shoes DataFrame, add a new variable rev_scaled that re-scales reviewCount to the [0, 1] range.\n\nThe product with the highest reviewCount within its brand has a value 1 in the rev_scaled variable.\nThe product with the lowest reviewCount within its brand has a value 0 in the rev_scaled variable.\n\n\n\n\nClick to Check the Answer!\ndef min_max(s):\n    return (s - s.min()) / (s.max() - s.min())\n\nshoes[\"rev_scaled\"] = (\n    shoes\n    .groupby([\"brandId\", \"brandName\"])[\"reviewCount\"]\n    .transform(min_max)\n    )"
   },
   {
     "objectID": "danl-hw/danl-210-hw-05.html#sportify-blog-homework-2",
@@ -5905,6 +5905,6 @@
     "href": "danl-rw/danl-210-project.html#stock_history_2023",
     "title": "Unifying Environmental, Social, and Governance (ESG) Metrics with Financial Analysis",
     "section": "3. stock_history_2023",
-    "text": "3. stock_history_2023\n\nThe stock_history_2023 contains daily historical stock market data for the year 2023.\n\n\nurl = \"https://bcdanl.github.io/data/stock_history_2023.csv\"\nstock_history_2023 = pd.read_csv(url)\n\n\n  \n\n\nVariable Description\n\nSymbol: Company’s stock ticker\nDate: Trading date\nYear: Trading year\nOpen: Opening price on the date\nHigh: Highest price on the date\nLow: Lowest price on the date\nClose: Closing price on the date\nVolume: Trading volume\nDividend: Cash dividend paid per share on the date (if any), as reported by Yahoo Finance\nStock_Split: The ratio of any stock split that occurred on the given date."
+    "text": "3. stock_history_2023\n\nThe stock_history_2023 DataFrame contains daily historical stock market data for the year 2023.\n\n\nurl = \"https://bcdanl.github.io/data/stock_history_2023.csv\"\nstock_history_2023 = pd.read_csv(url)\n\n\n  \n\n\nVariable Description\n\nSymbol: Company’s stock ticker\nDate: Trading date\nYear: Trading year\nOpen: Opening price on the date\nHigh: Highest price on the date\nLow: Lowest price on the date\nClose: Closing price on the date\nVolume: Trading volume\nDividend: Cash dividend paid per share on the date (if any), as reported by Yahoo Finance\nStock_Split: The ratio of any stock split that occurred on the given date."
   }
 ]
