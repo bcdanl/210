@@ -83,9 +83,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -436,91 +436,15 @@ window.Quarto = {
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table">
+<table class="quarto-listing-table table caption-top" data-quarto-postprocess="true">
 <thead>
-<tr>
-
-<th>
-Title
-</th>
-
-<th>
-Subtitle
-</th>
-
-<th>
-Date
-</th>
-
+<tr class="header">
+<th data-quarto-table-cell-role="th">Title</th>
+<th data-quarto-table-cell-role="th">Subtitle</th>
+<th data-quarto-table-cell-role="th">Date</th>
 </tr>
 </thead>
 <tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1738731600000" data-listing-file-modified-sort="1741753188468" data-listing-date-modified-sort="1741753188000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1293" data-listing-title-sort="Homework 1" data-listing-filename-sort="danl-210-hw-01.qmd">
-<td>
-<a href="./danl-hw/danl-210-hw-01.html" class="title listing-title">Homework 1</a>
-</td>
-<td>
-<span class="listing-subtitle">Survey, Personal Website, and Python Basics</span>
-</td>
-<td>
-<span class="listing-date">February 5, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1739941200000" data-listing-file-modified-sort="1745827610097" data-listing-date-modified-sort="1745827610000" data-listing-reading-time-sort="13" data-listing-word-count-sort="2540" data-listing-title-sort="Homework 2" data-listing-filename-sort="danl-210-hw-02.qmd">
-<td>
-<a href="./danl-hw/danl-210-hw-02.html" class="title listing-title">Homework 2</a>
-</td>
-<td>
-<span class="listing-subtitle">Pandas Basics</span>
-</td>
-<td>
-<span class="listing-date">February 19, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1743307200000" data-listing-file-modified-sort="1745827595452" data-listing-date-modified-sort="1745827595000" data-listing-reading-time-sort="15" data-listing-word-count-sort="2995" data-listing-title-sort="Homework 3" data-listing-filename-sort="danl-210-hw-03.qmd">
-<td>
-<a href="./danl-hw/danl-210-hw-03.html" class="title listing-title">Homework 3</a>
-</td>
-<td>
-<span class="listing-subtitle">Python <code>selenium</code> &amp; Pandas Basics</span>
-</td>
-<td>
-<span class="listing-date">March 30, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-date-sort="1744257600000" data-listing-file-modified-sort="1745827576570" data-listing-date-modified-sort="1745827576000" data-listing-reading-time-sort="16" data-listing-word-count-sort="3006" data-listing-title-sort="Homework 4" data-listing-filename-sort="danl-210-hw-04.qmd">
-<td>
-<a href="./danl-hw/danl-210-hw-04.html" class="title listing-title">Homework 4</a>
-</td>
-<td>
-<span class="listing-subtitle">Python <code>selenium</code>, APIs, &amp; Pandas Basics</span>
-</td>
-<td>
-<span class="listing-date">April 10, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="4" data-listing-date-sort="1746072000000" data-listing-file-modified-sort="1747463647063" data-listing-date-modified-sort="1747463647000" data-listing-reading-time-sort="13" data-listing-word-count-sort="2411" data-listing-title-sort="Homework 5" data-listing-filename-sort="danl-210-hw-05.qmd">
-<td>
-<a href="./danl-hw/danl-210-hw-05.html" class="title listing-title">Homework 5</a>
-</td>
-<td>
-<span class="listing-subtitle">Pandas Group Operations</span>
-</td>
-<td>
-<span class="listing-date">May 1, 2025</span>
-</td>
-
-</tr>
-
 </tbody>
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
