@@ -1,0 +1,1093 @@
+---
+title: "Midterm Exam II"
+subtitle: "Spring 2025, DANL 210-01"
+author: ""
+date: 2025-04-21
+
+toc: true
+toc-depth: 3
+toc-expand: true
+toc-title: Contents
+code-fold: true
+
+fig-width: 9
+fig-align: center
+
+execute:
+  echo: true
+  eval: false
+  message: false
+  warning: false
+
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+```{r}
+#| include: false
+#| eval: true
+library(tidyverse)
+library(kableExtra)
+library(skimr)
+library(lubridate)
+library(stargazer)
+library(broom)
+library(hrbrthemes)
+library(ggrepel)
+# theme_set(theme_ipsum())
+
+# knitr::opts_chunk$set(fig.width=6, fig.height=6)  
+
+theme_set(theme_bw() +
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = element_text(size = rel(1), hjust = 1 ),
+                axis.title.y = element_text(size = rel(1), 
+                                            angle = 0,
+                                            margin = margin(0,10,0,0)))
+          )
+
+spotify <- read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+shoes <- read_csv('https://bcdanl.github.io/data/onlinestore_shoes_simple.csv')
+```
+
+<!-- \begin{center}\large\bfseries -->
+<!-- \textsf{Spring 2025, SUNY Geneseo, DANL 210-01} -->
+<!-- \vspace*{-.5cm} -->
+<!-- \end{center} -->
+
+<!-- \begin{center}\huge\bfseries -->
+<!-- \textsf{Midterm Exam II} -->
+<!-- \vspace*{-.5cm} -->
+<!-- \end{center} -->
+
+<!-- \begin{center}\large\bfseries -->
+<!-- \textsf{Make-up Version} -->
+<!-- \end{center} -->
+
+<!-- \begin{center}\large -->
+<!-- {April 21, 2025} -->
+<!-- \end{center} -->
+
+
+<!-- # Honor Pledges -->
+
+<!-- I solemnly swear that I will not cheat or engage in any form of academic dishonesty during this exam.  -->
+
+<!-- I will not communicate with other students or use unauthorized materials.  -->
+
+<!-- I will uphold the integrity of this exam and demonstrate my own knowledge and abilities. -->
+
+<!-- By taking this pledge, I acknowledge that academic dishonesty undermines the academic process and is a violation of the trust placed in me as a student.  -->
+
+<!-- I accept the consequences of any violation of this promise. -->
+
+<!-- - Student's Name:  -->
+<!-- - Student's Signature:  -->
+
+<!-- <br><br> -->
+
+```{r}
+#| include: false
+#| eval: true
+
+library(tidyverse)
+```
+
+
+
+# Descriptive Statistics
+
+
+The distribution of scores for Midterm Exam II is shown below:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-210-s25-exam-2-dist.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+The distribution of raw scores for Data Collection in Midterm Exam II is shown below:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-210-s25-exam-2-dist-dc.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+The distribution of raw scores for Pandas in Midterm Exam II is shown below:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/danl-210-s25-exam-2-dist-pandas.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+<br>
+
+The following provides the descriptive statistics for each part of the Midterm Exam II:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-exam2-stat.csv")
+DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
+```
+
+<br>
+
+# Section 1. Data Collection I
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+# %%
+# =============================================================================
+# Setting up
+# =============================================================================
+import pandas as pd
+import os
+import time
+import random
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome() 
+
+# Set the working directory path
+wd_path = '/Users/bchoe/My Drive/suny-geneseo/spring2025/lecture-code'
+os.chdir(wd_path)  
+
+url = 'http://quotes.toscrape.com/tableful/'
+```
+
+
+
+
+
+
+**First/Front page** of the website for the `url`:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/table-scraping-quotes.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+<br>
+
+**Last page** of the website for the `url`:
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/table-scraping-quotes_end.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+
+
+
+
+
+**A single quote with its author**
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/table-scraping-quotes-only.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+<br>
+
+
+**Corresponding tags**
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/table-scraping-quotes-tag-only.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+
+
+
+
+## Question 1 (Points: 4)
+- Write `pandas` code that reads the HTML table from the front page of the website URL stored in `url` into a DataFrame called `df`.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+df = pd.read_html(url)[0]
+```
+
+
+
+<br>
+
+## Question 2 (Points: 4)
+
+- Write code to load the first/front page of the website for the `url` on the Chrome browser that *is being controlled by automated test software*, called `selenium`.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+driver.get(url)
+```
+
+
+
+
+<br>
+
+
+
+## Question 3 (Points: 20)
+- Write Python code to scrape every quote from a paginated website (unknown number of pages, 10 quotes per page) by repeatedly clicking the **Next** button until it disappears. 
+  - On each page, extract each quote and its author into a column `quote_author` and its associated tags into `tags`, appending them to a DataFrame named `df_clean`. 
+  - After loading each page, pause execution for a random 1–2 second interval. 
+  - Examine below XPath examples for `quote_author` (rows 2, 4, 6, …) and `tags` (rows 3, 5, 7, …), identify that pattern of even vs. odd row numbers, and use it to build your f-strings for locating each element.
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+# Table body - quote with author
+xpath_quote_author_01 = '/html/body/div/table/tbody/tr[2]/td'
+xpath_quote_author_02 = '/html/body/div/table/tbody/tr[4]/td'
+xpath_quote_author_03 = '/html/body/div/table/tbody/tr[6]/td'
+xpath_quote_author_04 = '/html/body/div/table/tbody/tr[8]/td'
+xpath_quote_author_05 = '/html/body/div/table/tbody/tr[10]/td'
+xpath_quote_author_06 = '/html/body/div/table/tbody/tr[12]/td'
+xpath_quote_author_07 = '/html/body/div/table/tbody/tr[14]/td'
+xpath_quote_author_08 = '/html/body/div/table/tbody/tr[16]/td'
+xpath_quote_author_09 = '/html/body/div/table/tbody/tr[18]/td'
+xpath_quote_author_10 = '/html/body/div/table/tbody/tr[20]/td'
+
+# Table body - tags
+xpath_tags_01 = '/html/body/div/table/tbody/tr[3]/td'
+xpath_tags_02 = '/html/body/div/table/tbody/tr[5]/td'
+xpath_tags_03 = '/html/body/div/table/tbody/tr[7]/td'
+xpath_tags_04 = '/html/body/div/table/tbody/tr[9]/td'
+xpath_tags_05 = '/html/body/div/table/tbody/tr[11]/td'
+xpath_tags_06 = '/html/body/div/table/tbody/tr[13]/td'
+xpath_tags_07 = '/html/body/div/table/tbody/tr[15]/td'
+xpath_tags_08 = '/html/body/div/table/tbody/tr[17]/td'
+xpath_tags_09 = '/html/body/div/table/tbody/tr[19]/td'
+xpath_tags_10 = '/html/body/div/table/tbody/tr[21]/td'
+```
+
+
+
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+df_clean = pd.DataFrame()
+while True:
+    
+    try:
+        btn = driver.find_element(By.PARTIAL_LINK_TEXT, "Next")
+    except:
+        btn = []
+
+    for i in range(1,11):
+        j = i*2
+        k = i*2+1
+        
+        xpath_quote_author = f'/html/body/div/table/tbody/tr[{j}]/td'
+        xpath_tags = f'/html/body/div/table/tbody/tr[{k}]/td'
+        
+        quote_author = driver.find_element(By.XPATH, xpath_quote_author).text
+        tags = driver.find_element(By.XPATH, xpath_tags).text
+        
+        lst = [quote_author, tags]
+        obs = pd.DataFrame([lst])
+        df_clean = pd.concat([df_clean, obs])
+    
+    if btn != []:
+        btn.click()
+        time.sleep(random.uniform(1,2))
+    else:
+        break
+      
+df_clean.columns = ['quote_author', 'tags']
+```
+
+
+
+
+
+<br>
+
+
+
+## Question 4 (Points: 4)
+- Write one-line code to export the `df_clean` DataFrame as a CSV file named **table_quotes.csv** inside the **data** subfolder of the current working directory given by `wd_path`.
+  - Ensure that the CSV does not include row index of the `df_clean` DataFrame.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+df_clean.to_csv('data/quotes_table.csv', index=False, encoding = 'utf-8-sig')  
+```
+
+
+
+<br>
+
+
+## Question 5 (Points: 4)
+
+- Write a one-line code to quit the Chrome browser that *is being controlled by automated test software*, called `selenium`.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+driver.quit()
+```
+
+
+
+
+<br><br>
+
+
+
+# Section 2. Data Collection II
+
+
+## Question 6 (Points: 4)
+
+- In the client–server model of the web, which statement is true?
+a. A client hosts webpages, and a server displays them to users.
+b. A client requests data, and a server responds with data.
+c. Clients and servers are the same machine communicating via HTTPS.
+d. A server initiates requests, and a client responds with data.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+b. A client requests data, and a server responds with data.
+```
+
+
+<br>
+
+
+
+## Question 7 (Points: 10)
+- Fill in the following 5 blanks to make a request to the FRED API for collecting the U.S. unemployment rate (`series_id` = "**UNRATE**")
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+import requests
+import pandas as pd
+param_dicts = {
+  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key
+  'file_type': 'json',
+  'series_id': ___BLANK_1___    ## ID for series data from the FRED
+}
+api_endpoint = "https://api.stlouisfed.org/fred/series/observations"
+response = ___BLANK_2___
+
+# Check if the server successfully sends the requested content
+if ___BLANK_3___:
+    # Convert JSON response to Python dictionary.
+    content = ___BLANK_4___
+
+    # Create a DataFrame of key 'observations's value from the content dictionary
+    df = pd.DataFrame( ___BLANK_5___ )
+else:
+    print("The server cannot find the requested content")
+```
+
+
+
+
+**key**-**value** pairs in the `content` dictionary
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/content_dictionary.png" style="width: 80%; margin-bottom: -20px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
+<br>
+
+**_Answer_** for `___BLANK_1___`:
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+"UNRATE"
+```
+
+<br>
+
+**_Answer_** for `___BLANK_2___`:
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+requests.get(api_endpoint, params=param_dicts)
+```
+
+
+<br>
+
+
+**_Answer_** for `___BLANK_3___`:
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+response.status_code == 200
+```
+
+<br>
+
+
+
+**_Answer_** for `___BLANK_4___`:
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+response.json()
+```
+
+<br>
+
+
+
+
+**_Answer_** for `___BLANK_5___`:
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+content['observations']
+```
+
+
+
+<br><br><br>
+
+
+
+# Section 3. Pandas Basics I
+
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+import pandas as pd
+import numpy as np
+```
+
+<br>
+
+Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+df <- read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+
+rmarkdown::paged_table(df,
+                       options = list(rows.print = 25))
+```
+
+
+
+## Variable Description
+
+- `pid`: playlist ID; unique ID for playlist
+- `playlist_name`: a name of playlist
+- `pos`: a position of the track within a playlist (starting from 0)
+- `artist_name`: name of the track’s primary artist
+- `track_name`: name of the track
+- `duration_ms`: duration of the track in milliseconds
+
+
+## Definition of a Song
+- In Section 1, a **song** is defined as a combination of a `artist_name` value and a `track_name` value.
+
+- E.g., the following provides the 12 distinct songs with the same `track_name`---**I Love You**:
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+spotify |> 
+  count(artist_name, track_name) |> 
+  filter(track_name == 'I Love You') |> 
+  select(-n) |>
+  mutate(Index = row_number() - 1) |>
+  relocate(Index) |> 
+  kbl() |>
+  kable_styling(
+    latex_options = c("hold_position"),
+    font_size = 8
+  ) |>
+  column_spec(1, background = "#d3d3d3") |> # light gray background for Row column
+  row_spec(0, background = "#d3d3d3") 
+```
+
+
+
+
+
+## Question 8 (Points: 4)
+
+- Complete the following line so that `num_columns` is assigned the total number of columns in the `spotify` DataFrame as an integer:
+
+
+
+```{.python}
+num_columns = spotify._______________________________________________
+```
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+num_columns = spotify.shape[1]
+```
+
+
+
+
+
+<br>
+
+
+
+## Question 9 (Points: 4)
+
+- Write code to count how many tracks each playlist contains.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+spotify[['pid', 'playlist_name']].value_counts().reset_index()
+```
+
+
+
+
+
+<br>
+
+
+
+
+## Question 10 (Points: 5)
+
+- Write code to identify playlists that include at least 100 different artists.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+plist_100 = (
+ spotify[['pid', 'playlist_name', 'artist_name']]
+ .drop_duplicates()
+ .value_counts()
+ .reset_index()[['pid', 'playlist_name']]
+ .value_counts()
+ .reset_index()
+ .query('count >= 100')
+ )
+
+```
+
+
+
+
+
+
+<br>
+
+
+
+
+## Question 11 (Points: 5)
+
+-	Write code to calculate the proportion of playlists in `spotify` that contain at least one duplicated song, i.e. (the number of playlists with at least 1 duplicate song) divided by (the total number of distinct playlists)
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+dup_T = spotify.duplicated(subset=["pid", "artist_name", "track_name"])
+duplicate_plist = (
+    spotify[ dup_T ]
+    .drop_duplicates(subset = ['pid', 'playlist_name'])
+    )
+
+
+all_plists = (
+    spotify
+    .drop_duplicates(subset = ['pid', 'playlist_name'])
+    )
+    
+duplicate_plist.shape[0] / all_plist.shape[0]
+```
+
+
+
+
+<br>
+
+
+
+
+## Question 12 (Points: 6)
+
+- Write code to add a new column, `duration_cat`, to the `spotify` DataFrame that categorizes `duration_ms` into:
+  - "**short**" for tracks under 3 minutes (<180000 ms)
+  - "**medium**" for tracks between 3 and 5 minutes (180000–300000 ms)
+  - "**long**" for tracks over 5 minutes (>300000 ms)
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+spotify['duration_cat'] = np.where(spotify['duration_ms'] < 180*1000,
+                                   "short", 
+                                   "")
+
+spotify['duration_cat'] = np.where(spotify['duration_ms'] > 300*1000,
+                                   "long", 
+                                   spotify['duration_cat'])
+
+spotify['duration_cat'] = np.where(spotify['duration_cat'] == '',
+                                   "medium", 
+                                   spotify['duration_cat'])
+```
+
+
+
+
+
+<br>
+
+
+
+
+## Question 13 (Points: 7)
+
+- Write code to find the second most frequently appearing song(s) across all playlists that include **"Viva La Vida"** (`track_name`) by **"Coldplay"** (`artist_name`).
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+coldplay_list = (
+    spotify.query('artist_name == "Coldplay" & track_name == "Viva La Vida"')
+    )
+
+after_coldplay = (
+    spotify[ spotify['pid'].isin(coldplay_list['pid']) ]
+    [ ['artist_name', 'track_name'] ]
+    .value_counts()
+    .reset_index()
+    .nlargest(2, 'count', keep="all")
+    )
+```
+
+
+
+
+<br>
+
+
+
+
+
+## Question 14 (Points: 7)
+
+-	Consider a DataFrame called `songs`, derived from `spotify`, that adds a new variable `song` by concatenating each row’s `artist_name` and `track_name`:
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+new_row <- list(
+  pid = NA,
+  playlist_name  = ".....",
+  song = NA
+)
+
+spotify |> 
+  head(3) |>
+  mutate(Index = row_number() - 1) |>
+  relocate(Index) |> 
+  mutate(song = str_c(artist_name, ' - ', track_name)) |> 
+  relocate(song, .after = playlist_name) |> 
+  select(Index, pid, playlist_name, song) |> 
+  add_row(!!!new_row, .after = 3) |> 
+  mutate(
+    across(
+      everything(),
+      ~ if_else(is.na(.), "", as.character(.))
+    )
+  ) |> 
+  kbl() |>
+  kable_styling(
+    latex_options = c("hold_position"),
+    font_size = 8
+  ) |>
+  column_spec(1, background = "#d3d3d3") |> # light gray background for Row column
+  row_spec(0, background = "#d3d3d3") 
+```
+
+- Note that the `songs` DataFrame has only the three variables---`pid`, `playlist_name`, and `song`, as shown above.
+
+- Write code to determine which two different songs appear together in playlists more often than any other pair, as shown below.
+  - (Hint:  self‑merge the `songs` DataFrame on `pid` to get `song_x`-`song_y` pairs, which is a many-to-many join.)
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+# 1. One row per song‑in‑playlist
+popular_pairs <- spotify |>
+  distinct(pid, playlist_name, artist_name, track_name) |>
+  mutate(song = paste(artist_name, track_name, sep = " – ")) |>
+  select(pid, playlist_name, song)
+
+# 2. Self‑join on pid to get all song–song combinations
+pairs <- popular_pairs |>
+  inner_join(popular_pairs, by = "pid", suffix = c("_x", "_y"))
+
+# 3. Count co‑occurrences and drop self‑pairs
+pair_counts <- pairs |>
+  count(song_x, song_y, name = "count") |>
+  arrange(-count) |> 
+  mutate(Index = row_number() - 1) |>
+  relocate(Index) |> 
+  filter(song_x != song_y)
+
+# View the result
+pair_counts |> 
+  head(1) |> 
+  kbl() |>
+  kable_styling(
+    latex_options = c("hold_position"),
+    font_size = 8
+  ) |>
+  column_spec(1, background = "#d3d3d3") |> # light gray background for Row column
+  row_spec(0, background = "#d3d3d3") 
+```
+
+
+
+
+
+Below is how `songs` DataFrame is created:
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+songs = (
+    spotify
+    .drop_duplicates(subset = ['pid', 'playlist_name', 'artist_name', 'track_name'])
+    [['pid', 'playlist_name', 'artist_name', 'track_name']]
+    )
+
+songs['song'] = songs['artist_name'] + ' – ' + songs['track_name']
+songs = songs[['pid', 'playlist_name', 'song']]
+```
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+pairs = songs.merge(songs, on='pid')
+
+pair_counts = (
+    pairs[['song_x','song_y']]
+    .value_counts()
+    .reset_index()
+    .query('song_x != song_y')
+    .nlargest(1, 'count', keep = "all")  
+)
+
+# Note: Lexicographic filtering is necessary to treat (song_x, song_y) and (song_y, song_x) as the same pair.
+```
+
+
+
+
+
+<br><br>
+
+
+
+
+# Section 4. Pandas Basics II
+
+Below is `shoes` `DataFrame` that reads the file `onlinestore_shoes_simple.csv` containing data of "shoes" search information from an online store.
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+
+shoes = pd.read_csv('https://bcdanl.github.io/data/onlinestore_shoes_simple.csv')
+```
+
+```{python}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+import pandas as pd
+import numpy as np
+shoes = pd.read_csv('https://bcdanl.github.io/data/onlinestore_shoes_simple.csv')
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+df <- read_csv('https://bcdanl.github.io/data/onlinestore_shoes_simple.csv')
+
+rmarkdown::paged_table(df,
+                       options = list(rows.print = 25))
+```
+
+
+## Variable Description
+
+| Variable                          | Description                                                                 |
+|----------------------------------|-----------------------------------------------------------------------------|
+| `id`                             | Unique identifier for the product                                           |
+| `brandId`                        | Unique identifier for the brand                                            |
+| `brandName`                      | Name of the brand                                                          |
+| `name`                           | Product name or title                                                      |
+| `reviewCount`                    | Number of customer reviews                                                 |
+| `reviewStarRating`               | Average star rating from customer reviews                                  |
+| `current_p`                      | Current price                   |
+| `clearance_p`                    | Clearance price  (`NA` if not available for clearance)           |
+
+<br>
+
+## Question 15 (Points: 5)
+
+- Write code to identify the top **deal** product(s), where a deal is defined by all of the following:
+	1.	**On clearance**: the product’s `current_p` equals its `clearance_p`.
+	2.	**Highly reviewed**: `reviewCount` is at or above the 95th percentile of all `reviewCount` values.
+	3.	**Best rated**: among these clearance, highly‑reviewed products, it has the maximum `reviewStarRating` (including any ties).
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+shoes_promo <- read_csv('https://bcdanl.github.io/data/onlinestore_shoes_simple_star.csv')
+
+shoes_promo |> 
+  kbl() |>
+  kable_styling(
+    latex_options = c("hold_position"),
+    font_size = 8
+  ) |>
+  column_spec(1, background = "#d3d3d3") |> # light gray background for Row column
+  row_spec(0, background = "#d3d3d3") 
+```
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+review_top5 = shoes['reviewCount'].quantile(.95)
+shoes_promo = (
+    shoes[(shoes['clearance_p'] == shoes['currernt_p']) & (shoes['reviewCount'] >= review_top5) ]
+    .nlargest(1, 'reviewStarRating', keep = 'all')
+    )
+
+```
+
+
+
+
+
+<br>
+
+
+
+
+
+## Question 16 (Points: 7)
+
+- Write pandas code to:
+	1.	**Count products per brand**: determine how many items each brand offers.
+	2.	**Find the 90th‑percentile threshold** of those brand‑level counts.
+	3.	**Select "popular" brands** whose product counts exceed that threshold.
+	4.	**Compute clearance rates** for each of these popular brands: the fraction of their items with a non‑missing `clearance_p`.
+	5.	**List the top five** brands by clearance rate, reporting each brand and its rate, as shown in below DataFrame.
+	
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+shoes_promo <- read_csv('https://bcdanl.github.io/data/onlinestore_shoes_simple_na.csv')
+
+shoes_promo |> 
+  kbl() |>
+  kable_styling(
+    latex_options = c("hold_position"),
+    font_size = 8
+  ) |>
+  column_spec(1, background = "#d3d3d3") |> # light gray background for Row column
+  row_spec(0, background = "#d3d3d3") 
+```
+
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+
+# 1. Count total products per brand
+total_per_brand = shoes['brandName'].value_counts().reset_index()
+
+total_per_brand_n = total_per_brand['count'].quantile(.9)
+total_per_brand = total_per_brand[total_per_brand['count'] >= total_per_brand_n]
+
+# 2. Count total products per brand
+shoes['clearance_available'] = shoes['clearance_p'].notna()
+
+total_per_brand_c = (
+    shoes
+    .query('clearance_available == True')['brandName']
+    .value_counts()
+    .reset_index()
+    )
+
+# 3. Join
+df = total_per_brand_c.merge(total_per_brand, on='brandName', how = 'left')
+df = df[~df['count_y'].isna()]
+df['rate'] = df['count_x'] / df['count_y'] 
+df_top5 = df.nlargest(5, 'rate', keep = 'all')
+```
+
+
+
+
+  
+  

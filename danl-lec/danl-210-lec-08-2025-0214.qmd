@@ -1,0 +1,495 @@
+---
+title: Lecture 8
+subtitle: "`pandas` Basics - Sorting Methods; Setting a New Index; Locating Observations/Values"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-14
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+## `nba` DataFrame
+:::{.nonincremental}
+- Let's read the **nba.csv** file as `nba`:
+
+:::
+
+```{.python}
+# Below is to import the pandas library as pd
+import pandas as pd 
+
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table  
+data_table.enable_dataframe_formatter()
+
+# Below is to read nba.csv as nba DataFrame
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+
+```
+
+
+
+# **Sorting Methods** {background-color="#1c4982"}
+
+
+## Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_values(["Name"])
+nba.sort_values(by = ["Name"])
+```
+:::{.nonincremental}
+
+
+- The `sort_values()` method’s first parameter, `by`, accepts the variables that pandas should use to sort observations.
+
+:::
+
+
+## Sorting by a Single Variable with `sort_values()`
+
+```{.python}
+nba.sort_values(["Name"], ascending = False)
+```
+:::{.nonincremental}
+
+
+- The `sort_values()` method’s `ascending` parameter determines the sort order.
+  - `ascending` has a default argument of `True`.
+  - By default, pandas will sort:
+    - A variable of numbers in *increasing* order;
+    - A variable of strings in *alphabetical* order;
+    - A variable of datetimes in *chronological* order.
+
+:::
+
+
+## Pandas Basics
+### Method Chaining
+
+```{.python}
+(
+    nba
+    .sort_values(['Salary'])
+    .head(5)
+)
+```
+
+:::{.nonincremental}
+
+-  `DataFrame` has various methods that modify the existing `DataFrame`. 
+  - **Method Chaining**: We can call methods sequentially without the need to store intermediate results.
+  
+:::
+
+
+## Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(5, 'Salary')
+nba.nlargest(5, 'Salary')
+```
+
+- `nsmallest()` are useful to get the first `n` observations ordered by a variable in <u>*ascending*</u> order.
+
+- `nlargest()` are useful to get the first `n` observations ordered by a variable in <u>*descending*</u> order.
+
+
+
+
+
+## Sorting by a Single Variable with `nsmallest()` and `nlargest()`
+
+```{.python}
+nba.nsmallest(4, 'Salary', keep = "all")
+nba.nlargest(4, 'Salary', keep = "all")
+```
+
+- `keep = "all"` keeps all duplicates, even it means selecting more than `n` observations.
+
+
+
+## Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(["Team", "Name"])
+nba.sort_values(by = ["Team", "Name"])
+```
+
+- We can sort a `DataFrame` by multiple columns by passing a *list* to the `by` parameter.
+
+
+
+## Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = False)
+```
+
+- We can pass a single Boolean to the `ascending` parameter to apply the same sort order to each variable.
+
+
+## Sorting by Multiple Variables with `sort_values()`
+
+```{.python}
+nba.sort_values(by = ["Team", "Name"], 
+                ascending = [False, True])
+```
+
+- If we want to sort each variable in a different order, we can pass a Boolean *list* to the `ascending` parameter.
+
+
+
+## Sorting by Multiple Variables with `sort_values()`
+
+**Q**. Which players on each team are paid the most?
+
+
+## Sorting by Row Index with `sort_index()`
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+# Below lines are equivalent
+nba.sort_index()
+nba.sort_index(ascending = True)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.sort_index(ascending = False)
+```
+:::
+
+::::
+
+- If we assigned `nba` to `nba` DataFrame sorted by "Name", how can we return it to its original form of `DataFrame`?
+  - Our `nba` `DataFrame` still has its numeric index labels.
+  - `sort_index()` sorts observations by their index labels (row names).
+
+
+
+## Relocating Variables with `sort_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.sort_index(axis = "columns")
+nba.sort_index(axis = 1)
+```
+
+- The `sort_index()` method can also be used to change the order of variables in an alphabetical order. 
+  - We need to add an `axis` parameter and pass it an argument of `"columns"` or `1`.
+
+
+
+
+# **Setting a New Index** {background-color="#1c4982"}
+
+## Setting a New Index
+
+- We can use the `set_index()` method when we want to change the current index of a `DataFrame` to one or more existing columns. 
+  - This is particularly useful when:
+    - We have a column that *uniquely identifies* each observation (e.g., ID);
+    - We sometimes want to use an *unique identifier* as the index for more efficient data wrangling.
+    
+
+## Setting a New Index with `set_index()`
+
+```{.python}
+# The two lines below are equivalent
+nba.set_index(keys = "Name")
+nba.set_index("Name")
+```
+
+- The `set_index()` method returns a new `DataFrame` with a given column set as the index. 
+  - Its first parameter, `keys`, accepts the column name.
+  
+  
+
+## Re-setting an Index with `reset_index()`
+
+```{.python}
+nba2 = nba.set_index("Name")
+nba2.reset_index(inplace=True)    # Useful for the method chaining
+```
+
+  
+- We use the `reset_index()` method: 
+  - When we want to convert the index back into a `DataFrame` column;
+  - When we need to reset the index to the default integer index. 
+
+- Note: With `inplace=True`, the operation alters the original `DataFrame` directly.
+
+
+
+
+# **Locating Observations** {background-color="#1c4982"}
+
+
+## Locating Observations
+:::{.nonincremental}
+- Let's read `nba.csv` as `nba`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+```
+
+
+:::
+
+
+## Locating Observations/Values
+
+- We can extract observations, variables, and values from a `DataFrame` by using the `loc[]` and `iloc[]` accessors. 
+
+  - These accessors work well when we know the **index labels and positions** of the observations/variables we want to target.
+  
+
+## Locating Observations by `.loc[Index Labels]`
+
+:::{.nonincremental}
+
+- Let's consider the `nba` with the `Name` index.
+```{.python}
+# The two lines below are equivalent
+nba = nba.set_index("Name")
+nba.set_index("Name", inplace = True)
+```
+
+- Below extracts observations:
+
+:::
+
+
+```{.python}
+nba.loc[ "LeBron James" ]
+nba.loc[ ["Kawhi Leonard", "Paul George"] ]
+```
+
+- The `.loc` attribute extracts an observation by **index label** (row name).
+
+
+## Locating Observations by `.loc[Index Labels]`
+
+
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Otto Porter":"Patrick Beverley"]
+)
+```
+
+- What is the above code doing?
+  - Note: Both the starting value and the ending value are **_inclusive_**.
+
+
+
+## Locating Observations by `.loc[Index Labels]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc["Zach Collins":]
+)
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+(
+    nba
+    .sort_index()
+    .loc[:"Al Horford"]
+)
+```
+:::
+
+::::
+
+- We can use `loc[:]` to pull rows:
+  - From the middle of the `DataFrame` to its end;
+  - From the beginning of the `DataFrame` to a specific index label.
+
+
+
+
+
+
+## Locating Observations by `.iloc[Index Positions]`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[ 300 ]
+nba.iloc[ [100, 200, 300, 400] ]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.iloc[400:404]
+nba.iloc[:2]
+nba.iloc[447:]
+nba.iloc[-10:-6]
+nba.iloc[0:10:2] # every other rows
+```
+:::
+
+::::
+
+
+- The `.iloc` (index location) attribute locates rows by index position.
+  - This can be helpful when the position of rows has significance in our data set.
+  - We pass integers.
+  
+- The `.iloc[:]` is similar to the **slicing** syntax with strings/lists.
+  - The end value is NOT *inclusive*.
+  
+
+
+
+## Pandas Basics
+
+Let's do Questions 4-7 in [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
+
+# **Locating Values** {background-color="#1c4982"}
+
+
+## Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+
+:::: {.columns}
+
+::: {.column width="42%"}
+```{.python}
+nba.loc[
+    "LeBron James",
+    "Team"
+]
+
+nba.loc[
+     "James Harden", 
+      ["Position", "Birthday"] 
+]
+```
+:::
+
+::: {.column width="58%"}
+```{.python}
+nba.loc[
+    ["Russell Westbrook", "Anthony Davis"],
+     ["Team", "Salary"]
+]
+
+nba.loc[
+    "Joel Embiid", 
+    "Position":"Salary"
+]
+```
+:::
+
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a *second argument* representing the <u>column(s)</u> to extract.
+  - If we are using `.loc`, we have to provide the column names. 
+
+
+
+## Locating Values by `loc[Rows, Columns]` or `iloc[Rows, Columns]`
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba.iloc[
+    57, 
+    3
+]
+
+nba.iloc[
+    100:104, 
+    :3
+]
+```
+:::
+
+::::
+
+
+
+- Both the `.loc` and `.iloc` attributes accept a second argument representing the column(s) to extract.
+  - If we are using `.iloc`, we have to provide the column position.
+
+
+

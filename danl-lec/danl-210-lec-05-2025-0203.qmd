@@ -1,0 +1,1258 @@
+---
+title: Lecture 5
+subtitle: Python Basics - `if`-`else` Chains; Slicing; Functions; `while` & `for` loops; List & Dictionary Methods; `try`-`except` Blocks
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: false
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-03
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+
+
+
+# Booleans, Conditions, and `if` Statements {background-color="#1c4982"}
+
+
+## Booleans, Conditions, and `if` Statements
+
+
+```{.python}
+10 == 20
+10 == '10'
+```
+
+- Boolean data have either `True` or `False` value.
+
+
+
+##  Booleans, Conditions, and `if` Statements
+
+```{r, eval = T, echo = F, out.width='100%', fig.align='center'}
+text_tbl <- data.frame(
+  Operator = c("x and y", "x or y", "not x"),
+  Description = c("Are x and y both True?",
+"Is at least one of x and y True?",
+"Is x False?")
+  )
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+```
+
+
+
+- Existing booleans can be combined, which create a boolean when executed.
+
+
+
+##  Booleans, Conditions, and `if` Statements
+
+Conditions are expressions that evaluate as booleans. 
+
+```{r, eval = T, echo = F, out.width='100%', fig.align='center'}
+text_tbl <- data.frame(
+  Operator = c("x == y", "x != y", "x > y", "x >= y", "x < y", "x <= y"),
+  Description = c("Is x equal to y?",
+"Is x not equal to y?",
+"Is x greater than y?",
+"Is x greater than or equal to y?",
+"Is x less than y?",
+"Is x less than or equal to y?")
+)
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+
+```
+
+
+
+##  Booleans, Conditions, and `if` Statements
+
+
+```{.python}
+boolean_condition1 = 10 == 20
+print(boolean_condition1)
+
+boolean_condition2 = 10 == '10'
+print(boolean_condition2)
+```
+
+
+- The `==` is an operator that compares the objects on either side and returns `True` if they have the same values
+
+
+- **Q**. What does `not (not True)` evaluate to?
+
+- **Q**. [**Classwork 4.2**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-2){target="_blank"}
+
+
+
+##  Booleans, Conditions, and `if` Statements
+
+
+```{.python}
+name = "Geneseo"
+score = 99
+
+if name == "Geneseo" and score > 90:
+    print("Geneseo, you achieved a high score.")
+
+if name == "Geneseo" or score > 90:
+    print("You could be called Geneseo or have a high score")
+
+if name != "Geneseo" and score > 90:
+    print("You are not called Geneseo and you have a high score")
+```
+
+- The real power of conditions comes when we start to use them in more complex examples, such as `if` statements.
+
+
+
+  
+##  Booleans, Conditions, and `if` Statements
+
+```{.python}
+name_list = ["Lovelace", "Smith", "Hopper", "Babbage"]
+
+print("Lovelace" in name_list)
+
+print("Bob" in name_list)
+```
+
+
+
+- One of the most useful conditional keywords is `in`. 
+  - This one must pop up ten times a day in most coders' lives because it can pick out a variable or make sure something is where it's supposed to be.
+
+
+- **Q**. Check if "a" is in the string "Sun Devil Arena" using `in`. Is "a" in "Anyone"?
+
+
+
+
+##  Booleans, Conditions, and `if` Statements
+
+
+```{.python}
+score = 98
+
+if score == 100:
+    print("Top marks!")
+elif score > 90 and score < 100:
+    print("High score!")
+elif score > 10 and score <= 90:
+    pass
+else:
+    print("Better luck next time.")
+```
+
+- One conditional construct we're bound to use at some point, is the `if-else` chain:
+
+
+##  Indentation
+
+- We have seen that certain parts of the code examples are indented. 
+
+- Code that is part of a function, a conditional clause, or loop is indented. 
+
+- Indention is actually what tells the Python interpreter that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.
+
+
+
+
+##  Indentation
+
+
+```{.python}
+x = 10
+
+if x > 2:
+    print("x is greater than 2")
+```
+
+- Here's a basic example of indentation as part of an `if` statement.
+
+- The standard practice for indentation is that each sub-statement should be indented by 4 spaces.
+
+
+
+
+# Slicing Methods with Strings and Lists {background-color="#1c4982"}
+
+
+## Slicing Methods
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/python_string_index.png">
+</p>
+
+
+- With slicing methods, we can get subset of the data object.
+
+- Slicing methods can apply for strings, lists, arrays, and DataFrames.
+
+- The above example describes indexing in Python
+
+
+##  Strings
+
+```{.python}
+string = "cheesecake"
+print( string[-4:] )
+```
+
+- From strings, we can access the individual characters via slicing and indexing. 
+
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+string = "cheesecake"
+print("String has length:")
+print( len(string) )
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+list_of_numbers = range(1, 20)
+print("List of numbers has length:")
+print( len(list_of_numbers) )
+```
+:::
+::::
+
+- Both lists and strings will allow us to use the `len()` command to get their length:
+
+
+##  String-related Functions
+
+#### Dot operation
+
+- In Python, we can access attributes by using a dot notation (`.`).
+
+- Unlike `len()`, some functions use a dot to access to strings. 
+
+- To use those string functions, type (1) the name of the string, (2) a dot, (3) the name of the function, and (4) any arguments that the function needs: 
+
+  - `string_name.some_function(arguments)`.
+
+
+
+##  String-related Functions
+#### Split with `split()`
+- We can use the built-in string `split()` function to break a string into a list of smaller strings based on some *separator*.
+  - If we don’t specify a *separator*, `split()` uses any sequence of white space characters---newlines, spaces, and tabs:
+```{.python}
+tasks = 'get gloves,get mask,give cat vitamins,call ambulance'
+tasks.split(',')
+tasks.split()
+```
+
+
+##  String-related Functions
+
+#### Combine by Using `join()`
+- `join()` collapses a *list* of strings into a single string.
+```{.python}
+crypto_list = ['Yeti', 'Bigfoot', 'Loch Ness Monster']
+crypto_string = ', '.join(crypto_list)
+print('Found and signing book deals:', crypto_string)
+```
+
+
+## Strings and Slicing
+
+- We can extract a substring (a part of a string) from a string by using a **slice**. 
+
+- We define a slice by using square brackets (`[]`), a *start* index, an *end* index, and an optional *step* count between them. 
+
+  - We can omit some of these. 
+
+- The slice will include characters from index *start* to one before *end*:
+
+
+
+
+
+## Get a Substring with a Slice
+
+
+::: {.panel-tabset}
+## `[:]`
+```{.python}
+letters = 'abcdefghij'
+letters[:]
+```
+- `[:]` extracts the entire sequence from start to end.
+
+
+## `[ start :]`
+```{.python}
+letters = 'abcdefghij'
+letters[4:]
+letters[2:]
+letters[-3:]
+letters[-50:]
+```
+- `[ start :]` specifies from the *start* index to the end.
+
+
+## `[: end ]`
+```{.python}
+letters = 'abcdefghij'
+letters[:3]
+letters[:-3]
+letters[:70]
+```
+- `[: end ]` specifies from the beginning to the *end* index minus 1.
+
+
+
+## `[ start : end ]`
+```{.python}
+letters = 'abcdefghij'
+letters[2:5]
+letters[-26:-24]
+letters[35:37]
+```
+- `[ start : end ]` indicates from the *start* index to the *end* index minus 1.
+
+
+## `[ start : end : step ]`
+```{.python}
+letters = 'abcdefghij'
+letters[2 : 6 : 2]   # From index 2 to 5, by steps of 2 characters
+letters[ : : 3]     # From the start to the end, in steps of 3 characters
+letters[ 6 : : 4 ]    # From index 19 to the end, by 4
+letters[ : 7 : 5 ]    # From the start to index 6 by 5:
+letters[-1 : : -1 ]   # Starts at the end and ends at the start
+letters[: : -1 ]
+```
+- `[ start : end : step ]` extracts from the *start* index to the *end* index minus 1, skipping characters by *step*.
+
+
+:::
+
+
+
+
+## Lists
+
+- Python is 
+  - a zero-indexed language (things start counting from zero);
+  - left inclusive;
+  - right exclusive when we are specifying a range of values.
+
+
+
+
+## Lists
+
+  
+```{.python}
+list_example = ['one', 'two', 'three']
+list_example[ 0 : 1 ]
+list_example[ 1 : 3 ]
+```
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/python-slicing-fence.png">
+</p>
+
+
+- We can think of items in a list-like object as being fenced in. 
+  - The index represents the fence post.
+
+## Lists
+
+::: {.panel-tabset}
+## `[index]`
+### Get an Item by `[index]`
+```{.python}
+suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
+        'Stony Brook', 'New Paltz'] 
+```
+
+- We can extract a single value from a list by specifying its index:
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+suny[0]
+suny[1]
+suny[2]
+suny[7]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+suny[-1]
+suny[-2]
+suny[-3]
+suny[-7]
+```
+:::
+
+::::
+
+
+
+## Get an Item with a Slice
+- We can extract a subsequence of a list by using a *slice*:
+```{.python}
+suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
+        'Stony Brook', 'New Paltz'] 
+suny[0:2]    # A slice of a list is also a list.
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+suny[ : : 2]
+suny[ : : -2]
+suny[ : : -1]
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+suny[4 : ]
+suny[-6 : ]
+suny[-6 : -2]
+suny[-6 : -4]
+```
+:::
+
+
+::::
+
+:::
+
+
+
+
+## Slicing Methods
+
+- **Q**. [**Classwork 4.3**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-3){target="_blank"}
+
+
+
+
+# Functions, Arguments, and Parameters {background-color="#1c4982"}
+
+## Functions
+
+```{.python}
+int("20") 
+float("14.3")
+str(5)
+int("xyz")
+```
+
+
+- A function can take any number and type of input *parameters* and **return** any number and type of output *results*.
+
+- Python ships with more than 65 built-in functions. 
+
+- Python also allows a user to define a new function.
+
+- We will mostly use built-in functions. 
+
+
+
+## Functions, Arguments, and Parameters
+
+```{.python}
+print("Cherry", "Strawberry", "Key Lime")
+print("Cherry", "Strawberry", "Key Lime", sep = "!")
+print("Cherry", "Strawberry", "Key Lime", sep=" ")
+```
+
+
+- We invoke a function by entering its name and a pair of opening and closing parentheses. 
+
+- Much as a cooking recipe can accept ingredients, a function invocation can accept inputs called **arguments**. 
+
+- We pass arguments sequentially inside the parentheses (, separated by commas).
+
+- A **parameter** is a name given to an expected function argument.
+
+- A *default argument* is a fallback value that Python passes to a parameter if the function invocation does not explicitly provide one.
+
+
+## Functions, Arguments, and Parameters
+
+- **Q**. [**Classwork 4.4**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-4){target="_blank"}
+
+
+
+
+
+
+# Loop with `while` and `for` {background-color="#1c4982"}
+
+
+##  Repeat with `while`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{.python}
+count = 1        
+while count <= 5:
+    print(count)
+    count += 1
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+1. We first assigned the value 1 to `count`.
+2. The `while` loop compared the value of `count` to 5 and continued if `count` was less than or equal to 5.
+3. Inside the loop, we printed the value of `count` and then *incremented* its value by one with the statement `count += 1`.
+4. Python goes back to the top of the loop, and again compares `count` with 5.
+5. The value of `count` is now 2, so the contents of the `while` loop are again executed, and `count` is incremented to 3.
+6. This continues until `count` is incremented from 5 to 6 at the bottom of the loop.
+7. On the next trip to the top, `count <= 5` is now `False`, and the `while` loop ends.
+
+:::
+::::
+
+
+
+##  Asking the user for input
+  
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{.python}
+stuff = input()
+# Type something and press Return/Enter on Console 
+# before running print(stuff)
+print(stuff)
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+- Sometimes we would like to take the value for a variable from the user via their keyboard. 
+  - The `input()` function gets *input* from the keyboard.
+  - When the `input()` is called, the program stops and waits for the user to type something on Console (interactive Python interpreter).
+  - When the user presses **Return** or **Enter** on Console, the program resumes and input returns what the user typed as a string.
+
+:::
+::::
+
+
+
+##  Cancel with `break`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+while True:
+    user_input = input("Enter 'yes' to continue or 'no' to stop: ")
+    if user_input.lower() == 'no':
+        print("Exiting the loop. Goodbye!")
+        break
+    elif user_input.lower() == 'yes':
+        print("You chose to continue.")
+    else:
+        print("Invalid input, please enter 'yes' or 'no'.")
+```
+
+:::
+
+::: {.column width="50%"}
+
+- `While` loop is used to execute a block of code repeatedly until given boolean condition evaluated to `False`. 
+  - `while True` loop will run forever unless we write it with a `break` statement.
+
+- If we want to loop until something occurs, but we’re not sure when that might happen, we can use an infinite loop with a `break` statement. 
+
+
+:::
+::::
+
+
+## Repeat with `while`
+### Skip Ahead with `continue`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+while True:
+    value = input("Integer, please [q to quit]: ")
+    if value == 'q': # quit
+        break
+    number = int(value)
+    if number % 2 == 0: # an even number
+        continue
+    print(number, "squared is", number*number)
+```
+
+:::
+::: {.column width="50%"}
+- Sometimes, we don’t want to break out of a loop but just want to skip ahead to the
+next iteration for some reason. 
+
+- The `continue` statement is used to skip the rest of the code inside a loop for the *current iteration* only. 
+
+:::
+::::
+
+
+## Repeat with `while`
+### Check `break` Use with `else`
+
+- We can consider using `while` with `else` when we’ve coded a `while` loop to check for something, and `break`ing as soon as it’s found. 
+  <!-- - The `else` would be run if the `while` loop completed but the object was not found. -->
+  
+```{.python}
+numbers = [1, 3, 5]
+position = 0
+
+while position < len(numbers):
+    number = numbers[position]
+    if number > 4:  # Condition changed to checking if the number is greater than 4
+        print('Found a number greater than 4:', number)
+        break
+    position += 1
+else:  # break not called
+    print('No number greater than 4 found')
+```
+- Consider it a break checker.
+
+
+##  Iterate with `for` and `in`
+
+- Sometimes we want to loop through a set of things such as a string of text, a list of words or a list of numbers.
+
+  - When we have a list of things to loop through, we can construct a `for` loop. 
+
+  - A `for` loop makes it possible for you to traverse data structures without knowing how large they are or how they are implemented. 
+  
+  <!-- - We can iterate over data that is created on the fly, allowing processing of data streams that would otherwise not fit in the computer’s memory all at once. -->
+
+
+<!-- - To do iteration, we need something like *strings*, *lists* and *tuples* or *dictionaries* to iterate over.  -->
+
+
+##  Iterate with `for` and `in`
+
+- Let's see two ways to walk through a string here:
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+word = 'thud'
+offset = 0
+while offset < len(word):
+    print(word[offset])
+    offset += 1
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+word = 'thud'
+for letter in word:
+    print(letter)
+```
+:::
+::::
+
+- Which one do you prefer?
+
+
+## Iterate with `for` and `in`
+###  Cancel with `break`
+
+```{.python}
+word = 'thud'
+for letter in word:
+    if letter == 'u':
+        break
+    print(letter)
+```
+
+- A `break` in a `for` loop breaks out of the loop, as it does for a `while` loop:
+
+## Iterate with `for` and `in`
+###  Skip with `continue`
+
+```{.python}
+word = 'thud'
+for letter in word:
+    if letter == 'u':
+        continue
+    print(letter)
+```
+- Inserting a `continue` in a `for` loop jumps to the next iteration of the loop, as it does for a `while` loop.
+
+
+
+## Generate Number Sequences with `range()`
+
+- The `range()` function returns a stream of numbers within a specified range, without
+first having to create and store a large data structure such as a *list* or *tuple*. 
+
+  - This lets us create huge ranges without using all the memory in our computers and crashing our program.
+  
+  - `range()` returns an iterable object, so we need to step through the values with `for` ... `in`, or convert the object to a sequence like a *list*. 
+
+
+## `for` ... `in` `range()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+for x in range(0, 3):
+    print(x)
+list( range(0, 3) )
+```
+
+:::
+
+::: {.column width="50%"}
+- We use `range()` similar to how we use *slices*: `range( start, stop, step )`. 
+  - If we omit `start`, the `range` begins at 0. 
+  - The only required value is `stop`; as with *slices*, the last value created will be just before stop. 
+  - The default value of `step` is 1, but we can change it.
+
+:::
+
+::::
+
+
+## Iterate with `for` and `in`
+### Check `break` Use with `else`
+- Similar to `while`, `for` has an optional `else` that checks whether the `for` completed normally. 
+  - If `break` was not called, the `else` statement is run.
+
+```{.python}
+word = 'thud'
+for letter in word:
+    if letter == 'x':
+        print("Eek! An 'x'!")
+        break
+    print(letter)
+else:
+    print("No 'x' in there.")
+```
+
+
+
+## Loop with `while` and `for`
+###  Class Exercises
+
+- **Q**. [**Classwork 4.5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-5){target="_blank"}
+
+
+- **Q**. [**Classwork 4.6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-6){target="_blank"}
+
+
+# List and Dictionary Comprehensions {background-color="#1c4982"}
+
+## List Comprehension
+### What is List Comprehension?
+
+- A concise way to create or modify lists.
+- Syntax: `[expression for item in iterable if condition]`
+
+1. **Creating a List of Squares:**
+```{.python}
+squares = [x**2 for x in range(5)]
+```
+
+2. **Filtering Items:**
+```{.python}
+numbers = [1, 2, 3, 4, 5, 6]
+evens = [x for x in numbers if x != 2]
+```
+
+
+## Dictionary Comprehension
+
+### What is Dictionary Comprehension?
+
+- A concise way to create or modify dictionaries.
+- Syntax: `{key_expression: value_expression for item in iterable if condition}`
+
+1. **Creating a Dictionary of Squares:**
+```{.python}
+squares_dict = {x: x**2 for x in range(5)}
+```
+
+2. **Filtering Dictionary Items:**
+```{.python}
+   my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+   filtered_dict = {k: v for k, v in my_dict.items() if v != 2}
+```
+
+3. **Swapping Keys and Values:**
+```{.python}
+original_dict = {'a': 1, 'b': 2, 'c': 3}
+swapped_dict = {v: k for k, v in original_dict.items()}
+```
+
+
+
+# Modifying Lists and Dictionaries {background-color="#1c4982"}
+
+## Modifying a List
+### Adding Items
+
+- **`append()`**: Adds an item to the end of the list.
+  
+```{.python}
+my_list = [1, 2, 3]
+my_list.append(4)
+```
+  
+## Modifying a List
+### Deleting Items
+
+- **`remove()`**: Deletes the first occurrence of value in the list.
+  
+```{.python}
+my_list = [1, 2, 3, 4, 2]
+my_list.remove(2)
+```
+
+
+- **List Comprehension**: Removes items based on a condition.
+
+```{.python}
+my_list = [1, 2, 3, 4, 2]
+my_list = [x for x in my_list if x != 2]  
+```
+
+
+- **`del` statement**: Deletes an item by index or a slice of items.
+  
+```{.python}
+my_list = [1, 2, 3, 4]
+del my_list[1] 
+del my_list[1:3]
+```
+
+
+## Modifying a Dictionary
+### Adding/Updating Items
+
+- **`update()`**: Adds new key-value pairs or updates existing ones.
+  
+```{.python}
+my_dict = {'a': 1, 'b': 2}
+my_dict.update({'c': 3})  
+my_dict.update({'a': 10})  
+```
+  
+## Modifying a Dictionary
+### Deleting Items
+
+- **Dictionary Comprehension**: Removes items based on a condition.
+
+```{.python}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict = {k: v for k, v in my_dict.items() if v != 2}  
+```
+
+- **`del` statement**: Deletes an item by key.
+  
+```{.python}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+del my_dict['b']  
+```
+
+
+
+
+
+# Handle Errors with `try` and `except` {background-color="#1c4982"}
+
+## Handle Errors with `try` and `except`
+### Exception handlers
+
+
+
+## Handle Errors with `try` and `except`
+### Exception handlers
+
+- In some languages, errors are indicated by special function return values. 
+  - Python uses *exceptions*: code that is executed when an associated error occurs.
+
+- When we run code that might fail under some circumstances, we also need appropriate *exception handlers* to intercept any potential errors.
+
+  - Accessing a list or tuple with an out-of-range position, or a dictionary with a nonexistent key.
+  
+
+## Handle Errors with `try` and `except`
+### Errors
+
+
+```{.python}
+short_list = [1, 2, 3]
+position = 5
+short_list[position]
+```
+- If we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:
+
+
+## Handle Errors with `try` and `except`
+
+
+```{.python}
+short_list = [1, 2, 3]
+position = 5
+
+try:
+    short_list[position]
+except:
+    print('Need a position between 0 and', len(short_list)-1, ' but got',
+    position)
+```
+
+- Rather than leaving things to chance, use `try` to wrap your code, and `except` to provide the error handling:
+
+## Handle Errors with `try` and `except`
+
+
+```{.python}
+short_list = [1, 2, 3]
+position = 5
+try:
+    short_list[position]
+except:
+    print('Need a position between 0 and', len(short_list)-1, ' but got',
+    position)
+```
+
+- The code inside the `try` block is run. 
+  - If there is an error, an exception is raised and the code inside the `except` block runs. 
+- If there are no errors, the `except` block is skipped.
+
+
+## Handle Errors with `try` and `except`
+### `except` type
+- Specifying a plain `except` with no arguments, as we did here, is a catchall for any exception type.
+
+- If more than one type of exception could occur, it’s best to provide a
+separate exception handler for each.
+
+- We get the full exception object in the variable name if we use the form:
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/int-py-ch9-exception.png" style="width: 90%; margin-bottom: -20px;">
+  <p style="font-style: bold;"></p>
+</div>
+
+
+## Handle Errors with `try` and `except`
+### `except` type
+```{.python}
+short_list = [1, 2, 3]
+while True:
+    value = input('Position [q to quit]? ')
+    if value == 'q':
+        break
+    try:
+        position = int(value)
+        print(short_list[position])
+    except IndexError as err:
+        print('Bad index:', position, '-', err)
+    except Exception as other:
+        print('Something else broke:', other)
+```
+
+
+## Handle Errors with `try` and `except`
+### `except` type
+
+- The example looks for an `IndexError` first, because that’s the exception type raised when we provide an illegal position to a sequence. 
+- It saves an `IndexError` exception in the variable `err`, and any other exception in the variable `other`. 
+
+- The example prints everything stored in `other` to show what you get in that object.
+
+  - Inputting position `3` raised an `IndexError` as expected. 
+  - Entering `two` annoyed the `int()` function, which we handled in our second, catchall `except` code.
+
+
+
+
+
+## Handle Errors with `try` and `except`
+###  Class Exercises
+
+- **Q**. [**Classwork 4.7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-7){target="_blank"}
+
+
+
+
+# Importing and Installing Modules, Packages, and Libraries {background-color="#1c4982"}
+
+## Importing Modules, Packages, and Libraries
+
+- Python is a general-purpose programming language and is not specialized for numerical or statistical computation.
+
+- The core libraries that enable Python to store and analyze data efficiently are:
+  - `pandas`
+  - `numpy`
+  - `matplotlib` and `seaborn`
+
+
+
+## Importing Modules, Packages, and Libraries
+### `pandas`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/pandas-logo.png">
+</p>
+
+- `pandas` provides `Series` and `DataFrames` which are used to store data in an easy-to-use format.
+
+## Importing Modules, Packages, and Libraries
+### `numpy`
+  
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/numpy-logo.png">
+</p>
+
+- `numpy`, numerical Python, provides the array block (`np.array()`) for doing fast and efficient computations;
+
+
+## Importing Modules, Packages, and Libraries
+### `matplotlib` and `seaborn`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/matplotlib-logo.png"><img src="https://bcdanl.github.io/lec_figs/seaborn-logo.png">
+</p>
+
+- `matplotlib` provides graphics. The most important submodule would be `matplotlib.pyplot`.
+- `seaborn` provides a general improvement in the default appearance of `matplotlib`-produced plots.
+
+
+## Importing Modules, Packages, and Libraries
+### `import` statement
+- A **module** is basically a bunch of related codes saved in a file with the extension `.py`.
+
+- A **package** is basically a directory of a collection of modules. 
+
+- A **library** is a collection of packages
+
+
+- We refer to code of other module/package/library by using the Python `import` statement. 
+
+```{.python}
+import LIBRARY_NAME
+```  
+
+
+- This makes the code and variables in the imported module available to our programming codes.
+
+
+## Importing Modules, Packages, and Libraries
+### `import` statement
+
+
+:::: {.columns}
+::: {.column width="50%"}
+#### `as`
+
+- We can use the `as` *keyword* when importing the module/package/library using its canonical names.
+
+
+```{.python}
+import LIBRARY as SOMETHING_SHORT
+```   
+
+:::
+
+::: {.column width="50%"}
+#### `from`
+
+- We can use the `from` *keyword* when specifying Python module/package/library from which we want to `import` something.
+
+
+```{.python}
+from LIBRARY import FUNCTION, PACKAGE, MODULE
+```   
+
+:::
+::::
+
+## Installing Modules, Packages, and Libraries
+### `pip` tool
+
+:::: {.columns}
+::: {.column width="50%"}
+- To install a library `LIBRARY` on your Google Colab, run:
+
+```{.python}
+!pip install LIBRARY
+```
+
+:::
+::: {.column width="50%"}
+
+- To install a library `LIBRARY` on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:
+
+```{.python}
+pip install LIBRARY
+```
+
+:::
+::::
+
+- **Q**. [**Classwork 4.8**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html#question-8){target="_blank"}

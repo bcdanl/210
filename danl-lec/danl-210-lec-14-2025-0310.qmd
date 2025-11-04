@@ -1,0 +1,296 @@
+---
+title: Lecture 14
+subtitle: "Spyder IDE; Scrapping Web-tables with `pd.read_html()`"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-03-10
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+## Data Collection
+### Learning Objectives
+- Scrapping web tables with `pd.read_html()`
+- Scrapping web data with `selenium`
+- Collecting web data with **application programming interfaces (APIs)**
+
+# **Spyder IDE** {background-color="#1c4982"}
+
+## Script Editor
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r, echo=FALSE, eval = T,  eval = T,out.width = '100%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder_env.png")
+```
+:::
+
+
+::: {.column width="40%"}
+
+- From **Script Editor** (red box), we can create, open and edit files.
+
+:::
+
+::::
+
+
+
+## Console Pane
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{r, echo=FALSE, eval = T, out.width = '100%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder_env.png")
+```
+:::
+
+
+::: {.column width="40%"}
+- From **Console Pane** (blue box), we can interact directly with the Python interpreter, and type commands where Python will immediately execute them.
+
+:::
+
+::::
+
+
+## Variable Explorer
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{r, echo=FALSE,  eval = T,out.width = '100%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder_env.png")
+```
+:::
+
+::: {.column width="40%"}
+- From **Variable Explorer** (yellow box), we can see the values of variables, data frames, and other objects that are currently stored in memory.
+
+
+:::
+
+
+::::
+
+
+
+## Data Containers in Variable Explorer
+
+
+:::: {.columns}
+::: {.column width="60%"}
+```{r, echo=FALSE,  eval = T,out.width = '100%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder-var-explore.gif")
+```
+:::
+
+::: {.column width="40%"}
+- If we doucle-click the objects such as `list` and `DataFrame` objects, we can see what data are contained in such objects.
+
+:::
+
+::::
+
+
+
+## Keyboard Shortcuts
+
+- General shortcuts
+  - **Undo**: Ctrl + z (command + z for Mac users)
+  - **Redo**: Ctrl + Shift + z (command + shift + z for Mac users)
+  - **Selection**: Ctrl + Shift + Arrow (:arrow_up: :arrow_right: :arrow_down: :arrow_left:)
+  - **Page Up/Down**: Fn + :arrow_up: / :arrow_down:
+  
+- Default shortcuts
+  - **Comment (`#`)**: Ctrl + 1 (command + 1 for Mac users)
+  - **Block-comment**: Ctrl + 4 (command + 4 for Mac users)
+  - **Run selection** (or **a current line**): F9
+  - **Run cell**: Ctrl + Enter (`# %%` defines a **cell**)
+
+
+
+## Comments, Code Cells, and Keyboard Shortcuts
+
+```{.python}
+# %%
+# =============================================================================
+# SECTION TITLE
+# =============================================================================
+a = 1
+```
+
+- The `#` mark is Spyder's **comment** character.
+
+- It is recommended to use a **coding block** (defined by `# %%`) with **block commenting** (Ctrl/command + 4) for separating code sections.
+
+- To set your keyboard shortcuts,
+  - Preferences > Keyboard Shortcuts > Search "run" and/or "comment"
+  - Set the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; and (4) blockcomment
+  - I use **command + return** for **running a current line (selection)**
+  <!-- - Windows users can set **Alt + Enter** for it. -->
+
+
+# **Scrapping Tables with `pd.read_html()`** {background-color="#1c4982"}
+
+## Scrapping Tables with `pd.read_html()`
+
+:::{.nonincremental}
+
+- Let's scrap the two tables in the following webpage:
+  - [National Park Visitation Sets New Record as Economic Engines](https://www.nps.gov/orgs/1207/national-park-visitation-sets-new-record-as-economic-engines.htm)
+
+:::
+
+```{.python}
+import pandas as pd
+url = "https://www.nps.gov/orgs/1207/national-park-visitation-sets-new-record-as-economic-engines.htm"
+
+tables = pd.read_html(url)
+len(tables)
+```
+
+- `read_html()` read HTML tables into a **list** of `DataFrame` objects.
+
+
+## Refining Web-Scraped Data
+### Setting Column Names & Resetting Index
+
+:::{.nonincremental}
+
+-	How do we **clean** tables after extracting them from a webpage?
+	-	How can we set the **first row** of a DataFrame as its **column names**?
+	-	How can we **remove** the first row and reset the index?
+
+:::
+
+```{.python}
+df_0 = tables[0]
+df_0.columns = df_0.iloc[0]  # Set the first row as column names
+df_0 = df_0[1:].reset_index(drop=True)  # Remove the first row & reset index
+```
+
+- Why `reset_index(drop=True)`?
+	-	**Removes the old index** and **prevents** it from being added as a new column.
+	-	Ensures a **clean, sequential index** (starting from 0) for the modified DataFrame.
+	
+
+
+## Finding the Absolute Path of a File/Folder
+
+::::{.nonincremental}
+:::: {.columns}
+
+::: {.column width="63%"}
+
+#### Windows 11
+
+- **Step 1:** Navigate to your folder using <u>File Explorer</u>.
+- **Step 2:** Right-click the desired file or folder.
+- **Step 3:** Click **Copy as path**.
+- **Step 4:** Paste the path into your Python script (**Ctrl + V**).
+- **Step 5:** Adjust backslashes in the path:
+  - **Option 1:** Replace backslashes (`\`) with forward slashes (`/`).
+  - **Option 2:** Replace single backslashes (`\`) with double backslashes (`\\`).
+
+:::
+
+::: {.column width="37%"}
+
+#### Mac
+
+- **Step 1:** Navigate to your folder using <u>Finder</u>.
+- **Step 2:** Select the file or folder by clicking on it.
+- **Step 3:** Press **Option + Command + C**.
+- **Step 4:** Paste the path into your Python script (**Command + V**).
+
+:::
+
+::::
+::::
+
+
+## Exporting a `DataFrame` as a **CSV** File with `to_csv()`
+
+:::{.nonincremental}
+- To export `DataFrame` as a **CSV** file, we use the `to_csv()` method.
+  - Before exporting, you can set the working directory to organize and manage the location of the CSV file. 
+  - This helps in keeping your data analysis and exports well-organized.
+
+:::
+
+```{.python}
+# Import the os module to interact with the operating system
+import os  
+
+# Set the working directory path
+wd_path = 'PATH_TO_YOUR_DATA_FOLDER' # Do not choose your personal website folder
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# index=False to not write the row index in the CSV output
+tables[0].to_csv('table.csv', index =False)
+```
+
+
+
+## Scrapping Tables with `pd.read_html()`
+
+Let's do [**Classwork 8**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-08.html)!
+
+
+

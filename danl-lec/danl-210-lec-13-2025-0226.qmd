@@ -1,0 +1,552 @@
+---
+title: Lecture 13
+subtitle: "`pandas` Basics - Joining DataFrames; Concatenating DataFrames"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-26
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+
+# **Joining `DataFrames`** {background-color="#1c4982"}
+
+
+## Joining `DataFrames`
+### Relational Data
+
+- Sometimes, one data set is scattered across multiple files.
+  - The size of the files can be huge.
+  - The data collection process can be scattered across time and space.
+  - E.g., `DataFrame` for county-level data and `DataFrame` for geographic information, such as longitude and latitude.
+
+
+- Sometimes we want to combine two or more `DataFrames` based on common data values in those `DataFrames`.
+  -  This task is known in the database world as performing a "join."
+  -  We can do this with the `merge()` method in Pandas.
+
+
+
+
+
+## Joining `DataFrames`
+### Join, Relational Data, and Keys
+
+```{r, out.width='100%', fig.align='center'}
+#| eval: true
+#| echo: false
+text_tbl <- data.frame(
+  Join = c("left", "right", "outer", "inner"),
+#   SQL = c("left outer",
+# "right outer", 
+# "full outer",
+# "inner"),
+  Description = c("Keep all the observations in the left",  
+                  "Keep all the observations in the right", 
+                  "Keep all the observations in both left and right",
+                  "Keep only the observations whose key values exist in both")
+  )
+
+
+
+# Create a DT datatable without search box and 'Show entries' dropdown
+DT::datatable(text_tbl, rownames = FALSE,
+              options = list(
+  dom = 't', # This sets the DOM layout without the search box ('f') and 'Show entries' dropdown ('l')
+  paging = FALSE, # Disable pagination
+  columnDefs = list(list(
+    targets = "_all", # Applies to all columns
+    orderable = FALSE # Disables sorting
+  ))
+), callback = htmlwidgets::JS("
+  // Change header background and text color
+  $('thead th').css('background-color', '#1c4982');
+  $('thead th').css('color', 'white');
+
+  // Loop through each row and alternate background color
+  $('tbody tr').each(function(index) {
+    if (index % 2 == 0) {
+      $(this).css('background-color', '#d1dae6'); // Light color for even rows
+    } else {
+      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows
+    }
+  });
+
+  // Set text color for all rows
+  $('tbody tr').css('color', 'black');
+
+  // Add hover effect
+  $('tbody tr').hover(
+    function() {
+      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row
+    }, 
+    function() {
+      var index = $(this).index();
+      if (index % 2 == 0) {
+        $(this).css('background-color', '#d1dae6'); // Restore even row color
+      } else {
+        $(this).css('background-color', '#9fb2cb'); // Restore odd row color
+      }
+    }
+  );
+")
+)
+
+
+```
+
+- The variables that are used to connect each pair of `DataFrames` are called **keys**.
+- Each observation in a DataFrame is often uniquely identified by key variable(s).
+- The key variable enables relationships between the DataFrames to be defined.
+
+
+## Joining `DataFrames` with `merge()`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-setup.png" width="300">
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+x = pd.DataFrame({
+    'key': [1, 2, 3],
+    'val_x': ['x1', 'x2', 'x3']
+})
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+y = pd.DataFrame({
+    'key': [1, 2, 4],
+    'val_y': ['y1', 'y2', 'y3']
+})
+```
+:::
+
+::::
+
+- The colored column represents the **"key"** variable.
+- The grey column represents the "value" variable.
+
+
+
+## Joining `DataFrames` with `merge()`
+### Inner Join
+- An **inner join** matches pairs of observations whenever their keys are equal:
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-inner.png" width="425">
+</p>
+
+```{.python}
+# the default value for 'how' is 'inner'
+# so it doesn't actually need to be specified
+merge_inner_1 = pd.merge(x, y, on='key')
+merge_inner_2 = pd.merge(x, y, on='key', how='inner')
+merge_inner_3 = x.merge(y, on='key')
+merge_inner_4 = x.merge(y, on='key', how='inner')
+```
+
+
+
+## Joining `DataFrames` with `merge()`
+### Left Join
+
+- A **left join** keeps all observations in `x`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-left.png" width="425">
+</p>
+
+```{.python}
+merge_left = pd.merge(x, y, on='key', how='left')
+merge_left_x = x.merge(y, on='key', how='left')
+```
+
+- The most commonly used join is the left join.
+
+
+## Joining `DataFrames` with `merge()`
+### Right Join
+
+- A **right join** keeps all observations in `y`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-right.png" width="425">
+</p>
+
+
+```{.python}
+merge_right = pd.merge(x, y, on='key', how='right')
+merge_right_x = x.merge(y, on='key', how='right')
+```
+
+
+
+## Joining `DataFrames` with `merge()`
+### Outer (Full) Join
+
+- A **full join** keeps all observations in `x` and `y`.
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-full.png" width="412.5">
+</p>
+
+
+```{.python}
+merge_outer = pd.merge(x, y, on='key', how='outer')
+merge_outer_x = x.merge(y, on='key', how='outer')
+```
+
+
+
+
+## Joining `DataFrames` with `merge()`
+### Duplicate keys: one-to-many
+
+- One `DataFrame` has duplicate keys (a one-to-many relationship). 
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-one-to-many.png" width="375">
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+```{.python}
+x = pd.DataFrame({
+    'key':[1, 2, 2, 3],
+    'val_x':['x1', 'x2', 'x3', 'x4']})
+```
+
+:::
+
+::: {.column width="52.5%"}
+```{.python}
+y = pd.DataFrame({
+    'key':[1, 2],
+    'val_y':['y1', 'y2'] })
+one_to_many = x.merge(y, on='key', 
+                         how='left')
+```
+
+:::
+
+::::
+
+
+## Joining `DataFrames` with `merge()`
+### Duplicate keys: many-to-many
+- Both `DataFrames` have duplicate keys (many-to-many relationship).
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/join-many-to-many.png" width="350">
+</p>
+
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{.python}
+x = pd.DataFrame({
+  'key':[1, 2, 2, 3],
+  'val_x':['x1','x2','x3','x4']})
+
+```
+
+:::
+
+
+::: {.column width="55%"}
+```{.python}
+y = pd.DataFrame({
+  'key': [1, 2, 2, 3],
+  'val_y': ['y1', 'y2', 'y3', 'y4'] })
+many_to_many = x.merge(y, on='key', 
+                          how='left')
+
+```
+:::
+
+::::
+
+- In practice, it is better to avoid the many-to-many join.
+
+## Joining `DataFrames` with `merge()`
+### Defining the key columns
+
+:::{.nonincremental}
+- If the left and right columns do not have the same name for the key variables, we can use the `left_on` and `right_on` parameters instead.
+
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+x = pd.DataFrame({
+  'key_x': [1, 2, 3],
+  'val_x': ['x1', 'x2', 'x3']
+})
+```
+:::
+
+::: {.column width="50%"}
+
+```{.python}
+y = pd.DataFrame({
+  'key_y': [1, 2],
+  'val_y': ['y1', 'y2'] })
+
+keys_xy = 
+  x.merge(y, left_on = 'key_x', 
+             right_on = 'key_y', 
+             how = 'left')
+```
+:::
+::::
+
+
+
+## Joining `DataFrames` with `merge()`
+
+
+Let's do Part 2 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
+
+
+# **Data Concatenation** {background-color="#1c4982"}
+
+
+## Data Concatenation
+:::{.nonincremental}
+-	Concatenation involves combining multiple `DataFrames` by adding rows or columns. This method is useful:
+	  - When merging datasets that were split into parts; 
+	  - When appending new data to an existing dataset.
+
+- Let's consider the following example DataFrames:
+
+```{.python}
+df1 = pd.read_csv('https://bcdanl.github.io/data/concat_1.csv')
+df2 = pd.read_csv('https://bcdanl.github.io/data/concat_2.csv')
+df3 = pd.read_csv('https://bcdanl.github.io/data/concat_3.csv')
+```
+
+
+- We will be working with `.index` and `.columns` in this Section.
+```{.python}
+df1.index
+df1.columns
+```
+
+:::
+
+## Data Concatenation
+###  Add Rows  
+
+:::{.nonincremental}
+
+- Concatenating the `DataFrames` on top of each other uses the `concat()` method. 
+  
+```{.python}
+row_concat = pd.concat([df1, df2, df3])
+```
+
+:::
+
+- All of the `DataFrames` to be concatenated are passed in a `list`.
+  - `pd.concat( [DataFrame_1, DataFrame_2, ... , DataFrame_N] )`
+  
+  
+## Data Concatenation
+###   Add Columns  
+
+:::{.nonincremental}
+
+- Concatenating *columns* is very similar to concatenating *rows*. 
+  - The main difference is the `axis` parameter in the `concat()` method. 
+  - The default value of `axis` is `0` (or `axis = "index"`), so it will concatenate data in a row-wise fashion. 
+  - If we pass `axis = 1` (or `axis = "columns"`) to the function, it will concatenate data in a column-wise manner.
+  
+  
+```{.python}
+pd.concat([df1, df2, df3], axis = "columns")
+pd.concat([df1, df2, df3], axis = "columns", ignore_index = True)  
+```
+
+- `ignore_index=True` to reset the column indices
+
+:::
+
+
+
+## Data Concatenation
+###  Add a Series?  
+:::{.nonincremental}
+
+- Let's consider a new `Series` and concatenate it with `df1`:
+```{.python}
+# create a new row of data
+new_row_series = pd.Series(['n1', 'n2', 'n3', 'n4'])
+
+# attempt to add the new row to a DataFrame
+df = pd.concat([df1, new_row_series])
+```
+
+-  Not only did our code not append the values as a row, but it also created a new column completely misaligned with everything else.
+  - Why?
+
+:::
+
+
+## Data Concatenation
+###  Add a Series?
+
+:::{.nonincremental}
+
+- To fix the problem, we need turn our `Series` into a `DataFrame`.
+  - This `DataFrame` contains one row of data, and the column names are the ones the data will bind to.
+
+```{.python}
+new_row_df = pd.DataFrame(
+  # note the double brackets to create a "row" of data
+  data =[ ["n1", "n2", "n3", "n4"] ],
+  columns = df1.columns,
+)
+
+df = pd.concat([df1, new_row_df])
+```
+
+:::
+
+
+- How about this?
+  - `pd.concat([df1, new_row_series], axis = 1)`
+  
+  
+
+<!-- ## Concatenate with Different Indices -->
+<!-- ### What would happen when the column indices are not aligned? -->
+<!-- :::{.nonincremental} -->
+
+<!-- - Let’s modify our `DataFrames` as follows. -->
+<!-- ```{.python} -->
+<!-- # rename the columns of our DataFrames -->
+<!-- df1.columns = ['A', 'B', 'C', 'D'] -->
+<!-- df2.columns = ['A', 'F', 'G', 'H'] -->
+<!-- df3.columns = ['A', 'C', 'F', 'H'] -->
+<!-- ``` -->
+
+<!-- -  If we try to concatenate these `DataFrames` as we did, the `DataFrames` now do much more than simply stack one on top of the other. -->
+<!-- ```{.python} -->
+<!-- pd.concat([df1, df2, df3]) -->
+<!-- pd.concat([df1, df2, df3], join ='inner') # keep only the common columns -->
+<!-- ``` -->
+
+:::
+
+
+<!-- ## Concatenate with Different Indices   -->
+
+<!-- :::{.nonincremental} -->
+
+
+
+<!-- - If we use the `DataFrames` that have columns in common, only the columns that all of them share will be returned. -->
+<!-- ```{.python} -->
+<!-- pd.concat([df1, df3], join ='inner',  ignore_index =False) -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+
+<!-- ## Concatenate with Different Indices   -->
+<!-- ### What would happen when the row indices are not aligned? -->
+<!-- :::{.nonincremental} -->
+
+<!-- - Let’s modify our `DataFrames` as follows. -->
+<!-- ```{.python} -->
+<!-- # re-indexing the rows of our DataFrames -->
+<!-- df1.index = [0, 1, 2, 3] -->
+<!-- df2.index = [4, 5, 6, 7] -->
+<!-- df3.index = [0, 2, 5, 7] -->
+<!-- ``` -->
+
+<!-- - When we concatenate along `axis="columns"` `(axis=1`), the new `DataFrames` will be added in a column-wise fashion and matched against their respective row indices. -->
+
+<!-- ```{.python} -->
+<!-- pd.concat([df1, df2, df3], axis = "columns") -->
+<!-- pd.concat([df1, df3], axis ="columns", join='inner') # keep only the common rows -->
+<!-- ``` -->
+
+
+:::
+
+
+
+## Data Concatenation
+
+Let's do Part 3 of [**Classwork 7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-07.html)!
+
+
+
+

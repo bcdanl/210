@@ -1,0 +1,834 @@
+---
+title: Homework 4
+subtitle: Python `selenium`, APIs, & Pandas Basics
+date: 2025-04-10
+from: markdown+emoji
+format:
+  html:
+    code-fold: true
+execute: 
+  eval: false
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+
+```{r}
+#| include: false
+#| eval: true
+
+library(tidyverse)
+```
+
+
+
+# Descriptive Statistics
+
+The following provides the descriptive statistics for each part of the Homework 4:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-hw4-stat.csv")
+DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
+```
+
+<br>
+
+
+# Direction
+
+- Please submit your **Python Script** for **Part 1 and Part 2 in Homework 4** to Brightspace with the name below:
+
+  - `danl_210_hw4_LASTNAME_FIRSTNAME.py`\
+  ( e.g., `danl_210_hw4_choe_byeonghak.py` )
+
+- The due is April 18, 2025, 10:30 A.M.
+
+- Please send Prof. Choe an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
+
+<br>
+
+# Part 1. Data Collection
+
+## Question 1
+- Go to the following webpage:
+[https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page](https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page)
+
+- Provide a Python Selenium code to download all the MS Excel files in the webpage above.
+  - Please make sure that you do not download any PDF files.
+
+
+```{python}
+# %%
+# =============================================================================
+# Setup
+# =============================================================================
+
+# import pandas as pd
+# import numpy as np
+# import os
+# from selenium.webdriver.chrome.service import Service
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+import time
+import random
+
+# Optional: Set your desired download directory
+  # Default download directory is usually "Download"
+download_dir = '/Users/bchoe/My Drive/suny-geneseo/spring2025/lecture-code/data'
+
+chrome_options = Options()
+chrome_options.add_experimental_option("prefs", {
+    "download.default_directory": download_dir,
+    "download.prompt_for_download": False,
+    "download.directory_upgrade": True,
+    "safebrowsing.enabled": True  # Allow downloads without warnings
+})
+
+driver = webdriver.Chrome(options=chrome_options)
+url = 'https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page'
+driver.get(url)
+
+# %%
+# =============================================================================
+# Downloading only Excel files (.xlsx or .xls)
+# =============================================================================
+
+excel_files_1 = driver.find_elements(By.PARTIAL_LINK_TEXT, 'Download')
+excel_files_2 = driver.find_elements(By.PARTIAL_LINK_TEXT, 'M')
+excel_files = excel_files_1 + excel_files_2
+
+for item in excel_files:
+    if ".x" in item.get_attribute('href'):
+        item.click()
+        time.sleep(random.uniform(.5, 1.25))
+```
+
+
+<br><br>
+
+
+## Question 2
+The `series_housing_price` DataFrame contains FRED series `id`s for the Home Price Index across 16 metropolitan statistical areas, each categorized into three price tiers: low, middle, and high.
+
+```{.python}
+url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
+series_housing_price = pd.read_csv(url)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+df <- read_csv('https://bcdanl.github.io/data/fred_api_series_housing_price.csv')
+DT::datatable(df)
+```
+
+<br>
+
+For more information regarding the index, please visit [Standard & Poor's](https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-corelogic-cs-home-price-indices.pdf). There is more information about home price sales pairs in the Methodology section. Copyright, 2016, Standard & Poor's Financial Services LLC. 
+
+
+Provide a Python code (**excluding your FRED API key**) to construct the following DataFrame:
+
+<!-- ```{.python} -->
+<!-- url = 'https://bcdanl.github.io/data/home_price_index_2025_01_01.csv' -->
+<!-- home_price = pd.read_csv(url) -->
+<!-- ``` -->
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+df <- read_csv('https://bcdanl.github.io/data/home_price_index_2025_01_01.csv')
+DT::datatable(df)
+```
+
+<br>
+
+-	Note that the `id` variable in the `series_housing_price` DataFrame corresponds to the `series_id` key used in the parameter dictionary (`param_dicts`) used for making requests to the FRED API.
+	
+- To iterate over the `id` values in the  `series_housing_price` DataFrame, you can convert the variable to a list using `.tolist()`:
+
+```{.python}
+for val in series_housing_price['id'].tolist():
+   # do something with val
+```
+
+
+- Below replaces 'Home Price Index (' with '' (empty string) in the `title` column:
+
+```{.python}
+df_all['title'] = df_all['title'].str.replace('Home Price Index (', '')
+```
+
+
+- The `title` column can split into the `tier` and `city` variables using the following code:
+
+```{.python}
+# Split the 'title' column into two new variables, 'ranking' and 'title'
+# by the first occurrence of " Tier) for ". 
+
+# expand=True tells pandas to return the results in a DataFrame
+  # If expand were False, the result would be a Series of lists.
+
+# Use \) to escape the closing parenthesis, which has special meaning in regex
+df_all[['tier', 'city']] = df_all['title'].str.split(' Tier\) for ', expand=True)  
+```
+
+
+- The DataFrame is sorted first by `state`, then by `city` within each `state`, then by `date` in descending order within each `city`, and finally by `tier` within each `city`-`date` group.
+  - To sort observations in a custom order (like Low, Middle, High), you can convert the `tier` variable to a categorical variable with an explicit order, and then sort.
+
+```{.python}
+df = pd.DataFrame({
+    'tier': ['Middle', 'High', 'Low', 'Middle', 'Low'],
+    'city': ['NY', 'LA', 'CHI', 'SF', 'SEA']
+})
+
+tier_order = ['Low', 'Middle', 'High']
+df['tier'] = pd.Categorical(df['tier'], categories=tier_order, ordered=True)
+
+df_sorted = df.sort_values('tier')
+```
+
+<br>
+
+Making requests to the FRED API
+```{python}
+import requests
+import pandas as pd
+
+url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
+series_housing_price = pd.read_csv(url)
+
+api_key = 'YOUR_API_KEY'
+endpoint = "series/observations"
+url = "https://api.stlouisfed.org/"
+
+df_all = pd.DataFrame()
+for val in series_housing_price['id'].tolist():
+    params = {
+      'api_key': api_key, 
+      'file_type': 'json',
+      'series_id': f'{val}'    
+    }
+    response = requests.get(url + "fred/" + endpoint, 
+                            params = params)
+    
+    # Convert JSON response to Python dictionary.
+    fred = response.json() 
+    
+    # Extract the "observations" list element.
+    df = pd.DataFrame( fred['observations'] )
+    df = df[['date', 'value']]
+    df['id'] = val
+    df_all = pd.concat([df_all, df], ignore_index=True)
+
+```
+
+<br>
+
+Cleaning raw data
+```{python}
+# Join
+df_all = df_all.merge(df_housing, on = 'id', how = 'left')
+
+# String operations
+df_all['title'] = df_all['title'].str.replace('Home Price Index (', '')
+df_all[['tier', 'city']] = df_all['title'].str.split(' Tier\) for ', expand=True)
+df_all[['city', 'state']] = df_all['city'].str.split(', ', expand=True)
+
+# Selecting variables
+df_all = df_all[['city', 'state', 'tier', 'date', 'value']]
+
+# Renaming
+df_all = df_all.rename( columns = { "value": "home_price_index" } )
+
+# Converting Data Types
+df_all = df_all.astype({'value': 'float',
+                        'date': 'datetime64[ns]'})
+tier_order = ['Low', 'Middle', 'High']  # your desired order
+df_all['tier'] = pd.Categorical(df_all['tier'], categories=tier_order, ordered=True)
+
+# Sorting
+df_all = df_all.sort_values(['state', 'city', 'date', 'tier'],
+                            ascending = [True, True, False, True])
+
+# Exporting DataFrame as a CSV file
+df_all.to_csv("PATHNAME_OF_df_all.csv",
+              index=False)
+```
+
+
+
+<br><br><br>
+
+# Part 2. Pandas Basics
+
+```{.python}
+import pandas as pd
+import numpy as np
+```
+
+
+
+The following describes the context of DataFrame in Part 2.
+
+[Open Payments](https://openpaymentsdata.cms.gov), which is managed by the Centers for Medicare & Medicaid Services (CMS), is a national disclosure program created by the Affordable Care Act (ACA). The program promotes transparency and accountability by helping consumers understand the financial relationships between pharmaceutical and medical device industries, physicians, and non-physician practitioners (NPP). Non-physician practitioners (NPPs) collectively refers to physician assistants, nurse practitioners, clinical nurse specialists, certified registered nurse anesthetists/anesthesiologists and certified nurse-midwives provider types. 
+
+These financial relationships may include consulting fees, research grants, travel reimbursements, and payments made from the industry to medical practitioners. It is important to note that financial ties between the health care industry and health care providers do not necessarily indicate an improper relationship.
+
+- Let us consider the CMS' Open Payments data for selected cities in **New York state** in **year 2022**, the `cms_ny_2022` DataFrame:
+
+```{.python}
+cms_ny_2022 = pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-all.zip')
+```
+
+## Variable Description
+
+|variable       |type     |description    |
+|:--------------|:---------|:--------------|
+|`Record_ID`    |numeric | Unique identifier for a transaction between a manufacturer and a physician or an NPP |
+|`Month`        |numeric |Month          |
+|`Day`          |numeric   |Year           |
+|`Amount_of_Payment`  |numeric | US dollar amount of payment to a physician or NPP          |
+|`Product`         |chracter    |An indicator showing if the product is a `Drug`, `Device`, `Biological`, or `Medical Supply`.         |
+|`Product_Manufacturer`         |chracter    |Manufacturer making the payment to a physician/NPP |
+|`NPI` |numeric    |National Provider Identifier, a unique identification number for a physician/NPP receiving the payment |
+|`Physician_or_NPP`    |chracter    |An indicator showing if the recipient of the payment is a physician or non-physician practitioner (NPP) |
+|`First_Name` |chracter    |First name of physician/NPP in New York state |
+|`Last_Name`   |chracter    |Last name of physician/NPP in New York state |
+|`City`    |chracter    |City of the physician/NPP in New York state |
+|`Type`       |chracter    |Type of physician/NPP (e.g., `Medical Doctor`, `Doctor of Optometry`, `Nurse Practitioner`, `Physician Assistant`, and more) |
+|`Taxonomy`    |chracter    |Standardized taxonomy of medical service provider (e.g., `Allopathic & Osteopathic Physicians`, `Chiropractic Providers`, `Dental Providers`, `Physician Assistants & Advanced Practice Nursing Providers`, and more)    |
+|`Specialty`   |chracter    |A specialty chosen within the standardized taxonomy (e.g., `Psychiatry & Neurology`, `Physician Assistant`, `Chiropractor`, `Dentist`, `Family Medicine`, `Neurological Surgery`, and more) |
+|`Specialty_Detail`   |chracter    |Detail in the specialty if any (e.g., `Family`, `Gastroenterology`, `Cardiovascular Disease`, `Neurology`, `Psychiatry`, and more) |
+
+
+- Note that each physician/NPP corresponds to one single `Specialty_Detail` value.
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+cms_ny_2022 <- read_csv('/Users/bchoe/My Drive/lecture-data/cms-2022-cities-all.csv')
+```
+
+```{r}
+#| results: asis
+#| echo: false
+#| eval: true
+
+rmarkdown::paged_table(cms_ny_2022)
+```
+
+<br>
+
+## Question 3
+- Write a Python code to convert the **string** type `Physician_or_NPP` variable into the **category** type variable.
+
+```{r}
+cms_ny_2022['Physician_or_NPP'] = cms_ny_2022['Physician_or_NPP'].astype('category')
+
+```
+
+
+<br>
+
+## Question 4
+- Write a Python code to replace the **NaN** value of the `Specialty_Detail` variable with the value of the `Specialty` variable.
+  - For example, the following shows that
+    - All **NaN** values in the `Specialty_Detail` variable, where the `Specialty` is **Physician Assistant**, are replaced with **Physician Assistant**.
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+cms_ny_2022 <- cms_ny_2022 |> 
+  mutate(Specialty_Detail = ifelse(is.na(Specialty_Detail), Specialty, Specialty_Detail))
+
+df <- cms_ny_2022 |> 
+  mutate(Specialty_Detail = ifelse(is.na(Specialty_Detail), Specialty, Specialty_Detail)) |> 
+  select(Specialty, Specialty_Detail) |> 
+  filter(Specialty == Specialty_Detail, Specialty == "Physician Assistant")
+
+rmarkdown::paged_table(df)
+```
+
+
+`np.where()`
+```{python}
+q4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]
+q4['Specialty_Detail'] = np.where(q4['Specialty_Detail'].isna(),
+                                  q4['Specialty'],
+                                  q4['Specialty_Detail']
+                                  )
+
+```
+
+`fillna()`
+```{r}
+q4 = cms_ny_2022[['Specialty', 'Specialty_Detail']]
+q4['Specialty_Detail']=q4['Specialty_Detail'].fillna(q4['Specialty'])
+```
+
+<br>
+
+## Question 5
+Write a Python code to count the number of transactions in which the payment amount (i.e., `Amount_of_Payment`) falls in the top 10% of all payments in the DataFrame. 
+
+
+
+```{python}
+top10pct = cms_ny_2022['Amount_of_Payment'].quantile(.9)
+cms_ny_2022[ cms_ny_2022['Amount_of_Payment'] > top10pct].shape[0]
+```
+
+<br>
+
+
+
+## Question 6
+Write a Python code to identify the city or cities with the highest number of non-missing values in the `Specialty_Detail` variable of the `cms_ny_2022` DataFrame.
+
+
+
+```{python}
+(
+ cms_ny_2022[ ~cms_ny_2022['Specialty_Detail'].isna() ]['City']
+ .value_counts()
+ .reset_index()
+ .nlargest(1, 'count', keep="all")
+ )
+```
+
+<br>
+
+
+## Question 7
+- Write a Python code to count the number of occurrences of each unique value in `Specialty_Detail` for each unique value in `Taxonomy`.
+  - For example, the following displays the number of occurrences of each unique value in `Specialty_Detail` for the **Dental Providers** `Taxonomy` value.
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+df <- cms_ny_2022 |> 
+  filter(Taxonomy == 'Dental Providers') |> 
+  group_by(Specialty_Detail) |> 
+  count()
+
+rmarkdown::paged_table(df)
+```
+
+
+
+```{python}
+(
+ cms_ny_2022[['Taxonomy', 'Specialty_Detail']]
+ .value_counts()
+ .reset_index()
+ .sort_values(['Taxonomy', 'Specialty_Detail'])
+ )
+```
+
+<br>
+
+
+
+## Question 8
+- Write a Python code to count the number of unique `Specialty_Detail` values for the value **"Dental Providers"** in `Taxonomy`.
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+df <- cms_ny_2022 |> 
+  filter(Taxonomy == "Dental Providers") |> 
+  summarise(n_unique = n_distinct(Specialty_Detail))
+
+rmarkdown::paged_table(df)
+
+```
+
+
+
+```{python}
+(
+ cms_ny_2022[cms_ny_2022['Taxonomy'] == "Dental Providers"]['Specialty_Detail']
+ .nunique()
+ )
+```
+
+
+```{python}
+(
+ cms_ny_2022[cms_ny_2022['Taxonomy'] == "Dental Providers"]['Specialty_Detail']
+ .value_counts()
+ .shape[0]
+ )
+```
+
+<br>
+
+
+## Question 9
+- Write a Python code (1) to count the number of missing values and (2) to calculate mean, standard deviation, minimum, first quartile, median, third quartile, and maximum of the `Amount_of_Payment` variable for the value **Dermatology** in the `Specialty` variable.
+
+
+
+```{python}
+(
+ cms_ny_2022[cms_ny_2022['Specialty'] == "Dermatology"][['Amount_of_Payment']]
+ .info()
+ )
+```
+
+
+```{python}
+x = cms_ny_2022[cms_ny_2022['Specialty'] == "Dermatology"]['Amount_of_Payment'].isna()
+sum(x)
+```
+
+
+```{python}
+(
+ cms_ny_2022[cms_ny_2022['Specialty'] == "Dermatology"]['Amount_of_Payment']
+ .describe()
+ )
+```
+
+<br>
+
+
+## Question 10
+- Write a Python code to replicate the following DataFrame, which calculates (1) the number of physicians in each city, (2) the number of NPPs in each city, (3) the number of physicians and NPPs in each city, and (4) the percentage of physicians and NPPs in each city, as shown below.
+  - Ensure that the sum of the percentages of physicians and NPPs within each city is 100.
+  - Ensure that the observations are sorted by `Total_Count` and `City` in descending and ascending orders, respectively.
+
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+df <- cms_ny_2022 |> 
+  select(City, Physician_or_NPP, NPI) |> 
+  distinct() |> 
+  group_by(City, Physician_or_NPP) |> 
+  summarise(count = n()) |> 
+  mutate(Total_Count = sum(count),
+            Percent = round(100 * count / Total_Count, 2)) |> 
+  arrange(-Total_Count, City)
+
+rmarkdown::paged_table(df, options = list(rows.print = nrow(df)))
+
+```
+
+
+<br>
+Using join
+```{python}
+df = (
+      cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+      .drop_duplicates()[['City', 'Physician_or_NPP']]
+      .value_counts()
+      .reset_index()
+      )
+
+df_1 = (
+        cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+        .drop_duplicates()['City']
+        .value_counts()
+        .reset_index()
+        .rename( columns = {'count' : 'Total_Count'})
+        )
+
+df = (
+      df
+      .merge(df_1, on = 'City', how = 'left')
+      .sort_values(['Total_Count', 'Physician_or_NPP'], ascending = [False, True])
+      )
+      
+df['Percent'] = 100 * df['count'] / df['Total_Count']
+```
+
+<br>
+
+Using for-loop with dictionary container
+```{python}
+cms_ny_2022.shape[0]
+cms_ny_2022['NPI'].nunique()
+
+df = (
+ cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+ .drop_duplicates()[['City', 'Physician_or_NPP']]
+ .value_counts()
+ .reset_index()
+ )
+
+d = {}
+for city in cms_ny_2022['City'].unique():
+    val = df[ df['City'] == city ]['count'].sum()
+    d[ city ] = val
+    
+df_tot = pd.DataFrame([d]).T.reset_index()
+df_tot.columns = ['City', 'Total_Count']
+
+df = df.merge(df_tot, on='City', how = 'left')
+df['Percent'] = 100 * df['count'] / df['Total_Count']
+df = df.sort_values(['Total_Count', 'City'], ascending = [False, True])
+```
+
+
+<br>
+
+Group operation with `groupby()`
+```{python}
+df_grouped = (
+ cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+ .drop_duplicates()
+ .groupby(['City', 'Physician_or_NPP'])
+ .size()  # number of observations in each group
+ .reset_index(name='count')
+ )
+
+df_grouped['Total_Count'] = df_grouped.groupby('City')['count'].transform('sum')
+df_grouped['Percent'] = (100 * df_grouped['count'] / df_grouped['Total_Count'])
+df_grouped = df_grouped.sort_values(['Total_Count', 'City'], ascending = [False, True])
+```
+
+
+<br>
+
+Group operation with `assign()` and `lambda`
+```{python}
+df_grouped = (
+    cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+    .drop_duplicates()
+    .groupby(['City', 'Physician_or_NPP'])
+    .size()
+    .reset_index(name = 'count')
+    .assign(
+        Total_Count = lambda df: df.groupby('City')['count'].transform('sum'),
+        Percent = lambda df: 100 * df['count'] / df['Total_Count']
+    )
+    .sort_values(['Total_Count', 'City'], ascending=[False, True])
+)
+
+
+```
+
+<br>
+
+
+## Question 11
+- Write a Python code to calculate:
+  - The total `Amount_of_Payment` the `Product_Manufacturer` **AbbVie Inc.** paid to physicians and non-physician practitioners (NPPs) in `Cities` of **Rochester**, **Buffalo**, and **Syracuse**.
+  - How many times the `Product_Manufacturer` **AbbVie Inc.** paid to physicians and non-physician practitioners (NPPs) in  in `Cities` of **Rochester**, **Buffalo**, and **Syracuse**.
+
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+df_producer_city <- cms_ny_2022 |> 
+  filter(City %in% c('Rochester', 'Buffalo', 'Syracuse'),
+         Product_Manufacturer == "AbbVie Inc.") |> 
+  summarise(Total_Amount_of_Payment = round(sum(Amount_of_Payment, na.rm = T), 2),
+            count = n())
+
+rmarkdown::paged_table(df_producer_city)
+```
+
+
+<br>
+
+```{python}
+(
+ cms_ny_2022.query(
+     'Product_Manufacturer == "AbbVie Inc." & City.isin(["Rochester", "Buffalo", "Syracuse"])'
+     )['Amount_of_Payment']
+ .sum()
+ )
+```
+
+
+<br>
+
+```{python}
+(
+ cms_ny_2022.query(
+     'Product_Manufacturer == "AbbVie Inc." & City.isin(["Rochester", "Buffalo", "Syracuse"])'
+     )
+ .shape[0]
+ )
+```
+
+<br>
+
+
+## Question 12
+- Consider the following two DataFrames, `cms_ny_2022_npi` and `cms_ny_2022_records`:
+
+```{.python}
+cms_ny_2022_npi = pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+cms_ny_2022_npi <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-npi.csv')
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+rmarkdown::paged_table(cms_ny_2022_npi)
+
+```
+-	`cms_ny_2022_npi`: This DataFrame is created from `cms_ny_2022` by selecting only the columns `NPI`, `Physician_or_NPP`, `First_Name`, `Last_Name`, `City`, `Type`, `Taxonomy`, `Specialty`, and `Specialty_Detail.` 
+  - In addition, it contains only unique observations (i.e., there are no duplicate rows).
+
+
+
+```{.python}
+cms_ny_2022_records = pd.read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')
+```
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+cms_ny_2022_records <- read_csv('https://bcdanl.github.io/data/cms-2022-cities-records.csv')
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+rmarkdown::paged_table(cms_ny_2022_records)
+
+```
+
+-	`cms_ny_2022_records`: This DataFrame is derived from `cms_ny_2022` by including every observation but only retaining the columns `Record_ID`, `Month`, `Day`, `Amount_of_Payment`, `Product`, `Product_Manufacturer`, and `NPI`.
+
+
+- Write a Python code to create the `cms_ny_2022` DataFrame by using the `cms_ny_2022_npi` and `cms_ny_2022_records` DataFrames. 
+
+
+<br>
+
+Below is the many-to-many join. Therefore, the `cms_ny_2022_new` DataFrame has more observations than `cms_ny_2022`.
+```{python}
+cms_ny_2022_new = cms_ny_2022_records.merge(cms_ny_2022_npi, on = 'NPI', how = 'left')
+```
+
+
+<br>
+
+This happens because `NPI` variable in the `cms_ny_2022_npi` DataFrame has duplicate values.
+
+```{python}
+# Dividing `cms_ny_2022_npi` into the two DataFrames
+cms_ny_2022_npi_dup = cms_ny_2022_npi[cms_ny_2022_npi['NPI'].duplicated(keep=False)].sort_values('NPI')
+cms_ny_2022_npi_unique = cms_ny_2022_npi[~cms_ny_2022_npi['NPI'].duplicated(keep=False)]
+
+# Creating a DataFrame with only non-duplicate values in NPI variable:
+cms_ny_2022_npi_dup_to_unique = cms_ny_2022_npi_dup.drop_duplicates(subset=['NPI'], keep='first')
+cms_ny_2022_npi_unique_all = pd.concat([cms_ny_2022_npi_unique, cms_ny_2022_npi_dup_to_unique])
+
+# Below can match the number of observations in cms_ny_2022, 
+# but may not match values in non-NPI variables in cms_ny_2022_npi
+cms_ny_2022_new2 = cms_ny_2022_records.merge(cms_ny_2022_npi_unique_all, on = 'NPI', how = 'left')
+
+# To replicate cms_ny_2022, we need to create a new key variable that uniquely identifies observations in `cms_ny_2022_npi`.
+```
+
+
+<br>
+
+## Question 13
+- Write a Python code to create the following DataFrame, `City_Physician_or_NPP`, which counts the number of physicians and the non-physician practitioners (NPPs) in each city.
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+City_Physician_or_NPP <- cms_ny_2022 |>
+  distinct(City, Physician_or_NPP, NPI) |> 
+  count(City, Physician_or_NPP) |>    
+  pivot_wider(names_from = Physician_or_NPP, values_from = n)
+
+
+rmarkdown::paged_table(City_Physician_or_NPP, options = list(rows.print = nrow(City_Physician_or_NPP)))
+```
+
+
+<br>
+
+
+Below is correct:
+```{python}
+City_Physician_or_NPP = (
+    cms_ny_2022[['City', 'Physician_or_NPP', 'NPI']]
+    .drop_duplicates()[['City', 'Physician_or_NPP']]
+    .value_counts()
+    .reset_index()
+    .pivot(index = 'City',
+           columns = 'Physician_or_NPP',
+           values = 'count'
+           )
+    .reset_index()
+    )
+```
+
+
+<br>
+
+Below is incorrect:
+```{python}
+City_Physician_or_NPP = (
+    cms_ny_2022[['City', 'Physician_or_NPP']]
+    .value_counts()
+    .reset_index()
+    .pivot(index = 'City',
+           columns = 'Physician_or_NPP',
+           values = 'count'
+           )
+    .reset_index()
+    )
+```
+
+

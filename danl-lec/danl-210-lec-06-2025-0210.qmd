@@ -1,0 +1,249 @@
+---
+title: Lecture 6
+subtitle: "`pandas` Basics - Loading Data"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-10
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+
+# **Workflow for File Management** {background-color="#1c4982"}
+
+
+## Workflow for File Management  
+- Save your Jupyter Notebook for each class to a dedicated directory in your local laptop, Google Drive, or a new GitHub repo.
+  - Go to **File** and select **Save ...**/
+  ( e.g., `danl-210-lec-08-2025-0210.ipynb`)
+
+
+
+
+## Workflow for File Management
+### Your Personal Website
+
+- In your local website project directory, avoid having
+  - Any file that exceeds 30 MB in size;
+  - `.ipynb` files you do not use for your website.
+
+- Your website project directory should include files specifically dedicated to your website.
+
+
+## Workflow for File Management
+### Jupyter Notebooks for Your Webpage
+
+1. Run Python code cells in a Jupyter Notebook (`.ipynb`) on **Google Colab**. Then, download the Jupyter Notebook from Google Colab.
+2. Use the **Finder/File Explorer** to move the Jupyter Notebook file (`.ipynb`) to your **website project directory**. (If it is for a blog post, create a subdirectory in the `posts` directory, and move it to the subdirectory.)
+3. Edit `_quarto.yml` properly. Save the changes by clicking the floppy disk icon (💾).
+4. On **Terminal**, run `quarto render`.
+5. Once `quarto render` completes, **view the `index.html`** in your **website working directory** to see the HTML output.
+6. After confirming the HTML output, use the 3-step `git` commands (`add`-`commit`-`push`) on **Terminal** to update your online website.
+
+
+
+
+# **Pandas Basics and Remaining Course Contents** {background-color="#1c4982"}
+
+## Pandas Basics
+### Learning Objectives
+
+- Loading `DataFrame` with `read_csv()`
+- Getting a Summary with `info()` and `describe()`
+- Selecting and Relocating Variables with `[]`
+- Counting Values with `value_counts()`, `nunique()`, and `count()`
+- Sorting with `sort_values()` and `sort_index()`
+- Indexing with `set_index()` and `reset_index()`
+- Locating Observations and Values  with `loc[]` and `iloc[]`
+- Mathematical & Vectorized Operations
+- Adding, Removing, and Renaming Variables
+- Converting Data Types with `.astype()`
+- Filtering Observations
+
+
+## Pandas Basics
+### Learning Objectives
+
+- Dealing with Missing Values
+- Dealing wit Duplicates
+- Reshaping `DataFrames` with `.melt()` and `.pivot()`
+- Joining `DataFrames` with `.merge()`
+- Concatenating `DataFrames`
+
+
+
+## Data Collection
+### Learning Objectives
+
+- Scrapping web tables with `.read_html()`
+- Scrapping web data with `selenium`
+- Collecting web data with Application Programming Interfaces (APIs)
+
+
+## Pandas Group Operations & Data Visualization
+### Learning Objectives
+
+- Using Custom Functions and Anonymous Functions
+- Grouping `DataFrames` with `groupby()`, `.agg()`, and `.transform()`
+- Visualizing `DataFrames` with `seaborn`
+
+
+
+
+# **Loading Data** {background-color="#1c4982"}
+
+
+## `Series` and `DataFrame`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
+</p>
+
+- `Series`:	a collection of a one-dimensional object containing a sequence of values.
+  
+- `DataFrame`: a collection of `Series` columns with an *index*.
+
+
+## Importing a data set with `read_csv()`
+
+:::{.nonincremental}
+- A CSV (comma-separated values) is a plain-text file that uses a comma to separate values (e.g., [nba.csv](https://bcdanl.github.io/data/nba.csv)).
+
+- The CSV is widely used for storing data, and we will use this throughout the module.
+
+- We use the `read_csv()` function to load a CSV data file.
+
+```{.python}
+import pandas as pd
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv")
+type(nba)
+nba
+```
+
+
+:::
+
+- The `DataFrame` is the workhorse of the pandas library and the data structure.
+
+
+
+## Importing a data set with `read_csv()`
+
+
+```{.python}
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+nba
+```
+
+- We can use the `parse_dates` parameter to coerce the values into `datetimes`.
+
+
+
+## Loading Data
+### Mounting Google Drive on Google Colab
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+from google.colab import drive, files
+drive.mount('/content/drive')
+files.upload()
+```
+
+- `drive.mount('/content/drive')`
+  - To mount your Google Drive on Google colab:
+- `files.upload()`
+  - To initiate uploading a file on Google Drive:
+
+:::
+::: {.column width="50%"}
+- To find a pathname of a CSV file in Google Drive:
+  - Click :file_folder: from the sidebar menu
+  - `drive` :arrow_right: `MyDrive` ...
+  - Hover a mouse cursor on the CSV file
+  - Click the vertical dots
+  - Click **"Copy path"**
+
+:::
+::::
+
+
+## Loading Data
+### Colab's Interactive DataFrame Display
+
+
+```{.python}
+from google.colab import data_table
+data_table.enable_dataframe_formatter()  # Enabling an interactive DataFrame display
+nba
+```
+
+- Colab includes an extension that renders pandas `DataFrames` into interactive displays.
+
+
+## Loading Data
+### Another Interactive DataFrame Display
+
+
+```{.python}
+# !pip install itables
+from itables import init_notebook_mode, show
+init_notebook_mode(all_interactive=False)
+show(nba)
+```
+
+- `itables` provides similar interactive displays for `DataFrames`.
+  - For a blog post, `itables`'s interactive displays may work better than `google.colab`' ones.
+
+
+

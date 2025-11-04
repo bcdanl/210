@@ -1,0 +1,306 @@
+---
+title: Lecture 11
+subtitle: "`pandas` Basics - Missing Values; Duplicates"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-21
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+
+
+# **Dealing with Missing Values** {background-color="#1c4982"}
+
+
+## Dealing with Missing Values
+:::{.nonincremental}
+- Let's read `employment.csv` as `emp`.
+
+```{.python}
+import pandas as pd
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table
+data_table.enable_dataframe_formatter()
+
+emp = pd.read_csv("https://bcdanl.github.io/data/employment.csv")
+```
+
+
+:::
+
+
+
+## Dealing with Missing Values
+
+- Pandas often marks (1) missing text values and (2) missing numeric values with a `NaN` (not a number); 
+  - It also marks missing datetime values with a `NaT` (not a time).
+
+<!-- - We can use several pandas methods to isolate observations with either missing or non-missing values in a given variable. -->
+
+
+
+## Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+emp["Team"].isna()
+emp["Start Date"].isna()
+```
+
+- The `isna()` method returns a Boolean `Series` in which `True` denotes that an observation's value is missing.
+  - Is a value of a variable "XYZ" missing?
+
+
+## Dealing with Missing Values: The `isna()` and `notna()` methods
+
+```{.python}
+# Below two are equivalent.
+emp["Team"].notna()
+~emp["Team"].isna()
+```
+
+- The `notna()` method returns the inverse `Series`, one in which `True` indicates that an observation's value is present.
+
+- We use the tilde symbol (`~`) to invert a Boolean `Series`.
+
+- **Q**. How can we pull out employees with non-missing `Team` values?
+
+
+
+
+## Dealing with Missing Values: The `value_counts(dropna = False)` method
+
+```{.python}
+emp["Mgmt"].isna().sum()
+emp["Mgmt"].value_counts()
+emp["Mgmt"].value_counts(dropna = False)
+```
+
+- One way to missing data counts is to use the `isna().sum()` on a `Series`.
+  - `True` is 1 and `False` is 0.
+
+- Another way to get missing data counts is to use the `.value_counts()` method on a `Series`. 
+  - If we use the `dropna = False` option, we can also get a missing value count.
+
+
+
+
+
+## Dealing with Missing Values: The `dropna()` method
+
+```{.python}
+emp.dropna()
+```
+
+- The `dropna()` method removes observations that hold any `NaN` or `NaT` values.
+
+
+
+## Dealing with Missing Values: The `dropna()` method with `how`
+
+```{.python}
+emp.dropna(how = "all")
+```
+- We can pass the `how` parameter an argument of `"all"` to remove observations in which all values are missing.
+
+- Note that the `how` parameter’s default argument is `"any"`. 
+
+
+
+## Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Gender"])
+```
+
+- We can use the `subset` parameter to target observations with a missing value in a specific variable.
+  - The above example removes observations that have a missing value in the `Gender` variable.
+
+
+
+
+## Dealing with Missing Values: The `dropna()` method with `subset`
+
+```{.python}
+emp.dropna(subset = ["Start Date", "Salary"])
+```
+
+- We can also pass the `subset` parameter a list of variables.
+
+
+
+
+<!-- ## Dealing with Missing Values: The `dropna()` method with `thresh` -->
+
+<!-- ```{.python} -->
+<!-- emp.dropna(thresh = 4) -->
+<!-- ``` -->
+
+<!-- - The `thresh` parameter specifies a minimum threshold of non-missing values that an observation must have for pandas to keep it. -->
+
+
+
+
+# **Dealing with Duplicates** {background-color="#1c4982"}
+
+## Dealing with Duplicates with the `duplicated()` method
+
+::: {.nonincremental}
+- Missing values are a common occurrence in messy data sets, and so are duplicate values.
+
+:::
+
+```{.python}
+emp["Team"].duplicated()
+```
+
+- The `duplicated()` method returns a Boolean `Series` that identifies duplicates in a variable.
+
+
+## Dealing with Duplicates with the `duplicated()` method
+
+```{.python}
+emp["Team"].duplicated(keep = "first")
+emp["Team"].duplicated(keep = "last")
+~emp["Team"].duplicated()
+```
+
+- The `duplicated()` method’s `keep` parameter informs pandas which duplicate occurrence to keep. 
+  - Its default argument, `"first"`, keeps the first occurrence of each duplicate value.
+  - Its argument, `"last"`, keeps the last occurrence of each duplicate value.
+
+<!-- - **Q**. How can we keep observations with the first occurrence of a value in the **Team** variable? -->
+
+
+
+
+
+## Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates()
+```
+
+
+- The `drop_duplicates()` method removes observations in which all values are equal to those in a previously encountered observations.
+
+
+
+
+## Dealing with Duplicates with the `drop_duplicates()` method
+
+
+::: {.nonincremental}
+- Below is an example of the `drop_duplicates()` method:
+
+:::
+
+```{.python}
+# Sample DataFrame with duplicate observations
+data = {
+    'Name': ['John', 'Anna', 'John', 'Mike', 'Anna'],
+    'Age': [28, 23, 28, 32, 23],
+    'City': ['New York', 'Paris', 'New York', 'London', 'Paris']
+}
+
+# pd.DataFrame( Series, List, or Dict ) creates a DataFrame
+df = pd.DataFrame(data)  
+df_unique = df.drop_duplicates()
+```
+
+
+
+
+## Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"])
+```
+
+- We can pass the `drop_duplicates()` method a `subset` parameter with a list of columns that pandas should use to determine an observation's uniqueness.
+
+  - The above example finds the first occurrence of each unique value in the Team variable.
+
+
+
+
+## Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Gender", "Team"])
+```
+
+- The above example uses a combination of values across the `Gender` and `Team` variables to identify duplicates.
+
+
+## Dealing with Duplicates with the `drop_duplicates()` method
+
+```{.python}
+emp.drop_duplicates(subset = ["Team"], keep = "last")
+emp.drop_duplicates(subset = ["Team"], keep = False)
+```
+
+- The `drop_duplicates()` method also accepts a `keep` parameter. 
+  - We can pass it an argument of `"last"` to keep the observations with each duplicate value’s last occurrence.
+  - We can pass it an argument of `False` to exclude all observations with duplicate values.
+  
+- **Q**. What does `emp.drop_duplicates(subset = ["First Name"], keep = False)` do?
+
+- **Q**. Find a subset of all employees with a First Name of "Douglas" and a Gender of "Male". Then check which "Douglas" is in the DataFrame `emp.drop_duplicates(subset = ["Gender", "Team"])`.
+
+
+
+## Pandas Basics
+
+Let's do Questions 7-8 in [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
+
+
+

@@ -1,0 +1,782 @@
+---
+title: Homework 2
+subtitle: Pandas Basics
+date: 2025-02-19
+from: markdown+emoji
+format:
+  html:
+    code-fold: true
+execute: 
+  eval: true
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+
+
+```{r}
+#| echo: false
+
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+
+# Descriptive Statistics
+
+The following provides the descriptive statistics for each part of the Homework 2:
+
+```{r}
+#| echo: false
+#| eval: true
+sum <- readr::read_csv("https://bcdanl.github.io/data/spring-2025-danl-210-hw2-stat.csv")
+DT::datatable(sum, options = list(pageLength = nrow(sum)), rownames = FALSE)
+```
+
+<br>
+
+```{python}
+#| code-fold: false
+import pandas as pd
+from itables import init_notebook_mode, show # for displaying an interactive DataFrame
+```
+
+# Direction
+
+- Please submit your **Jupyter Notebook** for **Part 1, Part 2, and Part 3 in Homework 2** to Brightspace with the name below:
+
+  - `danl_210_hw2_LASTNAME_FIRSTNAME.ipynb`\
+  ( e.g., `danl_210_hw2_choe_byeonghak.ipynb` )
+
+- The due is March 3, 2025, 10:30 A.M.
+
+- Please send Prof. Choe an email ([bchoe@geneseo.edu](mailto::bchoe@geneseo.edu)) if you have any questions.
+
+<br><br><br>
+
+
+<br><br><br>
+
+
+
+# Part 1. NYC Payroll
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/nyc-payroll.png" width="400px">
+</p>
+
+<br>
+
+Below is `nyc_payroll` `DataFrame` that reads the file `nyc_payroll.csv` containing data of how the New York City’s budget is being spent on salary and overtime pay for all municipal employees (Source: [NYC OpenData](https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e/about_data)).
+
+```{python}
+#| code-fold: false
+nyc_payroll = pd.read_csv('https://bcdanl.github.io/data/nyc_payroll_2024.csv')
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/nyc_payroll_2024.csv'),
+                       options = list(rows.print = 25))
+```
+
+
+## Variable Description
+- `Fiscal_Year`: Fiscal Year;
+- `Payroll_Number`:	Payroll Number;
+- `Agency_Name`: The Payroll agency that the employee works for;
+- `Last_Name`: Last name of employee;
+- `First_Name`: First name of employee;
+- `Mid_Init`: Middle initial of employee;
+- `Agency_Start_Date`: Date which employee began working for their current agency;
+- `Work_Location_Borough`: Borough of employee's primary work location;
+- `Title_Description`: Civil service title description of the employee;
+- `Leave_Status_as_of_June_30`: Status of employee as of the close of the relevant fiscal year;
+- `Base_Salary`: Base Salary assigned to the employee;
+- `Pay_Basis`: Lists whether the employee is paid on an hourly, per diem or annual basis;
+- `Regular_Hours`: Number of regular hours employee worked in the fiscal year;
+- `Regular_Gross_Paid`: The amount paid to the employee for base salary during the fiscal year;
+- `OT_Hours`: Overtime Hours worked by employee in the fiscal year;
+- `Total_OT_Paid`: Total overtime pay paid to the employee in the fiscal year;
+- `Total_Other_Pay`: Includes any compensation in addition to gross salary and overtime pay, ie Differentials, lump sums, uniform allowance, meal allowance, retroactive pay increases, settlement amounts, and bonus pay, if applicable.
+<br><br>
+
+## Question 1
+Select "`First_Name`", "`Last_Name`", "`Base_Salary`", and "`Total_OT_Paid`", then sort the DataFrame with these selected variables by "`Base_Salary`" in descending order and display the top 10 entries.
+
+
+
+*Answer*
+
+```{python}
+# 1. .sort_values() with head()
+(
+  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]
+  .sort_values('Base_Salary', ascending = False)
+  .head(10)
+)
+
+# 2. nlargest()
+(
+  nyc_payroll[['First_Name', 'Last_Name', 'Base_Salary', 'Total_OT_Paid']]
+  .nlargest(10, 'Base_Salary', keep = 'all')
+)
+```
+
+
+<br><br>
+
+
+## Question 2
+Using `set_index()`, change the DataFrame's index to "`Last_Name`", then locate the data for a specific last name, say **"BROWN"**, and display their "`Agency_Name`", "`Base_Salary`", and "`Total_OT_Paid`".
+
+
+
+*Answer*
+```{python}
+(
+  nyc_payroll
+  .set_index('Last_Name')
+  .loc["BROWN"][['Agency_Name', 'Base_Salary', 'Total_OT_Paid']]
+)
+```
+
+
+<br><br>
+
+
+## Question 3
+Find the 5 employees with the highest "`Regular_Gross_Paid`" and calculate their average "`OT_Hours`". Also, reset the index if you have changed it previously.
+
+
+
+*Answer*
+```{python}
+(
+  nyc_payroll
+  .nlargest(5, 'Regular_Gross_Paid', keep = "all")['OT_Hours']
+  .mean()
+)
+```
+
+<br><br>
+
+
+
+
+## Question 4
+Sort the DataFrame by "`Fiscal_Year`" and "`Total_Other_Pay`" in descending order, then set "`First_Name`" as the index and use the `loc` accessor to retrieve the "`Total_Other_Pay`" for a specific first name, say **"MICHAEL"**.
+
+*Answer*
+```{python}
+(
+    nyc_payroll
+    .sort_values(['Fiscal_Year', 'Total_Other_Pay'], ascending=False)
+    .set_index('First_Name')
+    .loc["MICHAEL"][['Total_Other_Pay']]
+)
+```
+
+<br><br>
+
+
+## Question 5
+Sort the DataFrame first by "`Work_Location_Borough`" alphabetically, and then by "`Total_Compensation`" (sum of "`Base_Salary`" and "`Total_OT_Paid`") in descending order within each borough.
+
+
+*Answer*
+```{python}
+#| code-fold: false
+nyc_payroll.columns
+```
+
+```{python}
+nyc_payroll['Total_Compensation'] = nyc_payroll['Base_Salary'] + nyc_payroll['Total_OT_Paid']
+
+(
+    nyc_payroll
+    .sort_values(['Work_Location_Borough', 'Total_Compensation'], ascending=[True, False])
+    [['Work_Location_Borough', 'Total_Compensation',     # This is to relocate variables
+      'Fiscal_Year', 'Payroll_Number', 'Agency_Name', 'Last_Name',
+       'First_Name', 'Mid_Init', 'Agency_Start_Date',
+       'Title_Description', 'Leave_Status_as_of_June_30', 'Base_Salary',
+       'Pay_Basis', 'Regular_Hours', 'Regular_Gross_Paid', 'OT_Hours',
+       'Total_OT_Paid', 'Total_Other_Pay']]
+)
+```
+
+<br><br>
+
+
+
+
+## Question 6
+- Select employees who have "OT_Hours" greater than **0**, calculate their "`OT_Rate`" ("`Total_OT_Paid`" / "`OT_Hours`"), and then find the employee with the highest "`OT_Rate`". Display their full name and "`OT_Rate`".
+
+
+*Answer*
+```{python}
+q6 = (
+    nyc_payroll
+    .query("OT_Hours > 0")
+)
+
+q6['OT_Rate'] = q6['Total_OT_Paid'] / q6['OT_Hours']
+
+(
+    q6
+    .nlargest(1, "OT_Rate", keep = 'all')
+    [['First_Name', 'Last_Name', 'OT_Rate']]
+)
+```
+
+<br><br>
+
+
+
+
+## Question 7
+Create a new DataFrame that includes employees from the **"DEPARTMENT OF EDUCATION ADMIN"** agency where the variables are "`First_Name`", "`Last_Name`", "`Title_Description`", "`Base_Salary`", and "`Total_OT_Paid`". Additionally, include a new variable "`Total_Compensation`" which is the sum of "`Base_Salary`" and "`Total_OT_Paid`".
+
+
+
+*Answer*
+```{python}
+(
+    nyc_payroll
+    .query("Agency_Name == 'DEPARTMENT OF EDUCATION ADMIN'")
+    [['First_Name', 'Last_Name', 'Title_Description', 'Base_Salary', 'Total_OT_Paid', 'Total_Compensation']]
+)
+```
+
+<br><br>
+
+## Question 8
+
+- How many employees have a "`Base_Salary`" within the top 10% of the DataFrame?
+
+
+*Answer*
+```{python}
+top10 = nyc_payroll['Base_Salary'].quantile(.9)
+top10
+
+nyc_payroll[ nyc_payroll['Base_Salary'] >= top10 ].shape[0]
+```
+
+<br><br>
+
+
+## Question 9
+Filter the DataFrame for employees who have "`OT_Hours`" greater than **0** but less than **100**, and their "`Leave_Status_as_of_June_30`" is **"ACTIVE"**.
+
+
+*Answer*
+```{python}
+(
+    nyc_payroll
+    .query("OT_Hours > 0 & OT_Hours < 100 & Leave_Status_as_of_June_30 == 'ACTIVE'")
+)
+```
+
+<br><br>
+
+
+
+
+## Question 10
+Find the unique job titles in the **"DEPARTMENT OF EDUCATION ADMIN"** agency and count how many there are.
+
+
+*Answer*
+```{python}
+# 1. value_counts()
+(
+    nyc_payroll
+    .query('Agency_Name == "DEPARTMENT OF EDUCATION ADMIN"')['Title_Description']
+    .value_counts()
+    .reset_index()
+    .shape[0]
+)
+```
+
+
+```{python}
+# 2. nunique()
+(
+    nyc_payroll
+    .query('Agency_Name == "DEPARTMENT OF EDUCATION ADMIN"')['Title_Description']
+    .nunique()
+)
+```
+
+
+
+<br><br>
+
+
+## Question 11
+- Identify the employee(s) with the highest "`Total_OT_Paid`" in the DataFrame. 
+  - Include their "`First_Name`", "`Last_Name`", and "`Total_OT_Paid`".
+
+
+*Answer*
+```{python}
+(
+    nyc_payroll
+    .nlargest(1, 'Total_OT_Paid', keep="all")[['First_Name', 'Last_Name', 'Total_OT_Paid']]
+)
+```
+
+<br><br>
+
+
+## Question 12
+- What percentage of the values is missing for each variable?
+
+
+*Answer*
+```{python}
+nyc_payroll.info()
+```
+
+```{python}
+nyc_payroll['Payroll_Number'].isna().sum() / nyc_payroll.shape[0]
+```
+
+
+```{python}
+for var in nyc_payroll.columns:
+  print(var, ':', 100 * nyc_payroll[var].isna().sum() / nyc_payroll.shape[0])
+```
+
+<br><br>
+
+
+
+## Question 13
+- Fill missing values in the "`Last_Name`" variable with "`UNKNOWN`".
+
+
+*Answer*
+```{python}
+nyc_payroll['Last_Name'] = nyc_payroll['Last_Name'].fillna("UNKNOWN")
+```
+
+<br><br><br>
+
+
+# Part 2. NFL 
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/nfl.png" width="300px">
+</p>
+
+<br>
+
+- The following is the DataFrame for Part 2. 
+
+```{python}
+#| code-fold: false
+NFL2022_stuffs = pd.read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv'))
+```
+
+- `NFL2022_stuffs` is the DataFrame that contains information about NFL games in year 2022, in which the unit of observation is a single play for each drive in a NFL game.
+
+
+## Variable description
+
+- `play_id`: Numeric play identifier that when used with `game_id` and `drive` provides the unique identifier for a single play
+- `game_id`: Ten digit identifier for NFL game.
+- `drive`: Numeric drive number in the game.
+- `week`: Season week.
+- `posteam`: String abbreviation for the team with possession.
+- `qtr`: Quarter of the game (5 is overtime).
+- `half_seconds_remaining`: Numeric seconds remaining in the half.
+- `down`: The down for the given play. 
+  - Basically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it). 
+  - If you make 10 yards then you get another set of four downs.
+- `pass`: Binary indicator if the play was a pass play.
+- `wp`: Estimated winning probability for the `posteam` given the current situation at the start of the given play.
+
+<br>
+
+## Question 14
+In DataFrame, `NFL2022_stuffs`, remove observations for which the value of `posteam` is missing.
+
+*Answer*: 
+
+```{python}
+NFL2022_stuffs.shape[0]
+
+NFL2022_stuffs = NFL2022_stuffs.dropna(subset = ['posteam'])
+NFL2022_stuffs.shape[0]
+```
+
+<br>
+
+
+## Question 15
+- Calculate the mean value of `pass` for the **BUF** `posteam` when all the following conditions hold:
+  1. `wp` is greater than 20% and less than 75%;
+  2. `down` is less than or equal to **2**; and
+  3. `half_seconds_remaining` is greater than **120**.
+
+*Answer*: 
+
+```{python}
+(
+    NFL2022_stuffs
+    .query('wp > .2 & wp < .75 & down <= 2 & half_seconds_remaining > 120 & posteam == "BUF"')['pass']
+    .mean()
+)
+```
+
+<br>
+
+
+## Question 16
+- Consider the following DataFrame, `NFL2022_epa`:
+
+```{python}
+#| code-fold: false
+NFL2022_epa = pd.read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv'))
+```
+
+### Variable Description for `NFL2022_epa`
+
+  - `play_id`: Numeric play identifier that when used with `game_id` and `drive` provides the unique identifier for a single play
+  - `game_id`: Ten digit identifier for NFL game.
+  - `drive`: Numeric drive number in the game.
+  - `posteam`: String abbreviation for the team with possession.
+  - `passer`: Name of the player who passed a ball to a receiver by initially taking a three-step drop and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks)
+  - `receiver`: Name of the receiver.
+  - `epa`: Expected points added (EPA) by the `posteam` for the given play.
+
+<br>
+
+- Create the following DataFrame, `NFL2022_stuffs_EPA`, that includes
+  1. All the variables and the observations in the DataFrame, `NFL2022_stuffs`;
+  2. The variables, `passer`, `receiver`, and `epa`, from the DataFrame, `NFL2022_epa` by joining the two DataFrames.
+
+- In the resulting DataFrame, `NFL2022_stuffs_EPA`, please remove observations with `NaN` in `passer` after the join.
+
+
+```{r}
+#| echo: false
+#| eval: true
+
+library(tidyverse)
+NFL2022_stuffs <- read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
+NFL2022_epa <- read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')
+
+DT::datatable(NFL2022_stuffs %>% 
+  left_join(NFL2022_epa) %>% 
+  filter(!is.na(passer))
+)
+```
+
+
+*Answer*:
+
+```{python}
+#| code-fold: false
+NFL2022_stuffs.columns
+```
+
+```{python}
+#| code-fold: false
+NFL2022_epa.columns
+```
+
+
+```{python}
+NFL2022_stuffs_EPA = (
+    NFL2022_stuffs
+    .merge(NFL2022_epa,
+           on = ['play_id', 'game_id', 'drive', 'posteam'],
+           how = 'left')
+    .dropna(subset = ['passer'])
+)
+
+NFL2022_stuffs_EPA
+```
+
+
+
+<br><br><br>
+
+
+
+# Part 3. Mr. Trash Wheel
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/trashwheel.png" width="600px">
+</p>
+
+<br>
+
+
+Mr. Trash Wheel is a semi-autonomous trash interceptor that is placed at the end of a river, stream or other outfall.
+
+Far too lazy to chase trash around the ocean, Mr. Trash Wheel stays put and waits for the waste to flow to him.
+
+Sustainably powered and built to withstand the biggest storms, Mr. Trash Wheel uses a unique blend of solar and hydro power to pull hundreds of tons of trash out of the water each year.
+
+See more [how Mr. Trash Wheel works](https://www.mrtrashwheel.com/technology/).
+
+
+- The following is the DataFrame for Part 3.
+
+```{python}
+#| code-fold: false
+trashwheel = pd.read_csv('https://bcdanl.github.io/data/trashwheel.csv')
+```
+
+```{r}
+#| results: asis
+#| eval: true
+#| echo: false
+
+library(readr)
+trashwheel <- read_csv('https://bcdanl.github.io/data/trashwheel.csv')
+rmarkdown::paged_table(trashwheel ,
+                       options = list(rows.print = 20,
+                                      cols.print = 5,
+                                      pages.print = 0,
+                                      paged.print = F
+                                      )) 
+```
+
+
+## Variable Description
+
+|variable       |type     |description    |
+|:--------------|:---------|:--------------|
+|`Name`           |string |Name of the Trash Wheel           |
+|`Dumpster`	      |integer	|Dumpster number over time; The Trash Wheel can have multiple dumpsters in a day |
+|`Month`          |string |Month          |
+|`Year`           |integer   |Year           |
+|`Date`           |string |Date (Daily)           |
+|`Weight`         |float    |Weight in tons         |
+|`Volume`         |integer    |Volume in cubic yards          |
+|`PlasticBottles` |float    |Number of plastic bottles |
+|`Polystyrene`    |float    |Number of polystyrene items    |
+|`CigaretteButts` |float    |Number of cigarette butts |
+|`GlassBottles`   |float    |Number of glass bottles   |
+|`PlasticBags`    |float    |Number of plastic bags    |
+|`Wrappers`       |float    |Number of wrappers       |
+|`SportsBalls`    |float    |Number of sports balls    |
+|`HomesPowered`   |integer    |Homes Powered - Each ton of trash equates to on average 500 kilowatts of electricity.  An average household will use 30 kilowatts per day.   |
+
+<br>
+
+- 
+
+<br>
+
+## Meet the Mr. Trash Wheel Family
+
+<br>
+
+::::{.columns}
+:::{.column width="50%"}
+![Mister Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-mister.png){width=50%}
+:::
+
+:::{.column width="50%"}
+- Installed: May 9, 2014
+- Location: Jones Falls stream, Inner Harbor, Baltimore, MD
+
+:::
+
+::::
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Professor Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-professor.png){width=50%}
+:::
+
+:::{.column width="50%"}
+- Installed: December 4, 2016
+- Location: Harris Creek, Canton neighborhood, Baltimore, MD
+
+:::
+::::
+
+
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Captain Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-captain.png){width=50%}
+:::
+
+:::{.column width="50%"}
+<br>
+
+- Installed: June 5, 2018
+- Location: Masonville Cove, Baltimore, MD
+
+:::
+::::
+
+
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Gwynnda Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-gwynnda.png){width=50%}
+:::
+
+:::{.column width="50%"}
+<br>
+
+  - Installed: June 3, 2021
+  - Location: Gwynns Falls, West Baltimore, MD
+
+:::
+::::
+
+
+
+
+<br>
+
+
+<br>
+
+## Question 17
+- Reshape the `trashwheel` DataFrame into a DataFrame called `trashwheel_long` that includes variables for "`Name`", "`Date`", "`Dumpster`", "`Trash_Type`", and "`Number`". 
+  - The "`Trash_Type`" variable should indicate the type of trash from the original DataFrame, and "`Number`" should contain the corresponding values. 
+  - Finally, sort `trashwheel_long` by "`Name`", "`Date`", "`Dumpster`", and "`Trash_Type`" in ascending order.
+  - The following displays the `trashwheel_long` DataFrame:
+  
+```{r}
+#| results: asis
+#| eval: true
+#| echo: false
+
+library(lubridate)
+library(dplyr)
+library(tidyr)
+library(readr)
+
+trashwheel <- read_csv('https://bcdanl.github.io/data/trashwheel.csv')
+
+trashwheel_long <- trashwheel |> 
+  select(Name, Date, Dumpster, PlasticBottles:SportsBalls) |> 
+  pivot_longer(
+    cols = PlasticBottles:SportsBalls,
+    values_to = "Number",
+    names_to = "Trash_Type"
+  ) |> 
+  mutate(Date = mdy(Date)) |>  # Converts "7/19/18" to a Date object
+  arrange(Name, Date, Dumpster, Trash_Type)
+
+DT::datatable(trashwheel_long, options = list(
+  pageLength = 20
+)) 
+```
+
+*Answer:*
+
+```{python}
+trashwheel.columns
+```
+
+```{python}
+trashwheel['Date'] = trashwheel['Date'].astype('datetime64[ns]')
+
+
+trashwheel_long = (
+    trashwheel[['Name', 'Date', 'Dumpster',
+                'PlasticBottles', 'Polystyrene', 'CigaretteButts', 'GlassBottles',
+                'PlasticBags', 'Wrappers', 'SportsBalls']]
+    .melt(
+        id_vars=['Name', 'Date', 'Dumpster'],
+        var_name= 'Trash_Type',
+        value_name= 'Number'
+    )
+    .sort_values(['Name', 'Date', 'Dumpster', 'Trash_Type'])
+)
+
+trashwheel_long
+```
+
+
+<br><br><br>
+
+# Part 4. Jupyter Notebook Blogging
+
+<br>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/spotify.png" width="400px">
+</p>
+
+<br>
+
+Below is `spotify` `DataFrame` that reads the file `spotify_all.csv` containing data of Spotify users' playlist information (Source: [Spotify Million Playlist Dataset Challenge](https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge)).
+
+```{.python}
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+
+rmarkdown::paged_table(readr::read_csv('https://bcdanl.github.io/data/spotify_all.csv'),
+                       options = list(rows.print = 25))
+```
+
+<br>
+
+## Variable Description
+
+- `pid`: playlist ID; unique ID for playlist
+- `playlist_name`: a name of playlist
+- `pos`: a position of the track within a playlist (starting from 0)
+- `artist_name`: name of the track’s primary artist
+- `track_name`: name of the track
+- `duration_ms`: duration of the track in milliseconds
+- `album_name`: name of the track’s album
+
+<br>
+
+
+- Write a blog post about your favorite artist(s) in the `spotify` DataFrame using Jupyter Notebook, and add it to your online blog.
+  - In your blog post, utilize counting, sorting, indexing, and filtering methods.
+  
+<br>
+

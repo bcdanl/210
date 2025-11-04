@@ -1,0 +1,293 @@
+---
+title: Lecture 7
+subtitle: "`pandas` Basics - Getting a Summary of Data; Selecting Variables; Counting Methods; Sorting Methods"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2025-02-12
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+## `nba` DataFrame
+:::{.nonincremental}
+- Let's read the **nba.csv** file as `nba`:
+
+:::
+
+```{.python}
+# Below is to import the pandas library as pd
+import pandas as pd 
+
+# Below is for an interactive display of DataFrame in Colab
+from google.colab import data_table  
+data_table.enable_dataframe_formatter()
+
+# Below is to read nba.csv as nba DataFrame
+nba = pd.read_csv("https://bcdanl.github.io/data/nba.csv",
+                  parse_dates = ["Birthday"])
+
+```
+
+
+
+# **Getting a Summary of Data** {background-color="#1c4982"}
+
+
+## DataFrame Terminologies: Variables, Observations, and Values
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
+</p>
+
+
+1. Each **variable** is a *column*.
+2. Each **observation** is a *row*.
+3. Each **value** is a *cell*.
+
+
+<!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
+
+<!-- - When we work with `DataFrame`, we mean a variable a column. -->
+
+
+
+## DataFrame Terminologies
+### Dot Operators, Methods, and Attributes
+
+#### Dot operator
+- The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### Method
+
+- A method (`DataFrame.METHOD()`) is a **function** that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
+  - e.g., `nba.info()`
+
+:::
+::: {.column width="50%"}
+#### Attribute
+
+- An attribute (`DataFrame.ATTRIBUTE`) is a **property** that provides information about the `DataFrame`'s structure or content without modifying it. 
+  - e.g., `nba.dtype`
+
+:::
+::::
+
+## Getting a Summary of a `DataFrame` with `.info()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba.info()    # method
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.shape     # attribute
+nba.dtypes    # attribute
+nba.columns   # attribute
+nba.count()   # method
+```
+:::
+
+::::
+
+- Every `DataFrame` object has a `.info()` method that provides a summary of a DataFrame:
+  - Variable names (`.columns`)
+  - Number of variables/observations (`.shape`)
+  - Data type of each variable (`.dtypes`)
+  - Number of non-missing values in each variable (`.count()`)
+    - Pandas often displays missing values as `NaN`.
+
+
+
+<!-- -  Since `.shape` is an **attribute** of the `DataFrame` object, and not a **function** or **method** of the `DataFrame` object, it does not have round parentheses after the period. -->
+
+
+
+## Getting a Summary of a `DataFrame` with `.describe()`
+
+```{.python}
+nba.describe()
+nba.describe(include='all')
+```
+
+
+- `.describe()` method generates **descriptive statistics** that summarize the central tendency, dispersion, and distribution of each variable. 
+  - It can also process `string`-type variables if specified explicitly (`include='all'`).
+
+
+
+
+# **Selecting Variables** {background-color="#1c4982"}
+
+## Selecting a Variable by its Name
+
+```{.python}
+nba_player_name_s = nba['Name']   # Series
+nba_player_name_s
+
+nba_player_name_df = nba[ ['Name'] ]   # DataFrame
+nba_player_name_df
+```
+
+- If we want only a specific variable from a `DataFrame`, we can access the variable with its name using squared brackets, `[ ]`.
+  - `DataFrame[ 'var_1' ]` 
+  - `DataFrame[ ['var_1'] ]`
+
+
+
+
+## Selecting Multiple Variables by their Names
+
+```{.python}
+nba_player_name_team = nba[ ['Name', 'Team'] ]
+nba_player_name_team
+```
+
+- In order to specify multiple variables by their names, we need to pass in a Python list between the square brackets.
+  - `DataFrame[ ['var_1', 'var_2', ... ] ]`
+  - This is also how we can relocate variables by the order specified in the list.
+
+
+## Selecting Multiple Variables with `select_dtypes()`
+
+
+```{.python}
+# To include only string variables
+nba.select_dtypes(include = "object")
+
+# To exclude string and integer variables
+nba.select_dtypes(exclude = ["object", "int"])
+```
+
+- We can use the `select_dtypes()` method to select columns based on their data types.
+  - The method accepts two parameters, `include` and `exclude`.
+
+
+# **Counting Methods** {background-color="#1c4982"}
+
+
+## Counting with `.count()` 
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+```{.python}
+nba['Salary'].count()
+nba[['Salary']].count()
+```
+:::
+
+::::
+
+- The `.count()` counts <u>the number of non-missing values</u> in a `Series`/`DataFrame`. 
+
+
+
+## Counting with `.value_counts()` 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba['Team'].value_counts()
+```
+:::
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].value_counts()
+```
+:::
+
+::::
+
+- The `.value_counts()` counts <u>the number of occurrences of each unique value</u> in a `Series`/`DataFrame`. 
+
+
+
+## Counting with `.nunique()` 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+nba[['Team']].nunique()
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+nba.nunique()
+```
+:::
+
+::::
+
+
+- The `.nunique()` counts <u>the number of unique values</u> in each variable in a `DataFrame`. 
+
+
+
+## Pandas Basics
+
+Let's do Questions 1-3 in [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+

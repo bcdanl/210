@@ -1,0 +1,511 @@
+---
+title: "Final Exam Practice"
+subtitle: "Data Wrangling with `pandas`"
+author: ""
+date: 2025-05-06
+
+toc: true
+toc-depth: 3
+toc-expand: true
+toc-title: Contents
+code-fold: true
+
+fig-width: 9
+fig-align: center
+
+execute:
+  echo: true
+  eval: false
+  message: false
+  warning: false
+
+language: 
+  code-summary: "Click to Check the Answer!"
+---
+```{r}
+#| include: false
+#| eval: true
+library(tidyverse)
+library(kableExtra)
+```
+
+
+# Part 1. Pandas with Mr. Trash Wheel Family
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/trashwheel.png" width="600px">
+</p>
+
+
+
+
+Mr. Trash Wheel is a semi-autonomous trash interceptor that is placed at the end of a river, stream or other outfall.
+
+Far too lazy to chase trash around the ocean, Mr. Trash Wheel stays put and waits for the waste to flow to him.
+
+Sustainably powered and built to withstand the biggest storms, Mr. Trash Wheel uses a unique blend of solar and hydro power to pull hundreds of tons of trash out of the water each year.
+
+See more [how Mr. Trash Wheel works](https://www.mrtrashwheel.com/technology/).
+
+
+- The following is the DataFrame for Part 1.
+
+```{python}
+#| code-fold: false
+#| eval: false
+#| echo: true
+
+import pandas as pd
+import numpy as np
+trashwheel = pd.read_csv('https://bcdanl.github.io/data/trashwheel.csv')
+```
+
+```{r}
+#| results: asis
+#| eval: true
+#| echo: false
+
+trashwheel <- read_csv('https://bcdanl.github.io/data/trashwheel.csv')
+rmarkdown::paged_table(trashwheel ,
+                       options = list(rows.print = 20,
+                                      cols.print = 5,
+                                      pages.print = 0,
+                                      paged.print = F
+                                      )) 
+```
+
+
+## Variable Description
+
+|variable       |type     |description    |
+|:--------------|:---------|:--------------|
+|`Name`           |string |Name of the Trash Wheel           |
+|`Dumpster`	      |integer	|Dumpster number over time; The Trash Wheel can have multiple dumpsters in a day |
+|`Month`          |string |Month          |
+|`Year`           |integer   |Year           |
+|`Date`           |string |Date (Daily)           |
+|`Weight`         |float    |Weight in tons         |
+|`Volume`         |integer    |Volume in cubic yards          |
+|`PlasticBottles` |float    |Number of plastic bottles |
+|`Polystyrene`    |float    |Number of polystyrene items    |
+|`CigaretteButts` |float    |Number of cigarette butts |
+|`GlassBottles`   |float    |Number of glass bottles   |
+|`PlasticBags`    |float    |Number of plastic bags    |
+|`Wrappers`       |float    |Number of wrappers       |
+|`SportsBalls`    |float    |Number of sports balls    |
+|`HomesPowered`   |integer    |Number of homes powered|
+
+- Each ton of trash equates to on average 500 kilowatts of electricity.
+- An average household will use 30 kilowatts per day.
+
+
+## Meet the Mr. Trash Wheel Family
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Mister Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-mister.png){width=50%}
+:::
+
+:::{.column width="50%"}
+- Installed: May 9, 2014
+- Location: Jones Falls stream, Inner Harbor, Baltimore, MD
+
+:::
+
+::::
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Professor Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-professor.png){width=50%}
+:::
+
+:::{.column width="50%"}
+- Installed: December 4, 2016
+- Location: Harris Creek, Canton neighborhood, Baltimore, MD
+
+:::
+::::
+
+
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Captain Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-captain.png){width=50%}
+:::
+
+:::{.column width="50%"}
+
+
+- Installed: June 5, 2018
+- Location: Masonville Cove, Baltimore, MD
+
+:::
+::::
+
+
+
+
+
+::::{.columns}
+:::{.column width="50%"}
+![Gwynnda Trash Wheel](https://bcdanl.github.io/lec_figs/trashwheel-gwynnda.png){width=50%}
+:::
+
+:::{.column width="50%"}
+
+
+  - Installed: June 3, 2021
+  - Location: Gwynns Falls, West Baltimore, MD
+
+:::
+::::
+
+
+## Question 1
+- Write code to count the number of observations in the `Name` variable.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+trashwheel['Name'].value_counts()
+```
+
+
+
+<br>
+
+
+
+## Question 2
+- Write code to convert 
+  - Data type of `Name` variable to `category`;
+  - Data type of `Month` variable to `category`; and
+  - Data type of `Date` variable to `datetimes` in the `trashwheel` DataFrame.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+trashwheel = (
+    trashwheel
+    .astype(
+        {
+            'Name':'category',
+            'Month':'category',
+            'Date':'datetime64',
+        }
+    )
+)
+```
+
+
+<br>
+
+
+
+## Question 3
+- Write Python code to replace **NaN** values in the `GlassBottles` variable with the mean within each `Year` group of the `trashwheel` DataFrame.
+
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+trashwheel['GlassBottles'] = (
+    trashwheel
+    .groupby('Year')['GlassBottles']
+    .transform(lambda x: x.fillna(x.mean()))
+)
+```
+
+
+
+<br>
+
+
+## Question 4
+- Write Python code to identify which Trash Wheel provided electricity to the greatest number of homes for each `Year`–`Month` combination.. 
+  - Please make sure your code manages any ties for the top values of `HomesPowered` while making selections.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+q4 = (
+    trashwheel
+    .groupby(['Name', 'Year', 'Month'])[['HomesPowered']]
+    .sum()
+    .reset_index()
+    .groupby(['Year', 'Month'])
+    .apply(lambda df: df.nlargest(1, 'HomesPowered', keep = "all"))
+    .reset_index(drop = True)
+)
+```
+
+
+
+<br>
+
+
+
+
+## Question 5
+- Each ton of trash equates to 500 kilowatts of electricity. 
+
+- Write code to determine the average monthly electricity supplied to homes by each Trash Wheel.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+q5 = (
+    trashwheel
+    .groupby(['Name', 'Year', 'Month'])[['Weight', 'HomesPowered']]
+    .sum()
+    .reset_index()
+    .assign(
+        electricity = lambda x: x['Weight'] * 500
+    )
+    .query('HomesPowered > 0') # optional
+)
+
+q5['avg_elec_home'] = q5['electricity'] / q5['HomesPowered']
+
+```
+
+
+
+<br><br>
+
+
+
+# Part 2. Pandas with NYC weather
+
+The `nyc_weather` DataFrame contains data for daily NYC weather in 2022 and 2023 from the National Centers for Environmental Information (NCEI) [https://www.ncdc.noaa.gov/cdo-web/webservices/v2](https://www.ncdc.noaa.gov/cdo-web/webservices/v2), observed from the weather stations in the NYC Metropolitan area.  
+
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+
+import pandas as pd
+import numpy as np
+nyc_weather = pd.read_csv('https://bcdanl.github.io/data/nyc_weather_2022_2023.csv')
+```
+
+
+```{r}
+#| results: asis
+#| eval: true
+#| echo: false
+
+nyc_weather <- read_csv('https://bcdanl.github.io/data/nyc_weather_2022_2023.csv')
+rmarkdown::paged_table(nyc_weather,
+                       options = list(rows.print = 20,
+                                      cols.print = 5,
+                                      pages.print = 0,
+                                      paged.print = F
+                                      )) 
+```
+
+
+| **Variable** | **Description** |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `year`      | The calendar year when the weather observation was recorded (values: 2022 or 2023).                                              |
+| `month`     | The calendar month when the weather observation was recorded (values: 1–12, where 1 = January, 12 = December).                  |
+| `day`       | The day of the month when the weather observation was recorded (values: 1–31, depending on the month).                          |
+| `id`   | The **unique identifier** of the weather station where the data was collected (e.g., `GHCND:US1CTFR0039`). This likely includes NYC area stations. |
+| `attributes`| Weather observation details, possibly including temperature, precipitation, wind, time, and quality flags. Likely needs parsing. |
+| `type`| Type of weather measurement (e.g., PRCP for precipitation, SNOW, SNWD) |
+| `weather_value`| Measured value for the given `type` (e.g., amount of precipitation in tenths of mm (0.1 mm)) |
+
+<br>
+
+
+
+## Question 6
+Using the `nyc_weather` DataFrame, write code to create the `weather` DataFrame containing only the observations where the `type` variable has one of the following values: '**PRCP**', '**SNOW**', '**SNWD**', '**TMIN**', '**TMAX**', '**AWND**', or '**TAVG**'.
+
+- Below explains what each value means:
+  - **PRCP**: Precipitation (tenths of mm)
+      -  **PRCP** covers any other form of moisture that falls to the ground (e.g., rain, snow, sleet, hail)
+  - **SNOW**: Snowfall (mm)
+  - **SNWD**: Snow depth (mm)
+  - **TMAX**: Maximum temperature (tenths of degrees C)
+  - **TMIN**: Minimum temperature (tenths of degrees C)
+  - **AWND**: Average daily wind speed (tenths of meters per second)
+  - **TAVG**: Average temperature (tenths of degrees C) 
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+weather =(
+      nyc_weather[
+        nyc_weather['type'].isin(['PRCP', 'SNOW', 'SNWD', 'TMIN', 'TMAX', 'AWND', 'TAVG'])
+        ]
+      )
+```
+
+
+<br><br>
+
+
+
+## Question 7
+Write code to calculate the monthly average `value` for each `type` at each weather station in the `weather` DataFrame.
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+q7 = (
+       weather.groupby(['id', 'type', 'year', 'month'])['weather_value']
+       .mean()
+       .reset_index(name = 'mean_value')
+       )
+```
+
+
+<br><br>
+
+
+
+## Question 8
+-	Write code to identify the names of the top 10 weather stations with the highest mean '**TMAX**' values in June, July, and August, respectively. (Here, top 10 refers to the stations with the hottest average temperatures.)
+-	Write code to identify the names of the top 10 weather stations with the lowest mean '**TMIN**' values in December, January, and February, respectively. (Here, top 10 refers to the stations with the coldest average temperatures.)
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+q8_tmax = (
+       weather
+       .query('month > 5 & month < 9')
+       .query('type == "TMAX"')
+       .groupby(['month', 'id'])
+       .agg(tmax_mean = ('weather_value', 'mean'))
+       .reset_index()
+       .groupby('month')
+       .apply(lambda x: x.nlargest(10, 'tmax_mean', keep = 'all'))
+       .reset_index(drop = True)
+       )
+
+q8_tmin = (
+       weather
+       .query('month == 11 | month == 1 | month == 2')
+       .query('type == "TMIN"')
+       .groupby(['month', 'id'])
+       .agg(tmin_mean = ('weather_value', 'mean'))
+       .reset_index()
+       .groupby('month')
+       .apply(lambda x: x.nsmallest(10, 'tmin_mean', keep = 'all'))
+       .reset_index(drop = True)
+       )
+```
+
+
+<br><br>
+
+
+
+
+## Question 9
+
+The `stations` DataFrame contains information about each weather station in the NYC area, including its `id` (**unique identifier** of the weather station), `name` (the name of the weather station, including its lo), `latitude`, `longitude`, and `elevation`.
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-fold: false
+
+stations = pd.read_csv('https://bcdanl.github.io/data/weather_stations.csv')
+```
+
+
+```{r}
+#| results: asis
+#| eval: true
+#| echo: false
+
+stations <- read_csv('https://bcdanl.github.io/data/weather_stations.csv')
+rmarkdown::paged_table(stations,
+                       options = list(rows.print = 20,
+                                      cols.print = 5,
+                                      pages.print = 0,
+                                      paged.print = F
+                                      )) 
+```
+
+
+- Write code to perform the following tasks:
+	-	Identify the names of the top 10 weather stations with the highest number of days with precipitation in each year.
+	    -	Determine how many days recorded measurable precipitation at the highest-ranked weather station each year.
+	-	For each of the top 10 weather stations in each year, generate a summary of descriptive statistics for precipitation values.
+
+
+
+```{python}
+#| eval: false
+#| message: false
+#| warning: false
+
+prcp_sorted = (
+       weather
+       .query('type == "PRCP"')
+       .query('weather_value > 0') 
+       .groupby(['year', 'id'])['type']
+       .size()
+       .reset_index(name = "n_days")
+       .merge(stations,
+              on = 'id',
+              how='left')
+       .sort_values('n_days', ascending = False)
+       .reset_index(drop=True)
+       )
+       
+top10stations = (
+    prcp_sorted
+    .groupby('year')
+    .apply(lambda df: df.nlargest(10, 'n_days', keep = 'all')['id'])
+    .reset_index()
+)
+
+
+top10prcp_summary = (
+    weather[weather['id'].isin(top10stations['id'])]
+    .query('type == "PRCP"')
+    .groupby(['id','year'])['weather_value']
+    .describe()
+    )
+```
+
+
+<br><br>
+
+
+
