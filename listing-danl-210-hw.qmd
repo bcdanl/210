@@ -1,13 +1,13 @@
 ---
-title: 'DANL 210 - Homework'
+title: '<font style="font-family:Optima"><b>DANL 210 - Homework</b></font>'
 date-modified: ""
 listing:
   contents: "danl-hw/*.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: 
-    - "title"
     - "date"
+    - "title desc"
   sort-ui: false
   page-size: 36
   
@@ -40,12 +40,3 @@ format:
         }
         </style>
 ---
-
-<style>
-/* Apply to .title only when it does NOT also have .listing-title */
-.title:not(.listing-title) {
-    font-family: Optima, sans-serif;
-    font-weight: bold;
-    font-size: 2em;  /* adjust as needed */
-}
-</style>

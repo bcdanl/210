@@ -10,7 +10,7 @@
   font-weight: normal;
   font-style: normal;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Palatino', 'Palatino Linotype', serif;
   font-weight: 400;
   color: #1c4982;
@@ -36,6 +36,12 @@ code.sourceCode {
 }
 
 a {
-  color: #628b41;
+  color: #3a9d23;        /* main link color  #628b41 */
+  font-weight: bold;
+  text-decoration: none; /* cleaner base */
 }
-
+a:hover, a:focus {
+  color: #1c4982;        /* darker shade on hover */
+  font-weight: bold;
+  text-decoration: underline;
+}

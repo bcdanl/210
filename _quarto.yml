@@ -3,7 +3,7 @@ project:
   output-dir: "."
   
 website:
-  title: Home
+  title: ""
   # favicon: img/favicon.ico
   description: 'A collection of data analytics by Byeong-Hak Choe'
   reader-mode: false
@@ -14,68 +14,46 @@ website:
     logo: img/geneseo-logo-squared.png
     pinned: true
     right:
-      # - text: Causal ML
-      #   href: danlml.qmd
-      # - text: Research
-      #   href: index-home.qmd
-
-      - text: Lecture
-        href: listing-danl-210-lec.qmd
-      - text: Classwork
-        href: listing-danl-210-cw.qmd
-      - text: Homework
-        href: listing-danl-210-hw.qmd
-      - text: Exam
-        href: listing-danl-210-ex.qmd
-      - text: Project
-        href: danl-rw/danl-210-project.qmd
-      
-      # - text: "Teaching {{< fa external-link >}}"
-      #   href: https://bcdanl.github.io
-      #   target: _blank
-      - text: Class Code
+      - icon: code-slash
+        text: Class Code
         href: https://github.com/bcdanl/210-code
         target: _blank
-      - text: Blog
-        href: blog-listing.qmd
       - text: " "
     
-  # sidebar:
-  #   title: "Welcome!"
-  #   logo: img/geneseo-logo-squared.png
-  #   style: docked
-  #   search: false
-  #   # collapse-level: 0
-  #   # pinned: true
-  #   # border: true
-  #   # type: light
-  #   contents:
-  #     - text: <a href="./index.html"><font size ="6" ><b>Welcome! </b></font><font size ="5" color="#194493"> <i class="fa fa-sun" aria-hidden="true"></i></font></a>
-  #     - text: &nbsp;
-  #     - text: <font size ="5" ><b>- Lecture </b></font><font size ="5" color="#194493">{{< fa solid laptop >}}</font>
-  #       href: listing-danl-210-lec.qmd
-  #     - text: &nbsp;
-  #     # - text: <font size ="5" ><b>- Q & A </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-  #     #   href: listing-danl-210-qa.qmd
-  #     # - text: &nbsp;
-  #     - text: <font size ="5" ><b>- Classwork </b></font><font size ="5" color="#194493">{{< fa solid keyboard >}}</font>
-  #       href: listing-danl-210-cw.qmd
-  #     - text: &nbsp;
-  #     - text: <font size ="5" ><b>- Homework </b></font><font size ="5" color="#194493">{{< fa solid level-up >}}</font>
-  #       href: listing-danl-210-hw.qmd
-  #     - text: &nbsp;
-  #     - text: <font size ="5" ><b>- Exam </b></font><font size ="5" color="#194493">{{< fa solid commenting >}}</font>
-  #       href: listing-danl-210-ex.qmd
-  #     - text: &nbsp;
-  #     - text: <font size ="5" ><b>- Project </b></font><font size ="5" color="#194493">{{< fa solid brain >}}</font>
-  #       href: danl-rw/danl-210-project.qmd
-  #     # - text: &nbsp;
-  #     # - text: <font size ="5" ><b>- Class Notes </b></font><font size ="5" color="#194493">{{< fa solid pencil >}}</font>
-  #     #   href: listing-danl-210-class.qmd
+  sidebar:
+    style: docked
+    search: false
+    collapse-level: 0
+    contents:
+      - text: 🏠 Home
+        href: index.qmd
+      - text: 📓 Syllabus
+        href: syllabus.qmd
+      - text: 🅱 Brightspace
+        href: http://brightspace.geneseo.edu/
+        target: _blank
+      
+      - text: 🚀 Lecture
+        href: listing-danl-210-lec.qmd
+      - text: ⌨️ Classwork
+        href: listing-danl-210-cw.qmd
+      - text: 💻 Homework
+        href: listing-danl-210-hw.qmd
+      - text: 📝 Exams
+        href: listing-danl-210-ex.qmd
+        
+      - section: 🗣️️ Project
+        contents:
+                
+      - section: 🗓️ Weeks
+        contents:
+          - text: Week 01
+            href: danl-wk/wk-01.qmd
+      
         
   page-footer: 
     border: false
-    center: "powered with github, quarto, and rstudio<br>byeong-hak choe, 2025"
+    center: "powered with github, quarto, and rstudio<br>byeong-hak choe, 2026"
     # foreground: dark
     # background: '#9b4e55' 
 
@@ -90,13 +68,15 @@ format:
   html: 
     grid:
       margin-width: 400px
-      sidebar-width: 275px
+      sidebar-width: 200px
     link-external-newwindow: true
     theme:
       light: [flatly]  # flatly litera sandstone 'assets/scss/light.scss'
       dark: [darkly, theme-dark.scss] # darkly cyborg slate solra superhero
+    include-in-header: 
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css"/>
     css: [styles.css, assets/css/font.css] # , font.css
     highlight-style: atom-one # espresso   tango
     mainfont:  sans-serif; serif; ui-sans-serif  # Gill Sans, sans-serif;
-    # include-after-body: [target-blank.html]
-
+    include-after-body: [sidebar-button-mobile.html]

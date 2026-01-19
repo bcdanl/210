@@ -1,7 +1,4 @@
 # system("quarto render")
-# quarto::quarto_render("listing-danl-210-lec.qmd")
-# quarto::quarto_render("listing-danl-210-cw.qmd")
-# quarto::quarto_render("listing-danl-210-hw.qmd")
 quarto::quarto_render("index.qmd")
 
 library(stringr)
@@ -12,24 +9,21 @@ system(paste("rm", shQuote("index.html")))
 # Sys.sleep(2)
 
 # Next lecture number & dates
-lec_dates <- c('0122', 
-               '0124', '0127', '0131',
-               '0203', 
-               '0210', '0212', '0214',
-               '0217', '0219', '0221',
-               '0224', '0226',
-               '0310', '0312', '0314',
-               '0409', '0425', '0430')
+lec_dates <- c('0825', '0827',
+               '0903', '0905',
+               '0917', '0929',
+               '1015', '1024',
+               '1103', '1105')
 lec_n <- length(lec_dates)
 
 lec_nos <- 1:lec_n
-lec_nos <- sprintf("%02d", lec_nos) 
+lec_nos <- sprintf("%02d", lec_nos)
 
 for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]
   lec_date <- lec_dates[i]
   
-  old_content <- str_c('./danl-lec/danl-210-lec-', lec_no, '-2025-', lec_date, '.html')
+  old_content <- str_c('./danl-lec/danl-101-lec-', lec_no, '-2025-', lec_date, '.html')
   new_content <- str_c('#', 
                        '" onclick="', 
                        "window.open(", 
@@ -44,3 +38,4 @@ for (i in 1:length(lec_nos)){
 
 writeLines(html_as_text, 
            "index.html")
+

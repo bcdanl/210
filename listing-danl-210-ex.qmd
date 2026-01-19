@@ -1,5 +1,5 @@
 ---
-title: 'DANL 210 - Exam'
+title: '<font style="font-family:Optima"><b>DANL 210 - Exams</b></font>'
 date-modified: ""
 listing:
   contents: "danl-ex/*.qmd"
@@ -10,8 +10,7 @@ listing:
     - "title"
   sort-ui: false
   page-size: 36
-
-# include-after-body: target-blank-td.html
+  
 page-layout: full
 comments: false
 # css: front.css
@@ -41,12 +40,3 @@ format:
         }
         </style>
 ---
-
-<style>
-/* Apply to .title only when it does NOT also have .listing-title */
-.title:not(.listing-title) {
-    font-family: Optima, sans-serif;
-    font-weight: bold;
-    font-size: 2em;  /* adjust as needed */
-}
-</style>

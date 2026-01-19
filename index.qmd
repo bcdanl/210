@@ -1,15 +1,16 @@
 ---
-title: 'DANL 210-01: Data Preparation and Management, Spring 2025'
-subtitle: '<div class=class="box-body buttons-text clearfix"><font size="5"><ul style="list-style-type: none;"><li><b>Instructor: Byeong-Hak Choe</b> &nbsp; <i class="fa fa-chevron-left" aria-hidden="true"></i><a href="mailto:bchoe@geneseo.edu" class="about-link" rel="" target=""><i class="bi bi-envelope"></i><span class="about-link-text"> <b>Email</b></span></a></span></a> | <a href="https://mylearning.suny.edu/d2l/home/1870149" class="about-link" rel="" target="_blank"><i class="bi bi-bootstrap"></i><span class="about-link-text"> <b>Brightspace</b></span></a> <i class="fa fa-chevron-right" aria-hidden="true"></i></li></ul></font></div>'
+title: '<font style="font-family:Optima"><b>DANL 210: Data Preparation and Management, Spring 2026</b></font>'
+subtitle: '<div class=class="box-body buttons-text clearfix"><font size="5"><ul style="list-style-type: none;"><li><b>Instructor: Byeong-Hak Choe</b> <b>(</b><a href="mailto:bchoe@geneseo.edu" class="about-link" rel="" target=""><i class="bi bi-envelope"></i><span class="about-link-text"> Email</span></a></span></a><b>)</b></li></ul></font></div>'
+
+date: ''
 date-modified: "" 
-author: ""
-page-layout: full
+# page-layout: full
 
 toc: false
 toc-title: ""
 toc-location: right
 comments: false
-# css: front.css
+# css: danl-wk/styles-wk.css
 from: markdown+emoji
 fig-align: center
 
@@ -20,6 +21,7 @@ listing:
     fields: [title, subtitle, date]
     sort: 
       - "date"
+      - "subtitle"
       - "title"
     sort-ui: false
     filter-ui: false
@@ -37,16 +39,6 @@ listing:
     page-size: 36
   - id: danl-210-hw
     contents: "danl-hw/danl-210*.qmd"
-    type: table
-    fields: [title, subtitle, date]
-    sort: 
-      - "title"
-      - "date"
-    sort-ui: false
-    filter-ui: false
-    page-size: 36
-  - id: danl-210-ex
-    contents: "danl-ex/danl-210*.qmd"
     type: table
     fields: [title, subtitle, date]
     sort: 
@@ -84,7 +76,7 @@ format:
 
 
 
-<div style="display:block; margin:30px;"></div>
+<div style="display:block; margin:25px;"></div>
 
 <font size = "5">Welcome! 👋 </font>
 
@@ -98,39 +90,20 @@ format:
 
 
 
-
-
-## $\bullet\,$ Lecture Slides :rocket:
+## :rocket: Lecture
 
 :::{#danl-210-lec}
 :::
 
 
-
-## $\bullet\,$ Classwork  :keyboard:
+## :keyboard: Classwork
 
 :::{#danl-210-cw}
 :::
 
-
-## $\bullet\,$ Homework  :computer:
+## :computer: Homework
 
 :::{#danl-210-hw}
 :::
 
 
-
-## $\bullet\,$ Exam  :pencil:
-
-:::{#danl-210-ex}
-:::
-
-
-<style>
-/* Apply to .title only when it does NOT also have .listing-title */
-.title:not(.listing-title) {
-    font-family: Optima, sans-serif;
-    font-weight: bold;
-    font-size: 2em;  /* adjust as needed */
-}
-</style>
