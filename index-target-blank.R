@@ -9,11 +9,7 @@ system(paste("rm", shQuote("index.html")))
 # Sys.sleep(2)
 
 # Next lecture number & dates
-lec_dates <- c('0825', '0827',
-               '0903', '0905',
-               '0917', '0929',
-               '1015', '1024',
-               '1103', '1105')
+lec_dates <- c('0121', '0123')
 lec_n <- length(lec_dates)
 
 lec_nos <- 1:lec_n
@@ -23,7 +19,7 @@ for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]
   lec_date <- lec_dates[i]
   
-  old_content <- str_c('./danl-lec/danl-101-lec-', lec_no, '-2025-', lec_date, '.html')
+  old_content <- str_c('./danl-lec/danl-101-lec-', lec_no, '-2026-', lec_date, '.html')
   new_content <- str_c('#', 
                        '" onclick="', 
                        "window.open(", 

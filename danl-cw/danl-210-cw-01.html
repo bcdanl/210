@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2026-01-21">
+<meta name="dcterms.date" content="2026-01-23">
 
-<title>Week 1 | Byeong-Hak Choe</title>
+<title>Classwork 2 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,9 +101,8 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
-<link rel="stylesheet" href="styles-wk.css">
-<meta property="og:title" content="Week 1 | Byeong-Hak Choe">
-<meta property="og:description" content="Introduction">
+<meta property="og:title" content="Classwork 2 | Byeong-Hak Choe">
+<meta property="og:description" content="Markdown Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
@@ -109,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../danl-wk/wk-01.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../danl-wk/wk-01.html">Week 01</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 2</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -178,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link active">
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
   </div>
 </li>
@@ -195,16 +228,26 @@ ul.task-list li input[type="checkbox"] {
 <br>On this page</h2>
    
   <ul>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link active" data-scroll-target="#syllabus">📓 Syllabus</a></li>
-  <li><a href="#lecture-slides" id="toc-lecture-slides" class="nav-link" data-scroll-target="#lecture-slides">🏫 Lecture Slides</a></li>
-  <li><a href="#recommended-reading" id="toc-recommended-reading" class="nav-link" data-scroll-target="#recommended-reading">📚 Recommended Reading</a>
+  <li><a href="#introduction-to-markdown" id="toc-introduction-to-markdown" class="nav-link active" data-scroll-target="#introduction-to-markdown">Introduction to Markdown</a>
   <ul>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine Learning</a>
+  <li><a href="#basic-syntax" id="toc-basic-syntax" class="nav-link" data-scroll-target="#basic-syntax">Basic Syntax</a>
   <ul>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a></li>
+  <li><a href="#emphasis" id="toc-emphasis" class="nav-link" data-scroll-target="#emphasis">Emphasis</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
+  <li><a href="#links-and-images" id="toc-links-and-images" class="nav-link" data-scroll-target="#links-and-images">Links and Images</a></li>
+  <li><a href="#links-and-images-1" id="toc-links-and-images-1" class="nav-link" data-scroll-target="#links-and-images-1">Links and Images</a></li>
   </ul></li>
+  <li><a href="#advanced-syntax" id="toc-advanced-syntax" class="nav-link" data-scroll-target="#advanced-syntax">Advanced Syntax</a>
+  <ul>
+  <li><a href="#blockquote" id="toc-blockquote" class="nav-link" data-scroll-target="#blockquote">Blockquote</a></li>
+  <li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis">Emojis</a></li>
+  <li><a href="#code-blocks" id="toc-code-blocks" class="nav-link" data-scroll-target="#code-blocks">Code Blocks</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">💬 Discussion</a></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems">Practice Problems</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -213,8 +256,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 1</h1>
-<p class="subtitle lead">Introduction</p>
+<h1 class="title">Classwork 2</h1>
+<p class="subtitle lead">Markdown Basics</p>
 </div>
 
 
@@ -231,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 21, 2026</p>
+      <p class="date">January 23, 2026</p>
     </div>
   </div>
   
@@ -247,37 +290,97 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to DANL 210, the first step in your data analytics journey! 👋</p>
-<p>In the first week, we will go over what you can expect to learn in this course and review key logistics, including the structure of lectures and class meetings, assessments, and how we will communicate throughout the semester.</p>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">📓 Syllabus</h2>
+<section id="introduction-to-markdown" class="level1">
+<h1>Introduction to Markdown</h1>
+<p>Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Jupyter Notebook.</p>
+<section id="basic-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="basic-syntax">Basic Syntax</h2>
+<section id="headings" class="level3">
+<h3 class="anchored" data-anchor-id="headings">Headings</h3>
+<p>Headings are created by adding one or more <code>#</code> symbols before your heading text. The number of <code>#</code> symbols indicates the level of the heading.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="emphasis" class="level3">
+<h3 class="anchored" data-anchor-id="emphasis">Emphasis</h3>
+<p>You can make text <strong>bold</strong> by wrapping it with two asterisks <code>**</code>, and <em>italic</em> by using one asterisk <code>*</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*italic* or _italic_</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>**bold** or __bold__</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lists" class="level3">
+<h3 class="anchored" data-anchor-id="lists">Lists</h3>
+<p>Unordered lists are created using <code>*</code>, <code>-</code>, or <code>+</code>, while ordered lists are numbered.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Subitem 2.1</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Subitem 2.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>First item</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Second item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="links-and-images" class="level3">
+<h3 class="anchored" data-anchor-id="links-and-images">Links and Images</h3>
+<p>Links are created using <code>[Link Text](URL)</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">DANL 210</span><span class="co">](https://bcdanl.github.io/210)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="links-and-images-1" class="level3">
+<h3 class="anchored" data-anchor-id="links-and-images-1">Links and Images</h3>
+<p>Images are created using <code>![Alt Text](Image URL)</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="advanced-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-syntax">Advanced Syntax</h2>
+<section id="blockquote" class="level3">
+<h3 class="anchored" data-anchor-id="blockquote">Blockquote</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="emojis" class="level3">
+<h3 class="anchored" data-anchor-id="emojis">Emojis</h3>
 <ul>
-<li>Please read the <a href="../syllabus.html" target="_blank">syllabus</a>.</li>
+<li>A ton of markdown emojis are available here <span class="emoji" data-emoji="smile">😄</span> (<code>:smile:</code>)
+<ul>
+<li><a href="https://github.com/ikatyang/emoji-cheat-sheet">https://github.com/ikatyang/emoji-cheat-sheet</a></li>
+</ul></li>
 </ul>
 </section>
-<section id="lecture-slides" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-slides">🏫 Lecture Slides</h2>
+<section id="code-blocks" class="level3">
+<h3 class="anchored" data-anchor-id="code-blocks">Code Blocks</h3>
+<p>Code blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">"string"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code block</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="practice-problems" class="level2">
+<h2 class="anchored" data-anchor-id="practice-problems">Practice Problems</h2>
 <ul>
-<li><strong>Lecture 1 — Syllabus</strong><br>
-<a href="../danl-lec/danl-210-lec-01-2026-0121.html" target="_blank">View Slides</a></li>
+<li>Do the following tasks on this Classwork 2 Discussion Board:
+<ol type="1">
+<li><strong>Basic Syntax</strong>: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.</li>
+<li><strong>Advanced Syntax</strong>: Write a comment that includes a Python code block, a blockquote, and an emoji.</li>
+</ol></li>
 </ul>
-<p>🎥 Looking for lecture recordings? You can only find those on Brightspace.</p>
 </section>
-<section id="recommended-reading" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-reading">📚 Recommended Reading</h2>
-<section id="machine-learning" class="level3">
-<h3 class="anchored" data-anchor-id="machine-learning">Machine Learning</h3>
-<section id="reference" class="level4">
-<h4 class="anchored" data-anchor-id="reference">Reference</h4>
-</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto Markdown Basics</a></li>
+<li><a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Start writing on GitHub</a></li>
+</ul>
 </section>
 </section>
-<section id="discussion" class="level2">
-<h2 class="anchored" data-anchor-id="discussion">💬 Discussion</h2>
-<p><font size="5">Welcome to our Week 1 Discussion Board! 👋 </font></p>
-<p>This space is designed for you to engage with your classmates about the material covered in Week 1.</p>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p><font size="5">Welcome to our Classwork 1 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Classwork 1.</p>
 <p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
-<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) or peer classmate (<span class="citation" data-cites="GitHub-Username">@GitHub-Username</span>) regarding the Week 1 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 1 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>All comments will be stored <a href="https://github.com/bcdanl/210-spr-2026-discussion/discussions">here</a>.</p>
 <p>Let’s collaborate and learn from each other!</p>
 
 

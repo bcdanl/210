@@ -158,7 +158,7 @@
     "href": "danl-wk/wk-01.html",
     "title": "Week 1",
     "section": "",
-    "text": "Welcome to DANL 210, the first step in your data analytics journey! 👋\nIn the first week, we will go over what you can expect to learn in this course and review key logistics, including the structure of lectures and class meetings, assessments, and how we will communicate throughout the semester. We will also install PyCharm IDE and set up Python in PyCharm."
+    "text": "Welcome to DANL 210, the first step in your data analytics journey! 👋\nIn the first week, we will go over what you can expect to learn in this course and review key logistics, including the structure of lectures and class meetings, assessments, and how we will communicate throughout the semester."
   },
   {
     "objectID": "danl-wk/wk-01.html#syllabus",
@@ -207,21 +207,21 @@
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-2",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.-H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-3",
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-3",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance (e.g., legal system, rule of law, and accountability) can be significant barriers to emissions reductions."
+    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.-H. and Newbold, Steve, “Estimating the Value of Statistical Life (VSL) through Big Data”\nVSL is the monetary value associated with reducing the risk of death.\n\nHow much value would that be? How can we measure it?\nHow do government agencies use the VSL to decide which policies are worth the cost when they reduce the risk of death?"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-4",
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-4",
     "title": "Lecture 1",
     "section": "Instructor",
-    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.H. and Newbold, Steve, “Estimating the Value of Statistical Life (VSL) through Big Data”\nVSL is the monetary value associated with reducing the risk of death.\n\nHow much value would that be? How can we measure it?\nHow do government agencies use the VSL to decide which policies are worth the cost when they reduce the risk of death?"
+    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.-H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance (e.g., legal system, rule of law, and accountability) can be significant barriers to emissions reductions."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#syllabus-1",
@@ -445,7 +445,7 @@
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-jupyter",
     "title": "Lecture 1",
     "section": "What is Jupyter?",
-    "text": "What is Jupyter?\n\nJupyter is an open-source integrated development environment (IDE) primarily for Python, though it supports many other languages.\n\nJupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format.\n\nJupyter Notebook is a user-friendly environment that enhances coding, data analysis, and visualization.\n\nIt offers a web-based interface that combines live code, equations, visualizations, and narrative text.\nJupyter is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.\n\nYou can use a free cloud version of Jupyter, which is Google Colab.\n\nGoogle Colab can be used for R as well."
+    "text": "What is Jupyter?\n\nJupyter is an open-source integrated development environment (IDE) primarily for Python, though it supports many other languages.\n\nAn IDE is a software application that provides comprehensive facilities (e.g., text code editor, graphical user interface (GUI)) to users for a programming-related project.\nJupyter provides a notebook interface that allows users to write and execute code in a more interactive and visual format."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#python-vs.-r",
@@ -508,7 +508,7 @@
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -522,7 +522,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-hw-q.html",
@@ -530,5 +530,341 @@
     "title": "DANL 210 - Homework Submission",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#welcome-to-danl-210",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#welcome-to-danl-210",
+    "title": "Lecture 1",
+    "section": "Welcome to DANL 210 👋",
+    "text": "Welcome to DANL 210 👋\nCourse & Meeting Info\n\nCourse: DANL 210-01 — Data Preparation and Management (3 credits)\n\nSemester: Spring 2026\n\nClass time: MWF 10:30 A.M. – 11:20 A.M.\n\nClass location: Newton 205\n\nInstructor Info\n\nInstructor: Byeong-Hak Choe\n\nEmail (preferred): bchoe@geneseo.edu\n\nOffice: South 227B\n\nOffice Hours: MWF 9:15 A.M. – 10:15 A.M. (or by appointment)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-website-brightspace",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-website-brightspace",
+    "title": "Lecture 1",
+    "section": "Course Website & Brightspace",
+    "text": "Course Website & Brightspace\n\n\nCourse Website (GitHub Pages)\n(https://bcdanl.github.io/210)\n\nLecture slides\n\nClasswork\n\nHomework\n\nProject resources\n\n\nBrightspace\n\nAnnouncements\n\nGrades\n\nAssignment submissions\n\n\nI will post a Brightspace announcement whenever new course materials (e.g., homework) are added to the course website."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#what-this-course-is-about",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#what-this-course-is-about",
+    "title": "Lecture 1",
+    "section": "What This Course Is About",
+    "text": "What This Course Is About\n\nThis course provides hands-on practice in collecting, cleaning, and transforming real-world datasets for analysis and decision-making.\nWe will use Jupyter Notebooks (.ipynb) in Google Colab for Python fundamentals and data transformation, and Python scripts (.py) in Spyder for data collection workflows.\nWe will focus on the core Python data workflow (e.g., pandas, selenium, requests, and related tools)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#prerequisites",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#prerequisites",
+    "title": "Lecture 1",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nStatistics: (ECON 205 or GEOG 278 or MATH 242 or MATH 262 or PLSC 251 or PSYC 250 or SOCL 211)\nIntroduction to Programming: DANL 201"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#communication-guidelines",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#communication-guidelines",
+    "title": "Lecture 1",
+    "section": "Communication Guidelines",
+    "text": "Communication Guidelines\n\nI check email daily (Mon–Fri)\n\nExpect responses within 12–72 hours"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-objectives-high-level",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-objectives-high-level",
+    "title": "Lecture 1",
+    "section": "Course Objectives (high level)",
+    "text": "Course Objectives (high level)\nBy the end of this course, you should be able to:\n\nUnderstand common data objects in Python and their attributes\n\nPerform core operations like grouping, pivoting, and joining\n\nClean “messy” data (missing values, duplicates, inconsistent types)\n\nVisualize results clearly and effectively\n\nCollect data from real-world sources\n\nExplain how Python tools are used strategically in data analytics problems"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-schedule-overview",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-schedule-overview",
+    "title": "Lecture 1",
+    "section": "Course Schedule (overview)",
+    "text": "Course Schedule (overview)\nMain modules\n\nWeeks 1–3: Python Basics\n\nWeeks 4–8: Data Collection (Web scraping + APIs)\n\nWeek 9: Spring Break\n\nWeeks 10–16: Data Transformation + Visualization (pandas + plotting)\n\nWeek 17: Final Exam + Data Storytelling Report\n\nKey dates\n\nMidterm Exam: March 13 (during class time)\n\nSpring Break: March 14–21\n\nGREAT Day: April 22 (no class)\n\nFinal Exam: May 14, 8:30 A.M. – 10:30 A.M.\n\nData Storytelling Report: May 14, 11:59 P.M."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#grading",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#grading",
+    "title": "Lecture 1",
+    "section": "Grading",
+    "text": "Grading\n\n\n\n\n\n\n\n\nGrade components\n\nAttendance — 5%\n\nParticipation — 5%\n\nGroup Project — 20%\n\nHomework (total) — 20%\n\nExams (total) — 50%\n\n\n\n\n\nImportant grading details\n\nLowest homework score is dropped\nTotal exam grade is the maximum of:\n\nSimple average of midterm and final, or\nWeighted average (33% midterm / 67% final)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-policies-high-priority",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-policies-high-priority",
+    "title": "Lecture 1",
+    "section": "Course Policies (high priority)",
+    "text": "Course Policies (high priority)\nLate work\nHomework is accepted up to 3 days late with a 30% penalty.\nMake-up work\nMake-up exams are allowed only with documented excuses or university-excused absences.\nAttendance & participation\n\nAttendance is taken with a sign-in sheet\nYou must email me before missing class for illness or other valid reasons\nYou have 7 unexcused absences available in the semester\n\nBeyond that, your total percentage grade may be reduced"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#academic-integrity-ai-use",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#academic-integrity-ai-use",
+    "title": "Lecture 1",
+    "section": "Academic integrity & AI use",
+    "text": "Academic integrity & AI use\n\nCheating and plagiarism violate college policy and may result in serious consequences.\nYou may use AI tools (e.g., ChatGPT, Gemini) to support your learning, but you must:\n\nDisclose AI use when it meaningfully contributes to your work\n\nCite/attribute AI-generated material appropriately\n\nUsing AI without disclosure/citation may be treated as academic dishonesty\n\nThere is no penalty for using AI on Homework and the Data Storytelling Project.\n\nHowever, you are still responsible for understanding, verifying, and being able to explain any AI-assisted work."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#accessibility",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#accessibility",
+    "title": "Lecture 1",
+    "section": "Accessibility",
+    "text": "Accessibility\nSUNY Geneseo is committed to equitable access. If you have approved accommodations, please coordinate through OAS and communicate with me early."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#todays-agenda",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#todays-agenda",
+    "title": "Lecture 1",
+    "section": "Today’s agenda",
+    "text": "Today’s agenda\n\nQuick introductions\n\nWhat this course will feel like (workflows + tools)\n\nGrading, deadlines, and expectations\n\nSetup checklist for Week 1\n\nMini-demo: Jupyter + pandas workflow"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#why-python-and-databases",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#why-python-and-databases",
+    "title": "Lecture 1",
+    "section": "Why Python and Databases?",
+    "text": "Why Python and Databases?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#why-python-and-databases-1",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#why-python-and-databases-1",
+    "title": "Lecture 1",
+    "section": "Why Python and Databases?",
+    "text": "Why Python and Databases?\nStack Overflow Trends\n\n\nStack Overflow is the most popular Q & A website specifically for programmers and software developers in the world.\nSee how programming languages have trended over time based on use of their tags in Stack Overflow from 2008 to 2023.\n\n\n\n\nMost Popular Languagues\n\n\nData Science and Big Data"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#why-we-focus-on-python-in-danl-210",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#why-we-focus-on-python-in-danl-210",
+    "title": "Lecture 1",
+    "section": "Why we focus on Python in DANL 210",
+    "text": "Why we focus on Python in DANL 210\n\nPython is the de facto language for modern data analytics\n\nIt has a powerful ecosystem for:\n\ndata preparation (pandas)\n\nnumerical work (NumPy)\n\nvisualization (Matplotlib)\n\ndata collection (APIs, web scraping)\n\nThe skills transfer directly to analytics roles in industry and graduate study"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-5",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-5",
+    "title": "Lecture 1",
+    "section": "Instructor",
+    "text": "Instructor\nEconomics and Data Science\n\nChoe, B.-H., “Climate Finance under Limited Commitment and Renegotiations: A Dynamic Contract Approach” (2026)\n\nUsing climate funds (e.g., the Green Climate Fund) as the main mechanism for financing developing countries, this paper studies a long-term funding relationship between a rich and a poor country.\n\nThe parties disagree over (1) the level of funding and (2) how to allocate it between adaptation and mitigation. Commitment is limited, and contracts may be renegotiated each period with some probability.\n\nMain results: Less frequent renegotiation improves contract efficiency and reduces inequality between the countries.\n\nThese findings suggest design principles for climate funds: strengthen commitment and limit renegotiation, especially as climate risks intensify."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#current-appointment-education",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#current-appointment-education",
+    "title": "Lecture 1",
+    "section": "Current Appointment & Education",
+    "text": "Current Appointment & Education\n\nName: Byeong-Hak Choe.\nAssistant Professor of Data Analytics and Economics, School of Business at SUNY Geneseo.\nPh.D. in Economics from University of Wyoming.\nM.S. in Economics from Arizona State University.\nM.A. in Economics from SUNY Stony Brook.\nB.A. in Economics & B.S. in Applied Mathematics from Hanyang University at Ansan, South Korea.\n\nMinor in Business Administration.\nConcentration in Finance."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research",
+    "title": "Lecture 1",
+    "section": "Research",
+    "text": "Research\n\nChoe, B.-H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-1",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-1",
+    "title": "Lecture 1",
+    "section": "Research",
+    "text": "Research\n\nChoe, B.-H. and Newbold, Steve, “Estimating the Value of Statistical Life (VSL) through Big Data”\nVSL is the monetary value associated with reducing the risk of death.\n\nHow much value would that be? How can we measure it?\nHow do government agencies use the VSL to decide which policies are worth the cost when they reduce the risk of death?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-2",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-2",
+    "title": "Lecture 1",
+    "section": "Research",
+    "text": "Research\n\nChoe, B.-H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance (e.g., legal system, rule of law, and accountability) can be significant barriers to emissions reductions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-3",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-3",
+    "title": "Lecture 1",
+    "section": "Research",
+    "text": "Research\n\nChoe, B.-H., “Climate Finance under Limited Commitment and Renegotiations: A Dynamic Contract Approach” (2026)\n\nUsing climate funds (e.g., the Green Climate Fund) as the main mechanism for financing developing countries, this paper studies a long-term funding relationship between a rich and a poor country.\n\nThe parties disagree over (1) the level of funding and (2) how to allocate it between adaptation and mitigation. Commitment is limited, and contracts may be renegotiated each period with some probability.\n\nMain results: Less frequent renegotiation improves contract efficiency and reduces inequality between the countries.\n\nThese findings suggest design principles for climate funds: strengthen commitment and limit renegotiation, especially as climate risks intensify."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-meeting-info",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-meeting-info",
+    "title": "Lecture 1",
+    "section": "Course & Meeting Info",
+    "text": "Course & Meeting Info\n\nCourse: DANL 210-01 — Data Preparation and Management (3 credits)\n\nSemester: Spring 2026\n\nInstructor: Byeong-Hak Choe\n\nEmail (preferred): bchoe@geneseo.edu\n\nClass time: MWF 10:30 A.M. – 11:20 A.M.\n\nClass location: Newton 205\n\nOffice: South 227B\n\nOffice Hours: MWF 9:15 A.M. – 10:15 A.M. (or by appointment)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-contents-schedule",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-contents-schedule",
+    "title": "Lecture 1",
+    "section": "Course Contents & Schedule",
+    "text": "Course Contents & Schedule\n\nWeeks 1–3: Python Basics\n\nHW 1: Feb 4 (before class time)\n\n\nWeeks 4–8: Data Collection (Web scraping with selenium + application programming interfaces (APIs))\n\nHW 2: Feb 25 (before class time)\n\nHW 3: Mar 9 (before class time)\n\nMidterm Exam: March 13 (during class time)\n\n\nWeek 9: Spring Break (March 14–21)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-policies",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-policies",
+    "title": "Lecture 1",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nLate work: Homework is accepted up to 3 days late with a 30% penalty.\nMake-up exams are allowed only with documented excuses or university-excused absences.\nAttendance is taken with a sign-in sheet\n\nYou must email me before missing class for illness or other valid reasons\nYou have 7 unexcused absences available in the semester\n\nBeyond that, your total percentage grade may be reduced"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#installing-the-tools-1",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#installing-the-tools-1",
+    "title": "Lecture 1",
+    "section": "Installing the Tools",
+    "text": "Installing the Tools\nAnaconda\n\nTo install Anaconda, go to the following download page:\n\nhttps://www.anaconda.com/products/distribution.\nClick the “Download” button."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#lets-practice-markdown",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#lets-practice-markdown",
+    "title": "Lecture 1",
+    "section": "Let’s Practice Markdown!",
+    "text": "Let’s Practice Markdown!\n\nMarkdown is a lightweight writing format that lets you create well-structured documents using plain text (headings, lists, links, quotes, images, and code blocks).\nWhy Markdown is widely used on the internet:\n\nWorks everywhere: supported by many platforms, including Jupyter Notebook, GitHub, Reddit, Slack/Discord, and documentation websites.\nGreat for publishing and future-proof: Markdown can be converted into professional webpages/PDFs, and because it is plain text, and it is easy to store and reuse.\n\nIn this course, Markdown is essential because you will write narrative explanations in Jupyter Notebook (*.ipynb) when creating your Data Storytelling Report.\nStart here: Classwork 1"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-01.html",
+    "href": "danl-cw/danl-210-cw-01.html",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Jupyter Notebook.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-01.html#basic-syntax",
+    "href": "danl-cw/danl-210-cw-01.html#basic-syntax",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-01.html#advanced-syntax",
+    "href": "danl-cw/danl-210-cw-01.html#advanced-syntax",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-01.html#practice-problems",
+    "href": "danl-cw/danl-210-cw-01.html#practice-problems",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-01.html#references",
+    "href": "danl-cw/danl-210-cw-01.html#references",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Quarto Markdown Basics\nStart writing on GitHub"
+  },
+  {
+    "objectID": "syllabus.html#technology-requirements",
+    "href": "syllabus.html#technology-requirements",
+    "title": "Syllabus",
+    "section": "Technology Requirements",
+    "text": "Technology Requirements\n\nBrightspace\n\nMicrosoft Teams\n\nAnaconda Distribution\nGoogle Colab\nChrome Browser\n\nGitHub"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#anaconda-distribution",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#anaconda-distribution",
+    "title": "Lecture 1",
+    "section": "Anaconda Distribution",
+    "text": "Anaconda Distribution\n\nAnaconda is a free Python distribution that includes Python, Conda (Python environment manager), and many commonly used data analytics packages.\nInstall Anaconda from the official download page:\n\nAnaconda Distribution\n\nClick Download, then follow the installer steps for your operating system."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-jupyter-notebook",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-jupyter-notebook",
+    "title": "Lecture 1",
+    "section": "What is Jupyter Notebook?",
+    "text": "What is Jupyter Notebook?\n\nJupyter Notebook (*.ipynb) is a user-friendly environment that enhances coding, data analysis, and visualization.\n\nIt offers a web-based interface that combines live code, equations, visualizations, and narrative text.\nJupyter Notebook is widely used for data science, machine learning, and research, enabling easy sharing and collaboration.\n\nFor Python basics and data transformation topics, we will use Google Colab, Google’s free cloud-based version of Jupyter Notebook."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-a-python-script",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-a-python-script",
+    "title": "Lecture 1",
+    "section": "What is a Python Script?",
+    "text": "What is a Python Script?\n\nA Python script (*.py) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder).\n\nIt is the standard format for writing reusable Python programs, such as data-cleaning pipelines, web scrapers, and automation tasks.\nScripts are easy to version-control with Git/GitHub and are commonly used in real-world analytics and software projects.\nCompared to notebooks, scripts are typically better for organized, production-style code (functions, modules, and repeatable workflows).\n\nFor data collection topics, we will write and run Python scripts mainly in Spyder, using Anaconda Distribution as our Python environment."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-1.",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-1.",
+    "title": "Lecture 1",
+    "section": "Research 1.",
+    "text": "Research 1.\n\nChoe, B.-H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-2.",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-2.",
+    "title": "Lecture 1",
+    "section": "Research 2.",
+    "text": "Research 2.\n\nChoe, B.-H. and Newbold, Steve, “Estimating the Value of Statistical Life (VSL) through Big Data”\nVSL is the monetary value associated with reducing the risk of death.\n\nHow much value would that be? How can we measure it?\nHow do government agencies use the VSL to decide which policies are worth the cost when they reduce the risk of death?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-3.",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-3.",
+    "title": "Lecture 1",
+    "section": "Research 3.",
+    "text": "Research 3.\n\nChoe, B.-H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance (e.g., legal system, rule of law, and accountability) can be significant barriers to emissions reductions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-4.",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-4.",
+    "title": "Lecture 1",
+    "section": "Research 4.",
+    "text": "Research 4.\n\nChoe, B.-H., “Climate Finance under Limited Commitment and Renegotiations: A Dynamic Contract Approach” (2026)\n\nUsing climate funds (e.g., the Green Climate Fund) as the main mechanism for financing developing countries, this paper studies a long-term funding relationship between a rich and a poor country.\n\nThe parties disagree over (1) the level of funding and (2) how to allocate it between adaptation and mitigation. Commitment is limited, and contracts may be renegotiated each period with some probability.\n\nMain results: Less frequent renegotiation improves contract efficiency and reduces inequality between the countries.\n\nThese findings suggest design principles for climate funds: strengthen commitment and limit renegotiation, especially as climate risks intensify."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-1-social-media-vs.-fossil-fuel-lobbying-on-climate-legislation",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-1-social-media-vs.-fossil-fuel-lobbying-on-climate-legislation",
+    "title": "Lecture 1",
+    "section": "Research 1: Social Media vs. Fossil Fuel Lobbying on Climate Legislation",
+    "text": "Research 1: Social Media vs. Fossil Fuel Lobbying on Climate Legislation\n\nChoe, B.-H., 2021. “Social Media Campaigns, Lobbying and Legislation: Evidence from #climatechange and Energy Lobbies.”\nQuestion: To what extent do social media campaigns compete with fossil fuel lobbying on climate change legislation?\nData include:\n\n5.0 million tweets with #climatechange/#globalwarming around the globe;\n12.0 million retweets/likes to those tweets;\n0.8 million Twitter users who wrote those tweets;\n1.4 million Twitter users who retweeted or liked those tweets;\n0.3 million US Twitter users with their location at a city level;\nFirm-level lobbying data (expenses, targeted bills, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-2-measuring-the-value-of-statistical-life-using-big-data",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-2-measuring-the-value-of-statistical-life-using-big-data",
+    "title": "Lecture 1",
+    "section": "Research 2: Measuring the Value of Statistical Life Using Big Data",
+    "text": "Research 2: Measuring the Value of Statistical Life Using Big Data\n\nChoe, B.-H. and Newbold, Steve, “Estimating the Value of Statistical Life (VSL) through Big Data”\nVSL is the monetary value associated with reducing the risk of death.\n\nHow much value would that be? How can we measure it?\nHow do government agencies use the VSL to decide which policies are worth the cost when they reduce the risk of death?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-3-governance-barriers-to-effective-climate-finance",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-3-governance-barriers-to-effective-climate-finance",
+    "title": "Lecture 1",
+    "section": "Research 3: Governance Barriers to Effective Climate Finance",
+    "text": "Research 3: Governance Barriers to Effective Climate Finance\n\nChoe, B.-H. and Ore-Monago, T., 2024. “Governance and Climate Finance in the Developing World”\nClimate finance refers to the financial resources allocated for mitigating and adapting to climate change, including support for initiatives that reduce greenhouse gas emissions and enhance resilience to climate impacts.\n\nWe focus on transnational financing that rich countries provide poor countries with financial resources, in order to help them adapt to climate change and mitigate greenhouse gas (GHG) emissions.\nSince the GHG emissions in developing countries are rapidly growing, it is crucial to assess the effectiveness of climate finance.\nPoor governance (e.g., legal system, rule of law, and accountability) can be significant barriers to emissions reductions."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-4-dynamic-contracts-for-climate-finance-with-renegotiation-risk",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-4-dynamic-contracts-for-climate-finance-with-renegotiation-risk",
+    "title": "Lecture 1",
+    "section": "Research 4: Dynamic Contracts for Climate Finance with Renegotiation Risk",
+    "text": "Research 4: Dynamic Contracts for Climate Finance with Renegotiation Risk\n\nChoe, B.-H., “Climate Finance under Limited Commitment and Renegotiations: A Dynamic Contract Approach” (2026)\n\nUsing climate funds (e.g., the Green Climate Fund) as the main mechanism for financing developing countries, this paper studies a long-term funding relationship between a rich and a poor country.\n\nThe parties disagree over (1) the level of funding and (2) how to allocate it between adaptation and mitigation. Commitment is limited, and contracts may be renegotiated each period with some probability.\n\nMain results: Less frequent renegotiation improves contract efficiency and reduces inequality between the countries.\n\nThese findings suggest design principles for climate funds: strengthen commitment and limit renegotiation, especially as climate risks intensify."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-4-climate-finance-with-renegotiations",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#research-4-climate-finance-with-renegotiations",
+    "title": "Lecture 1",
+    "section": "Research 4: Climate Finance with Renegotiations",
+    "text": "Research 4: Climate Finance with Renegotiations\n\nChoe, B.-H., “Climate Finance under Limited Commitment and Renegotiations: A Dynamic Contract Approach” (2026)\n\nUsing climate funds (e.g., the Green Climate Fund) as the main mechanism for financing developing countries, this paper studies a long-term funding relationship between a rich and a poor country.\n\nThe parties disagree over (1) the level of funding and (2) how to allocate it between adaptation and mitigation. Commitment is limited, and contracts may be renegotiated each period with some probability.\n\nMain results: Less frequent renegotiation improves contract efficiency and reduces inequality between the countries.\n\nThese findings suggest design principles for climate funds: strengthen commitment and limit renegotiation, especially as climate risks intensify."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#key-skills-youll-build",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#key-skills-youll-build",
+    "title": "Lecture 1",
+    "section": "Key skills you’ll build:",
+    "text": "Key skills you’ll build:\n\nCollect data from real-world sources\n\nWork with common Python data objects (and understand their structure and attributes)\n\nPerform essential data-wrangling tasks (filtering, grouping, pivoting, joining)\n\nClean messy data (missing values, duplicates, inconsistent types)\n\nCreate clear, effective visualizations to communicate results\n\nExplain how Python tools are used strategically to solve data analytics problems"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-contents-schedule-1",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-contents-schedule-1",
+    "title": "Lecture 1",
+    "section": "Course Contents & Schedule",
+    "text": "Course Contents & Schedule\n\nWeeks 10–16: Data Transformation + Visualization (pandas + plotting)\n\nHW 4: Apr 13 (before class time)\n\nGREAT Day: April 22 (no class)\n\nHW 5: Apr 22 (before class time)\n\nHW 6: May 4 (before class time)\n\n\nWeek 17: Final Exam + Data Storytelling Report\n\nFinal Exam: May 14, 8:30 A.M. – 10:30 A.M.\n\nData Storytelling Report: May 14, 11:59 P.M."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#grading-data-storytelling-report",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#grading-data-storytelling-report",
+    "title": "Lecture 1",
+    "section": "Grading Data Storytelling Report",
+    "text": "Grading Data Storytelling Report\n\n\nData collection (30%)\n\nDescriptive statistics (5%)\n\nData transformation (30%)\n\nData visualization (10%)\n\nData storytelling (15%)\n\nCode (10%)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#lets-introduce-ourselves",
+    "href": "danl-lec/danl-210-lec-01-2026-0121.html#lets-introduce-ourselves",
+    "title": "Lecture 1",
+    "section": "Let’s Introduce Ourselves",
+    "text": "Let’s Introduce Ourselves\n\nNow that you’ve heard a bit about me and my research, I’d like to learn about you.\nPlease briefly introduce yourself:\n\nYour name and year (first-year, sophomore, junior, senior)\nYour major/minor (or what you are considering)\nWhy you are taking DANL 210\nOne topic you are interested in exploring with data this semester (sports, finance, social issues, business, etc.)"
   }
 ]
