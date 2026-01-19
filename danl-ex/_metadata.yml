@@ -15,7 +15,7 @@ include-after-body:
     <script src='/assets/js/posts.js'></script>
 comments:
   giscus:
-    repo: bcdanl/101-fall-2025-discussion
+    repo: bcdanl/210-spr-2026-discussion
     # mapping: title
     reactions-enabled: false
     # loading: lazy
