@@ -508,7 +508,7 @@
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -522,7 +522,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 2\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-hw-q.html",
@@ -716,35 +716,35 @@
   {
     "objectID": "danl-cw/danl-210-cw-01.html",
     "href": "danl-cw/danl-210-cw-01.html",
-    "title": "Classwork 2",
+    "title": "Classwork 1",
     "section": "",
-    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Jupyter Notebook.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
+    "text": "Markdown is a lightweight markup language with plain-text formatting syntax. Its main goal is to be readable and easy to write, even when viewed as plain text. Markdown is widely used for creating formatted text on the web and in various applications such as Jupyter Notebook.\n\n\n\n\nHeadings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)\n\n\n\n\n\n\n&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```\n\n\n\n\n\nDo the following tasks on this Classwork 1 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji.\n\n\n\n\n\n\nQuarto Markdown Basics\nStart writing on GitHub"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html#basic-syntax",
     "href": "danl-cw/danl-210-cw-01.html#basic-syntax",
-    "title": "Classwork 2",
+    "title": "Classwork 1",
     "section": "",
     "text": "Headings are created by adding one or more # symbols before your heading text. The number of # symbols indicates the level of the heading.\n# Heading 1\n## Heading 2\n### Heading 3\n\n\n\nYou can make text bold by wrapping it with two asterisks **, and italic by using one asterisk *.\n*italic* or _italic_\n**bold** or __bold__\n\n\n\nUnordered lists are created using *, -, or +, while ordered lists are numbered.\n- Item 1\n- Item 2\n  - Subitem 2.1\n  - Subitem 2.2\n1. First item\n2. Second item\n\n\n\nLinks are created using [Link Text](URL)\n[DANL 210](https://bcdanl.github.io/210)\n\n\n\nImages are created using ![Alt Text](Image URL).\n![Geneseo Logo](https://bcdanl.github.io/img/geneseo-logo.gif)"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html#advanced-syntax",
     "href": "danl-cw/danl-210-cw-01.html#advanced-syntax",
-    "title": "Classwork 2",
+    "title": "Classwork 1",
     "section": "",
     "text": "&gt; Be yourself. Everyone else is already taken. - Oscar Wilde.\n\n\n\n\nA ton of markdown emojis are available here 😄 (:smile:)\n\nhttps://github.com/ikatyang/emoji-cheat-sheet\n\n\n\n\n\nCode blocks are created by using triple backticks (```). Optionally, you can specify the language for syntax highlighting.\n```\n\"string\"\n```\n```python\n# Python code block\nimport numpy as np\n```"
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html#practice-problems",
     "href": "danl-cw/danl-210-cw-01.html#practice-problems",
-    "title": "Classwork 2",
+    "title": "Classwork 1",
     "section": "",
-    "text": "Do the following tasks on this Classwork 2 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
+    "text": "Do the following tasks on this Classwork 1 Discussion Board:\n\nBasic Syntax: Write a comment with a heading, an unordered list, an ordered list, a link, and an image.\nAdvanced Syntax: Write a comment that includes a Python code block, a blockquote, and an emoji."
   },
   {
     "objectID": "danl-cw/danl-210-cw-01.html#references",
     "href": "danl-cw/danl-210-cw-01.html#references",
-    "title": "Classwork 2",
+    "title": "Classwork 1",
     "section": "",
     "text": "Quarto Markdown Basics\nStart writing on GitHub"
   },
