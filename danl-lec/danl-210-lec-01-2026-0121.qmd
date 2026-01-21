@@ -152,8 +152,10 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 
 ## Course Website & Brightspace
 
+::::{.nonincremental}
 ::::{.columns}
 ::: {.column width="50%"}
+
 [**Course Website (GitHub Pages)**](https://bcdanl.github.io/210)  
 (<u>https://bcdanl.github.io/210</u>)
 
@@ -162,14 +164,20 @@ scale_fill_discrete <- function(...) scale_fill_colorblind(...)
 - Homework  
 - Project resources  
 
+
 :::
 
+
 ::: {.column width="50%"}
+
+
 [**Brightspace**](https://mylearning.suny.edu/d2l/home/2533587)
 
 - Announcements  
 - Grades  
 - Assignment submissions  
+
+
 
 :::{.fragment}
 I will post a **Brightspace announcement** whenever new course materials (e.g., homework) are added to the course website.
@@ -178,7 +186,7 @@ I will post a **Brightspace announcement** whenever new course materials (e.g., 
 
 :::
 ::::
-
+::::
 
 ## What This Course Is About
 
@@ -266,6 +274,9 @@ I will post a **Brightspace announcement** whenever new course materials (e.g., 
 ::::
 ::::
 
+-	I will post detailed grading feedback for each assignment on Brightspace once grading is completed.
+	-	The final grade displayed in Brightspace will NOT reflect your official course grade because we will follow the grading scheme described above.
+
 ## Grading Data Storytelling Report
 
 :::{.nonincremental}
@@ -318,23 +329,6 @@ SUNY Geneseo is committed to equitable access. If you have approved accommodatio
   - Python is open source and has a vast ecosystem of libraries and frameworks.
 
 
-
-## Anaconda Distribution
-- **Anaconda is a free Python distribution** that includes Python, Conda (Python environment manager), and many commonly used data analytics packages.
-- Install Anaconda from the official download page:  
-  - [Anaconda Distribution](https://www.anaconda.com/products/distribution)
-- Click **Download**, then follow the installer steps for your operating system.
-
-
-## What is a Python Script?
-- A Python script (`*.py`) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder).
-  - It is the standard format for writing **reusable Python programs**, such as data-cleaning pipelines, web scrapers, and automation tasks.
-  - Scripts are easy to **version-control** with Git/GitHub and are commonly used in real-world analytics and software projects.
-  - Compared to notebooks, scripts are typically better for **organized, production-style code** (functions, modules, and repeatable workflows).
-
-- For **data collection** topics, we will write and run Python scripts mainly in **Spyder**, using **Anaconda Distribution** as our Python environment.
-
-
 ## What is Jupyter?
 
 - **Jupyter** is an open-source integrated development environment (IDE) primarily for **Python**, though it supports many other languages.
@@ -362,4 +356,22 @@ SUNY Geneseo is committed to equitable access. If you have approved accommodatio
 - **In this course, Markdown is essential** because you will write narrative explanations in Jupyter Notebook (`*.ipynb`) when creating your **Data Storytelling Report**.
 
 - Start here: [Classwork 1](../danl-cw/danl-210-cw-01.html){target="_blank"}
+
+
+
+
+## Anaconda Distribution
+- **Anaconda is a free Python distribution** that includes Python, Conda (Python environment manager), and many commonly used data analytics packages.
+- Install Anaconda from the official download page:  
+  - [Anaconda Distribution](https://www.anaconda.com/products/distribution)
+  - Click **Download**, then follow the installer steps for your operating system.
+
+
+## What is a Python Script?
+- A Python script (`*.py`) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder).
+  - It is the standard format for writing **reusable Python programs**, such as data-cleaning pipelines, web scrapers, and automation tasks.
+  - Scripts are commonly used in real-world analytics and software projects.
+  - Compared to notebooks, scripts are typically better for **organized, production-style code** (functions, modules, and repeatable workflows).
+
+- For **data collection** topics, we will write and run Python scripts mainly in **Spyder**, using **Anaconda Distribution** as our Python environment.
 

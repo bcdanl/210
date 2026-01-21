@@ -39,7 +39,7 @@
     "href": "syllabus.html#course-description",
     "title": "Syllabus",
     "section": "Course Description",
-    "text": "Course Description\nThis course aims to provide overview of how one can manipulate, process, clean, and crunch datasets with hands-on and practical case studies that show you how to solve a broad set of data analysis problems effectively. We will use a computing development environment, Jupyter Notebook, which is a shell and notebook for exploratory computing.\nThis course will cover topics such as:\n\nLoading, cleaning, transforming, merging, and reshaping data\n\nCreating informative visualizations with matplotlib\n\nDataset slicing, dicing, and summarizing\n\nAnalyzing and manipulating regular and irregular time series data\n\nComputing is done in Python using Pandas, with additional tools such as NumPy and Matplotlib."
+    "text": "Course Description\nThis course provides a practical overview of how to collect, manipulate, process, clean, and analyze real-world datasets through hands-on case studies. We will work primarily in Jupyter Notebook, an interactive environment for exploratory computing and reproducible analysis.\nKey topics include: (1) loading, cleaning, transforming, merging, and reshaping data; (2) creating clear and informative visualizations; (3) slicing, summarizing, and reporting insights; and (4) collecting data from the web and online services. Throughout the semester, you will apply these skills to solve a wide range of data analysis problems using Python, including core tools such as Pandas, as well as data-collection methods using Selenium and application programming interfaces (APIs)."
   },
   {
     "objectID": "syllabus.html#prerequisitescorequisites",
@@ -543,7 +543,7 @@
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#course-website-brightspace",
     "title": "Lecture 1",
     "section": "Course Website & Brightspace",
-    "text": "Course Website & Brightspace\n\n\nCourse Website (GitHub Pages)\n(https://bcdanl.github.io/210)\n\nLecture slides\n\nClasswork\n\nHomework\n\nProject resources\n\n\nBrightspace\n\nAnnouncements\n\nGrades\n\nAssignment submissions\n\n\nI will post a Brightspace announcement whenever new course materials (e.g., homework) are added to the course website."
+    "text": "Course Website & Brightspace\n\n\n\nCourse Website (GitHub Pages)\n(https://bcdanl.github.io/210)\n\nLecture slides\n\nClasswork\n\nHomework\n\nProject resources\n\n\nBrightspace\n\nAnnouncements\n\nGrades\n\nAssignment submissions\n\n\nI will post a Brightspace announcement whenever new course materials (e.g., homework) are added to the course website."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#what-this-course-is-about",
@@ -585,7 +585,7 @@
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#grading",
     "title": "Lecture 1",
     "section": "Grading",
-    "text": "Grading\n\n\n\n\n\n\n\n\nGrade components\n\nAttendance — 5%\n\nParticipation — 5%\n\nGroup Project — 20%\n\nHomework (total) — 20%\n\nExams (total) — 50%\n\n\n\n\n\nImportant grading details\n\nLowest homework score is dropped\nTotal exam grade is the maximum of:\n\nSimple average of midterm and final, or\nWeighted average (33% midterm / 67% final)"
+    "text": "Grading\n\n\n\n\n\n\n\n\nGrade components\n\nAttendance — 5%\n\nParticipation — 5%\n\nGroup Project — 20%\n\nHomework (total) — 20%\n\nExams (total) — 50%\n\n\n\n\n\nImportant grading details\n\nLowest homework score is dropped\nTotal exam grade is the maximum of:\n\nSimple average of midterm and final, or\nWeighted average (33% midterm / 67% final)\n\n\n\n\n\n\n\nI will post detailed grading feedback for each assignment on Brightspace once grading is completed.\n\nThe final grade displayed in Brightspace will NOT reflect your official course grade because we will follow the grading scheme described above."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#course-policies-high-priority",
@@ -760,7 +760,7 @@
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#anaconda-distribution",
     "title": "Lecture 1",
     "section": "Anaconda Distribution",
-    "text": "Anaconda Distribution\n\nAnaconda is a free Python distribution that includes Python, Conda (Python environment manager), and many commonly used data analytics packages.\nInstall Anaconda from the official download page:\n\nAnaconda Distribution\n\nClick Download, then follow the installer steps for your operating system."
+    "text": "Anaconda Distribution\n\nAnaconda is a free Python distribution that includes Python, Conda (Python environment manager), and many commonly used data analytics packages.\nInstall Anaconda from the official download page:\n\nAnaconda Distribution\nClick Download, then follow the installer steps for your operating system."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-jupyter-notebook",
@@ -774,7 +774,7 @@
     "href": "danl-lec/danl-210-lec-01-2026-0121.html#what-is-a-python-script",
     "title": "Lecture 1",
     "section": "What is a Python Script?",
-    "text": "What is a Python Script?\n\nA Python script (*.py) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder).\n\nIt is the standard format for writing reusable Python programs, such as data-cleaning pipelines, web scrapers, and automation tasks.\nScripts are easy to version-control with Git/GitHub and are commonly used in real-world analytics and software projects.\nCompared to notebooks, scripts are typically better for organized, production-style code (functions, modules, and repeatable workflows).\n\nFor data collection topics, we will write and run Python scripts mainly in Spyder, using Anaconda Distribution as our Python environment."
+    "text": "What is a Python Script?\n\nA Python script (*.py) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder).\n\nIt is the standard format for writing reusable Python programs, such as data-cleaning pipelines, web scrapers, and automation tasks.\nScripts are commonly used in real-world analytics and software projects.\nCompared to notebooks, scripts are typically better for organized, production-style code (functions, modules, and repeatable workflows).\n\nFor data collection topics, we will write and run Python scripts mainly in Spyder, using Anaconda Distribution as our Python environment."
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#research-1.",
@@ -866,5 +866,12 @@
     "title": "Lecture 1",
     "section": "Let’s Introduce Ourselves",
     "text": "Let’s Introduce Ourselves\n\nNow that you’ve heard a bit about me and my research, I’d like to learn about you.\nPlease briefly introduce yourself:\n\nYour name and year (first-year, sophomore, junior, senior)\nYour major/minor (or what you are considering)\nWhy you are taking DANL 210\nOne topic you are interested in exploring with data this semester (sports, finance, social issues, business, etc.)"
+  },
+  {
+    "objectID": "danl-wk/wk-01.html#classwork",
+    "href": "danl-wk/wk-01.html#classwork",
+    "title": "Week 1",
+    "section": "✍️ Classwork",
+    "text": "✍️ Classwork\n\nClasswork 1 - Markdown Basics\nView Classwork"
   }
 ]

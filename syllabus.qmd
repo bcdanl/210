@@ -43,16 +43,9 @@ css: [weeks/styles-wk.css]
 
 ## Course Description
 
-This course aims to provide overview of how one can manipulate, process, clean, and crunch datasets with hands-on and practical case studies that show you how to solve a broad set of data analysis problems effectively. We will use a computing development environment, Jupyter Notebook, which is a shell and notebook for exploratory computing.
+This course provides a practical overview of how to collect, manipulate, process, clean, and analyze real-world datasets through hands-on case studies. We will work primarily in Jupyter Notebook, an interactive environment for exploratory computing and reproducible analysis.
 
-This course will cover topics such as:
-
-1. Loading, cleaning, transforming, merging, and reshaping data  
-2. Creating informative visualizations with **matplotlib**  
-3. Dataset slicing, dicing, and summarizing  
-4. Analyzing and manipulating regular and irregular time series data  
-
-Computing is done in **Python** using **Pandas**, with additional tools such as **NumPy** and **Matplotlib**.
+Key topics include: (1) loading, cleaning, transforming, merging, and reshaping data; (2) creating clear and informative visualizations; (3) slicing, summarizing, and reporting insights; and (4) collecting data from the web and online services. Throughout the semester, you will apply these skills to solve a wide range of data analysis problems using Python, including core tools such as Pandas, as well as data-collection methods using Selenium and application programming interfaces (APIs).
 
 ## Prerequisites/Corequisites
 
@@ -72,9 +65,9 @@ No textbook is required.
 
 ### Optional Readings
 
-- *Python for Data Analysis*  
-- *Python for Data Science*  
-- *Python Programming for Data Science*  
+- [*Python for Data Analysis*](https://wesmckinney.com/book/)  
+- [*Python for Data Science*](https://aeturrell.github.io/python4DS/welcome.html)  
+- [*Python Programming for Data Science*](https://www.tomasbeuzen.com/python-programming-for-data-science/README.html)  
 
 ## Technology Requirements
 
