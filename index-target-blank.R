@@ -19,7 +19,7 @@ for (i in 1:length(lec_nos)){
   lec_no <- lec_nos[i]
   lec_date <- lec_dates[i]
   
-  old_content <- str_c('./danl-lec/danl-101-lec-', lec_no, '-2026-', lec_date, '.html')
+  old_content <- str_c('./danl-lec/danl-210-lec-', lec_no, '-2026-', lec_date, '.html')
   new_content <- str_c('#', 
                        '" onclick="', 
                        "window.open(", 
