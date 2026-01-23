@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-01-18">
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2026-01-23">
 
-<title>DANL 210 - Classwork | Byeong-Hak Choe</title>
+<title>Classwork 2 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +22,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,62 +96,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
-<style>
-#toc-welcome {
-      font-size: 1.67em;
-}
-#toc-bullet-lecture {
-      font-size: 1.67em;
-}
-#toc-bullet-classwork {
-      font-size: 1.67em;
-}
-#toc-bullet-homework {
-      font-size: 1.67em;
-}
-a {
-text-decoration: none; /* This removes the underline */
-padding: 5px 10px; /* Top & Bottom, Left & Right Padding */
-border-radius: 5px; /* Rounds the corners */
-}
-</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/css/font.css">
-<meta property="og:title" content="DANL 210 - Classwork | Byeong-Hak Choe">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<meta property="og:title" content="Classwork 2 | Byeong-Hak Choe">
+<meta property="og:description" content="Python Basics">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
@@ -129,8 +115,8 @@ border-radius: 5px; /* Rounds the corners */
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -158,27 +144,27 @@ border-radius: 5px; /* Rounds the corners */
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./listing-danl-210-cw.html">⌨️ Classwork</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 2</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🏠 Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📓 Syllabus</span></a>
   </div>
 </li>
@@ -190,25 +176,25 @@ border-radius: 5px; /* Rounds the corners */
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🚀 Lecture</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-cw.html" class="sidebar-item-text sidebar-link active">
+  <a href="../listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">⌨️ Classwork</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">💻 Homework</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📝 Exams</span></a>
   </div>
 </li>
@@ -227,7 +213,7 @@ border-radius: 5px; /* Rounds the corners */
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
   </div>
 </li>
@@ -238,89 +224,198 @@ border-radius: 5px; /* Rounds the corners */
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title"><img src="../img/logo-geneseo.jpg" style="height:48px; display:inline-block; vertical-align:middle; margin-right:0px;"> <span style="display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;"> Data<br>Analytics </span><br>
+<br>On this page</h2>
+   
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
+  <ul>
+  <li><a href="#a" id="toc-a" class="nav-link" data-scroll-target="#a">(a)</a></li>
+  <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">(b)</a></li>
+  </ul></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><font style="font-family:Optima"><b>DANL 210 - Classwork</b></font></h1>
+<h1 class="title">Classwork 2</h1>
+<p class="subtitle lead">Python Basics</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Byeong-Hak Choe </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 18, 2026</p>
+      <p class="date">January 23, 2026</p>
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 22, 2026</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Using Python operations only, calculate below: <span class="math display">\[\frac{2^5}{7 \cdot (4 - 2^3)}\]</span></p>
+<p><br><br><br></p>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>For each expression below, what is the value of the expression? Explain thoroughly.</p>
+<section id="a" class="level3">
+<h3 class="anchored" data-anchor-id="a">(a)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="op">==</span> <span class="st">'20'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1769144400000" data-listing-file-modified-sort="1769015181770" data-listing-date-modified-sort="1769015181000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 1" data-listing-filename-sort="danl-210-cw-01.qmd">
-<td>
-<a href="./danl-cw/danl-210-cw-01.html" class="title listing-title">Classwork 1</a>
-</td>
-<td>
-<span class="listing-subtitle">Markdown Basics</span>
-</td>
-<td>
-<span class="listing-date">January 23, 2026</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1769144400000" data-listing-file-modified-sort="1769129712518" data-listing-date-modified-sort="1769129712000" data-listing-reading-time-sort="3" data-listing-title-sort="Classwork 2" data-listing-filename-sort="danl-210-cw-02.qmd">
-<td>
-<a href="./danl-cw/danl-210-cw-02.html" class="title listing-title">Classwork 2</a>
-</td>
-<td>
-<span class="listing-subtitle">Python Basics</span>
-</td>
-<td>
-<span class="listing-date">January 23, 2026</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+</section>
+<section id="b" class="level3">
+<h3 class="anchored" data-anchor-id="b">(b)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">4.0</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">.5</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">&lt;</span> y <span class="kw">or</span> <span class="dv">3</span><span class="op">*</span>y <span class="op">&lt;</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<p><br><br><br></p>
+</section>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>What will the following code print?</p>
+</section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fare <span class="op">=</span> <span class="st">"$10.00"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tip <span class="op">=</span> <span class="st">"2.00$"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="st">"$ 0.80"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a Python code that uses <em>slicing</em> and the <code>print()</code> function to print out the following message:</p>
+<div style="font-family:courier">
+The total trip cost is: $12.80
+</div>
+<p><br></p>
+<p><br><br><br></p>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>list_variable <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">144</span>, <span class="dv">169</span>, <span class="dv">1000</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a Python code that uses <code>print()</code> and <code>max()</code> functions to print out the largest value in the list, <code>list_variable</code>, as follows:</p>
+<div style="font-family:courier">
+The largest value in the list is: 1000
+</div>
+<p><br></p>
+<p><br><br><br></p>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vals <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Use a <code>while</code> loop to print each value of the list [3, 2, 1, 0], one at a time.</li>
+<li>Use a <code>for</code> loop to print each value of the list [3, 2, 1, 0], one at a time.</li>
+</ul>
+<p><br></p>
+<p><br><br><br></p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<ul>
+<li><p>Assign the value 7 to the variable <code>guess_me</code>, and the value 1 to the variable <code>number</code>.</p></li>
+<li><p>Write a <code>while</code> loop that compares <code>number</code> with <code>guess_me.</code></p>
+<ul>
+<li>Print ‘too low’ if <code>number</code> is less than guess me.</li>
+<li>If <code>number</code> equals <code>guess_me</code>, print ‘found it!’ and then exit the loop.</li>
+<li>If <code>number</code> is greater than <code>guess_me</code>, print ‘oops’ and then exit the loop.</li>
+<li>Increment <code>number</code> at the end of the loop.</li>
+</ul></li>
+<li><p>Write a <code>for</code> loop that compares <code>number</code> with <code>guess_me.</code></p>
+<ul>
+<li>Print ‘too low’ if <code>number</code> is less than guess me.</li>
+<li>If <code>number</code> equals <code>guess_me</code>, print ‘found it!’ and then exit the loop.</li>
+<li>If <code>number</code> is greater than <code>guess_me</code>, print ‘oops’ and then exit the loop.</li>
+<li>Increment <code>number</code> at the end of the loop.</li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><br><br><br></p>
+</section>
+<section id="question-8" class="level1">
+<h1>Question 8</h1>
+<ul>
+<li>You are given a variable value that contains a string.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="st">"$320"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Write a Python program to:
+<ol type="1">
+<li>Attempt to convert value to a floating-point number using <code>float()</code>.</li>
+<li>If the conversion is successful, print: “You entered: <number>”.</number></li>
+<li>If the conversion fails (e.g., the value is not a valid number), print: “That’s not a valid number!”.</li>
+</ol></li>
+<li>Use a <code>try</code>-<code>except</code> block to handle the potential error.</li>
+</ul>
+<p><br></p>
+<p><br><br><br></p>
+</section>
+<section id="question-9" class="level1">
+<h1>Question 9</h1>
+<ul>
+<li>Import the <code>pandas</code> library as <code>pd</code>.</li>
+<li>Install the <code>selenium</code> library.</li>
+<li>From <code>selenium</code>, import the functions <code>webdriver</code>.</li>
+</ul>
+<p><br></p>
+<p><br><br><br></p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p><font size="5">Welcome to our Classwork 2 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Classwork 2.</p>
+<p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 2 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>All comments will be stored <a href="https://github.com/bcdanl/210-spr-2026-discussion/discussions">here</a>.</p>
+<p>Let’s collaborate and learn from each other!</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const btn = document.querySelector('.quarto-btn-toggle');
@@ -696,6 +791,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/210-spr-2026-discussion" data-repo-id="R_kgDOQ8ghEg" data-category="General" data-category-id="DIC_kwDOQ8ghEs4C1IRP" data-mapping="title" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -709,8 +806,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 <div id="scroll-padding"></div>
-<script src="./assets/js/site.js"></script>
-<script src="./assets/js/posts.js"></script>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
 
 
 

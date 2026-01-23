@@ -326,6 +326,19 @@ SUNY Geneseo is committed to equitable access. If you have approved accommodatio
 - **E**: PDF export/printing mode
 
 
+## Let’s Practice Markdown!
+
+- **Markdown is a lightweight writing format** that lets you create well-structured documents using plain text (headings, lists, links, quotes, images, and code blocks).
+- **Why Markdown is widely used on the internet:**
+  - **Works everywhere:** supported by many platforms, including **Jupyter Notebook**, **GitHub**, **Reddit**, **Slack/Discord/Obsidian**, and documentation websites.
+  - **Great for publishing and future-proof:** Markdown can be converted into professional webpages/PDFs, and because it is plain text, and it is easy to store and reuse.
+
+- **In this course, Markdown is essential** because you will write narrative explanations in Jupyter Notebook (`*.ipynb`) when creating your **Data Storytelling Report**.
+
+- Start here: [Classwork 1](../danl-cw/danl-210-cw-01.html){target="_blank"}
+
+
+
 ## What is Python?
 
 - **Python** is a versatile programming language known for its simplicity and readability.
@@ -351,33 +364,41 @@ SUNY Geneseo is committed to equitable access. If you have approved accommodatio
 - For Python basics and data transformation topics, we will use [**Google Colab**](https://colab.research.google.com), Google’s free cloud-based version of Jupyter Notebook.
 
 
+## Getting Started with Google Colab
 
-## Let’s Practice Markdown!
+- Step 1: Accessing [**Google Colab**](https://colab.research.google.com)
+  - Open your web browser and go to Google Colab.
+  - Sign in with your Google account if you haven't already. 
 
-- **Markdown is a lightweight writing format** that lets you create well-structured documents using plain text (headings, lists, links, quotes, images, and code blocks).
-- **Why Markdown is widely used on the internet:**
-  - **Works everywhere:** supported by many platforms, including **Jupyter Notebook**, **GitHub**, **Reddit**, **Slack/Discord/Obsidian**, and documentation websites.
-  - **Great for publishing and future-proof:** Markdown can be converted into professional webpages/PDFs, and because it is plain text, and it is easy to store and reuse.
-
-- **In this course, Markdown is essential** because you will write narrative explanations in Jupyter Notebook (`*.ipynb`) when creating your **Data Storytelling Report**.
-
-- Start here: [Classwork 1](../danl-cw/danl-210-cw-01.html){target="_blank"}
+- Step 2: Creating a New Notebook
+  - Once on the Colab homepage, click on the **+ New notebook** button. 
 
 
+## Turn off AI Assistance in Google Colab
+
+- On Google Colab:
+  1. From the top-right corner, click :gear:
+  2. Click "**AI Assistance**" from the side menu.
+  3. Disable the first two and enable the last:  
+    ⃣$\hspace{.5cm}$**Show AI-powered inline completions**  
+    ⃣$\hspace{.5cm}$**Consented to use generative AI features**  
+    ✅ $\hspace{.5cm}$ **Hide generative AI features**
 
 
-## Anaconda Distribution
-- **Anaconda is a free Python distribution** that includes Python, Conda (Python environment manager), and many commonly used data analytics packages.
-- Install Anaconda from the official download page:  
-  - [Anaconda Distribution](https://www.anaconda.com/products/distribution)
-  - Click **Download**, then follow the installer steps for your operating system.
 
 
-## What is a Python Script?
-- A Python script (`*.py`) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder).
-  - It is the standard format for writing **reusable Python programs**, such as data-cleaning pipelines, web scrapers, and automation tasks.
-  - Scripts are commonly used in real-world analytics and software projects.
-  - Compared to notebooks, scripts are typically better for **organized, production-style code** (functions, modules, and repeatable workflows).
+<!-- ## Anaconda Distribution -->
+<!-- - **Anaconda is a free Python distribution** that includes Python, Conda (Python environment manager), and many commonly used data analytics packages. -->
+<!-- - Install Anaconda from the official download page:   -->
+<!--   - [Anaconda Distribution](https://www.anaconda.com/products/distribution) -->
+<!--   - Click **Download**, then follow the installer steps for your operating system. -->
 
-- For **data collection** topics, we will write and run Python scripts mainly in **Spyder**, using **Anaconda Distribution** as our Python environment.
+
+<!-- ## What is a Python Script? -->
+<!-- - A Python script (`*.py`) is a plain-text file that contains Python code you can run from your computer (or an IDE like Spyder). -->
+<!--   - It is the standard format for writing **reusable Python programs**, such as data-cleaning pipelines, web scrapers, and automation tasks. -->
+<!--   - Scripts are commonly used in real-world analytics and software projects. -->
+<!--   - Compared to notebooks, scripts are typically better for **organized, production-style code** (functions, modules, and repeatable workflows). -->
+
+<!-- - For **data collection** topics, we will write and run Python scripts mainly in **Spyder**, using **Anaconda Distribution** as our Python environment. -->
 
