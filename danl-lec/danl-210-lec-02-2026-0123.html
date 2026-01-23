@@ -405,7 +405,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Lecture 2</h1>
-  <p class="subtitle">Python Basics</p>
+  <p class="subtitle">Python Fundamentals</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -501,53 +501,67 @@ Byeong-Hak Choe
 </section>
 <section id="code-and-comment-style" class="slide level2">
 <h2>Code and comment style</h2>
+<div>
+<div class="fragment">
 <ul>
-<li class="fragment">Two guiding principles:
+<li>Two guiding principles:
 <ul>
-<li class="fragment"><strong>Make things easy for your future self</strong></li>
-<li class="fragment"><strong>Assume you will forget details later</strong> → write it down now</li>
-</ul></li>
-<li class="fragment">In Python, the comment character is <code>#</code>
-<ul>
-<li class="fragment">Anything after <code>#</code> is ignored by the interpreter</li>
-<li class="fragment">Put comments <strong>right above</strong> the code they describe</li>
-</ul></li>
-<li class="fragment">Use Markdown/text cells to explain:
-<ul>
-<li class="fragment">What the code cell is doing,</li>
-<li class="fragment">Any assumptions/choices,</li>
-<li class="fragment">How to interpret output.</li>
+<li><strong>Make things easy for your future self</strong></li>
+<li><strong>Assume you will forget details later</strong> → write it down now</li>
 </ul></li>
 </ul>
+</div>
+<div class="fragment">
+<ul>
+<li>In Python, the comment character is <code>#</code>
+<ul>
+<li>Anything after <code>#</code> is ignored by the interpreter</li>
+<li>Put comments <strong>right above</strong> the code they describe</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Use Markdown/text cells to explain:
+<ul>
+<li>What the code cell is doing,</li>
+<li>Any assumptions/choices,</li>
+<li>How to interpret output.</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="most-useful-google-colab-shortcuts" class="slide level2">
 <h2>⌨️ Most Useful Google Colab Shortcuts</h2>
 <div style="display:block; margin:-10px;">
 
 </div>
+<div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h4 id="windows">Windows</h4>
 <ul>
-<li class="fragment"><strong>Ctrl + Enter</strong>: Run cell</li>
-<li class="fragment"><strong>Alt + Enter</strong>: Run cell and add new cell below</li>
-<li class="fragment"><strong>Ctrl + /</strong>: Comment current line</li>
-<li class="fragment"><strong>Ctrl + Z</strong>: Undo</li>
-<li class="fragment"><strong>Ctrl + Shift + Z</strong>: Redo</li>
-<li class="fragment"><strong>Shift + ⬅️⬆️⬇️➡️</strong>: Select text</li>
-<li class="fragment"><strong>Shift + Ctrl + ⬅️⬆️⬇️➡️</strong>: Select to the beginning/end of the line</li>
+<li><strong>Ctrl + Enter</strong>: Run cell</li>
+<li><strong>Alt + Enter</strong>: Run cell and add new cell below</li>
+<li><strong>Ctrl + /</strong>: Comment current line</li>
+<li><strong>Ctrl + Z</strong>: Undo</li>
+<li><strong>Ctrl + Shift + Z</strong>: Redo</li>
+<li><strong>Shift + ⬅️⬆️⬇️➡️</strong>: Select text</li>
+<li><strong>Shift + Ctrl + ⬅️⬆️⬇️➡️</strong>: Select to the beginning/end of the line</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h4 id="mac">Mac</h4>
 <ul>
-<li class="fragment"><strong>command/control + return</strong>: Run cell</li>
-<li class="fragment"><strong>option + return</strong>: Run cell and add new cell below</li>
-<li class="fragment"><strong>command + /</strong>: Comment current line</li>
-<li class="fragment"><strong>command + Z</strong>: Undo</li>
-<li class="fragment"><strong>command + shift + Z</strong>: Redo</li>
-<li class="fragment"><strong>shift + ⬅️⬆️⬇️➡️</strong>: Select text</li>
-<li class="fragment"><strong>shift + command + ⬅️⬆️⬇️➡️</strong>: Select to the beginning/end of the line</li>
+<li><strong>command + return</strong>: Run cell</li>
+<li><strong>option + return</strong>: Run cell and add new cell below</li>
+<li><strong>command + /</strong>: Comment current line</li>
+<li><strong>command + Z</strong>: Undo</li>
+<li><strong>command + shift + Z</strong>: Redo</li>
+<li><strong>shift + ⬅️⬆️⬇️➡️</strong>: Select text</li>
+<li><strong>shift + command + ⬅️⬆️⬇️➡️</strong>: Select to the beginning/end of the line</li>
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -568,8 +582,11 @@ Byeong-Hak Choe
 <li class="fragment">A <strong>list</strong> can contain mixed types.</li>
 </ul>
 </section>
-<section id="data-types" class="slide level2">
-<h2>Data Types</h2>
+<section id="types" class="slide level2">
+<h2>Types</h2>
+<div style="display:block; margin:-30px;">
+
+</div>
 <p align="center">
 <img src="https://bcdanl.github.io/lec_figs/int-py-tab2-1.png" width="600">
 </p>
@@ -586,28 +603,34 @@ Byeong-Hak Choe
 <h2>Square Brackets <code>[]</code></h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>vector <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>]</span>
 <span id="cb4-2"><a href="#cb4-2"></a>vector[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment">Use <code>[]</code> to create a <strong>list</strong></li>
-<li class="fragment">Use <code>[]</code> to access an element by <strong>index</strong></li>
+<li>Use <code>[]</code> to create a <strong>list</strong></li>
+<li>Use <code>[]</code> to access an element by <strong>index</strong></li>
 </ul>
+</div>
 </section>
 <section id="curly-braces" class="slide level2">
 <h2>Curly Braces <code>{}</code></h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>{<span class="st">'a'</span>, <span class="st">'b'</span>}  <span class="co"># set</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>{<span class="st">'first_letter'</span>: <span class="st">'a'</span>, <span class="st">'second_letter'</span>: <span class="st">'b'</span>}  <span class="co"># dictionary (key:value pairs)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment"><code>{}</code> is used to denote a <strong>set</strong> or a <strong>dictionary</strong></li>
-<li class="fragment">Use <code>{}</code> for <strong>sets</strong> and <strong>dictionaries</strong></li>
+<li><code>{}</code> is used to denote a <strong>set</strong> or a <strong>dictionary</strong></li>
+<li>Use <code>{}</code> for <strong>sets</strong> and <strong>dictionaries</strong></li>
 </ul>
+</div>
 </section>
 <section id="parentheses" class="slide level2">
 <h2>Parentheses <code>()</code></h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>num_tup <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="bu">sum</span>(num_tup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment">Use <code>()</code> for <strong>tuples</strong></li>
-<li class="fragment">Use <code>()</code> to pass <strong>arguments</strong> into functions</li>
+<li>Use <code>()</code> for <strong>tuples</strong></li>
+<li>Use <code>()</code> to pass <strong>arguments</strong> into functions</li>
 </ul>
+</div>
 </section>
 <section id="operators" class="slide level2">
 <h2>Operators</h2>
@@ -615,30 +638,33 @@ Byeong-Hak Choe
 <span id="cb7-2"><a href="#cb7-2"></a>string_two <span class="op">=</span> <span class="st">"of string concatenation"</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>string_full <span class="op">=</span> string_one <span class="op">+</span> string_two</span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(string_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
 <ul>
-<li class="fragment">All of the basic operators we see in mathematics are available to use:</li>
+<li>All of the basic operators we see in mathematics are available to use:</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:33.3%;">
 <ul>
-<li class="fragment"><code>+</code> add</li>
-<li class="fragment"><code>-</code> subtract</li>
+<li><code>+</code> add</li>
+<li><code>-</code> subtract</li>
 </ul>
 </div><div class="column" style="width:33.4%;">
 <ul>
-<li class="fragment"><code>*</code> multiply</li>
-<li class="fragment"><code>**</code> power</li>
+<li><code>*</code> multiply</li>
+<li><code>**</code> power</li>
 </ul>
 </div><div class="column" style="width:33.3%;">
 <ul>
-<li class="fragment"><code>/</code> divide</li>
-<li class="fragment"><code>//</code> integer divide</li>
+<li><code>/</code> divide</li>
+<li><code>//</code> integer divide</li>
 </ul>
+</div>
 </div>
 </div>
 </section>
 <section id="operators-also-work-for-lists-and-strings" class="slide level2">
 <h2>Operators Also Work for Lists and Strings</h2>
+<div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>list_one <span class="op">=</span> [<span class="st">"apples"</span>, <span class="st">"oranges"</span>]</span>
@@ -646,21 +672,20 @@ Byeong-Hak Choe
 <span id="cb8-3"><a href="#cb8-3"></a>list_full <span class="op">=</span> list_one <span class="op">+</span> list_two</span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="bu">print</span>(list_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">It works for lists too:</li>
+<li>It works for lists too:</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>string <span class="op">=</span> <span class="st">"apples, "</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(string <span class="op">*</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">We can multiply strings!</li>
+<li>We can multiply strings!</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="operators-1" class="slide level2">
-<h2>Operators</h2>
-<p><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-1" target="_blank"><strong>Classwork 2.1</strong></a></p>
-<p>Using Python operations only, calculate below: <span class="math display">\[\frac{2^5}{7 \cdot (4 - 2^3)}\]</span></p>
+<ul>
+<li><strong>Q</strong>. <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-1" target="_blank"><strong>Classwork 2.1</strong></a></li>
+</ul>
+</div>
 </section>
 <section id="casting-variables" class="slide level2">
 <h2>Casting Variables</h2>
@@ -738,21 +763,21 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-c67e26d98fb7f21846cb" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c67e26d98fb7f21846cb">{"x":{"filter":"none","vertical":false,"data":[["x and y","x or y","not x"],["True only if both are True","True if at least one is True","Flips True ↔ False"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ee4e80089eb6666ecf3f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ee4e80089eb6666ecf3f">{"x":{"filter":"none","vertical":false,"data":[["x and y","x or y","not x"],["True only if both are True","True if at least one is True","Flips True ↔ False"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
 <li class="fragment">Existing booleans can be combined by a <strong>boolean operator</strong>, which create a boolean when executed.</li>
 </ul>
 </section>
-<section id="boolean-comparisons" class="slide level2">
-<h2>Boolean Comparisons</h2>
+<section id="comparison-operators" class="slide level2">
+<h2>Comparison Operators</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-b7790938fd750d6338e7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b7790938fd750d6338e7">{"x":{"filter":"none","vertical":false,"data":[["x == y","x != y","x &gt; y","x &gt;= y","x &lt; y","x &lt;= y"],["equal","not equal","greater","greater or equal","less","less or equal"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-db2e3370962c98c0c1e0" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-db2e3370962c98c0c1e0">{"x":{"filter":"none","vertical":false,"data":[["x == y","x != y","x &gt; y","x &gt;= y","x &lt; y","x &lt;= y"],["equal","not equal","greater","greater or equal","less","less or equal"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

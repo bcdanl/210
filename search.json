@@ -193,7 +193,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#instructor-1",
@@ -501,7 +501,7 @@
     "href": "index.html#lecture",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "🚀 Lecture",
-    "text": "🚀 Lecture\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Basics\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "🚀 Lecture\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#classwork",
@@ -921,7 +921,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#code-and-comment-style",
     "title": "Lecture 2",
     "section": "Code and comment style",
-    "text": "Code and comment style\n\nTwo guiding principles:\n\nMake things easy for your future self\nAssume you will forget details later → write it down now\n\nIn Python, the comment character is #\n\nAnything after # is ignored by the interpreter\nPut comments right above the code they describe\n\nUse Markdown/text cells to explain:\n\nWhat the code cell is doing,\nAny assumptions/choices,\nHow to interpret output."
+    "text": "Code and comment style\n\n\n\nTwo guiding principles:\n\nMake things easy for your future self\nAssume you will forget details later → write it down now\n\n\n\n\n\nIn Python, the comment character is #\n\nAnything after # is ignored by the interpreter\nPut comments right above the code they describe\n\n\n\n\n\nUse Markdown/text cells to explain:\n\nWhat the code cell is doing,\nAny assumptions/choices,\nHow to interpret output."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#assignment-1",
@@ -942,7 +942,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#data-types",
     "title": "Lecture 2",
     "section": "Data Types",
-    "text": "Data Types\n\n\n\n\nThe Type column shows Python’s official type name.\nMutable?\n\n✅ mutable → can be changed after creation\n❌ immutable → cannot be changed after creation"
+    "text": "Data Types\n\n\n\n\n\n\n\nThe Type column shows Python’s official type name.\nMutable?\n\n✅ mutable → can be changed after creation\n❌ immutable → cannot be changed after creation"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#brackets",
@@ -956,7 +956,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#operators",
     "title": "Lecture 2",
     "section": "Operators",
-    "text": "Operators\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nAll of the basic operators we see in mathematics are available to use:\n\n\n\n\n+ add\n- subtract\n\n\n\n* multiply\n** power\n\n\n\n/ divide\n// integer divide"
+    "text": "Operators\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\n\nAll of the basic operators we see in mathematics are available to use:\n\n\n\n\n+ add\n- subtract\n\n\n\n* multiply\n** power\n\n\n\n/ divide\n// integer divide"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#operators-1",
@@ -1593,35 +1593,35 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#most-useful-google-colab-shortcuts",
     "title": "Lecture 2",
     "section": "⌨️ Most Useful Google Colab Shortcuts",
-    "text": "⌨️ Most Useful Google Colab Shortcuts\n\n\n\n\n\nWindows\n\nCtrl + Enter: Run cell\nAlt + Enter: Run cell and add new cell below\nCtrl + /: Comment current line\nCtrl + Z: Undo\nCtrl + Shift + Z: Redo\nShift + ⬅️⬆️⬇️➡️: Select text\nShift + Ctrl + ⬅️⬆️⬇️➡️: Select to the beginning/end of the line\n\n\nMac\n\ncommand/control + return: Run cell\noption + return: Run cell and add new cell below\ncommand + /: Comment current line\ncommand + Z: Undo\ncommand + shift + Z: Redo\nshift + ⬅️⬆️⬇️➡️: Select text\nshift + command + ⬅️⬆️⬇️➡️: Select to the beginning/end of the line"
+    "text": "⌨️ Most Useful Google Colab Shortcuts\n\n\n\n\n\n\nWindows\n\nCtrl + Enter: Run cell\nAlt + Enter: Run cell and add new cell below\nCtrl + /: Comment current line\nCtrl + Z: Undo\nCtrl + Shift + Z: Redo\nShift + ⬅️⬆️⬇️➡️: Select text\nShift + Ctrl + ⬅️⬆️⬇️➡️: Select to the beginning/end of the line\n\n\nMac\n\ncommand + return: Run cell\noption + return: Run cell and add new cell below\ncommand + /: Comment current line\ncommand + Z: Undo\ncommand + shift + Z: Redo\nshift + ⬅️⬆️⬇️➡️: Select text\nshift + command + ⬅️⬆️⬇️➡️: Select to the beginning/end of the line"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#square-brackets",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#square-brackets",
     "title": "Lecture 2",
     "section": "Square Brackets []",
-    "text": "Square Brackets []\nvector = ['a', 'b']\nvector[0]\n\nUse [] to create a list\nUse [] to access an element by index"
+    "text": "Square Brackets []\nvector = ['a', 'b']\nvector[0]\n\n\nUse [] to create a list\nUse [] to access an element by index"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#curly-braces",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#curly-braces",
     "title": "Lecture 2",
     "section": "Curly Braces {}",
-    "text": "Curly Braces {}\n{'a', 'b'}  # set\n{'first_letter': 'a', 'second_letter': 'b'}  # dictionary (key:value pairs)\n\n{} is used to denote a set or a dictionary\nUse {} for sets and dictionaries"
+    "text": "Curly Braces {}\n{'a', 'b'}  # set\n{'first_letter': 'a', 'second_letter': 'b'}  # dictionary (key:value pairs)\n\n\n{} is used to denote a set or a dictionary\nUse {} for sets and dictionaries"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#parentheses",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#parentheses",
     "title": "Lecture 2",
     "section": "Parentheses ()",
-    "text": "Parentheses ()\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\nUse () for tuples\nUse () to pass arguments into functions"
+    "text": "Parentheses ()\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n\nUse () for tuples\nUse () to pass arguments into functions"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#operators-also-work-for-lists-and-strings",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#operators-also-work-for-lists-and-strings",
     "title": "Lecture 2",
     "section": "Operators Also Work for Lists and Strings",
-    "text": "Operators Also Work for Lists and Strings\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!"
+    "text": "Operators Also Work for Lists and Strings\n\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!\n\n\n\n\nQ. Classwork 2.1"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-in-keyword-membership-test",
@@ -1671,5 +1671,19 @@
     "title": "Lecture 2",
     "section": "Get an Item with a Slice",
     "text": "Get an Item with a Slice\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#types",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#types",
+    "title": "Lecture 2",
+    "section": "Types",
+    "text": "Types\n\n\n\n\n\n\n\nThe Type column shows Python’s official type name.\nMutable?\n\n✅ mutable → can be changed after creation\n❌ immutable → cannot be changed after creation"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#comparison-operators",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#comparison-operators",
+    "title": "Lecture 2",
+    "section": "Comparison Operators",
+    "text": "Comparison Operators"
   }
 ]

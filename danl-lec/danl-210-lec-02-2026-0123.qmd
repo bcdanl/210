@@ -1,6 +1,6 @@
 ---
 title: Lecture 2
-subtitle: Python Basics
+subtitle: Python Fundamentals
 format:
   clean-revealjs:
     self-contained: false
@@ -135,24 +135,33 @@ y
 
 ## Code and comment style
 
+::::{.nonincremental}
+::: {.fragment}
 - Two guiding principles:
   - **Make things easy for your future self**
   - **Assume you will forget details later** → write it down now
+:::
 
+::: {.fragment}
 - In Python, the comment character is `#`
   - Anything after `#` is ignored by the interpreter
   - Put comments **right above** the code they describe
+:::
 
+::: {.fragment}
 - Use Markdown/text cells to explain:
   - What the code cell is doing,
   - Any assumptions/choices,
   - How to interpret output.
+:::
 
+::::
 
 ## ⌨️ Most Useful Google Colab Shortcuts
 
 <div style="display:block; margin:-10px;"></div>
 
+::::{.nonincremental}
 :::: {.columns}
 ::: {.column width="50%"}
 #### Windows
@@ -169,7 +178,7 @@ y
 ::: {.column width="50%"}
 #### Mac
 
-- **command/control + return**: Run cell
+- **command + return**: Run cell
 - **option + return**: Run cell and add new cell below
 - **command + /**: Comment current line 
 - **command + Z**:  Undo
@@ -179,7 +188,7 @@ y
 
 :::
 ::::
-
+::::
 
 
 ##  Variables Are Names, Not Places
@@ -202,11 +211,14 @@ type(list_example)
 
 
 
-## Data Types
+## Types
+
+<div style="display:block; margin:-30px;"></div>
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/int-py-tab2-1.png" width="600">
 </p>
+
 
 - The **Type** column shows Python’s official type name.
 - **Mutable?**
@@ -225,9 +237,11 @@ vector = ['a', 'b']
 vector[0]
 ```
 
+:::nonincremental
 - Use `[]` to create a **list**
 - Use `[]` to access an element by **index**
 
+:::
 
 ## Curly Braces `{}`
 
@@ -236,10 +250,12 @@ vector[0]
 {'a', 'b'}  # set
 {'first_letter': 'a', 'second_letter': 'b'}  # dictionary (key:value pairs)
 ```
+:::nonincremental
 
 - `{}` is used to denote a **set** or a **dictionary**
 - Use `{}` for **sets** and **dictionaries**
 
+:::
 
 ## Parentheses `()`
 
@@ -248,11 +264,12 @@ num_tup = (1, 2, 3)
 sum(num_tup)
 ```
 
+:::nonincremental
 
 - Use `()` for **tuples**
 - Use `()` to pass **arguments** into functions
 
-
+:::
 
 ##  Operators
 
@@ -263,9 +280,11 @@ string_full = string_one + string_two
 print(string_full)
 ```
 
+:::: nonincremental
 
 
 - All of the basic operators we see in mathematics are available to use:
+
 
 :::: {.columns}
 ::: {.column width="33.3%"}
@@ -291,11 +310,14 @@ print(string_full)
 
 ::::
 
-
+::::
 
 
 
 ## Operators Also Work for Lists and Strings
+
+:::: nonincremental
+
 :::: {.columns}
 ::: {.column width="50%"}
 
@@ -325,14 +347,10 @@ print(string * 3)
 
 
 
+- **Q**. [**Classwork 2.1**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-1){target="_blank"}
 
-##  Operators
 
-**Q**. [**Classwork 2.1**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-1){target="_blank"}
-
-Using Python operations only, calculate below:
-$$\frac{2^5}{7 \cdot (4 - 2^3)}$$ 
-
+::::
 
 
 ##  Casting Variables
@@ -479,7 +497,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 
 
-## Boolean Comparisons
+## Comparison Operators
 
 ```{r, eval = T, echo = F, out.width='100%', fig.align='center'}
 text_tbl <- data.frame(
