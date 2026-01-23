@@ -956,7 +956,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#operators",
     "title": "Lecture 2",
     "section": "Operators",
-    "text": "Operators\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\n\nAll of the basic operators we see in mathematics are available to use:\n\n\n\n\n+ add\n- subtract\n\n\n\n* multiply\n** power\n\n\n\n/ divide\n// integer divide"
+    "text": "Operators\n:::: nonincremental\n\n\na = 10\nb = 3\n\na + b\na - b\na * b\na ** b\na / b\na // b\na % b\n\n\nAll of the basic operators we see in mathematics are available to use:\n\n+ add\n- subtract\n* multiply\n** power\n/ divide\n// integer divide (floor division)\n% remainder"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#operators-1",
@@ -1621,7 +1621,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#operators-also-work-for-lists-and-strings",
     "title": "Lecture 2",
     "section": "Operators Also Work for Lists and Strings",
-    "text": "Operators Also Work for Lists and Strings\n\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\nIt works for lists too:\n\n\nstring = \"apples, \"\nprint(string * 3)\n\nWe can multiply strings!\n\n\n\n\nQ. Classwork 2.1"
+    "text": "Operators Also Work for Lists and Strings\n\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nstring = \"apples, \"\nprint(string * 3)\n\n+ concatenates (joins) strings\n* repeats a string multiple times\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\n+ concatenates (combines) lists into a longer list\n\n\n\n\nQ. Classwork 2.1"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-in-keyword-membership-test",
@@ -1727,5 +1727,12 @@
     "title": "Lecture 2",
     "section": "Skip in a for Loop with continue",
     "text": "Skip in a for Loop with continue\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        continue\n    print(letter)\n\ncontinue skips the current iteration and moves to the next one"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#updating-a-variable-with",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#updating-a-variable-with",
+    "title": "Lecture 2",
+    "section": "Updating a Variable with +=",
+    "text": "Updating a Variable with +=\n\n\ncount = 1\ncount += 1\nprint(count)\n\ncount = 1\ncount = count + 1\nprint(count)\n\n\n\n+= is a shortcut assignment operator\nIt means: take the current value and add something to it\nE.g.,: count += 1 means the same thing as count = count + 1."
   }
 ]

@@ -133,6 +133,8 @@ y
 :::
 ::::
 
+
+	
 ## Code and comment style
 
 ::::{.nonincremental}
@@ -273,45 +275,40 @@ sum(num_tup)
 
 ##  Operators
 
-```{.python}
-string_one = "This is an example "
-string_two = "of string concatenation"
-string_full = string_one + string_two
-print(string_full)
-```
 
 :::: nonincremental
 
-
-- All of the basic operators we see in mathematics are available to use:
-
-
 :::: {.columns}
-::: {.column width="33.3%"}
+::: {.column width="50%"}
+```{.python}
+a = 10
+b = 3
 
+a + b
+a - b
+a * b
+a ** b
+a / b
+a // b
+a % b
+```
+
+:::
+
+  
+::: {.column width="50%"}
+- All of the basic operators we see in mathematics are available to use:
   - `+` add
   - `-` subtract
-
-:::
-
-::: {.column width="33.4%"}
-
   - `*` multiply
   - `**` power
-
-:::
-
-::: {.column width="33.3%"}
-
   - `/` divide
-  - `//` integer divide
+  - `//` integer divide (floor division)
+  - `%` remainder
 
 :::
-
+  
 ::::
-
-::::
-
 
 
 ## Operators Also Work for Lists and Strings
@@ -322,24 +319,31 @@ print(string_full)
 ::: {.column width="50%"}
 
 ```{.python}
-list_one = ["apples", "oranges"]
-list_two = ["pears", "satsumas"]
-list_full = list_one + list_two
-print(list_full)
+string_one = "This is an example "
+string_two = "of string concatenation"
+string_full = string_one + string_two
+print(string_full)
+
+string = "apples, "
+print(string * 3)
 ```
 
-- It works for lists too:
+-	`+` **concatenates** (joins) strings
+-	`*` **repeats** a string multiple times
+
 
 :::
 
 ::: {.column width="50%"}
 
 ```{.python}
-string = "apples, "
-print(string * 3)
+list_one = ["apples", "oranges"]
+list_two = ["pears", "satsumas"]
+list_full = list_one + list_two
+print(list_full)
 ```
 
-- We can multiply strings!
+-	`+` **concatenates** (combines) lists into a longer list
 
 
 :::
@@ -948,6 +952,30 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 
 # **Loop with `while` and `for`** {background-color="#1c4982"}
 
+
+## Updating a Variable with `+=`
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+count = 1
+count += 1
+print(count)
+```
+:::
+::: {.column width="50%"}
+```{.python}
+count = 1
+count = count + 1
+print(count)
+```
+:::
+::::
+
+-	`+=` is a **shortcut assignment operator**
+-	It means: **take the current value and add something to it**
+  - E.g.,: `count += 1` means the same thing as `count = count + 1`.
+  
 ##  Repeat with `while`
 
 :::: {.columns}

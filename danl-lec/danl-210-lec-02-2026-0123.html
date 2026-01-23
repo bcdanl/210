@@ -634,31 +634,32 @@ Byeong-Hak Choe
 </section>
 <section id="operators" class="slide level2">
 <h2>Operators</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>string_one <span class="op">=</span> <span class="st">"This is an example "</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>string_two <span class="op">=</span> <span class="st">"of string concatenation"</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>string_full <span class="op">=</span> string_one <span class="op">+</span> string_two</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(string_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
-<ul>
-<li>All of the basic operators we see in mathematics are available to use:</li>
-</ul>
+<p>:::: nonincremental</p>
 <div class="columns">
-<div class="column" style="width:33.3%;">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>a <span class="op">+</span> b</span>
+<span id="cb7-5"><a href="#cb7-5"></a>a <span class="op">-</span> b</span>
+<span id="cb7-6"><a href="#cb7-6"></a>a <span class="op">*</span> b</span>
+<span id="cb7-7"><a href="#cb7-7"></a>a <span class="op">**</span> b</span>
+<span id="cb7-8"><a href="#cb7-8"></a>a <span class="op">/</span> b</span>
+<span id="cb7-9"><a href="#cb7-9"></a>a <span class="op">//</span> b</span>
+<span id="cb7-10"><a href="#cb7-10"></a>a <span class="op">%</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
 <ul>
-<li><code>+</code> add</li>
-<li><code>-</code> subtract</li>
-</ul>
-</div><div class="column" style="width:33.4%;">
+<li class="fragment">All of the basic operators we see in mathematics are available to use:
 <ul>
-<li><code>*</code> multiply</li>
-<li><code>**</code> power</li>
+<li class="fragment"><code>+</code> add</li>
+<li class="fragment"><code>-</code> subtract</li>
+<li class="fragment"><code>*</code> multiply</li>
+<li class="fragment"><code>**</code> power</li>
+<li class="fragment"><code>/</code> divide</li>
+<li class="fragment"><code>//</code> integer divide (floor division)</li>
+<li class="fragment"><code>%</code> remainder</li>
+</ul></li>
 </ul>
-</div><div class="column" style="width:33.3%;">
-<ul>
-<li><code>/</code> divide</li>
-<li><code>//</code> integer divide</li>
-</ul>
-</div>
 </div>
 </div>
 </section>
@@ -667,18 +668,24 @@ Byeong-Hak Choe
 <div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>list_one <span class="op">=</span> [<span class="st">"apples"</span>, <span class="st">"oranges"</span>]</span>
-<span id="cb8-2"><a href="#cb8-2"></a>list_two <span class="op">=</span> [<span class="st">"pears"</span>, <span class="st">"satsumas"</span>]</span>
-<span id="cb8-3"><a href="#cb8-3"></a>list_full <span class="op">=</span> list_one <span class="op">+</span> list_two</span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="bu">print</span>(list_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>string_one <span class="op">=</span> <span class="st">"This is an example "</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>string_two <span class="op">=</span> <span class="st">"of string concatenation"</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>string_full <span class="op">=</span> string_one <span class="op">+</span> string_two</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="bu">print</span>(string_full)</span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a>string <span class="op">=</span> <span class="st">"apples, "</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="bu">print</span>(string <span class="op">*</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>It works for lists too:</li>
+<li><code>+</code> <strong>concatenates</strong> (joins) strings</li>
+<li><code>*</code> <strong>repeats</strong> a string multiple times</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>string <span class="op">=</span> <span class="st">"apples, "</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(string <span class="op">*</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>list_one <span class="op">=</span> [<span class="st">"apples"</span>, <span class="st">"oranges"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a>list_two <span class="op">=</span> [<span class="st">"pears"</span>, <span class="st">"satsumas"</span>]</span>
+<span id="cb9-3"><a href="#cb9-3"></a>list_full <span class="op">=</span> list_one <span class="op">+</span> list_two</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(list_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>We can multiply strings!</li>
+<li><code>+</code> <strong>concatenates</strong> (combines) lists into a longer list</li>
 </ul>
 </div>
 </div>
@@ -763,8 +770,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-bb069a65e11b20203b3f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bb069a65e11b20203b3f">{"x":{"filter":"none","vertical":false,"data":[["x and y","x or y","not x"],["True only if both are True","True if at least one is True","Flips True ↔ False"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c8e2482a4bb6881dda6c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c8e2482a4bb6881dda6c">{"x":{"filter":"none","vertical":false,"data":[["x and y","x or y","not x"],["True only if both are True","True if at least one is True","Flips True ↔ False"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
@@ -776,8 +783,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-9771f369409a20a3f582" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9771f369409a20a3f582">{"x":{"filter":"none","vertical":false,"data":[["x == y","x != y","x &gt; y","x &gt;= y","x &lt; y","x &lt;= y"],["equal","not equal","greater","greater or equal","less","less or equal"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-26a30a1d2f5063405340" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-26a30a1d2f5063405340">{"x":{"filter":"none","vertical":false,"data":[["x == y","x != y","x &gt; y","x &gt;= y","x &lt; y","x &lt;= y"],["equal","not equal","greater","greater or equal","less","less or equal"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1119,14 +1126,33 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <h1><strong>Loop with <code>while</code> and <code>for</code></strong></h1>
 
 </section>
+<section id="updating-a-variable-with" class="slide level2">
+<h2>Updating a Variable with <code>+=</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>count <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="bu">print</span>(count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>count <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="bu">print</span>(count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>+=</code> is a <strong>shortcut assignment operator</strong></li>
+<li class="fragment">It means: <strong>take the current value and add something to it</strong></li>
+<li class="fragment">E.g.,: <code>count += 1</code> means the same thing as <code>count = count + 1</code>.</li>
+</ul>
+</section>
 <section id="repeat-with-while" class="slide level2">
 <h2>Repeat with <code>while</code></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>count <span class="op">=</span> <span class="dv">1</span>        </span>
-<span id="cb48-2"><a href="#cb48-2"></a><span class="cf">while</span> count <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
-<span id="cb48-3"><a href="#cb48-3"></a>    <span class="bu">print</span>(count)</span>
-<span id="cb48-4"><a href="#cb48-4"></a>    count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>count <span class="op">=</span> <span class="dv">1</span>        </span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="cf">while</span> count <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
+<span id="cb50-3"><a href="#cb50-3"></a>    <span class="bu">print</span>(count)</span>
+<span id="cb50-4"><a href="#cb50-4"></a>    count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:60%;">
 <div style="display:block; margin:-35px;">
 
@@ -1148,10 +1174,10 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 </section>
 <section id="asking-the-user-for-input" class="slide level2">
 <h2>Asking the user for input</h2>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>stuff <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb49-2"><a href="#cb49-2"></a><span class="co"># Type something and press Return/Enter on Python Console </span></span>
-<span id="cb49-3"><a href="#cb49-3"></a><span class="co"># before running print(stuff)</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a><span class="bu">print</span>(stuff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>stuff <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="co"># Type something and press Return/Enter on Python Console </span></span>
+<span id="cb51-3"><a href="#cb51-3"></a><span class="co"># before running print(stuff)</span></span>
+<span id="cb51-4"><a href="#cb51-4"></a><span class="bu">print</span>(stuff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>input()</code> pauses the program and waits for the user to type something.</li>
 <li class="fragment">Whatever the user types is returned as a <strong>string</strong>.</li>
@@ -1160,15 +1186,15 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 </section>
 <section id="cancel-an-infinite-loop-with-break" class="slide level2">
 <h2>Cancel an Infinite Loop with <code>break</code></h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb50-2"><a href="#cb50-2"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter 'yes' to continue or 'no' to stop: "</span>)</span>
-<span id="cb50-3"><a href="#cb50-3"></a>    <span class="cf">if</span> user_input.lower() <span class="op">==</span> <span class="st">'no'</span>:</span>
-<span id="cb50-4"><a href="#cb50-4"></a>        <span class="bu">print</span>(<span class="st">"Exiting the loop. Goodbye!"</span>)</span>
-<span id="cb50-5"><a href="#cb50-5"></a>        <span class="cf">break</span></span>
-<span id="cb50-6"><a href="#cb50-6"></a>    <span class="cf">elif</span> user_input.lower() <span class="op">==</span> <span class="st">'yes'</span>:</span>
-<span id="cb50-7"><a href="#cb50-7"></a>        <span class="bu">print</span>(<span class="st">"You chose to continue."</span>)</span>
-<span id="cb50-8"><a href="#cb50-8"></a>    <span class="cf">else</span>:</span>
-<span id="cb50-9"><a href="#cb50-9"></a>        <span class="bu">print</span>(<span class="st">"Invalid input, please enter 'yes' or 'no'."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb52-2"><a href="#cb52-2"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter 'yes' to continue or 'no' to stop: "</span>)</span>
+<span id="cb52-3"><a href="#cb52-3"></a>    <span class="cf">if</span> user_input.lower() <span class="op">==</span> <span class="st">'no'</span>:</span>
+<span id="cb52-4"><a href="#cb52-4"></a>        <span class="bu">print</span>(<span class="st">"Exiting the loop. Goodbye!"</span>)</span>
+<span id="cb52-5"><a href="#cb52-5"></a>        <span class="cf">break</span></span>
+<span id="cb52-6"><a href="#cb52-6"></a>    <span class="cf">elif</span> user_input.lower() <span class="op">==</span> <span class="st">'yes'</span>:</span>
+<span id="cb52-7"><a href="#cb52-7"></a>        <span class="bu">print</span>(<span class="st">"You chose to continue."</span>)</span>
+<span id="cb52-8"><a href="#cb52-8"></a>    <span class="cf">else</span>:</span>
+<span id="cb52-9"><a href="#cb52-9"></a>        <span class="bu">print</span>(<span class="st">"Invalid input, please enter 'yes' or 'no'."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>While</code> loop is used to execute a block of code repeatedly until given boolean condition evaluated to <code>False</code>.
 <ul>
@@ -1180,14 +1206,14 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 </section>
 <section id="skip-ahead-with-continue" class="slide level2">
 <h2>Skip Ahead with <code>continue</code></h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb51-2"><a href="#cb51-2"></a>    value <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Integer, please [q to quit]: "</span>)</span>
-<span id="cb51-3"><a href="#cb51-3"></a>    <span class="cf">if</span> value <span class="op">==</span> <span class="st">'q'</span>: <span class="co"># quit</span></span>
-<span id="cb51-4"><a href="#cb51-4"></a>        <span class="cf">break</span></span>
-<span id="cb51-5"><a href="#cb51-5"></a>    number <span class="op">=</span> <span class="bu">int</span>(value)</span>
-<span id="cb51-6"><a href="#cb51-6"></a>    <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># an even number</span></span>
-<span id="cb51-7"><a href="#cb51-7"></a>        <span class="cf">continue</span></span>
-<span id="cb51-8"><a href="#cb51-8"></a>    <span class="bu">print</span>(number, <span class="st">"squared is"</span>, number<span class="op">*</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb53-2"><a href="#cb53-2"></a>    value <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Integer, please [q to quit]: "</span>)</span>
+<span id="cb53-3"><a href="#cb53-3"></a>    <span class="cf">if</span> value <span class="op">==</span> <span class="st">'q'</span>: <span class="co"># quit</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a>        <span class="cf">break</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a>    number <span class="op">=</span> <span class="bu">int</span>(value)</span>
+<span id="cb53-6"><a href="#cb53-6"></a>    <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># an even number</span></span>
+<span id="cb53-7"><a href="#cb53-7"></a>        <span class="cf">continue</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a>    <span class="bu">print</span>(number, <span class="st">"squared is"</span>, number<span class="op">*</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>continue</code> skips the rest of the loop body <strong>for the current iteration</strong></li>
 <li class="fragment">Then Python jumps back to the top of the loop</li>
@@ -1213,16 +1239,16 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <div class="columns">
 <div class="column" style="width:50%;">
 <h4 id="while-approach"><code>while</code> approach</h4>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>offset <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb52-3"><a href="#cb52-3"></a><span class="cf">while</span> offset <span class="op">&lt;</span> <span class="bu">len</span>(word):</span>
-<span id="cb52-4"><a href="#cb52-4"></a>    <span class="bu">print</span>(word[offset])</span>
-<span id="cb52-5"><a href="#cb52-5"></a>    offset <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a>offset <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="cf">while</span> offset <span class="op">&lt;</span> <span class="bu">len</span>(word):</span>
+<span id="cb54-4"><a href="#cb54-4"></a>    <span class="bu">print</span>(word[offset])</span>
+<span id="cb54-5"><a href="#cb54-5"></a>    offset <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <h4 id="for-approach"><code>for</code> approach</h4>
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
-<span id="cb53-2"><a href="#cb53-2"></a><span class="cf">for</span> letter <span class="kw">in</span> word:</span>
-<span id="cb53-3"><a href="#cb53-3"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="cf">for</span> letter <span class="kw">in</span> word:</span>
+<span id="cb55-3"><a href="#cb55-3"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1231,11 +1257,11 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 </section>
 <section id="cancel-a-for-loop-with-break" class="slide level2">
 <h2>Cancel a <code>for</code> Loop with <code>break</code></h2>
-<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a><span class="cf">for</span> letter <span class="kw">in</span> word:</span>
-<span id="cb54-3"><a href="#cb54-3"></a>    <span class="cf">if</span> letter <span class="op">==</span> <span class="st">'u'</span>:</span>
-<span id="cb54-4"><a href="#cb54-4"></a>        <span class="cf">break</span></span>
-<span id="cb54-5"><a href="#cb54-5"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="cf">for</span> letter <span class="kw">in</span> word:</span>
+<span id="cb56-3"><a href="#cb56-3"></a>    <span class="cf">if</span> letter <span class="op">==</span> <span class="st">'u'</span>:</span>
+<span id="cb56-4"><a href="#cb56-4"></a>        <span class="cf">break</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>break</code> exits the loop immediately</li>
 </ul>
@@ -1243,29 +1269,29 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 </section>
 <section id="skip-in-a-for-loop-with-continue" class="slide level2">
 <h2>Skip in a <code>for</code> Loop with <code>continue</code></h2>
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a><span class="cf">for</span> letter <span class="kw">in</span> word:</span>
-<span id="cb55-3"><a href="#cb55-3"></a>    <span class="cf">if</span> letter <span class="op">==</span> <span class="st">'u'</span>:</span>
-<span id="cb55-4"><a href="#cb55-4"></a>        <span class="cf">continue</span></span>
-<span id="cb55-5"><a href="#cb55-5"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>word <span class="op">=</span> <span class="st">'thud'</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a><span class="cf">for</span> letter <span class="kw">in</span> word:</span>
+<span id="cb57-3"><a href="#cb57-3"></a>    <span class="cf">if</span> letter <span class="op">==</span> <span class="st">'u'</span>:</span>
+<span id="cb57-4"><a href="#cb57-4"></a>        <span class="cf">continue</span></span>
+<span id="cb57-5"><a href="#cb57-5"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>continue</code> skips the current iteration and moves to the next one</li>
 </ul>
 </section>
 <section id="loop-control-continue-pass-break" class="slide level2">
 <h2>🔄 Loop Control: <code>continue</code>, <code>pass</code>, <code>break</code></h2>
-<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
-<span id="cb56-2"><a href="#cb56-2"></a></span>
-<span id="cb56-3"><a href="#cb56-3"></a>    <span class="cf">if</span> num <span class="op">==</span> <span class="dv">2</span>:</span>
-<span id="cb56-4"><a href="#cb56-4"></a>        <span class="cf">continue</span>   <span class="co"># skip printing 2</span></span>
-<span id="cb56-5"><a href="#cb56-5"></a></span>
-<span id="cb56-6"><a href="#cb56-6"></a>    <span class="cf">if</span> num <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb56-7"><a href="#cb56-7"></a>        <span class="cf">pass</span>       <span class="co"># do nothing, move on</span></span>
-<span id="cb56-8"><a href="#cb56-8"></a></span>
-<span id="cb56-9"><a href="#cb56-9"></a>    <span class="cf">if</span> num <span class="op">==</span> <span class="dv">4</span>:</span>
-<span id="cb56-10"><a href="#cb56-10"></a>        <span class="cf">break</span>      <span class="co"># exit the loop</span></span>
-<span id="cb56-11"><a href="#cb56-11"></a></span>
-<span id="cb56-12"><a href="#cb56-12"></a>    <span class="bu">print</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb58-2"><a href="#cb58-2"></a></span>
+<span id="cb58-3"><a href="#cb58-3"></a>    <span class="cf">if</span> num <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb58-4"><a href="#cb58-4"></a>        <span class="cf">continue</span>   <span class="co"># skip printing 2</span></span>
+<span id="cb58-5"><a href="#cb58-5"></a></span>
+<span id="cb58-6"><a href="#cb58-6"></a>    <span class="cf">if</span> num <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb58-7"><a href="#cb58-7"></a>        <span class="cf">pass</span>       <span class="co"># do nothing, move on</span></span>
+<span id="cb58-8"><a href="#cb58-8"></a></span>
+<span id="cb58-9"><a href="#cb58-9"></a>    <span class="cf">if</span> num <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb58-10"><a href="#cb58-10"></a>        <span class="cf">break</span>      <span class="co"># exit the loop</span></span>
+<span id="cb58-11"><a href="#cb58-11"></a></span>
+<span id="cb58-12"><a href="#cb58-12"></a>    <span class="bu">print</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><strong><code>continue</code></strong> → skips to the next iteration<br>
 </li>
@@ -1278,12 +1304,12 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <h2>Generate Number Sequences with <code>range()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="bu">list</span>( <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>) )</span>
-<span id="cb57-2"><a href="#cb57-2"></a><span class="bu">list</span>( <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">4</span>) )</span>
-<span id="cb57-3"><a href="#cb57-3"></a><span class="bu">list</span>( <span class="bu">range</span>(<span class="dv">4</span>) )</span>
-<span id="cb57-4"><a href="#cb57-4"></a></span>
-<span id="cb57-5"><a href="#cb57-5"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">4</span>):</span>
-<span id="cb57-6"><a href="#cb57-6"></a>    <span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a><span class="bu">list</span>( <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>) )</span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="bu">list</span>( <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">4</span>) )</span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="bu">list</span>( <span class="bu">range</span>(<span class="dv">4</span>) )</span>
+<span id="cb59-4"><a href="#cb59-4"></a></span>
+<span id="cb59-5"><a href="#cb59-5"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">4</span>):</span>
+<span id="cb59-6"><a href="#cb59-6"></a>    <span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li class="fragment"><code>range()</code> creates a sequence of integers without storing a full list</li>
@@ -1323,12 +1349,12 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ol type="1">
 <li><strong>Creating a List of Squares:</strong></li>
 </ol>
-<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li><strong>Filtering Items:</strong></li>
 </ol>
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
-<span id="cb59-2"><a href="#cb59-2"></a>evens <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> numbers <span class="cf">if</span> x <span class="op">!=</span> <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb61-2"><a href="#cb61-2"></a>evens <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> numbers <span class="cf">if</span> x <span class="op">!=</span> <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dictionary-comprehension" class="slide level2">
@@ -1342,17 +1368,17 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ol type="1">
 <li><strong>Creating a Dictionary of Squares:</strong></li>
 </ol>
-<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>squares_dict <span class="op">=</span> {x: x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>squares_dict <span class="op">=</span> {x: x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li><strong>Filtering Dictionary Items:</strong></li>
 </ol>
-<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>   my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>}</span>
-<span id="cb61-2"><a href="#cb61-2"></a>   filtered_dict <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> my_dict.items() <span class="cf">if</span> v <span class="op">!=</span> <span class="dv">2</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>   my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>}</span>
+<span id="cb63-2"><a href="#cb63-2"></a>   filtered_dict <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> my_dict.items() <span class="cf">if</span> v <span class="op">!=</span> <span class="dv">2</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li><strong>Swapping Keys and Values:</strong></li>
 </ol>
-<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>original_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
-<span id="cb62-2"><a href="#cb62-2"></a>swapped_dict <span class="op">=</span> {v: k <span class="cf">for</span> k, v <span class="kw">in</span> original_dict.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>original_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
+<span id="cb64-2"><a href="#cb64-2"></a>swapped_dict <span class="op">=</span> {v: k <span class="cf">for</span> k, v <span class="kw">in</span> original_dict.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -1367,8 +1393,8 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ul>
 <li><strong><code>append()</code></strong>: Adds an item to the end of the list.</li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb63-2"><a href="#cb63-2"></a>my_list.append(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb65-2"><a href="#cb65-2"></a>my_list.append(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="modifying-a-list-1" class="slide level2">
@@ -1378,19 +1404,19 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ul>
 <li><strong><code>remove()</code></strong>: Deletes the first occurrence of value in the list.</li>
 </ul>
-<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>]</span>
-<span id="cb64-2"><a href="#cb64-2"></a>my_list.remove(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>]</span>
+<span id="cb66-2"><a href="#cb66-2"></a>my_list.remove(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong>List Comprehension</strong>: Removes items based on a condition.</li>
 </ul>
-<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>]</span>
-<span id="cb65-2"><a href="#cb65-2"></a>my_list <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> my_list <span class="cf">if</span> x <span class="op">!=</span> <span class="dv">2</span>]  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>]</span>
+<span id="cb67-2"><a href="#cb67-2"></a>my_list <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> my_list <span class="cf">if</span> x <span class="op">!=</span> <span class="dv">2</span>]  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong><code>del</code> statement</strong>: Deletes an item by index or a slice of items.</li>
 </ul>
-<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb66-2"><a href="#cb66-2"></a><span class="kw">del</span> my_list[<span class="dv">1</span>] </span>
-<span id="cb66-3"><a href="#cb66-3"></a><span class="kw">del</span> my_list[<span class="dv">1</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb68-2"><a href="#cb68-2"></a><span class="kw">del</span> my_list[<span class="dv">1</span>] </span>
+<span id="cb68-3"><a href="#cb68-3"></a><span class="kw">del</span> my_list[<span class="dv">1</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="modifying-a-dictionary" class="slide level2">
@@ -1400,9 +1426,9 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ul>
 <li><strong><code>update()</code></strong>: Adds new key-value pairs or updates existing ones.</li>
 </ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>}</span>
-<span id="cb67-2"><a href="#cb67-2"></a>my_dict.update({<span class="st">'c'</span>: <span class="dv">3</span>})  </span>
-<span id="cb67-3"><a href="#cb67-3"></a>my_dict.update({<span class="st">'a'</span>: <span class="dv">10</span>})  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>}</span>
+<span id="cb69-2"><a href="#cb69-2"></a>my_dict.update({<span class="st">'c'</span>: <span class="dv">3</span>})  </span>
+<span id="cb69-3"><a href="#cb69-3"></a>my_dict.update({<span class="st">'a'</span>: <span class="dv">10</span>})  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="modifying-a-dictionary-1" class="slide level2">
@@ -1412,13 +1438,13 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ul>
 <li><strong>Dictionary Comprehension</strong>: Removes items based on a condition.</li>
 </ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
-<span id="cb68-2"><a href="#cb68-2"></a>my_dict <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> my_dict.items() <span class="cf">if</span> v <span class="op">!=</span> <span class="dv">2</span>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
+<span id="cb70-2"><a href="#cb70-2"></a>my_dict <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> my_dict.items() <span class="cf">if</span> v <span class="op">!=</span> <span class="dv">2</span>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong><code>del</code> statement</strong>: Deletes an item by key.</li>
 </ul>
-<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
-<span id="cb69-2"><a href="#cb69-2"></a><span class="kw">del</span> my_dict[<span class="st">'b'</span>]  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
+<span id="cb71-2"><a href="#cb71-2"></a><span class="kw">del</span> my_dict[<span class="st">'b'</span>]  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -1443,36 +1469,36 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <section id="handle-errors-with-try-and-except-2" class="slide level2">
 <h2>Handle Errors with <code>try</code> and <code>except</code></h2>
 <h3 id="errors">Errors</h3>
-<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb70-2"><a href="#cb70-2"></a>position <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb70-3"><a href="#cb70-3"></a>short_list[position]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb72-2"><a href="#cb72-2"></a>position <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb72-3"><a href="#cb72-3"></a>short_list[position]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">If we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:</li>
 </ul>
 </section>
 <section id="handle-errors-with-try-and-except-3" class="slide level2">
 <h2>Handle Errors with <code>try</code> and <code>except</code></h2>
-<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb71-2"><a href="#cb71-2"></a>position <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb71-3"><a href="#cb71-3"></a></span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="cf">try</span>:</span>
-<span id="cb71-5"><a href="#cb71-5"></a>    short_list[position]</span>
-<span id="cb71-6"><a href="#cb71-6"></a><span class="cf">except</span>:</span>
-<span id="cb71-7"><a href="#cb71-7"></a>    <span class="bu">print</span>(<span class="st">'Need a position between 0 and'</span>, <span class="bu">len</span>(short_list)<span class="op">-</span><span class="dv">1</span>, <span class="st">' but got'</span>,</span>
-<span id="cb71-8"><a href="#cb71-8"></a>    position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb73-2"><a href="#cb73-2"></a>position <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb73-3"><a href="#cb73-3"></a></span>
+<span id="cb73-4"><a href="#cb73-4"></a><span class="cf">try</span>:</span>
+<span id="cb73-5"><a href="#cb73-5"></a>    short_list[position]</span>
+<span id="cb73-6"><a href="#cb73-6"></a><span class="cf">except</span>:</span>
+<span id="cb73-7"><a href="#cb73-7"></a>    <span class="bu">print</span>(<span class="st">'Need a position between 0 and'</span>, <span class="bu">len</span>(short_list)<span class="op">-</span><span class="dv">1</span>, <span class="st">' but got'</span>,</span>
+<span id="cb73-8"><a href="#cb73-8"></a>    position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Rather than leaving things to chance, use <code>try</code> to wrap your code, and <code>except</code> to provide the error handling:</li>
 </ul>
 </section>
 <section id="handle-errors-with-try-and-except-4" class="slide level2">
 <h2>Handle Errors with <code>try</code> and <code>except</code></h2>
-<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb72-2"><a href="#cb72-2"></a>position <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb72-3"><a href="#cb72-3"></a><span class="cf">try</span>:</span>
-<span id="cb72-4"><a href="#cb72-4"></a>    short_list[position]</span>
-<span id="cb72-5"><a href="#cb72-5"></a><span class="cf">except</span>:</span>
-<span id="cb72-6"><a href="#cb72-6"></a>    <span class="bu">print</span>(<span class="st">'Need a position between 0 and'</span>, <span class="bu">len</span>(short_list)<span class="op">-</span><span class="dv">1</span>, <span class="st">' but got'</span>,</span>
-<span id="cb72-7"><a href="#cb72-7"></a>    position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb74-2"><a href="#cb74-2"></a>position <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb74-3"><a href="#cb74-3"></a><span class="cf">try</span>:</span>
+<span id="cb74-4"><a href="#cb74-4"></a>    short_list[position]</span>
+<span id="cb74-5"><a href="#cb74-5"></a><span class="cf">except</span>:</span>
+<span id="cb74-6"><a href="#cb74-6"></a>    <span class="bu">print</span>(<span class="st">'Need a position between 0 and'</span>, <span class="bu">len</span>(short_list)<span class="op">-</span><span class="dv">1</span>, <span class="st">' but got'</span>,</span>
+<span id="cb74-7"><a href="#cb74-7"></a>    position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The code inside the <code>try</code> block is run.
 <ul>
@@ -1500,18 +1526,18 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <section id="handle-errors-with-try-and-except-6" class="slide level2">
 <h2>Handle Errors with <code>try</code> and <code>except</code></h2>
 <h3 id="except-type-1"><code>except</code> type</h3>
-<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb73-2"><a href="#cb73-2"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb73-3"><a href="#cb73-3"></a>    value <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Position [q to quit]? '</span>)</span>
-<span id="cb73-4"><a href="#cb73-4"></a>    <span class="cf">if</span> value <span class="op">==</span> <span class="st">'q'</span>:</span>
-<span id="cb73-5"><a href="#cb73-5"></a>        <span class="cf">break</span></span>
-<span id="cb73-6"><a href="#cb73-6"></a>    <span class="cf">try</span>:</span>
-<span id="cb73-7"><a href="#cb73-7"></a>        position <span class="op">=</span> <span class="bu">int</span>(value)</span>
-<span id="cb73-8"><a href="#cb73-8"></a>        <span class="bu">print</span>(short_list[position])</span>
-<span id="cb73-9"><a href="#cb73-9"></a>    <span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> err:</span>
-<span id="cb73-10"><a href="#cb73-10"></a>        <span class="bu">print</span>(<span class="st">'Bad index:'</span>, position, <span class="st">'-'</span>, err)</span>
-<span id="cb73-11"><a href="#cb73-11"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> other:</span>
-<span id="cb73-12"><a href="#cb73-12"></a>        <span class="bu">print</span>(<span class="st">'Something else broke:'</span>, other)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb75-2"><a href="#cb75-2"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb75-3"><a href="#cb75-3"></a>    value <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Position [q to quit]? '</span>)</span>
+<span id="cb75-4"><a href="#cb75-4"></a>    <span class="cf">if</span> value <span class="op">==</span> <span class="st">'q'</span>:</span>
+<span id="cb75-5"><a href="#cb75-5"></a>        <span class="cf">break</span></span>
+<span id="cb75-6"><a href="#cb75-6"></a>    <span class="cf">try</span>:</span>
+<span id="cb75-7"><a href="#cb75-7"></a>        position <span class="op">=</span> <span class="bu">int</span>(value)</span>
+<span id="cb75-8"><a href="#cb75-8"></a>        <span class="bu">print</span>(short_list[position])</span>
+<span id="cb75-9"><a href="#cb75-9"></a>    <span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> err:</span>
+<span id="cb75-10"><a href="#cb75-10"></a>        <span class="bu">print</span>(<span class="st">'Bad index:'</span>, position, <span class="st">'-'</span>, err)</span>
+<span id="cb75-11"><a href="#cb75-11"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> other:</span>
+<span id="cb75-12"><a href="#cb75-12"></a>        <span class="bu">print</span>(<span class="st">'Something else broke:'</span>, other)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="handle-errors-with-try-and-except-7" class="slide level2">
 <h2>Handle Errors with <code>try</code> and <code>except</code></h2>
@@ -1576,7 +1602,7 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <li><p>A <strong>library</strong> is a collection of packages</p></li>
 <li><p>We refer to code of other module/package/library by using the Python <code>import</code> statement.</p></li>
 </ul>
-<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a><span class="im">import</span> LIBRARY_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a><span class="im">import</span> LIBRARY_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>This makes the code and variables in the imported module available to our programming codes.</li>
 </ul>
@@ -1591,13 +1617,13 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ul>
 <li>We can use the <code>as</code> <em>keyword</em> when importing the module/package/library using its canonical names.</li>
 </ul>
-<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a><span class="im">import</span> LIBRARY <span class="im">as</span> SOMETHING_SHORT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a><span class="im">import</span> LIBRARY <span class="im">as</span> SOMETHING_SHORT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <h4 id="from"><code>from</code></h4>
 <ul>
 <li>We can use the <code>from</code> <em>keyword</em> when specifying Python module/package/library from which we want to <code>import</code> something.</li>
 </ul>
-<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a><span class="im">from</span> LIBRARY <span class="im">import</span> FUNCTION, PACKAGE, MODULE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a><span class="im">from</span> LIBRARY <span class="im">import</span> FUNCTION, PACKAGE, MODULE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1610,12 +1636,12 @@ It tells the interpreter what should run <strong>inside</strong> the block (e.g.
 <ul>
 <li>To install a library <code>LIBRARY</code> on your Google Colab, run:</li>
 </ul>
-<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a><span class="op">!</span>pip install LIBRARY</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a><span class="op">!</span>pip install LIBRARY</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>To install a library <code>LIBRARY</code> on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:</li>
 </ul>
-<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>pip install LIBRARY</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a>pip install LIBRARY</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
