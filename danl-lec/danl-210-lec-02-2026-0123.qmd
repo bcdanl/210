@@ -750,8 +750,7 @@ letters[::-1]     # reverse
 
 
 
-
-## Length of Strings and Ranges
+## Length of a String and a List
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -887,6 +886,10 @@ suny[-6 : -4]
 
 ## Functions
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
 ```{.python}
 int("20") 
 float("14.3")
@@ -894,10 +897,26 @@ str(5)
 int("xyz")
 ```
 
-- A function can take inputs (**arguments**) and return an output.
-- Built-in examples: `len()`, `max()`, `sum()`, `type()`
+
+:::
+
+::: {.column width="50%"}
+Common built-in functions you will use often:
+
+::: nonincremental
+-	`print()` → print
+-	`len()` → length
+-	`max()` → largest value
+-	`sum()` → total
+-	`type()` → data type
+:::
+
+:::
+::::
+
+- A function can take **inputs** (called **arguments**) and return an **output**.
 -	Python also lets you define your own functions with the `def` keyword.
-  - Later, we will use such **user-defined function** together with pandas.
+  - Later, we will use such **user-defined function** together with **pandas**.
 
 
 ## Functions, Arguments, and Parameters
@@ -909,10 +928,14 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 ```
 
 
--	To call a function, write its name followed by parentheses: `function_name(...)`.
--	Inside the parentheses, you provide inputs called **arguments**, separated by commas.
--	A **parameter** is the name used in the function definition for an expected input (e.g., `sep`).
--	A **default argument** is the value used automatically when you do not supply that argument (e.g., `sep=" "` is the default for `print()`).
+-	To **call** a function, write its name followed by parentheses: 
+  - `function_name(...)`
+-	Inside the parentheses, 
+  - you provide **arguments** (inputs), separated by commas
+-	A **parameter** is the name used in the function definition for an expected input 
+  - Example: `sep` is a parameter of `print()`
+-	A **default argument** is the value used automatically if you do not specify it 
+  - For `print()`, the default separator is a space: `sep = " "`
 	
 	
 
@@ -929,7 +952,7 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ```{.python}
 count = 1        
@@ -939,19 +962,22 @@ while count <= 5:
 ```
 
 
-1. We first assigned the value 1 to `count`.
-2. The `while` loop compared the value of `count` to 5 and continued if `count` was less than or equal to 5.
-3. Inside the loop, we printed the value of `count` and then *incremented* its value by one with the statement `count += 1`.
-
 :::
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 
+<div style="display:block; margin:-35px;"></div>
 
-4. Python goes back to the top of the loop, and again compares `count` with 5.
-5. The value of `count` is now 2, so the contents of the `while` loop are again executed, and `count` is incremented to 3.
-6. This continues until `count` is incremented from 5 to 6 at the bottom of the loop.
-7. On the next trip to the top, `count <= 5` is now `False`, and the `while` loop ends.
+#### How this loop works
+
+1.	Start with `count = 1`.
+2.	Check the condition: `count <= 5`
+	-	If it is `True`, run the loop body.
+3.	Print the current value of count.
+4.	Update count using `count += 1`.
+5.	Go back to step 2 and repeat.
+6.	The loop stops when `count <= 5` becomes `False`.
+
 
 :::
 ::::
@@ -959,26 +985,22 @@ while count <= 5:
 
 
 ##  Asking the user for input
-  
 
 ```{.python}
 stuff = input()
-# Type something and press Return/Enter on Console 
+# Type something and press Return/Enter on Python Console 
 # before running print(stuff)
 print(stuff)
 ```
 
-- Sometimes we would like to take the value for a variable from the user via their keyboard. 
+- `input()` pauses the program and waits for the user to type something.
+-	Whatever the user types is returned as a **string**.
+-	This is useful when you want to make your code interactive.
 
 
 
-  - The `input()` function gets *input* from the keyboard.
-  - When the `input()` is called, the program stops and waits for the user to type something on Console (interactive Python interpreter).
-  - When the user presses **Return** or **Enter** on Console, the program resumes and input returns what the user typed as a string.
 
-
-
-##  Cancel with `break`
+## Cancel an Infinite Loop with `break`
 
 ```{.python}
 while True:
@@ -993,15 +1015,13 @@ while True:
 ```
 
 - `While` loop is used to execute a block of code repeatedly until given boolean condition evaluated to `False`. 
-  - `while True` loop will run forever unless we write it with a `break` statement.
+  -	`while True` creates an **infinite loop**
+-	The loop runs forever unless you stop it using `break`
+-	`break` exits the loop immediately
+	
 
-- If we want to loop until something occurs, but we’re not sure when that might happen, we can use an infinite loop with a `break` statement. 
 
-
-
-
-## Repeat with `while`
-### Skip Ahead with `continue`
+## Skip Ahead with `continue`
 
 ```{.python}
 while True:
@@ -1014,58 +1034,29 @@ while True:
     print(number, "squared is", number*number)
 ```
 
-- Sometimes, we don’t want to break out of a loop but just want to skip ahead to the
-next iteration for some reason. 
-
-- The `continue` statement is used to skip the rest of the code inside a loop for the *current iteration* only. 
+-	`continue` skips the rest of the loop body **for the current iteration**
+-	Then Python jumps back to the top of the loop
 
 
-
-## Repeat with `while`
-### Check `break` Use with `else`
-
-  <!-- - The `else` would be run if the `while` loop completed but the object was not found. -->
-  
-```{.python}
-numbers = [1, 3, 5]
-position = 0
-
-while position < len(numbers):
-    number = numbers[position]
-    if number > 4:  # Condition changed to checking if the number is greater than 4
-        print('Found a number greater than 4:', number)
-        break
-    position += 1
-else:  # break not called
-    print('No number greater than 4 found')
-```
-
-- We can consider using `while` with `else` when we’ve coded a `while` loop to check for something, and `break`ing as soon as it’s found. 
-  - Consider it a break checker.
 
 
 ##  Iterate with `for` and `in`
 
-- Sometimes we want to loop through a set of things such as a string of text, a list of words or a list of numbers.
-  - When we have a list of things to loop through, we can construct a `for` loop. 
-  - A `for` loop makes it possible for you to traverse data structures without knowing how large they are or how they are implemented. 
-  
-  <!-- - We can iterate over data that is created on the fly, allowing processing of data streams that would otherwise not fit in the computer’s memory all at once. -->
+-	Use a `for` loop when you want to go through each item in:
+	-	a string
+	-	a list
+	-	a range (`range()`)
+	-	or any iterable object
+	
 
+##  Two Ways to Loop Through a String
 
-<!-- - To do iteration, we need something like *strings*, *lists* and *tuples* or *dictionaries* to iterate over.  -->
-
-
-##  Iterate with `for` and `in`
-
-:::{.nonincremental}
-- Let's see two ways to walk through a string here:
-
-:::
+<div style="display:block; margin:-30px;"></div>
 
 :::: {.columns}
 
 ::: {.column width="50%"}
+#### `while` approach
 ```{.python}
 word = 'thud'
 offset = 0
@@ -1076,6 +1067,8 @@ while offset < len(word):
 :::
 
 ::: {.column width="50%"}
+
+#### `for` approach
 ```{.python}
 word = 'thud'
 for letter in word:
@@ -1087,8 +1080,7 @@ for letter in word:
 - Which one do you prefer?
 
 
-## Iterate with `for` and `in`
-###  Cancel with `break`
+## Cancel a `for` Loop with `break`
 
 ```{.python}
 word = 'thud'
@@ -1098,10 +1090,11 @@ for letter in word:
     print(letter)
 ```
 
-- A `break` in a `for` loop breaks out of the loop, as it does for a `while` loop:
+-	`break` exits the loop immediately
 
-## Iterate with `for` and `in`
-###  Skip with `continue`
+<!-- - A `break` in a `for` loop breaks out of the loop, as it does for a `while` loop: -->
+
+## Skip in a `for` Loop with `continue`
 
 ```{.python}
 word = 'thud'
@@ -1110,7 +1103,9 @@ for letter in word:
         continue
     print(letter)
 ```
-- Inserting a `continue` in a `for` loop jumps to the next iteration of the loop, as it does for a `while` loop.
+
+-	`continue` skips the current iteration and moves to the next one
+
 
 ## 🔄 Loop Control: `continue`, `pass`, `break`
 
@@ -1131,60 +1126,42 @@ for num in range(1, 6):
 
 ```
 
-- In a `for` or `while` loop, you can alter flow with:
-    - **`continue`** → skips to the next loop iteration  
-    - **`pass`** → does nothing (placeholder)  
-    - **`break`** → exits the loop completely  
+- **`continue`** → skips to the next iteration  
+- **`pass`** → does nothing (useful as a placeholder)  
+- **`break`** → exits the loop completely  
 
 
 ## Generate Number Sequences with `range()`
-
-- The `range()` function returns a stream of numbers within a specified range, without first having to create and store a large data structure such as a *list* or *tuple*. 
-  - This lets us create huge ranges without using all the memory in our computers and crashing our program.
-  - `range()` returns an iterable object, so we need to step through the values with `for` ... `in`, or convert the object to a sequence like a *list*. 
-
-
-## `for` ... `in` `range()`
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 ```{.python}
-for x in range(0, 3):
+list( range(1, 4) )
+list( range(0, 4) )
+list( range(4) )
+
+for x in range(0, 4):
     print(x)
-list( range(0, 3) )
 ```
 
 :::
 
 ::: {.column width="50%"}
-- We use `range()` similar to how we use *slices*: `range( start, stop, step )`. 
-  - If we omit `start`, the `range` begins at 0. 
-  - The only required value is `stop`; as with *slices*, the last value created will be just before stop. 
-  - The default value of `step` is 1, but we can change it.
+
+- `range()` creates a sequence of integers without storing a full list
+-	This is memory-efficient and very common in `for` loops
+-	Syntax is similar to slicing:
+  - `range( start, stop, step )`
+	-	`start` defaults to 0
+	-	`step` defaults to 1
+	-	the sequence stops **right before** stop
 
 :::
 
 ::::
 
 
-## Iterate with `for` and `in`
-### Check `break` Use with `else`
-
-```{.python}
-word = 'thud'
-for letter in word:
-    if letter == 'x':
-        print("Eek! An 'x'!")
-        break
-    print(letter)
-else:
-    print("No 'x' in there.")
-```
-
-
-- Similar to `while`, `for` has an optional `else` that checks whether the `for` completed normally. 
-  - If `break` was not called, the `else` statement is run.
 
 ## Loop with `while` and `for`
 ###  Class Exercises

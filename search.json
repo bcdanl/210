@@ -1159,14 +1159,14 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#functions",
     "title": "Lecture 2",
     "section": "Functions",
-    "text": "Functions\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")\n\nA function can take inputs (arguments) and return an output.\nBuilt-in examples: len(), max(), sum(), type()\nPython also lets you define your own functions with the def keyword.\nLater, we will use such user-defined function together with pandas."
+    "text": "Functions\n\n\nint(\"20\") \nfloat(\"14.3\")\nstr(5)\nint(\"xyz\")\n\nCommon built-in functions you will use often:\n\n\nprint() → print\nlen() → length\nmax() → largest value\nsum() → total\ntype() → data type\n\n\n\n\n\nA function can take inputs (called arguments) and return an output.\nPython also lets you define your own functions with the def keyword.\nLater, we will use such user-defined function together with pandas."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#functions-arguments-and-parameters-1",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#functions-arguments-and-parameters-1",
     "title": "Lecture 2",
     "section": "Functions, Arguments, and Parameters",
-    "text": "Functions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nTo call a function, write its name followed by parentheses: function_name(...).\nInside the parentheses, you provide inputs called arguments, separated by commas.\nA parameter is the name used in the function definition for an expected input (e.g., sep).\nA default argument is the value used automatically when you do not supply that argument (e.g., sep=\" \" is the default for print())."
+    "text": "Functions, Arguments, and Parameters\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep = \"!\")\nprint(\"Cherry\", \"Strawberry\", \"Key Lime\", sep=\" \")\n\nTo call a function, write its name followed by parentheses:\nfunction_name(...)\nInside the parentheses,\nyou provide arguments (inputs), separated by commas\nA parameter is the name used in the function definition for an expected input\nExample: sep is a parameter of print()\nA default argument is the value used automatically if you do not specify it\nFor print(), the default separator is a space: sep = \" \""
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#functions-arguments-and-parameters-2",
@@ -1180,14 +1180,14 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#repeat-with-while",
     "title": "Lecture 2",
     "section": "Repeat with while",
-    "text": "Repeat with while\n\n\ncount = 1        \nwhile count &lt;= 5:\n    print(count)\n    count += 1\n\nWe first assigned the value 1 to count.\nThe while loop compared the value of count to 5 and continued if count was less than or equal to 5.\nInside the loop, we printed the value of count and then incremented its value by one with the statement count += 1.\n\n\n\nPython goes back to the top of the loop, and again compares count with 5.\nThe value of count is now 2, so the contents of the while loop are again executed, and count is incremented to 3.\nThis continues until count is incremented from 5 to 6 at the bottom of the loop.\nOn the next trip to the top, count &lt;= 5 is now False, and the while loop ends."
+    "text": "Repeat with while\n\n\ncount = 1        \nwhile count &lt;= 5:\n    print(count)\n    count += 1\n\n\n\n\nHow this loop works\n\nStart with count = 1.\nCheck the condition: count &lt;= 5\n\nIf it is True, run the loop body.\n\nPrint the current value of count.\nUpdate count using count += 1.\nGo back to step 2 and repeat.\nThe loop stops when count &lt;= 5 becomes False."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#asking-the-user-for-input",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#asking-the-user-for-input",
     "title": "Lecture 2",
     "section": "Asking the user for input",
-    "text": "Asking the user for input\nstuff = input()\n# Type something and press Return/Enter on Console \n# before running print(stuff)\nprint(stuff)\n\nSometimes we would like to take the value for a variable from the user via their keyboard.\n\nThe input() function gets input from the keyboard.\nWhen the input() is called, the program stops and waits for the user to type something on Console (interactive Python interpreter).\nWhen the user presses Return or Enter on Console, the program resumes and input returns what the user typed as a string."
+    "text": "Asking the user for input\nstuff = input()\n# Type something and press Return/Enter on Python Console \n# before running print(stuff)\nprint(stuff)\n\ninput() pauses the program and waits for the user to type something.\nWhatever the user types is returned as a string.\nThis is useful when you want to make your code interactive."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-with-break",
@@ -1215,7 +1215,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#iterate-with-for-and-in",
     "title": "Lecture 2",
     "section": "Iterate with for and in",
-    "text": "Iterate with for and in\n\nSometimes we want to loop through a set of things such as a string of text, a list of words or a list of numbers.\n\nWhen we have a list of things to loop through, we can construct a for loop.\nA for loop makes it possible for you to traverse data structures without knowing how large they are or how they are implemented."
+    "text": "Iterate with for and in\n\nUse a for loop when you want to go through each item in:\n\na string\na list\na range (range())\nor any iterable object"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#iterate-with-for-and-in-1",
@@ -1243,14 +1243,14 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#loop-control-continue-pass-break",
     "title": "Lecture 2",
     "section": "🔄 Loop Control: continue, pass, break",
-    "text": "🔄 Loop Control: continue, pass, break\nfor num in range(1, 6):\n\n    if num == 2:\n        continue   # skip printing 2\n\n    if num == 3:\n        pass       # do nothing, move on\n\n    if num == 4:\n        break      # exit the loop\n\n    print(num)\n\nIn a for or while loop, you can alter flow with:\n\ncontinue → skips to the next loop iteration\n\npass → does nothing (placeholder)\n\nbreak → exits the loop completely"
+    "text": "🔄 Loop Control: continue, pass, break\nfor num in range(1, 6):\n\n    if num == 2:\n        continue   # skip printing 2\n\n    if num == 3:\n        pass       # do nothing, move on\n\n    if num == 4:\n        break      # exit the loop\n\n    print(num)\n\ncontinue → skips to the next iteration\n\npass → does nothing (useful as a placeholder)\n\nbreak → exits the loop completely"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#generate-number-sequences-with-range",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#generate-number-sequences-with-range",
     "title": "Lecture 2",
     "section": "Generate Number Sequences with range()",
-    "text": "Generate Number Sequences with range()\n\nThe range() function returns a stream of numbers within a specified range, without first having to create and store a large data structure such as a list or tuple.\n\nThis lets us create huge ranges without using all the memory in our computers and crashing our program.\nrange() returns an iterable object, so we need to step through the values with for … in, or convert the object to a sequence like a list."
+    "text": "Generate Number Sequences with range()\n\n\nlist( range(1, 4) )\nlist( range(0, 4) )\nlist( range(4) )\n\nfor x in range(0, 4):\n    print(x)\n\n\nrange() creates a sequence of integers without storing a full list\nThis is memory-efficient and very common in for loops\nSyntax is similar to slicing:\nrange( start, stop, step )\n\nstart defaults to 0\nstep defaults to 1\nthe sequence stops right before stop"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#for-in-range",
@@ -1685,5 +1685,47 @@
     "title": "Lecture 2",
     "section": "Comparison Operators",
     "text": "Comparison Operators"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#length-of-a-string-and-a-list",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#length-of-a-string-and-a-list",
+    "title": "Lecture 2",
+    "section": "Length of a String and a List",
+    "text": "Length of a String and a List\n\n\nstring = \"cheesecake\"\nlen(string)\n\nlist_of_numbers = [1, 2, 3, 4, 5]\nlen(list_of_numbers)\n\n\n\nBoth strings and list objects support len()\nlen() tells you how many items/characters are stored"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-an-infinite-loop-with-break",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-an-infinite-loop-with-break",
+    "title": "Lecture 2",
+    "section": "Cancel an Infinite Loop with break",
+    "text": "Cancel an Infinite Loop with break\nwhile True:\n    user_input = input(\"Enter 'yes' to continue or 'no' to stop: \")\n    if user_input.lower() == 'no':\n        print(\"Exiting the loop. Goodbye!\")\n        break\n    elif user_input.lower() == 'yes':\n        print(\"You chose to continue.\")\n    else:\n        print(\"Invalid input, please enter 'yes' or 'no'.\")\n\nWhile loop is used to execute a block of code repeatedly until given boolean condition evaluated to False.\n\nwhile True creates an infinite loop\n\nThe loop runs forever unless you stop it using break\nbreak exits the loop immediately"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#skip-ahead-with-continue",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#skip-ahead-with-continue",
+    "title": "Lecture 2",
+    "section": "Skip Ahead with continue",
+    "text": "Skip Ahead with continue\nwhile True:\n    value = input(\"Integer, please [q to quit]: \")\n    if value == 'q': # quit\n        break\n    number = int(value)\n    if number % 2 == 0: # an even number\n        continue\n    print(number, \"squared is\", number*number)\n\ncontinue skips the rest of the loop body for the current iteration\nThen Python jumps back to the top of the loop"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#two-ways-to-loop-through-a-string",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#two-ways-to-loop-through-a-string",
+    "title": "Lecture 2",
+    "section": "Two Ways to Loop Through a String",
+    "text": "Two Ways to Loop Through a String\n\n\n\n\n\nwhile approach\nword = 'thud'\noffset = 0\nwhile offset &lt; len(word):\n    print(word[offset])\n    offset += 1\n\nfor approach\nword = 'thud'\nfor letter in word:\n    print(letter)\n\n\n\nWhich one do you prefer?"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-a-for-loop-with-break",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-a-for-loop-with-break",
+    "title": "Lecture 2",
+    "section": "Cancel a for Loop with break",
+    "text": "Cancel a for Loop with break\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        break\n    print(letter)\n\nbreak exits the loop immediately"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#skip-in-a-for-loop-with-continue",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#skip-in-a-for-loop-with-continue",
+    "title": "Lecture 2",
+    "section": "Skip in a for Loop with continue",
+    "text": "Skip in a for Loop with continue\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        continue\n    print(letter)\n\ncontinue skips the current iteration and moves to the next one"
   }
 ]
