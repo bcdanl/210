@@ -231,7 +231,7 @@ type(list_example)
 
 
 
-## Square Brackets `[]`
+## Square Brackets `[]` in Python
 
 
 ```{.python}
@@ -245,7 +245,7 @@ vector[0]
 
 :::
 
-## Curly Braces `{}`
+## Curly Braces `{}` in Python
 
 
 ```{.python}
@@ -259,7 +259,7 @@ vector[0]
 
 :::
 
-## Parentheses `()`
+## Parentheses `()` in Python
 
 ```{.python}
 num_tup = (1, 2, 3)
@@ -272,6 +272,84 @@ sum(num_tup)
 - Use `()` to pass **arguments** into functions
 
 :::
+
+
+
+## 🧺 Data Containers in Python---List and Tuple
+
+<div style="display:block; margin:-20px;"></div>
+
+:::: nonincremental
+
+
+#### ✅ List 
+
+- Stores **multiple values** in an ordered sequence
+- 🔄 **Mutable**: **You can change it** after creation
+
+```{.python}
+fruits = ["apple", "banana", "orange"]
+fruits.append("grape")
+fruits[0] = "pear"
+```
+
+
+#### ✅ Tuple
+
+- Stores **multiple values** in an ordered sequence
+- 🔒 **Immutable**: Cannot be changed after creation
+
+```{.python}
+geneseo_coords = (40.7158, 77.8136)
+geneseo_coords[0]           # 👀 reading is OK
+# geneseo_coords[0] = 100   # ❌ cannot modify
+```
+
+
+::::
+
+
+
+
+
+## 🗂️ Data Containers in Python---Dictionaries
+
+```{.python}
+city_to_temp = {
+    "Paris": 28,
+    "London": 22,
+    "New York": 18,
+    "Seoul": 29,
+    "Rochester": 10
+}
+
+city_to_temp["Paris"]          # 🔍 look up a value by key
+city_to_temp["London"] = 32    # ✏️ update a value
+
+city_to_temp.keys()        # 🔑 all keys
+city_to_temp.values()      # 🌡️ all values
+city_to_temp.items()       # 🧾 (key, value) pairs
+```
+
+- Stores values as **key→value** pairs
+- Keys are used for fast lookup
+- Useful when you want to create **associations** (“mapping”)
+
+
+
+##  Running on Empty
+
+```{python}
+lst = []
+tup = ()
+dic = {}
+```
+
+- Being able to create empty containers is sometimes useful, especially when using loops (e.g., `for`, `while`). 
+
+- **Q.** What is the type of an empty list?
+
+
 
 ##  Operators
 
@@ -352,8 +430,6 @@ print(list_full)
 
 
 
-- **Q**. [**Classwork 2.1**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-1){target="_blank"}
-
 
 ::::
 
@@ -382,47 +458,7 @@ type(mod_number)
   - `int()`, `float()`, `str()`
   - If we try these, Python will do its best to interpret the input and convert it to the output type we'd like and, if they can't, the code will throw a great big error.
 
-
-
-## Tuples and (Im)mutability
-
-:::{.nonincremental}
-- **Tuple** example: `(15, 20, 32)` → immutable
-- **List** example: `[15, 20, 32]` → mutable
-
-:::
-
-✅ Lists can be changed
-❌ Tuples cannot be changed
-
-
-##  Dictionaries
-
-```{.python}
-cities_to_temps = {"Paris": 28, "London": 22, "New York": 36, "Seoul": 29}
-
-cities_to_temps.keys()
-cities_to_temps.values()
-cities_to_temps.items()
-```
-
-
-- A **dictionary** stores **key → value** pairs
-- Useful when you want to create **associations** (“mapping”)
-
-
-
-##  Running on Empty
-
-```{python}
-lst = []
-tup = ()
-dic = {}
-```
-
-- Being able to create empty containers is sometimes useful, especially when using loops (e.g., `for`, `while`). 
-
-- **Q.** What is the type of an empty list?
+- **Q**. [**Classwork 2.1**](../danl-cw/danl-210-cw-02.html#question-1){target="_blank"}
 
 
 
@@ -576,7 +612,7 @@ boolean_condition2 = 10 == '10'
 
 - **Q**. What does `not (not True)` evaluate to?
 
-- **Q**. [**Classwork 2.2**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-2){target="_blank"}
+- **Q**. [**Classwork 2.2**](../danl-cw/danl-210-cw-02.html#question-2){target="_blank"}
 
 
 
@@ -711,7 +747,7 @@ if x > 2:
 
 ## Booleans, Conditions, and `if` Statements
 
-- **Q**. [**Classwork 2.3**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-3){target="_blank"}
+- **Q**. [**Classwork 2.3**](../danl-cw/danl-210-cw-02.html#question-3){target="_blank"}
 
 
 
@@ -882,7 +918,7 @@ suny[-6 : -4]
 
 ## Slicing Methods
 
-- **Q**. [**Classwork 2.4**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-4){target="_blank"}
+- **Q**. [**Classwork 2.4**](../danl-cw/danl-210-cw-02.html#question-4){target="_blank"}
 
 
 
@@ -946,7 +982,7 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 
 ## Functions, Arguments, and Parameters
 
-- **Q**. [**Classwork 2.5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-5){target="_blank"}
+- **Q**. [**Classwork 2.5**](../danl-cw/danl-210-cw-02.html#question-5){target="_blank"}
 
 
 
@@ -1013,7 +1049,7 @@ while count <= 5:
 
 
 
-##  Asking the user for input
+## Asking the user for input
 
 ```{.python}
 stuff = input()
@@ -1191,14 +1227,49 @@ for x in range(0, 4):
 ::::
 
 
+## 🔢 Get Index + Value with `enumerate()`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+fruits = ["apple", "banana", "orange"]
+
+# default: starts counting at 0
+for i, fruit in enumerate(fruits):
+    print(i, fruit)
+
+# start counting at 1
+for i, fruit in enumerate(fruits, start=1):
+    print(i, fruit)
+```
+:::
+
+::: {.column width=“50%”}
+-	`enumerate()` gives you **two things** while looping:
+  -	the **index** (`i`)
+  -	the **value** (`fruit`)
+-	Very useful when you want to label or number items
+-	Syntax:
+  -	`enumerate(iterable, start=0)`
+    -	`iterable` can be a list, tuple, string, etc.
+    -	`start` controls the first index (default is 0)
+
+:::
+
+::::
+
+
+
+
 
 ## Loop with `while` and `for`
 ###  Class Exercises
 
-- **Q**. [**Classwork 2.6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-6){target="_blank"}
+- **Q**. [**Classwork 2.6**](../danl-cw/danl-210-cw-02.html#question-6){target="_blank"}
 
 
-- **Q**. [**Classwork 2.7**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-7){target="_blank"}
+- **Q**. [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
 
 
 # **List and Dictionary Comprehensions** {background-color="#1c4982"}
@@ -1445,7 +1516,7 @@ while True:
 ## Handle Errors with `try` and `except`
 ###  Class Exercises
 
-- **Q**. [**Classwork 2.8**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-8){target="_blank"}
+- **Q**. [**Classwork 2.8**](../danl-cw/danl-210-cw-02.html#question-8){target="_blank"}
 
 
 
@@ -1554,6 +1625,6 @@ pip install LIBRARY
 :::
 ::::
 
-- **Q**. [**Classwork 2.9**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-01.html#question-9){target="_blank"}
+- **Q**. [**Classwork 2.9**](../danl-cw/danl-210-cw-02.html#question-9){target="_blank"}
 
 ::::

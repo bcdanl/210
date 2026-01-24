@@ -508,7 +508,7 @@
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Basics\n\n\nJanuary 26, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -522,7 +522,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Basics\n\n\nJanuary 26, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-hw-q.html",
@@ -977,7 +977,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#casting-variables",
     "title": "Lecture 2",
     "section": "Casting Variables",
-    "text": "Casting Variables\n\n\norig_number = 4.39898498\ntype(orig_number)\n\nmod_number = int(orig_number)\nmod_number\ntype(mod_number)\n\n\n\nCasting changes type using built-in functions:\n\nint(), float(), str()\nIf we try these, Python will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw a great big error."
+    "text": "Casting Variables\n\n\norig_number = 4.39898498\ntype(orig_number)\n\nmod_number = int(orig_number)\nmod_number\ntype(mod_number)\n\n\n\nCasting changes type using built-in functions:\n\nint(), float(), str()\nIf we try these, Python will do its best to interpret the input and convert it to the output type we’d like and, if they can’t, the code will throw a great big error.\n\nQ. Classwork 2.1"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#tuples-and-immutability",
@@ -1467,14 +1467,14 @@
     "href": "danl-cw/danl-210-cw-02.html",
     "title": "Classwork 2",
     "section": "",
-    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
+    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\n\n\n\nGiven:\n\ndata = [10, 2.5, \"3\"]\n\nUsing Python only, calculate 10 + 2.5 + 3\n\n\n\nGiven:\n\nexam_score = {\"Midterm\": 78, \"Final\": 92}\n\nCompute the Total Exam Score:\n\\[\n\\begin{align}\n\\text{(Total Exam Score)} = \\max\\{ &0.50\\times \\text{(Midterm)} + 0.50\\times \\text{(Final)},\\\\\n&0.33\\times \\text{(Midterm)} + 0.67\\times \\text{(Final)} \\}\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-1",
     "href": "danl-cw/danl-210-cw-02.html#question-1",
     "title": "Classwork 2",
     "section": "",
-    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]"
+    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\n\n\n\nGiven:\n\ndata = [10, 2.5, \"3\"]\n\nUsing Python only, calculate 10 + 2.5 + 3\n\n\n\nGiven:\n\nexam_score = {\"Midterm\": 78, \"Final\": 92}\n\nCompute the Total Exam Score:\n\\[\n\\begin{align}\n\\text{(Total Exam Score)} = \\max\\{ &0.50\\times \\text{(Midterm)} + 0.50\\times \\text{(Final)},\\\\\n&0.33\\times \\text{(Midterm)} + 0.67\\times \\text{(Final)} \\}\n\\end{align}\n\\]"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-2",
@@ -1488,7 +1488,7 @@
     "href": "danl-cw/danl-210-cw-02.html#question-3",
     "title": "Classwork 2",
     "section": "Question 3",
-    "text": "Question 3\nWhat will the following code print?"
+    "text": "Question 3\nWhat will the following code print?\n\nstatus = \"Gold\"\ncart_total = 92.5\n\nfree_shipping_levels = [\"Gold\", \"Platinum\"]\n\nif status in free_shipping_levels:\n    shipping = 0\n    msg = f\"Status: {status} → Free shipping! Total = ${cart_total}\"\nelif cart_total &gt;= 100:\n    shipping = 0\n    msg = f\"Spend threshold met → Free shipping! Total = ${cart_total}\"\nelse:\n    shipping = 7.99\n    msg = f\"Status: {status}, Total = ${cart_total} → Shipping = ${shipping}\"\n\nprint(msg)"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-4",
@@ -1621,7 +1621,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#operators-also-work-for-lists-and-strings",
     "title": "Lecture 2",
     "section": "Operators Also Work for Lists and Strings",
-    "text": "Operators Also Work for Lists and Strings\n\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nstring = \"apples, \"\nprint(string * 3)\n\n+ concatenates (joins) strings\n* repeats a string multiple times\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\n+ concatenates (combines) lists into a longer list\n\n\n\n\nQ. Classwork 2.1"
+    "text": "Operators Also Work for Lists and Strings\n\n\n\nstring_one = \"This is an example \"\nstring_two = \"of string concatenation\"\nstring_full = string_one + string_two\nprint(string_full)\n\nstring = \"apples, \"\nprint(string * 3)\n\n+ concatenates (joins) strings\n* repeats a string multiple times\n\n\nlist_one = [\"apples\", \"oranges\"]\nlist_two = [\"pears\", \"satsumas\"]\nlist_full = list_one + list_two\nprint(list_full)\n\n+ concatenates (combines) lists into a longer list"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-in-keyword-membership-test",
@@ -1734,5 +1734,47 @@
     "title": "Lecture 2",
     "section": "Updating a Variable with +=",
     "text": "Updating a Variable with +=\n\n\ncount = 1\ncount += 1\nprint(count)\n\ncount = 1\ncount = count + 1\nprint(count)\n\n\n\n+= is a shortcut assignment operator\nIt means: take the current value and add something to it\nE.g.,: count += 1 means the same thing as count = count + 1."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#data-containers-in-python",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#data-containers-in-python",
+    "title": "Lecture 2",
+    "section": "Data Containers in Python",
+    "text": "Data Containers in Python\n\n\n\n\n\n\n✅ List\n\nStores multiple values in an ordered sequence\nYou can change it after creation\n\n\n\n\nfruits = [\"apple\", \"banana\", \"orange\"]\nfruits.append(\"grape\")\nfruits[0] = \"pear\"\n\n✅ Tuple\n\nStores multiple values in an ordered sequence\nCannot be changed after creation\n\n\n\n\ncoords = (40.7128, -74.0060)\ncoords[0] = 100   # ❌ error\n\n\n\n\n\n✅ Dictionary\n\nStores values as key-value pairs\nKeys are used for fast lookup\n\n\n\n\nstudent = {\"name\": \"Alice\", \"major\": \"Data Analytics\", \"year\": 2}\nstudent[\"major\"]\nstudent[\"year\"] = 3\nstudent[\"GPA\"] = 3.8"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#data-containers-in-pythonlist-and-tuple",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#data-containers-in-pythonlist-and-tuple",
+    "title": "Lecture 2",
+    "section": "🧺 Data Containers in Python—List and Tuple",
+    "text": "🧺 Data Containers in Python—List and Tuple\n\n\n\n\n✅ List\n\nStores multiple values in an ordered sequence\n🔄 Mutable: You can change it after creation\n\nfruits = [\"apple\", \"banana\", \"orange\"]\nfruits.append(\"grape\")\nfruits[0] = \"pear\"\n✅ Tuple\n\nStores multiple values in an ordered sequence\n🔒 Immutable: Cannot be changed after creation\n\ngeneseo_coords = (40.7158, 77.8136)\ngeneseo_coords[0]           # 👀 reading is OK\n# geneseo_coords[0] = 100   # ❌ cannot modify"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#data-containers-in-pythondictionaries",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#data-containers-in-pythondictionaries",
+    "title": "Lecture 2",
+    "section": "🗂️ Data Containers in Python—Dictionaries",
+    "text": "🗂️ Data Containers in Python—Dictionaries\ncity_to_temp = {\n    \"Paris\": 28,\n    \"London\": 22,\n    \"New York\": 18,\n    \"Seoul\": 29,\n    \"Rochester\": 10\n}\n\ncity_to_temp[\"Paris\"]          # 🔍 look up a value by key\ncity_to_temp[\"London\"] = 32    # ✏️ update a value\n\ncity_to_temp.keys()        # 🔑 all keys\ncity_to_temp.values()      # 🌡️ all values\ncity_to_temp.items()       # 🧾 (key, value) pairs\n\nStores values as key→value pairs\nKeys are used for fast lookup\nUseful when you want to create associations (“mapping”)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#square-brackets-in-python",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#square-brackets-in-python",
+    "title": "Lecture 2",
+    "section": "Square Brackets [] in Python",
+    "text": "Square Brackets [] in Python\nvector = ['a', 'b']\nvector[0]\n\n\nUse [] to create a list\nUse [] to access an element by index"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#curly-braces-in-python",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#curly-braces-in-python",
+    "title": "Lecture 2",
+    "section": "Curly Braces {} in Python",
+    "text": "Curly Braces {} in Python\n{'a', 'b'}  # set\n{'first_letter': 'a', 'second_letter': 'b'}  # dictionary (key:value pairs)\n\n\n{} is used to denote a set or a dictionary\nUse {} for sets and dictionaries"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#parentheses-in-python",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#parentheses-in-python",
+    "title": "Lecture 2",
+    "section": "Parentheses () in Python",
+    "text": "Parentheses () in Python\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n\nUse () for tuples\nUse () to pass arguments into functions"
   }
 ]

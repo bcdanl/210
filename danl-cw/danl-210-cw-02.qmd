@@ -1,7 +1,7 @@
 ---
 title: Classwork 2
-subtitle: Python Basics
-date: 2026-01-26
+subtitle: Python Fundamentals
+date: 2026-01-28
 execute: 
   eval: false
   echo: false
@@ -19,9 +19,43 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 
 ## Question 1
+
+### (a)
 Using Python operations only, calculate below:
 $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 
+
+```{python}
+
+```
+
+
+### (b)
+
+Given:
+```{python}
+#| echo: true
+data = [10, 2.5, "3"]
+```
+
+Using Python only, calculate `10 + 2.5 + 3`
+
+
+### (c)
+Given:
+```{python}
+#| echo: true
+exam_score = {"Midterm": 78, "Final": 92}
+```
+
+Compute the Total Exam Score:
+
+$$
+\begin{align}
+\text{(Total Exam Score)} = \max\{ &0.50\times \text{(Midterm)} + 0.50\times \text{(Final)},\\ 
+&0.33\times \text{(Midterm)} + 0.67\times \text{(Final)} \}
+\end{align}
+$$
 
 ```{python}
 
@@ -66,6 +100,8 @@ x < y or 3*y < x
 What will the following code print?
 
 ```{python}
+#| echo: true
+
 status = "Gold"
 cart_total = 92.5
 
@@ -84,6 +120,7 @@ else:
 print(msg)
 ```
 
+<br><br><br>
 
 ## Question 4
 
