@@ -920,8 +920,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#code-and-comment-style",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#code-and-comment-style",
     "title": "Lecture 2",
-    "section": "Code and comment style",
-    "text": "Code and comment style\n\n\n\nTwo guiding principles:\n\nMake things easy for your future self\nAssume you will forget details later → write it down now\n\n\n\n\n\nIn Python, the comment character is #\n\nAnything after # is ignored by the interpreter\nPut comments right above the code they describe\n\n\n\n\n\nUse Markdown/text cells to explain:\n\nWhat the code cell is doing,\nAny assumptions/choices,\nHow to interpret output."
+    "section": "✍️💬 Code and comment style",
+    "text": "✍️💬 Code and comment style\n\n\n\nTwo guiding principles:\n\nMake things easy for your future self\nAssume you will forget details later → write it down now\n\n\n\n\n\nIn Python, the comment character is #\n\nAnything after # is ignored by the interpreter\nPut comments right above the code they describe\n\n\n\n\n\nUse Markdown/text cells to explain:\n\nWhat the code cell is doing,\nAny assumptions/choices,\nHow to interpret output."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#assignment-1",
@@ -955,8 +955,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#operators",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#operators",
     "title": "Lecture 2",
-    "section": "Operators",
-    "text": "Operators\n\n\n\na = 10\nb = 3\n\na + b\na - b\na * b\na ** b\na / b\na // b\na % b\n\n\nAll of the basic operators we see in mathematics are available to use:\n\n+ add\n- subtract\n* multiply\n** power\n/ divide\n// integer divide (floor division)\n% remainder"
+    "section": "Operators ➕➖✖️➗",
+    "text": "Operators ➕➖✖️➗\n\n\n\na = 10\nb = 3\n\na + b\na - b\na * b\na ** b\na / b\na // b\na % b\n\n\nAll of the basic operators we see in mathematics are available to use:\n\n+ add\n- subtract\n* multiply\n** power\n/ divide\n// integer divide (floor division)\n% remainder"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#operators-1",
@@ -1179,15 +1179,15 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#repeat-with-while",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#repeat-with-while",
     "title": "Lecture 2",
-    "section": "Repeat with while",
-    "text": "Repeat with while\n\n\ncount = 1        \nwhile count &lt;= 5:\n    print(count)\n    count += 1\n\n\n\n\nHow this loop works\n\nStart with count = 1.\nCheck the condition: count &lt;= 5\n\nIf it is True, run the loop body.\n\nPrint the current value of count.\nUpdate count using count += 1.\nGo back to step 2 and repeat.\nThe loop stops when count &lt;= 5 becomes False."
+    "section": "🔄⏳ Repeat with while",
+    "text": "🔄⏳ Repeat with while\n\n\ncount = 1        \nwhile count &lt;= 5:\n    print(count)\n    count += 1\n\n\n\n\nHow this loop works\n\nStart with count = 1.\nCheck the condition: count &lt;= 5\n\nIf it is True, run the loop body.\n\nPrint the current value of count.\nUpdate count using count += 1.\nGo back to step 2 and repeat.\nThe loop stops when count &lt;= 5 becomes False."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#asking-the-user-for-input",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#asking-the-user-for-input",
     "title": "Lecture 2",
-    "section": "Asking the user for input",
-    "text": "Asking the user for input\nstuff = input()\n# Type something and press Return/Enter on Python Console \n# before running print(stuff)\nprint(stuff)\n\ninput() pauses the program and waits for the user to type something.\nWhatever the user types is returned as a string.\nThis is useful when you want to make your code interactive."
+    "section": "🙋⌨️ Asking the user for input",
+    "text": "🙋⌨️ Asking the user for input\nstuff = input()\n# Type something and press Return/Enter on Python Console \n# before running print(stuff)\nprint(stuff)\n\ninput() pauses the program and waits for the user to type something.\nWhatever the user types is returned as a string.\nThis is useful when you want to make your code interactive."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-with-break",
@@ -1249,8 +1249,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#generate-number-sequences-with-range",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#generate-number-sequences-with-range",
     "title": "Lecture 2",
-    "section": "Generate Number Sequences with range()",
-    "text": "Generate Number Sequences with range()\n\n\nlist( range(1, 4) )\nlist( range(0, 4) )\nlist( range(4) )\n\nfor x in range(0, 4):\n    print(x)\n\n\nrange() creates a sequence of integers without storing a full list\nThis is memory-efficient and very common in for loops\nSyntax is similar to slicing:\nrange( start, stop, step )\n\nstart defaults to 0\nstep defaults to 1\nthe sequence stops right before stop"
+    "section": "🔢 Generate Number Sequences with range()",
+    "text": "🔢 Generate Number Sequences with range()\n\n\nlist( range(1, 4) )\nlist( range(0, 4) )\nlist( range(4) )\n\nfor x in range(0, 4):\n    print(x)\n\n\nrange() creates a sequence of integers without storing a full list\nThis is memory-efficient and very common in for loops\nSyntax is similar to slicing:\nrange( start, stop, step )\n\nstart defaults to 0\nstep defaults to 1\nthe sequence stops right before stop"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#for-in-range",
@@ -1291,64 +1291,64 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-list",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-list",
     "title": "Lecture 2",
-    "section": "Modifying a List",
-    "text": "Modifying a List\nAdding Items\n\n\nappend(): Adds an item to the end of the list.\n\nmy_list = [1, 2, 3]\nmy_list.append(4)"
+    "section": "🔧 Modifying a List",
+    "text": "🔧 Modifying a List\nAdding Items\n\n\nappend(): Adds an item to the end of the list.\n\nmy_list = [1, 2, 3]\nmy_list.append(4)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-list-1",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-list-1",
     "title": "Lecture 2",
-    "section": "Modifying a List",
-    "text": "Modifying a List\nDeleting Items\n\n\nremove(): Deletes the first occurrence of value in the list.\n\nmy_list = [1, 2, 3, 4, 2]\nmy_list.remove(2)\n\nList Comprehension: Removes items based on a condition.\n\nmy_list = [1, 2, 3, 4, 2]\nmy_list = [x for x in my_list if x != 2]  \n\ndel statement: Deletes an item by index or a slice of items.\n\nmy_list = [1, 2, 3, 4]\ndel my_list[1] \ndel my_list[1:3]"
+    "section": "🔧 Modifying a List",
+    "text": "🔧 Modifying a List\nDeleting Items\n\n\nremove(): Deletes the first occurrence of value in the list.\n\nmy_list = [1, 2, 3, 4, 2]\nmy_list.remove(2)\n\nList Comprehension: Removes items based on a condition.\n\nmy_list = [1, 2, 3, 4, 2]\nmy_list = [x for x in my_list if x != 2]  \n\ndel statement: Deletes an item by index or a slice of items.\n\nmy_list = [1, 2, 3, 4]\ndel my_list[1] \ndel my_list[1:3]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-dictionary",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-dictionary",
     "title": "Lecture 2",
-    "section": "Modifying a Dictionary",
-    "text": "Modifying a Dictionary\nAdding/Updating Items\n\n\nupdate(): Adds new key-value pairs or updates existing ones.\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict.update({'c': 3})  \nmy_dict.update({'a': 10})"
+    "section": "🔧 Modifying a Dictionary",
+    "text": "🔧 Modifying a Dictionary\nAdding/Updating Items\n\n\nupdate(): Adds new key-value pairs or updates existing ones.\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict.update({'c': 3})  \nmy_dict.update({'a': 10})"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-dictionary-1",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#modifying-a-dictionary-1",
     "title": "Lecture 2",
-    "section": "Modifying a Dictionary",
-    "text": "Modifying a Dictionary\nDeleting Items\n\n\nDictionary Comprehension: Removes items based on a condition.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nmy_dict = {k: v for k, v in my_dict.items() if v != 2}  \n\ndel statement: Deletes an item by key.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\ndel my_dict['b']"
+    "section": "🔧 Modifying a Dictionary",
+    "text": "🔧 Modifying a Dictionary\nDeleting Items\n\n\nDictionary Comprehension: Removes items based on a condition.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nmy_dict = {k: v for k, v in my_dict.items() if v != 2}  \n\ndel statement: Deletes an item by key.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\ndel my_dict['b']"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-1",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-1",
     "title": "Lecture 2",
-    "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nException handlers\n\nIn some languages, errors are indicated by special function return values.\n\nPython uses exceptions: code that is executed when an associated error occurs.\n\nWhen we run code that might fail under some circumstances, we also need appropriate exception handlers to intercept any potential errors.\n\nAccessing a list or tuple with an out-of-range position, or a dictionary with a nonexistent key."
+    "section": "⚠️🛠️ Handle Errors with try and except",
+    "text": "⚠️🛠️ Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\n\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nRather than leaving things to chance, use try to wrap your code, and except to provide the error handling:"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-2",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-2",
     "title": "Lecture 2",
     "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nErrors\nshort_list = [1, 2, 3]\nposition = 5\nshort_list[position]\n\nIf we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:"
+    "text": "Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nThe code inside the try block is run.\n\nIf there is an error, an exception is raised and the code inside the except block runs.\n\nIf there are no errors, the except block is skipped."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-3",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-3",
     "title": "Lecture 2",
     "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\n\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nRather than leaving things to chance, use try to wrap your code, and except to provide the error handling:"
+    "text": "Handle Errors with try and except\nexcept type\nshort_list = [1, 2, 3]\nwhile True:\n    value = input('Position [q to quit]? ')\n    if value == 'q':\n        break\n    try:\n        position = int(value)\n        print(short_list[position])\n    except IndexError as err:\n        print('Bad index:', position, '-', err)\n    except Exception as other:\n        print('Something else broke:', other)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-4",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-4",
     "title": "Lecture 2",
     "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nThe code inside the try block is run.\n\nIf there is an error, an exception is raised and the code inside the except block runs.\n\nIf there are no errors, the except block is skipped."
+    "text": "Handle Errors with try and except\nexcept type\n\nThe example looks for an IndexError first, because that’s the exception type raised when we provide an illegal position to a sequence.\nIt saves an IndexError exception in the variable err, and any other exception in the variable other.\nThe example prints everything stored in other to show what you get in that object.\n\nInputting position 3 raised an IndexError as expected.\nEntering two annoyed the int() function, which we handled in our second, catchall except code."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-5",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-5",
     "title": "Lecture 2",
     "section": "Handle Errors with try and except",
-    "text": "Handle Errors with try and except\nexcept type\n\n\nSpecifying a plain except with no arguments, as we did here, is a catchall for any exception type.\nIf more than one type of exception could occur, it’s best to provide a separate exception handler for each.\nWe get the full exception object in the variable name if we use the form:"
+    "text": "Handle Errors with try and except\nClass Exercises\n\nQ. Classwork 2.8"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-6",
@@ -1375,43 +1375,43 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#importing-modules-packages-and-libraries",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#importing-modules-packages-and-libraries",
     "title": "Lecture 2",
-    "section": "Importing Modules, Packages, and Libraries",
-    "text": "Importing Modules, Packages, and Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nThe core libraries that enable Python to store and analyze data efficiently are:\n\npandas\nnumpy"
+    "section": "📦⬇️ Importing Modules, Packages, and Libraries",
+    "text": "📦⬇️ Importing Modules, Packages, and Libraries\n\nPython is a general-purpose programming language and is not specialized for numerical or statistical computation.\nThe core libraries that enable Python to store and analyze data efficiently are:\n\npandas\nnumpy"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#pandas",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#pandas",
     "title": "Lecture 2",
-    "section": "pandas",
-    "text": "pandas\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format."
+    "section": "🐼 pandas",
+    "text": "🐼 pandas\n\n\n\n\npandas provides Series and DataFrames which are used to store data in an easy-to-use format."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#numpy",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#numpy",
     "title": "Lecture 2",
-    "section": "numpy",
-    "text": "numpy\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;"
+    "section": "🔢🧮 numpy",
+    "text": "🔢🧮 numpy\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#import-statement",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#import-statement",
     "title": "Lecture 2",
-    "section": "import statement",
-    "text": "import statement\n\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other module/package/library by using the Python import statement.\n\nimport LIBRARY_NAME\n\nThis makes the code and variables in the imported module available to our programming codes."
+    "section": "📥🧾 import statement",
+    "text": "📥🧾 import statement\n\n\nA module is basically a bunch of related codes saved in a file with the extension .py.\nA package is basically a directory of a collection of modules.\nA library is a collection of packages\nWe refer to code of other module/package/library by using the Python import statement.\n\nimport LIBRARY_NAME\n\nThis makes the code and variables in the imported module available to our programming codes."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#import-statement-with-as-or-from",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#import-statement-with-as-or-from",
     "title": "Lecture 2",
-    "section": "import statement with as or from",
-    "text": "import statement with as or from\n\n\n\nas\n\nWe can use the as keyword when importing the module/package/library using its canonical names.\n\nimport LIBRARY as SOMETHING_SHORT\n\nfrom\n\nWe can use the from keyword when specifying Python module/package/library from which we want to import something.\n\nfrom LIBRARY import FUNCTION, PACKAGE, MODULE"
+    "section": "📥🏷️ import statement with as or from",
+    "text": "📥🏷️ import statement with as or from\n\n\n\nas\n\nWe can use the as keyword when importing the module/package/library using its canonical names.\n\nimport LIBRARY as SOMETHING_SHORT\n\nfrom\n\nWe can use the from keyword when specifying Python module/package/library from which we want to import something.\n\nfrom LIBRARY import FUNCTION, PACKAGE, MODULE"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#pip-tool",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#pip-tool",
     "title": "Lecture 2",
-    "section": "pip tool",
-    "text": "pip tool\n\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY\n\n\n\nQ. Classwork 2.9"
+    "section": "🛠️📦 pip tool",
+    "text": "🛠️📦 pip tool\n\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY\n\n\n\nQ. Classwork 2.9"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#google-colab-settings",
@@ -1536,8 +1536,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-equality-operator",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#the-equality-operator",
     "title": "Lecture 2",
-    "section": "The Equality Operator ==",
-    "text": "The Equality Operator ==\nboolean_condition1 = 10 == 20\nboolean_condition2 = 10 == '10'\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 2.2"
+    "section": "🟰 The Equality Operator ==",
+    "text": "🟰 The Equality Operator ==\nboolean_condition1 = 10 == 20\nboolean_condition2 = 10 == '10'\n\nThe == is an operator that compares the objects on either side and returns True if they have the same values\nQ. What does not (not True) evaluate to?\nQ. Classwork 2.2"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#conditions-boolean-expressions",
@@ -1550,8 +1550,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#condition-and-if-statements",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#condition-and-if-statements",
     "title": "Lecture 2",
-    "section": "Condition and if Statements",
-    "text": "Condition and if Statements\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements."
+    "section": "🚦🧾 Condition and if Statements",
+    "text": "🚦🧾 Condition and if Statements\nname = \"Geneseo\"\nscore = 99\n\nif name == \"Geneseo\" and score &gt; 90:\n    print(\"Geneseo, you achieved a high score.\")\n\nif name == \"Geneseo\" or score &gt; 90:\n    print(\"You could be called Geneseo or have a high score\")\n\nif name != \"Geneseo\" and score &gt; 90:\n    print(\"You are not called Geneseo and you have a high score\")\n\nThe real power of conditions comes when we start to use them in more complex examples, such as if statements."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-in-keyword-is-it-in-the-list",
@@ -1683,8 +1683,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#comparison-operators",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#comparison-operators",
     "title": "Lecture 2",
-    "section": "Comparison Operators",
-    "text": "Comparison Operators"
+    "section": "⚖️ Comparison Operators",
+    "text": "⚖️ Comparison Operators"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#length-of-a-string-and-a-list",
@@ -1697,15 +1697,15 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-an-infinite-loop-with-break",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-an-infinite-loop-with-break",
     "title": "Lecture 2",
-    "section": "Cancel an Infinite Loop with break",
-    "text": "Cancel an Infinite Loop with break\nwhile True:\n    user_input = input(\"Enter 'yes' to continue or 'no' to stop: \")\n    if user_input.lower() == 'no':\n        print(\"Exiting the loop. Goodbye!\")\n        break\n    elif user_input.lower() == 'yes':\n        print(\"You chose to continue.\")\n    else:\n        print(\"Invalid input, please enter 'yes' or 'no'.\")\n\nWhile loop is used to execute a block of code repeatedly until given boolean condition evaluated to False.\n\nwhile True creates an infinite loop\n\nThe loop runs forever unless you stop it using break\nbreak exits the loop immediately"
+    "section": "🛑🔁 Cancel an Infinite Loop with break",
+    "text": "🛑🔁 Cancel an Infinite Loop with break\nwhile True:\n    user_input = input(\"Enter 'yes' to continue or 'no' to stop: \")\n    if user_input.lower() == 'no':\n        print(\"Exiting the loop. Goodbye!\")\n        break\n    elif user_input.lower() == 'yes':\n        print(\"You chose to continue.\")\n    else:\n        print(\"Invalid input, please enter 'yes' or 'no'.\")\n\nWhile loop is used to execute a block of code repeatedly until given boolean condition evaluated to False.\n\nwhile True creates an infinite loop\n\nThe loop runs forever unless you stop it using break\nbreak exits the loop immediately"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#skip-ahead-with-continue",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#skip-ahead-with-continue",
     "title": "Lecture 2",
-    "section": "Skip Ahead with continue",
-    "text": "Skip Ahead with continue\nwhile True:\n    value = input(\"Integer, please [q to quit]: \")\n    if value == 'q': # quit\n        break\n    number = int(value)\n    if number % 2 == 0: # an even number\n        continue\n    print(number, \"squared is\", number*number)\n\ncontinue skips the rest of the loop body for the current iteration\nThen Python jumps back to the top of the loop"
+    "section": "⏭️🔁 Skip Ahead with continue",
+    "text": "⏭️🔁 Skip Ahead with continue\nwhile True:\n    value = input(\"Integer, please [q to quit]: \")\n    if value == 'q': # quit\n        break\n    number = int(value)\n    if number % 2 == 0: # an even number\n        continue\n    print(number, \"squared is\", number*number)\n\ncontinue skips the rest of the loop body for the current iteration\nThen Python jumps back to the top of the loop"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#two-ways-to-loop-through-a-string",
@@ -1718,15 +1718,15 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-a-for-loop-with-break",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-a-for-loop-with-break",
     "title": "Lecture 2",
-    "section": "Cancel a for Loop with break",
-    "text": "Cancel a for Loop with break\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        break\n    print(letter)\n\nbreak exits the loop immediately"
+    "section": "🛑🔂 Cancel a for Loop with break",
+    "text": "🛑🔂 Cancel a for Loop with break\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        break\n    print(letter)\n\nbreak exits the loop immediately"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#skip-in-a-for-loop-with-continue",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#skip-in-a-for-loop-with-continue",
     "title": "Lecture 2",
-    "section": "Skip in a for Loop with continue",
-    "text": "Skip in a for Loop with continue\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        continue\n    print(letter)\n\ncontinue skips the current iteration and moves to the next one"
+    "section": "⏭️🔂 Skip in a for Loop with continue",
+    "text": "⏭️🔂 Skip in a for Loop with continue\nword = 'thud'\nfor letter in word:\n    if letter == 'u':\n        continue\n    print(letter)\n\ncontinue skips the current iteration and moves to the next one"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#updating-a-variable-with",
@@ -1776,5 +1776,47 @@
     "title": "Lecture 2",
     "section": "Parentheses () in Python",
     "text": "Parentheses () in Python\nnum_tup = (1, 2, 3)\nsum(num_tup)\n\n\nUse () for tuples\nUse () to pass arguments into functions"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#get-index-value-with-enumerate",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#get-index-value-with-enumerate",
+    "title": "Lecture 2",
+    "section": "🔢🧾 Get Index + Value with enumerate()",
+    "text": "🔢🧾 Get Index + Value with enumerate()\n\n\nfruits = [\"apple\", \"banana\", \"orange\"]\n\n# default: starts counting at 0\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\n\n# start counting at 1\nfor i, fruit in enumerate(fruits, start=1):\n    print(i, fruit)\n\n\nenumerate() gives you two things while looping:\nthe index (i)\nthe value (fruit)\nVery useful when you want to label or number items\nSyntax:\nenumerate(iterable, start=0)\n\niterable can be a list, tuple, string, etc.\nstart controls the first index (default is 0)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-list-comprehension",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-list-comprehension",
+    "title": "Lecture 2",
+    "section": "❓📋 What is List Comprehension?",
+    "text": "❓📋 What is List Comprehension?\n\n\nA concise way to create or modify lists.\nSyntax: [expression for item in iterable if condition]\n\n\nCreating a List of Squares:\n\nsquares = [x**2 for x in range(5)]\n\nFiltering Items:\n\nnumbers = [1, 2, 3, 4, 5, 6]\nevens = [x for x in numbers if x != 2]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-dictionary-comprehension",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-dictionary-comprehension",
+    "title": "Lecture 2",
+    "section": "❓📘 What is Dictionary Comprehension?",
+    "text": "❓📘 What is Dictionary Comprehension?\n\n\nA concise way to create or modify dictionaries.\nSyntax: {key_expression: value_expression for item in iterable if condition}\n\n\nCreating a Dictionary of Squares:\n\nsquares_dict = {x: x**2 for x in range(5)}\n\nFiltering Dictionary Items:\n\n   my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}\n   filtered_dict = {k: v for k, v in my_dict.items() if v != 2}\n\nSwapping Keys and Values:\n\noriginal_dict = {'a': 1, 'b': 2, 'c': 3}\nswapped_dict = {v: k for k, v in original_dict.items()}"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#exception-handlers",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#exception-handlers",
+    "title": "Lecture 2",
+    "section": "Exception handlers",
+    "text": "Exception handlers\n\nIn some languages, errors are indicated by special function return values.\n\nPython uses exceptions: code that is executed when an associated error occurs.\n\nWhen we run code that might fail under some circumstances, we also need appropriate exception handlers to intercept any potential errors.\n\nAccessing a list or tuple with an out-of-range position, or a dictionary with a nonexistent key."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#errors",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#errors",
+    "title": "Lecture 2",
+    "section": "Errors",
+    "text": "Errors\nshort_list = [1, 2, 3]\nposition = 5\nshort_list[position]\n\nIf we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#except-type",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#except-type",
+    "title": "Lecture 2",
+    "section": "except type",
+    "text": "except type\n\n\nSpecifying a plain except with no arguments, as we did here, is a catchall for any exception type.\nIf more than one type of exception could occur, it’s best to provide a separate exception handler for each.\nWe get the full exception object in the variable name if we use the form:"
   }
 ]

@@ -135,7 +135,7 @@ y
 
 
 	
-## Code and comment style
+## ✍️💬 Code and comment style
 
 ::::{.nonincremental}
 ::: {.fragment}
@@ -351,7 +351,7 @@ dic = {}
 
 
 
-##  Operators
+##  Operators ➕➖✖️➗
 
 
 :::: nonincremental
@@ -462,7 +462,7 @@ type(mod_number)
 
 
 
-# **Booleans, Conditions, and `if` Statements** {background-color="#1c4982"}
+# ✅❓ **Booleans, Conditions, and `if` Statements** {background-color="#1c4982"}
 
 
 ## Booleans
@@ -538,7 +538,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 
 
-## Comparison Operators
+## ⚖️ Comparison Operators
 
 ```{r, eval = T, echo = F, out.width='100%', fig.align='center'}
 text_tbl <- data.frame(
@@ -599,7 +599,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 
 
-## The Equality Operator `==`
+## 🟰 The Equality Operator `==`
 
 ```{.python}
 boolean_condition1 = 10 == 20
@@ -631,7 +631,7 @@ print(x != 0)    # True
 
 
 
-##  Condition and `if` Statements
+## 🚦🧾 Condition and `if` Statements
 
 ```{.python}
 name = "Geneseo"
@@ -752,7 +752,7 @@ if x > 2:
 
 
 
-# **Slicing Methods with Strings and Lists** {background-color="#1c4982"}
+# ✂️ **Slicing Methods with Strings and Lists** {background-color="#1c4982"}
 
 
 ## Slicing Methods
@@ -923,7 +923,7 @@ suny[-6 : -4]
 
 
 
-# **Functions, Arguments, and Parameters** {background-color="#1c4982"}
+# ⚙️ **Functions, Arguments, and Parameters** {background-color="#1c4982"}
 
 ## Functions
 
@@ -987,7 +987,7 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 
 
 
-# **Loop with `while` and `for`** {background-color="#1c4982"}
+# 🔁 **Loop with `while` and `for`** {background-color="#1c4982"}
 
 
 ## Updating a Variable with `+=`
@@ -1013,7 +1013,7 @@ print(count)
 -	It means: **take the current value and add something to it**
   - E.g.,: `count += 1` means the same thing as `count = count + 1`.
   
-##  Repeat with `while`
+## 🔄⏳ Repeat with `while`
 
 :::: {.columns}
 
@@ -1049,7 +1049,7 @@ while count <= 5:
 
 
 
-## Asking the user for input
+## 🙋⌨️ Asking the user for input
 
 ```{.python}
 stuff = input()
@@ -1065,7 +1065,7 @@ print(stuff)
 
 
 
-## Cancel an Infinite Loop with `break`
+## 🛑🔁 Cancel an Infinite Loop with `break`
 
 ```{.python}
 while True:
@@ -1086,7 +1086,7 @@ while True:
 	
 
 
-## Skip Ahead with `continue`
+## ⏭️🔁 Skip Ahead with `continue`
 
 ```{.python}
 while True:
@@ -1145,7 +1145,7 @@ for letter in word:
 - Which one do you prefer?
 
 
-## Cancel a `for` Loop with `break`
+## 🛑🔂 Cancel a `for` Loop with `break`
 
 ```{.python}
 word = 'thud'
@@ -1159,7 +1159,7 @@ for letter in word:
 
 <!-- - A `break` in a `for` loop breaks out of the loop, as it does for a `while` loop: -->
 
-## Skip in a `for` Loop with `continue`
+## ⏭️🔂 Skip in a `for` Loop with `continue`
 
 ```{.python}
 word = 'thud'
@@ -1196,7 +1196,7 @@ for num in range(1, 6):
 - **`break`** → exits the loop completely  
 
 
-## Generate Number Sequences with `range()`
+## 🔢 Generate Number Sequences with `range()`
 
 :::: {.columns}
 
@@ -1227,7 +1227,7 @@ for x in range(0, 4):
 ::::
 
 
-## 🔢 Get Index + Value with `enumerate()`
+## 🔢🧾 Get Index + Value with `enumerate()`
 
 :::: {.columns}
 
@@ -1272,10 +1272,9 @@ for i, fruit in enumerate(fruits, start=1):
 - **Q**. [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
 
 
-# **List and Dictionary Comprehensions** {background-color="#1c4982"}
+#  📋📘⚡ **List and Dictionary Comprehensions** {background-color="#1c4982"}
 
-## List Comprehension
-### What is List Comprehension?
+## ❓📋 What is List Comprehension?
 
 :::{.nonincremental}
 - A concise way to create or modify lists.
@@ -1294,9 +1293,7 @@ evens = [x for x in numbers if x != 2]
 
 :::
 
-## Dictionary Comprehension
-
-### What is Dictionary Comprehension?
+## ❓📘 What is Dictionary Comprehension?
 
 :::{.nonincremental}
 
@@ -1322,9 +1319,9 @@ swapped_dict = {v: k for k, v in original_dict.items()}
 
 :::
 
-# **Modifying Lists and Dictionaries** {background-color="#1c4982"}
+# 🛠️ **Modifying Lists and Dictionaries** {background-color="#1c4982"}
 
-## Modifying a List
+## 🔧 Modifying a List
 ### Adding Items
 
 :::{.nonincremental}
@@ -1337,7 +1334,7 @@ my_list.append(4)
 
 :::
 
-## Modifying a List
+## 🔧 Modifying a List
 ### Deleting Items
 :::{.nonincremental}
 - **`remove()`**: Deletes the first occurrence of value in the list.
@@ -1366,7 +1363,7 @@ del my_list[1:3]
 
 :::
 
-## Modifying a Dictionary
+## 🔧 Modifying a Dictionary
 ### Adding/Updating Items
 
 :::{.nonincremental}
@@ -1380,7 +1377,7 @@ my_dict.update({'a': 10})
 
 :::
 
-## Modifying a Dictionary
+## 🔧 Modifying a Dictionary
 ### Deleting Items
 
 :::{.nonincremental}
@@ -1402,11 +1399,10 @@ del my_dict['b']
 
 
 
-# **Handle Errors with `try` and `except`** {background-color="#1c4982"}
+# 🛡⚠️️ **Handle Errors with `try` and `except`** {background-color="#1c4982"}
 
 
-## Handle Errors with `try` and `except`
-### Exception handlers
+## Exception handlers
 
 - In some languages, errors are indicated by special function return values. 
   - Python uses *exceptions*: code that is executed when an associated error occurs.
@@ -1416,8 +1412,7 @@ del my_dict['b']
   - Accessing a list or tuple with an out-of-range position, or a dictionary with a nonexistent key.
   
 
-## Handle Errors with `try` and `except`
-### Errors
+## Errors
 
 
 ```{.python}
@@ -1428,7 +1423,7 @@ short_list[position]
 - If we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:
 
 
-## Handle Errors with `try` and `except`
+## ⚠️🛠️ Handle Errors with `try` and `except`
 
 
 ```{.python}
@@ -1446,7 +1441,6 @@ except:
 
 ## Handle Errors with `try` and `except`
 
-
 ```{.python}
 short_list = [1, 2, 3]
 position = 5
@@ -1462,8 +1456,7 @@ except:
 - If there are no errors, the `except` block is skipped.
 
 
-## Handle Errors with `try` and `except`
-### `except` type
+## `except` type
 
 :::{.nonincremental}
 - Specifying a plain `except` with no arguments, as we did here, is a catchall for any exception type.
@@ -1521,9 +1514,9 @@ while True:
 
 
 
-# **Importing and Installing Modules, Packages, and Libraries** {background-color="#1c4982"}
+# 📦⬇️ **Importing and Installing Modules, Packages, and Libraries** {background-color="#1c4982"}
 
-## Importing Modules, Packages, and Libraries
+## 📦⬇️ Importing Modules, Packages, and Libraries
 
 - Python is a general-purpose programming language and is not specialized for numerical or statistical computation.
 
@@ -1533,7 +1526,7 @@ while True:
 
 
 
-## `pandas`
+## 🐼 `pandas`
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/pandas-logo.png">
@@ -1541,7 +1534,7 @@ while True:
 
 - `pandas` provides `Series` and `DataFrames` which are used to store data in an easy-to-use format.
 
-## `numpy`
+## 🔢🧮 `numpy`
   
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/numpy-logo.png">
@@ -1551,7 +1544,7 @@ while True:
 
 
 
-## `import` statement
+## 📥🧾 `import` statement
 
 :::{.nonincremental}
 - A **module** is basically a bunch of related codes saved in a file with the extension `.py`.
@@ -1572,7 +1565,7 @@ import LIBRARY_NAME
 
 :::
 
-## `import` statement with `as` or `from`
+## 📥🏷️ `import` statement with `as` or `from`
 
 :::{.nonincremental}
 :::: {.columns}
@@ -1602,7 +1595,7 @@ from LIBRARY import FUNCTION, PACKAGE, MODULE
 ::::
 ::::
 
-## `pip` tool
+## 🛠️📦 `pip` tool
 
 :::{.nonincremental}
 :::: {.columns}
