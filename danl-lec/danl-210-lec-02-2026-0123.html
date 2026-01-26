@@ -565,23 +565,6 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="variables-are-names-not-places" class="slide level2">
-<h2>Variables Are Names, Not Places</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>list_example <span class="op">=</span> [<span class="dv">10</span>, <span class="fl">1.23</span>, <span class="st">"like this"</span>, <span class="va">True</span>, <span class="va">None</span>]</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(list_example)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">type</span>(list_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">Common built-in types:
-<ul>
-<li class="fragment"><code>int</code> (e.g., <code>10</code>)</li>
-<li class="fragment"><code>float</code> (e.g., <code>1.23</code>)</li>
-<li class="fragment"><code>str</code> (e.g., <code>"hello"</code>)</li>
-<li class="fragment"><code>bool</code> (e.g., <code>True</code>)</li>
-<li class="fragment"><code>NoneType</code> (e.g., <code>None</code>)</li>
-</ul></li>
-<li class="fragment">A <strong>list</strong> can contain mixed types.</li>
-</ul>
-</section>
 <section id="types" class="slide level2">
 <h2>Types</h2>
 <div style="display:block; margin:-30px;">
@@ -597,6 +580,23 @@ Byeong-Hak Choe
 <li class="fragment">✅ mutable → can be changed after creation</li>
 <li class="fragment">❌ immutable → cannot be changed after creation</li>
 </ul></li>
+</ul>
+</section>
+<section id="one-list-many-types" class="slide level2">
+<h2>One List, Many Types</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>list_example <span class="op">=</span> [<span class="dv">10</span>, <span class="fl">1.23</span>, <span class="st">"like this"</span>, <span class="va">True</span>, <span class="va">None</span>]</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(list_example)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">type</span>(list_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Common built-in types:
+<ul>
+<li class="fragment"><code>int</code> (e.g., <code>10</code>)</li>
+<li class="fragment"><code>float</code> (e.g., <code>1.23</code>)</li>
+<li class="fragment"><code>str</code> (e.g., <code>"hello"</code>)</li>
+<li class="fragment"><code>bool</code> (e.g., <code>True</code>)</li>
+<li class="fragment"><code>NoneType</code> (e.g., <code>None</code>)</li>
+</ul></li>
+<li class="fragment">A <strong>list</strong> can contain mixed types.</li>
 </ul>
 </section>
 <section id="square-brackets-in-python" class="slide level2">
@@ -793,8 +793,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-779cfae90805bd367424" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-779cfae90805bd367424">{"x":{"filter":"none","vertical":false,"data":[["x and y","x or y","not x"],["True only if both are True","True if at least one is True","Flips True ↔ False"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-57f3741052fd5a7feab8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-57f3741052fd5a7feab8">{"x":{"filter":"none","vertical":false,"data":[["x and y","x or y","not x"],["True only if both are True","True if at least one is True","Flips True ↔ False"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
@@ -806,8 +806,8 @@ Byeong-Hak Choe
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e9cd568ed0c42b31e6ca" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e9cd568ed0c42b31e6ca">{"x":{"filter":"none","vertical":false,"data":[["x == y","x != y","x &gt; y","x &gt;= y","x &lt; y","x &lt;= y"],["equal","not equal","greater","greater or equal","less","less or equal"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-f6968c3cf0b383f02fcc" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f6968c3cf0b383f02fcc">{"x":{"filter":"none","vertical":false,"data":[["x == y","x != y","x &gt; y","x &gt;= y","x &lt; y","x &lt;= y"],["equal","not equal","greater","greater or equal","less","less or equal"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Operator<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","paging":false,"columnDefs":[{"targets":"_all","orderable":false},{"name":"Operator","targets":0},{"name":"Description","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\n\n  // Change header background and text color\n  $('thead th').css('background-color', '#1c4982');\n  $('thead th').css('color', 'white');\n\n  // Loop through each row and alternate background color\n  $('tbody tr').each(function(index) {\n    if (index % 2 == 0) {\n      $(this).css('background-color', '#d1dae6'); // Light color for even rows\n    } else {\n      $(this).css('background-color', '#9fb2cb'); // Dark color for odd rows\n    }\n  });\n\n  // Set text color for all rows\n  $('tbody tr').css('color', 'black');\n\n  // Add hover effect\n  $('tbody tr').hover(\n    function() {\n      $(this).css('background-color', '#607fa7'); // Color when mouse hovers over a row\n    }, \n    function() {\n      var index = $(this).index();\n      if (index % 2 == 0) {\n        $(this).css('background-color', '#d1dae6'); // Restore even row color\n      } else {\n        $(this).css('background-color', '#9fb2cb'); // Restore odd row color\n      }\n    }\n  );\n\n}"},"evals":["callback"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

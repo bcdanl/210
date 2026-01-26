@@ -1818,5 +1818,12 @@
     "title": "Lecture 2",
     "section": "except type",
     "text": "except type\n\n\nSpecifying a plain except with no arguments, as we did here, is a catchall for any exception type.\nIf more than one type of exception could occur, it’s best to provide a separate exception handler for each.\nWe get the full exception object in the variable name if we use the form:"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#one-list-many-types",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#one-list-many-types",
+    "title": "Lecture 2",
+    "section": "One List, Many Types",
+    "text": "One List, Many Types\nlist_example = [10, 1.23, \"like this\", True, None]\nprint(list_example)\ntype(list_example)\n\nCommon built-in types:\n\nint (e.g., 10)\nfloat (e.g., 1.23)\nstr (e.g., \"hello\")\nbool (e.g., True)\nNoneType (e.g., None)\n\nA list can contain mixed types."
   }
 ]

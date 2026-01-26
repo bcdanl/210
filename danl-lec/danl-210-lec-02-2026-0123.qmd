@@ -193,7 +193,25 @@ y
 ::::
 
 
-##  Variables Are Names, Not Places
+
+## Types
+
+<div style="display:block; margin:-30px;"></div>
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/int-py-tab2-1.png" width="600">
+</p>
+
+
+- The **Type** column shows Python’s official type name.
+- **Mutable?**
+
+  - ✅ mutable → can be changed after creation
+  - ❌ immutable → cannot be changed after creation
+
+
+
+## One List, Many Types
 
 ```{.python}
 list_example = [10, 1.23, "like this", True, None]
@@ -213,24 +231,6 @@ type(list_example)
 
 
 
-## Types
-
-<div style="display:block; margin:-30px;"></div>
-
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/int-py-tab2-1.png" width="600">
-</p>
-
-
-- The **Type** column shows Python’s official type name.
-- **Mutable?**
-
-  - ✅ mutable → can be changed after creation
-  - ❌ immutable → cannot be changed after creation
-
-
-
-
 ## Square Brackets `[]` in Python
 
 
@@ -244,6 +244,9 @@ vector[0]
 - Use `[]` to access an element by **index**
 
 :::
+
+
+
 
 ## Curly Braces `{}` in Python
 
