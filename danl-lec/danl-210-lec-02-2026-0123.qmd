@@ -775,7 +775,7 @@ if x > 2:
 
 ## Slicing Patterns
 
-```{python}
+```{.python}
 letters = "abcdefghij"
 
 letters[:]        # whole string

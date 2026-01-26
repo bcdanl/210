@@ -1635,7 +1635,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-patterns",
     "title": "Lecture 2",
     "section": "Slicing Patterns",
-    "text": "Slicing Patterns\n\nletters = \"abcdefghij\"\n\nletters[:]        # whole string\n\n'abcdefghij'\n\nletters[3:]       # from index 3 to end\n\n'defghij'\n\nletters[:5]       # from start to index 4\n\n'abcde'\n\nletters[:-4]      # take the last 4 characters\n\n'abcdef'\n\nletters[2:7]      # index 2 to 6\n\n'cdefg'\n\nletters[::2]      # step size 2\n\n'acegi'\n\nletters[::-1]     # reverse\n\n'jihgfedcba'\n\n\n\nSlice format: [start : end : step]\n\nstart is included\nend is excluded\nstep controls how many characters to skip"
+    "text": "Slicing Patterns\nletters = \"abcdefghij\"\n\nletters[:]        # whole string\nletters[3:]       # from index 3 to end\nletters[:5]       # from start to index 4\nletters[:-4]      # take the last 4 characters\nletters[2:7]      # index 2 to 6\nletters[::2]      # step size 2\nletters[::-1]     # reverse\n\nSlice format: [start : end : step]\n\nstart is included\nend is excluded\nstep controls how many characters to skip"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#length-of-strings-and-ranges",
