@@ -32,6 +32,9 @@ website:
       - text: 🅱 Brightspace
         href: https://mylearning.suny.edu/d2l/home/2533587
         target: _blank
+      - text: 🟧 Google Colab
+        href: https://colab.research.google.com/
+        target: _blank
       
       - text: 🚀 Lecture
         href: listing-danl-210-lec.qmd
@@ -49,6 +52,8 @@ website:
         contents:
           - text: Week 01
             href: danl-wk/wk-01.qmd
+          - text: Week 02
+            href: danl-wk/wk-02.qmd
       
         
   page-footer: 
