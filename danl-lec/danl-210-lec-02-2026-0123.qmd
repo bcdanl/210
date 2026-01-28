@@ -470,6 +470,13 @@ type(mod_number)
 
 ## Booleans
 
+:::: nonincremental
+
+:::: {.columns}
+
+
+::: {.column width="50%"}
+::: fragment
 ```{.python}
 10 == 20
 10 == '10'
@@ -479,6 +486,29 @@ type(mod_number)
   - `True`
   - `False`
 
+:::
+
+:::
+
+
+::: {.column width="50%"}
+:::: fragment
+```{.python}
+int(True)
+int(False)
+```
+
+-	In Python, Booleans can be converted to integers:
+	-	`int(True)` is 1
+	-	`int(False)` is 0
+
+	
+:::
+:::
+
+::::
+
+::::
 
 ##  Boolean Operators
 
@@ -535,7 +565,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 )
 ```
 
-
+Here, both `x` and `y` are boolean.
 
 - Existing booleans can be combined by a **boolean operator**, which create a boolean when executed.
 
@@ -548,10 +578,10 @@ text_tbl <- data.frame(
   Operator = c("x == y", "x != y", "x > y", "x >= y", "x < y", "x <= y"),
   Description = c("equal",
 "not equal",
-"greater",
-"greater or equal",
-"less",
-"less or equal")
+"greater than",
+"greater than or equal to",
+"less than",
+"less than or equal to")
 )
 
 # Create a DT datatable without search box and 'Show entries' dropdown
@@ -600,6 +630,7 @@ DT::datatable(text_tbl, rownames = FALSE,
 
 ```
 
+Here, both `x` and `y` are variables.
 
 
 ## 🟰 The Equality Operator `==`
@@ -748,7 +779,8 @@ if x > 2:
 
 :::
 
-## Booleans, Conditions, and `if` Statements
+<div style="display:block; margin:-15px;"></div>
+
 
 - **Q**. [**Classwork 2.3**](../danl-cw/danl-210-cw-02.html#question-3){target="_blank"}
 
@@ -758,7 +790,7 @@ if x > 2:
 # ✂️ **Slicing Methods with Strings and Lists** {background-color="#1c4982"}
 
 
-## Slicing Methods
+## ✂️ Slicing Methods
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/python_string_index.png">
@@ -773,7 +805,7 @@ if x > 2:
   - right exclusive when we are specifying a range of values.
 
 
-## Slicing Patterns
+## 🧩 Slicing Patterns
 
 ```{.python}
 letters = "abcdefghij"
@@ -794,7 +826,7 @@ letters[::-1]     # reverse
 
 
 
-## Length of a String and a List
+## 📏 Length of a String and a List
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -831,7 +863,7 @@ len(list_of_numbers)
 
 
 
-## Slicing with Lists
+## ✂️🧾 Slicing with Lists
 
 ```{.python}
 list_example = ['one', 'two', 'three']
@@ -847,7 +879,7 @@ list_example[ 1 : 3 ]
 
 
 
-## Slicing with Lists
+## ✂️🧾 Slicing with Lists
 
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/python-slicing-fence.png">
@@ -859,7 +891,7 @@ list_example[ 1 : 3 ]
 
 
 
-## Get an Item by `[index]`
+## 🔢 Get an Item by `[index]`
 
 ```{.python}
 suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
@@ -889,7 +921,7 @@ suny[-7]
 
 
 
-## Get an Item with a Slice
+## ✂️ Get an Item with a Slice
 ```{.python}
 suny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', 
         'Stony Brook', 'New Paltz'] 
@@ -1495,7 +1527,7 @@ for i in positions:
 
 - `pandas` provides `Series` and `DataFrames` which are used to store data in an easy-to-use format.
 
-## 🔢🧮 `numpy`
+## 🔢 `numpy`
   
 <p align="center">
   <img src="https://bcdanl.github.io/lec_figs/numpy-logo.png">
@@ -1531,7 +1563,7 @@ import LIBRARY_NAME
 :::{.nonincremental}
 :::: {.columns}
 ::: {.column width="50%"}
-#### `as`
+#### Keyword `as`
 
 - We can use the `as` *keyword* when importing the module/package/library using its canonical names.
 
@@ -1543,7 +1575,7 @@ import LIBRARY as SOMETHING_SHORT
 :::
 
 ::: {.column width="50%"}
-#### `from`
+#### Keyword `from`
 
 - We can use the `from` *keyword* when specifying Python module/package/library from which we want to `import` something.
 

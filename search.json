@@ -564,21 +564,21 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#booleans",
     "title": "Lecture 2",
     "section": "Booleans",
-    "text": "Booleans\n10 == 20\n10 == '10'\n\nBoolean values are either:\n\nTrue\nFalse"
+    "text": "Booleans\n\n\n\n\n10 == 20\n10 == '10'\n\nBoolean values are either:\n\nTrue\nFalse\n\n\n\n\n\nint(True)\nint(False)\n\nIn Python, Booleans can be converted to integers:\n\nint(True) is 1\nint(False) is 0"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#boolean-operators",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#boolean-operators",
     "title": "Lecture 2",
     "section": "Boolean Operators",
-    "text": "Boolean Operators\n\n\n\n\n\n\n\n\nExisting booleans can be combined by a boolean operator, which create a boolean when executed."
+    "text": "Boolean Operators\n\n\n\n\n\n\n\nHere, both x and y are boolean.\n\nExisting booleans can be combined by a boolean operator, which create a boolean when executed."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#comparison-operators",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#comparison-operators",
     "title": "Lecture 2",
     "section": "⚖️ Comparison Operators",
-    "text": "⚖️ Comparison Operators"
+    "text": "⚖️ Comparison Operators\n\n\n\n\n\n\n\nHere, both x and y are variables."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-equality-operator",
@@ -634,7 +634,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#indentation",
     "title": "Lecture 2",
     "section": "Indentation",
-    "text": "Indentation\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\n\n\nIn Python, indentation is required for code blocks, such as code inside:\n\na user-defined function (def ...),\na conditional (if / elif / else),\na loop (for / while).\n\nIndentation is how Python knows which lines belong to a block.\nIt tells the interpreter what should run inside the block (e.g., inside an if) and what should run after the block ends.\nStandard Python style is 4 spaces per indentation level.\n\nIn Google Colab, you might see 2 spaces."
+    "text": "Indentation\nx = 10\n\nif x &gt; 2:\n    print(\"x is greater than 2\")\n\n\n\nIn Python, indentation is required for code blocks, such as code inside:\n\na user-defined function (def ...),\na conditional (if / elif / else),\na loop (for / while).\n\nIndentation is how Python knows which lines belong to a block.\nIt tells the interpreter what should run inside the block (e.g., inside an if) and what should run after the block ends.\nStandard Python style is 4 spaces per indentation level.\n\nIn Google Colab, you might see 2 spaces.\n\n\n\n\n\n\n\nQ. Classwork 2.3"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#booleans-conditions-and-if-statements-1",
@@ -647,50 +647,50 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-methods",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-methods",
     "title": "Lecture 2",
-    "section": "Slicing Methods",
-    "text": "Slicing Methods\n\n\n\n\nSlicing methods can apply for strings, lists, and DataFrames.\nWith slicing methods, we can get subset of the data object.\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
+    "section": "✂️ Slicing Methods",
+    "text": "✂️ Slicing Methods\n\n\n\n\nSlicing methods can apply for strings, lists, and DataFrames.\nWith slicing methods, we can get subset of the data object.\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-patterns",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-patterns",
     "title": "Lecture 2",
-    "section": "Slicing Patterns",
-    "text": "Slicing Patterns\nletters = \"abcdefghij\"\n\nletters[:]        # whole string\nletters[3:]       # from index 3 to end\nletters[:5]       # from start to index 4\nletters[:-4]      # take the last 4 characters\nletters[2:7]      # index 2 to 6\nletters[::2]      # step size 2\nletters[::-1]     # reverse\n\nSlice format: [start : end : step]\n\nstart is included\nend is excluded\nstep controls how many characters to skip"
+    "section": "🧩 Slicing Patterns",
+    "text": "🧩 Slicing Patterns\nletters = \"abcdefghij\"\n\nletters[:]        # whole string\nletters[3:]       # from index 3 to end\nletters[:5]       # from start to index 4\nletters[:-4]      # take the last 4 characters\nletters[2:7]      # index 2 to 6\nletters[::2]      # step size 2\nletters[::-1]     # reverse\n\nSlice format: [start : end : step]\n\nstart is included\nend is excluded\nstep controls how many characters to skip"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#length-of-a-string-and-a-list",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#length-of-a-string-and-a-list",
     "title": "Lecture 2",
-    "section": "Length of a String and a List",
-    "text": "Length of a String and a List\n\n\nstring = \"cheesecake\"\nlen(string)\n\nlist_of_numbers = [1, 2, 3, 4, 5]\nlen(list_of_numbers)\n\n\n\nBoth strings and list objects support len()\nlen() tells you how many items/characters are stored"
+    "section": "📏 Length of a String and a List",
+    "text": "📏 Length of a String and a List\n\n\nstring = \"cheesecake\"\nlen(string)\n\nlist_of_numbers = [1, 2, 3, 4, 5]\nlen(list_of_numbers)\n\n\n\nBoth strings and list objects support len()\nlen() tells you how many items/characters are stored"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-with-lists",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-with-lists",
     "title": "Lecture 2",
-    "section": "Slicing with Lists",
-    "text": "Slicing with Lists\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
+    "section": "✂️🧾 Slicing with Lists",
+    "text": "✂️🧾 Slicing with Lists\nlist_example = ['one', 'two', 'three']\nlist_example[ 0 : 1 ]\nlist_example[ 1 : 3 ]\n\nPython is\n\na zero-indexed language (things start counting from zero);\nleft inclusive;\nright exclusive when we are specifying a range of values."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-with-lists-1",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-with-lists-1",
     "title": "Lecture 2",
-    "section": "Slicing with Lists",
-    "text": "Slicing with Lists\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post."
+    "section": "✂️🧾 Slicing with Lists",
+    "text": "✂️🧾 Slicing with Lists\n\n\n\n\nWe can think of items in a list-like object as being fenced in.\n\nThe index represents the fence post."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#get-an-item-by-index",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#get-an-item-by-index",
     "title": "Lecture 2",
-    "section": "Get an Item by [index]",
-    "text": "Get an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]"
+    "section": "🔢 Get an Item by [index]",
+    "text": "🔢 Get an Item by [index]\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \n\n\nsuny[0]\nsuny[1]\nsuny[2]\nsuny[7]\n\nsuny[-1]\nsuny[-2]\nsuny[-3]\nsuny[-7]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#get-an-item-with-a-slice",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#get-an-item-with-a-slice",
     "title": "Lecture 2",
-    "section": "Get an Item with a Slice",
-    "text": "Get an Item with a Slice\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]\n\n\n\nQ. Classwork 2.4"
+    "section": "✂️ Get an Item with a Slice",
+    "text": "✂️ Get an Item with a Slice\nsuny = ['Geneseo', 'Brockport', 'Oswego', 'Binghamton', \n        'Stony Brook', 'New Paltz'] \nsuny[0:2]    # A slice of a list is also a list.\n\n\nsuny[ : : 2]\nsuny[ : : -2]\nsuny[ : : -1]\n\nsuny[4 : ]\nsuny[-6 : ]\nsuny[-6 : -2]\nsuny[-6 : -4]\n\n\n\nQ. Classwork 2.4"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#slicing-methods-1",
@@ -927,8 +927,8 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#numpy",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#numpy",
     "title": "Lecture 2",
-    "section": "🔢🧮 numpy",
-    "text": "🔢🧮 numpy\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;"
+    "section": "🔢 numpy",
+    "text": "🔢 numpy\n\n\n\n\nnumpy, numerical Python, provides the array block (np.array()) for doing fast and efficient computations;"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#import-statement",
@@ -942,7 +942,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#import-statement-with-as-or-from",
     "title": "Lecture 2",
     "section": "📥🏷️ import statement with as or from",
-    "text": "📥🏷️ import statement with as or from\n\n\n\nas\n\nWe can use the as keyword when importing the module/package/library using its canonical names.\n\nimport LIBRARY as SOMETHING_SHORT\n\nfrom\n\nWe can use the from keyword when specifying Python module/package/library from which we want to import something.\n\nfrom LIBRARY import FUNCTION, PACKAGE, MODULE"
+    "text": "📥🏷️ import statement with as or from\n\n\n\nKeyword as\n\nWe can use the as keyword when importing the module/package/library using its canonical names.\n\nimport LIBRARY as SOMETHING_SHORT\n\nKeyword from\n\nWe can use the from keyword when specifying Python module/package/library from which we want to import something.\n\nfrom LIBRARY import FUNCTION, PACKAGE, MODULE"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#pip-tool",
@@ -977,14 +977,14 @@
     "href": "danl-cw/danl-210-cw-02.html#question-3",
     "title": "Classwork 2",
     "section": "Question 3",
-    "text": "Question 3\nWhat will the following code print? (Answer without running it.)\n\nstatus = \"Gold\"\ncart_total = 92.5\n\nfree_shipping_levels = [\"Gold\", \"Platinum\"]\n\nif status in free_shipping_levels:\n    shipping = 0\n    msg = f\"Status: {status} → Free shipping! Total = ${cart_total}\"\nelif cart_total &gt;= 100:\n    shipping = 0\n    msg = f\"Spend threshold met → Free shipping! Total = ${cart_total}\"\nelse:\n    shipping = 7.99\n    msg = f\"Status: {status}, Total = ${cart_total} → Shipping = ${shipping}\"\n\nprint(msg)"
+    "text": "Question 3\n\n(a)\nWhat will the following code print? (Answer without running it.)\n\nstatus = \"Gold\"\ncart_total = 92.5\n\nfree_shipping_levels = [\"Gold\", \"Platinum\"]\n\nif status in free_shipping_levels:\n    shipping = 0\n    msg = f\"Status: {status} → Free shipping! Total = ${cart_total}\"\nelif cart_total &gt;= 100:\n    shipping = 0\n    msg = f\"Spend threshold met → Free shipping! Total = ${cart_total}\"\nelse:\n    shipping = 7.99\n    msg = f\"Status: {status}, Total = ${cart_total} → Shipping = ${shipping}\"\n\nprint(msg)\n\n\n\n(b)\n\nFill in the blanks:\n\nIf name is \"Geneseo\" and score &gt;= 90 → print \"Geneseo high score\"\nElse if score &gt;= 90 → print \"High score\"\nElse → print \"Try again\"\n\n\n\nname = \"Geneseo\"\nscore = 88\n\n# Fill in the blanks\nif ______________________________:\n    print(\"Geneseo high score\")\nelif ____________________________:\n    print(\"High score\")\nelse:\n    print(\"Try again\")"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-4",
     "href": "danl-cw/danl-210-cw-02.html#question-4",
     "title": "Classwork 2",
     "section": "Question 4",
-    "text": "Question 4\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80"
+    "text": "Question 4\n\n(a)\nWhat will the following code print? (Do not run it—reason it out.)\n\nnums = [10, 20, 30, 40, 50, 60, 70]\n\nprint(nums[2:6])\nprint(nums[:4])\nprint(nums[::2])\nprint(nums[-4:-1])\n\n\n\n(b)\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-5",

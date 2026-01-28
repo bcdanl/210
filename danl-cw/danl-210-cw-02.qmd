@@ -97,6 +97,8 @@ x < y or 3*y < x
 
 ## Question 3
 
+### (a)
+
 What will the following code print? *(Answer without running it.)*
 
 ```{python}
@@ -120,11 +122,47 @@ else:
 print(msg)
 ```
 
+### (b)
+- Fill in the blanks:
+  - If `name` is `"Geneseo"` **and** `score >= 90` → print `"Geneseo high score"`
+  - Else if `score >= 90` → print `"High score"`
+  - Else → print `"Try again"`
+	
+```{python}
+#| echo: true
+name = "Geneseo"
+score = 88
+
+# Fill in the blanks
+if ______________________________:
+    print("Geneseo high score")
+elif ____________________________:
+    print("High score")
+else:
+    print("Try again")
+```
+
+
 <br><br><br>
 
 ## Question 4
 
 
+### (a)
+What will the following code print? *(Do not run it—reason it out.)*
+
+```{python}
+#| echo: true
+nums = [10, 20, 30, 40, 50, 60, 70]
+
+print(nums[2:6])
+print(nums[:4])
+print(nums[::2])
+print(nums[-4:-1])
+```
+
+
+### (b)
 ```{python}
 #| echo: true
 fare = "$10.00"
