@@ -864,15 +864,15 @@
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#errors",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#errors",
     "title": "Lecture 2",
-    "section": "Errors",
-    "text": "Errors\nshort_list = [1, 2, 3]\nposition = 5\nshort_list[position]\n\nIf we don’t provide your own exception handler, Python prints an error message and some information about where the error occurred and then terminates the program:"
+    "section": "⚠️️ Errors",
+    "text": "⚠️️ Errors\nshort_list = [1, 2, 3]\npositions = [0, 1, 5, 2]   # 5 is out of range\n\nfor i in positions:\n    print(short_list[i])\n\nIf we don’t write our own exception handler, Python will:\n\nprint an error message (a traceback) explaining what went wrong, and\nstop the program."
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-1",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-1",
     "title": "Lecture 2",
-    "section": "⚠️🛠️ Handle Errors with try and except",
-    "text": "⚠️🛠️ Handle Errors with try and except\nshort_list = [1, 2, 3]\nposition = 5\n\ntry:\n    short_list[position]\nexcept:\n    print('Need a position between 0 and', len(short_list)-1, ' but got',\n    position)\n\nRather than leaving things to chance, use try to wrap your code, and except to provide the error handling:"
+    "section": "⚠️🛡️ Handle Errors with try and except",
+    "text": "⚠️🛡️ Handle Errors with try and except\nshort_list = [1, 2, 3]\npositions = [0, 1, 5, 2]   # 5 is out of range\n\nfor i in positions:\n    try:\n        print(short_list[i])\n    except:\n        print(\"Index error:\", i, \"is not between 0 and\", len(short_list) - 1)\n\nUse try to run code that might fail, and except to handle the error gracefully.\n\nIf an error occurs, Python raises an exception and runs the except block.\nIf no error occurs, Python skips the except block.\n\nQ. Classwork 2.8"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-2",
@@ -977,7 +977,7 @@
     "href": "danl-cw/danl-210-cw-02.html#question-3",
     "title": "Classwork 2",
     "section": "Question 3",
-    "text": "Question 3\nWhat will the following code print?\n\nstatus = \"Gold\"\ncart_total = 92.5\n\nfree_shipping_levels = [\"Gold\", \"Platinum\"]\n\nif status in free_shipping_levels:\n    shipping = 0\n    msg = f\"Status: {status} → Free shipping! Total = ${cart_total}\"\nelif cart_total &gt;= 100:\n    shipping = 0\n    msg = f\"Spend threshold met → Free shipping! Total = ${cart_total}\"\nelse:\n    shipping = 7.99\n    msg = f\"Status: {status}, Total = ${cart_total} → Shipping = ${shipping}\"\n\nprint(msg)"
+    "text": "Question 3\nWhat will the following code print? (Answer without running it.)\n\nstatus = \"Gold\"\ncart_total = 92.5\n\nfree_shipping_levels = [\"Gold\", \"Platinum\"]\n\nif status in free_shipping_levels:\n    shipping = 0\n    msg = f\"Status: {status} → Free shipping! Total = ${cart_total}\"\nelif cart_total &gt;= 100:\n    shipping = 0\n    msg = f\"Spend threshold met → Free shipping! Total = ${cart_total}\"\nelse:\n    shipping = 7.99\n    msg = f\"Status: {status}, Total = ${cart_total} → Shipping = ${shipping}\"\n\nprint(msg)"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-4",
@@ -1062,5 +1062,40 @@
     "title": "DANL 210 - Homework Submission",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#adding-an-item-to-a-list",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#adding-an-item-to-a-list",
+    "title": "Lecture 2",
+    "section": "🔧 Adding an Item to a List",
+    "text": "🔧 Adding an Item to a List\n\n\nappend(): Adds an item to the end of the list.\n\nmy_list = [1, 2, 3]\nmy_list.append(4)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#deleting-items-in-a-list",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#deleting-items-in-a-list",
+    "title": "Lecture 2",
+    "section": "🔧 Deleting Items in a List",
+    "text": "🔧 Deleting Items in a List\n\n\nremove(): Deletes the first occurrence of value in the list.\n\nmy_list = [1, 2, 3, 4, 2]\nmy_list.remove(2)\n\nList Comprehension: Removes items based on a condition.\n\nmy_list = [1, 2, 3, 4, 2]\nmy_list = [x for x in my_list if x != 2]  \n\ndel statement: Deletes an item by index or a slice of items.\n\nmy_list = [1, 2, 3, 4]\ndel my_list[1] \ndel my_list[1:3]"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#addingupdating-items-in-a-dictionary",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#addingupdating-items-in-a-dictionary",
+    "title": "Lecture 2",
+    "section": "🔧 Adding/Updating Items in a Dictionary",
+    "text": "🔧 Adding/Updating Items in a Dictionary\n\n\nupdate(): Adds new key-value pairs or updates existing ones.\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict.update({'c': 3})  \nmy_dict.update({'a': 10})"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#deleting-items-in-a-dictionary",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#deleting-items-in-a-dictionary",
+    "title": "Lecture 2",
+    "section": "🔧 Deleting Items in a Dictionary",
+    "text": "🔧 Deleting Items in a Dictionary\n\n\nDictionary Comprehension: Removes items based on a condition.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nmy_dict = {k: v for k, v in my_dict.items() if v != 2}  \n\ndel statement: Deletes an item by key.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\ndel my_dict['b']"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#exception-handlers-why-we-need-them",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#exception-handlers-why-we-need-them",
+    "title": "Lecture 2",
+    "section": "🛡 Exception Handlers (Why we need them)",
+    "text": "🛡 Exception Handlers (Why we need them)\n\nIn Python, when something goes wrong, an exception is raised.\nIf we’re running code that might fail, we can add an exception handler so the program can respond nicely instead of crashing.\nCommon examples:\n\nUsing an index that’s out of range for a list/tuple\nLooking up a key that doesn’t exist in a dictionary"
   }
 ]
