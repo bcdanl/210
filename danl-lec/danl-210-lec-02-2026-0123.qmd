@@ -919,8 +919,6 @@ suny[-6 : -4]
 
 
 
-## Slicing Methods
-
 - **Q**. [**Classwork 2.4**](../danl-cw/danl-210-cw-02.html#question-4){target="_blank"}
 
 
@@ -928,7 +926,7 @@ suny[-6 : -4]
 
 # ⚙️ **Functions, Arguments, and Parameters** {background-color="#1c4982"}
 
-## Functions
+## ⚙️ Functions
 
 :::: {.columns}
 
@@ -939,31 +937,56 @@ int("20")
 float("14.3")
 str(5)
 int("xyz")
+print("DANL 210")
 ```
 
 
 :::
 
 ::: {.column width="50%"}
-Common built-in functions you will use often:
+```{.python}
+lst = [1,2,3,4]
 
-::: nonincremental
--	`print()` → print
--	`len()` → length
--	`max()` → largest value
--	`sum()` → total
--	`type()` → data type
-:::
+type(lst)
+len(lst) 
+max(lst)
+sum(lst)
+```
+
 
 :::
 ::::
+
+Common built-in functions you will use often:
+
+
+:::: nonincremental
+
+:::: {.columns}
+
+::: {.column width="50%"}
+-	`type()` → data type
+-	`len()` → length
+
+:::
+
+::: {.column width="50%"}
+-	`max()` → largest value
+-	`sum()` → total
+
+:::
+::::
+
+
+::::
+
 
 - A function can take **inputs** (called **arguments**) and return an **output**.
 -	Python also lets you define your own functions with the `def` keyword.
   - Later, we will use such **user-defined function** together with **pandas**.
 
 
-## Functions, Arguments, and Parameters
+## ⚙️📥 Functions, Arguments, and Parameters
 
 ```{.python}
 print("Cherry", "Strawberry", "Key Lime")
@@ -972,28 +995,24 @@ print("Cherry", "Strawberry", "Key Lime", sep=" ")
 ```
 
 
--	To **call** a function, write its name followed by parentheses: 
+- To **call** a function, write its name followed by parentheses:  
   - `function_name(...)`
--	Inside the parentheses, 
-  - you provide **arguments** (inputs), separated by commas
--	A **parameter** is the name used in the function definition for an expected input 
-  - Example: `sep` is a parameter of `print()`
--	A **default argument** is the value used automatically if you do not specify it 
-  - For `print()`, the default separator is a space: `sep = " "`
-	
-	
 
-## Functions, Arguments, and Parameters
+- Inside the parentheses, you provide **arguments** (inputs), separated by commas.
 
-- **Q**. [**Classwork 2.5**](../danl-cw/danl-210-cw-02.html#question-5){target="_blank"}
+- A **parameter** is the name used in the function definition for an expected input  
+  - Example: `sep` is a parameter of `print()`.
 
+- A **default argument** is the value used automatically if you do not specify it.
+  - For `print()`, the default separator is a space: `sep = " "`.
 
+- **Q.** [**Classwork 2.5**](../danl-cw/danl-210-cw-02.html#question-5){target="_blank"}
 
 
 # 🔁 **Loop with `while` and `for`** {background-color="#1c4982"}
 
 
-## Updating a Variable with `+=`
+## ➕= Updating a Variable with `+=`
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -1108,7 +1127,7 @@ while True:
 
 
 
-##  Iterate with `for` and `in`
+## 🔁🔎 Iterate with `for` and `in`
 
 -	Use a `for` loop when you want to go through each item in:
 	-	a string
@@ -1117,7 +1136,7 @@ while True:
 	-	or any iterable object
 	
 
-##  Two Ways to Loop Through a String
+## Two Ways to Loop Through an Iterable
 
 <div style="display:block; margin:-30px;"></div>
 
@@ -1145,7 +1164,28 @@ for letter in word:
 :::
 ::::
 
+
+<div style="display:block; margin:60px;"></div>
+
+
+:::: {.columns}
+
+::: {.column width="25%"}
+
+:::
+
+::: {.column width="50%"}
+
 - Which one do you prefer?
+
+:::
+
+::: {.column width="25%"}
+
+
+:::
+::::
+
 
 
 ## 🛑🔂 Cancel a `for` Loop with `break`
@@ -1219,22 +1259,22 @@ for x in range(0, 4):
 
 - `range()` creates a sequence of integers without storing a full list
 -	This is memory-efficient and very common in `for` loops
+
+:::
+
+::::
+
 -	Syntax is similar to slicing:
   - `range( start, stop, step )`
 	-	`start` defaults to 0
 	-	`step` defaults to 1
 	-	the sequence stops **right before** stop
 
-:::
-
-::::
-
-
 ## 🔢🧾 Get Index + Value with `enumerate()`
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ```{.python}
 fruits = ["apple", "banana", "orange"]
 
@@ -1248,31 +1288,21 @@ for i, fruit in enumerate(fruits, start=1):
 ```
 :::
 
-::: {.column width=“50%”}
--	`enumerate()` gives you **two things** while looping:
-  -	the **index** (`i`)
-  -	the **value** (`fruit`)
--	Very useful when you want to label or number items
--	Syntax:
-  -	`enumerate(iterable, start=0)`
-    -	`iterable` can be a list, tuple, string, etc.
-    -	`start` controls the first index (default is 0)
+::: {.column width="40%"}
+- `enumerate()` gives you **two things** while looping:
+  - the **index** (`i`)
+  - the **value** (`fruit`)
 
 :::
 
 ::::
 
+- Very handy when you want to **label**, **number**, or **track positions**.
+- Syntax: `enumerate(iterable, start=0)`
+  - `iterable` can be a list, tuple, string, etc.
+  - `start` controls the first index (default is 0)
 
-
-
-
-## Loop with `while` and `for`
-###  Class Exercises
-
-- **Q**. [**Classwork 2.6**](../danl-cw/danl-210-cw-02.html#question-6){target="_blank"}
-
-
-- **Q**. [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
+- **Q**. [**Classwork 2.6**](../danl-cw/danl-210-cw-02.html#question-6){target="_blank"} and [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
 
 
 #  📋📘⚡ **List and Dictionary Comprehensions** {background-color="#1c4982"}
@@ -1310,8 +1340,8 @@ squares_dict = {x: x**2 for x in range(5)}
 
 2. **Filtering Dictionary Items:**
 ```{.python}
-   my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-   filtered_dict = {k: v for k, v in my_dict.items() if v != 2}
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+filtered_dict = {k: v for k, v in my_dict.items() if v != 2}
 ```
 
 3. **Swapping Keys and Values:**
