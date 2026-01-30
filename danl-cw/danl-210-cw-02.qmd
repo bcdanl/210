@@ -17,21 +17,32 @@ from: markdown+emoji
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
+## Question 1. Python Operations and Basic Data Structures
 
-## Question 1
-
-### (a)
+### (a) Arithmetic with Powers and Parentheses
 Using Python operations only, calculate below:
 $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 
-
+::: {.callout-tip collapse="true"}
+### Show answer
 ```{python}
+#| echo: true
 
+# NOTE: In Python, exponentiation is ** (not ^)
+
+result = (2**5) / (7 * (4 - 2**3))
 ```
 
+- -1.1428571428571428  (which is exactly -8/7)
 
-### (b)
+:::
 
+
+
+
+<br>
+
+### (b) Adding Mixed Types by Converting Strings
 Given:
 ```{python}
 #| echo: true
@@ -40,8 +51,19 @@ data = [10, 2.5, "3"]
 
 Using Python only, calculate `10 + 2.5 + 3`
 
+::: {.callout-tip collapse="true"}
+### Show answer
+```{python}
+#| echo: true
 
-### (c)
+total = data[0] + data[1] + float(data[2])
+```
+
+:::
+
+<br>
+
+### (c) Computing a Weighted Exam Score with `max()`
 Given:
 ```{python}
 #| echo: true
@@ -57,25 +79,48 @@ $$
 \end{align}
 $$
 
+::: {.callout-tip collapse="true"}
+### Show answer
 ```{python}
+#| echo: true
 
+simple_avg = 0.50 * exam_score["Midterm"] + 0.50 * exam_score["Final"]
+weighted_avg = 0.33 * exam_score["Midterm"] + 0.67 * exam_score["Final"]
+
+total_exam_score = max(simple_avg, weighted_avg)
 ```
+
+:::
+
 
 <br><br><br>
 
 
-## Question 2
+
+## Question 2. Boolean Expressions and Logic
 
 For each expression below, what is the value of the expression? Explain thoroughly.
 
-### (a)
+### (a) Comparing Different Data Types (`int` vs `str`)
 ```{python}
 #| echo: true
 20 == '20'
 ```
 
+::: {.callout-tip collapse="true"}
+### Show answer
 
-### (b)
+- `False`
+- Why? 
+  - 20 is an integer, but '20' is a string. 
+  - Different types are not equal.
+
+:::
+
+
+<br>
+
+### (b) Logical Operators with Comparisons (`or`)
 ```{python}
 #| echo: true
 x = 4.0
@@ -85,20 +130,25 @@ x < y or 3*y < x
 ```
 
 
+::: {.callout-tip collapse="true"}
+### Show answer
+- `True`
+- Why?
+	-	`x < y` → 4.0 < 0.5 → `False`
+	-	`3*y < x` → 1.5 < 4.0 → `True`
+	-	`False or True` → `True`
 
-```{python}
-
-```
+:::
 
 <br><br><br>
 
 
 
 
-## Question 3
 
-### (a)
+## Question 3. Conditional Statements (`if` / `elif` / `else`)
 
+### (a) Tracing an `if`-Chain (Membership and Thresholds)
 What will the following code print? *(Answer without running it.)*
 
 ```{python}
@@ -122,7 +172,9 @@ else:
 print(msg)
 ```
 
-### (b)
+<br>
+
+### (b) Fill-in-the-Blanks: Writing an `if`-`elif`-`else` Chain
 - Fill in the blanks:
   - If `name` is `"Geneseo"` **and** `score >= 90` → print `"Geneseo high score"`
   - Else if `score >= 90` → print `"High score"`
@@ -145,10 +197,9 @@ else:
 
 <br><br><br>
 
-## Question 4
 
-
-### (a)
+## Question 4. List Slicing and String Slicing
+### (a) Predicting Output from List Slices
 What will the following code print? *(Do not run it—reason it out.)*
 
 ```{python}
@@ -161,8 +212,9 @@ print(nums[::2])
 print(nums[-4:-1])
 ```
 
+<br>
 
-### (b)
+### (b) Extracting Numbers from Strings with Slicing
 ```{python}
 #| echo: true
 fare = "$10.00"
@@ -184,7 +236,10 @@ Write a Python code that uses *slicing* and the `print()` function to print out 
 
 <br><br><br>
 
-## Question 5
+
+
+## Question 5. Finding the Maximum Value in a List
+<!-- ### Largest Value with `max()` and `print()` -->
 
 ```{python}
 #| echo: true
@@ -208,7 +263,11 @@ Write a Python code that uses `print()` and `max()` functions to print out the l
 <br><br><br>
 
 
-## Question 6
+
+
+## Question 6. Looping Through a List (`while` vs `for`)
+<!-- ### Iterating Over Values Two Ways -->
+
 
 ```{python}
 #| echo: true
@@ -229,7 +288,10 @@ vals = [3, 2, 1, 0]
 
 <br><br><br>
 
-## Question 7
+
+## Question 7. Loop Control with Comparisons and Early Exit
+<!-- ### Comparing `number` to `guess_me` with `while` and `for` -->
+
 - Assign the value 7 to the variable `guess_me`, and the value 1 to the variable `number`. 
 
 - Write a `while` loop that compares `number` with `guess_me.` 
@@ -256,20 +318,26 @@ vals = [3, 2, 1, 0]
 <br><br><br>
 
 
-# Question 8
-- You are given a variable value that contains a string. 
+
+## Question 8. Error Handling with `try`–`except`
+<!-- ### Safe Type Conversion with `float()` -->
+
+
+You are given a variable `value` that stores a string:
 
 ```{.python}
 value = "$320"
 ```
 
+Write a Python program that does the following:
 
-- Write a Python program to:
-	1.	Attempt to convert value to a floating-point number using `float()`.
-	2.	If the conversion is successful, print: "You entered: <number>".
-	3.	If the conversion fails (e.g., the value is not a valid number), print: "That's not a valid number!".
+1.	Attempt to convert value into a floating-point number using float().
+2.	If the conversion is successful, print:
+<div style="font-family:courier">You entered: <number></div>
+3.	If the conversion fails (for example, because the string is not a valid number), print:
+<div style="font-family:courier">That's not a valid number!</div>
 
-- Use a `try`-`except` block to handle the potential error.
+Your program must use a `try`–`except` block to handle the potential error gracefully.
 
 <br>
 
@@ -281,13 +349,18 @@ value = "$320"
 
 <br><br><br>
 
-# Question 9
-- Import the `pandas` library as `pd`.
-- Install the `selenium` library.
-- From `selenium`, import the functions `webdriver`.
+
+## Question 9. Imports and Library Setup (pandas + selenium)
+### (a) Importing a Library with an Alias
+Import the `pandas` library as `pd`.
+
+### (b) Installing an External Library
+Install the `selenium` library.
+
+### (c) Importing from a Submodule
+From `selenium`, import the functions `webdriver`.
 
 <br>
-
 
 ```{python}
 

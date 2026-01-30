@@ -956,7 +956,7 @@
     "href": "danl-cw/danl-210-cw-02.html",
     "title": "Classwork 2",
     "section": "",
-    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\n\n\n\nGiven:\n\ndata = [10, 2.5, \"3\"]\n\nUsing Python only, calculate 10 + 2.5 + 3\n\n\n\nGiven:\n\nexam_score = {\"Midterm\": 78, \"Final\": 92}\n\nCompute the Total Exam Score:\n\\[\n\\begin{align}\n\\text{(Total Exam Score)} = \\max\\{ &0.50\\times \\text{(Midterm)} + 0.50\\times \\text{(Final)},\\\\\n&0.33\\times \\text{(Midterm)} + 0.67\\times \\text{(Final)} \\}\n\\end{align}\n\\]"
+    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n# NOTE: In Python, exponentiation is ** (not ^)\n\nresult = (2**5) / (7 * (4 - 2**3))\n\n\n-1.1428571428571428 (which is exactly -8/7)\n\n\n\n\n\n\n\n\nGiven:\n\ndata = [10, 2.5, \"3\"]\n\nUsing Python only, calculate 10 + 2.5 + 3\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ntotal = data[0] + data[1] + float(data[2])\n\n\n\n\n\n\n\n\nGiven:\n\nexam_score = {\"Midterm\": 78, \"Final\": 92}\n\nCompute the Total Exam Score:\n\\[\n\\begin{align}\n\\text{(Total Exam Score)} = \\max\\{ &0.50\\times \\text{(Midterm)} + 0.50\\times \\text{(Final)},\\\\\n&0.33\\times \\text{(Midterm)} + 0.67\\times \\text{(Final)} \\}\n\\end{align}\n\\]\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nsimple_avg = 0.50 * exam_score[\"Midterm\"] + 0.50 * exam_score[\"Final\"]\nweighted_avg = 0.33 * exam_score[\"Midterm\"] + 0.67 * exam_score[\"Final\"]\n\ntotal_exam_score = max(simple_avg, weighted_avg)"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-1",
@@ -1104,5 +1104,75 @@
     "title": "Lecture 2",
     "section": "Two Ways to Loop Through an Iterable",
     "text": "Two Ways to Loop Through an Iterable\n\n\n\n\n\nwhile approach\nword = 'thud'\noffset = 0\nwhile offset &lt; len(word):\n    print(word[offset])\n    offset += 1\n\nfor approach\nword = 'thud'\nfor letter in word:\n    print(letter)\n\n\n\n\n\n\n\n\n\n\nWhich one do you prefer?"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-8-handling-conversion-errors-with-tryexcept",
+    "href": "danl-cw/danl-210-cw-02.html#question-8-handling-conversion-errors-with-tryexcept",
+    "title": "Classwork 2",
+    "section": "Question 8: Handling Conversion Errors with try–except",
+    "text": "Question 8: Handling Conversion Errors with try–except\nYou are given a variable value that stores a string:\nvalue = \"$320\"\nWrite a Python program that does the following:\n\nAttempt to convert value into a floating-point number using float().\nIf the conversion is successful, print:\n\nYou entered: \n\nIf the conversion fails (for example, because the string is not a valid number), print:\n\nThat’s not a valid number!\n\n\nYour program must use a try–except block to handle the potential error gracefully."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-1.-python-operations-and-basic-data-structures",
+    "href": "danl-cw/danl-210-cw-02.html#question-1.-python-operations-and-basic-data-structures",
+    "title": "Classwork 2",
+    "section": "",
+    "text": "Using Python operations only, calculate below: \\[\\frac{2^5}{7 \\cdot (4 - 2^3)}\\]\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n# NOTE: In Python, exponentiation is ** (not ^)\n\nresult = (2**5) / (7 * (4 - 2**3))\n\n\n-1.1428571428571428 (which is exactly -8/7)\n\n\n\n\n\n\n\n\nGiven:\n\ndata = [10, 2.5, \"3\"]\n\nUsing Python only, calculate 10 + 2.5 + 3\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ntotal = data[0] + data[1] + float(data[2])\n\n\n\n\n\n\n\n\nGiven:\n\nexam_score = {\"Midterm\": 78, \"Final\": 92}\n\nCompute the Total Exam Score:\n\\[\n\\begin{align}\n\\text{(Total Exam Score)} = \\max\\{ &0.50\\times \\text{(Midterm)} + 0.50\\times \\text{(Final)},\\\\\n&0.33\\times \\text{(Midterm)} + 0.67\\times \\text{(Final)} \\}\n\\end{align}\n\\]\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nsimple_avg = 0.50 * exam_score[\"Midterm\"] + 0.50 * exam_score[\"Final\"]\nweighted_avg = 0.33 * exam_score[\"Midterm\"] + 0.67 * exam_score[\"Final\"]\n\ntotal_exam_score = max(simple_avg, weighted_avg)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-2.-boolean-expressions-and-logic",
+    "href": "danl-cw/danl-210-cw-02.html#question-2.-boolean-expressions-and-logic",
+    "title": "Classwork 2",
+    "section": "Question 2. Boolean Expressions and Logic",
+    "text": "Question 2. Boolean Expressions and Logic\nFor each expression below, what is the value of the expression? Explain thoroughly.\n\n(a) Comparing Different Data Types (int vs str)\n\n20 == '20'\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nFalse\nWhy?\n\n20 is an integer, but ‘20’ is a string.\nDifferent types are not equal.\n\n\n\n\n\n\n\n\n(b) Logical Operators with Comparisons (or)\n\nx = 4.0\ny = .5\n\nx &lt; y or 3*y &lt; x\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nTrue\nWhy?\n\nx &lt; y → 4.0 &lt; 0.5 → False\n3*y &lt; x → 1.5 &lt; 4.0 → True\nFalse or True → True"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-3.-conditional-statements-if-elif-else",
+    "href": "danl-cw/danl-210-cw-02.html#question-3.-conditional-statements-if-elif-else",
+    "title": "Classwork 2",
+    "section": "Question 3. Conditional Statements (if / elif / else)",
+    "text": "Question 3. Conditional Statements (if / elif / else)\n\n(a) Tracing an if-Chain (Membership and Thresholds)\nWhat will the following code print? (Answer without running it.)\n\nstatus = \"Gold\"\ncart_total = 92.5\n\nfree_shipping_levels = [\"Gold\", \"Platinum\"]\n\nif status in free_shipping_levels:\n    shipping = 0\n    msg = f\"Status: {status} → Free shipping! Total = ${cart_total}\"\nelif cart_total &gt;= 100:\n    shipping = 0\n    msg = f\"Spend threshold met → Free shipping! Total = ${cart_total}\"\nelse:\n    shipping = 7.99\n    msg = f\"Status: {status}, Total = ${cart_total} → Shipping = ${shipping}\"\n\nprint(msg)\n\n\n\n\n(b) Fill-in-the-Blanks: Writing an if-elif-else Chain\n\nFill in the blanks:\n\nIf name is \"Geneseo\" and score &gt;= 90 → print \"Geneseo high score\"\nElse if score &gt;= 90 → print \"High score\"\nElse → print \"Try again\"\n\n\n\nname = \"Geneseo\"\nscore = 88\n\n# Fill in the blanks\nif ______________________________:\n    print(\"Geneseo high score\")\nelif ____________________________:\n    print(\"High score\")\nelse:\n    print(\"Try again\")"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-4.-list-slicing-and-string-slicing",
+    "href": "danl-cw/danl-210-cw-02.html#question-4.-list-slicing-and-string-slicing",
+    "title": "Classwork 2",
+    "section": "Question 4. List Slicing and String Slicing",
+    "text": "Question 4. List Slicing and String Slicing\n\n(a) Predicting Output from List Slices\nWhat will the following code print? (Do not run it—reason it out.)\n\nnums = [10, 20, 30, 40, 50, 60, 70]\n\nprint(nums[2:6])\nprint(nums[:4])\nprint(nums[::2])\nprint(nums[-4:-1])\n\n\n\n\n(b) Extracting Numbers from Strings with Slicing\n\nfare = \"$10.00\"\ntip = \"2.00$\"\ntax = \"$ 0.80\"\n\nWrite a Python code that uses slicing and the print() function to print out the following message:\n\nThe total trip cost is: $12.80"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-5.-finding-the-maximum-value-in-a-list",
+    "href": "danl-cw/danl-210-cw-02.html#question-5.-finding-the-maximum-value-in-a-list",
+    "title": "Classwork 2",
+    "section": "Question 5. Finding the Maximum Value in a List",
+    "text": "Question 5. Finding the Maximum Value in a List\n\n\nlist_variable = [100, 144, 169, 1000, 8]\n\nWrite a Python code that uses print() and max() functions to print out the largest value in the list, list_variable, as follows:\n\nThe largest value in the list is: 1000"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-6.-looping-through-a-list-while-vs-for",
+    "href": "danl-cw/danl-210-cw-02.html#question-6.-looping-through-a-list-while-vs-for",
+    "title": "Classwork 2",
+    "section": "Question 6. Looping Through a List (while vs for)",
+    "text": "Question 6. Looping Through a List (while vs for)\n\n\nvals = [3, 2, 1, 0]\n\n\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-7.-loop-control-with-comparisons-and-early-exit",
+    "href": "danl-cw/danl-210-cw-02.html#question-7.-loop-control-with-comparisons-and-early-exit",
+    "title": "Classwork 2",
+    "section": "Question 7. Loop Control with Comparisons and Early Exit",
+    "text": "Question 7. Loop Control with Comparisons and Early Exit\n\n\nAssign the value 7 to the variable guess_me, and the value 1 to the variable number.\nWrite a while loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop.\n\nWrite a for loop that compares number with guess_me.\n\nPrint ‘too low’ if number is less than guess me.\nIf number equals guess_me, print ‘found it!’ and then exit the loop.\nIf number is greater than guess_me, print ‘oops’ and then exit the loop.\nIncrement number at the end of the loop."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-8.-error-handling-with-tryexcept",
+    "href": "danl-cw/danl-210-cw-02.html#question-8.-error-handling-with-tryexcept",
+    "title": "Classwork 2",
+    "section": "Question 8. Error Handling with try–except",
+    "text": "Question 8. Error Handling with try–except\n\nYou are given a variable value that stores a string:\nvalue = \"$320\"\nWrite a Python program that does the following:\n\nAttempt to convert value into a floating-point number using float().\nIf the conversion is successful, print:\n\nYou entered: \n\nIf the conversion fails (for example, because the string is not a valid number), print:\n\nThat’s not a valid number!\n\n\nYour program must use a try–except block to handle the potential error gracefully."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-9.-imports-and-library-setup-pandas-selenium",
+    "href": "danl-cw/danl-210-cw-02.html#question-9.-imports-and-library-setup-pandas-selenium",
+    "title": "Classwork 2",
+    "section": "Question 9. Imports and Library Setup (pandas + selenium)",
+    "text": "Question 9. Imports and Library Setup (pandas + selenium)\n\n(a) Importing a Library with an Alias\nImport the pandas library as pd.\n\n\n(b) Installing an External Library\nInstall the selenium library.\n\n\n(c) Importing from a Submodule\nFrom selenium, import the functions webdriver."
   }
 ]
