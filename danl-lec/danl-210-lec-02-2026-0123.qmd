@@ -796,34 +796,51 @@ if x > 2:
   <img src="https://bcdanl.github.io/lec_figs/python_string_index.png">
 </p>
 
-- Slicing methods can apply for strings, lists, and DataFrames.
-- With slicing methods, we can get subset of the data object.
+- Slicing methods can apply for **strings**, **lists**, and **DataFrames**.
+- With slicing methods, we can get a **subset** of the data object.
 
-- Python is 
-  - a zero-indexed language (things start counting from zero);
-  - left inclusive;
-  - right exclusive when we are specifying a range of values.
+- Python is:
+  - **zero-indexed** (things start counting from 0)
+  - **left inclusive**
+  - **right exclusive** when we specify a range
+
 
 
 ## 🧩 Slicing Patterns
 
+:::: {.columns}
+::: {.column width="50%"}
+
 ```{.python}
 letters = "abcdefghij"
 
-letters[:]        # whole string
-letters[3:]       # from index 3 to end
-letters[:5]       # from start to index 4
-letters[:-4]      # take the last 4 characters
-letters[2:7]      # index 2 to 6
-letters[::2]      # step size 2
-letters[::-1]     # reverse
+letters[:]      # whole string
+letters[3:]     # from index 3 to end
+letters[:5]     # from start to index 4
+letters[:-4]    # take the last 4 characters
+letters[2:7]    # index 2 to 6
+letters[::2]    # step size 2
+letters[::-1]   # reverse
 ```
+
+:::
+::: {.column width="50%"}
+<div style="display:block; margin:-15px;"></div>
 
 - **Slice format**: `[start : end : step]`
   - `start` is **included**
   - `end` is **excluded**
   - `step` controls how many characters to skip
 
+:::
+::::
+
+- ✅ **Important (when you “skip” numbers)**  
+  If you omit `start` or `end`, Python fills them in automatically:
+  - If `start` is missing → slicing starts from the **beginning**
+  - If `end` is missing → slicing goes to the **end**
+  - <u>Example</u>: `letters[::2]` means “from the beginning to the end, taking every 2nd character.”
+  
 
 
 ## 📏 Length of a String and a List
