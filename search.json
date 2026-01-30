@@ -571,7 +571,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#two-ways-to-loop-through-an-iterable",
     "title": "Lecture 2",
     "section": "Two Ways to Loop Through an Iterable",
-    "text": "Two Ways to Loop Through an Iterable\n\n\n\n\n\nwhile approach\nword = 'thud'\noffset = 0\nwhile offset &lt; len(word):\n    print(word[offset])\n    offset += 1\n\nfor approach\nword = 'thud'\nfor letter in word:\n    print(letter)\n\n\n\n\n\n\n\n\n\n\nWhich one do you prefer?"
+    "text": "Two Ways to Loop Through an Iterable\n\n\n\n\n\nwhile approach\nword = 'thud'\noffset = 0\nwhile offset &lt; len(word):\n    print(word[offset])\n    offset += 1\n\nfor approach\nword = 'thud'\nfor letter in word:\n    print(letter)\n\n\n\n\n\n\n\n\n\n\nWhich one do you prefer?\n\n\n\n\n\n\nQ. Classwork 2.6"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#cancel-a-for-loop-with-break",
@@ -606,7 +606,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#get-index-value-with-enumerate",
     "title": "Lecture 2",
     "section": "🔢🧾 Get Index + Value with enumerate()",
-    "text": "🔢🧾 Get Index + Value with enumerate()\n\n\nfruits = [\"apple\", \"banana\", \"orange\"]\n\n# default: starts counting at 0\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\n\n# start counting at 1\nfor i, fruit in enumerate(fruits, start=1):\n    print(i, fruit)\n\n\nenumerate() gives you two things while looping:\n\nthe index (i)\nthe value (fruit)\n\n\n\n\n\nVery handy when you want to label, number, or track positions.\nSyntax: enumerate(iterable, start=0)\n\niterable can be a list, tuple, string, etc.\nstart controls the first index (default is 0)\n\nQ. Classwork 2.6 and Classwork 2.7"
+    "text": "🔢🧾 Get Index + Value with enumerate()\n\n\nfruits = [\"apple\", \"banana\", \"orange\"]\n\n# default: starts counting at 0\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\n\n# start counting at 1\nfor i, fruit in enumerate(fruits, start=1):\n    print(i, fruit)\n\n\nenumerate() gives you two things while looping:\n\nthe index (i)\nthe value (fruit)\n\n\n\n\n\nVery handy when you want to label, number, or track positions.\nSyntax: enumerate(iterable, start=0)\n\niterable can be a list, tuple, string, etc.\nstart controls the first index (default is 0)\n\nQ. Classwork 2.7"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-list-comprehension",

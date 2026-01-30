@@ -1235,6 +1235,8 @@ for letter in word:
 :::
 ::::
 
+- **Q**. [**Classwork 2.6**](../danl-cw/danl-210-cw-02.html#question-6){target="_blank"}
+
 
 
 ## 🛑🔂 Cancel a `for` Loop with `break`
@@ -1351,7 +1353,7 @@ for i, fruit in enumerate(fruits, start=1):
   - `iterable` can be a list, tuple, string, etc.
   - `start` controls the first index (default is 0)
 
-- **Q**. [**Classwork 2.6**](../danl-cw/danl-210-cw-02.html#question-6){target="_blank"} and [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
+- **Q**. [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
 
 
 #  📋📘⚡ **List and Dictionary Comprehensions** {background-color="#1c4982"}
