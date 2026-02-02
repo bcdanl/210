@@ -7,179 +7,284 @@
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
+    "objectID": "danl-hw/danl-210-hw-01.html",
+    "href": "danl-hw/danl-210-hw-01.html",
+    "title": "Homework 1",
     "section": "",
-    "text": "Item\nDetails\n\n\n\n\nSemester\nSpring 2026\n\n\nClass Location\nNewton 205\n\n\nClass Hours\nMWF 10:30 A.M. – 11:20 A.M."
+    "text": "Download the Homework 1 starter notebook from Brightspace and complete your work in that file.\n\nDo not start from a blank notebook.\n\nWhen finished, rename your file and submit it to Brightspace using this format:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n(e.g., danl-210-hw1-choe-byeonghak.ipynb)\n\nDue: February 11, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
   },
   {
-    "objectID": "syllabus.html#course-information",
-    "href": "syllabus.html#course-information",
-    "title": "Syllabus",
+    "objectID": "danl-hw/danl-210-hw-01.html#question-0a",
+    "href": "danl-hw/danl-210-hw-01.html#question-0a",
+    "title": "Homework 1",
+    "section": "Question 0a",
+    "text": "Question 0a\nCreate a variable named github_username (string) and print it."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-0b",
+    "href": "danl-hw/danl-210-hw-01.html#question-0b",
+    "title": "Homework 1",
+    "section": "Question 0b",
+    "text": "Question 0b\nIn one code cell, print:\n\nyour Python version (hint: import sys)\ntoday’s date (hint: import datetime)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-1a-list-edits",
+    "href": "danl-hw/danl-210-hw-01.html#question-1a-list-edits",
+    "title": "Homework 1",
+    "section": "Question 1a (List edits)",
+    "text": "Question 1a (List edits)\n\nCreate a list named seat_numbers containing integers 2 through 9.\nAppend 10.\nRemove 6.\nPrint the final list."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-1b-tuple-immutability",
+    "href": "danl-hw/danl-210-hw-01.html#question-1b-tuple-immutability",
+    "title": "Homework 1",
+    "section": "Question 1b (Tuple: immutability)",
+    "text": "Question 1b (Tuple: immutability)\nCreate a tuple named campus:\n\ncampus = (\"SUNY Geneseo\", 2026)\n\nThen:\n\nPrint the second element.\nWrite one line of code that tries to change the year to 2027.\nIn a Markdown cell, explain what happens and why."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-1c-dictionary-addupdateiterate",
+    "href": "danl-hw/danl-210-hw-01.html#question-1c-dictionary-addupdateiterate",
+    "title": "Homework 1",
+    "section": "Question 1c (Dictionary: add/update/iterate)",
+    "text": "Question 1c (Dictionary: add/update/iterate)\nStart with:\nmenu_prices = {\"coffee\": 2.75, \"tea\": 2.25, \"sandwich\": 6.50}\n\nAdd \"cookie\": 1.50\nUpdate the price of \"coffee\" to 3.00\nPrint:\n\nall item names (keys)\nall prices (values)\neach (item, price) pair on its own line"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-2a-arithmetic-operators",
+    "href": "danl-hw/danl-210-hw-01.html#question-2a-arithmetic-operators",
+    "title": "Homework 1",
+    "section": "Question 2a (Arithmetic operators)",
+    "text": "Question 2a (Arithmetic operators)\nLet:\nx = 17\ny = 4\nCompute and print:\n\nx + y, x - y, x * y, x ** y, x / y, x // y, x % y"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-2b-operators-with-strings-and-lists",
+    "href": "danl-hw/danl-210-hw-01.html#question-2b-operators-with-strings-and-lists",
+    "title": "Homework 1",
+    "section": "Question 2b (Operators with strings and lists)",
+    "text": "Question 2b (Operators with strings and lists)\n\nUsing only + and *, build and print this exact string:\n\n\n\"Go Knights! Go Knights! Go Knights!\"\n\nYou may start with:\nchant = \"Go Knights!\"\n\nUsing only + and *, create a list that repeats [\"lab\", \"lecture\"] 4 times."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-2c-casting",
+    "href": "danl-hw/danl-210-hw-01.html#question-2c-casting",
+    "title": "Homework 1",
+    "section": "Question 2c (Casting)",
+    "text": "Question 2c (Casting)\nGiven:\npi_text = \"3.14159\"\n\nConvert pi_text to a float named pi_value.\nConvert pi_value to an integer named pi_int.\nPrint pi_text, pi_value, pi_int and their types."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-3a-print-value-type",
+    "href": "danl-hw/danl-210-hw-01.html#question-3a-print-value-type",
+    "title": "Homework 1",
+    "section": "Question 3a (Print value + type)",
+    "text": "Question 3a (Print value + type)\nGiven:\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\nUse a for loop to print each element and its type."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-3b-targeted-conversions",
+    "href": "danl-hw/danl-210-hw-01.html#question-3b-targeted-conversions",
+    "title": "Homework 1",
+    "section": "Question 3b (Targeted conversions)",
+    "text": "Question 3b (Targeted conversions)\nUsing mixed above, do the following conversions and print results + types:\n\nConvert the string \"42\" to an integer.\nConvert the integer 99 to a string.\nConvert False to an integer."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-4a-if-elif-else",
+    "href": "danl-hw/danl-210-hw-01.html#question-4a-if-elif-else",
+    "title": "Homework 1",
+    "section": "Question 4a (if-elif-else)",
+    "text": "Question 4a (if-elif-else)\nSet:\nscore = 83\nPrint:\n\n\"Fail\" if score &lt; 60\n\"Pass\" if 60 &lt;= score &lt; 80\n\"Great\" if 80 &lt;= score &lt; 95\n\"Perfect\" if score &gt;= 95"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-4b-nested-if",
+    "href": "danl-hw/danl-210-hw-01.html#question-4b-nested-if",
+    "title": "Homework 1",
+    "section": "Question 4b (Nested if)",
+    "text": "Question 4b (Nested if)\nSet:\nmembership = \"Gold\"\ntotal_spent = 120\nPrint:\n\n\"Free shipping\" if membership is \"Gold\" and total_spent &gt;= 100\n\"5% coupon\" if membership is \"Silver\" and total_spent &gt;= 100\n\"No perk\" otherwise"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-4c-in-membership-test-f-string",
+    "href": "danl-hw/danl-210-hw-01.html#question-4c-in-membership-test-f-string",
+    "title": "Homework 1",
+    "section": "Question 4c (in membership test + f-string)",
+    "text": "Question 4c (in membership test + f-string)\nGiven:\ncities = [\"Rochester\", \"Buffalo\", \"Syracuse\", \"Albany\"]\ntarget = \"Albany\"\nUse in to print:\n\n\"Albany is on the list!\" if present\notherwise \"Albany is not on the list.\"\n\n(Use an f-string.)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-4d-boolean-reasoning",
+    "href": "danl-hw/danl-210-hw-01.html#question-4d-boolean-reasoning",
+    "title": "Homework 1",
+    "section": "Question 4d (Boolean reasoning)",
+    "text": "Question 4d (Boolean reasoning)\nCompute and print the value of:\n\nnot (not False)\n7 == \"7\"\n(10 &gt; 3) and (2 &gt;= 2)\n(10 &lt; 3) or (2 == 2)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-5a-string-slicing",
+    "href": "danl-hw/danl-210-hw-01.html#question-5a-string-slicing",
+    "title": "Homework 1",
+    "section": "Question 5a (String slicing)",
+    "text": "Question 5a (String slicing)\nGiven:\nword = \"datascience\"\nPrint the result of each:\n\nword[:]\nword[4:]\nword[:4]\nword[:-3]\nword[2:8]\nword[::3]\nword[::-1]"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-5b-list-slicing",
+    "href": "danl-hw/danl-210-hw-01.html#question-5b-list-slicing",
+    "title": "Homework 1",
+    "section": "Question 5b (List slicing)",
+    "text": "Question 5b (List slicing)\nGiven:\nplaylist = [\"Intro\", \"Beat\", \"Chorus\", \"Bridge\", \"Solo\", \"Outro\"]\nPrint:\n\nthe first 3 items\nevery 2nd item starting from the beginning\nthe last 2 items\nthe list reversed (using slicing)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-5c-len-practice",
+    "href": "danl-hw/danl-210-hw-01.html#question-5c-len-practice",
+    "title": "Homework 1",
+    "section": "Question 5c (len() practice)",
+    "text": "Question 5c (len() practice)\nCompute and print:\n\nlen(\"machinelearning\")\nlen([10, 20, 30, 40])\nlen(playlist)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-6a-average-labels",
+    "href": "danl-hw/danl-210-hw-01.html#question-6a-average-labels",
+    "title": "Homework 1",
+    "section": "Question 6a (Average + labels)",
+    "text": "Question 6a (Average + labels)\nGiven:\ntemps = [32, 28, 30, 35, 27]\n\nCompute the average temperature.\nFor each temperature, print \"Above Avg\" if it is above average, otherwise \"Below Avg\"."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-6b-while-loop-savings",
+    "href": "danl-hw/danl-210-hw-01.html#question-6b-while-loop-savings",
+    "title": "Homework 1",
+    "section": "Question 6b (while loop: savings)",
+    "text": "Question 6b (while loop: savings)\nStart with:\nbalance = 150\nEach week you save 25. Use a while loop until the balance reaches or exceeds 300.\nPrint the balance each week."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-6c-range-patterns",
+    "href": "danl-hw/danl-210-hw-01.html#question-6c-range-patterns",
+    "title": "Homework 1",
+    "section": "Question 6c (range() patterns)",
+    "text": "Question 6c (range() patterns)\nUsing range(), create and print:\n\nintegers from 5 to 15\nmultiples of 3 from 0 to 30\ncountdown from 12 to 0"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-6d-enumerate-index-value",
+    "href": "danl-hw/danl-210-hw-01.html#question-6d-enumerate-index-value",
+    "title": "Homework 1",
+    "section": "Question 6d (enumerate() index + value)",
+    "text": "Question 6d (enumerate() index + value)\nGiven:\ntasks = [\"download\", \"open\", \"run\", \"submit\"]\nUse enumerate() to print each task with its step number starting at 1 like:\n\nStep 1: download"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-7a-list-comprehension-cubes",
+    "href": "danl-hw/danl-210-hw-01.html#question-7a-list-comprehension-cubes",
+    "title": "Homework 1",
+    "section": "Question 7a (List comprehension: cubes)",
+    "text": "Question 7a (List comprehension: cubes)\nUse list comprehension to create a list of cubes for 1 through 6.\nStore it in cubes and print it."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-7b-list-comprehension-filter",
+    "href": "danl-hw/danl-210-hw-01.html#question-7b-list-comprehension-filter",
+    "title": "Homework 1",
+    "section": "Question 7b (List comprehension: filter)",
+    "text": "Question 7b (List comprehension: filter)\nGiven:\nvals = [0, 5, 10, 0, 20, 0, 25]\nUse list comprehension to create a new list that removes all zeros."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-7c-dictionary-comprehension-length-of-words",
+    "href": "danl-hw/danl-210-hw-01.html#question-7c-dictionary-comprehension-length-of-words",
+    "title": "Homework 1",
+    "section": "Question 7c (Dictionary comprehension: length of words)",
+    "text": "Question 7c (Dictionary comprehension: length of words)\nGiven:\nwords = [\"data\", \"science\", \"python\", \"loop\"]\nUse dictionary comprehension to create a dictionary mapping each word to its length.\nPrint the dictionary."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-7d-modify-list-removekeepdelete",
+    "href": "danl-hw/danl-210-hw-01.html#question-7d-modify-list-removekeepdelete",
+    "title": "Homework 1",
+    "section": "Question 7d (Modify list: remove/keep/delete)",
+    "text": "Question 7d (Modify list: remove/keep/delete)\nGiven:\ntickets = [\"A\", \"B\", \"C\", \"B\", \"D\", \"B\"]\n\nRemove only the first \"B\" using .remove() and print the list.\nStarting from the original list again, remove all \"B\" values using list comprehension and print.\nStarting from the original list again, delete the middle two elements using del with slicing and print."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-7e-modify-dictionary-update-delete",
+    "href": "danl-hw/danl-210-hw-01.html#question-7e-modify-dictionary-update-delete",
+    "title": "Homework 1",
+    "section": "Question 7e (Modify dictionary: update + delete)",
+    "text": "Question 7e (Modify dictionary: update + delete)\nGiven:\ninventory = {\"pens\": 10, \"notebooks\": 5, \"erasers\": 2}\n\nAdd \"markers\": 4 using .update()\nChange \"pens\" to 12 using .update()\nDelete \"erasers\" using del\n\nPrint after each step."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-8a-division-safety",
+    "href": "danl-hw/danl-210-hw-01.html#question-8a-division-safety",
+    "title": "Homework 1",
+    "section": "Question 8a (Division safety)",
+    "text": "Question 8a (Division safety)\nGiven:\nnumerator = 24\ndenominator = 0\nUse try-except to attempt division. If an error occurs, print \"Division failed!\"."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-8b-convert-text-to-number",
+    "href": "danl-hw/danl-210-hw-01.html#question-8b-convert-text-to-number",
+    "title": "Homework 1",
+    "section": "Question 8b (Convert text to number)",
+    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer.\n\nIf conversion works, print the integer.\nIf it fails, print \"Not a number: oops\" (use the actual bad value)."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-8c-missing-values",
+    "href": "danl-hw/danl-210-hw-01.html#question-8c-missing-values",
+    "title": "Homework 1",
+    "section": "Question 8c (Missing values)",
+    "text": "Question 8c (Missing values)\nGiven:\nhours = {\"Mon\": 2, \"Tue\": None, \"Wed\": 3, \"Thu\": None, \"Fri\": 4}\nCompute the total of non-missing hours and print the total."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-8d-missing-dictionary-key",
+    "href": "danl-hw/danl-210-hw-01.html#question-8d-missing-dictionary-key",
+    "title": "Homework 1",
+    "section": "Question 8d (Missing dictionary key)",
+    "text": "Question 8d (Missing dictionary key)\nGiven:\ncapitals = {\"NY\": \"Albany\", \"CA\": \"Sacramento\"}\nTry to print capitals[\"TX\"]. Handle the error so the program prints \"State not found\"."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-9a-math",
+    "href": "danl-hw/danl-210-hw-01.html#question-9a-math",
+    "title": "Homework 1",
+    "section": "Question 9a (math)",
+    "text": "Question 9a (math)\nImport math and compute math.sqrt(144). Print the result."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-9b-import-...-as-...",
+    "href": "danl-hw/danl-210-hw-01.html#question-9b-import-...-as-...",
+    "title": "Homework 1",
+    "section": "Question 9b (import ... as ...)",
+    "text": "Question 9b (import ... as ...)\nImport math as m. Compute and print:\n\nm.sqrt(144)\nm.floor(9.99)\nm.ceil(9.01)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-9c-from-...-import-...",
+    "href": "danl-hw/danl-210-hw-01.html#question-9c-from-...-import-...",
+    "title": "Homework 1",
+    "section": "Question 9c (from ... import ...)",
+    "text": "Question 9c (from ... import ...)\nImport only ceil from math and compute ceil(12.2). Print it."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-01.html#question-10-workout-summary",
+    "href": "danl-hw/danl-210-hw-01.html#question-10-workout-summary",
+    "title": "Homework 1",
+    "section": "Question 10 (Workout summary)",
+    "text": "Question 10 (Workout summary)\nYou are given:\nexercises = [\"pushups\", \"plank\", \"squats\", \"jog\"]\nminutes   = [10, 5, 12, 20]\nWrite code that:\n\nUses enumerate() to print:\n\n1) pushups\n2) plank\n…\n\nComputes the average minutes.\nFor each exercise, print a line like:\n\n\n\"squats: 12 min (Above Avg)\" or \"plank: 5 min (Below Avg)\" (Use f-strings.)\n\n\nCreate a dictionary exercise_to_minutes using dictionary comprehension.\nUse try/except to attempt to print exercise_to_minutes[\"stretch\"].\n\nIf missing, print \"stretch is not in the plan.\""
+  },
+  {
+    "objectID": "listing-danl-210-cw.html",
+    "href": "listing-danl-210-cw.html",
+    "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Item\nDetails\n\n\n\n\nSemester\nSpring 2026\n\n\nClass Location\nNewton 205\n\n\nClass Hours\nMWF 10:30 A.M. – 11:20 A.M."
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "syllabus.html#instructor-information",
-    "href": "syllabus.html#instructor-information",
-    "title": "Syllabus",
-    "section": "Instructor Information",
-    "text": "Instructor Information\n\n\n\nItem\nDetails\n\n\n\n\nName\nByeong-Hak Choe\n\n\nEmail (preferred)\nbchoe@geneseo.edu\n\n\nPhone (alternative)\n(545) 245-5425\n\n\nOffice Location\nSouth 227B\n\n\nOffice Hours\nMWF 9:15 A.M. – 10:15 A.M."
-  },
-  {
-    "objectID": "syllabus.html#course-access-and-orientation",
-    "href": "syllabus.html#course-access-and-orientation",
-    "title": "Syllabus",
-    "section": "Course Access and Orientation",
-    "text": "Course Access and Orientation\n\nCourse Website: https://bcdanl.github.io/210\n\nBrightspace: Use Brightspace for announcements, grades, and course materials."
-  },
-  {
-    "objectID": "syllabus.html#course-description",
-    "href": "syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "Course Description",
-    "text": "Course Description\nThis course provides a practical overview of how to collect, manipulate, process, clean, and analyze real-world datasets through hands-on case studies. We will work primarily in Jupyter Notebook, an interactive environment for exploratory computing and reproducible analysis.\nKey topics include: (1) loading, cleaning, transforming, merging, and reshaping data; (2) creating clear and informative visualizations; (3) slicing, summarizing, and reporting insights; and (4) collecting data from the web and online services. Throughout the semester, you will apply these skills to solve a wide range of data analysis problems using Python, including core tools such as Pandas, as well as data-collection methods using Selenium and application programming interfaces (APIs)."
-  },
-  {
-    "objectID": "syllabus.html#prerequisitescorequisites",
-    "href": "syllabus.html#prerequisitescorequisites",
-    "title": "Syllabus",
-    "section": "Prerequisites/Corequisites",
-    "text": "Prerequisites/Corequisites\n(ECON 205 or GEOG 278 or MATH 242 or MATH 262 or PLSC 251 or PSYC 250 or SOCL 211) and DANL 201"
-  },
-  {
-    "objectID": "syllabus.html#communication-guidelines",
-    "href": "syllabus.html#communication-guidelines",
-    "title": "Syllabus",
-    "section": "Communication Guidelines",
-    "text": "Communication Guidelines\nInstructor checks email daily (Mon–Fri). Expect responses within 24–72 hours."
-  },
-  {
-    "objectID": "syllabus.html#syllabus-statement",
-    "href": "syllabus.html#syllabus-statement",
-    "title": "Syllabus",
-    "section": "Syllabus Statement",
-    "text": "Syllabus Statement\nThis syllabus is a working document and subject to change. Updates will be communicated in class meetings and/or Brightspace announcements."
-  },
-  {
-    "objectID": "syllabus.html#required-materials",
-    "href": "syllabus.html#required-materials",
-    "title": "Syllabus",
-    "section": "Required Materials",
-    "text": "Required Materials\nNo textbook is required.\n\nOptional Readings\n\nPython for Data Analysis\n\nPython for Data Science\n\nPython Programming for Data Science"
-  },
-  {
-    "objectID": "syllabus.html#technology-requirements",
-    "href": "syllabus.html#technology-requirements",
-    "title": "Syllabus",
-    "section": "Technology Requirements",
-    "text": "Technology Requirements\n\nBrightspace\n\nMicrosoft Teams\n\nAnaconda Distribution\nGoogle Colab\nChrome Browser\n\nGitHub"
-  },
-  {
-    "objectID": "syllabus.html#general-education-globe-learning-outcomes",
-    "href": "syllabus.html#general-education-globe-learning-outcomes",
-    "title": "Syllabus",
-    "section": "General Education (GLOBE) Learning Outcomes",
-    "text": "General Education (GLOBE) Learning Outcomes\nN/A"
-  },
-  {
-    "objectID": "syllabus.html#school-of-business-mission",
-    "href": "syllabus.html#school-of-business-mission",
-    "title": "Syllabus",
-    "section": "School of Business Mission",
-    "text": "School of Business Mission\nThe School of Business at SUNY Geneseo is committed to exceptional business and economics education within the context of a strong liberal arts tradition. The School is distinguished by a uniquely accomplished and dedicated faculty, motivated and capable students, a robust professional development program, and the engaged support of alumni, employers, and business leaders.\nStudents acquire strong quantitative, analytical, and communication skills while preparing for professional success as socially conscious contributors. We strive for teaching excellence, and we recognize that high-quality faculty scholarship and professional activities increase our impact on knowledge, practice, and pedagogy."
-  },
-  {
-    "objectID": "syllabus.html#key-dates-summary",
-    "href": "syllabus.html#key-dates-summary",
-    "title": "Syllabus",
-    "section": "Key Dates (Summary)",
-    "text": "Key Dates (Summary)\n\nMidterm Exam: March 13 (during class time)\n\nSpring Break: March 14–21 (no classes)\n\nGREAT Day: April 22 (no class)\n\nFinal Exam: May 14, 8:30 A.M. – 10:30 A.M.\n\nData Storytelling Report: May 14, 11:59 P.M."
-  },
-  {
-    "objectID": "syllabus.html#grade-components",
-    "href": "syllabus.html#grade-components",
-    "title": "Syllabus",
-    "section": "Grade Components",
-    "text": "Grade Components\n\nAttendance (5%)\n\nParticipation (5%)\n\nGroup Project (20%)\n\nTotal Homework (20%)\n\nTotal Exam (50%)"
-  },
-  {
-    "objectID": "syllabus.html#grading-details",
-    "href": "syllabus.html#grading-details",
-    "title": "Syllabus",
-    "section": "Grading Details",
-    "text": "Grading Details\n\nSingle lowest homework score is dropped when calculating the Total Homework Grade.\n\nTotal Exam Grade is the maximum between:\n\nSimple average of Midterm Exam and Final Exam scores, and\n\nWeighted average of Midterm Exam (33%) and Final Exam (67%)"
-  },
-  {
-    "objectID": "syllabus.html#group-project-grade-breakdown",
-    "href": "syllabus.html#group-project-grade-breakdown",
-    "title": "Syllabus",
-    "section": "Group Project Grade Breakdown",
-    "text": "Group Project Grade Breakdown\n\nDescriptive statistics (5%)\n\nData collection (30%)\n\nData transformation (30%)\n\nData visualization (10%)\n\nData storytelling (15%)\n\nCode (10%)"
-  },
-  {
-    "objectID": "syllabus.html#grading-scale",
-    "href": "syllabus.html#grading-scale",
-    "title": "Syllabus",
-    "section": "Grading Scale",
-    "text": "Grading Scale\n\nA = 93–100%\n\nA– = 90–92%\n\nB+ = 87–89%\n\nB = 83–86%\n\nB– = 80–82%\n\nC+ = 77–79%\n\nC = 73–76%\n\nC– = 70–72%\n\nD = 60–69%\n\nE = 0–59%"
-  },
-  {
-    "objectID": "syllabus.html#late-work",
-    "href": "syllabus.html#late-work",
-    "title": "Syllabus",
-    "section": "Late Work",
-    "text": "Late Work\nAccepted up to 3 days late with 30% penalty."
-  },
-  {
-    "objectID": "syllabus.html#make-up-work",
-    "href": "syllabus.html#make-up-work",
-    "title": "Syllabus",
-    "section": "Make-up Work",
-    "text": "Make-up Work\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero.\nLate submissions for homework assignment will be accepted with a penalty. A zero will be recorded for a missed assignment."
-  },
-  {
-    "objectID": "syllabus.html#attendance-participation",
-    "href": "syllabus.html#attendance-participation",
-    "title": "Syllabus",
-    "section": "Attendance & Participation",
-    "text": "Attendance & Participation\nThe knowledge and skills you will gain in this course highly depend on your participation in class learning activities as an in-person class. Because of that, you are expected to attend all class sessions unless you are ill or have a valid reason for missing.\nIf you are sick or have another valid reason for missing, you must email me before the absence—any notifications after will be disregarded.\nAttendance will be taken during class via a sign-up sheet. You must sign in to be credited for attending class. If you attend class and do not sign in, it will be considered the equivalent of an absence.\nYou are provided with 5 unexcused absences per semester. Any additional unexcused absences will be subject to reducing your final grade by one letter grade for each additional absence (6 total absences = 1 letter grade (A to A–), 7 total absences = 2 letter grades (A to B+), etc.)\nFor extended absences (i.e., more than a couple of days of classes), you should contact the Dean of Students, who can assist with contacting your faculty."
-  },
-  {
-    "objectID": "syllabus.html#netiquette-policy",
-    "href": "syllabus.html#netiquette-policy",
-    "title": "Syllabus",
-    "section": "Netiquette Policy",
-    "text": "Netiquette Policy\n\nBefore contributing to a discussion board, verify if your question has already been asked and answered. Avoid repeating topics as you would in a real-life conversation.\n\nRemain focused on the topic. Refrain from posting unrelated links, comments, thoughts, or images.\n\nAvoid typing in all caps, as it may appear as if you’re shouting.\n\nSteer clear of writing anything that might be interpreted as angry or sarcastic, particularly as tone is hard to convey online.\n\nAlways use “Please” and “Thank you” when requesting assistance from peers or instructors.\n\nRespect differing viewpoints. If disagreeing, do so respectfully and acknowledge the merits of your classmates’ arguments.\n\nEnsure accuracy when responding to a peer’s query. If unsure, especially about deadlines, it’s better not to guess to avoid confusion.\n\nBe concise in your responses; lengthy replies to simple questions might not be read fully.\n\nIf multiple responses are received to your question, consider summarizing them for the benefit of the entire class.\n\nAvoid derogatory comments or insulting others’ intelligence. Disagree with ideas, not individuals.\n\nWhen referencing a previous discussion, quote only the essential lines to provide context without requiring others to search for the original post.\n\nPractice forgiveness. If a peer makes an error, do not dwell on it; everyone makes mistakes.\n\nBefore posting, run a spell and grammar check. This small effort can significantly impact how your message is perceived."
-  },
-  {
-    "objectID": "danl-wk/wk-02.html",
-    "href": "danl-wk/wk-02.html",
-    "title": "Week 1",
+    "objectID": "danl-wk/wk-03.html",
+    "href": "danl-wk/wk-03.html",
+    "title": "Week 3",
     "section": "",
-    "text": "In the second week, we will continue Python Fundamentals."
+    "text": "In the third week, we will discuss the following topics."
   },
   {
-    "objectID": "danl-wk/wk-02.html#lecture-slides",
-    "href": "danl-wk/wk-02.html#lecture-slides",
-    "title": "Week 1",
+    "objectID": "danl-wk/wk-03.html#lecture-slides",
+    "href": "danl-wk/wk-03.html#lecture-slides",
+    "title": "Week 3",
     "section": "🏫 Lecture Slides",
     "text": "🏫 Lecture Slides\n\nLecture 2 — Python Fundamental\nView Slides\n\n🎥 Looking for lecture recordings? You can only find those on Brightspace."
   },
   {
-    "objectID": "danl-wk/wk-02.html#classwork",
-    "href": "danl-wk/wk-02.html#classwork",
-    "title": "Week 1",
+    "objectID": "danl-wk/wk-03.html#classwork",
+    "href": "danl-wk/wk-03.html#classwork",
+    "title": "Week 3",
     "section": "✍️ Classwork",
-    "text": "✍️ Classwork\n\nClasswork 2 - Markdown Basics\nView Classwork"
+    "text": "✍️ Classwork\n\nClasswork 2 - Python Fundamentals\nView Classwork"
   },
   {
-    "objectID": "danl-wk/wk-02.html#discussion",
-    "href": "danl-wk/wk-02.html#discussion",
-    "title": "Week 1",
+    "objectID": "danl-wk/wk-03.html#discussion",
+    "href": "danl-wk/wk-03.html#discussion",
+    "title": "Week 3",
     "section": "💬 Discussion",
-    "text": "💬 Discussion\nWelcome to our Week 2 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 2.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Week 2 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!"
+    "text": "💬 Discussion\nWelcome to our Week 3 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 3.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Week 3 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!"
   },
   {
     "objectID": "listing-danl-210-lec-pdf.html",
@@ -1008,11 +1113,179 @@
     "text": "💬 Discussion\nWelcome to our Week 1 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 1.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Week 1 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!"
   },
   {
-    "objectID": "listing-danl-210-cw.html",
-    "href": "listing-danl-210-cw.html",
-    "title": "DANL 210 - Classwork",
+    "objectID": "danl-wk/wk-02.html",
+    "href": "danl-wk/wk-02.html",
+    "title": "Week 2",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "In the second week, we will continue Python Fundamentals."
+  },
+  {
+    "objectID": "danl-wk/wk-02.html#lecture-slides",
+    "href": "danl-wk/wk-02.html#lecture-slides",
+    "title": "Week 2",
+    "section": "🏫 Lecture Slides",
+    "text": "🏫 Lecture Slides\n\nLecture 2 — Python Fundamental\nView Slides\n\n🎥 Looking for lecture recordings? You can only find those on Brightspace."
+  },
+  {
+    "objectID": "danl-wk/wk-02.html#classwork",
+    "href": "danl-wk/wk-02.html#classwork",
+    "title": "Week 2",
+    "section": "✍️ Classwork",
+    "text": "✍️ Classwork\n\nClasswork 2 - Python Fundamentals\nView Classwork"
+  },
+  {
+    "objectID": "danl-wk/wk-02.html#discussion",
+    "href": "danl-wk/wk-02.html#discussion",
+    "title": "Week 2",
+    "section": "💬 Discussion",
+    "text": "💬 Discussion\nWelcome to our Week 2 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Week 2.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) or peer classmate (@GitHub-Username) regarding the Week 2 materials or need clarification on any points, don’t hesitate to ask here.\nLet’s collaborate and learn from each other!"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Item\nDetails\n\n\n\n\nSemester\nSpring 2026\n\n\nClass Location\nNewton 205\n\n\nClass Hours\nMWF 10:30 A.M. – 11:20 A.M."
+  },
+  {
+    "objectID": "syllabus.html#course-information",
+    "href": "syllabus.html#course-information",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Item\nDetails\n\n\n\n\nSemester\nSpring 2026\n\n\nClass Location\nNewton 205\n\n\nClass Hours\nMWF 10:30 A.M. – 11:20 A.M."
+  },
+  {
+    "objectID": "syllabus.html#instructor-information",
+    "href": "syllabus.html#instructor-information",
+    "title": "Syllabus",
+    "section": "Instructor Information",
+    "text": "Instructor Information\n\n\n\nItem\nDetails\n\n\n\n\nName\nByeong-Hak Choe\n\n\nEmail (preferred)\nbchoe@geneseo.edu\n\n\nPhone (alternative)\n(545) 245-5425\n\n\nOffice Location\nSouth 227B\n\n\nOffice Hours\nMWF 9:15 A.M. – 10:15 A.M."
+  },
+  {
+    "objectID": "syllabus.html#course-access-and-orientation",
+    "href": "syllabus.html#course-access-and-orientation",
+    "title": "Syllabus",
+    "section": "Course Access and Orientation",
+    "text": "Course Access and Orientation\n\nCourse Website: https://bcdanl.github.io/210\n\nBrightspace: Use Brightspace for announcements, grades, and course materials."
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course Description",
+    "text": "Course Description\nThis course provides a practical overview of how to collect, manipulate, process, clean, and analyze real-world datasets through hands-on case studies. We will work primarily in Jupyter Notebook, an interactive environment for exploratory computing and reproducible analysis.\nKey topics include: (1) loading, cleaning, transforming, merging, and reshaping data; (2) creating clear and informative visualizations; (3) slicing, summarizing, and reporting insights; and (4) collecting data from the web and online services. Throughout the semester, you will apply these skills to solve a wide range of data analysis problems using Python, including core tools such as Pandas, as well as data-collection methods using Selenium and application programming interfaces (APIs)."
+  },
+  {
+    "objectID": "syllabus.html#prerequisitescorequisites",
+    "href": "syllabus.html#prerequisitescorequisites",
+    "title": "Syllabus",
+    "section": "Prerequisites/Corequisites",
+    "text": "Prerequisites/Corequisites\n(ECON 205 or GEOG 278 or MATH 242 or MATH 262 or PLSC 251 or PSYC 250 or SOCL 211) and DANL 201"
+  },
+  {
+    "objectID": "syllabus.html#communication-guidelines",
+    "href": "syllabus.html#communication-guidelines",
+    "title": "Syllabus",
+    "section": "Communication Guidelines",
+    "text": "Communication Guidelines\nInstructor checks email daily (Mon–Fri). Expect responses within 24–72 hours."
+  },
+  {
+    "objectID": "syllabus.html#syllabus-statement",
+    "href": "syllabus.html#syllabus-statement",
+    "title": "Syllabus",
+    "section": "Syllabus Statement",
+    "text": "Syllabus Statement\nThis syllabus is a working document and subject to change. Updates will be communicated in class meetings and/or Brightspace announcements."
+  },
+  {
+    "objectID": "syllabus.html#required-materials",
+    "href": "syllabus.html#required-materials",
+    "title": "Syllabus",
+    "section": "Required Materials",
+    "text": "Required Materials\nNo textbook is required.\n\nOptional Readings\n\nPython for Data Analysis\n\nPython for Data Science\n\nPython Programming for Data Science"
+  },
+  {
+    "objectID": "syllabus.html#technology-requirements",
+    "href": "syllabus.html#technology-requirements",
+    "title": "Syllabus",
+    "section": "Technology Requirements",
+    "text": "Technology Requirements\n\nBrightspace\n\nMicrosoft Teams\n\nAnaconda Distribution\nGoogle Colab\nChrome Browser\n\nGitHub"
+  },
+  {
+    "objectID": "syllabus.html#general-education-globe-learning-outcomes",
+    "href": "syllabus.html#general-education-globe-learning-outcomes",
+    "title": "Syllabus",
+    "section": "General Education (GLOBE) Learning Outcomes",
+    "text": "General Education (GLOBE) Learning Outcomes\nN/A"
+  },
+  {
+    "objectID": "syllabus.html#school-of-business-mission",
+    "href": "syllabus.html#school-of-business-mission",
+    "title": "Syllabus",
+    "section": "School of Business Mission",
+    "text": "School of Business Mission\nThe School of Business at SUNY Geneseo is committed to exceptional business and economics education within the context of a strong liberal arts tradition. The School is distinguished by a uniquely accomplished and dedicated faculty, motivated and capable students, a robust professional development program, and the engaged support of alumni, employers, and business leaders.\nStudents acquire strong quantitative, analytical, and communication skills while preparing for professional success as socially conscious contributors. We strive for teaching excellence, and we recognize that high-quality faculty scholarship and professional activities increase our impact on knowledge, practice, and pedagogy."
+  },
+  {
+    "objectID": "syllabus.html#key-dates-summary",
+    "href": "syllabus.html#key-dates-summary",
+    "title": "Syllabus",
+    "section": "Key Dates (Summary)",
+    "text": "Key Dates (Summary)\n\nMidterm Exam: March 13 (during class time)\n\nSpring Break: March 14–21 (no classes)\n\nGREAT Day: April 22 (no class)\n\nFinal Exam: May 14, 8:30 A.M. – 10:30 A.M.\n\nData Storytelling Report: May 14, 11:59 P.M."
+  },
+  {
+    "objectID": "syllabus.html#grade-components",
+    "href": "syllabus.html#grade-components",
+    "title": "Syllabus",
+    "section": "Grade Components",
+    "text": "Grade Components\n\nAttendance (5%)\n\nParticipation (5%)\n\nGroup Project (20%)\n\nTotal Homework (20%)\n\nTotal Exam (50%)"
+  },
+  {
+    "objectID": "syllabus.html#grading-details",
+    "href": "syllabus.html#grading-details",
+    "title": "Syllabus",
+    "section": "Grading Details",
+    "text": "Grading Details\n\nSingle lowest homework score is dropped when calculating the Total Homework Grade.\n\nTotal Exam Grade is the maximum between:\n\nSimple average of Midterm Exam and Final Exam scores, and\n\nWeighted average of Midterm Exam (33%) and Final Exam (67%)"
+  },
+  {
+    "objectID": "syllabus.html#group-project-grade-breakdown",
+    "href": "syllabus.html#group-project-grade-breakdown",
+    "title": "Syllabus",
+    "section": "Group Project Grade Breakdown",
+    "text": "Group Project Grade Breakdown\n\nDescriptive statistics (5%)\n\nData collection (30%)\n\nData transformation (30%)\n\nData visualization (10%)\n\nData storytelling (15%)\n\nCode (10%)"
+  },
+  {
+    "objectID": "syllabus.html#grading-scale",
+    "href": "syllabus.html#grading-scale",
+    "title": "Syllabus",
+    "section": "Grading Scale",
+    "text": "Grading Scale\n\nA = 93–100%\n\nA– = 90–92%\n\nB+ = 87–89%\n\nB = 83–86%\n\nB– = 80–82%\n\nC+ = 77–79%\n\nC = 73–76%\n\nC– = 70–72%\n\nD = 60–69%\n\nE = 0–59%"
+  },
+  {
+    "objectID": "syllabus.html#late-work",
+    "href": "syllabus.html#late-work",
+    "title": "Syllabus",
+    "section": "Late Work",
+    "text": "Late Work\nAccepted up to 3 days late with 30% penalty."
+  },
+  {
+    "objectID": "syllabus.html#make-up-work",
+    "href": "syllabus.html#make-up-work",
+    "title": "Syllabus",
+    "section": "Make-up Work",
+    "text": "Make-up Work\nMake-up exams will not be given unless you have either a medically verified excuse or an absence excused by the University.\nIf you cannot take exams because of religious obligations, notify me by email at least two weeks in advance so that an alternative exam time may be set.\nA missed exam without an excused absence earns a grade of zero.\nLate submissions for homework assignment will be accepted with a penalty. A zero will be recorded for a missed assignment."
+  },
+  {
+    "objectID": "syllabus.html#attendance-participation",
+    "href": "syllabus.html#attendance-participation",
+    "title": "Syllabus",
+    "section": "Attendance & Participation",
+    "text": "Attendance & Participation\nThe knowledge and skills you will gain in this course highly depend on your participation in class learning activities as an in-person class. Because of that, you are expected to attend all class sessions unless you are ill or have a valid reason for missing.\nIf you are sick or have another valid reason for missing, you must email me before the absence—any notifications after will be disregarded.\nAttendance will be taken during class via a sign-up sheet. You must sign in to be credited for attending class. If you attend class and do not sign in, it will be considered the equivalent of an absence.\nYou are provided with 5 unexcused absences per semester. Any additional unexcused absences will be subject to reducing your final grade by one letter grade for each additional absence (6 total absences = 1 letter grade (A to A–), 7 total absences = 2 letter grades (A to B+), etc.)\nFor extended absences (i.e., more than a couple of days of classes), you should contact the Dean of Students, who can assist with contacting your faculty."
+  },
+  {
+    "objectID": "syllabus.html#netiquette-policy",
+    "href": "syllabus.html#netiquette-policy",
+    "title": "Syllabus",
+    "section": "Netiquette Policy",
+    "text": "Netiquette Policy\n\nBefore contributing to a discussion board, verify if your question has already been asked and answered. Avoid repeating topics as you would in a real-life conversation.\n\nRemain focused on the topic. Refrain from posting unrelated links, comments, thoughts, or images.\n\nAvoid typing in all caps, as it may appear as if you’re shouting.\n\nSteer clear of writing anything that might be interpreted as angry or sarcastic, particularly as tone is hard to convey online.\n\nAlways use “Please” and “Thank you” when requesting assistance from peers or instructors.\n\nRespect differing viewpoints. If disagreeing, do so respectfully and acknowledge the merits of your classmates’ arguments.\n\nEnsure accuracy when responding to a peer’s query. If unsure, especially about deadlines, it’s better not to guess to avoid confusion.\n\nBe concise in your responses; lengthy replies to simple questions might not be read fully.\n\nIf multiple responses are received to your question, consider summarizing them for the benefit of the entire class.\n\nAvoid derogatory comments or insulting others’ intelligence. Disagree with ideas, not individuals.\n\nWhen referencing a previous discussion, quote only the essential lines to provide context without requiring others to search for the original post.\n\nPractice forgiveness. If a peer makes an error, do not dwell on it; everyone makes mistakes.\n\nBefore posting, run a spell and grammar check. This small effort can significantly impact how your message is perceived."
   },
   {
     "objectID": "listing-danl-210-hw-q.html",
@@ -1020,894 +1293,5 @@
     "title": "DANL 210 - Homework Submission",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html",
-    "href": "danl-hw/danl-210-hw-01.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Download the Homework 1 starter notebook from Brightspace and complete your work in that file.\n\nDo not start from a blank notebook.\n\nWhen finished, rename your file and submit it to Brightspace using this format:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n(e.g., danl-210-hw1-choe-byeonghak.ipynb)\n\nDue: February 11, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-0",
-    "href": "danl-hw/danl-210-hw-01.html#question-0",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Provide your GitHub username."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-1",
-    "href": "danl-hw/danl-210-hw-01.html#question-1",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Create a list of integers from 1 to 10.\nAppend the number 11 to the list and remove the number 5.\n\n\n\n\n\n\nConsider the following dictionary of three employees and their salaries:\n\ndict_salaries = {'Alice': 50000, 'Bob': 60000, 'Charlie': 70000}\n\nAdd a new employee 'Dana' with a salary of 65000.\nUpdate 'Alice'’s salary to 55000.\nPrint all employee names and their salaries."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-2",
-    "href": "danl-hw/danl-210-hw-01.html#question-2",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Assign a variable salary to 75000.\nUse an if-elif-else statement to print:\n\n'Low' if salary is less than 50,000\n'Medium' if salary is between 50,000 and 99,999\n'High' if salary is 100,000 or more\n\n\n\n\n\n\n\n\nAssign two variables, role and salary, to 'Manager' and 85000, respectively.\nUse nested if-else statements to print:\n\n'Eligible for bonus' if the role is 'Manager' and the salary is greater than 80,000.\n'Eligible for raise' if the role is 'Analyst' and the salary is less than 60,000.\n'No action needed' for all other cases."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-3",
-    "href": "danl-hw/danl-210-hw-01.html#question-3",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Consider the following list of salaries:\n\nlist_salaries = [45000, 60000, 75000, 120000, 30000]\n\nCalculate the average salary.\nUse a for loop to print whether each salary is 'Above Average' or 'Below Average'.\n\n\n\n\n\n\n\nStart with a salary of 50000.\nUse a while loop to increase the salary by 5000 each year until it exceeds 80000.\nPrint the salary after each increment.\n\n\n\n\n\n\n\nConsider the following dictionary of employee salaries:\n\nsalaries = {'Alice': 50000, 'Bob': 60000, 'Charlie': 70000, 'Dana': 45000}\n\nUse a for loop to print the names of employees who earn more than 55000.\n\n\n\n\n\n\ndata_list = [42, 3.14, 'Data Analytics', True, None, [1, 2, 3], {'key': 'value'}, (4, 5)]\n\nGiven the list above, print the data type of each element using the type() function in a for loop. In the loop:\n\nConvert the integer 42 to a string.\nConvert the float 3.14 to a string, then back to a float.\nConvert the boolean True to an integer."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-4",
-    "href": "danl-hw/danl-210-hw-01.html#question-4",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Consider the variables a and b:\na = 10\nb = 0\n\nUse a try-except block to print the result of a / b.\n\nIf there is an error, print 'Cannot divide by zero!'.\n\n\n\n\n\n\n\n\nConsider the following dictionary of salaries with some missing (None) values:\n\nsalaries = {'Alice': 50000, 'Bob': None, 'Charlie': 70000, 'Dana': None, 'Eve': 80000}\n\nUse a for loop with a try-except block to calculate the total of non-missing salaries."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-5",
-    "href": "danl-hw/danl-210-hw-01.html#question-5",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Import the math library and calculate the square root of 81 using the sqrt() function provided by the math library."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html",
-    "href": "danl-hw/danl-210-hw-1.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Download the Homework 1 starter notebook from Brightspace and complete your work in that file.\n\nDo not start from a blank notebook.\n\nWhen finished, rename your file and submit it to Brightspace using this format:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n(e.g., danl-210-hw1-choe-byeonghak.ipynb)\n\nDue: February 11, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-0a",
-    "href": "danl-hw/danl-210-hw-1.html#question-0a",
-    "title": "Homework 1",
-    "section": "Question 0a",
-    "text": "Question 0a\nCreate a variable named github_username (string) and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-0b",
-    "href": "danl-hw/danl-210-hw-1.html#question-0b",
-    "title": "Homework 1",
-    "section": "Question 0b",
-    "text": "Question 0b\nIn one code cell, print:\n\nyour Python version (hint: import sys)\ntoday’s date (hint: import datetime)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-1a-list-basics",
-    "href": "danl-hw/danl-210-hw-1.html#question-1a-list-basics",
-    "title": "Homework 1",
-    "section": "Question 1a (List basics)",
-    "text": "Question 1a (List basics)\n\nCreate a list of integers from 1 to 10 called nums.\nAppend 11 to the list.\nRemove 5 from the list.\nPrint the final list."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-1b-tuple-basics",
-    "href": "danl-hw/danl-210-hw-1.html#question-1b-tuple-basics",
-    "title": "Homework 1",
-    "section": "Question 1b (Tuple basics)",
-    "text": "Question 1b (Tuple basics)\nCreate a tuple named coords representing Geneseo coordinates:\n\ncoords = (42.7959, -77.8169) Then:\nPrint the first element.\nTry to modify the first element (write the line of code).\nAdd a short Markdown sentence explaining what happens and why."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-1c-dictionary-basics",
-    "href": "danl-hw/danl-210-hw-1.html#question-1c-dictionary-basics",
-    "title": "Homework 1",
-    "section": "Question 1c (Dictionary basics)",
-    "text": "Question 1c (Dictionary basics)\nConsider:\ndict_salaries = {'Alice': 50000, 'Bob': 60000, 'Charlie': 70000}\n\nAdd a new employee 'Dana' with salary 65000.\n\nUpdate 'Alice' salary to 55000.\n\nPrint:\n\nall keys (names)\nall values (salaries)\nall items ((name, salary) pairs)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-2a-arithmetic-operators",
-    "href": "danl-hw/danl-210-hw-1.html#question-2a-arithmetic-operators",
-    "title": "Homework 1",
-    "section": "Question 2a (Arithmetic operators)",
-    "text": "Question 2a (Arithmetic operators)\nLet:\nx = 17\ny = 4\nCompute and print:\n\nx + y, x - y, x * y, x ** y, x / y, x // y, x % y"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-2b-operators-with-strings-and-lists",
-    "href": "danl-hw/danl-210-hw-1.html#question-2b-operators-with-strings-and-lists",
-    "title": "Homework 1",
-    "section": "Question 2b (Operators with strings and lists)",
-    "text": "Question 2b (Operators with strings and lists)\n\nUsing only + and *, build and print this exact string:\n\n\n\"Go Knights! Go Knights! Go Knights!\"\n\nYou may start with:\nchant = \"Go Knights!\"\n\nUsing only + and *, create a list that repeats [\"lab\", \"lecture\"] 4 times."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-2c-casting",
-    "href": "danl-hw/danl-210-hw-1.html#question-2c-casting",
-    "title": "Homework 1",
-    "section": "Question 2c (Casting)",
-    "text": "Question 2c (Casting)\nGiven:\npi_text = \"3.14159\"\n\nConvert pi_text to a float named pi_value.\nConvert pi_value to an integer named pi_int.\nPrint pi_text, pi_value, pi_int and their types."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-3a-mixed-types-in-a-list",
-    "href": "danl-hw/danl-210-hw-1.html#question-3a-mixed-types-in-a-list",
-    "title": "Homework 1",
-    "section": "Question 3a (Mixed types in a list)",
-    "text": "Question 3a (Mixed types in a list)\nGiven:\ndata_list = [42, 3.14, \"Data Analytics\", True, None, [1, 2, 3], {\"key\": \"value\"}, (4, 5)]\nUsing a for loop:\n\nPrint each element AND its type (use type())."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-3b-specific-conversions-inside-a-loop",
-    "href": "danl-hw/danl-210-hw-1.html#question-3b-specific-conversions-inside-a-loop",
-    "title": "Homework 1",
-    "section": "Question 3b (Specific conversions inside a loop)",
-    "text": "Question 3b (Specific conversions inside a loop)\nUsing the same data_list:\n\nConvert the integer 42 to a string.\nConvert the float 3.14 to a string, then back to a float.\nConvert the boolean True to an integer.\n\nPrint the converted results and their types."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-4a-if-elif-else",
-    "href": "danl-hw/danl-210-hw-1.html#question-4a-if-elif-else",
-    "title": "Homework 1",
-    "section": "Question 4a (if-elif-else)",
-    "text": "Question 4a (if-elif-else)\nSet:\nscore = 83\nPrint:\n\n\"Fail\" if score &lt; 60\n\"Pass\" if 60 &lt;= score &lt; 80\n\"Great\" if 80 &lt;= score &lt; 95\n\"Perfect\" if score &gt;= 95"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-4b-nested-if",
-    "href": "danl-hw/danl-210-hw-1.html#question-4b-nested-if",
-    "title": "Homework 1",
-    "section": "Question 4b (Nested if)",
-    "text": "Question 4b (Nested if)\nSet:\nmembership = \"Gold\"\ntotal_spent = 120\nPrint:\n\n\"Free shipping\" if membership is \"Gold\" and total_spent &gt;= 100\n\"5% coupon\" if membership is \"Silver\" and total_spent &gt;= 100\n\"No perk\" otherwise"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-4c-in-membership-test",
-    "href": "danl-hw/danl-210-hw-1.html#question-4c-in-membership-test",
-    "title": "Homework 1",
-    "section": "Question 4c (in membership test)",
-    "text": "Question 4c (in membership test)\nGiven:\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfavorite = \"banana\"\nUse in and an if-else statement to print:\n\n\"banana is available!\" (use f-string)\nor \"banana is not in the list.\""
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-4d-boolean-reasoning",
-    "href": "danl-hw/danl-210-hw-1.html#question-4d-boolean-reasoning",
-    "title": "Homework 1",
-    "section": "Question 4d (Boolean reasoning)",
-    "text": "Question 4d (Boolean reasoning)\nCompute and print the value of:\n\nnot (not False)\n7 == \"7\"\n(10 &gt; 3) and (2 &gt;= 2)\n(10 &lt; 3) or (2 == 2)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-5a-string-slicing-patterns",
-    "href": "danl-hw/danl-210-hw-1.html#question-5a-string-slicing-patterns",
-    "title": "Homework 1",
-    "section": "Question 5a (String slicing patterns)",
-    "text": "Question 5a (String slicing patterns)\nGiven:\nletters = \"abcdefghij\"\nPrint the result of each:\n\nletters[:]\nletters[3:]\nletters[:5]\nletters[:-4]\nletters[2:7]\nletters[::2]\nletters[::-1]"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-5b-list-slicing",
-    "href": "danl-hw/danl-210-hw-1.html#question-5b-list-slicing",
-    "title": "Homework 1",
-    "section": "Question 5b (List slicing)",
-    "text": "Question 5b (List slicing)\nGiven:\nplaylist = [\"Intro\", \"Beat\", \"Chorus\", \"Bridge\", \"Solo\", \"Outro\"]\nPrint:\n\nthe first 3 items\nevery 2nd item starting from the beginning\nthe last 2 items\nthe list reversed (using slicing)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-5c-len-practice",
-    "href": "danl-hw/danl-210-hw-1.html#question-5c-len-practice",
-    "title": "Homework 1",
-    "section": "Question 5c (len() practice)",
-    "text": "Question 5c (len() practice)\nCompute and print:\n\nlen(\"machinelearning\")\nlen([10, 20, 30, 40])\nlen(playlist)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-6a-average-labels",
-    "href": "danl-hw/danl-210-hw-1.html#question-6a-average-labels",
-    "title": "Homework 1",
-    "section": "Question 6a (Average + labels)",
-    "text": "Question 6a (Average + labels)\nGiven:\ntemps = [32, 28, 30, 35, 27]\n\nCompute the average temperature.\nFor each temperature, print \"Above Avg\" if it is above average, otherwise \"Below Avg\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-6b-while-loop-growth",
-    "href": "danl-hw/danl-210-hw-1.html#question-6b-while-loop-growth",
-    "title": "Homework 1",
-    "section": "Question 6b (while loop growth)",
-    "text": "Question 6b (while loop growth)\nStart:\nsalary = 50000\nUse a while loop to increase salary by 5000 each year until it exceeds 80000. Print salary after each increment."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-6c-range-patterns",
-    "href": "danl-hw/danl-210-hw-1.html#question-6c-range-patterns",
-    "title": "Homework 1",
-    "section": "Question 6c (range() patterns)",
-    "text": "Question 6c (range() patterns)\nUsing range(), create and print:\n\nintegers from 5 to 15\nmultiples of 3 from 0 to 30\ncountdown from 12 to 0"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-6d-enumerate-index-value",
-    "href": "danl-hw/danl-210-hw-1.html#question-6d-enumerate-index-value",
-    "title": "Homework 1",
-    "section": "Question 6d (enumerate() index + value)",
-    "text": "Question 6d (enumerate() index + value)\nGiven:\ntasks = [\"download\", \"open\", \"run\", \"submit\"]\nUse enumerate() to print each task with its step number starting at 1 like:\n\nStep 1: download"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7a-list-comprehension-squares",
-    "href": "danl-hw/danl-210-hw-1.html#question-7a-list-comprehension-squares",
-    "title": "Homework 1",
-    "section": "Question 7a (List comprehension: squares)",
-    "text": "Question 7a (List comprehension: squares)\nUse list comprehension to create a list of squares:\n\n[0^2, 1^2, 2^2, 3^2, 4^2, 5^2]\n\nStore it in squares and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7b-list-comprehension-filter",
-    "href": "danl-hw/danl-210-hw-1.html#question-7b-list-comprehension-filter",
-    "title": "Homework 1",
-    "section": "Question 7b (List comprehension: filter)",
-    "text": "Question 7b (List comprehension: filter)\nGiven:\nvals = [0, 5, 10, 0, 20, 0, 25]\nUse list comprehension to create a new list that removes all zeros."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7c-dictionary-comprehension-squares",
-    "href": "danl-hw/danl-210-hw-1.html#question-7c-dictionary-comprehension-squares",
-    "title": "Homework 1",
-    "section": "Question 7c (Dictionary comprehension: squares)",
-    "text": "Question 7c (Dictionary comprehension: squares)\nCreate a dictionary:\n\nkeys are integers 0 to 5\nvalues are their squares\n\nPrint the dictionary."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7d-modify-list-remove-all-occurrences",
-    "href": "danl-hw/danl-210-hw-1.html#question-7d-modify-list-remove-all-occurrences",
-    "title": "Homework 1",
-    "section": "Question 7d (Modify list: remove all occurrences)",
-    "text": "Question 7d (Modify list: remove all occurrences)\nGiven:\nmy_list = [1, 2, 3, 4, 2, 2, 5]\n\nRemove only the first 2 using .remove(), print the list.\nThen (starting from the original list again), remove all 2s using list comprehension, print the result.\nThen (starting from the original list again), delete the middle three elements using del with slicing, print the result."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7e-modify-dictionary-update-delete",
-    "href": "danl-hw/danl-210-hw-1.html#question-7e-modify-dictionary-update-delete",
-    "title": "Homework 1",
-    "section": "Question 7e (Modify dictionary: update + delete)",
-    "text": "Question 7e (Modify dictionary: update + delete)\nGiven:\ninventory = {\"pens\": 10, \"notebooks\": 5, \"erasers\": 2}\n\nAdd \"markers\": 4 using .update()\nChange \"pens\" to 12 using .update()\nDelete \"erasers\" using del\n\nPrint after each step."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-8a-division-by-zero",
-    "href": "danl-hw/danl-210-hw-1.html#question-8a-division-by-zero",
-    "title": "Homework 1",
-    "section": "Question 8a (Division by zero)",
-    "text": "Question 8a (Division by zero)\nGiven:\na = 10\nb = 0\nUse try-except to attempt a / b.\n\nIf there is an error, print: \"Cannot divide by zero!\""
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-8b-index-errors-in-a-loop",
-    "href": "danl-hw/danl-210-hw-1.html#question-8b-index-errors-in-a-loop",
-    "title": "Homework 1",
-    "section": "Question 8b (Index errors in a loop)",
-    "text": "Question 8b (Index errors in a loop)\nGiven:\nshort_list = [1, 2, 3]\npositions = [0, 1, 5, 2]\nLoop over positions. Use try/except to print:\n\nthe element if it exists\notherwise print a helpful message like: \"Index error: 5 is out of range\""
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-8c-missing-values",
-    "href": "danl-hw/danl-210-hw-1.html#question-8c-missing-values",
-    "title": "Homework 1",
-    "section": "Question 8c (Missing values)",
-    "text": "Question 8c (Missing values)\nGiven:\nhours = {\"Mon\": 2, \"Tue\": None, \"Wed\": 3, \"Thu\": None, \"Fri\": 4}\nCompute the total of non-missing hours and print the total."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-8d-missing-dictionary-key",
-    "href": "danl-hw/danl-210-hw-1.html#question-8d-missing-dictionary-key",
-    "title": "Homework 1",
-    "section": "Question 8d (Missing dictionary key)",
-    "text": "Question 8d (Missing dictionary key)\nGiven:\ncapitals = {\"NY\": \"Albany\", \"CA\": \"Sacramento\"}\nTry to print capitals[\"TX\"]. Handle the error so the program prints \"State not found\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-9a-math",
-    "href": "danl-hw/danl-210-hw-1.html#question-9a-math",
-    "title": "Homework 1",
-    "section": "Question 9a (math)",
-    "text": "Question 9a (math)\nImport math and compute math.sqrt(144). Print the result."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-9b-import-...-as-...",
-    "href": "danl-hw/danl-210-hw-1.html#question-9b-import-...-as-...",
-    "title": "Homework 1",
-    "section": "Question 9b (import ... as ...)",
-    "text": "Question 9b (import ... as ...)\nImport math as m. Compute and print:\n\nm.sqrt(144)\nm.floor(9.99)\nm.ceil(9.01)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-9c-from-...-import-...",
-    "href": "danl-hw/danl-210-hw-1.html#question-9c-from-...-import-...",
-    "title": "Homework 1",
-    "section": "Question 9c (from ... import ...)",
-    "text": "Question 9c (from ... import ...)\nImport only ceil from math and compute ceil(12.2). Print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-9d-pip-concept-check-no-installing",
-    "href": "danl-hw/danl-210-hw-1.html#question-9d-pip-concept-check-no-installing",
-    "title": "Homework 1",
-    "section": "Question 9d (pip concept check — no installing)",
-    "text": "Question 9d (pip concept check — no installing)\nIn a Markdown cell, answer:\n\nWhat is the difference between:\n\n!pip install LIBRARY (Colab)\npip install LIBRARY (Terminal/Anaconda Prompt)\n\nWhy do we sometimes use ! in Colab?"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-10-student-roster-summary",
-    "href": "danl-hw/danl-210-hw-1.html#question-10-student-roster-summary",
-    "title": "Homework 1",
-    "section": "Question 10 (Student roster summary)",
-    "text": "Question 10 (Student roster summary)\nYou are given:\nstudents = [\"Ada\", \"Grace\", \"Alan\", \"Katherine\", \"Tim\"]\nscores   = [100, 92, 85, 98, 67]\nWrite code that:\n\nUses enumerate() to print a numbered roster starting at 1:\n\n1. Ada\n2. Grace\n…\n\nComputes the average score.\nUses a for loop with an if-else to print for each student:\n\n\"Ada: 100 (Above Avg)\" or \"Tim: 67 (Below Avg)\"\n(Use f-strings.)\n\nCreates a dictionary student_to_score using dictionary comprehension.\nUses try/except to handle this:\n\nAttempt to print student_to_score[\"Jordan\"]\nIf missing, print \"Jordan is not in the roster.\""
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Download the Homework 1 starter notebook from Brightspace and complete your work in that file.\n\nDo not start from a blank notebook.\n\nWhen finished, rename your file and submit it to Brightspace using this format:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n(e.g., danl-210-hw1-choe-byeonghak.ipynb)\n\nDue: February 11, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-0a",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-0a",
-    "title": "Homework 1",
-    "section": "Question 0a",
-    "text": "Question 0a\nCreate a variable named github_username (string) and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-0b",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-0b",
-    "title": "Homework 1",
-    "section": "Question 0b",
-    "text": "Question 0b\nIn one code cell, print:\n\nyour Python version (hint: import sys)\ntoday’s date (hint: import datetime)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-1a-list-edits",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-1a-list-edits",
-    "title": "Homework 1",
-    "section": "Question 1a (List edits)",
-    "text": "Question 1a (List edits)\n\nCreate a list named seat_numbers containing integers 2 through 9.\nAppend 10.\nRemove 6.\nPrint the final list."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-1b-tuple-immutability",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-1b-tuple-immutability",
-    "title": "Homework 1",
-    "section": "Question 1b (Tuple: immutability)",
-    "text": "Question 1b (Tuple: immutability)\nCreate a tuple named campus:\n\ncampus = (\"SUNY Geneseo\", 2026)\n\nThen:\n\nPrint the second element.\nWrite one line of code that tries to change the year to 2027.\nIn a Markdown cell, explain what happens and why."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-1c-dictionary-addupdateiterate",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-1c-dictionary-addupdateiterate",
-    "title": "Homework 1",
-    "section": "Question 1c (Dictionary: add/update/iterate)",
-    "text": "Question 1c (Dictionary: add/update/iterate)\nStart with:\nmenu_prices = {\"coffee\": 2.75, \"tea\": 2.25, \"sandwich\": 6.50}\n\nAdd \"cookie\": 1.50\nUpdate the price of \"coffee\" to 3.00\nPrint:\n\nall item names (keys)\nall prices (values)\neach (item, price) pair on its own line"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-2a-arithmetic-operators",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-2a-arithmetic-operators",
-    "title": "Homework 1",
-    "section": "Question 2a (Arithmetic operators)",
-    "text": "Question 2a (Arithmetic operators)\nLet:\nx = 17\ny = 4\nCompute and print:\n\nx + y, x - y, x * y, x ** y, x / y, x // y, x % y"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-2b-operators-with-strings-and-lists",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-2b-operators-with-strings-and-lists",
-    "title": "Homework 1",
-    "section": "Question 2b (Operators with strings and lists)",
-    "text": "Question 2b (Operators with strings and lists)\n\nUsing only + and *, build and print this exact string:\n\n\n\"Go Knights! Go Knights! Go Knights!\"\n\nYou may start with:\nchant = \"Go Knights!\"\n\nUsing only + and *, create a list that repeats [\"lab\", \"lecture\"] 4 times."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-2c-casting",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-2c-casting",
-    "title": "Homework 1",
-    "section": "Question 2c (Casting)",
-    "text": "Question 2c (Casting)\nGiven:\npi_text = \"3.14159\"\n\nConvert pi_text to a float named pi_value.\nConvert pi_value to an integer named pi_int.\nPrint pi_text, pi_value, pi_int and their types."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-3a-print-value-type",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-3a-print-value-type",
-    "title": "Homework 1",
-    "section": "Question 3a (Print value + type)",
-    "text": "Question 3a (Print value + type)\nGiven:\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\nUse a for loop to print each element and its type."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-3b-targeted-conversions",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-3b-targeted-conversions",
-    "title": "Homework 1",
-    "section": "Question 3b (Targeted conversions)",
-    "text": "Question 3b (Targeted conversions)\nUsing mixed above, do the following conversions and print results + types:\n\nConvert the string \"42\" to an integer.\nConvert the integer 99 to a string.\nConvert False to an integer."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4a-if-elif-else",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4a-if-elif-else",
-    "title": "Homework 1",
-    "section": "Question 4a (if-elif-else)",
-    "text": "Question 4a (if-elif-else)\nSet:\nscore = 83\nPrint:\n\n\"Fail\" if score &lt; 60\n\"Pass\" if 60 &lt;= score &lt; 80\n\"Great\" if 80 &lt;= score &lt; 95\n\"Perfect\" if score &gt;= 95"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4b-nested-if",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4b-nested-if",
-    "title": "Homework 1",
-    "section": "Question 4b (Nested if)",
-    "text": "Question 4b (Nested if)\nSet:\nmembership = \"Gold\"\ntotal_spent = 120\nPrint:\n\n\"Free shipping\" if membership is \"Gold\" and total_spent &gt;= 100\n\"5% coupon\" if membership is \"Silver\" and total_spent &gt;= 100\n\"No perk\" otherwise"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4c-in-membership-test-f-string",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4c-in-membership-test-f-string",
-    "title": "Homework 1",
-    "section": "Question 4c (in membership test + f-string)",
-    "text": "Question 4c (in membership test + f-string)\nGiven:\ncities = [\"Rochester\", \"Buffalo\", \"Syracuse\", \"Albany\"]\ntarget = \"Albany\"\nUse in to print:\n\n\"Albany is on the list!\" if present\notherwise \"Albany is not on the list.\"\n\n(Use an f-string.)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4d-boolean-reasoning",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-4d-boolean-reasoning",
-    "title": "Homework 1",
-    "section": "Question 4d (Boolean reasoning)",
-    "text": "Question 4d (Boolean reasoning)\nCompute and print the value of:\n\nnot (not False)\n7 == \"7\"\n(10 &gt; 3) and (2 &gt;= 2)\n(10 &lt; 3) or (2 == 2)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-5a-string-slicing",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-5a-string-slicing",
-    "title": "Homework 1",
-    "section": "Question 5a (String slicing)",
-    "text": "Question 5a (String slicing)\nGiven:\nword = \"datascience\"\nPrint the result of each:\n\nword[:]\nword[4:]\nword[:4]\nword[:-3]\nword[2:8]\nword[::3]\nword[::-1]"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-5b-list-slicing",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-5b-list-slicing",
-    "title": "Homework 1",
-    "section": "Question 5b (List slicing)",
-    "text": "Question 5b (List slicing)\nGiven:\nplaylist = [\"Intro\", \"Beat\", \"Chorus\", \"Bridge\", \"Solo\", \"Outro\"]\nPrint:\n\nthe first 3 items\nevery 2nd item starting from the beginning\nthe last 2 items\nthe list reversed (using slicing)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-5c-len-practice",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-5c-len-practice",
-    "title": "Homework 1",
-    "section": "Question 5c (len() practice)",
-    "text": "Question 5c (len() practice)\nCompute and print:\n\nlen(\"machinelearning\")\nlen([10, 20, 30, 40])\nlen(playlist)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6a-average-labels",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6a-average-labels",
-    "title": "Homework 1",
-    "section": "Question 6a (Average + labels)",
-    "text": "Question 6a (Average + labels)\nGiven:\ntemps = [32, 28, 30, 35, 27]\n\nCompute the average temperature.\nFor each temperature, print \"Above Avg\" if it is above average, otherwise \"Below Avg\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6b-while-loop-savings",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6b-while-loop-savings",
-    "title": "Homework 1",
-    "section": "Question 6b (while loop: savings)",
-    "text": "Question 6b (while loop: savings)\nStart with:\nbalance = 150\nEach week you save 25. Use a while loop until the balance reaches or exceeds 300.\nPrint the balance each week."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6c-range-patterns",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6c-range-patterns",
-    "title": "Homework 1",
-    "section": "Question 6c (range() patterns)",
-    "text": "Question 6c (range() patterns)\nUsing range(), create and print:\n\nintegers from 5 to 15\nmultiples of 3 from 0 to 30\ncountdown from 12 to 0"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6d-enumerate-index-value",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-6d-enumerate-index-value",
-    "title": "Homework 1",
-    "section": "Question 6d (enumerate() index + value)",
-    "text": "Question 6d (enumerate() index + value)\nGiven:\ntasks = [\"download\", \"open\", \"run\", \"submit\"]\nUse enumerate() to print each task with its step number starting at 1 like:\n\nStep 1: download"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7a-list-comprehension-cubes",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7a-list-comprehension-cubes",
-    "title": "Homework 1",
-    "section": "Question 7a (List comprehension: cubes)",
-    "text": "Question 7a (List comprehension: cubes)\nUse list comprehension to create a list of cubes for 1 through 6.\nStore it in cubes and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7b-list-comprehension-filter",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7b-list-comprehension-filter",
-    "title": "Homework 1",
-    "section": "Question 7b (List comprehension: filter)",
-    "text": "Question 7b (List comprehension: filter)\nGiven:\nvals = [0, 5, 10, 0, 20, 0, 25]\nUse list comprehension to create a new list that removes all zeros."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7c-dictionary-comprehension-length-of-words",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7c-dictionary-comprehension-length-of-words",
-    "title": "Homework 1",
-    "section": "Question 7c (Dictionary comprehension: length of words)",
-    "text": "Question 7c (Dictionary comprehension: length of words)\nGiven:\nwords = [\"data\", \"science\", \"python\", \"loop\"]\nUse dictionary comprehension to create a dictionary mapping each word to its length.\nPrint the dictionary."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7d-modify-list-removekeepdelete",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7d-modify-list-removekeepdelete",
-    "title": "Homework 1",
-    "section": "Question 7d (Modify list: remove/keep/delete)",
-    "text": "Question 7d (Modify list: remove/keep/delete)\nGiven:\ntickets = [\"A\", \"B\", \"C\", \"B\", \"D\", \"B\"]\n\nRemove only the first \"B\" using .remove() and print the list.\nStarting from the original list again, remove all \"B\" values using list comprehension and print.\nStarting from the original list again, delete the middle two elements using del with slicing and print."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7e-modify-dictionary-update-delete",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-7e-modify-dictionary-update-delete",
-    "title": "Homework 1",
-    "section": "Question 7e (Modify dictionary: update + delete)",
-    "text": "Question 7e (Modify dictionary: update + delete)\nGiven:\ninventory = {\"pens\": 10, \"notebooks\": 5, \"erasers\": 2}\n\nAdd \"markers\": 4 using .update()\nChange \"pens\" to 12 using .update()\nDelete \"erasers\" using del\n\nPrint after each step."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8a-division-safety",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8a-division-safety",
-    "title": "Homework 1",
-    "section": "Question 8a (Division safety)",
-    "text": "Question 8a (Division safety)\nGiven:\nnumerator = 24\ndenominator = 0\nUse try-except to attempt division. If an error occurs, print \"Division failed!\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8b-convert-text-to-number",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8b-convert-text-to-number",
-    "title": "Homework 1",
-    "section": "Question 8b (Convert text to number)",
-    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer. - If conversion works, print the integer. - If it fails, print \"Not a number: oops\" (use the actual bad value)."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8c-missing-values",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8c-missing-values",
-    "title": "Homework 1",
-    "section": "Question 8c (Missing values)",
-    "text": "Question 8c (Missing values)\nGiven:\nhours = {\"Mon\": 2, \"Tue\": None, \"Wed\": 3, \"Thu\": None, \"Fri\": 4}\nCompute the total of non-missing hours and print the total."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8d-missing-dictionary-key",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-8d-missing-dictionary-key",
-    "title": "Homework 1",
-    "section": "Question 8d (Missing dictionary key)",
-    "text": "Question 8d (Missing dictionary key)\nGiven:\ncapitals = {\"NY\": \"Albany\", \"CA\": \"Sacramento\"}\nTry to print capitals[\"TX\"]. Handle the error so the program prints \"State not found\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9a-math",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9a-math",
-    "title": "Homework 1",
-    "section": "Question 9a (math)",
-    "text": "Question 9a (math)\nImport math and compute math.sqrt(144). Print the result."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9b-import-...-as-...",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9b-import-...-as-...",
-    "title": "Homework 1",
-    "section": "Question 9b (import ... as ...)",
-    "text": "Question 9b (import ... as ...)\nImport math as m. Compute and print:\n\nm.sqrt(144)\nm.floor(9.99)\nm.ceil(9.01)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9c-from-...-import-...",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9c-from-...-import-...",
-    "title": "Homework 1",
-    "section": "Question 9c (from ... import ...)",
-    "text": "Question 9c (from ... import ...)\nImport only ceil from math and compute ceil(12.2). Print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9d-pip-concept-check-no-installing",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-9d-pip-concept-check-no-installing",
-    "title": "Homework 1",
-    "section": "Question 9d (pip concept check — no installing)",
-    "text": "Question 9d (pip concept check — no installing)\nIn a Markdown cell, answer: 1) Why does !pip install ... work inside Colab but not in normal Python code? 2) What does pip do, in one sentence?"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-10-workout-summary",
-    "href": "danl-hw/danl-210-hw1-v2-different-from-lecture.html#question-10-workout-summary",
-    "title": "Homework 1",
-    "section": "Question 10 (Workout summary)",
-    "text": "Question 10 (Workout summary)\nYou are given:\nexercises = [\"pushups\", \"plank\", \"squats\", \"jog\"]\nminutes   = [10, 5, 12, 20]\nWrite code that:\n\nUses enumerate() to print:\n\n1) pushups\n2) plank\n…\n\nComputes the average minutes.\nFor each exercise, print a line like:\n\n\n\"squats: 12 min (Above Avg)\" or \"plank: 5 min (Below Avg)\" (Use f-strings.)\n\n\nCreate a dictionary exercise_to_minutes using dictionary comprehension.\nUse try/except to attempt to print exercise_to_minutes[\"stretch\"].\n\nIf missing, print \"stretch is not in the plan.\""
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-1a-list-edits",
-    "href": "danl-hw/danl-210-hw-1.html#question-1a-list-edits",
-    "title": "Homework 1",
-    "section": "Question 1a (List edits)",
-    "text": "Question 1a (List edits)\n\nCreate a list named seat_numbers containing integers 2 through 9.\nAppend 10.\nRemove 6.\nPrint the final list."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-1b-tuple-immutability",
-    "href": "danl-hw/danl-210-hw-1.html#question-1b-tuple-immutability",
-    "title": "Homework 1",
-    "section": "Question 1b (Tuple: immutability)",
-    "text": "Question 1b (Tuple: immutability)\nCreate a tuple named campus:\n\ncampus = (\"SUNY Geneseo\", 2026)\n\nThen:\n\nPrint the second element.\nWrite one line of code that tries to change the year to 2027.\nIn a Markdown cell, explain what happens and why."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-1c-dictionary-addupdateiterate",
-    "href": "danl-hw/danl-210-hw-1.html#question-1c-dictionary-addupdateiterate",
-    "title": "Homework 1",
-    "section": "Question 1c (Dictionary: add/update/iterate)",
-    "text": "Question 1c (Dictionary: add/update/iterate)\nStart with:\nmenu_prices = {\"coffee\": 2.75, \"tea\": 2.25, \"sandwich\": 6.50}\n\nAdd \"cookie\": 1.50\nUpdate the price of \"coffee\" to 3.00\nPrint:\n\nall item names (keys)\nall prices (values)\neach (item, price) pair on its own line"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-3a-print-value-type",
-    "href": "danl-hw/danl-210-hw-1.html#question-3a-print-value-type",
-    "title": "Homework 1",
-    "section": "Question 3a (Print value + type)",
-    "text": "Question 3a (Print value + type)\nGiven:\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\nUse a for loop to print each element and its type."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-3b-targeted-conversions",
-    "href": "danl-hw/danl-210-hw-1.html#question-3b-targeted-conversions",
-    "title": "Homework 1",
-    "section": "Question 3b (Targeted conversions)",
-    "text": "Question 3b (Targeted conversions)\nUsing mixed above, do the following conversions and print results + types:\n\nConvert the string \"42\" to an integer.\nConvert the integer 99 to a string.\nConvert False to an integer."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-4c-in-membership-test-f-string",
-    "href": "danl-hw/danl-210-hw-1.html#question-4c-in-membership-test-f-string",
-    "title": "Homework 1",
-    "section": "Question 4c (in membership test + f-string)",
-    "text": "Question 4c (in membership test + f-string)\nGiven:\ncities = [\"Rochester\", \"Buffalo\", \"Syracuse\", \"Albany\"]\ntarget = \"Albany\"\nUse in to print:\n\n\"Albany is on the list!\" if present\notherwise \"Albany is not on the list.\"\n\n(Use an f-string.)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-5a-string-slicing",
-    "href": "danl-hw/danl-210-hw-1.html#question-5a-string-slicing",
-    "title": "Homework 1",
-    "section": "Question 5a (String slicing)",
-    "text": "Question 5a (String slicing)\nGiven:\nword = \"datascience\"\nPrint the result of each:\n\nword[:]\nword[4:]\nword[:4]\nword[:-3]\nword[2:8]\nword[::3]\nword[::-1]"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-6b-while-loop-savings",
-    "href": "danl-hw/danl-210-hw-1.html#question-6b-while-loop-savings",
-    "title": "Homework 1",
-    "section": "Question 6b (while loop: savings)",
-    "text": "Question 6b (while loop: savings)\nStart with:\nbalance = 150\nEach week you save 25. Use a while loop until the balance reaches or exceeds 300.\nPrint the balance each week."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7a-list-comprehension-cubes",
-    "href": "danl-hw/danl-210-hw-1.html#question-7a-list-comprehension-cubes",
-    "title": "Homework 1",
-    "section": "Question 7a (List comprehension: cubes)",
-    "text": "Question 7a (List comprehension: cubes)\nUse list comprehension to create a list of cubes for 1 through 6.\nStore it in cubes and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7c-dictionary-comprehension-length-of-words",
-    "href": "danl-hw/danl-210-hw-1.html#question-7c-dictionary-comprehension-length-of-words",
-    "title": "Homework 1",
-    "section": "Question 7c (Dictionary comprehension: length of words)",
-    "text": "Question 7c (Dictionary comprehension: length of words)\nGiven:\nwords = [\"data\", \"science\", \"python\", \"loop\"]\nUse dictionary comprehension to create a dictionary mapping each word to its length.\nPrint the dictionary."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-7d-modify-list-removekeepdelete",
-    "href": "danl-hw/danl-210-hw-1.html#question-7d-modify-list-removekeepdelete",
-    "title": "Homework 1",
-    "section": "Question 7d (Modify list: remove/keep/delete)",
-    "text": "Question 7d (Modify list: remove/keep/delete)\nGiven:\ntickets = [\"A\", \"B\", \"C\", \"B\", \"D\", \"B\"]\n\nRemove only the first \"B\" using .remove() and print the list.\nStarting from the original list again, remove all \"B\" values using list comprehension and print.\nStarting from the original list again, delete the middle two elements using del with slicing and print."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-8a-division-safety",
-    "href": "danl-hw/danl-210-hw-1.html#question-8a-division-safety",
-    "title": "Homework 1",
-    "section": "Question 8a (Division safety)",
-    "text": "Question 8a (Division safety)\nGiven:\nnumerator = 24\ndenominator = 0\nUse try-except to attempt division. If an error occurs, print \"Division failed!\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-8b-convert-text-to-number",
-    "href": "danl-hw/danl-210-hw-1.html#question-8b-convert-text-to-number",
-    "title": "Homework 1",
-    "section": "Question 8b (Convert text to number)",
-    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer.\n\nIf conversion works, print the integer.\nIf it fails, print \"Not a number: oops\" (use the actual bad value)."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-1.html#question-10-workout-summary",
-    "href": "danl-hw/danl-210-hw-1.html#question-10-workout-summary",
-    "title": "Homework 1",
-    "section": "Question 10 (Workout summary)",
-    "text": "Question 10 (Workout summary)\nYou are given:\nexercises = [\"pushups\", \"plank\", \"squats\", \"jog\"]\nminutes   = [10, 5, 12, 20]\nWrite code that:\n\nUses enumerate() to print:\n\n1) pushups\n2) plank\n…\n\nComputes the average minutes.\nFor each exercise, print a line like:\n\n\n\"squats: 12 min (Above Avg)\" or \"plank: 5 min (Below Avg)\" (Use f-strings.)\n\n\nCreate a dictionary exercise_to_minutes using dictionary comprehension.\nUse try/except to attempt to print exercise_to_minutes[\"stretch\"].\n\nIf missing, print \"stretch is not in the plan.\""
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-0a",
-    "href": "danl-hw/danl-210-hw-01.html#question-0a",
-    "title": "Homework 1",
-    "section": "Question 0a",
-    "text": "Question 0a\nCreate a variable named github_username (string) and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-0b",
-    "href": "danl-hw/danl-210-hw-01.html#question-0b",
-    "title": "Homework 1",
-    "section": "Question 0b",
-    "text": "Question 0b\nIn one code cell, print:\n\nyour Python version (hint: import sys)\ntoday’s date (hint: import datetime)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-1a-list-edits",
-    "href": "danl-hw/danl-210-hw-01.html#question-1a-list-edits",
-    "title": "Homework 1",
-    "section": "Question 1a (List edits)",
-    "text": "Question 1a (List edits)\n\nCreate a list named seat_numbers containing integers 2 through 9.\nAppend 10.\nRemove 6.\nPrint the final list."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-1b-tuple-immutability",
-    "href": "danl-hw/danl-210-hw-01.html#question-1b-tuple-immutability",
-    "title": "Homework 1",
-    "section": "Question 1b (Tuple: immutability)",
-    "text": "Question 1b (Tuple: immutability)\nCreate a tuple named campus:\n\ncampus = (\"SUNY Geneseo\", 2026)\n\nThen:\n\nPrint the second element.\nWrite one line of code that tries to change the year to 2027.\nIn a Markdown cell, explain what happens and why."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-1c-dictionary-addupdateiterate",
-    "href": "danl-hw/danl-210-hw-01.html#question-1c-dictionary-addupdateiterate",
-    "title": "Homework 1",
-    "section": "Question 1c (Dictionary: add/update/iterate)",
-    "text": "Question 1c (Dictionary: add/update/iterate)\nStart with:\nmenu_prices = {\"coffee\": 2.75, \"tea\": 2.25, \"sandwich\": 6.50}\n\nAdd \"cookie\": 1.50\nUpdate the price of \"coffee\" to 3.00\nPrint:\n\nall item names (keys)\nall prices (values)\neach (item, price) pair on its own line"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-2a-arithmetic-operators",
-    "href": "danl-hw/danl-210-hw-01.html#question-2a-arithmetic-operators",
-    "title": "Homework 1",
-    "section": "Question 2a (Arithmetic operators)",
-    "text": "Question 2a (Arithmetic operators)\nLet:\nx = 17\ny = 4\nCompute and print:\n\nx + y, x - y, x * y, x ** y, x / y, x // y, x % y"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-2b-operators-with-strings-and-lists",
-    "href": "danl-hw/danl-210-hw-01.html#question-2b-operators-with-strings-and-lists",
-    "title": "Homework 1",
-    "section": "Question 2b (Operators with strings and lists)",
-    "text": "Question 2b (Operators with strings and lists)\n\nUsing only + and *, build and print this exact string:\n\n\n\"Go Knights! Go Knights! Go Knights!\"\n\nYou may start with:\nchant = \"Go Knights!\"\n\nUsing only + and *, create a list that repeats [\"lab\", \"lecture\"] 4 times."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-2c-casting",
-    "href": "danl-hw/danl-210-hw-01.html#question-2c-casting",
-    "title": "Homework 1",
-    "section": "Question 2c (Casting)",
-    "text": "Question 2c (Casting)\nGiven:\npi_text = \"3.14159\"\n\nConvert pi_text to a float named pi_value.\nConvert pi_value to an integer named pi_int.\nPrint pi_text, pi_value, pi_int and their types."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-3a-print-value-type",
-    "href": "danl-hw/danl-210-hw-01.html#question-3a-print-value-type",
-    "title": "Homework 1",
-    "section": "Question 3a (Print value + type)",
-    "text": "Question 3a (Print value + type)\nGiven:\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\nUse a for loop to print each element and its type."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-3b-targeted-conversions",
-    "href": "danl-hw/danl-210-hw-01.html#question-3b-targeted-conversions",
-    "title": "Homework 1",
-    "section": "Question 3b (Targeted conversions)",
-    "text": "Question 3b (Targeted conversions)\nUsing mixed above, do the following conversions and print results + types:\n\nConvert the string \"42\" to an integer.\nConvert the integer 99 to a string.\nConvert False to an integer."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-4a-if-elif-else",
-    "href": "danl-hw/danl-210-hw-01.html#question-4a-if-elif-else",
-    "title": "Homework 1",
-    "section": "Question 4a (if-elif-else)",
-    "text": "Question 4a (if-elif-else)\nSet:\nscore = 83\nPrint:\n\n\"Fail\" if score &lt; 60\n\"Pass\" if 60 &lt;= score &lt; 80\n\"Great\" if 80 &lt;= score &lt; 95\n\"Perfect\" if score &gt;= 95"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-4b-nested-if",
-    "href": "danl-hw/danl-210-hw-01.html#question-4b-nested-if",
-    "title": "Homework 1",
-    "section": "Question 4b (Nested if)",
-    "text": "Question 4b (Nested if)\nSet:\nmembership = \"Gold\"\ntotal_spent = 120\nPrint:\n\n\"Free shipping\" if membership is \"Gold\" and total_spent &gt;= 100\n\"5% coupon\" if membership is \"Silver\" and total_spent &gt;= 100\n\"No perk\" otherwise"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-4c-in-membership-test-f-string",
-    "href": "danl-hw/danl-210-hw-01.html#question-4c-in-membership-test-f-string",
-    "title": "Homework 1",
-    "section": "Question 4c (in membership test + f-string)",
-    "text": "Question 4c (in membership test + f-string)\nGiven:\ncities = [\"Rochester\", \"Buffalo\", \"Syracuse\", \"Albany\"]\ntarget = \"Albany\"\nUse in to print:\n\n\"Albany is on the list!\" if present\notherwise \"Albany is not on the list.\"\n\n(Use an f-string.)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-4d-boolean-reasoning",
-    "href": "danl-hw/danl-210-hw-01.html#question-4d-boolean-reasoning",
-    "title": "Homework 1",
-    "section": "Question 4d (Boolean reasoning)",
-    "text": "Question 4d (Boolean reasoning)\nCompute and print the value of:\n\nnot (not False)\n7 == \"7\"\n(10 &gt; 3) and (2 &gt;= 2)\n(10 &lt; 3) or (2 == 2)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-5a-string-slicing",
-    "href": "danl-hw/danl-210-hw-01.html#question-5a-string-slicing",
-    "title": "Homework 1",
-    "section": "Question 5a (String slicing)",
-    "text": "Question 5a (String slicing)\nGiven:\nword = \"datascience\"\nPrint the result of each:\n\nword[:]\nword[4:]\nword[:4]\nword[:-3]\nword[2:8]\nword[::3]\nword[::-1]"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-5b-list-slicing",
-    "href": "danl-hw/danl-210-hw-01.html#question-5b-list-slicing",
-    "title": "Homework 1",
-    "section": "Question 5b (List slicing)",
-    "text": "Question 5b (List slicing)\nGiven:\nplaylist = [\"Intro\", \"Beat\", \"Chorus\", \"Bridge\", \"Solo\", \"Outro\"]\nPrint:\n\nthe first 3 items\nevery 2nd item starting from the beginning\nthe last 2 items\nthe list reversed (using slicing)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-5c-len-practice",
-    "href": "danl-hw/danl-210-hw-01.html#question-5c-len-practice",
-    "title": "Homework 1",
-    "section": "Question 5c (len() practice)",
-    "text": "Question 5c (len() practice)\nCompute and print:\n\nlen(\"machinelearning\")\nlen([10, 20, 30, 40])\nlen(playlist)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-6a-average-labels",
-    "href": "danl-hw/danl-210-hw-01.html#question-6a-average-labels",
-    "title": "Homework 1",
-    "section": "Question 6a (Average + labels)",
-    "text": "Question 6a (Average + labels)\nGiven:\ntemps = [32, 28, 30, 35, 27]\n\nCompute the average temperature.\nFor each temperature, print \"Above Avg\" if it is above average, otherwise \"Below Avg\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-6b-while-loop-savings",
-    "href": "danl-hw/danl-210-hw-01.html#question-6b-while-loop-savings",
-    "title": "Homework 1",
-    "section": "Question 6b (while loop: savings)",
-    "text": "Question 6b (while loop: savings)\nStart with:\nbalance = 150\nEach week you save 25. Use a while loop until the balance reaches or exceeds 300.\nPrint the balance each week."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-6c-range-patterns",
-    "href": "danl-hw/danl-210-hw-01.html#question-6c-range-patterns",
-    "title": "Homework 1",
-    "section": "Question 6c (range() patterns)",
-    "text": "Question 6c (range() patterns)\nUsing range(), create and print:\n\nintegers from 5 to 15\nmultiples of 3 from 0 to 30\ncountdown from 12 to 0"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-6d-enumerate-index-value",
-    "href": "danl-hw/danl-210-hw-01.html#question-6d-enumerate-index-value",
-    "title": "Homework 1",
-    "section": "Question 6d (enumerate() index + value)",
-    "text": "Question 6d (enumerate() index + value)\nGiven:\ntasks = [\"download\", \"open\", \"run\", \"submit\"]\nUse enumerate() to print each task with its step number starting at 1 like:\n\nStep 1: download"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-7a-list-comprehension-cubes",
-    "href": "danl-hw/danl-210-hw-01.html#question-7a-list-comprehension-cubes",
-    "title": "Homework 1",
-    "section": "Question 7a (List comprehension: cubes)",
-    "text": "Question 7a (List comprehension: cubes)\nUse list comprehension to create a list of cubes for 1 through 6.\nStore it in cubes and print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-7b-list-comprehension-filter",
-    "href": "danl-hw/danl-210-hw-01.html#question-7b-list-comprehension-filter",
-    "title": "Homework 1",
-    "section": "Question 7b (List comprehension: filter)",
-    "text": "Question 7b (List comprehension: filter)\nGiven:\nvals = [0, 5, 10, 0, 20, 0, 25]\nUse list comprehension to create a new list that removes all zeros."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-7c-dictionary-comprehension-length-of-words",
-    "href": "danl-hw/danl-210-hw-01.html#question-7c-dictionary-comprehension-length-of-words",
-    "title": "Homework 1",
-    "section": "Question 7c (Dictionary comprehension: length of words)",
-    "text": "Question 7c (Dictionary comprehension: length of words)\nGiven:\nwords = [\"data\", \"science\", \"python\", \"loop\"]\nUse dictionary comprehension to create a dictionary mapping each word to its length.\nPrint the dictionary."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-7d-modify-list-removekeepdelete",
-    "href": "danl-hw/danl-210-hw-01.html#question-7d-modify-list-removekeepdelete",
-    "title": "Homework 1",
-    "section": "Question 7d (Modify list: remove/keep/delete)",
-    "text": "Question 7d (Modify list: remove/keep/delete)\nGiven:\ntickets = [\"A\", \"B\", \"C\", \"B\", \"D\", \"B\"]\n\nRemove only the first \"B\" using .remove() and print the list.\nStarting from the original list again, remove all \"B\" values using list comprehension and print.\nStarting from the original list again, delete the middle two elements using del with slicing and print."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-7e-modify-dictionary-update-delete",
-    "href": "danl-hw/danl-210-hw-01.html#question-7e-modify-dictionary-update-delete",
-    "title": "Homework 1",
-    "section": "Question 7e (Modify dictionary: update + delete)",
-    "text": "Question 7e (Modify dictionary: update + delete)\nGiven:\ninventory = {\"pens\": 10, \"notebooks\": 5, \"erasers\": 2}\n\nAdd \"markers\": 4 using .update()\nChange \"pens\" to 12 using .update()\nDelete \"erasers\" using del\n\nPrint after each step."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-8a-division-safety",
-    "href": "danl-hw/danl-210-hw-01.html#question-8a-division-safety",
-    "title": "Homework 1",
-    "section": "Question 8a (Division safety)",
-    "text": "Question 8a (Division safety)\nGiven:\nnumerator = 24\ndenominator = 0\nUse try-except to attempt division. If an error occurs, print \"Division failed!\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-8b-convert-text-to-number",
-    "href": "danl-hw/danl-210-hw-01.html#question-8b-convert-text-to-number",
-    "title": "Homework 1",
-    "section": "Question 8b (Convert text to number)",
-    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer.\n\nIf conversion works, print the integer.\nIf it fails, print \"Not a number: oops\" (use the actual bad value)."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-8c-missing-values",
-    "href": "danl-hw/danl-210-hw-01.html#question-8c-missing-values",
-    "title": "Homework 1",
-    "section": "Question 8c (Missing values)",
-    "text": "Question 8c (Missing values)\nGiven:\nhours = {\"Mon\": 2, \"Tue\": None, \"Wed\": 3, \"Thu\": None, \"Fri\": 4}\nCompute the total of non-missing hours and print the total."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-8d-missing-dictionary-key",
-    "href": "danl-hw/danl-210-hw-01.html#question-8d-missing-dictionary-key",
-    "title": "Homework 1",
-    "section": "Question 8d (Missing dictionary key)",
-    "text": "Question 8d (Missing dictionary key)\nGiven:\ncapitals = {\"NY\": \"Albany\", \"CA\": \"Sacramento\"}\nTry to print capitals[\"TX\"]. Handle the error so the program prints \"State not found\"."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-9a-math",
-    "href": "danl-hw/danl-210-hw-01.html#question-9a-math",
-    "title": "Homework 1",
-    "section": "Question 9a (math)",
-    "text": "Question 9a (math)\nImport math and compute math.sqrt(144). Print the result."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-9b-import-...-as-...",
-    "href": "danl-hw/danl-210-hw-01.html#question-9b-import-...-as-...",
-    "title": "Homework 1",
-    "section": "Question 9b (import ... as ...)",
-    "text": "Question 9b (import ... as ...)\nImport math as m. Compute and print:\n\nm.sqrt(144)\nm.floor(9.99)\nm.ceil(9.01)"
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-9c-from-...-import-...",
-    "href": "danl-hw/danl-210-hw-01.html#question-9c-from-...-import-...",
-    "title": "Homework 1",
-    "section": "Question 9c (from ... import ...)",
-    "text": "Question 9c (from ... import ...)\nImport only ceil from math and compute ceil(12.2). Print it."
-  },
-  {
-    "objectID": "danl-hw/danl-210-hw-01.html#question-10-workout-summary",
-    "href": "danl-hw/danl-210-hw-01.html#question-10-workout-summary",
-    "title": "Homework 1",
-    "section": "Question 10 (Workout summary)",
-    "text": "Question 10 (Workout summary)\nYou are given:\nexercises = [\"pushups\", \"plank\", \"squats\", \"jog\"]\nminutes   = [10, 5, 12, 20]\nWrite code that:\n\nUses enumerate() to print:\n\n1) pushups\n2) plank\n…\n\nComputes the average minutes.\nFor each exercise, print a line like:\n\n\n\"squats: 12 min (Above Avg)\" or \"plank: 5 min (Below Avg)\" (Use f-strings.)\n\n\nCreate a dictionary exercise_to_minutes using dictionary comprehension.\nUse try/except to attempt to print exercise_to_minutes[\"stretch\"].\n\nIf missing, print \"stretch is not in the plan.\""
   }
 ]
