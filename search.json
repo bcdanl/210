@@ -1663,7 +1663,7 @@
     "href": "danl-hw/danl-210-hw-1.html#question-8b-convert-text-to-number",
     "title": "Homework 1",
     "section": "Question 8b (Convert text to number)",
-    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer. - If conversion works, print the integer. - If it fails, print \"Not a number: oops\" (use the actual bad value)."
+    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer.\n\nIf conversion works, print the integer.\nIf it fails, print \"Not a number: oops\" (use the actual bad value)."
   },
   {
     "objectID": "danl-hw/danl-210-hw-1.html#question-10-workout-summary",

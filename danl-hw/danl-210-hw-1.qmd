@@ -346,6 +346,7 @@ Given:
 entries = ["10", "8", "oops", "15"]
 ```
 Loop through `entries` and try to convert each to an integer.
+
 - If conversion works, print the integer.
 - If it fails, print `"Not a number: oops"` (use the actual bad value).
 
