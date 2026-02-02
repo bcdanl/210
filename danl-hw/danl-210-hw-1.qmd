@@ -1,0 +1,425 @@
+---
+title: Homework 1
+subtitle: Python Fundamentals
+date: 2026-02-01
+from: markdown+emoji
+execute: 
+  eval: false
+format:
+  html:
+    code-fold: true
+css: styles.css
+---
+
+# 📌 Directions
+
+- Download the **Homework 1 starter notebook** from **Brightspace** and complete your work **in that file**.
+  - Do **not** start from a blank notebook.
+- When finished, **rename** your file and submit it to Brightspace using this format:
+
+  - `danl-210-hw1-LASTNAME-FIRSTNAME.ipynb`  
+    (e.g., `danl-210-hw1-choe-byeonghak.ipynb`)
+
+- **Due:** **February 11, 2026, 10:30 A.M.**
+- Questions? Email Prof. Choe: <bchoe@geneseo.edu>
+
+---
+
+# ✅ Submission Rules
+
+1) Put your answers in the notebook.
+2) Use a Markdown cell for each label (e.g., `## Q3b`) and a code cell right below it.
+3) When asked to “print,” use `print(...)`.
+4) Do **not** use `pandas` yet.
+
+---
+
+<br><br>
+
+# 0) 🧑‍💻 Setup
+
+## Question 0a
+Create a variable named `github_username` (string) and print it.
+
+## Question 0b
+In one code cell, print:
+
+- your Python version (hint: `import sys`)
+- today’s date (hint: `import datetime`)
+
+---
+
+<br><br>
+
+
+# 1) 📦 Containers: List, Tuple, Dictionary
+
+## Question 1a (List edits)
+1) Create a list named `seat_numbers` containing integers **2 through 9**.
+2) Append `10`.
+3) Remove `6`.
+4) Print the final list.
+
+## Question 1b (Tuple: immutability)
+Create a tuple named `campus`:
+
+- `campus = ("SUNY Geneseo", 2026)`
+
+Then:
+
+1) Print the second element.
+2) Write one line of code that *tries* to change the year to 2027.
+3) In a Markdown cell, explain what happens and why.
+
+## Question 1c (Dictionary: add/update/iterate)
+Start with:
+
+```{.python}
+menu_prices = {"coffee": 2.75, "tea": 2.25, "sandwich": 6.50}
+```
+
+1) Add `"cookie": 1.50`
+2) Update the price of `"coffee"` to `3.00`
+3) Print:
+   - all item names (keys)
+   - all prices (values)
+   - each `(item, price)` pair on its own line
+
+---
+
+
+<br><br>
+
+# 2) ➕ Operators and Casting
+
+## Question 2a (Arithmetic operators)
+Let:
+```{.python}
+x = 17
+y = 4
+```
+Compute and print:
+
+- `x + y`, `x - y`, `x * y`, `x ** y`, `x / y`, `x // y`, `x % y`
+
+## Question 2b (Operators with strings and lists)
+1) Using only `+` and `*`, build and print this exact string:
+
+- `"Go Knights! Go Knights! Go Knights!"`
+
+You may start with:
+```{.python}
+chant = "Go Knights!"
+```
+
+2) Using only `+` and `*`, create a list that repeats `["lab", "lecture"]` **4 times**.
+
+## Question 2c (Casting)
+Given:
+```{.python}
+pi_text = "3.14159"
+```
+1) Convert `pi_text` to a float named `pi_value`.
+2) Convert `pi_value` to an integer named `pi_int`.
+3) Print `pi_text`, `pi_value`, `pi_int` and their types.
+
+---
+
+
+<br><br>
+
+# 3) 🔎 Types + Conversions Practice
+
+## Question 3a (Print value + type)
+Given:
+```{.python}
+mixed = ["42", 99, 0.5, False, None, {"course": "DANL 210"}, (1, 2, 3)]
+```
+Use a `for` loop to print each element and its type.
+
+## Question 3b (Targeted conversions)
+Using `mixed` above, do the following conversions and print results + types:
+
+- Convert the string `"42"` to an integer.
+- Convert the integer `99` to a string.
+- Convert `False` to an integer.
+
+---
+
+
+<br><br>
+
+# 4) ✅ Conditions, `in`, f-Strings, and `if` Chains
+
+## Question 4a (if-elif-else)
+Set:
+```{.python}
+score = 83
+```
+Print:
+
+- `"Fail"` if score < 60
+- `"Pass"` if 60 <= score < 80
+- `"Great"` if 80 <= score < 95
+- `"Perfect"` if score >= 95
+
+## Question 4b (Nested if)
+Set:
+```{.python}
+membership = "Gold"
+total_spent = 120
+```
+Print:
+
+- `"Free shipping"` if membership is `"Gold"` and total_spent >= 100
+- `"5% coupon"` if membership is `"Silver"` and total_spent >= 100
+- `"No perk"` otherwise
+
+## Question 4c (`in` membership test + f-string)
+Given:
+```{.python}
+cities = ["Rochester", "Buffalo", "Syracuse", "Albany"]
+target = "Albany"
+```
+Use `in` to print:
+
+- `"Albany is on the list!"` if present
+- otherwise `"Albany is not on the list."`
+
+(Use an f-string.)
+
+## Question 4d (Boolean reasoning)
+Compute and print the value of:
+
+- `not (not False)`
+- `7 == "7"`
+- `(10 > 3) and (2 >= 2)`
+- `(10 < 3) or (2 == 2)`
+
+---
+
+
+<br><br>
+
+# 5) ✂️ Slicing + `len()`
+
+## Question 5a (String slicing)
+Given:
+```{.python}
+word = "datascience"
+```
+Print the result of each:
+
+1) `word[:]`
+2) `word[4:]`
+3) `word[:4]`
+4) `word[:-3]`
+5) `word[2:8]`
+6) `word[::3]`
+7) `word[::-1]`
+
+## Question 5b (List slicing)
+Given:
+```{.python}
+playlist = ["Intro", "Beat", "Chorus", "Bridge", "Solo", "Outro"]
+```
+Print:
+
+1) the first 3 items
+2) every 2nd item starting from the beginning
+3) the last 2 items
+4) the list reversed (using slicing)
+
+## Question 5c (`len()` practice)
+Compute and print:
+
+- `len("machinelearning")`
+- `len([10, 20, 30, 40])`
+- `len(playlist)`
+
+---
+
+
+<br><br>
+
+# 6) 🔁 Loops: `for`, `while`, `range()`, `enumerate()`
+
+## Question 6a (Average + labels)
+Given:
+```{.python}
+temps = [32, 28, 30, 35, 27]
+```
+1) Compute the average temperature.
+2) For each temperature, print `"Above Avg"` if it is above average, otherwise `"Below Avg"`.
+
+## Question 6b (`while` loop: savings)
+Start with:
+```{.python}
+balance = 150
+```
+Each week you save `25`. Use a `while` loop until the balance **reaches or exceeds 300**.
+
+Print the balance each week.
+
+## Question 6c (`range()` patterns)
+Using `range()`, create and print:
+
+1) integers from 5 to 15
+2) multiples of 3 from 0 to 30
+3) countdown from 12 to 0
+
+## Question 6d (`enumerate()` index + value)
+Given:
+```{.python}
+tasks = ["download", "open", "run", "submit"]
+```
+Use `enumerate()` to print each task with its step number starting at 1 like:
+
+- `Step 1: download`
+
+---
+
+
+<br><br>
+
+# 7) 🧠 Comprehensions + Modifying Containers
+
+## Question 7a (List comprehension: cubes)
+Use list comprehension to create a list of cubes for 1 through 6.
+
+Store it in `cubes` and print it.
+
+## Question 7b (List comprehension: filter)
+Given:
+```{.python}
+vals = [0, 5, 10, 0, 20, 0, 25]
+```
+Use list comprehension to create a new list that removes all zeros.
+
+## Question 7c (Dictionary comprehension: length of words)
+Given:
+```{.python}
+words = ["data", "science", "python", "loop"]
+```
+Use dictionary comprehension to create a dictionary mapping each word to its length.
+
+Print the dictionary.
+
+## Question 7d (Modify list: remove/keep/delete)
+Given:
+```{.python}
+tickets = ["A", "B", "C", "B", "D", "B"]
+```
+1) Remove only the first `"B"` using `.remove()` and print the list.
+2) Starting from the original list again, remove *all* `"B"` values using list comprehension and print.
+3) Starting from the original list again, delete the middle two elements using `del` with slicing and print.
+
+## Question 7e (Modify dictionary: update + delete)
+Given:
+```{.python}
+inventory = {"pens": 10, "notebooks": 5, "erasers": 2}
+```
+1) Add `"markers": 4` using `.update()`
+2) Change `"pens"` to 12 using `.update()`
+3) Delete `"erasers"` using `del`
+
+Print after each step.
+
+---
+
+
+<br><br>
+
+# 8) 🧯 Exceptions: `try-except`
+
+## Question 8a (Division safety)
+Given:
+```{.python}
+numerator = 24
+denominator = 0
+```
+Use `try-except` to attempt division. If an error occurs, print `"Division failed!"`.
+
+## Question 8b (Convert text to number)
+Given:
+```{.python}
+entries = ["10", "8", "oops", "15"]
+```
+Loop through `entries` and try to convert each to an integer.
+- If conversion works, print the integer.
+- If it fails, print `"Not a number: oops"` (use the actual bad value).
+
+## Question 8c (Missing values)
+Given:
+```{.python}
+hours = {"Mon": 2, "Tue": None, "Wed": 3, "Thu": None, "Fri": 4}
+```
+Compute the total of non-missing hours and print the total.
+
+## Question 8d (Missing dictionary key)
+Given:
+```{.python}
+capitals = {"NY": "Albany", "CA": "Sacramento"}
+```
+Try to print `capitals["TX"]`. Handle the error so the program prints `"State not found"`.
+
+---
+
+
+<br><br>
+
+# 9) 📚 Imports (Modules / Packages)
+
+## Question 9a (`math`)
+Import `math` and compute `math.sqrt(144)`. Print the result.
+
+## Question 9b (`import ... as ...`)
+Import `math` as `m`. Compute and print:
+
+- `m.sqrt(144)`
+- `m.floor(9.99)`
+- `m.ceil(9.01)`
+
+## Question 9c (`from ... import ...`)
+Import only `ceil` from `math` and compute `ceil(12.2)`. Print it.
+
+
+---
+
+
+<br><br>
+
+# 10) 🧩 Mini Task: Put It All Together
+
+## Question 10 (Workout summary)
+You are given:
+
+```{.python}
+exercises = ["pushups", "plank", "squats", "jog"]
+minutes   = [10, 5, 12, 20]
+```
+
+Write code that:
+
+1) Uses `enumerate()` to print:
+
+   - `1) pushups`
+   - `2) plank`
+   - ...
+
+2) Computes the average minutes.
+
+3) For each exercise, print a line like:
+
+- `"squats: 12 min (Above Avg)"` or `"plank: 5 min (Below Avg)"`
+(Use f-strings.)
+
+4) Create a dictionary `exercise_to_minutes` using dictionary comprehension.
+
+5) Use `try/except` to attempt to print `exercise_to_minutes["stretch"]`.
+
+   - If missing, print `"stretch is not in the plan."`
+
+---
+
+# ✅ End of Homework 1

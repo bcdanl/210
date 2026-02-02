@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2026-02-01">
+
+<title>Homework 1 | Byeong-Hak Choe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Homework 1 | Byeong-Hak Choe">
+<meta property="og:description" content="Python Fundamentals">
+<meta property="og:image" content="/assets/img/posts.png">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/bcdanl/210-code" rel="" target="_blank"><i class="bi bi-code-slash" role="img">
+</i> 
+ <span class="menu-text">Class Code</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Homework 1</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🏠 Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📓 Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://mylearning.suny.edu/d2l/home/2533587" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
+ <span class="menu-text">🅱 Brightspace</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://colab.research.google.com/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
+ <span class="menu-text">🟧 Google Colab</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📑 Lecture (PDF)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Lecture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">⌨️ Classwork</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">💻 Homework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📝 Exams</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">🗣️️ Project</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">🗓️ Weeks</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#directions" id="toc-directions" class="nav-link active" data-scroll-target="#directions">📌 Directions</a></li>
+  <li><a href="#submission-rules" id="toc-submission-rules" class="nav-link" data-scroll-target="#submission-rules">✅ Submission Rules</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">0) 🧑‍💻 Setup</a>
+  <ul>
+  <li><a href="#question-0a" id="toc-question-0a" class="nav-link" data-scroll-target="#question-0a">Question 0a</a></li>
+  <li><a href="#question-0b" id="toc-question-0b" class="nav-link" data-scroll-target="#question-0b">Question 0b</a></li>
+  </ul></li>
+  <li><a href="#containers-list-tuple-dictionary" id="toc-containers-list-tuple-dictionary" class="nav-link" data-scroll-target="#containers-list-tuple-dictionary">1) 📦 Containers: List, Tuple, Dictionary</a>
+  <ul>
+  <li><a href="#question-1a-list-edits" id="toc-question-1a-list-edits" class="nav-link" data-scroll-target="#question-1a-list-edits">Question 1a (List edits)</a></li>
+  <li><a href="#question-1b-tuple-immutability" id="toc-question-1b-tuple-immutability" class="nav-link" data-scroll-target="#question-1b-tuple-immutability">Question 1b (Tuple: immutability)</a></li>
+  <li><a href="#question-1c-dictionary-addupdateiterate" id="toc-question-1c-dictionary-addupdateiterate" class="nav-link" data-scroll-target="#question-1c-dictionary-addupdateiterate">Question 1c (Dictionary: add/update/iterate)</a></li>
+  </ul></li>
+  <li><a href="#operators-and-casting" id="toc-operators-and-casting" class="nav-link" data-scroll-target="#operators-and-casting">2) ➕ Operators and Casting</a>
+  <ul>
+  <li><a href="#question-2a-arithmetic-operators" id="toc-question-2a-arithmetic-operators" class="nav-link" data-scroll-target="#question-2a-arithmetic-operators">Question 2a (Arithmetic operators)</a></li>
+  <li><a href="#question-2b-operators-with-strings-and-lists" id="toc-question-2b-operators-with-strings-and-lists" class="nav-link" data-scroll-target="#question-2b-operators-with-strings-and-lists">Question 2b (Operators with strings and lists)</a></li>
+  <li><a href="#question-2c-casting" id="toc-question-2c-casting" class="nav-link" data-scroll-target="#question-2c-casting">Question 2c (Casting)</a></li>
+  </ul></li>
+  <li><a href="#types-conversions-practice" id="toc-types-conversions-practice" class="nav-link" data-scroll-target="#types-conversions-practice">3) 🔎 Types + Conversions Practice</a>
+  <ul>
+  <li><a href="#question-3a-print-value-type" id="toc-question-3a-print-value-type" class="nav-link" data-scroll-target="#question-3a-print-value-type">Question 3a (Print value + type)</a></li>
+  <li><a href="#question-3b-targeted-conversions" id="toc-question-3b-targeted-conversions" class="nav-link" data-scroll-target="#question-3b-targeted-conversions">Question 3b (Targeted conversions)</a></li>
+  </ul></li>
+  <li><a href="#conditions-in-f-strings-and-if-chains" id="toc-conditions-in-f-strings-and-if-chains" class="nav-link" data-scroll-target="#conditions-in-f-strings-and-if-chains">4) ✅ Conditions, <code>in</code>, f-Strings, and <code>if</code> Chains</a>
+  <ul>
+  <li><a href="#question-4a-if-elif-else" id="toc-question-4a-if-elif-else" class="nav-link" data-scroll-target="#question-4a-if-elif-else">Question 4a (if-elif-else)</a></li>
+  <li><a href="#question-4b-nested-if" id="toc-question-4b-nested-if" class="nav-link" data-scroll-target="#question-4b-nested-if">Question 4b (Nested if)</a></li>
+  <li><a href="#question-4c-in-membership-test-f-string" id="toc-question-4c-in-membership-test-f-string" class="nav-link" data-scroll-target="#question-4c-in-membership-test-f-string">Question 4c (<code>in</code> membership test + f-string)</a></li>
+  <li><a href="#question-4d-boolean-reasoning" id="toc-question-4d-boolean-reasoning" class="nav-link" data-scroll-target="#question-4d-boolean-reasoning">Question 4d (Boolean reasoning)</a></li>
+  </ul></li>
+  <li><a href="#slicing-len" id="toc-slicing-len" class="nav-link" data-scroll-target="#slicing-len">5) ✂️ Slicing + <code>len()</code></a>
+  <ul>
+  <li><a href="#question-5a-string-slicing" id="toc-question-5a-string-slicing" class="nav-link" data-scroll-target="#question-5a-string-slicing">Question 5a (String slicing)</a></li>
+  <li><a href="#question-5b-list-slicing" id="toc-question-5b-list-slicing" class="nav-link" data-scroll-target="#question-5b-list-slicing">Question 5b (List slicing)</a></li>
+  <li><a href="#question-5c-len-practice" id="toc-question-5c-len-practice" class="nav-link" data-scroll-target="#question-5c-len-practice">Question 5c (<code>len()</code> practice)</a></li>
+  </ul></li>
+  <li><a href="#loops-for-while-range-enumerate" id="toc-loops-for-while-range-enumerate" class="nav-link" data-scroll-target="#loops-for-while-range-enumerate">6) 🔁 Loops: <code>for</code>, <code>while</code>, <code>range()</code>, <code>enumerate()</code></a>
+  <ul>
+  <li><a href="#question-6a-average-labels" id="toc-question-6a-average-labels" class="nav-link" data-scroll-target="#question-6a-average-labels">Question 6a (Average + labels)</a></li>
+  <li><a href="#question-6b-while-loop-savings" id="toc-question-6b-while-loop-savings" class="nav-link" data-scroll-target="#question-6b-while-loop-savings">Question 6b (<code>while</code> loop: savings)</a></li>
+  <li><a href="#question-6c-range-patterns" id="toc-question-6c-range-patterns" class="nav-link" data-scroll-target="#question-6c-range-patterns">Question 6c (<code>range()</code> patterns)</a></li>
+  <li><a href="#question-6d-enumerate-index-value" id="toc-question-6d-enumerate-index-value" class="nav-link" data-scroll-target="#question-6d-enumerate-index-value">Question 6d (<code>enumerate()</code> index + value)</a></li>
+  </ul></li>
+  <li><a href="#comprehensions-modifying-containers" id="toc-comprehensions-modifying-containers" class="nav-link" data-scroll-target="#comprehensions-modifying-containers">7) 🧠 Comprehensions + Modifying Containers</a>
+  <ul>
+  <li><a href="#question-7a-list-comprehension-cubes" id="toc-question-7a-list-comprehension-cubes" class="nav-link" data-scroll-target="#question-7a-list-comprehension-cubes">Question 7a (List comprehension: cubes)</a></li>
+  <li><a href="#question-7b-list-comprehension-filter" id="toc-question-7b-list-comprehension-filter" class="nav-link" data-scroll-target="#question-7b-list-comprehension-filter">Question 7b (List comprehension: filter)</a></li>
+  <li><a href="#question-7c-dictionary-comprehension-length-of-words" id="toc-question-7c-dictionary-comprehension-length-of-words" class="nav-link" data-scroll-target="#question-7c-dictionary-comprehension-length-of-words">Question 7c (Dictionary comprehension: length of words)</a></li>
+  <li><a href="#question-7d-modify-list-removekeepdelete" id="toc-question-7d-modify-list-removekeepdelete" class="nav-link" data-scroll-target="#question-7d-modify-list-removekeepdelete">Question 7d (Modify list: remove/keep/delete)</a></li>
+  <li><a href="#question-7e-modify-dictionary-update-delete" id="toc-question-7e-modify-dictionary-update-delete" class="nav-link" data-scroll-target="#question-7e-modify-dictionary-update-delete">Question 7e (Modify dictionary: update + delete)</a></li>
+  </ul></li>
+  <li><a href="#exceptions-try-except" id="toc-exceptions-try-except" class="nav-link" data-scroll-target="#exceptions-try-except">8) 🧯 Exceptions: <code>try-except</code></a>
+  <ul>
+  <li><a href="#question-8a-division-safety" id="toc-question-8a-division-safety" class="nav-link" data-scroll-target="#question-8a-division-safety">Question 8a (Division safety)</a></li>
+  <li><a href="#question-8b-convert-text-to-number" id="toc-question-8b-convert-text-to-number" class="nav-link" data-scroll-target="#question-8b-convert-text-to-number">Question 8b (Convert text to number)</a></li>
+  <li><a href="#question-8c-missing-values" id="toc-question-8c-missing-values" class="nav-link" data-scroll-target="#question-8c-missing-values">Question 8c (Missing values)</a></li>
+  <li><a href="#question-8d-missing-dictionary-key" id="toc-question-8d-missing-dictionary-key" class="nav-link" data-scroll-target="#question-8d-missing-dictionary-key">Question 8d (Missing dictionary key)</a></li>
+  </ul></li>
+  <li><a href="#imports-modules-packages" id="toc-imports-modules-packages" class="nav-link" data-scroll-target="#imports-modules-packages">9) 📚 Imports (Modules / Packages)</a>
+  <ul>
+  <li><a href="#question-9a-math" id="toc-question-9a-math" class="nav-link" data-scroll-target="#question-9a-math">Question 9a (<code>math</code>)</a></li>
+  <li><a href="#question-9b-import-...-as-..." id="toc-question-9b-import-...-as-..." class="nav-link" data-scroll-target="#question-9b-import-...-as-...">Question 9b (<code>import ... as ...</code>)</a></li>
+  <li><a href="#question-9c-from-...-import-..." id="toc-question-9c-from-...-import-..." class="nav-link" data-scroll-target="#question-9c-from-...-import-...">Question 9c (<code>from ... import ...</code>)</a></li>
+  </ul></li>
+  <li><a href="#mini-task-put-it-all-together" id="toc-mini-task-put-it-all-together" class="nav-link" data-scroll-target="#mini-task-put-it-all-together">10) 🧩 Mini Task: Put It All Together</a>
+  <ul>
+  <li><a href="#question-10-workout-summary" id="toc-question-10-workout-summary" class="nav-link" data-scroll-target="#question-10-workout-summary">Question 10 (Workout summary)</a></li>
+  </ul></li>
+  <li><a href="#end-of-homework-1" id="toc-end-of-homework-1" class="nav-link" data-scroll-target="#end-of-homework-1">✅ End of Homework 1</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 1</h1>
+<p class="subtitle lead">Python Fundamentals</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Byeong-Hak Choe </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 1, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">February 1, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="directions" class="level1">
+<h1>📌 Directions</h1>
+<ul>
+<li><p>Download the <strong>Homework 1 starter notebook</strong> from <strong>Brightspace</strong> and complete your work <strong>in that file</strong>.</p>
+<ul>
+<li>Do <strong>not</strong> start from a blank notebook.</li>
+</ul></li>
+<li><p>When finished, <strong>rename</strong> your file and submit it to Brightspace using this format:</p>
+<ul>
+<li><code>danl-210-hw1-LASTNAME-FIRSTNAME.ipynb</code><br>
+(e.g., <code>danl-210-hw1-choe-byeonghak.ipynb</code>)</li>
+</ul></li>
+<li><p><strong>Due:</strong> <strong>February 11, 2026, 10:30 A.M.</strong></p></li>
+<li><p>Questions? Email Prof.&nbsp;Choe: <a href="mailto:bchoe@geneseo.edu" class="email">bchoe@geneseo.edu</a></p></li>
+</ul>
+<hr>
+</section>
+<section id="submission-rules" class="level1">
+<h1>✅ Submission Rules</h1>
+<ol type="1">
+<li>Put your answers in the notebook.</li>
+<li>Use a Markdown cell for each label (e.g., <code>## Q3b</code>) and a code cell right below it.</li>
+<li>When asked to “print,” use <code>print(...)</code>.</li>
+<li>Do <strong>not</strong> use <code>pandas</code> yet.</li>
+</ol>
+<hr>
+<p><br><br></p>
+</section>
+<section id="setup" class="level1">
+<h1>0) 🧑‍💻 Setup</h1>
+<section id="question-0a" class="level2">
+<h2 class="anchored" data-anchor-id="question-0a">Question 0a</h2>
+<p>Create a variable named <code>github_username</code> (string) and print it.</p>
+</section>
+<section id="question-0b" class="level2">
+<h2 class="anchored" data-anchor-id="question-0b">Question 0b</h2>
+<p>In one code cell, print:</p>
+<ul>
+<li>your Python version (hint: <code>import sys</code>)</li>
+<li>today’s date (hint: <code>import datetime</code>)</li>
+</ul>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="containers-list-tuple-dictionary" class="level1">
+<h1>1) 📦 Containers: List, Tuple, Dictionary</h1>
+<section id="question-1a-list-edits" class="level2">
+<h2 class="anchored" data-anchor-id="question-1a-list-edits">Question 1a (List edits)</h2>
+<ol type="1">
+<li>Create a list named <code>seat_numbers</code> containing integers <strong>2 through 9</strong>.</li>
+<li>Append <code>10</code>.</li>
+<li>Remove <code>6</code>.</li>
+<li>Print the final list.</li>
+</ol>
+</section>
+<section id="question-1b-tuple-immutability" class="level2">
+<h2 class="anchored" data-anchor-id="question-1b-tuple-immutability">Question 1b (Tuple: immutability)</h2>
+<p>Create a tuple named <code>campus</code>:</p>
+<ul>
+<li><code>campus = ("SUNY Geneseo", 2026)</code></li>
+</ul>
+<p>Then:</p>
+<ol type="1">
+<li>Print the second element.</li>
+<li>Write one line of code that <em>tries</em> to change the year to 2027.</li>
+<li>In a Markdown cell, explain what happens and why.</li>
+</ol>
+</section>
+<section id="question-1c-dictionary-addupdateiterate" class="level2">
+<h2 class="anchored" data-anchor-id="question-1c-dictionary-addupdateiterate">Question 1c (Dictionary: add/update/iterate)</h2>
+<p>Start with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>menu_prices <span class="op">=</span> {<span class="st">"coffee"</span>: <span class="fl">2.75</span>, <span class="st">"tea"</span>: <span class="fl">2.25</span>, <span class="st">"sandwich"</span>: <span class="fl">6.50</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Add <code>"cookie": 1.50</code></li>
+<li>Update the price of <code>"coffee"</code> to <code>3.00</code></li>
+<li>Print:
+<ul>
+<li>all item names (keys)</li>
+<li>all prices (values)</li>
+<li>each <code>(item, price)</code> pair on its own line</li>
+</ul></li>
+</ol>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="operators-and-casting" class="level1">
+<h1>2) ➕ Operators and Casting</h1>
+<section id="question-2a-arithmetic-operators" class="level2">
+<h2 class="anchored" data-anchor-id="question-2a-arithmetic-operators">Question 2a (Arithmetic operators)</h2>
+<p>Let:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">17</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Compute and print:</p>
+<ul>
+<li><code>x + y</code>, <code>x - y</code>, <code>x * y</code>, <code>x ** y</code>, <code>x / y</code>, <code>x // y</code>, <code>x % y</code></li>
+</ul>
+</section>
+<section id="question-2b-operators-with-strings-and-lists" class="level2">
+<h2 class="anchored" data-anchor-id="question-2b-operators-with-strings-and-lists">Question 2b (Operators with strings and lists)</h2>
+<ol type="1">
+<li>Using only <code>+</code> and <code>*</code>, build and print this exact string:</li>
+</ol>
+<ul>
+<li><code>"Go Knights! Go Knights! Go Knights!"</code></li>
+</ul>
+<p>You may start with:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>chant <span class="op">=</span> <span class="st">"Go Knights!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Using only <code>+</code> and <code>*</code>, create a list that repeats <code>["lab", "lecture"]</code> <strong>4 times</strong>.</li>
+</ol>
+</section>
+<section id="question-2c-casting" class="level2">
+<h2 class="anchored" data-anchor-id="question-2c-casting">Question 2c (Casting)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pi_text <span class="op">=</span> <span class="st">"3.14159"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Convert <code>pi_text</code> to a float named <code>pi_value</code>.</li>
+<li>Convert <code>pi_value</code> to an integer named <code>pi_int</code>.</li>
+<li>Print <code>pi_text</code>, <code>pi_value</code>, <code>pi_int</code> and their types.</li>
+</ol>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="types-conversions-practice" class="level1">
+<h1>3) 🔎 Types + Conversions Practice</h1>
+<section id="question-3a-print-value-type" class="level2">
+<h2 class="anchored" data-anchor-id="question-3a-print-value-type">Question 3a (Print value + type)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mixed <span class="op">=</span> [<span class="st">"42"</span>, <span class="dv">99</span>, <span class="fl">0.5</span>, <span class="va">False</span>, <span class="va">None</span>, {<span class="st">"course"</span>: <span class="st">"DANL 210"</span>}, (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use a <code>for</code> loop to print each element and its type.</p>
+</section>
+<section id="question-3b-targeted-conversions" class="level2">
+<h2 class="anchored" data-anchor-id="question-3b-targeted-conversions">Question 3b (Targeted conversions)</h2>
+<p>Using <code>mixed</code> above, do the following conversions and print results + types:</p>
+<ul>
+<li>Convert the string <code>"42"</code> to an integer.</li>
+<li>Convert the integer <code>99</code> to a string.</li>
+<li>Convert <code>False</code> to an integer.</li>
+</ul>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="conditions-in-f-strings-and-if-chains" class="level1">
+<h1>4) ✅ Conditions, <code>in</code>, f-Strings, and <code>if</code> Chains</h1>
+<section id="question-4a-if-elif-else" class="level2">
+<h2 class="anchored" data-anchor-id="question-4a-if-elif-else">Question 4a (if-elif-else)</h2>
+<p>Set:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">83</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Print:</p>
+<ul>
+<li><code>"Fail"</code> if score &lt; 60</li>
+<li><code>"Pass"</code> if 60 &lt;= score &lt; 80</li>
+<li><code>"Great"</code> if 80 &lt;= score &lt; 95</li>
+<li><code>"Perfect"</code> if score &gt;= 95</li>
+</ul>
+</section>
+<section id="question-4b-nested-if" class="level2">
+<h2 class="anchored" data-anchor-id="question-4b-nested-if">Question 4b (Nested if)</h2>
+<p>Set:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>membership <span class="op">=</span> <span class="st">"Gold"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>total_spent <span class="op">=</span> <span class="dv">120</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Print:</p>
+<ul>
+<li><code>"Free shipping"</code> if membership is <code>"Gold"</code> and total_spent &gt;= 100</li>
+<li><code>"5% coupon"</code> if membership is <code>"Silver"</code> and total_spent &gt;= 100</li>
+<li><code>"No perk"</code> otherwise</li>
+</ul>
+</section>
+<section id="question-4c-in-membership-test-f-string" class="level2">
+<h2 class="anchored" data-anchor-id="question-4c-in-membership-test-f-string">Question 4c (<code>in</code> membership test + f-string)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> [<span class="st">"Rochester"</span>, <span class="st">"Buffalo"</span>, <span class="st">"Syracuse"</span>, <span class="st">"Albany"</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">"Albany"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use <code>in</code> to print:</p>
+<ul>
+<li><code>"Albany is on the list!"</code> if present</li>
+<li>otherwise <code>"Albany is not on the list."</code></li>
+</ul>
+<p>(Use an f-string.)</p>
+</section>
+<section id="question-4d-boolean-reasoning" class="level2">
+<h2 class="anchored" data-anchor-id="question-4d-boolean-reasoning">Question 4d (Boolean reasoning)</h2>
+<p>Compute and print the value of:</p>
+<ul>
+<li><code>not (not False)</code></li>
+<li><code>7 == "7"</code></li>
+<li><code>(10 &gt; 3) and (2 &gt;= 2)</code></li>
+<li><code>(10 &lt; 3) or (2 == 2)</code></li>
+</ul>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="slicing-len" class="level1">
+<h1>5) ✂️ Slicing + <code>len()</code></h1>
+<section id="question-5a-string-slicing" class="level2">
+<h2 class="anchored" data-anchor-id="question-5a-string-slicing">Question 5a (String slicing)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"datascience"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Print the result of each:</p>
+<ol type="1">
+<li><code>word[:]</code></li>
+<li><code>word[4:]</code></li>
+<li><code>word[:4]</code></li>
+<li><code>word[:-3]</code></li>
+<li><code>word[2:8]</code></li>
+<li><code>word[::3]</code></li>
+<li><code>word[::-1]</code></li>
+</ol>
+</section>
+<section id="question-5b-list-slicing" class="level2">
+<h2 class="anchored" data-anchor-id="question-5b-list-slicing">Question 5b (List slicing)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>playlist <span class="op">=</span> [<span class="st">"Intro"</span>, <span class="st">"Beat"</span>, <span class="st">"Chorus"</span>, <span class="st">"Bridge"</span>, <span class="st">"Solo"</span>, <span class="st">"Outro"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Print:</p>
+<ol type="1">
+<li>the first 3 items</li>
+<li>every 2nd item starting from the beginning</li>
+<li>the last 2 items</li>
+<li>the list reversed (using slicing)</li>
+</ol>
+</section>
+<section id="question-5c-len-practice" class="level2">
+<h2 class="anchored" data-anchor-id="question-5c-len-practice">Question 5c (<code>len()</code> practice)</h2>
+<p>Compute and print:</p>
+<ul>
+<li><code>len("machinelearning")</code></li>
+<li><code>len([10, 20, 30, 40])</code></li>
+<li><code>len(playlist)</code></li>
+</ul>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="loops-for-while-range-enumerate" class="level1">
+<h1>6) 🔁 Loops: <code>for</code>, <code>while</code>, <code>range()</code>, <code>enumerate()</code></h1>
+<section id="question-6a-average-labels" class="level2">
+<h2 class="anchored" data-anchor-id="question-6a-average-labels">Question 6a (Average + labels)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>temps <span class="op">=</span> [<span class="dv">32</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">27</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Compute the average temperature.</li>
+<li>For each temperature, print <code>"Above Avg"</code> if it is above average, otherwise <code>"Below Avg"</code>.</li>
+</ol>
+</section>
+<section id="question-6b-while-loop-savings" class="level2">
+<h2 class="anchored" data-anchor-id="question-6b-while-loop-savings">Question 6b (<code>while</code> loop: savings)</h2>
+<p>Start with:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>balance <span class="op">=</span> <span class="dv">150</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each week you save <code>25</code>. Use a <code>while</code> loop until the balance <strong>reaches or exceeds 300</strong>.</p>
+<p>Print the balance each week.</p>
+</section>
+<section id="question-6c-range-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="question-6c-range-patterns">Question 6c (<code>range()</code> patterns)</h2>
+<p>Using <code>range()</code>, create and print:</p>
+<ol type="1">
+<li>integers from 5 to 15</li>
+<li>multiples of 3 from 0 to 30</li>
+<li>countdown from 12 to 0</li>
+</ol>
+</section>
+<section id="question-6d-enumerate-index-value" class="level2">
+<h2 class="anchored" data-anchor-id="question-6d-enumerate-index-value">Question 6d (<code>enumerate()</code> index + value)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tasks <span class="op">=</span> [<span class="st">"download"</span>, <span class="st">"open"</span>, <span class="st">"run"</span>, <span class="st">"submit"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use <code>enumerate()</code> to print each task with its step number starting at 1 like:</p>
+<ul>
+<li><code>Step 1: download</code></li>
+</ul>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="comprehensions-modifying-containers" class="level1">
+<h1>7) 🧠 Comprehensions + Modifying Containers</h1>
+<section id="question-7a-list-comprehension-cubes" class="level2">
+<h2 class="anchored" data-anchor-id="question-7a-list-comprehension-cubes">Question 7a (List comprehension: cubes)</h2>
+<p>Use list comprehension to create a list of cubes for 1 through 6.</p>
+<p>Store it in <code>cubes</code> and print it.</p>
+</section>
+<section id="question-7b-list-comprehension-filter" class="level2">
+<h2 class="anchored" data-anchor-id="question-7b-list-comprehension-filter">Question 7b (List comprehension: filter)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vals <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">25</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use list comprehension to create a new list that removes all zeros.</p>
+</section>
+<section id="question-7c-dictionary-comprehension-length-of-words" class="level2">
+<h2 class="anchored" data-anchor-id="question-7c-dictionary-comprehension-length-of-words">Question 7c (Dictionary comprehension: length of words)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"data"</span>, <span class="st">"science"</span>, <span class="st">"python"</span>, <span class="st">"loop"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use dictionary comprehension to create a dictionary mapping each word to its length.</p>
+<p>Print the dictionary.</p>
+</section>
+<section id="question-7d-modify-list-removekeepdelete" class="level2">
+<h2 class="anchored" data-anchor-id="question-7d-modify-list-removekeepdelete">Question 7d (Modify list: remove/keep/delete)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>tickets <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"D"</span>, <span class="st">"B"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Remove only the first <code>"B"</code> using <code>.remove()</code> and print the list.</li>
+<li>Starting from the original list again, remove <em>all</em> <code>"B"</code> values using list comprehension and print.</li>
+<li>Starting from the original list again, delete the middle two elements using <code>del</code> with slicing and print.</li>
+</ol>
+</section>
+<section id="question-7e-modify-dictionary-update-delete" class="level2">
+<h2 class="anchored" data-anchor-id="question-7e-modify-dictionary-update-delete">Question 7e (Modify dictionary: update + delete)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>inventory <span class="op">=</span> {<span class="st">"pens"</span>: <span class="dv">10</span>, <span class="st">"notebooks"</span>: <span class="dv">5</span>, <span class="st">"erasers"</span>: <span class="dv">2</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Add <code>"markers": 4</code> using <code>.update()</code></li>
+<li>Change <code>"pens"</code> to 12 using <code>.update()</code></li>
+<li>Delete <code>"erasers"</code> using <code>del</code></li>
+</ol>
+<p>Print after each step.</p>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="exceptions-try-except" class="level1">
+<h1>8) 🧯 Exceptions: <code>try-except</code></h1>
+<section id="question-8a-division-safety" class="level2">
+<h2 class="anchored" data-anchor-id="question-8a-division-safety">Question 8a (Division safety)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>numerator <span class="op">=</span> <span class="dv">24</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>denominator <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use <code>try-except</code> to attempt division. If an error occurs, print <code>"Division failed!"</code>.</p>
+</section>
+<section id="question-8b-convert-text-to-number" class="level2">
+<h2 class="anchored" data-anchor-id="question-8b-convert-text-to-number">Question 8b (Convert text to number)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> [<span class="st">"10"</span>, <span class="st">"8"</span>, <span class="st">"oops"</span>, <span class="st">"15"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Loop through <code>entries</code> and try to convert each to an integer. - If conversion works, print the integer. - If it fails, print <code>"Not a number: oops"</code> (use the actual bad value).</p>
+</section>
+<section id="question-8c-missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="question-8c-missing-values">Question 8c (Missing values)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>hours <span class="op">=</span> {<span class="st">"Mon"</span>: <span class="dv">2</span>, <span class="st">"Tue"</span>: <span class="va">None</span>, <span class="st">"Wed"</span>: <span class="dv">3</span>, <span class="st">"Thu"</span>: <span class="va">None</span>, <span class="st">"Fri"</span>: <span class="dv">4</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Compute the total of non-missing hours and print the total.</p>
+</section>
+<section id="question-8d-missing-dictionary-key" class="level2">
+<h2 class="anchored" data-anchor-id="question-8d-missing-dictionary-key">Question 8d (Missing dictionary key)</h2>
+<p>Given:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>capitals <span class="op">=</span> {<span class="st">"NY"</span>: <span class="st">"Albany"</span>, <span class="st">"CA"</span>: <span class="st">"Sacramento"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Try to print <code>capitals["TX"]</code>. Handle the error so the program prints <code>"State not found"</code>.</p>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="imports-modules-packages" class="level1">
+<h1>9) 📚 Imports (Modules / Packages)</h1>
+<section id="question-9a-math" class="level2">
+<h2 class="anchored" data-anchor-id="question-9a-math">Question 9a (<code>math</code>)</h2>
+<p>Import <code>math</code> and compute <code>math.sqrt(144)</code>. Print the result.</p>
+</section>
+<section id="question-9b-import-...-as-..." class="level2">
+<h2 class="anchored" data-anchor-id="question-9b-import-...-as-...">Question 9b (<code>import ... as ...</code>)</h2>
+<p>Import <code>math</code> as <code>m</code>. Compute and print:</p>
+<ul>
+<li><code>m.sqrt(144)</code></li>
+<li><code>m.floor(9.99)</code></li>
+<li><code>m.ceil(9.01)</code></li>
+</ul>
+</section>
+<section id="question-9c-from-...-import-..." class="level2">
+<h2 class="anchored" data-anchor-id="question-9c-from-...-import-...">Question 9c (<code>from ... import ...</code>)</h2>
+<p>Import only <code>ceil</code> from <code>math</code> and compute <code>ceil(12.2)</code>. Print it.</p>
+<hr>
+<p><br><br></p>
+</section>
+</section>
+<section id="mini-task-put-it-all-together" class="level1">
+<h1>10) 🧩 Mini Task: Put It All Together</h1>
+<section id="question-10-workout-summary" class="level2">
+<h2 class="anchored" data-anchor-id="question-10-workout-summary">Question 10 (Workout summary)</h2>
+<p>You are given:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>exercises <span class="op">=</span> [<span class="st">"pushups"</span>, <span class="st">"plank"</span>, <span class="st">"squats"</span>, <span class="st">"jog"</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>minutes   <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">20</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Write code that:</p>
+<ol type="1">
+<li><p>Uses <code>enumerate()</code> to print:</p>
+<ul>
+<li><code>1) pushups</code></li>
+<li><code>2) plank</code></li>
+<li>…</li>
+</ul></li>
+<li><p>Computes the average minutes.</p></li>
+<li><p>For each exercise, print a line like:</p></li>
+</ol>
+<ul>
+<li><code>"squats: 12 min (Above Avg)"</code> or <code>"plank: 5 min (Below Avg)"</code> (Use f-strings.)</li>
+</ul>
+<ol start="4" type="1">
+<li><p>Create a dictionary <code>exercise_to_minutes</code> using dictionary comprehension.</p></li>
+<li><p>Use <code>try/except</code> to attempt to print <code>exercise_to_minutes["stretch"]</code>.</p>
+<ul>
+<li>If missing, print <code>"stretch is not in the plan."</code></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="end-of-homework-1" class="level1">
+<h1>✅ End of Homework 1</h1>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.quarto-btn-toggle');
+  if (!btn || !window.bootstrap) return;
+
+  btn.addEventListener('click', function (e) {
+    ['#quarto-sidebar', '#quarto-sidebar-glass'].forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) bootstrap.Collapse.getOrCreateInstance(el).toggle();
+    });
+  }, { capture: true });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2026</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<div id="scroll-padding"></div>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
+
+
+
+</body></html>
