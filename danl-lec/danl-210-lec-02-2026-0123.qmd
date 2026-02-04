@@ -1289,6 +1289,7 @@ for letter in word:
 list( range(1, 4) )
 list( range(0, 4) )
 list( range(4) )
+list( range(0, 4, 2) )
 
 for x in range(0, 4):
     print(x)
@@ -1447,6 +1448,24 @@ swapped_dict = {v: k for k, v in original_dict.items()}
 :::
 
 # 🛠️ **Modifying Lists and Dictionaries** {background-color="#1c4982"}
+
+## The `.` (dot) Operator on an *Object*
+
+```{.python}
+text = "GeNeSeO"
+
+print(text.lower())   # method on a string object
+print(text.upper())   # another string method
+```
+
+
+- In Python, the **dot operator** (`.`) means:  
+  **“go inside this thing and access one of its members.”**
+- Many data types come with **built-in methods** you can call using the dot operator.
+- <u>Example</u>: For strings, `.lower()` is a method that returns a lowercase version of the string.
+- ✅ Here, `text` is a **string object**, and `text.lower()` means:  
+“use the **lower() method** that belongs to the **string type**.”
+
 
 ## 🔧 Adding an Item to a List
 :::{.nonincremental}
@@ -1654,6 +1673,8 @@ from LIBRARY import FUNCTION, PACKAGE, MODULE
 ::::
 ::::
 
+
+
 ## 🛠️📦 `pip` tool
 
 :::{.nonincremental}
@@ -1680,3 +1701,57 @@ pip install LIBRARY
 - **Q**. [**Classwork 2.10**](../danl-cw/danl-210-cw-02.html#question-10){target="_blank"}
 
 ::::
+
+
+## 🧩 The `.` (dot) Operator on a Library
+
+- In Python, the **dot operator** (`.`) means:  
+  **“go inside this thing and access one of its members.”**
+  - `module.name` → access something **defined inside** the module  
+  - `object.attribute` or `object.method()` → access a **property** or **function** of an object
+
+
+
+## Example 1: `import sys`
+
+```{.python}
+import sys
+
+print(sys.version)      # attribute: Python version info
+print(sys.path)         # attribute: module search paths
+```
+
+✅ Here, `sys` is a **module**, and `sys.version` and `sys.path` are things **inside** the `sys` module.
+
+
+
+## Example 2: `import datetime`
+
+```{.python}
+import datetime
+
+now = datetime.datetime.now()   # module.class.method()
+today = datetime.date.today()   # module.class.method()
+```
+
+- `datetime` (left side) is the **module**
+- `datetime.datetime` is a **class inside** the module  
+- `.now()` is a **method** you can call from that class
+
+:::: fragment
+
+::: callout-tips
+- A **class** is a blueprint for creating objects that bundles **attributes** and **methods** together.
+:::
+
+::::
+
+
+## Common Patterns to Remember
+
+- `module.something`
+- `module.class_name.method_name()`
+- `object.method_name()`
+
+### Read it like:
+> “start with the thing on the left → use `.` to reach something inside → then (maybe) call it with `()`”

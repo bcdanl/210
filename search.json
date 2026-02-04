@@ -704,7 +704,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#generate-number-sequences-with-range",
     "title": "Lecture 2",
     "section": "🔢 Generate Number Sequences with range()",
-    "text": "🔢 Generate Number Sequences with range()\n\n\nlist( range(1, 4) )\nlist( range(0, 4) )\nlist( range(4) )\n\nfor x in range(0, 4):\n    print(x)\n\n\nrange() creates a sequence of integers without storing a full list\nThis is memory-efficient and very common in for loops\n\n\n\n\nSyntax is similar to slicing:\nrange( start, stop, step )\n\nstart defaults to 0\nstep defaults to 1\nthe sequence stops right before stop"
+    "text": "🔢 Generate Number Sequences with range()\n\n\nlist( range(1, 4) )\nlist( range(0, 4) )\nlist( range(4) )\nlist( range(0, 4, 2) )\n\nfor x in range(0, 4):\n    print(x)\n\n\nrange() creates a sequence of integers without storing a full list\nThis is memory-efficient and very common in for loops\n\n\n\n\nSyntax is similar to slicing:\nrange( start, stop, step )\n\nstart defaults to 0\nstep defaults to 1\nthe sequence stops right before stop"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#get-index-value-with-enumerate",
@@ -1321,5 +1321,40 @@
     "title": "Classwork 2",
     "section": "Question 10. Imports and Library Setup (pandas + selenium)",
     "text": "Question 10. Imports and Library Setup (pandas + selenium)\n\n(a) Importing a Library with an Alias\nImport the pandas library as pd.\n\n\n(b) Installing an External Library\nInstall the selenium library.\n\n\n(c) Importing from a Submodule\nFrom selenium, import the functions webdriver."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-.-dot-operator-on-an-object",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#the-.-dot-operator-on-an-object",
+    "title": "Lecture 2",
+    "section": "The . (dot) Operator on an Object",
+    "text": "The . (dot) Operator on an Object\ntext = \"GeNeSeO\"\n\nprint(text.lower())   # method on a string object\nprint(text.upper())   # another string method\n\nIn Python, the dot operator (.) means:\n“go inside this thing and access one of its members.”\nMany data types come with built-in methods you can call using the dot operator.\nExample: For strings, .lower() is a method that returns a lowercase version of the string.\n✅ Here, text is a string object, and text.lower() means:\n“use the lower() method that belongs to the string type.”"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#the-.-dot-operator-on-a-library",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#the-.-dot-operator-on-a-library",
+    "title": "Lecture 2",
+    "section": "🧩 The . (dot) Operator on a Library",
+    "text": "🧩 The . (dot) Operator on a Library\n\nIn Python, the dot operator (.) means:\n“go inside this thing and access one of its members.”\n\nmodule.name → access something defined inside the module\n\nobject.attribute or object.method() → access a property or function of an object"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#example-1-import-sys",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#example-1-import-sys",
+    "title": "Lecture 2",
+    "section": "Example 1: import sys",
+    "text": "Example 1: import sys\nimport sys\n\nprint(sys.version)      # attribute: Python version info\nprint(sys.path)         # attribute: module search paths\n✅ Here, sys is a module, and sys.version and sys.path are things inside the sys module."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#example-2-import-datetime",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#example-2-import-datetime",
+    "title": "Lecture 2",
+    "section": "Example 2: import datetime",
+    "text": "Example 2: import datetime\nimport datetime\n\nnow = datetime.datetime.now()   # module.class.method()\ntoday = datetime.date.today()   # module.class.method()\n\ndatetime (left side) is the module\ndatetime.datetime is a class inside the module\n\n.now() is a method you can call from that class\n\n\n\n\nA class is a blueprint for creating objects that bundles attributes and methods together."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#common-patterns-to-remember",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#common-patterns-to-remember",
+    "title": "Lecture 2",
+    "section": "Common Patterns to Remember",
+    "text": "Common Patterns to Remember\n\nmodule.something\nmodule.class_name.method_name()\nobject.method_name()\n\nRead it like:\n\n“start with the thing on the left → use . to reach something inside → then (maybe) call it with ()”"
   }
 ]
