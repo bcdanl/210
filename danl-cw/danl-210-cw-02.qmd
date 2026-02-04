@@ -24,7 +24,7 @@ Using Python operations only, calculate below:
 $$\frac{2^5}{7 \cdot (4 - 2^3)}$$
 
 ::: {.callout-tip collapse="true"}
-### Show answer
+#### Show answer
 ```{python}
 #| echo: true
 
@@ -52,7 +52,7 @@ data = [10, 2.5, "3"]
 Using Python only, calculate `10 + 2.5 + 3`
 
 ::: {.callout-tip collapse="true"}
-### Show answer
+#### Show answer
 ```{python}
 #| echo: true
 
@@ -80,7 +80,7 @@ $$
 $$
 
 ::: {.callout-tip collapse="true"}
-### Show answer
+#### Show answer
 ```{python}
 #| echo: true
 
@@ -108,7 +108,7 @@ For each expression below, what is the value of the expression? Explain thorough
 ```
 
 ::: {.callout-tip collapse="true"}
-### Show answer
+#### Show answer
 
 - `False`
 - Why? 
@@ -131,7 +131,7 @@ x < y or 3*y < x
 
 
 ::: {.callout-tip collapse="true"}
-### Show answer
+#### Show answer
 - `True`
 - Why?
 	-	`x < y` → 4.0 < 0.5 → `False`
@@ -172,6 +172,22 @@ else:
 print(msg)
 ```
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+What will it print?
+
+-	`status` is `"Gold"`
+-	`"Gold"` in `["Gold", "Platinum"]` is **True**, so the **first if-branch** runs.
+
+So it prints:
+
+```text
+Status: Gold → Free shipping! Total = $92.5
+```
+
+:::
+
+
 <br>
 
 ### (b) Fill-in-the-Blanks: Writing an `if`-`elif`-`else` Chain
@@ -194,6 +210,26 @@ else:
     print("Try again")
 ```
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+
+```{python}
+#| echo: true
+
+name = "Geneseo"
+score = 88
+
+if name == "Geneseo" and score >= 90:
+    print("Geneseo high score")
+elif score >= 90:
+    print("High score")
+else:
+    print("Try again")
+```
+
+:::
+
 
 <br><br><br>
 
@@ -211,6 +247,19 @@ print(nums[:4])
 print(nums[::2])
 print(nums[-4:-1])
 ```
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+
+```text
+[30, 40, 50, 60]
+[10, 20, 30, 40]
+[10, 30, 50, 70]
+[40, 50, 60]
+```
+
+:::
 
 <br>
 
@@ -230,9 +279,24 @@ Write a Python code that uses *slicing* and the `print()` function to print out 
 <br>
 
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
 ```{python}
+#| echo: true
+
+fare_num = float(fare[1:])     # "10.00"
+tip_num  = float(tip[:-1])     # "2.00"
+tax_num  = float(tax[2:])      # "0.80"
+
+total = fare_num + tip_num + tax_num
+
+print(f"The total trip cost is: ${total:.2f}")
 
 ```
+
+
+:::
 
 <br><br><br>
 
@@ -254,10 +318,19 @@ Write a Python code that uses `print()` and `max()` functions to print out the l
 <br>
 
 
-```{python}
+::: {.callout-tip collapse="true"}
+#### Show answer
 
+```{python}
+#| echo: true
+
+list_variable = [100, 144, 169, 1000, 8]
+
+largest = max(list_variable)
+print(f"The largest value in the list is: {largest}")
 ```
 
+:::
 
 
 <br><br><br>
@@ -266,8 +339,6 @@ Write a Python code that uses `print()` and `max()` functions to print out the l
 
 
 ## Question 6. Looping Through a List (`while` vs `for`)
-<!-- ### Iterating Over Values Two Ways -->
-
 
 ```{python}
 #| echo: true
@@ -290,28 +361,36 @@ vals = [3, 2, 1, 0]
 
 
 ## Question 7. Loop Control with Comparisons and Early Exit
-<!-- ### Comparing `number` to `guess_me` with `while` and `for` -->
 
-- Assign the value 7 to the variable `guess_me`, and the value 1 to the variable `number`. 
+Start with `guess_me = 7` and `number = 1`.
 
-- Write a `while` loop that compares `number` with `guess_me.` 
-  - Print 'too low' if `number` is less than guess me. 
-  - If `number` equals `guess_me`, print 'found it!' and then exit the loop. 
-  - If `number` is greater than `guess_me`, print 'oops' and then exit the loop. 
-  - Increment `number` at the end of the loop.
+```{python}
+#| echo: true
+guess_me = 7
+number = 1
+```
 
-- Write a `for` loop that compares `number` with `guess_me.` 
-  - Print 'too low' if `number` is less than guess me. 
-  - If `number` equals `guess_me`, print 'found it!' and then exit the loop. 
-  - If `number` is greater than `guess_me`, print 'oops' and then exit the loop. 
-  - Increment `number` at the end of the loop.
+### (a) `while` loop
+
+Write a `while` loop that keeps running **until you break**:
+
+- If `number < guess_me`, print `"too low"` and then increment `number` by 1.
+- If `number == guess_me`, print `"found it!"` and then **break**.
+- If `number > guess_me`, print `"oops"` and then **break**.
+
 
 <br>
 
 
-```{python}
+### (b) `for` loop
 
-```
+Write the same logic using a `for` loop that tries values from `1` to `10`:
+
+- If the current value is less than `guess_me`, print `"too low"`.
+- If it equals `guess_me`, print `"found it!"` and then `break`.
+- If it is greater than `guess_me`, print `"oops"` and then `break`.
+
+
 
 
 
