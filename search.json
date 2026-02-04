@@ -347,7 +347,7 @@
     "href": "danl-cw/danl-210-cw-02.html#question-6.-looping-through-a-list-while-vs-for",
     "title": "Classwork 2",
     "section": "Question 6. Looping Through a List (while vs for)",
-    "text": "Question 6. Looping Through a List (while vs for)\n\nvals = [3, 2, 1, 0]\n\n\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time."
+    "text": "Question 6. Looping Through a List (while vs for)\n\nvals = [3, 2, 1, 0]\n\n\n(a) while loop\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\n\n\n\n(b) for loop\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time."
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-7.-loop-control-with-comparisons-and-early-exit",

@@ -276,11 +276,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#b-extracting-numbers-from-strings-with-slicing" id="toc-b-extracting-numbers-from-strings-with-slicing" class="nav-link" data-scroll-target="#b-extracting-numbers-from-strings-with-slicing">(b) Extracting Numbers from Strings with Slicing</a></li>
   </ul></li>
   <li><a href="#question-5.-finding-the-maximum-value-in-a-list" id="toc-question-5.-finding-the-maximum-value-in-a-list" class="nav-link" data-scroll-target="#question-5.-finding-the-maximum-value-in-a-list">Question 5. Finding the Maximum Value in a List</a></li>
-  <li><a href="#question-6.-looping-through-a-list-while-vs-for" id="toc-question-6.-looping-through-a-list-while-vs-for" class="nav-link" data-scroll-target="#question-6.-looping-through-a-list-while-vs-for">Question 6. Looping Through a List (<code>while</code> vs <code>for</code>)</a></li>
-  <li><a href="#question-7.-loop-control-with-comparisons-and-early-exit" id="toc-question-7.-loop-control-with-comparisons-and-early-exit" class="nav-link" data-scroll-target="#question-7.-loop-control-with-comparisons-and-early-exit">Question 7. Loop Control with Comparisons and Early Exit</a>
+  <li><a href="#question-6.-looping-through-a-list-while-vs-for" id="toc-question-6.-looping-through-a-list-while-vs-for" class="nav-link" data-scroll-target="#question-6.-looping-through-a-list-while-vs-for">Question 6. Looping Through a List (<code>while</code> vs <code>for</code>)</a>
   <ul>
   <li><a href="#a-while-loop" id="toc-a-while-loop" class="nav-link" data-scroll-target="#a-while-loop">(a) <code>while</code> loop</a></li>
   <li><a href="#b-for-loop" id="toc-b-for-loop" class="nav-link" data-scroll-target="#b-for-loop">(b) <code>for</code> loop</a></li>
+  </ul></li>
+  <li><a href="#question-7.-loop-control-with-comparisons-and-early-exit" id="toc-question-7.-loop-control-with-comparisons-and-early-exit" class="nav-link" data-scroll-target="#question-7.-loop-control-with-comparisons-and-early-exit">Question 7. Loop Control with Comparisons and Early Exit</a>
+  <ul>
+  <li><a href="#a-while-loop-1" id="toc-a-while-loop-1" class="nav-link" data-scroll-target="#a-while-loop-1">(a) <code>while</code> loop</a></li>
+  <li><a href="#b-for-loop-1" id="toc-b-for-loop-1" class="nav-link" data-scroll-target="#b-for-loop-1">(b) <code>for</code> loop</a></li>
   </ul></li>
   <li><a href="#question-8.-comprehensions-modifying-collections" id="toc-question-8.-comprehensions-modifying-collections" class="nav-link" data-scroll-target="#question-8.-comprehensions-modifying-collections">Question 8. Comprehensions &amp; Modifying Collections</a>
   <ul>
@@ -709,12 +713,16 @@ Show answer
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vals <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Use a <code>while</code> loop to print each value of the list [3, 2, 1, 0], one at a time.</li>
-<li>Use a <code>for</code> loop to print each value of the list [3, 2, 1, 0], one at a time.</li>
-</ul>
+<section id="a-while-loop" class="level3">
+<h3 class="anchored" data-anchor-id="a-while-loop">(a) <code>while</code> loop</h3>
+<p>Use a <code>while</code> loop to print each value of the list [3, 2, 1, 0], one at a time.</p>
 <p><br></p>
+</section>
+<section id="b-for-loop" class="level3">
+<h3 class="anchored" data-anchor-id="b-for-loop">(b) <code>for</code> loop</h3>
+<p>Use a <code>for</code> loop to print each value of the list [3, 2, 1, 0], one at a time.</p>
 <p><br><br><br></p>
+</section>
 </section>
 <section id="question-7.-loop-control-with-comparisons-and-early-exit" class="level2">
 <h2 class="anchored" data-anchor-id="question-7.-loop-control-with-comparisons-and-early-exit">Question 7. Loop Control with Comparisons and Early Exit</h2>
@@ -723,8 +731,8 @@ Show answer
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>guess_me <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="a-while-loop" class="level3">
-<h3 class="anchored" data-anchor-id="a-while-loop">(a) <code>while</code> loop</h3>
+<section id="a-while-loop-1" class="level3">
+<h3 class="anchored" data-anchor-id="a-while-loop-1">(a) <code>while</code> loop</h3>
 <p>Write a <code>while</code> loop that keeps running <strong>until you break</strong>:</p>
 <ul>
 <li>If <code>number &lt; guess_me</code>, print <code>"too low"</code> and then increment <code>number</code> by 1.</li>
@@ -733,8 +741,8 @@ Show answer
 </ul>
 <p><br></p>
 </section>
-<section id="b-for-loop" class="level3">
-<h3 class="anchored" data-anchor-id="b-for-loop">(b) <code>for</code> loop</h3>
+<section id="b-for-loop-1" class="level3">
+<h3 class="anchored" data-anchor-id="b-for-loop-1">(b) <code>for</code> loop</h3>
 <p>Write the same logic using a <code>for</code> loop that tries values from <code>1</code> to <code>10</code>:</p>
 <ul>
 <li>If the current value is less than <code>guess_me</code>, print <code>"too low"</code>.</li>
