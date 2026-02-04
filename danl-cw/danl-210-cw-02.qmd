@@ -403,7 +403,7 @@ Given a list of three dictionaries:
 ```{python}
 #| echo: true
 
-students = [
+lst_students = [
     {"name": "Ava",  "major": "DANL", "score": 91},
     {"name": "Ben",  "major": "ECON", "score": 84},
     {"name": "Cara", "major": "DANL", "score": 76},
