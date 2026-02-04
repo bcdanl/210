@@ -317,9 +317,51 @@ vals = [3, 2, 1, 0]
 
 <br><br><br>
 
+## Question 8. Comprehensions & Modifying Collections
+
+### (a) List & Dictionary Comprehensions
+
+Given a list of three dictionaries:
 
 
-## Question 8. Error Handling with `try`–`except`
+```{python}
+#| echo: true
+
+students = [
+    {"name": "Ava",  "major": "DANL", "score": 91},
+    {"name": "Ben",  "major": "ECON", "score": 84},
+    {"name": "Cara", "major": "DANL", "score": 76},
+]
+```
+
+
+1) Use a **list comprehension** to create `danl_names`, the names of students whose major is `"DANL"`.  
+2) Use a **dictionary comprehension** to create `danl_scores` mapping **name → score** for only `"DANL"` students.
+
+
+<br>
+
+### (b) Modifying Lists & Dictionaries
+
+1) Modify `nums` using **`.append()`** to add `99`.  
+
+```{python}
+#| echo: true
+
+nums = [2, 5, 2, 8]
+```
+
+2) Modify `grades` using **`.update()`** to (i) add `"Cara": 76` and (ii) change `"Ben"` to `90`.
+
+```{python}
+#| echo: true
+
+grades = {"Ava": 91, "Ben": 84}
+```
+
+<br><br><br>
+
+## Question 9. Error Handling with `try`–`except`
 <!-- ### Safe Type Conversion with `float()` -->
 
 
@@ -350,7 +392,7 @@ Your program must use a `try`–`except` block to handle the potential error gra
 <br><br><br>
 
 
-## Question 9. Imports and Library Setup (pandas + selenium)
+## Question 10. Imports and Library Setup (pandas + selenium)
 ### (a) Importing a Library with an Alias
 Import the `pandas` library as `pd`.
 

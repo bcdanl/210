@@ -291,7 +291,7 @@
     "href": "listing-danl-210-lec-pdf.html",
     "title": "Lecture Slides (PDF)",
     "section": "",
-    "text": "ℹ️ Choose Portrait or Landscape depending on your device or printing preference.\n\n\n\n\nTitle\nPortrait\nLandscape\nDate\n\n\n\n\nLecture 1 - Syllabus and Course Outline\n📄 PDF\n📄 PDF\nJan 26\n\n\nLecture 2 - Python Fundamentals\n📄 PDF\n📄 PDF\nJan 30\n\n\n\n\n\n\n Back to top"
+    "text": "ℹ️ Choose Portrait or Landscape depending on your device or printing preference.\n\n\n\n\nTitle\nPortrait\nLandscape\nDate\n\n\n\n\nLecture 1 - Syllabus and Course Outline\n📄 PDF\n📄 PDF\nJan 26\n\n\nLecture 2 - Python Fundamentals\n📄 PDF\n📄 PDF\nFeb 4\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-lec.html",
@@ -746,14 +746,14 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#addingupdating-items-in-a-dictionary",
     "title": "Lecture 2",
     "section": "🔧 Adding/Updating Items in a Dictionary",
-    "text": "🔧 Adding/Updating Items in a Dictionary\n\n\nupdate(): Adds new key-value pairs or updates existing ones.\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict.update({'c': 3})  \nmy_dict.update({'a': 10})"
+    "text": "🔧 Adding/Updating Items in a Dictionary\n\n\nupdate(): Adds new key-value pairs or updates existing ones.\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict.update({'c': 3})  \nmy_dict.update({'a': 10})  \nmy_dict.update({'e': -1, 'f': 0})"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#deleting-items-in-a-dictionary",
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#deleting-items-in-a-dictionary",
     "title": "Lecture 2",
     "section": "🔧 Deleting Items in a Dictionary",
-    "text": "🔧 Deleting Items in a Dictionary\n\n\nDictionary Comprehension: Removes items based on a condition.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nmy_dict = {k: v for k, v in my_dict.items() if v != 2}  \n\ndel statement: Deletes an item by key.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\ndel my_dict['b']"
+    "text": "🔧 Deleting Items in a Dictionary\n\n\nDictionary Comprehension: Removes items based on a condition.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nmy_dict = {k: v for k, v in my_dict.items() if v != 2}  \n\ndel statement: Deletes an item by key.\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\ndel my_dict['b']  \n\n\nQ. Classwork 2.8"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#errors",
@@ -774,7 +774,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#handle-errors-with-try-and-except-1",
     "title": "Lecture 2",
     "section": "⚠️🛡️ Handle Errors with try and except",
-    "text": "⚠️🛡️ Handle Errors with try and except\nshort_list = [1, 2, 3]\npositions = [0, 1, 5, 2]   # 5 is out of range\n\nfor i in positions:\n    try:\n        print(short_list[i])\n    except:\n        print(\"Index error:\", i, \"is not between 0 and\", len(short_list) - 1)\n\nUse try to run code that might fail, and except to handle the error gracefully.\n\nIf an error occurs, Python raises an exception and runs the except block.\nIf no error occurs, Python skips the except block.\n\nQ. Classwork 2.8"
+    "text": "⚠️🛡️ Handle Errors with try and except\nshort_list = [1, 2, 3]\npositions = [0, 1, 5, 2]   # 5 is out of range\n\nfor i in positions:\n    try:\n        print(short_list[i])\n    except:\n        print(\"Index error:\", i, \"is not between 0 and\", len(short_list) - 1)\n\nUse try to run code that might fail, and except to handle the error gracefully.\n\nIf an error occurs, Python raises an exception and runs the except block.\nIf no error occurs, Python skips the except block.\n\nQ. Classwork 2.9"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#importing-modules-packages-and-libraries",
@@ -816,7 +816,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#pip-tool",
     "title": "Lecture 2",
     "section": "🛠️📦 pip tool",
-    "text": "🛠️📦 pip tool\n\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY\n\n\n\nQ. Classwork 2.9"
+    "text": "🛠️📦 pip tool\n\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY\n\n\n\nQ. Classwork 2.10"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#current-appointment-education",
@@ -1300,5 +1300,26 @@
     "title": "Lecture 2",
     "section": "🔁🚶 Repeat with a for Loop",
     "text": "🔁🚶 Repeat with a for Loop\n\n\n\n\n\nfor loop syntax (the pattern)\nfor &lt;item_name&gt; in &lt;iterable&gt;:\n    &lt;indented code block using &lt;item_name&gt;&gt;\n\nlst_nums = [0, 1, 2, 3, 4]\n\nfor num in lst_nums:\n    print(num)\n\n\nHow this loop works\n\nTake the first item in lst_nums → set num = 0 → run print(num)\nTake the next item → set num = 1 → run print(num)\nRepeat for 2, 3, 4\nStop after the last item"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-8.-comprehensions-modifying-collections",
+    "href": "danl-cw/danl-210-cw-02.html#question-8.-comprehensions-modifying-collections",
+    "title": "Classwork 2",
+    "section": "Question 8. Comprehensions & Modifying Collections",
+    "text": "Question 8. Comprehensions & Modifying Collections\n\n(a) List & Dictionary Comprehensions\nGiven a list of three dictionaries:\n\nstudents = [\n    {\"name\": \"Ava\",  \"major\": \"DANL\", \"score\": 91},\n    {\"name\": \"Ben\",  \"major\": \"ECON\", \"score\": 84},\n    {\"name\": \"Cara\", \"major\": \"DANL\", \"score\": 76},\n]\n\n\nUse a list comprehension to create danl_names, the names of students whose major is \"DANL\".\n\nUse a dictionary comprehension to create danl_scores mapping name → score for only \"DANL\" students.\n\n\n\n\n(b) Modifying Lists & Dictionaries\n\nModify nums using .append() to add 99.\n\n\nnums = [2, 5, 2, 8]\n\n\nModify grades using .update() to (i) add \"Cara\": 76 and (ii) change \"Ben\" to 90.\n\n\ngrades = {\"Ava\": 91, \"Ben\": 84}"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-9.-error-handling-with-tryexcept",
+    "href": "danl-cw/danl-210-cw-02.html#question-9.-error-handling-with-tryexcept",
+    "title": "Classwork 2",
+    "section": "Question 9. Error Handling with try–except",
+    "text": "Question 9. Error Handling with try–except\n\nYou are given a variable value that stores a string:\nvalue = \"$320\"\nWrite a Python program that does the following:\n\nAttempt to convert value into a floating-point number using float().\nIf the conversion is successful, print:\n\nYou entered: \n\nIf the conversion fails (for example, because the string is not a valid number), print:\n\nThat’s not a valid number!\n\n\nYour program must use a try–except block to handle the potential error gracefully."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-02.html#question-10.-imports-and-library-setup-pandas-selenium",
+    "href": "danl-cw/danl-210-cw-02.html#question-10.-imports-and-library-setup-pandas-selenium",
+    "title": "Classwork 2",
+    "section": "Question 10. Imports and Library Setup (pandas + selenium)",
+    "text": "Question 10. Imports and Library Setup (pandas + selenium)\n\n(a) Importing a Library with an Alias\nImport the pandas library as pd.\n\n\n(b) Installing an External Library\nInstall the selenium library.\n\n\n(c) Importing from a Submodule\nFrom selenium, import the functions webdriver."
   }
 ]

@@ -278,8 +278,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-5.-finding-the-maximum-value-in-a-list" id="toc-question-5.-finding-the-maximum-value-in-a-list" class="nav-link" data-scroll-target="#question-5.-finding-the-maximum-value-in-a-list">Question 5. Finding the Maximum Value in a List</a></li>
   <li><a href="#question-6.-looping-through-a-list-while-vs-for" id="toc-question-6.-looping-through-a-list-while-vs-for" class="nav-link" data-scroll-target="#question-6.-looping-through-a-list-while-vs-for">Question 6. Looping Through a List (<code>while</code> vs <code>for</code>)</a></li>
   <li><a href="#question-7.-loop-control-with-comparisons-and-early-exit" id="toc-question-7.-loop-control-with-comparisons-and-early-exit" class="nav-link" data-scroll-target="#question-7.-loop-control-with-comparisons-and-early-exit">Question 7. Loop Control with Comparisons and Early Exit</a></li>
-  <li><a href="#question-8.-error-handling-with-tryexcept" id="toc-question-8.-error-handling-with-tryexcept" class="nav-link" data-scroll-target="#question-8.-error-handling-with-tryexcept">Question 8. Error Handling with <code>try</code>–<code>except</code></a></li>
-  <li><a href="#question-9.-imports-and-library-setup-pandas-selenium" id="toc-question-9.-imports-and-library-setup-pandas-selenium" class="nav-link" data-scroll-target="#question-9.-imports-and-library-setup-pandas-selenium">Question 9. Imports and Library Setup (pandas + selenium)</a>
+  <li><a href="#question-8.-comprehensions-modifying-collections" id="toc-question-8.-comprehensions-modifying-collections" class="nav-link" data-scroll-target="#question-8.-comprehensions-modifying-collections">Question 8. Comprehensions &amp; Modifying Collections</a>
+  <ul>
+  <li><a href="#a-list-dictionary-comprehensions" id="toc-a-list-dictionary-comprehensions" class="nav-link" data-scroll-target="#a-list-dictionary-comprehensions">(a) List &amp; Dictionary Comprehensions</a></li>
+  <li><a href="#b-modifying-lists-dictionaries" id="toc-b-modifying-lists-dictionaries" class="nav-link" data-scroll-target="#b-modifying-lists-dictionaries">(b) Modifying Lists &amp; Dictionaries</a></li>
+  </ul></li>
+  <li><a href="#question-9.-error-handling-with-tryexcept" id="toc-question-9.-error-handling-with-tryexcept" class="nav-link" data-scroll-target="#question-9.-error-handling-with-tryexcept">Question 9. Error Handling with <code>try</code>–<code>except</code></a></li>
+  <li><a href="#question-10.-imports-and-library-setup-pandas-selenium" id="toc-question-10.-imports-and-library-setup-pandas-selenium" class="nav-link" data-scroll-target="#question-10.-imports-and-library-setup-pandas-selenium">Question 10. Imports and Library Setup (pandas + selenium)</a>
   <ul>
   <li><a href="#a-importing-a-library-with-an-alias" id="toc-a-importing-a-library-with-an-alias" class="nav-link" data-scroll-target="#a-importing-a-library-with-an-alias">(a) Importing a Library with an Alias</a></li>
   <li><a href="#b-installing-an-external-library" id="toc-b-installing-an-external-library" class="nav-link" data-scroll-target="#b-installing-an-external-library">(b) Installing an External Library</a></li>
@@ -319,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 29, 2026</p>
+      <p class="date-modified">February 4, 2026</p>
     </div>
   </div>
     
@@ -619,11 +624,47 @@ The largest value in the list is: 1000
 <p><br></p>
 <p><br><br><br></p>
 </section>
-<section id="question-8.-error-handling-with-tryexcept" class="level2">
-<h2 class="anchored" data-anchor-id="question-8.-error-handling-with-tryexcept">Question 8. Error Handling with <code>try</code>–<code>except</code></h2>
+<section id="question-8.-comprehensions-modifying-collections" class="level2">
+<h2 class="anchored" data-anchor-id="question-8.-comprehensions-modifying-collections">Question 8. Comprehensions &amp; Modifying Collections</h2>
+<section id="a-list-dictionary-comprehensions" class="level3">
+<h3 class="anchored" data-anchor-id="a-list-dictionary-comprehensions">(a) List &amp; Dictionary Comprehensions</h3>
+<p>Given a list of three dictionaries:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Ava"</span>,  <span class="st">"major"</span>: <span class="st">"DANL"</span>, <span class="st">"score"</span>: <span class="dv">91</span>},</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Ben"</span>,  <span class="st">"major"</span>: <span class="st">"ECON"</span>, <span class="st">"score"</span>: <span class="dv">84</span>},</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Cara"</span>, <span class="st">"major"</span>: <span class="st">"DANL"</span>, <span class="st">"score"</span>: <span class="dv">76</span>},</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Use a <strong>list comprehension</strong> to create <code>danl_names</code>, the names of students whose major is <code>"DANL"</code>.<br>
+</li>
+<li>Use a <strong>dictionary comprehension</strong> to create <code>danl_scores</code> mapping <strong>name → score</strong> for only <code>"DANL"</code> students.</li>
+</ol>
+<p><br></p>
+</section>
+<section id="b-modifying-lists-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="b-modifying-lists-dictionaries">(b) Modifying Lists &amp; Dictionaries</h3>
+<ol type="1">
+<li>Modify <code>nums</code> using <strong><code>.append()</code></strong> to add <code>99</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Modify <code>grades</code> using <strong><code>.update()</code></strong> to (i) add <code>"Cara": 76</code> and (ii) change <code>"Ben"</code> to <code>90</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> {<span class="st">"Ava"</span>: <span class="dv">91</span>, <span class="st">"Ben"</span>: <span class="dv">84</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br><br></p>
+</section>
+</section>
+<section id="question-9.-error-handling-with-tryexcept" class="level2">
+<h2 class="anchored" data-anchor-id="question-9.-error-handling-with-tryexcept">Question 9. Error Handling with <code>try</code>–<code>except</code></h2>
 <!-- ### Safe Type Conversion with `float()` -->
 <p>You are given a variable <code>value</code> that stores a string:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="st">"$320"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="st">"$320"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Write a Python program that does the following:</p>
 <ol type="1">
 <li>Attempt to convert value into a floating-point number using float().</li>
@@ -640,8 +681,8 @@ That’s not a valid number!
 <p><br></p>
 <p><br><br><br></p>
 </section>
-<section id="question-9.-imports-and-library-setup-pandas-selenium" class="level2">
-<h2 class="anchored" data-anchor-id="question-9.-imports-and-library-setup-pandas-selenium">Question 9. Imports and Library Setup (pandas + selenium)</h2>
+<section id="question-10.-imports-and-library-setup-pandas-selenium" class="level2">
+<h2 class="anchored" data-anchor-id="question-10.-imports-and-library-setup-pandas-selenium">Question 10. Imports and Library Setup (pandas + selenium)</h2>
 <section id="a-importing-a-library-with-an-alias" class="level3">
 <h3 class="anchored" data-anchor-id="a-importing-a-library-with-an-alias">(a) Importing a Library with an Alias</h3>
 <p>Import the <code>pandas</code> library as <code>pd</code>.</p>
