@@ -1185,6 +1185,46 @@ while True:
 	-	or any iterable object
 	
 
+## 🔁🚶 Repeat with a `for` Loop
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+<div style="display:block; margin:-40px;"></div>
+
+
+#### `for` loop syntax (the pattern)
+```text
+for <item_name> in <iterable>:
+    <indented code block using <item_name>>
+```
+
+:::
+
+
+::: {.column width="40%"}
+```{.python}
+lst_nums = [0, 1, 2, 3, 4]
+
+for num in lst_nums:
+    print(num)
+```
+:::
+::::
+
+
+
+#### How this loop works
+1. Take the first item in `lst_nums` → set `num = 0` → run `print(num)`
+2. Take the next item → set `num = 1` → run `print(num)`
+3. Repeat for `2`, `3`, `4`
+4. Stop after the last item
+
+
+
+
+
 ## Two Ways to Loop Through an Iterable
 
 <div style="display:block; margin:-30px;"></div>
@@ -1239,56 +1279,6 @@ for letter in word:
 
 
 
-## 🛑🔂 Cancel a `for` Loop with `break`
-
-```{.python}
-word = 'thud'
-for letter in word:
-    if letter == 'u':
-        break
-    print(letter)
-```
-
--	`break` exits the loop immediately
-
-<!-- - A `break` in a `for` loop breaks out of the loop, as it does for a `while` loop: -->
-
-## ⏭️🔂 Skip in a `for` Loop with `continue`
-
-```{.python}
-word = 'thud'
-for letter in word:
-    if letter == 'u':
-        continue
-    print(letter)
-```
-
--	`continue` skips the current iteration and moves to the next one
-
-
-## 🔄 Loop Control: `continue`, `pass`, `break`
-
-
-```{.python}
-for num in range(1, 6):
-
-    if num == 2:
-        continue   # skip printing 2
-
-    if num == 3:
-        pass       # do nothing, move on
-
-    if num == 4:
-        break      # exit the loop
-
-    print(num)
-
-```
-
-- **`continue`** → skips to the next iteration  
-- **`pass`** → does nothing (useful as a placeholder)  
-- **`break`** → exits the loop completely  
-
 
 ## 🔢 Generate Number Sequences with `range()`
 
@@ -1320,6 +1310,8 @@ for x in range(0, 4):
 	-	`start` defaults to 0
 	-	`step` defaults to 1
 	-	the sequence stops **right before** stop
+	
+
 
 ## 🔢🧾 Get Index + Value with `enumerate()`
 
@@ -1352,6 +1344,57 @@ for i, fruit in enumerate(fruits, start=1):
 - Syntax: `enumerate(iterable, start=0)`
   - `iterable` can be a list, tuple, string, etc.
   - `start` controls the first index (default is 0)
+
+
+## 🛑🔂 Cancel a `for` Loop with `break`
+
+```{.python}
+word = 'thud'
+for letter in word:
+    if letter == 'u':
+        break
+    print(letter)
+```
+
+-	`break` exits the loop immediately
+
+<!-- - A `break` in a `for` loop breaks out of the loop, as it does for a `while` loop: -->
+
+## ⏭️🔂 Skip in a `for` Loop with `continue`
+
+```{.python}
+word = 'thud'
+for letter in word:
+    if letter == 'u':
+        continue
+    print(letter)
+```
+
+-	`continue` skips the current iteration and moves to the next one
+
+
+
+## 🔄 Loop Control: `continue`, `pass`, `break`
+
+```{.python}
+for num in range(1, 6):
+
+    if num == 2:
+        continue   # skip printing 2
+
+    if num == 3:
+        pass       # do nothing, move on
+
+    if num == 4:
+        break      # exit the loop
+
+    print(num)
+
+```
+
+- **`continue`** → skips to the next iteration  
+- **`pass`** → does nothing (useful as a placeholder)  
+- **`break`** → exits the loop completely  
 
 - **Q**. [**Classwork 2.7**](../danl-cw/danl-210-cw-02.html#question-7){target="_blank"}
 

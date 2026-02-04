@@ -697,7 +697,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#loop-control-continue-pass-break",
     "title": "Lecture 2",
     "section": "🔄 Loop Control: continue, pass, break",
-    "text": "🔄 Loop Control: continue, pass, break\nfor num in range(1, 6):\n\n    if num == 2:\n        continue   # skip printing 2\n\n    if num == 3:\n        pass       # do nothing, move on\n\n    if num == 4:\n        break      # exit the loop\n\n    print(num)\n\ncontinue → skips to the next iteration\n\npass → does nothing (useful as a placeholder)\n\nbreak → exits the loop completely"
+    "text": "🔄 Loop Control: continue, pass, break\nfor num in range(1, 6):\n\n    if num == 2:\n        continue   # skip printing 2\n\n    if num == 3:\n        pass       # do nothing, move on\n\n    if num == 4:\n        break      # exit the loop\n\n    print(num)\n\ncontinue → skips to the next iteration\n\npass → does nothing (useful as a placeholder)\n\nbreak → exits the loop completely\nQ. Classwork 2.7"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#generate-number-sequences-with-range",
@@ -711,7 +711,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#get-index-value-with-enumerate",
     "title": "Lecture 2",
     "section": "🔢🧾 Get Index + Value with enumerate()",
-    "text": "🔢🧾 Get Index + Value with enumerate()\n\n\nfruits = [\"apple\", \"banana\", \"orange\"]\n\n# default: starts counting at 0\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\n\n# start counting at 1\nfor i, fruit in enumerate(fruits, start=1):\n    print(i, fruit)\n\n\nenumerate() gives you two things while looping:\n\nthe index (i)\nthe value (fruit)\n\n\n\n\n\nVery handy when you want to label, number, or track positions.\nSyntax: enumerate(iterable, start=0)\n\niterable can be a list, tuple, string, etc.\nstart controls the first index (default is 0)\n\nQ. Classwork 2.7"
+    "text": "🔢🧾 Get Index + Value with enumerate()\n\n\nfruits = [\"apple\", \"banana\", \"orange\"]\n\n# default: starts counting at 0\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\n\n# start counting at 1\nfor i, fruit in enumerate(fruits, start=1):\n    print(i, fruit)\n\n\nenumerate() gives you two things while looping:\n\nthe index (i)\nthe value (fruit)\n\n\n\n\n\nVery handy when you want to label, number, or track positions.\nSyntax: enumerate(iterable, start=0)\n\niterable can be a list, tuple, string, etc.\nstart controls the first index (default is 0)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-list-comprehension",
@@ -1293,5 +1293,12 @@
     "title": "DANL 210 - Homework Submission",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#repeat-with-a-for-loop",
+    "href": "danl-lec/danl-210-lec-02-2026-0123.html#repeat-with-a-for-loop",
+    "title": "Lecture 2",
+    "section": "🔁🚶 Repeat with a for Loop",
+    "text": "🔁🚶 Repeat with a for Loop\n\n\n\n\n\nfor loop syntax (the pattern)\nfor &lt;item_name&gt; in &lt;iterable&gt;:\n    &lt;indented code block using &lt;item_name&gt;&gt;\n\nlst_nums = [0, 1, 2, 3, 4]\n\nfor num in lst_nums:\n    print(num)\n\n\nHow this loop works\n\nTake the first item in lst_nums → set num = 0 → run print(num)\nTake the next item → set num = 1 → run print(num)\nRepeat for 2, 3, 4\nStop after the last item"
   }
 ]
