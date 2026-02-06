@@ -1698,7 +1698,6 @@ pip install LIBRARY
 :::
 ::::
 
-- **Q**. [**Classwork 2.10**](../danl-cw/danl-210-cw-02.html#question-10){target="_blank"}
 
 ::::
 
@@ -1755,3 +1754,8 @@ today = datetime.date.today()   # module.class.method()
 
 ### Read it like:
 > “start with the thing on the left → use `.` to reach something inside → then (maybe) call it with `()`”
+
+
+- **Q**. [**Classwork 2.10**](../danl-cw/danl-210-cw-02.html#question-10){target="_blank"}
+
+

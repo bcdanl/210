@@ -816,7 +816,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#pip-tool",
     "title": "Lecture 2",
     "section": "🛠️📦 pip tool",
-    "text": "🛠️📦 pip tool\n\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY\n\n\n\nQ. Classwork 2.10"
+    "text": "🛠️📦 pip tool\n\n\n\n\nTo install a library LIBRARY on your Google Colab, run:\n\n!pip install LIBRARY\n\n\nTo install a library LIBRARY on your Anaconda Python, open your Spyder IDE, Anaconda Prompt, or Terminal and run:\n\npip install LIBRARY"
   },
   {
     "objectID": "danl-lec/danl-210-lec-01-2026-0121.html#current-appointment-education",
@@ -1355,6 +1355,6 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#common-patterns-to-remember",
     "title": "Lecture 2",
     "section": "Common Patterns to Remember",
-    "text": "Common Patterns to Remember\n\nmodule.something\nmodule.class_name.method_name()\nobject.method_name()\n\nRead it like:\n\n“start with the thing on the left → use . to reach something inside → then (maybe) call it with ()”"
+    "text": "Common Patterns to Remember\n\nmodule.something\nmodule.class_name.method_name()\nobject.method_name()\n\nRead it like:\n\n“start with the thing on the left → use . to reach something inside → then (maybe) call it with ()”\n\n\nQ. Classwork 2.10"
   }
 ]
