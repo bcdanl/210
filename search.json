@@ -725,7 +725,7 @@
     "href": "danl-lec/danl-210-lec-02-2026-0123.html#what-is-dictionary-comprehension",
     "title": "Lecture 2",
     "section": "❓📘 What is Dictionary Comprehension?",
-    "text": "❓📘 What is Dictionary Comprehension?\n\n\nA concise way to create or modify dictionaries.\nSyntax: {key_expression: value_expression for item in iterable if condition}\n\n\nCreating a Dictionary of Squares:\n\nsquares_dict = {x: x**2 for x in range(5)}\n\nFiltering Dictionary Items:\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}\nfiltered_dict = {k: v for k, v in my_dict.items() if v != 2}\n\nSwapping Keys and Values:\n\noriginal_dict = {'a': 1, 'b': 2, 'c': 3}\nswapped_dict = {v: k for k, v in original_dict.items()}"
+    "text": "❓📘 What is Dictionary Comprehension?\n\n\nA concise way to create or modify dictionaries.\nSyntax: { key_expression : value_expression for item in iterable if condition}\n\n\nCreating a Dictionary of Squares:\n\nsquares_dict = {x: x**2 for x in range(5)}\n\nFiltering Dictionary Items:\n\nmy_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}\nfiltered_dict = {k: v for k, v in my_dict.items() if v != 2}\n\nSwapping Keys and Values:\n\noriginal_dict = {'a': 1, 'b': 2, 'c': 3}\nswapped_dict = {v: k for k, v in original_dict.items()}"
   },
   {
     "objectID": "danl-lec/danl-210-lec-02-2026-0123.html#adding-an-item-to-a-list",
