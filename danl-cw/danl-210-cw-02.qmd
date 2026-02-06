@@ -348,10 +348,40 @@ vals = [3, 2, 1, 0]
 ### (a) `while` loop
 Use a `while` loop to print each value of the list [3, 2, 1, 0], one at a time.
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+vals = [3, 2, 1, 0]
+counter = 0
+
+while counter < len(vals):
+  print(vals[counter])
+  counter += 1
+```
+
+:::
+
 <br>
 
 ### (b) `for` loop
 Use a `for` loop to print each value of the list [3, 2, 1, 0], one at a time.
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+vals = [3, 2, 1, 0]
+
+for val in vals:
+  print(val)
+```
+
+:::
 
 
 <br><br><br>
@@ -375,6 +405,29 @@ Write a `while` loop that keeps running **until you break**:
 - If `number == guess_me`, print `"found it!"` and then **break**.
 - If `number > guess_me`, print `"oops"` and then **break**.
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+guess_me = 7
+number = 1
+
+while True:
+  if number < guess_me:
+    print("too low")
+    number += 1
+  elif number == guess_me:
+    print("found it!")
+    break
+  else:
+    print("oops")
+    break
+```
+
+:::
+
 
 <br>
 
@@ -387,8 +440,28 @@ Write the same logic using a `for` loop that tries values from `1` to `10`:
 - If it equals `guess_me`, print `"found it!"` and then `break`.
 - If it is greater than `guess_me`, print `"oops"` and then `break`.
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
 
 
+guess_me = 7
+number = 1
+
+for num in range(1,11):
+  if num < guess_me:
+    print("too low")
+  elif num == guess_me:
+    print("found it!")
+    break
+  else:
+    print("oops")
+    break
+```
+
+:::
 
 
 <br><br><br>

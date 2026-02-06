@@ -347,14 +347,14 @@
     "href": "danl-cw/danl-210-cw-02.html#question-6.-looping-through-a-list-while-vs-for",
     "title": "Classwork 2",
     "section": "Question 6. Looping Through a List (while vs for)",
-    "text": "Question 6. Looping Through a List (while vs for)\n\nvals = [3, 2, 1, 0]\n\n\n(a) while loop\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\n\n\n\n(b) for loop\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time."
+    "text": "Question 6. Looping Through a List (while vs for)\n\nvals = [3, 2, 1, 0]\n\n\n(a) while loop\nUse a while loop to print each value of the list [3, 2, 1, 0], one at a time.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nvals = [3, 2, 1, 0]\ncounter = 0\n\nwhile counter &lt; len(vals):\n  print(vals[counter])\n  counter += 1\n\n\n\n\n\n\n\n(b) for loop\nUse a for loop to print each value of the list [3, 2, 1, 0], one at a time.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nvals = [3, 2, 1, 0]\n\nfor val in vals:\n  print(val)"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-7.-loop-control-with-comparisons-and-early-exit",
     "href": "danl-cw/danl-210-cw-02.html#question-7.-loop-control-with-comparisons-and-early-exit",
     "title": "Classwork 2",
     "section": "Question 7. Loop Control with Comparisons and Early Exit",
-    "text": "Question 7. Loop Control with Comparisons and Early Exit\nStart with guess_me = 7 and number = 1.\n\nguess_me = 7\nnumber = 1\n\n\n(a) while loop\nWrite a while loop that keeps running until you break:\n\nIf number &lt; guess_me, print \"too low\" and then increment number by 1.\nIf number == guess_me, print \"found it!\" and then break.\nIf number &gt; guess_me, print \"oops\" and then break.\n\n\n\n\n(b) for loop\nWrite the same logic using a for loop that tries values from 1 to 10:\n\nIf the current value is less than guess_me, print \"too low\".\nIf it equals guess_me, print \"found it!\" and then break.\nIf it is greater than guess_me, print \"oops\" and then break."
+    "text": "Question 7. Loop Control with Comparisons and Early Exit\nStart with guess_me = 7 and number = 1.\n\nguess_me = 7\nnumber = 1\n\n\n(a) while loop\nWrite a while loop that keeps running until you break:\n\nIf number &lt; guess_me, print \"too low\" and then increment number by 1.\nIf number == guess_me, print \"found it!\" and then break.\nIf number &gt; guess_me, print \"oops\" and then break.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nguess_me = 7\nnumber = 1\n\nwhile True:\n  if number &lt; guess_me:\n    print(\"too low\")\n    number += 1\n  elif number == guess_me:\n    print(\"found it!\")\n    break\n  else:\n    print(\"oops\")\n    break\n\n\n\n\n\n\n\n(b) for loop\nWrite the same logic using a for loop that tries values from 1 to 10:\n\nIf the current value is less than guess_me, print \"too low\".\nIf it equals guess_me, print \"found it!\" and then break.\nIf it is greater than guess_me, print \"oops\" and then break.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nguess_me = 7\nnumber = 1\n\nfor num in range(1,11):\n  if num &lt; guess_me:\n    print(\"too low\")\n  elif num == guess_me:\n    print(\"found it!\")\n    break\n  else:\n    print(\"oops\")\n    break"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-8.-error-handling-with-tryexcept",
