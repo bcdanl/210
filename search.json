@@ -1131,7 +1131,7 @@
     "href": "danl-cw/danl-210-cw-02.html#question-8.-comprehensions-modifying-collections",
     "title": "Classwork 2",
     "section": "Question 8. Comprehensions & Modifying Collections",
-    "text": "Question 8. Comprehensions & Modifying Collections\n\n(a) List & Dictionary Comprehensions\nGiven a list of three dictionaries:\n\nlst_students = [\n    {\"name\": \"Ava\",  \"major\": \"DANL\", \"score\": 91},\n    {\"name\": \"Ben\",  \"major\": \"ECON\", \"score\": 84},\n    {\"name\": \"Cara\", \"major\": \"DANL\", \"score\": 76},\n]\n\n\nUse a list comprehension to create danl_names, the names of students whose major is \"DANL\".\n\nUse a dictionary comprehension to create danl_scores mapping name → score for only \"DANL\" students.\n\n\n\n\n(b) Modifying Lists & Dictionaries\n\nModify nums using .append() to add 99.\n\n\nnums = [2, 5, 2, 8]\n\n\nModify grades using .update() to (i) add \"Cara\": 76 and (ii) change \"Ben\" to 90.\n\n\ngrades = {\"Ava\": 91, \"Ben\": 84}"
+    "text": "Question 8. Comprehensions & Modifying Collections\n\n(a) List & Dictionary Comprehensions\nGiven a list of three dictionaries:\n\nlst_students = [\n    {\"name\": \"Ava\",  \"major\": \"DANL\", \"score\": 91},\n    {\"name\": \"Ben\",  \"major\": \"ECON\", \"score\": 84},\n    {\"name\": \"Cara\", \"major\": \"DANL\", \"score\": 76},\n]\n\n\nUse a list comprehension to create danl_names, the names of students whose major is \"DANL\".\n\nUse a dictionary comprehension to create danl_scores mapping name → score for only \"DANL\" students.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n# (a) Comprehensions\n\n# list comprehension\ndanl_names = [d[\"name\"] for d in lst_students if d[\"major\"] == \"DANL\"]\n\n# dict comprehension\ndanl_scores = {d[\"name\"]: d[\"score\"] for d in lst_students if d[\"major\"] == \"DANL\"}\n\n\n\n\n\n\n\n(b) Modifying Lists & Dictionaries\n\nModify nums using .append() to add 99.\n\n\nnums = [2, 5, 2, 8]\n\n\nModify grades using .update() to (i) add \"Cara\": 76 and (ii) change \"Ben\" to 90.\n\n\ngrades = {\"Ava\": 91, \"Ben\": 84}\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n# (b) Modifying lists & dictionaries\n\nnums.append(99)\n\ngrades.update({\"Cara\": 76, \"Ben\": 90})"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-9.-error-handling-with-tryexcept",
@@ -1159,7 +1159,7 @@
     "href": "listing-danl-210-lec-pdf.html",
     "title": "Lecture Slides (PDF)",
     "section": "",
-    "text": "ℹ️ Choose Portrait or Landscape depending on your device or printing preference.\n\n\n\n\nTitle\nPortrait\nLandscape\nDate\n\n\n\n\nLecture 1 - Syllabus and Course Outline\n📄 PDF\n📄 PDF\nJan 26\n\n\nLecture 2 - Python Fundamentals\n📄 PDF\n📄 PDF\nFeb 4\n\n\n\n\n\n\n Back to top"
+    "text": "ℹ️ Choose Portrait or Landscape depending on your device or printing preference.\n\n\n\n\nTitle\nPortrait\nLandscape\nDate\n\n\n\n\nLecture 1 - Syllabus and Course Outline\n📄 PDF\n📄 PDF\nJan 26\n\n\nLecture 2 - Python Fundamentals\n📄 PDF\n📄 PDF\nFeb 4\n\n\nLecture 2 - Scraping Web-Tables with pd.read_html()\n📄 PDF\n📄 PDF\nFeb 9\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "danl-wk/wk-03.html",

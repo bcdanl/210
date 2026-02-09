@@ -487,6 +487,23 @@ lst_students = [
 1) Use a **list comprehension** to create `danl_names`, the names of students whose major is `"DANL"`.  
 2) Use a **dictionary comprehension** to create `danl_scores` mapping **name → score** for only `"DANL"` students.
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+# (a) Comprehensions
+
+# list comprehension
+danl_names = [d["name"] for d in lst_students if d["major"] == "DANL"]
+
+# dict comprehension
+danl_scores = {d["name"]: d["score"] for d in lst_students if d["major"] == "DANL"}
+```
+
+:::
+
 
 <br>
 
@@ -508,6 +525,23 @@ nums = [2, 5, 2, 8]
 grades = {"Ava": 91, "Ben": 84}
 ```
 
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+# (b) Modifying lists & dictionaries
+
+nums.append(99)
+
+grades.update({"Cara": 76, "Ben": 90})
+```
+
+:::
+
+
 <br><br><br>
 
 ## Question 9. Error Handling with `try`–`except`
@@ -522,7 +556,7 @@ value = "$320"
 
 Write a Python program that does the following:
 
-1.	Attempt to convert value into a floating-point number using float().
+1.	Attempt to convert value into a floating-point number using `float()`.
 2.	If the conversion is successful, print:
 <div style="font-family:courier">You entered: <number></div>
 3.	If the conversion fails (for example, because the string is not a valid number), print:
