@@ -70,21 +70,48 @@ theme_set(theme_fivethirtyeight()+
 - `DataFrame`: a collection of `Series` columns with an *index*.
 
 
-## `DataFrame` Terminologies
+
+## 🧐 Observations in `DataFrame`
+- **Rows** in a `DataFrame` represent individual units or entities for which data is collected.  
+- **Examples**:  
+  - *Student Information*: Each row = one student  
+  - *Employee Information*: Each row = one employee  
+  - *Daily S&P 500 Index Data*: Each row = one trading day  
+  - *Household Survey Data*: Each row = one household  
+
+
+## 🏷️ Variables in `DataFrame`
+- **Columns** in a `DataFrame` represent attributes or characteristics measured across multiple *observations*.  
+- **Examples**:  
+  - *Student Data*: `Name`, `Age`, `Grade`, `Major`  
+  - *Employee Data*: `EmployeeID`, `Name`, `Age`, `Department`  
+  - *Customer Data*: `CustomerID`, `Name`, `Age`, `Income`, `HousingType`  
+
+:::: fragment
+:::callout-note
+- In a `DataFrame`, a **variable** is a **column** of data.  
+- In general programming, a **variable** is the **name of an object**.  
+:::
+::::
+
+## ✨ Tidy `DataFrame`
 ### Variables, Observations, and Values
 
 <div style="display:block; margin:-30px;"></div>
 
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
-</p>
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/tidy-1.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
+- A `DataFrame` is *tidy* if it follows three rules:  
 
-1. Each **variable** is a *column*.
-2. Each **observation** is a *row*.
-3. Each **value** is a *cell*.
+  1. Each **variable** has its own *column*.  
+  2. Each **observation** has its own *row*.  
+  3. Each **value** has its own *cell*.  
 
-- When we work with `DataFrame`, we mean a variable a column.
+- A tidy `DataFrame` keeps your data organized, making it easier to understand, analyze, and share in any data analysis.  
+
 
 <!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
 
@@ -275,25 +302,32 @@ df_0 = df_0[1:]  # Remove the first row
 
 ## ⚙️ Dot Operators, Methods, and Attributes
 
+:::: fragment
 #### ⚫ Dot operator
 - The dot operator (`DataFrame.`) is used for an **attribute**  or a **method** on objects. 
 
+::::
 
 :::: {.columns}
 
 ::: {.column width="50%"}
+::: fragment
+
 #### 🛠️ Method
 
 - A method (`DataFrame.METHOD()`) is a **function** that we can call on a `DataFrame` to perform operations, modify data, or derive insights.
   - e.g., `df.info()`
 
 :::
+:::
 ::: {.column width="50%"}
+::: fragment
 #### 🏷️ Attribute
 
 - An attribute (`DataFrame.ATTRIBUTE`) is a **property** that provides information about the `DataFrame`'s structure or content without modifying it. 
   - e.g., `df.columns`
 
+:::
 :::
 ::::
 
@@ -321,7 +355,7 @@ df_0.columns   # attribute
 
 - Every `DataFrame` object has a `.info()` method that provides a summary of a DataFrame:
   - Variable names (`.columns`)
-  - Number of variables/observations (`.shape`)
+  - Number of observations and variables (`.shape`)
   - Number of non-missing values in each variable (`.count()`)
     - Pandas often displays missing values as `NaN`.
     

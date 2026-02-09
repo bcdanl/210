@@ -427,22 +427,76 @@ Byeong-Hak Choe
 <li class="fragment"><p><code>DataFrame</code>: a collection of <code>Series</code> columns with an <em>index</em>.</p></li>
 </ul>
 </section>
-<section id="dataframe-terminologies" class="slide level2">
-<h2><code>DataFrame</code> Terminologies</h2>
+<section id="observations-in-dataframe" class="slide level2">
+<h2>🧐 Observations in <code>DataFrame</code></h2>
+<ul>
+<li class="fragment"><strong>Rows</strong> in a <code>DataFrame</code> represent individual units or entities for which data is collected.<br>
+</li>
+<li class="fragment"><strong>Examples</strong>:
+<ul>
+<li class="fragment"><em>Student Information</em>: Each row = one student<br>
+</li>
+<li class="fragment"><em>Employee Information</em>: Each row = one employee<br>
+</li>
+<li class="fragment"><em>Daily S&amp;P 500 Index Data</em>: Each row = one trading day<br>
+</li>
+<li class="fragment"><em>Household Survey Data</em>: Each row = one household</li>
+</ul></li>
+</ul>
+</section>
+<section id="variables-in-dataframe" class="slide level2">
+<h2>🏷️ Variables in <code>DataFrame</code></h2>
+<ul>
+<li class="fragment"><strong>Columns</strong> in a <code>DataFrame</code> represent attributes or characteristics measured across multiple <em>observations</em>.<br>
+</li>
+<li class="fragment"><strong>Examples</strong>:
+<ul>
+<li class="fragment"><em>Student Data</em>: <code>Name</code>, <code>Age</code>, <code>Grade</code>, <code>Major</code><br>
+</li>
+<li class="fragment"><em>Employee Data</em>: <code>EmployeeID</code>, <code>Name</code>, <code>Age</code>, <code>Department</code><br>
+</li>
+<li class="fragment"><em>Customer Data</em>: <code>CustomerID</code>, <code>Name</code>, <code>Age</code>, <code>Income</code>, <code>HousingType</code></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">In a <code>DataFrame</code>, a <strong>variable</strong> is a <strong>column</strong> of data.<br>
+</li>
+<li class="fragment">In general programming, a <strong>variable</strong> is the <strong>name of an object</strong>.<br>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tidy-dataframe" class="slide level2">
+<h2>✨ Tidy <code>DataFrame</code></h2>
 <h3 id="variables-observations-and-values">Variables, Observations, and Values</h3>
 <div style="display:block; margin:-30px;">
 
 </div>
-<p align="center">
-<img src="https://bcdanl.github.io/lec_figs/tidy-1.png">
+<div style="text-align: center; width: 80%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/tidy-1.png" style="width: 100%; margin-bottom: -50px;">
+<p style="font-weight: bold;">
 </p>
-<ol type="1">
-<li class="fragment">Each <strong>variable</strong> is a <em>column</em>.</li>
-<li class="fragment">Each <strong>observation</strong> is a <em>row</em>.</li>
-<li class="fragment">Each <strong>value</strong> is a <em>cell</em>.</li>
-</ol>
+</div>
 <ul>
-<li class="fragment">When we work with <code>DataFrame</code>, we mean a variable a column.</li>
+<li class="fragment"><p>A <code>DataFrame</code> is <em>tidy</em> if it follows three rules:</p>
+<ol type="1">
+<li class="fragment">Each <strong>variable</strong> has its own <em>column</em>.<br>
+</li>
+<li class="fragment">Each <strong>observation</strong> has its own <em>row</em>.<br>
+</li>
+<li class="fragment">Each <strong>value</strong> has its own <em>cell</em>.</li>
+</ol></li>
+<li class="fragment"><p>A tidy <code>DataFrame</code> keeps your data organized, making it easier to understand, analyze, and share in any data analysis.</p></li>
 </ul>
 <!-- - This structure is intuitive and aligns with the way data is often collected and used in data visualization,  statistical analysis, and machine learning. -->
 </section></section>
@@ -630,12 +684,17 @@ Byeong-Hak Choe
 </section>
 <section id="dot-operators-methods-and-attributes" class="slide level2">
 <h2>⚙️ Dot Operators, Methods, and Attributes</h2>
+<div class="fragment">
+<!-- -->
 <h4 id="dot-operator">⚫ Dot operator</h4>
 <ul>
 <li class="fragment">The dot operator (<code>DataFrame.</code>) is used for an <strong>attribute</strong> or a <strong>method</strong> on objects.</li>
 </ul>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="fragment">
+<!-- -->
 <h4 id="method">🛠️ Method</h4>
 <ul>
 <li class="fragment">A method (<code>DataFrame.METHOD()</code>) is a <strong>function</strong> that we can call on a <code>DataFrame</code> to perform operations, modify data, or derive insights.
@@ -643,7 +702,10 @@ Byeong-Hak Choe
 <li class="fragment">e.g., <code>df.info()</code></li>
 </ul></li>
 </ul>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="fragment">
+<!-- -->
 <h4 id="attribute">🏷️ Attribute</h4>
 <ul>
 <li class="fragment">An attribute (<code>DataFrame.ATTRIBUTE</code>) is a <strong>property</strong> that provides information about the <code>DataFrame</code>’s structure or content without modifying it.
@@ -651,6 +713,7 @@ Byeong-Hak Choe
 <li class="fragment">e.g., <code>df.columns</code></li>
 </ul></li>
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -669,7 +732,7 @@ Byeong-Hak Choe
 <li class="fragment">Every <code>DataFrame</code> object has a <code>.info()</code> method that provides a summary of a DataFrame:
 <ul>
 <li class="fragment">Variable names (<code>.columns</code>)</li>
-<li class="fragment">Number of variables/observations (<code>.shape</code>)</li>
+<li class="fragment">Number of observations and variables (<code>.shape</code>)</li>
 <li class="fragment">Number of non-missing values in each variable (<code>.count()</code>)
 <ul>
 <li class="fragment">Pandas often displays missing values as <code>NaN</code>.</li>

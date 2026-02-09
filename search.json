@@ -1992,7 +1992,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#dot-operators-methods-and-attributes",
     "title": "Lecture 3",
     "section": "⚙️ Dot Operators, Methods, and Attributes",
-    "text": "⚙️ Dot Operators, Methods, and Attributes\n⚫ Dot operator\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\n\n\n\n🛠️ Method\n\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., df.info()\n\n\n\n🏷️ Attribute\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., df.columns"
+    "text": "⚙️ Dot Operators, Methods, and Attributes\n\n\n⚫ Dot operator\n\nThe dot operator (DataFrame.) is used for an attribute or a method on objects.\n\n\n\n\n\n\n🛠️ Method\n\nA method (DataFrame.METHOD()) is a function that we can call on a DataFrame to perform operations, modify data, or derive insights.\n\ne.g., df.info()\n\n\n\n\n\n\n🏷️ Attribute\n\nAn attribute (DataFrame.ATTRIBUTE) is a property that provides information about the DataFrame’s structure or content without modifying it.\n\ne.g., df.columns"
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#getting-a-summary-of-a-dataframe-with-.info",
@@ -2013,7 +2013,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#getting-a-summary-of-a-dataframe",
     "title": "Lecture 3",
     "section": "📑 Getting a Summary of a DataFrame",
-    "text": "📑 Getting a Summary of a DataFrame\n\n\ndf_0.info()    # method\ndf_0.count()   # method\n\ndf_0.shape     # attribute\ndf_0.columns   # attribute\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of variables/observations (.shape)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
+    "text": "📑 Getting a Summary of a DataFrame\n\n\ndf_0.info()    # method\ndf_0.count()   # method\n\ndf_0.shape     # attribute\ndf_0.columns   # attribute\n\n\n\nEvery DataFrame object has a .info() method that provides a summary of a DataFrame:\n\nVariable names (.columns)\nNumber of observations and variables (.shape)\nNumber of non-missing values in each variable (.count())\n\nPandas often displays missing values as NaN."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#series-and-dataframe",
@@ -2063,5 +2063,26 @@
     "title": "Lecture 3",
     "section": "Pandas Series and DataFrame",
     "text": "Pandas Series and DataFrame\n\n\n\n\nSeries: a collection of a one-dimensional object containing a sequence of values.\nDataFrame: a collection of Series columns with an index."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#observations-in-dataframe",
+    "href": "danl-lec/danl-210-lec-03-2026-0209.html#observations-in-dataframe",
+    "title": "Lecture 3",
+    "section": "🧐 Observations in DataFrame",
+    "text": "🧐 Observations in DataFrame\n\nRows in a DataFrame represent individual units or entities for which data is collected.\n\nExamples:\n\nStudent Information: Each row = one student\n\nEmployee Information: Each row = one employee\n\nDaily S&P 500 Index Data: Each row = one trading day\n\nHousehold Survey Data: Each row = one household"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#variables-in-dataframe",
+    "href": "danl-lec/danl-210-lec-03-2026-0209.html#variables-in-dataframe",
+    "title": "Lecture 3",
+    "section": "🏷️ Variables in DataFrame",
+    "text": "🏷️ Variables in DataFrame\n\nColumns in a DataFrame represent attributes or characteristics measured across multiple observations.\n\nExamples:\n\nStudent Data: Name, Age, Grade, Major\n\nEmployee Data: EmployeeID, Name, Age, Department\n\nCustomer Data: CustomerID, Name, Age, Income, HousingType\n\n\n\n\n\n\nNote\n\n\n\nIn a DataFrame, a variable is a column of data.\n\nIn general programming, a variable is the name of an object."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#tidy-dataframe",
+    "href": "danl-lec/danl-210-lec-03-2026-0209.html#tidy-dataframe",
+    "title": "Lecture 3",
+    "section": "✨ Tidy DataFrame",
+    "text": "✨ Tidy DataFrame\nVariables, Observations, and Values\n\n\n\n\n\n\n\n\n\nA DataFrame is tidy if it follows three rules:\n\nEach variable has its own column.\n\nEach observation has its own row.\n\nEach value has its own cell.\n\nA tidy DataFrame keeps your data organized, making it easier to understand, analyze, and share in any data analysis."
   }
 ]
