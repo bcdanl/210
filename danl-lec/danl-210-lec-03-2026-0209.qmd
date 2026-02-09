@@ -412,7 +412,7 @@ df_0.columns   # attribute
 
 - **Step 1:** Navigate to your folder using <u>Finder</u>.
 - **Step 2:** Select the file or folder by clicking on it.
-- **Step 3:** Press **Option + Command + C**.
+- **Step 3:** Copy the path (**Option + Command + C**).
 - **Step 4:** Paste the path into your Python script (**Command + V**).
 
 :::
@@ -446,8 +446,8 @@ df_0.columns   # attribute
 
 :::{.nonincremental}
 - To export `DataFrame` as a **CSV** file, we use the `to_csv()` method.
-  - Before exporting, you can set the **working directory** to organize and manage the location of CSV files. 
-  - This helps in keeping your data analysis and exports well-organized.
+  - Before exporting, you can set the **working directory (WD)** to organize and manage the location of CSV files. 
+  - Create a `data` directory within your **WD**. This helps in keeping your data analysis and exports well-organized.
 
 :::
 
@@ -461,7 +461,7 @@ os.chdir(wd_path)  # Change the current working directory to wd_path
 os.getcwd()  # Retrieve and return the current working directory
 
 # index=False to not write the row index in the CSV output
-df_0.to_csv('table.csv', index =False)
+df_0.to_csv('data/table.csv', index =False)
 ```
 
 
