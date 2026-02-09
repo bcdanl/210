@@ -1138,14 +1138,14 @@
     "href": "danl-cw/danl-210-cw-02.html#question-9.-error-handling-with-tryexcept",
     "title": "Classwork 2",
     "section": "Question 9. Error Handling with try–except",
-    "text": "Question 9. Error Handling with try–except\n\nYou are given a variable value that stores a string:\nvalue = \"$320\"\nWrite a Python program that does the following:\n\nAttempt to convert value into a floating-point number using float().\nIf the conversion is successful, print:\n\nYou entered: \n\nIf the conversion fails (for example, because the string is not a valid number), print:\n\nThat’s not a valid number!\n\n\nYour program must use a try–except block to handle the potential error gracefully."
+    "text": "Question 9. Error Handling with try–except\n\nYou are given a variable value that stores a string:\nvalue = \"$320\"\nWrite a Python program that does the following:\n\nAttempt to convert value into a floating-point number using float().\nIf the conversion is successful, print:\n\nYou entered: \n\nIf the conversion fails (for example, because the string is not a valid number), print:\n\nThat’s not a valid number!\n\n\nYour program must use a try–except block to handle the potential error gracefully.\n\n\n\n\n\n\n\nShow answer"
   },
   {
     "objectID": "danl-cw/danl-210-cw-02.html#question-10.-imports-and-library-setup-pandas-selenium",
     "href": "danl-cw/danl-210-cw-02.html#question-10.-imports-and-library-setup-pandas-selenium",
     "title": "Classwork 2",
     "section": "Question 10. Imports and Library Setup (pandas + selenium)",
-    "text": "Question 10. Imports and Library Setup (pandas + selenium)\n\n(a) Importing a Library with an Alias\nImport the pandas library as pd.\n\n\n(b) Installing an External Library\nInstall the selenium library.\n\n\n(c) Importing from a Submodule\nFrom selenium, import the functions webdriver."
+    "text": "Question 10. Imports and Library Setup (pandas + selenium)\n\n(a) Importing a Library with an Alias\nImport the pandas library as pd.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nimport pandas as pd\n\n\n\n\n\n\n(b) Installing an External Library\nInstall the selenium library.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n!pip install selenium\n\n\n\n\n\n\n(c) Importing from a Submodule\nFrom selenium, import the function webdriver.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nfrom selenium import webdriver"
   },
   {
     "objectID": "listing-danl-210-lec.html",

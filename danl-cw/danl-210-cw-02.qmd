@@ -567,10 +567,16 @@ Your program must use a `try`–`except` block to handle the potential error gra
 <br>
 
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
 ```{python}
+#| echo: true
+
 
 ```
 
+:::
 
 <br><br><br>
 
@@ -579,17 +585,49 @@ Your program must use a `try`–`except` block to handle the potential error gra
 ### (a) Importing a Library with an Alias
 Import the `pandas` library as `pd`.
 
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+import pandas as pd
+```
+
+:::
+
 ### (b) Installing an External Library
 Install the `selenium` library.
 
+
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+!pip install selenium
+```
+
+:::
+
 ### (c) Importing from a Submodule
-From `selenium`, import the functions `webdriver`.
+From `selenium`, import the function `webdriver`.
 
 <br>
 
-```{python}
+::: {.callout-tip collapse="true"}
+#### Show answer
 
+```{python}
+#| echo: true
+
+from selenium import webdriver
 ```
+
+:::
 
 
 
