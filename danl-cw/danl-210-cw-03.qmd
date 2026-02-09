@@ -22,11 +22,12 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 
 # Question 1
 
-- Store the table in the following webpage as a `pandas`' `DataFrame`:
+- Store the table in the following webpage as a **pandas** `DataFrame`:
   - [Gasoline Pump Components History](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
-	-	Convert the abbreviated month-year string to datetime using `pd.to_datetime()` with `format='%b-%y'`.
-  - If necessary, use the `Series.str.replace()` method.
-    - For example, `Series.str.replace('A', 'B')` replaces "A" with "B" in `Series`.
+  
+<!-- 	-	Convert the abbreviated month-year string to datetime using `pd.to_datetime()` with `format='%b-%y'`. -->
+<!--   - If necessary, use the `Series.str.replace()` method. -->
+<!--     - For example, `Series.str.replace('A', 'B')` replaces "A" with "B" in `Series`. -->
 
 
 ```{python}
@@ -48,7 +49,7 @@ Series = pd.to_datetime(Series, format='%b-%y')
 - Store each table in the following webpage as a `pandas`' `DataFrame`:
   - [https://www.geneseo.edu/business/student%20outcomes](https://www.geneseo.edu/business/student%20outcomes)
 
-- Ensure each table has appropriate column names and properly structured observations.
+<!-- - Ensure each table has appropriate column names and properly structured observations. -->
 
 - Export the `DataFrame` as a CSV file.
 
