@@ -419,12 +419,14 @@ Byeong-Hak Choe
 </section>
 <section id="pandas-series-and-dataframe-1" class="slide level2">
 <h2>Pandas <code>Series</code> and <code>DataFrame</code></h2>
-<p align="center">
-<img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
+<div style="text-align: center; width: 80%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/pd-series-df.jpg" style="width: 100%; margin-bottom: -50px;">
+<p style="font-weight: bold;">
 </p>
+</div>
 <ul>
-<li class="fragment"><p><code>Series</code>: a collection of a one-dimensional object containing a sequence of values.</p></li>
-<li class="fragment"><p><code>DataFrame</code>: a collection of <code>Series</code> columns with an <em>index</em>.</p></li>
+<li class="fragment"><p><code>Series</code>: A one-dimensional object containing a sequence of values (like a list).</p></li>
+<li class="fragment"><p><code>DataFrame</code>: A two-dimensional table made of multiple <code>Series</code> columns sharing a common <em>index</em>.</p></li>
 </ul>
 </section>
 <section id="observations-in-dataframe" class="slide level2">
@@ -630,17 +632,17 @@ Byeong-Hak Choe
 <section id="comments-code-cells-and-keyboard-shortcuts" class="slide level2">
 <h2>💬 Comments, Code Cells, and Keyboard Shortcuts</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># %%</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># =============================================================================</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># ===========================================================================</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co"># SECTION TITLE</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># =============================================================================</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># ===========================================================================</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a>a <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p>The <code>#</code> mark is Spyder’s <strong>comment</strong> character.</p></li>
 <li class="fragment"><p>It is recommended to use a <strong>coding block</strong> (defined by <code># %%</code>) with <strong>block commenting</strong> (Ctrl/command + 4) for separating code sections.</p></li>
 <li class="fragment"><p>To set your keyboard shortcuts,</p>
 <ul>
-<li class="fragment">Preferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”</li>
-<li class="fragment">Set the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; and (4) blockcomment</li>
+<li class="fragment"><strong>Preferences</strong> &gt; <strong>Keyboard Shortcuts</strong> &gt; <strong>Search</strong> <strong>“run”</strong> and/or <strong>“comment”</strong></li>
+<li class="fragment">Set the shortcuts for (1) <u>run selection</u>; (2) <u>run cell</u>; (3) <u>toggle comment</u>; and (4) <u>blockcomment</u></li>
 <li class="fragment">I use <strong>command + return</strong> for <strong>running a current line (selection)</strong> <!-- - Windows users can set **Alt + Enter** for it. --></li>
 </ul></li>
 </ul>
@@ -740,6 +742,45 @@ Byeong-Hak Choe
 </ul></li>
 </ul>
 </section>
+<section id="absolute-pathnames" class="slide level2">
+<h2>📍 Absolute Pathnames</h2>
+<ul>
+<li class="fragment"><p>An <strong>absolute pathname</strong> tells the computer the <em>exact location</em> of a file, starting from the very top folder of your computer.</p>
+<ul>
+<li class="fragment">This location never changes, no matter where you are working in Python.<br>
+</li>
+</ul></li>
+<li class="fragment"><p>In Python, you can see the <strong>working directory</strong> — the folder where Python is currently “looking” for files — by running <code>os.getcwd()</code> in the <strong>Console</strong>.</p></li>
+<li class="fragment"><p><strong>Examples of an absolute pathname for <code>custdata_rev.csv</code>:</strong></p>
+<ul>
+<li class="fragment">On a Mac:<br>
+<code>/Users/user/documents/data/custdata_rev.csv</code><br>
+</li>
+<li class="fragment">On Windows:<br>
+<code>C:\\Users\\user\\Documents\\data\\custdata_rev.csv</code>
+<ul>
+<li class="fragment">Note: In Windows, we use <strong>double backslashes (<code>\\</code>)</strong> because a single backslash (<code>\</code>) is treated as a special character in R.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="relative-pathnames" class="slide level2">
+<h2>🔗 Relative Pathnames</h2>
+<ul>
+<li class="fragment">A <strong>relative pathname</strong> specifies the location of a file <em>relative to the working directory</em>.<br>
+</li>
+<li class="fragment"><strong>Examples of a relative pathname for <code>custdata_rev.csv</code>:</strong>
+<ul>
+<li class="fragment">Absolute pathname:<br>
+<code>/Users/user/documents/data/custdata_rev.csv</code></li>
+<li class="fragment">Working directory:<br>
+<code>/Users/user/documents/</code><br>
+</li>
+<li class="fragment">Relative pathname:<br>
+<code>data/custdata_rev.csv</code></li>
+</ul></li>
+</ul>
+</section>
 <section id="finding-the-absolute-path-of-a-filefolder" class="slide level2">
 <h2>📍📁 Finding the Absolute Path of a File/Folder</h2>
 <div>
@@ -769,13 +810,34 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
+<section id="csv-files" class="slide level2">
+<h2>📑 CSV Files</h2>
+<div>
+<div class="fragment">
+<ul>
+<li>A <strong>CSV</strong> (comma-separated values) file is a plain text file where each value is separated by a <em>comma</em>.
+<ul>
+<li>CSV files are widely used for storing data from spreadsheets and databases.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Example</strong>
+<ul>
+<li><a href="https://bcdanl.github.io/data/tvshows.csv"><code>https://bcdanl.github.io/data/tvshows.csv</code></a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
 <section id="exporting-a-dataframe-as-a-csv-file-with-to_csv" class="slide level2">
 <h2>💾 Exporting a <code>DataFrame</code> as a <strong>CSV</strong> File with <code>to_csv()</code></h2>
 <div>
 <ul>
 <li>To export <code>DataFrame</code> as a <strong>CSV</strong> file, we use the <code>to_csv()</code> method.
 <ul>
-<li>Before exporting, you can set the working directory to organize and manage the location of the CSV file.</li>
+<li>Before exporting, you can set the <strong>working directory</strong> to organize and manage the location of CSV files.</li>
 <li>This helps in keeping your data analysis and exports well-organized.</li>
 </ul></li>
 </ul>
@@ -784,7 +846,7 @@ Byeong-Hak Choe
 <span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> os  </span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Set the working directory path</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>wd_path <span class="op">=</span> <span class="st">'PATH_TO_YOUR_DATA_FOLDER'</span> <span class="co"># Do not choose your personal website folder</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>wd_path <span class="op">=</span> <span class="st">'PATH_TO_YOUR_DATA_FOLDER'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
 <span id="cb6-7"><a href="#cb6-7"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
 <span id="cb6-8"><a href="#cb6-8"></a></span>

@@ -61,13 +61,14 @@ theme_set(theme_fivethirtyeight()+
 
 ## Pandas `Series` and `DataFrame`
 
-<p align="center">
-  <img src="https://bcdanl.github.io/lec_figs/py-series-df.png" width="400px">
-</p>
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/pd-series-df.jpg" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
-- `Series`:	a collection of a one-dimensional object containing a sequence of values.
-  
-- `DataFrame`: a collection of `Series` columns with an *index*.
+- `Series`: A one-dimensional object containing a sequence of values (like a list).
+
+- `DataFrame`: A two-dimensional table made of multiple `Series` columns sharing a common *index*.
 
 
 
@@ -242,9 +243,9 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder-var-explore.gi
 
 ```{.python}
 # %%
-# =============================================================================
+# ===========================================================================
 # SECTION TITLE
-# =============================================================================
+# ===========================================================================
 a = 1
 ```
 
@@ -253,8 +254,8 @@ a = 1
 - It is recommended to use a **coding block** (defined by `# %%`) with **block commenting** (Ctrl/command + 4) for separating code sections.
 
 - To set your keyboard shortcuts,
-  - Preferences > Keyboard Shortcuts > Search "run" and/or "comment"
-  - Set the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; and (4) blockcomment
+  - **Preferences** > **Keyboard Shortcuts** > **Search** **"run"** and/or **"comment"**
+  - Set the shortcuts for (1) <u>run selection</u>; (2) <u>run cell</u>; (3) <u>toggle comment</u>; and (4) <u>blockcomment</u>
   - I use **command + return** for **running a current line (selection)**
   <!-- - Windows users can set **Alt + Enter** for it. -->
 
@@ -360,6 +361,31 @@ df_0.columns   # attribute
     - Pandas often displays missing values as `NaN`.
     
 
+## 📍 Absolute Pathnames
+
+- An **absolute pathname** tells the computer the *exact location* of a file, starting from the very top folder of your computer.  
+  - This location never changes, no matter where you are working in Python.  
+- In Python, you can see the **working directory** — the folder where Python is currently “looking” for files — by running `os.getcwd()` in the **Console**.  
+
+- **Examples of an absolute pathname for `custdata_rev.csv`:**  
+  - On a Mac:  
+    `/Users/user/documents/data/custdata_rev.csv`  
+  - On Windows:  
+    `C:\\Users\\user\\Documents\\data\\custdata_rev.csv`  
+    - Note: In Windows, we use **double backslashes (`\\`)** because a single backslash (`\`) is treated as a special character in R.  
+
+## 🔗 Relative Pathnames
+
+- A **relative pathname** specifies the location of a file *relative to the working directory*.  
+- **Examples of a relative pathname for `custdata_rev.csv`:**  
+  - Absolute pathname:  
+  `/Users/user/documents/data/custdata_rev.csv`
+  - Working directory:  
+  `/Users/user/documents/`  
+  - Relative pathname:  
+  `data/custdata_rev.csv`  
+
+
 
 ## 📍📁 Finding the Absolute Path of a File/Folder
 
@@ -395,11 +421,32 @@ df_0.columns   # attribute
 ::::
 
 
+
+## 📑 CSV Files
+
+:::: nonincremental
+
+::: fragment
+- A **CSV** (comma-separated values) file is a plain text file where each value is separated by a *comma*.
+  -	CSV files are widely used for storing data from spreadsheets and databases.
+
+:::
+
+::: fragment
+
+- **Example**
+  - [`https://bcdanl.github.io/data/tvshows.csv`](https://bcdanl.github.io/data/tvshows.csv)
+
+:::
+
+::::
+
+
 ## 💾 Exporting a `DataFrame` as a **CSV** File with `to_csv()`
 
 :::{.nonincremental}
 - To export `DataFrame` as a **CSV** file, we use the `to_csv()` method.
-  - Before exporting, you can set the working directory to organize and manage the location of the CSV file. 
+  - Before exporting, you can set the **working directory** to organize and manage the location of CSV files. 
   - This helps in keeping your data analysis and exports well-organized.
 
 :::
@@ -409,7 +456,7 @@ df_0.columns   # attribute
 import os  
 
 # Set the working directory path
-wd_path = 'PATH_TO_YOUR_DATA_FOLDER' # Do not choose your personal website folder
+wd_path = 'PATH_TO_YOUR_DATA_FOLDER' # e.g., '/Users/bchoe/Documents/DANL-210'
 os.chdir(wd_path)  # Change the current working directory to wd_path
 os.getcwd()  # Retrieve and return the current working directory
 

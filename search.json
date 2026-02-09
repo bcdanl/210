@@ -1922,7 +1922,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#comments-code-cells-and-keyboard-shortcuts",
     "title": "Lecture 3",
     "section": "💬 Comments, Code Cells, and Keyboard Shortcuts",
-    "text": "💬 Comments, Code Cells, and Keyboard Shortcuts\n# %%\n# =============================================================================\n# SECTION TITLE\n# =============================================================================\na = 1\n\nThe # mark is Spyder’s comment character.\nIt is recommended to use a coding block (defined by # %%) with block commenting (Ctrl/command + 4) for separating code sections.\nTo set your keyboard shortcuts,\n\nPreferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”\nSet the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; and (4) blockcomment\nI use command + return for running a current line (selection)"
+    "text": "💬 Comments, Code Cells, and Keyboard Shortcuts\n# %%\n# ===========================================================================\n# SECTION TITLE\n# ===========================================================================\na = 1\n\nThe # mark is Spyder’s comment character.\nIt is recommended to use a coding block (defined by # %%) with block commenting (Ctrl/command + 4) for separating code sections.\nTo set your keyboard shortcuts,\n\nPreferences &gt; Keyboard Shortcuts &gt; Search “run” and/or “comment”\nSet the shortcuts for (1) run selection; (2) run cell; (3) toggle comment; and (4) blockcomment\nI use command + return for running a current line (selection)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#scrapping-tables-with-pd.read_html-1",
@@ -1950,7 +1950,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#exporting-a-dataframe-as-a-csv-file-with-to_csv",
     "title": "Lecture 3",
     "section": "💾 Exporting a DataFrame as a CSV File with to_csv()",
-    "text": "💾 Exporting a DataFrame as a CSV File with to_csv()\n\n\nTo export DataFrame as a CSV file, we use the to_csv() method.\n\nBefore exporting, you can set the working directory to organize and manage the location of the CSV file.\nThis helps in keeping your data analysis and exports well-organized.\n\n\n\n# Import the os module to interact with the operating system\nimport os  \n\n# Set the working directory path\nwd_path = 'PATH_TO_YOUR_DATA_FOLDER' # Do not choose your personal website folder\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# index=False to not write the row index in the CSV output\ndf_0.to_csv('table.csv', index =False)"
+    "text": "💾 Exporting a DataFrame as a CSV File with to_csv()\n\n\nTo export DataFrame as a CSV file, we use the to_csv() method.\n\nBefore exporting, you can set the working directory to organize and manage the location of CSV files.\nThis helps in keeping your data analysis and exports well-organized.\n\n\n\n# Import the os module to interact with the operating system\nimport os  \n\n# Set the working directory path\nwd_path = 'PATH_TO_YOUR_DATA_FOLDER' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# index=False to not write the row index in the CSV output\ndf_0.to_csv('table.csv', index =False)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#scrapping-tables-with-pd.read_html-2",
@@ -2062,7 +2062,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#pandas-series-and-dataframe-1",
     "title": "Lecture 3",
     "section": "Pandas Series and DataFrame",
-    "text": "Pandas Series and DataFrame\n\n\n\n\nSeries: a collection of a one-dimensional object containing a sequence of values.\nDataFrame: a collection of Series columns with an index."
+    "text": "Pandas Series and DataFrame\n\n\n\n\n\n\nSeries: A one-dimensional object containing a sequence of values (like a list).\nDataFrame: A two-dimensional table made of multiple Series columns sharing a common index."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#observations-in-dataframe",
@@ -2084,5 +2084,26 @@
     "title": "Lecture 3",
     "section": "✨ Tidy DataFrame",
     "text": "✨ Tidy DataFrame\nVariables, Observations, and Values\n\n\n\n\n\n\n\n\n\nA DataFrame is tidy if it follows three rules:\n\nEach variable has its own column.\n\nEach observation has its own row.\n\nEach value has its own cell.\n\nA tidy DataFrame keeps your data organized, making it easier to understand, analyze, and share in any data analysis."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#csv-files",
+    "href": "danl-lec/danl-210-lec-03-2026-0209.html#csv-files",
+    "title": "Lecture 3",
+    "section": "📑 CSV Files",
+    "text": "📑 CSV Files\n\n\n\nA CSV (comma-separated values) file is a plain text file where each value is separated by a comma.\n\nCSV files are widely used for storing data from spreadsheets and databases.\n\n\n\n\n\nExample\n\nhttps://bcdanl.github.io/data/tvshows.csv"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#absolute-pathnames",
+    "href": "danl-lec/danl-210-lec-03-2026-0209.html#absolute-pathnames",
+    "title": "Lecture 3",
+    "section": "📍 Absolute Pathnames",
+    "text": "📍 Absolute Pathnames\n\nAn absolute pathname tells the computer the exact location of a file, starting from the very top folder of your computer.\n\nThis location never changes, no matter where you are working in Python.\n\n\nIn Python, you can see the working directory — the folder where Python is currently “looking” for files — by running os.getcwd() in the Console.\nExamples of an absolute pathname for custdata_rev.csv:\n\nOn a Mac:\n/Users/user/documents/data/custdata_rev.csv\n\nOn Windows:\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv\n\nNote: In Windows, we use double backslashes (\\\\) because a single backslash (\\) is treated as a special character in R."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#relative-pathnames",
+    "href": "danl-lec/danl-210-lec-03-2026-0209.html#relative-pathnames",
+    "title": "Lecture 3",
+    "section": "🔗 Relative Pathnames",
+    "text": "🔗 Relative Pathnames\n\nA relative pathname specifies the location of a file relative to the working directory.\n\nExamples of a relative pathname for custdata_rev.csv:\n\nAbsolute pathname:\n/Users/user/documents/data/custdata_rev.csv\nWorking directory:\n/Users/user/documents/\n\nRelative pathname:\ndata/custdata_rev.csv"
   }
 ]
