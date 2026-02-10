@@ -1887,35 +1887,35 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#script-editor",
     "title": "Lecture 3",
     "section": "📝 Script Editor",
-    "text": "📝 Script Editor\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Script Editor (red box), we can create, open and edit files."
+    "text": "📝 Script Editor\n\n\n\n\n\n\nFrom Script Editor (red box), we can create, open and edit files."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#console-pane",
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#console-pane",
     "title": "Lecture 3",
     "section": "🖥️ Console Pane",
-    "text": "🖥️ Console Pane\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Console Pane (blue box), we can interact directly with the Python interpreter, and type commands where Python will immediately execute them."
+    "text": "🖥️ Console Pane\n\n\n\n\n\n\nFrom Console Pane (blue box), we can interact directly with the Python interpreter, and type commands where Python will immediately execute them."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#variable-explorer",
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#variable-explorer",
     "title": "Lecture 3",
     "section": "🔍 Variable Explorer",
-    "text": "🔍 Variable Explorer\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Variable Explorer (yellow box), we can see the values of variables, data frames, and other objects that are currently stored in memory."
+    "text": "🔍 Variable Explorer\n\n\n\n\n\n\nFrom Variable Explorer (yellow box), we can see the values of variables, data frames, and other objects that are currently stored in memory."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#data-containers-in-variable-explorer",
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#data-containers-in-variable-explorer",
     "title": "Lecture 3",
     "section": "📦️ Data Containers in Variable Explorer",
-    "text": "📦️ Data Containers in Variable Explorer\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf we doucle-click the objects such as list and DataFrame objects, we can see what data are contained in such objects."
+    "text": "📦️ Data Containers in Variable Explorer\n\n\n\n\n\n\nIf we doucle-click the objects such as list and DataFrame objects, we can see what data are contained in such objects."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#keyboard-shortcuts",
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#keyboard-shortcuts",
     "title": "Lecture 3",
     "section": "⌨️ Keyboard Shortcuts",
-    "text": "⌨️ Keyboard Shortcuts\n\nGeneral shortcuts\n\nUndo: Ctrl + z (command + z for Mac users)\nRedo: Ctrl + Shift + z (command + shift + z for Mac users)\nSelection: Ctrl + Shift + Arrow (⬆️ ➡️ ⬇️ ⬅️)\nPage Up/Down: Fn + ⬆️ / ⬇️\n\nDefault shortcuts\n\nComment (#): Ctrl + 1 (command + 1 for Mac users)\nBlock-comment: Ctrl + 4 (command + 4 for Mac users)\nRun selection (or a current line): F9\nRun cell: Ctrl + Enter (# %% defines a cell)"
+    "text": "⌨️ Keyboard Shortcuts\n\n\n\nGeneral shortcuts\n\nUndo: Ctrl + z (command + z for Mac users)\nRedo: Ctrl + Shift + z (command + shift + z for Mac users)\nSelection: Ctrl + Shift + Arrow (⬆️ ➡️ ⬇️ ⬅️)\nPage Up/Down: Fn + ⬆️ / ⬇️\n\n\n\n\n\nDefault shortcuts\n\nComment (#): Ctrl + 1 (command + 1 for Mac users)\nBlock-comment: Ctrl + 4 (command + 4 for Mac users)\nRun selection (or a current line): F9\nRun cell: Ctrl + Enter (# %% defines a cell)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#comments-code-cells-and-keyboard-shortcuts",
@@ -2027,7 +2027,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#setting-column-names",
     "title": "Lecture 3",
     "section": "🏷️ Setting Column Names",
-    "text": "🏷️ Setting Column Names\n\n\nHow can we set the first row of a DataFrame as its column names?\nHow can we remove the first row ?\n\n\ndf_0 = tables[0]\ndf_0.columns = df_0.iloc[0]  # Set the first row as column names\ndf_0 = df_0[1:]  # Remove the first row"
+    "text": "🏷️ Setting Column Names\n\n\nHow can we set the first row of a DataFrame as its column names?\nHow can we remove the first row ?\n\ndf_0 = tables[0]\ndf_0.columns = df_0.iloc[0]  # Set the first row as column names\ndf_0 = df_0.iloc[1:]  # Keeps rows from position 1 onward\n\n\n\n\n\n✅ What is DataFrame.iloc[]?\n\nDataFrame.iloc[...] is integer-location indexing:\n\nIt selects rows by position (0, 1, 2, …), not by index labels.\nSlicing works with DataFrame.iloc[]\n\ndf_0.iloc[0] returns the first row (position 0) as a Series."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#anaconda-distribution",
@@ -2097,7 +2097,7 @@
     "href": "danl-lec/danl-210-lec-03-2026-0209.html#absolute-pathnames",
     "title": "Lecture 3",
     "section": "📍 Absolute Pathnames",
-    "text": "📍 Absolute Pathnames\n\nAn absolute pathname tells the computer the exact location of a file, starting from the very top folder of your computer.\n\nThis location never changes, no matter where you are working in Python.\n\n\nIn Python, you can see the working directory — the folder where Python is currently “looking” for files — by running os.getcwd() in the Console.\nExamples of an absolute pathname for custdata_rev.csv:\n\nOn a Mac:\n/Users/user/documents/data/custdata_rev.csv\n\nOn Windows:\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv\n\nNote: In Windows, we use double backslashes (\\\\) because a single backslash (\\) is treated as a special character in R."
+    "text": "📍 Absolute Pathnames\n\n\n\n\nAn absolute pathname tells the computer the exact location of a file, starting from the very top folder of your computer.\n\nThis location never changes, no matter where you are working in Python.\n\n\nIn Python, you can see the working directory — the folder where Python is currently “looking” for files — by running os.getcwd() in the Console.\nExamples of an absolute pathname for custdata_rev.csv:\n\nOn a Mac:\n/Users/user/documents/data/custdata_rev.csv\n\nOn Windows:\nC:\\\\Users\\\\user\\\\Documents\\\\data\\\\custdata_rev.csv\n\nNote: In Windows, we use double backslashes (\\\\) because a single backslash (\\) is treated as a special character in Python."
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html#relative-pathnames",

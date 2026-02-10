@@ -142,101 +142,80 @@ theme_set(theme_fivethirtyeight()+
 
 ## 📝 Script Editor
 
-:::: {.columns}
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/spyder_env.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
-::: {.column width="60%"}
-
-```{r, echo=FALSE, eval = T,  eval = T,out.width = '100%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder_env.png")
-```
-:::
-
-
-::: {.column width="40%"}
 
 - From **Script Editor** (red box), we can create, open and edit files.
-
-:::
-
-::::
 
 
 
 ## 🖥️ Console Pane
 
 
-:::: {.columns}
 
-::: {.column width="60%"}
-```{r, echo=FALSE, eval = T, out.width = '100%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder_env.png")
-```
-:::
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/spyder_env.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
 
-::: {.column width="40%"}
 - From **Console Pane** (blue box), we can interact directly with the Python interpreter, and type commands where Python will immediately execute them.
 
-:::
-
-::::
 
 
 ## 🔍 Variable Explorer
 
 
-:::: {.columns}
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/spyder_env.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
 
-::: {.column width="60%"}
-```{r, echo=FALSE,  eval = T,out.width = '100%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder_env.png")
-```
-:::
 
-::: {.column width="40%"}
 - From **Variable Explorer** (yellow box), we can see the values of variables, data frames, and other objects that are currently stored in memory.
-
-
-:::
-
-
-::::
 
 
 
 ## 📦️ Data Containers in Variable Explorer
 
 
-:::: {.columns}
-::: {.column width="60%"}
-```{r, echo=FALSE,  eval = T,out.width = '100%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/spyder-var-explore.gif")
-```
-:::
 
-::: {.column width="40%"}
+<div style="text-align: center; width: 80%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/spyder-var-explore.gif" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
 - If we doucle-click the objects such as `list` and `DataFrame` objects, we can see what data are contained in such objects.
 
-:::
-
-::::
 
 
 
 ## ⌨️ Keyboard Shortcuts
 
+:::: nonincremental
+
+::: fragment
 - General shortcuts
   - **Undo**: Ctrl + z (command + z for Mac users)
   - **Redo**: Ctrl + Shift + z (command + shift + z for Mac users)
   - **Selection**: Ctrl + Shift + Arrow (:arrow_up: :arrow_right: :arrow_down: :arrow_left:)
   - **Page Up/Down**: Fn + :arrow_up: / :arrow_down:
-  
+
+:::
+
+::: fragment
 - Default shortcuts
   - **Comment (`#`)**: Ctrl + 1 (command + 1 for Mac users)
   - **Block-comment**: Ctrl + 4 (command + 4 for Mac users)
   - **Run selection** (or **a current line**): F9
   - **Run cell**: Ctrl + Enter (`# %%` defines a **cell**)
 
+:::
+::::
 
 
 ## 💬 Comments, Code Cells, and Keyboard Shortcuts
@@ -286,19 +265,33 @@ df_0 = tables[0]
 
 ## 🏷️ Setting Column Names
 
-:::{.nonincremental}
+::::{.nonincremental}
 
 -	How can we set the **first row** of a DataFrame as its **column names**?
 -	How can we **remove** the first row ?
 
-:::
-
 ```{.python}
 df_0 = tables[0]
 df_0.columns = df_0.iloc[0]  # Set the first row as column names
-df_0 = df_0[1:]  # Remove the first row
+df_0 = df_0.iloc[1:]  # Keeps rows from position 1 onward
 ```
 
+<div style="display:block; margin:50px;"></div>
+
+
+::: fragment
+
+### ✅ What is `DataFrame.iloc[]`?
+
+- **`DataFrame.iloc[...]`** is **integer-location indexing**:
+  - It selects **rows by position** (0, 1, 2, …), not by index labels.
+  - **Slicing works with `DataFrame.iloc[]`**
+- `df_0.iloc[0]` returns the **first row** (position 0) as a **Series**.
+
+
+:::
+
+::::
 
 
 ## ⚙️ Dot Operators, Methods, and Attributes
@@ -363,6 +356,9 @@ df_0.columns   # attribute
 
 ## 📍 Absolute Pathnames
 
+<div style="display:block; margin:-10px;"></div>
+
+
 - An **absolute pathname** tells the computer the *exact location* of a file, starting from the very top folder of your computer.  
   - This location never changes, no matter where you are working in Python.  
 - In Python, you can see the **working directory** — the folder where Python is currently “looking” for files — by running `os.getcwd()` in the **Console**.  
@@ -372,7 +368,7 @@ df_0.columns   # attribute
     `/Users/user/documents/data/custdata_rev.csv`  
   - On Windows:  
     `C:\\Users\\user\\Documents\\data\\custdata_rev.csv`  
-    - Note: In Windows, we use **double backslashes (`\\`)** because a single backslash (`\`) is treated as a special character in R.  
+    - Note: In Windows, we use **double backslashes (`\\`)** because a single backslash (`\`) is treated as a special character in Python.  
 
 ## 🔗 Relative Pathnames
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DANL 210 - Lecture | Byeong-Hak Choe</title>
+<title>DANL 210: Data Preparation and Management, Spring 2026 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-danl-210-lec .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -78,7 +78,63 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-danl-210-lec'] = new List('listing-danl-210-lec', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-danl-210-cw .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-danl-210-cw'] = new List('listing-danl-210-cw', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-danl-210-hw .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-danl-210-hw'] = new List('listing-danl-210-hw', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -117,11 +173,12 @@ border-radius: 5px; /* Rounds the corners */
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="assets/css/font.css">
-<meta property="og:title" content="DANL 210 - Lecture | Byeong-Hak Choe">
+<meta property="og:title" content="DANL 210: Data Preparation and Management, Spring 2026 | Byeong-Hak Choe">
+<meta property="og:description" content="<div class=class=“box-body buttons-text clearfix”>">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -157,21 +214,21 @@ border-radius: 5px; /* Rounds the corners */
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./listing-danl-210-lec.html">🚀 Lecture</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">🏠 Home</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">🏠 Home</span></a>
   </div>
 </li>
@@ -201,7 +258,7 @@ border-radius: 5px; /* Rounds the corners */
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-lec.html" class="sidebar-item-text sidebar-link active">
+  <a href="./listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🚀 Lecture</span></a>
   </div>
 </li>
@@ -254,12 +311,6 @@ border-radius: 5px; /* Rounds the corners */
  <span class="menu-text">Week 03</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -269,11 +320,12 @@ border-radius: 5px; /* Rounds the corners */
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><font style="font-family:Optima"><b>DANL 210 - Lecture</b></font></h1>
+<h1 class="title"><font style="font-family:Optima"><b>DANL 210: Data Preparation and Management, Spring 2026</b></font></h1>
+<p class="subtitle lead"></p><div class="class=&quot;box-body" buttons-text="" clearfix"=""><font size="5"><ul style="list-style-type: none;"><li><b>Instructor: Byeong-Hak Choe</b> <b>(</b><a href="mailto:bchoe@geneseo.edu" class="about-link" rel="" target=""><i class="bi bi-envelope"></i><span class="about-link-text"> Email</span></a><b>)</b></li></ul></font></div><p></p>
 </div>
 
 
@@ -288,17 +340,20 @@ border-radius: 5px; /* Rounds the corners */
 
 </header>
 
+<div style="display:block; margin:25px;">
 
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
 </div>
+<p><font size="5">Welcome! 👋 </font></p>
+<div style="display:block; margin:-10px;">
+
+</div>
+<p><font size="5"><span class="math inline">\(-\)</span> Explore, Learn, and Grow with Data Analytics! 🌟</font></p>
+<div style="display:block; margin:5px;">
+
+</div>
+<section id="lecture" class="level2">
+<h2 class="anchored" data-anchor-id="lecture"><span class="emoji" data-emoji="rocket">🚀</span> Lecture</h2>
+<div id="listing-danl-210-lec" class="quarto-listing quarto-listing-container-table">
 
 <table class="quarto-listing-table table">
 <thead>
@@ -315,9 +370,9 @@ Date
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1768971600000" data-listing-file-modified-sort="1770618868614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Lecture 1" data-listing-filename-sort="danl-210-lec-01-2026-0121.qmd">
+<tr data-index="0" data-listing-date-sort="1768971600000" data-listing-file-modified-sort="1769126061002" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Lecture 1" data-listing-filename-sort="danl-210-lec-01-2026-0121.qmd">
 <td>
-<a href="./danl-lec/danl-210-lec-01-2026-0121.html" class="title listing-title">Lecture 1</a>
+<a href="#" onclick="window.open('./danl-lec/danl-210-lec-01-2026-0121.html'); return false;"" class="title listing-title">Lecture 1</a>
 </td>
 <td>
 <span class="listing-subtitle">Syllabus and Course Outline</span>
@@ -328,7 +383,7 @@ Date
 </tr>
 <tr data-index="1" data-listing-date-sort="1769144400000" data-listing-file-modified-sort="1770389701503" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-title-sort="Lecture 2" data-listing-filename-sort="danl-210-lec-02-2026-0123.qmd">
 <td>
-<a href="./danl-lec/danl-210-lec-02-2026-0123.html" class="title listing-title">Lecture 2</a>
+<a href="#" onclick="window.open('./danl-lec/danl-210-lec-02-2026-0123.html'); return false;"" class="title listing-title">Lecture 2</a>
 </td>
 <td>
 <span class="listing-subtitle">Python Fundamentals</span>
@@ -337,15 +392,53 @@ Date
 <span class="listing-date">January 23, 2026</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1770613200000" data-listing-file-modified-sort="1770755692034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Lecture 3" data-listing-filename-sort="danl-210-lec-03-2026-0209.qmd">
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="classwork" class="level2">
+<h2 class="anchored" data-anchor-id="classwork"><span class="emoji" data-emoji="keyboard">⌨️</span> Classwork</h2>
+<div id="listing-danl-210-cw" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Subtitle
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1769144400000" data-listing-file-modified-sort="1769015181770" data-listing-date-modified-sort="1769015181000" data-listing-reading-time-sort="2" data-listing-title-sort="Classwork 1" data-listing-filename-sort="danl-210-cw-01.qmd">
 <td>
-<a href="./danl-lec/danl-210-lec-03-2026-0209.html" class="title listing-title">Lecture 3</a>
+<a href="./danl-cw/danl-210-cw-01.html" class="title listing-title">Classwork 1</a>
 </td>
 <td>
-<span class="listing-subtitle">Data Collection I: <code>DataFrame</code>; Spyder IDE; Scrapping Web-tables with <code>pd.read_html()</code></span>
+<span class="listing-subtitle">Markdown Basics</span>
 </td>
 <td>
-<span class="listing-date">February 9, 2026</span>
+<span class="listing-date">January 23, 2026</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1769576400000" data-listing-file-modified-sort="1770390026180" data-listing-date-modified-sort="1770390026000" data-listing-reading-time-sort="7" data-listing-title-sort="Classwork 2" data-listing-filename-sort="danl-210-cw-02.qmd">
+<td>
+<a href="./danl-cw/danl-210-cw-02.html" class="title listing-title">Classwork 2</a>
+</td>
+<td>
+<span class="listing-subtitle">Python Fundamentals</span>
+</td>
+<td>
+<span class="listing-date">January 28, 2026</span>
 </td>
 </tr>
 </tbody>
@@ -354,7 +447,51 @@ Date
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div>
+</section>
+<section id="homework" class="level2">
+<h2 class="anchored" data-anchor-id="homework"><span class="emoji" data-emoji="computer">💻</span> Homework</h2>
+<div id="listing-danl-210-hw" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Subtitle
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1769922000000" data-listing-file-modified-sort="1769996356657" data-listing-date-modified-sort="1769996356000" data-listing-reading-time-sort="6" data-listing-title-sort="Homework 1" data-listing-filename-sort="danl-210-hw-01.qmd">
+<td>
+<a href="./danl-hw/danl-210-hw-01.html" class="title listing-title">Homework 1</a>
+</td>
+<td>
+<span class="listing-subtitle">Python Fundamentals</span>
+</td>
+<td>
+<span class="listing-date">February 1, 2026</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+<font size="5"><font size="5">
+</font></font></section><font size="5"><font size="5">
+
+</font></font><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><font size="5"><font size="5"> <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const btn = document.querySelector('.quarto-btn-toggle');
@@ -368,7 +505,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { capture: true });
 });
 </script>
-<script type="text/javascript" src="link-td.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -731,7 +867,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-</div> <!-- /content -->
+</font></font></div><font size="5"><font size="5"> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -749,4 +885,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+</font></font></body></html>
