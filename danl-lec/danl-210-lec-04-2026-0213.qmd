@@ -1,0 +1,571 @@
+---
+title: Lecture 4
+subtitle: "Primer on Web-scrapping"
+format:
+  clean-revealjs:
+    self-contained: false
+    chalkboard: true
+    incremental: true
+    code-annotations: hover
+    scrollable: false
+
+    # logo: logo-title-slide.png
+author:
+  - name: Byeong-Hak Choe
+    email: bchoe@geneseo.edu
+    affiliations: SUNY Geneseo
+date: 2026-02-13
+
+execute: 
+  eval: true
+  echo: true
+callout-icon: false
+
+from: markdown+emoji
+include-after-body: target-hover.html # effect.html
+
+# bibliography: refs.bib
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+
+theme_set(theme_fivethirtyeight()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.5),
+                               margin = margin(0,10,0,0)),
+                axis.text.x = element_text(size = rel(1.5)),
+                axis.text.y = element_text(size = rel(1.5)),
+                strip.text = element_text(size = rel(1.5)),
+                legend.position = "top",
+                legend.text = element_text(size = rel(1.5)),
+                legend.title = element_text(size = rel(1.5))
+                )
+          )
+```
+
+
+# **Premier on Web-scrapping** {background-color="#1c4982"}
+
+## Data Collection via Web-scraping
+
+- Web pages can be a rich data source, but **web scraping is powerful**.
+  - Careless scraping can **harm websites, violate rules, or compromise privacy**.
+  
+- Our goal in this module:
+  - Learn the **web fundamentals** (client/server, HTTPS, URL, HTML/DOM),
+  - Understand **ethical, responsible scraping**
+
+
+
+# Ethics First: Scraping is Not “Free” {background-color="#1c4982"}
+
+## The Quote (and the Correction)
+
+> *"If you can see things in your web browser, you can scrape them."*
+
+- *Technically*: often true.
+- *Ethically*: incomplete.
+- *Practically*: risky.
+  - You can unintentionally overload servers.
+  - You can violate terms, copyright, or privacy expectations.
+
+
+
+## Ethical considerations (what we owe others)
+
+- Respect **website owners’ Terms of Service (ToS)**.
+- Respect **robots.txt** (not law, but a strong norm about automated access).
+- Respect **copyright / intellectual property**.
+- Respect **server resources** (rate limits, delays, off-peak runs).
+- Respect **privacy**:
+  - Avoid collecting personal data unless you have a clear, legitimate reason.
+  - Minimize what you collect.
+  - Store it securely.
+
+
+
+## A Simple “Responsible Scraping” Checklist ✅
+
+Before you scrape, ask:
+
+1) **Do I have permission?**
+   - ToS, robots.txt, course policy, and (if needed) instructor approval.
+2) **Is there an official API (application programming interface) or dataset?**
+   - Prefer APIs when available (more stable + intended for reuse).
+3) **Am I collecting personal or sensitive data?**
+   - If yes: rethink, minimize, or stop.
+4) **Can I do this gently?**
+   - rate-limit, add delays.
+5) **Can I reproduce and cite properly?**
+   - record source, timestamp, query logic, and versioning.
+
+
+
+## “Legal” Is Not the Same as “Ethical”
+
+- [**hiQ Labs vs. LinkedIn Corp. court ruling**](https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn).
+- In the U.S., **publicly available** data may sometimes be scraped with automated tools, but:
+  - ToS can still restrict access,
+  - privacy/copyright issues can still apply,
+  - platforms may still block you.
+- **Course norm:** We scrape in ways that are respectful, reproducible, and defensible.
+
+
+
+## Good Scraping Behavior (What “Polite” Looks Like)
+
+- Add **randomized delays** between requests/actions.
+- Avoid hammering pages (especially pages that trigger heavy database queries).
+- Keep volumes small; start with **samples**.
+- Don’t scrape behind logins/paywalls unless you have explicit permission.
+- Don’t bypass anti-bot protections.
+
+
+
+# Web Basics: Clients and Servers {background-color="#1c4982"}
+
+## Clients and Servers
+
+
+<div style="text-align: center; width: 75%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/client-server.jpg" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+- Devices on the web act as **clients** and **servers**.
+- Your browser is a **client**; websites and data live on **servers**.
+  - **Client**: your computer/phone + a browser (Chrome/Firefox/Safari).
+  - **Server**: a computer that stores webpages/data and sends them when requested.
+- When you load a page, your browser sends a **request** and the server sends back a **response** (the page content).
+
+
+## Hypertext Transfer Protocol Secure (HTTPS)
+
+::: nonincremental
+- **HTTP** is how clients and servers communicate.
+- **HTTPS** is encrypted HTTP (safer).
+
+:::
+
+When we type a URL starting with `https://`:
+
+1. Browser finds the server.
+2. Browser and server establish a secure connection.
+3. Browser sends a request for content.
+4. Server responds (e.g., **200 OK**) and sends data.
+5. Browser decrypts and displays the page.
+
+
+
+## HTTP Status Codes
+
+```{.python}
+# library for making HTTPS requests in Python
+import requests
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{.python}
+p = 'https://bcdanl.github.io/210'
+response = requests.get(p)
+print(response.status_code)
+print(response.reason)
+```
+
+- **200 OK** → success; content returned.
+:::
+
+::: {.column width="50%"}
+```{.python}
+p = 'https://bcdanl.github.io/2100'
+response = requests.get(p)
+print(response.status_code)
+print(response.reason)
+```
+
+- **404 Not Found** → URL/page doesn’t exist (typo, removed page, broken link).
+:::
+::::
+
+
+
+## URL (what you’re actually requesting)
+
+```{r, echo=FALSE, eval=TRUE, out.width='75%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
+```
+
+- A **URL** is a location for a resource on the internet.
+- Often includes:
+  - protocol (`https`)
+  - domain (`example.com`)
+  - path (`/products`)
+  - **query string** (`?id=...&cat=...`) ← common in data pages
+  - fragment (`#section`) ← in-page reference
+
+
+
+# HTML Basics {background-color="#1c4982"}
+
+## The Big Idea: Scraping = Selecting from HTML
+
+- When you “scrape,” you usually:
+  1) load a page,
+  2) read the **HTML**,
+  3) extract specific elements (title, price, table, links, etc.).
+- **If you don’t understand HTML/DOM, you can’t reliably target the right data.**
+- Selenium is not “magic”—it automates a browser, but you still need:
+  - **DOM inspection**
+  - **selectors** (XPath)
+  - stable element identifiers (`id`, `class`, attributes)
+
+
+
+## HTML in one sentence
+
+- **HTML** is the markup that defines the **structure** of a web page (headings, paragraphs, links, tables, etc.).
+
+
+
+## HTML Example
+
+:::{.nonincremental}
+- A minimal HTML document:
+:::
+
+```{.html}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+  </body>
+</html>
+```
+
+
+
+## HTML elements (what you actually scrape)
+
+- Most HTML is built from **elements** like:
+
+```{.html}
+<tagname>Content goes here...</tagname>
+```
+
+- Common ones you’ll extract:
+  - headings: `<h1> ... </h1>`
+  - text blocks: `<p> ... </p>`
+  - links: `<a href="..."> ... </a>`
+  - tables: `<table> ... </table>`
+
+
+
+## HTML body: links and images
+
+#### `<a>` (link)
+
+```{.html}
+<a href="https://www.w3schools.com">This is a link</a>
+```
+
+- The `href` attribute is often what you scrape.
+
+#### `<img>` (image)
+
+```{.html}
+<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+```
+
+- You may scrape `src` (image URL) or `alt` (description).
+
+
+
+## HTML Tables (common data source)
+
+- Table structure:
+  - `<table>` table container
+  - `<tr>` row
+  - `<th>` header cell
+  - `<td>` data cell
+
+```{.html}
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+```
+
+
+
+## Lists you’ll see in the wild
+
+### Unordered list (`<ul>`)
+
+```{.html}
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+```
+
+### Ordered list (`<ol>`)
+
+```{.html}
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+```
+
+
+
+## Containers you’ll target a lot: `<div>` and `<span>`
+
+### `<div>` – block-level container
+
+```{.html}
+<div style="background-color:black;color:white;padding:20px;">
+  <h2>London</h2>
+  <p>London is the capital city of England...</p>
+</div>
+```
+
+- Often used to group major page sections.
+
+### `<span>` – inline container
+
+```{.html}
+<p>My mother has <span style="color:blue;font-weight:bold">blue</span> eyes...</p>
+```
+
+- Often used inside text; can carry classes/ids that help selection.
+
+
+
+## Inspecting HTML (your #1 Selenium skill)
+
+- Open DevTools:
+  - **F12** (Chrome/Firefox), or right-click → **Inspect**
+- Use it to find:
+  - element text,
+  - `id` / `class`,
+  - attributes (like `href`, `data-*`),
+  - whether content is static or injected by JavaScript.
+
+
+
+## HTML Source Code: DOM
+
+- Browsers represent HTML as a tree called the **DOM** (Document Object Model).
+- Selenium interacts with the **DOM**, not with “pixels.”
+- So scraping is often:
+  - “find the node”
+  - “extract its text/attribute”
+
+
+
+## Document Object Model (DOM)
+
+```{r, echo=FALSE, eval=TRUE, out.width='40%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/DOM.png")
+```
+
+
+
+## HTML in Browser vs. HTML in DevTools
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r, echo=FALSE, eval=TRUE, out.width='75%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code.png")
+```
+:::
+::: {.column width="50%"}
+```{r, echo=FALSE, eval=TRUE, out.width='50%', fig.align='center'}
+knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-web.png")
+```
+:::
+::::
+
+
+
+# Static vs. Dynamic Pages {background-color="#1c4982"}
+
+## JavaScript (JS): Dynamic Content
+
+- **JavaScript** runs in the browser and can:
+  - load more data after the page “finishes” loading,
+  - update content when you click/scroll,
+  - build HTML dynamically.
+
+**Key point:**  
+If data appears only after a click/scroll, or after a delay, the page is likely **JS-driven**.
+
+
+
+## Cascading Style Sheets (CSS) — and why scrapers still care
+
+- CSS controls the **appearance** of elements.
+- Scrapers care because:
+  - CSS selectors are used to **find** elements (`.class`, `#id`, tags).
+- House analogy:
+  - **HTML** = structure
+  - **CSS** = decoration
+  - **JS** = interactivity
+
+
+
+## When NOT to use Selenium
+
+- Selenium is heavier and slower (it runs a real browser).
+- If the page is static:
+  - prefer `requests + BeautifulSoup` (faster, simpler, more “polite”).
+- Use Selenium when:
+  - content is generated by JavaScript,
+  - you must click/scroll/login (with permission),
+  - the workflow requires real browser interaction.
+
+
+
+# Selenium-ready preview {background-color="#1c4982"}
+
+## 1) CSS selectors = *target the right element* 🎯
+
+- Selenium doesn’t “read the page like a human” — it selects **DOM elements**.
+- **CSS selectors** are a compact way to say: *“find this element in the HTML.”*
+- Reliability tip:
+  - Prefer stable identifiers: `#id`, unique classes, meaningful attributes.
+  - Avoid fragile paths that break when layout changes.
+
+::: {.callout-note}
+**Ethics angle:** Accurate targeting means you collect **only what you need** (data minimization) and avoid “scrape-everything” behavior.
+:::
+
+## 2) Explicit waits = *don’t fight the website* ⏳
+
+- Modern pages load content **asynchronously** (JavaScript).
+- Use **explicit waits** to wait for a specific element/state instead of guessing with `time.sleep()`.
+- Reliability tip:
+  - Fewer random failures.
+  - Less repeated reloading/clicking (which can generate extra traffic).
+
+::: {.callout-note}
+**Ethics angle:** Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops.
+:::
+
+## 3) Rate limiting = *be polite to the server* 🧑‍🤝‍🧑
+
+- Add pauses between actions/requests (and keep volumes small).
+- Reliability tip:
+  - Fewer blocks / CAPTCHAs.
+  - Less chance of IP bans.
+- Practical habits:
+  - Randomized delay ranges (not constant).
+  - Cache results; don’t re-fetch the same page repeatedly.
+
+::: {.callout-warning}
+**Ethics angle:** Rate limiting is about **respecting shared infrastructure**—your script should not degrade service for real users.
+:::
+
+## The one-sentence takeaway ✅
+
+**CSS selectors** help you extract the *right* thing, **explicit waits** help you extract it *reliably*, and **rate limiting** helps you extract it *responsibly*.
+
+
+
+# Ethics again: Selenium can do *more* harm {background-color="#1c4982"}
+
+## Why ethics matters even more with Selenium
+
+- Selenium can:
+  - rapidly simulate clicks/scrolls,
+  - create lots of requests unintentionally,
+  - look like bot activity.
+- So: slow down, log actions, and keep runs small and deliberate.
+
+
+
+## Practical guardrails for class projects
+
+- Start with:
+  - **small samples**
+  - **few pages**
+  - clear pauses between actions
+- Keep:
+  - a reproducible script
+  - source documentation (URL, time, what you collected)
+- Stop immediately if:
+  - the site blocks you,
+  - you suspect you are causing load,
+  - you notice personal/sensitive info.
+
+
+
+# Selenium-ready: what you must know next {background-color="#1c4982"}
+
+## 1) XPath = *target the right element* 🎯
+
+- Selenium doesn’t “read the page like a human” — it selects **DOM elements**.
+- **XPaths** are a compact way to say: *“find this element in the HTML.”*
+- Reliability tip:
+  - Prefer stable identifiers: `#id`, unique classes, meaningful attributes.
+  - Avoid fragile paths that break when layout changes.
+
+::: {.callout-note}
+**Ethics angle:** Accurate targeting means you collect **only what you need** (data minimization) and avoid “scrape-everything” behavior.
+:::
+
+## 2) Explicit waits = *don’t fight the website* ⏳
+
+- Modern pages load content **asynchronously** (JavaScript).
+- Use **explicit waits** to wait for a specific element/state instead of guessing with `time.sleep()`.
+- Reliability tip:
+  - Fewer random failures.
+  - Less repeated reloading/clicking (which can generate extra traffic).
+
+::: {.callout-note}
+**Ethics angle:** Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops.
+:::
+
+## 3) Rate limiting = *be polite to the server* 🧑‍🤝‍🧑
+
+- Add pauses between actions/requests (and keep volumes small).
+- Reliability tip:
+  - Fewer blocks / CAPTCHAs.
+  - Less chance of IP bans.
+- Practical habits:
+  - Randomized delay ranges (not constant).
+  - Cache results; don’t re-fetch the same page repeatedly.
+
+::: {.callout-warning}
+**Ethics angle:** Rate limiting is about **respecting shared infrastructure**—your script should not degrade service for real users.
+:::
+
