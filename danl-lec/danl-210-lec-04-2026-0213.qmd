@@ -1,6 +1,6 @@
 ---
 title: Lecture 4
-subtitle: "Primer on Web-scrapping"
+subtitle: "Data Collection II: Web-scrapping Primer; Scrapping Data with `selenium`"
 format:
   clean-revealjs:
     self-contained: false
@@ -457,10 +457,10 @@ If data appears only after a click/scroll, or after a delay, the page is likely 
 
 # Selenium-ready preview {background-color="#1c4982"}
 
-## 1) CSS selectors = *target the right element* 🎯
+## 1) XPath = *target the right element* 🎯
 
 - Selenium doesn’t “read the page like a human” — it selects **DOM elements**.
-- **CSS selectors** are a compact way to say: *“find this element in the HTML.”*
+- **XPaths** are a compact way to say: *“find this element in the HTML.”*
 - Reliability tip:
   - Prefer stable identifiers: `#id`, unique classes, meaningful attributes.
   - Avoid fragile paths that break when layout changes.
