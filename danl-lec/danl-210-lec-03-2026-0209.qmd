@@ -452,7 +452,7 @@ df_0.columns   # attribute
 import os  
 
 # Set the working directory path
-wd_path = 'PATH_TO_YOUR_DATA_FOLDER' # e.g., '/Users/bchoe/Documents/DANL-210'
+wd_path = 'PATH_TO_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'
 os.chdir(wd_path)  # Change the current working directory to wd_path
 os.getcwd()  # Retrieve and return the current working directory
 
