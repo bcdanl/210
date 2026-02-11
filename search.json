@@ -2419,7 +2419,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#url-what-youre-actually-requesting",
     "title": "Lecture 4",
     "section": "URL (what you’re actually requesting)",
-    "text": "URL (what you’re actually requesting)\n\n\n\n\n\n\n\n\n\n\nA URL is a location for a resource on the internet.\nOften includes:\n\nprotocol (https)\ndomain (example.com)\npath (/products)\nquery string (?id=...&cat=...) ← common in data pages\nfragment (#section) ← in-page reference"
+    "text": "URL (what you’re actually requesting)\n\n\nA URL is a location for a resource on the internet.\nOften includes:\n\nprotocol (https)\ndomain (example.com)\npath (/products)\nquery string (?id=...&cat=...) ← common in data pages\nfragment (#section) ← in-page reference"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-big-idea-scraping-selecting-from-html",
@@ -2454,7 +2454,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-body-links-and-images",
     "title": "Lecture 4",
     "section": "HTML body: links and images",
-    "text": "HTML body: links and images\n\n&lt;a&gt; (link)\n&lt;a href=\"https://www.w3schools.com\"&gt;This is a link&lt;/a&gt;\n\nThe href attribute is often what you scrape.\n\n\n\n&lt;img&gt; (image)\n&lt;img src=\"w3schools.jpg\" alt=\"W3Schools.com\" width=\"104\" height=\"142\"&gt;\n\nYou may scrape src (image URL) or alt (description)."
+    "text": "HTML body: links and images\n&lt;a&gt; (link)\n&lt;a href=\"https://www.w3schools.com\"&gt;This is a link&lt;/a&gt;\n\nThe href attribute is often what you scrape.\n\n&lt;img&gt; (image)\n&lt;img src=\"w3schools.jpg\" alt=\"W3Schools.com\" width=\"104\" height=\"142\"&gt;\n\nYou may scrape src (image URL) or alt (description)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-tables-common-data-source",
@@ -2468,14 +2468,14 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#lists-youll-see-in-the-wild",
     "title": "Lecture 4",
     "section": "Lists you’ll see in the wild",
-    "text": "Lists you’ll see in the wild\n\nUnordered list (&lt;ul&gt;)\n&lt;ul&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ul&gt;\n\n\nOrdered list (&lt;ol&gt;)\n&lt;ol&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ol&gt;"
+    "text": "Lists you’ll see in the wild\nUnordered list (&lt;ul&gt;)\n&lt;ul&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ul&gt;\nOrdered list (&lt;ol&gt;)\n&lt;ol&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ol&gt;"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
     "title": "Lecture 4",
     "section": "Containers you’ll target a lot: <div> and <span>",
-    "text": "Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;London&lt;/h2&gt;\n  &lt;p&gt;London is the capital city of England...&lt;/p&gt;\n&lt;/div&gt;\n\nOften used to group major page sections.\n\n\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\nOften used inside text; can carry classes/ids that help selection."
+    "text": "Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;London&lt;/h2&gt;\n  &lt;p&gt;London is the capital city of England...&lt;/p&gt;\n&lt;/div&gt;\n\nOften used to group major page sections.\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\nOften used inside text; can carry classes/ids that help selection."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-selenium-skill",
@@ -2538,14 +2538,14 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#explicit-waits-dont-fight-the-website",
     "title": "Lecture 4",
     "section": "2) Explicit waits = don’t fight the website ⏳",
-    "text": "2) Explicit waits = don’t fight the website ⏳\n\nModern pages load content asynchronously (JavaScript).\nUse explicit waits to wait for a specific element/state instead of guessing with time.sleep().\nReliability tip:\n\nFewer random failures.\nLess repeated reloading/clicking (which can generate extra traffic).\n\n\n\n\n\n\n\n\nNote\n\n\n\nEthics angle: Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops."
+    "text": "2) Explicit waits = don’t fight the website ⏳\n\nModern pages load content asynchronously (JavaScript).\nUse explicit waits to wait for a specific element/state instead of guessing with time.sleep().\nReliability tip:\n\nFewer random failures.\nLess repeated reloading/clicking (which can generate extra traffic).\n\n\n\n\n\nNote\n\n\nEthics angle: Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#rate-limiting-be-polite-to-the-server",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#rate-limiting-be-polite-to-the-server",
     "title": "Lecture 4",
     "section": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑",
-    "text": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑\n\nAdd pauses between actions/requests (and keep volumes small).\nReliability tip:\n\nFewer blocks / CAPTCHAs.\nLess chance of IP bans.\n\nPractical habits:\n\nRandomized delay ranges (not constant).\nCache results; don’t re-fetch the same page repeatedly.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nEthics angle: Rate limiting is about respecting shared infrastructure—your script should not degrade service for real users."
+    "text": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑\n\nAdd pauses between actions/requests (and keep volumes small).\nReliability tip:\n\nFewer blocks / CAPTCHAs.\nLess chance of IP bans.\n\nPractical habits:\n\nRandomized delay ranges (not constant).\nCache results; don’t re-fetch the same page repeatedly.\n\n\n\n\n\nWarning\n\n\nEthics angle: Rate limiting is about respecting shared infrastructure—your script should not degrade service for real users."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-one-sentence-takeaway",
@@ -2586,8 +2586,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#data-collection-via-web-scraping",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#data-collection-via-web-scraping",
     "title": "Lecture 4",
-    "section": "",
-    "text": "Web pages can be a rich data source, but web scraping is powerful.\n\nCareless scraping can harm websites, violate rules, or compromise privacy.\n\nOur goal in this module:\n\nLearn the web fundamentals (client/server, HTTPS, URL, HTML/DOM),\nUnderstand ethical, responsible scraping"
+    "section": "Data Collection via Web-scraping",
+    "text": "Data Collection via Web-scraping\n\nWeb pages can be a rich data source, but web scraping is powerful.\n\nCareless scraping can harm websites, violate rules, or compromise privacy.\n\nOur goal in this module:\n\nLearn the web fundamentals (client/server, HTTPS, URL, HTML/DOM),\nUnderstand ethical, responsible scraping"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#css-selectors-target-the-right-element-1",
@@ -2601,14 +2601,14 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#explicit-waits-dont-fight-the-website-1",
     "title": "Lecture 4",
     "section": "2) Explicit waits = don’t fight the website ⏳",
-    "text": "2) Explicit waits = don’t fight the website ⏳\n\nModern pages load content asynchronously (JavaScript).\nUse explicit waits to wait for a specific element/state instead of guessing with time.sleep().\nReliability tip:\n\nFewer random failures.\nLess repeated reloading/clicking (which can generate extra traffic).\n\n\n\n\n\n\n\n\nNote\n\n\n\nEthics angle: Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops."
+    "text": "2) Explicit waits = don’t fight the website ⏳\n\nModern pages load content asynchronously (JavaScript).\nUse explicit waits to wait for a specific element/state instead of guessing with time.sleep().\nReliability tip:\n\nFewer random failures.\nLess repeated reloading/clicking (which can generate extra traffic).\n\n\n\n\n\nNote\n\n\nEthics angle: Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#rate-limiting-be-polite-to-the-server-1",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#rate-limiting-be-polite-to-the-server-1",
     "title": "Lecture 4",
     "section": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑",
-    "text": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑\n\nAdd pauses between actions/requests (and keep volumes small).\nReliability tip:\n\nFewer blocks / CAPTCHAs.\nLess chance of IP bans.\n\nPractical habits:\n\nRandomized delay ranges (not constant).\nCache results; don’t re-fetch the same page repeatedly.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nEthics angle: Rate limiting is about respecting shared infrastructure—your script should not degrade service for real users."
+    "text": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑\n\nAdd pauses between actions/requests (and keep volumes small).\nReliability tip:\n\nFewer blocks / CAPTCHAs.\nLess chance of IP bans.\n\nPractical habits:\n\nRandomized delay ranges (not constant).\nCache results; don’t re-fetch the same page repeatedly.\n\n\n\n\n\nWarning\n\n\nEthics angle: Rate limiting is about respecting shared infrastructure—your script should not degrade service for real users."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-one-sentence-takeaway-1",
@@ -2650,7 +2650,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#xpath-target-the-right-element",
     "title": "Lecture 4",
     "section": "1) XPath = target the right element 🎯",
-    "text": "1) XPath = target the right element 🎯\n\nSelenium doesn’t “read the page like a human” — it selects DOM elements.\nXPaths are a compact way to say: “find this element in the HTML.”\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile paths that break when layout changes.\n\n\n\n\n\n\n\n\nNote\n\n\n\nEthics angle: Accurate targeting means you collect only what you need (data minimization) and avoid “scrape-everything” behavior."
+    "text": "1) XPath = target the right element 🎯\n\nSelenium doesn’t “read the page like a human” — it selects DOM elements.\nXPaths are a compact way to say: “find this element in the HTML.”\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile paths that break when layout changes.\n\n\n\n\n\nNote\n\n\nEthics angle: Accurate targeting means you collect only what you need (data minimization) and avoid “scrape-everything” behavior."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html",
@@ -2664,6 +2664,6 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#xpath-target-the-right-element-1",
     "title": "Lecture 4",
     "section": "1) XPath = target the right element 🎯",
-    "text": "1) XPath = target the right element 🎯\n\nSelenium doesn’t “read the page like a human” — it selects DOM elements.\nXPaths are a compact way to say: “find this element in the HTML.”\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile paths that break when layout changes.\n\n\n\n\n\n\n\n\nNote\n\n\n\nEthics angle: Accurate targeting means you collect only what you need (data minimization) and avoid “scrape-everything” behavior."
+    "text": "1) XPath = target the right element 🎯\n\nSelenium doesn’t “read the page like a human” — it selects DOM elements.\nXPaths are a compact way to say: “find this element in the HTML.”\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile paths that break when layout changes.\n\n\n\n\n\nNote\n\n\nEthics angle: Accurate targeting means you collect only what you need (data minimization) and avoid “scrape-everything” behavior."
   }
 ]

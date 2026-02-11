@@ -501,7 +501,28 @@ If data appears only after a click/scroll, or after a delay, the page is likely 
 
 
 
-# Ethics again: Selenium can do *more* harm {background-color="#1c4982"}
+<!-- # Ethics again: Selenium can do *more* harm {background-color="#1c4982"} -->
+
+
+
+
+<!-- ## Practical guardrails for class projects -->
+
+<!-- - Start with: -->
+<!--   - **small samples** -->
+<!--   - **few pages** -->
+<!--   - clear pauses between actions -->
+<!-- - Keep: -->
+<!--   - a reproducible script -->
+<!--   - source documentation (URL, time, what you collected) -->
+<!-- - Stop immediately if: -->
+<!--   - the site blocks you, -->
+<!--   - you suspect you are causing load, -->
+<!--   - you notice personal/sensitive info. -->
+
+
+
+# Selenium-ready: what you must know next {background-color="#1c4982"}
 
 ## Why ethics matters even more with Selenium
 
@@ -510,26 +531,6 @@ If data appears only after a click/scroll, or after a delay, the page is likely 
   - create lots of requests unintentionally,
   - look like bot activity.
 - So: slow down, log actions, and keep runs small and deliberate.
-
-
-
-## Practical guardrails for class projects
-
-- Start with:
-  - **small samples**
-  - **few pages**
-  - clear pauses between actions
-- Keep:
-  - a reproducible script
-  - source documentation (URL, time, what you collected)
-- Stop immediately if:
-  - the site blocks you,
-  - you suspect you are causing load,
-  - you notice personal/sensitive info.
-
-
-
-# Selenium-ready: what you must know next {background-color="#1c4982"}
 
 ## 1) XPath = *target the right element* 🎯
 
