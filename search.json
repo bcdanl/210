@@ -2105,5 +2105,481 @@
     "title": "Lecture 3",
     "section": "🔗 Relative Pathnames",
     "text": "🔗 Relative Pathnames\n\nA relative pathname specifies the location of a file relative to the working directory.\n\nExamples of a relative pathname for custdata_rev.csv:\n\nAbsolute pathname:\n/Users/user/documents/data/custdata_rev.csv\nWorking directory:\n/Users/user/documents/\n\nRelative pathname:\ndata/custdata_rev.csv"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html",
+    "href": "danl-210-hw-01-a.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Download the Homework 1 starter notebook from Brightspace and complete your work in that file.\n\nDo not start from a blank notebook.\n\nWhen finished, rename your file and submit it to Brightspace using this format:\n\ndanl-210-hw1-LASTNAME-FIRSTNAME.ipynb\n(e.g., danl-210-hw1-choe-byeonghak.ipynb)\n\nDue: February 11, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-0a",
+    "href": "danl-210-hw-01-a.html#question-0a",
+    "title": "Homework 1",
+    "section": "Question 0a",
+    "text": "Question 0a\nCreate a variable named github_username (string) and print it.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ngithub_username = \"YOUR_GITHUB_USERNAME\"\nprint(github_username)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-0b",
+    "href": "danl-210-hw-01-a.html#question-0b",
+    "title": "Homework 1",
+    "section": "Question 0b",
+    "text": "Question 0b\nIn one code cell, print:\n\nyour Python version (hint: import sys)\ntoday’s date (hint: import datetime)\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nimport sys\nimport datetime\n\nprint(sys.version)\nprint(datetime.date.today())"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-1a-list-edits",
+    "href": "danl-210-hw-01-a.html#question-1a-list-edits",
+    "title": "Homework 1",
+    "section": "Question 1a (List edits)",
+    "text": "Question 1a (List edits)\n\nCreate a list named seat_numbers containing integers 2 through 9.\nAppend 10.\nRemove 6.\nPrint the final list.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nseat_numbers = list(range(2, 10))  # 2 through 9\nseat_numbers.append(10)\nseat_numbers.remove(6)\nprint(seat_numbers)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-1b-tuple-immutability",
+    "href": "danl-210-hw-01-a.html#question-1b-tuple-immutability",
+    "title": "Homework 1",
+    "section": "Question 1b (Tuple: immutability)",
+    "text": "Question 1b (Tuple: immutability)\nCreate a tuple named campus:\n\ncampus = (\"SUNY Geneseo\", 2026)\n\nThen:\n\nPrint the second element.\nWrite one line of code that tries to change the year to 2027.\nIn a Markdown cell, explain what happens and why.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ncampus = (\"SUNY Geneseo\", 2026)\n\nprint(campus[1])\n\n# One line that tries to change the year (this will fail):\n# campus[1] = 2027\n\n# Demonstrate safely:\ntry:\n    campus[1] = 2027\nexcept:\n    print(\"TypeError\")\n\nExplanation: Tuples are immutable, so you cannot modify an existing element after the tuple is created."
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-1c-dictionary-addupdateiterate",
+    "href": "danl-210-hw-01-a.html#question-1c-dictionary-addupdateiterate",
+    "title": "Homework 1",
+    "section": "Question 1c (Dictionary: add/update/iterate)",
+    "text": "Question 1c (Dictionary: add/update/iterate)\nStart with:\nmenu_prices = {\"coffee\": 2.75, \"tea\": 2.25, \"sandwich\": 6.50}\n\nAdd \"cookie\": 1.50\nUpdate the price of \"coffee\" to 3.00\nPrint:\n\nall item names (keys)\nall prices (values)\neach (item, price) pair on its own line\n\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nmenu_prices = {\"coffee\": 2.75, \"tea\": 2.25, \"sandwich\": 6.50}\n\nmenu_prices[\"cookie\"] = 1.50\nmenu_prices[\"coffee\"] = 3.00\n\nprint(\"Keys:\", list(menu_prices.keys()))\nprint(\"Values:\", list(menu_prices.values()))\nprint(\"Items:\")\n\nfor item, price in menu_prices.items():\n    print(item, price)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-2a-arithmetic-operators",
+    "href": "danl-210-hw-01-a.html#question-2a-arithmetic-operators",
+    "title": "Homework 1",
+    "section": "Question 2a (Arithmetic operators)",
+    "text": "Question 2a (Arithmetic operators)\nLet:\nx = 17\ny = 4\nCompute and print:\n\nx + y, x - y, x * y, x ** y, x / y, x // y, x % y\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nx = 17\ny = 4\n\nprint(x + y)\nprint(x - y)\nprint(x * y)\nprint(x ** y)\nprint(x / y)\nprint(x // y)\nprint(x % y)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-2b-operators-with-strings-and-lists",
+    "href": "danl-210-hw-01-a.html#question-2b-operators-with-strings-and-lists",
+    "title": "Homework 1",
+    "section": "Question 2b (Operators with strings and lists)",
+    "text": "Question 2b (Operators with strings and lists)\n\nUsing only + and *, build and print this exact string:\n\n\n\"Go Knights! Go Knights! Go Knights!\"\n\nYou may start with:\nchant = \"Go Knights!\"\n\nUsing only + and *, create a list that repeats [\"lab\", \"lecture\"] 4 times.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nchant = \"Go Knights!\"\n\n# Only + and * (no join)\ntriple = (chant + \" \") * 2 + chant\nprint(triple)\n\nrepeat_list = [\"lab\", \"lecture\"] * 4\nprint(repeat_list)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-2c-casting",
+    "href": "danl-210-hw-01-a.html#question-2c-casting",
+    "title": "Homework 1",
+    "section": "Question 2c (Casting)",
+    "text": "Question 2c (Casting)\nGiven:\npi_text = \"3.14159\"\n\nConvert pi_text to a float named pi_value.\nConvert pi_value to an integer named pi_int.\nPrint pi_text, pi_value, pi_int and their types.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\npi_text = \"3.14159\"\npi_value = float(pi_text)\npi_int = int(pi_value)\n\nprint(pi_text, type(pi_text))\nprint(pi_value, type(pi_value))\nprint(pi_int, type(pi_int))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-3a-print-value-type",
+    "href": "danl-210-hw-01-a.html#question-3a-print-value-type",
+    "title": "Homework 1",
+    "section": "Question 3a (Print value + type)",
+    "text": "Question 3a (Print value + type)\nGiven:\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\nUse a for loop to print each element and its type.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\n\nfor x in mixed:\n    print(x, type(x))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-3b-targeted-conversions",
+    "href": "danl-210-hw-01-a.html#question-3b-targeted-conversions",
+    "title": "Homework 1",
+    "section": "Question 3b (Targeted conversions)",
+    "text": "Question 3b (Targeted conversions)\nUsing mixed above, do the following conversions and print results + types:\n\nConvert the string \"42\" to an integer.\nConvert the integer 99 to a string.\nConvert False to an integer.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nmixed = [\"42\", 99, 0.5, False, None, {\"course\": \"DANL 210\"}, (1, 2, 3)]\n\na = int(mixed[0])        # \"42\" -&gt; 42\nb = str(mixed[1])        # 99 -&gt; \"99\"\nc = int(mixed[3])        # False -&gt; 0\n\nprint(a, type(a))\nprint(b, type(b))\nprint(c, type(c))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-4a-if-elif-else",
+    "href": "danl-210-hw-01-a.html#question-4a-if-elif-else",
+    "title": "Homework 1",
+    "section": "Question 4a (if-elif-else)",
+    "text": "Question 4a (if-elif-else)\nSet:\nscore = 83\nPrint:\n\n\"Fail\" if score &lt; 60\n\"Pass\" if 60 &lt;= score &lt; 80\n\"Great\" if 80 &lt;= score &lt; 95\n\"Perfect\" if score &gt;= 95\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nscore = 83\n\nif score &lt; 60:\n    print(\"Fail\")\nelif score &lt; 80:\n    print(\"Pass\")\nelif score &lt; 95:\n    print(\"Great\")\nelse:\n    print(\"Perfect\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-4b-nested-if",
+    "href": "danl-210-hw-01-a.html#question-4b-nested-if",
+    "title": "Homework 1",
+    "section": "Question 4b (Nested if)",
+    "text": "Question 4b (Nested if)\nSet:\nmembership = \"Gold\"\ntotal_spent = 120\nPrint:\n\n\"Free shipping\" if membership is \"Gold\" and total_spent &gt;= 100\n\"5% coupon\" if membership is \"Silver\" and total_spent &gt;= 100\n\"No perk\" otherwise\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nmembership = \"Gold\"\ntotal_spent = 120\n\nif membership == \"Gold\":\n    if total_spent &gt;= 100:\n        print(\"Free shipping\")\n    else:\n        print(\"No perk\")\nelif membership == \"Silver\":\n    if total_spent &gt;= 100:\n        print(\"5% coupon\")\n    else:\n        print(\"No perk\")\nelse:\n    print(\"No perk\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-4c-in-membership-test-f-string",
+    "href": "danl-210-hw-01-a.html#question-4c-in-membership-test-f-string",
+    "title": "Homework 1",
+    "section": "Question 4c (in membership test + f-string)",
+    "text": "Question 4c (in membership test + f-string)\nGiven:\ncities = [\"Rochester\", \"Buffalo\", \"Syracuse\", \"Albany\"]\ntarget = \"Albany\"\nUse in to print:\n\n\"Albany is on the list!\" if present\notherwise \"Albany is not on the list.\"\n\n(Use an f-string.)\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ncities = [\"Rochester\", \"Buffalo\", \"Syracuse\", \"Albany\"]\ntarget = \"Albany\"\n\nif target in cities:\n    print(f\"{target} is on the list!\")\nelse:\n    print(f\"{target} is not on the list.\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-4d-boolean-reasoning",
+    "href": "danl-210-hw-01-a.html#question-4d-boolean-reasoning",
+    "title": "Homework 1",
+    "section": "Question 4d (Boolean reasoning)",
+    "text": "Question 4d (Boolean reasoning)\nCompute and print the value of:\n\nnot (not False)\n7 == \"7\"\n(10 &gt; 3) and (2 &gt;= 2)\n(10 &lt; 3) or (2 == 2)\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nprint(not (not False))\nprint(7 == \"7\")\nprint((10 &gt; 3) and (2 &gt;= 2))\nprint((10 &lt; 3) or (2 == 2))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-5a-string-slicing",
+    "href": "danl-210-hw-01-a.html#question-5a-string-slicing",
+    "title": "Homework 1",
+    "section": "Question 5a (String slicing)",
+    "text": "Question 5a (String slicing)\nGiven:\nword = \"datascience\"\nPrint the result of each:\n\nword[:]\nword[4:]\nword[:4]\nword[:-3]\nword[2:8]\nword[::3]\nword[::-1]\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nword = \"datascience\"\n\nprint(word[:])\nprint(word[4:])\nprint(word[:4])\nprint(word[:-3])\nprint(word[2:8])\nprint(word[::3])\nprint(word[::-1])"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-5b-list-slicing",
+    "href": "danl-210-hw-01-a.html#question-5b-list-slicing",
+    "title": "Homework 1",
+    "section": "Question 5b (List slicing)",
+    "text": "Question 5b (List slicing)\nGiven:\nplaylist = [\"Intro\", \"Beat\", \"Chorus\", \"Bridge\", \"Solo\", \"Outro\"]\nPrint:\n\nthe first 3 items\nevery 2nd item starting from the beginning\nthe last 2 items\nthe list reversed (using slicing)\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nplaylist = [\"Intro\", \"Beat\", \"Chorus\", \"Bridge\", \"Solo\", \"Outro\"]\n\nprint(playlist[:3])\nprint(playlist[::2])\nprint(playlist[-2:])\nprint(playlist[::-1])"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-5c-len-practice",
+    "href": "danl-210-hw-01-a.html#question-5c-len-practice",
+    "title": "Homework 1",
+    "section": "Question 5c (len() practice)",
+    "text": "Question 5c (len() practice)\nCompute and print:\n\nlen(\"machinelearning\")\nlen([10, 20, 30, 40])\nlen(playlist)\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nprint(len(\"machinelearning\"))\nprint(len([10, 20, 30, 40]))\nprint(len(playlist))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-6a-average-labels",
+    "href": "danl-210-hw-01-a.html#question-6a-average-labels",
+    "title": "Homework 1",
+    "section": "Question 6a (Average + labels)",
+    "text": "Question 6a (Average + labels)\nGiven:\ntemps = [32, 28, 30, 35, 27]\n\nCompute the average temperature.\nFor each temperature, print \"Above Avg\" if it is above average, otherwise \"Below Avg\".\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ntemps = [32, 28, 30, 35, 27]\navg = sum(temps) / len(temps)\nprint(\"Average:\", avg)\n\nfor t in temps:\n    if t &gt; avg:\n        print(\"Above Avg\")\n    else:\n        print(\"Below Avg\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-6b-while-loop-savings",
+    "href": "danl-210-hw-01-a.html#question-6b-while-loop-savings",
+    "title": "Homework 1",
+    "section": "Question 6b (while loop: savings)",
+    "text": "Question 6b (while loop: savings)\nStart with:\nbalance = 150\nEach week you save 25. Use a while loop until the balance reaches or exceeds 300.\nPrint the balance each week.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nbalance = 150\n\nwhile balance &lt; 300:\n    balance += 25\n    print(balance)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-6c-range-patterns",
+    "href": "danl-210-hw-01-a.html#question-6c-range-patterns",
+    "title": "Homework 1",
+    "section": "Question 6c (range() patterns)",
+    "text": "Question 6c (range() patterns)\nUsing range(), create and print:\n\nintegers from 5 to 15\nmultiples of 3 from 0 to 30\ncountdown from 12 to 0\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nprint(list(range(5, 16)))\nprint(list(range(0, 31, 3)))\nprint(list(range(12, -1, -1)))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-6d-enumerate-index-value",
+    "href": "danl-210-hw-01-a.html#question-6d-enumerate-index-value",
+    "title": "Homework 1",
+    "section": "Question 6d (enumerate() index + value)",
+    "text": "Question 6d (enumerate() index + value)\nGiven:\ntasks = [\"download\", \"open\", \"run\", \"submit\"]\nUse enumerate() to print each task with its step number starting at 1 like:\n\nStep 1: download\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ntasks = [\"download\", \"open\", \"run\", \"submit\"]\n\nfor i, task in enumerate(tasks, start=1):\n    print(f\"Step {i}: {task}\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-7a-list-comprehension-cubes",
+    "href": "danl-210-hw-01-a.html#question-7a-list-comprehension-cubes",
+    "title": "Homework 1",
+    "section": "Question 7a (List comprehension: cubes)",
+    "text": "Question 7a (List comprehension: cubes)\nUse list comprehension to create a list of cubes for 1 through 6.\nStore it in cubes and print it.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ncubes = [x**3 for x in range(1, 7)]\nprint(cubes)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-7b-list-comprehension-filter",
+    "href": "danl-210-hw-01-a.html#question-7b-list-comprehension-filter",
+    "title": "Homework 1",
+    "section": "Question 7b (List comprehension: filter)",
+    "text": "Question 7b (List comprehension: filter)\nGiven:\nvals = [0, 5, 10, 0, 20, 0, 25]\nUse list comprehension to create a new list that removes all zeros.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nvals = [0, 5, 10, 0, 20, 0, 25]\nno_zeros = [v for v in vals if v != 0]\nprint(no_zeros)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-7c-dictionary-comprehension-length-of-words",
+    "href": "danl-210-hw-01-a.html#question-7c-dictionary-comprehension-length-of-words",
+    "title": "Homework 1",
+    "section": "Question 7c (Dictionary comprehension: length of words)",
+    "text": "Question 7c (Dictionary comprehension: length of words)\nGiven:\nwords = [\"data\", \"science\", \"python\", \"loop\"]\nUse dictionary comprehension to create a dictionary mapping each word to its length.\nPrint the dictionary.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nwords = [\"data\", \"science\", \"python\", \"loop\"]\nword_len = {w: len(w) for w in words}\nprint(word_len)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-7d-modify-list-removekeepdelete",
+    "href": "danl-210-hw-01-a.html#question-7d-modify-list-removekeepdelete",
+    "title": "Homework 1",
+    "section": "Question 7d (Modify list: remove/keep/delete)",
+    "text": "Question 7d (Modify list: remove/keep/delete)\nGiven:\ntickets = [\"A\", \"B\", \"C\", \"B\", \"D\", \"B\"]\n\nRemove only the first \"B\" using .remove() and print the list.\nStarting from the original list again, remove all \"B\" values using list comprehension and print.\nStarting from the original list again, delete the middle two elements using del with slicing and print.\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ntickets = [\"A\", \"B\", \"C\", \"B\", \"D\", \"B\"]\n\nt1 = tickets.copy()\nt1.remove(\"B\")\nprint(t1)\n\nt2 = [x for x in tickets if x != \"B\"]\nprint(t2)\n\nt3 = tickets.copy()\ndel t3[2:4]   # delete the middle two elements (indices 2 and 3)\nprint(t3)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-7e-modify-dictionary-update-delete",
+    "href": "danl-210-hw-01-a.html#question-7e-modify-dictionary-update-delete",
+    "title": "Homework 1",
+    "section": "Question 7e (Modify dictionary: update + delete)",
+    "text": "Question 7e (Modify dictionary: update + delete)\nGiven:\ninventory = {\"pens\": 10, \"notebooks\": 5, \"erasers\": 2}\n\nAdd \"markers\": 4 using .update()\nChange \"pens\" to 12 using .update()\nDelete \"erasers\" using del\n\nPrint after each step.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ninventory = {\"pens\": 10, \"notebooks\": 5, \"erasers\": 2}\n\ninventory.update({\"markers\": 4})\nprint(inventory)\n\ninventory.update({\"pens\": 12})\nprint(inventory)\n\ndel inventory[\"erasers\"]\nprint(inventory)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-8a-division-safety",
+    "href": "danl-210-hw-01-a.html#question-8a-division-safety",
+    "title": "Homework 1",
+    "section": "Question 8a (Division safety)",
+    "text": "Question 8a (Division safety)\nGiven:\nnumerator = 24\ndenominator = 0\nUse try-except to attempt division. If an error occurs, print \"Division failed!\".\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nnumerator = 24\ndenominator = 0\n\ntry:\n    print(numerator / denominator)\nexcept ZeroDivisionError:\n    print(\"Division failed!\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-8b-convert-text-to-number",
+    "href": "danl-210-hw-01-a.html#question-8b-convert-text-to-number",
+    "title": "Homework 1",
+    "section": "Question 8b (Convert text to number)",
+    "text": "Question 8b (Convert text to number)\nGiven:\nentries = [\"10\", \"8\", \"oops\", \"15\"]\nLoop through entries and try to convert each to an integer.\n\nIf conversion works, print the integer.\nIf it fails, print \"Not a number: oops\" (use the actual bad value).\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nentries = [\"10\", \"8\", \"oops\", \"15\"]\n\nfor e in entries:\n    try:\n        print(int(e))\n    except:\n        print(f\"Not a number: {e}\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-8c-missing-values",
+    "href": "danl-210-hw-01-a.html#question-8c-missing-values",
+    "title": "Homework 1",
+    "section": "Question 8c (Missing values)",
+    "text": "Question 8c (Missing values)\nGiven:\nhours = {\"Mon\": 2, \"Tue\": None, \"Wed\": 3, \"Thu\": None, \"Fri\": 4}\nCompute the total of non-missing hours and print the total.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nhours = {\"Mon\": 2, \"Tue\": None, \"Wed\": 3, \"Thu\": None, \"Fri\": 4}\n\ntotal = 0\nfor day, h in hours.items():\n    if h is not None:\n        total += h\n\nprint(total)"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-8d-missing-dictionary-key",
+    "href": "danl-210-hw-01-a.html#question-8d-missing-dictionary-key",
+    "title": "Homework 1",
+    "section": "Question 8d (Missing dictionary key)",
+    "text": "Question 8d (Missing dictionary key)\nGiven:\ncapitals = {\"NY\": \"Albany\", \"CA\": \"Sacramento\"}\nTry to print capitals[\"TX\"]. Handle the error so the program prints \"State not found\".\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\ncapitals = {\"NY\": \"Albany\", \"CA\": \"Sacramento\"}\n\ntry:\n    print(capitals[\"TX\"])\nexcept KeyError:\n    print(\"State not found\")"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-9a-math",
+    "href": "danl-210-hw-01-a.html#question-9a-math",
+    "title": "Homework 1",
+    "section": "Question 9a (math)",
+    "text": "Question 9a (math)\nImport math and compute math.sqrt(144). Print the result.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nimport math\nprint(math.sqrt(144))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-9b-import-...-as-...",
+    "href": "danl-210-hw-01-a.html#question-9b-import-...-as-...",
+    "title": "Homework 1",
+    "section": "Question 9b (import ... as ...)",
+    "text": "Question 9b (import ... as ...)\nImport math as m. Compute and print:\n\nm.sqrt(144)\nm.floor(9.99)\nm.ceil(9.01)\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nimport math as m\nprint(m.sqrt(144))\nprint(m.floor(9.99))\nprint(m.ceil(9.01))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-9c-from-...-import-...",
+    "href": "danl-210-hw-01-a.html#question-9c-from-...-import-...",
+    "title": "Homework 1",
+    "section": "Question 9c (from ... import ...)",
+    "text": "Question 9c (from ... import ...)\nImport only ceil from math and compute ceil(12.2). Print it.\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nfrom math import ceil\nprint(ceil(12.2))"
+  },
+  {
+    "objectID": "danl-210-hw-01-a.html#question-10-workout-summary",
+    "href": "danl-210-hw-01-a.html#question-10-workout-summary",
+    "title": "Homework 1",
+    "section": "Question 10 (Workout summary)",
+    "text": "Question 10 (Workout summary)\nYou are given:\nexercises = [\"pushups\", \"plank\", \"squats\", \"jog\"]\nminutes   = [10, 5, 12, 20]\nWrite code that:\n\nUses enumerate() to print:\n\n1) pushups\n2) plank\n…\n\nComputes the average minutes.\nFor each exercise, print a line like:\n\n\n\"squats: 12 min (Above Avg)\" or \"plank: 5 min (Below Avg)\" (Use f-strings.)\n\n\nCreate a dictionary exercise_to_minutes using dictionary comprehension.\nUse try/except to attempt to print exercise_to_minutes[\"stretch\"].\n\nIf missing, print \"stretch is not in the plan.\"\n\n\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\nexercises = [\"pushups\", \"plank\", \"squats\", \"jog\"]\nminutes   = [10, 5, 12, 20]\n\n# 1) enumerate\nfor i, ex in enumerate(exercises, start=1):\n    print(f\"{i}) {ex}\")\n\n# 2) average minutes\navg = sum(minutes) / len(minutes)\nprint(\"Average minutes:\", avg)\n\n# 3) above/below average\nfor i in range(len(exercises)):\n    ex = exercises[i]\n    m  = minutes[i]\n    label = \"Above Avg\" if m &gt; avg else \"Below Avg\"\n    print(f\"{ex}: {m} min ({label})\")\n\n# 4) dictionary comprehension\nexercise_to_minutes = {exercises[i]: minutes[i] for i in range(len(exercises))}\nprint(exercise_to_minutes)\n\n# 5) try/except for missing key (catch KeyError specifically)\ntry:\n    print(exercise_to_minutes[\"stretch\"])\nexcept:\n    print(\"stretch is not in the plan.\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#why-this-lecture-exists",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#why-this-lecture-exists",
+    "title": "Lecture 4",
+    "section": "Why this lecture exists",
+    "text": "Why this lecture exists\n\nWeb pages contain valuable data, but web scraping is powerful and can be harmful if done carelessly.\nOur goal:\n\nlearn the web basics (client/server, HTTPS, HTML/DOM),\nunderstand ethics + responsible practice,\nthen use Selenium when pages are dynamic (JS-driven)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-quote-and-the-correction",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#the-quote-and-the-correction",
+    "title": "Lecture 4",
+    "section": "The quote (and the correction)",
+    "text": "The quote (and the correction)\n\n“If you can see things in your web browser, you can scrape them.”\n\n\nTechnically: often true.\nEthically: incomplete.\nPractically: risky.\n\nYou can unintentionally overload servers.\nYou can violate terms, copyright, or privacy expectations."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#ethical-considerations-what-we-owe-others",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#ethical-considerations-what-we-owe-others",
+    "title": "Lecture 4",
+    "section": "Ethical considerations (what we owe others)",
+    "text": "Ethical considerations (what we owe others)\n\nRespect website owners’ Terms of Service (ToS).\nRespect robots.txt (not law, but a strong norm about automated access).\nRespect copyright / intellectual property.\nRespect server resources (rate limits, delays, caching, off-peak runs).\nRespect privacy:\n\navoid collecting personal data unless you have a clear, legitimate reason,\nminimize what you collect,\nstore it securely."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#a-simple-responsible-scraping-checklist",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#a-simple-responsible-scraping-checklist",
+    "title": "Lecture 4",
+    "section": "A simple “responsible scraping” checklist ✅",
+    "text": "A simple “responsible scraping” checklist ✅\nBefore you scrape, ask:\n\nDo I have permission?\n\nToS, robots.txt, course policy, and (if needed) instructor approval.\n\nIs there an official API or dataset?\n\nPrefer APIs when available (more stable + intended for reuse).\n\nAm I collecting personal or sensitive data?\n\nIf yes: rethink, minimize, or stop.\n\nCan I do this gently?\n\nrate-limit, add delays, don’t parallelize aggressively, cache results.\n\nCan I reproduce and cite properly?\n\nrecord source, timestamp, query logic, and versioning."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical",
+    "title": "Lecture 4",
+    "section": "“Legal” is not the same as “ethical”",
+    "text": "“Legal” is not the same as “ethical”\n\nIn the U.S., publicly available data may sometimes be scraped with automated tools, but:\n\nToS can still restrict access,\nprivacy/copyright issues can still apply,\nplatforms may still block you.\n\nCourse norm: We scrape in ways that are respectful, reproducible, and defensible."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#good-scraping-behavior-what-polite-looks-like",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#good-scraping-behavior-what-polite-looks-like",
+    "title": "Lecture 4",
+    "section": "Good scraping behavior (what “polite” looks like)",
+    "text": "Good scraping behavior (what “polite” looks like)\n\nAdd randomized delays between requests/actions.\nAvoid hammering pages (especially pages that trigger heavy database queries).\nKeep volumes small; start with samples.\nDon’t scrape behind logins/paywalls unless you have explicit permission.\nDon’t bypass anti-bot protections."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#clients-and-servers",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#clients-and-servers",
+    "title": "Lecture 4",
+    "section": "Clients and servers",
+    "text": "Clients and servers\n\n\n\n\n\n\n\n\n\n\nDevices on the web are clients and servers.\nYour browser is a client; websites live on servers.\n\n\n\n\nClient: your computer + browser (Chrome/Firefox/Safari).\nServer: stores webpages and sends them when requested.\nWhen you load a page, your browser downloads content from the server."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#hypertext-transfer-protocol-secure-https",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#hypertext-transfer-protocol-secure-https",
+    "title": "Lecture 4",
+    "section": "Hypertext Transfer Protocol Secure (HTTPS)",
+    "text": "Hypertext Transfer Protocol Secure (HTTPS)\n\nHTTP is how clients and servers communicate.\nHTTPS is encrypted HTTP (safer).\n\nWhen we type a URL starting with https://:\n\nBrowser finds the server.\nBrowser and server establish a secure connection.\nBrowser sends a request for content.\nServer responds (e.g., 200 OK) and sends data.\nBrowser decrypts and displays the page."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#http-status-codes-why-they-matter",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#http-status-codes-why-they-matter",
+    "title": "Lecture 4",
+    "section": "HTTP Status Codes (why they matter)",
+    "text": "HTTP Status Codes (why they matter)\n# library for making HTTPS requests in Python\nimport requests\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n200 OK → success; content returned.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n404 Not Found → URL/page doesn’t exist (typo, removed page, broken link)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#url-what-youre-actually-requesting",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#url-what-youre-actually-requesting",
+    "title": "Lecture 4",
+    "section": "URL (what you’re actually requesting)",
+    "text": "URL (what you’re actually requesting)\n\n\nA URL is a location for a resource on the internet.\nOften includes:\n\nprotocol (https)\ndomain (example.com)\npath (/products)\nquery string (?id=...&cat=...) ← common in data pages\nfragment (#section) ← in-page reference"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-big-idea-scraping-selecting-from-html",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#the-big-idea-scraping-selecting-from-html",
+    "title": "Lecture 4",
+    "section": "The big idea: scraping = selecting from HTML",
+    "text": "The big idea: scraping = selecting from HTML\n\nWhen you “scrape,” you usually:\n\nload a page,\nread the HTML,\nextract specific elements (title, price, table, links, etc.).\n\nIf you don’t understand HTML/DOM, you can’t reliably target the right data.\nSelenium is not “magic”—it automates a browser, but you still need:\n\nDOM inspection\nselectors (CSS/XPath)\nstable element identifiers (id, class, attributes)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-one-sentence",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-one-sentence",
+    "title": "Lecture 4",
+    "section": "HTML in one sentence",
+    "text": "HTML in one sentence\n\nHTML is the markup that defines the structure of a web page (headings, paragraphs, links, tables, etc.)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-example",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-example",
+    "title": "Lecture 4",
+    "section": "HTML Example",
+    "text": "HTML Example\n\n\nA minimal HTML document:\n\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Page Title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;My First Heading&lt;/h1&gt;\n    &lt;p&gt;My first paragraph.&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-elements-what-you-actually-scrape",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-elements-what-you-actually-scrape",
+    "title": "Lecture 4",
+    "section": "HTML elements (what you actually scrape)",
+    "text": "HTML elements (what you actually scrape)\n\nMost HTML is built from elements like:\n\n&lt;tagname&gt;Content goes here...&lt;/tagname&gt;\n\nCommon ones you’ll extract:\n\nheadings: &lt;h1&gt; ... &lt;/h1&gt;\ntext blocks: &lt;p&gt; ... &lt;/p&gt;\nlinks: &lt;a href=\"...\"&gt; ... &lt;/a&gt;\ntables: &lt;table&gt; ... &lt;/table&gt;"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-body-links-and-images",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-body-links-and-images",
+    "title": "Lecture 4",
+    "section": "HTML body: links and images",
+    "text": "HTML body: links and images\n&lt;a&gt; (link)\n&lt;a href=\"https://www.w3schools.com\"&gt;This is a link&lt;/a&gt;\n\nThe href attribute is often what you scrape.\n\n&lt;img&gt; (image)\n&lt;img src=\"w3schools.jpg\" alt=\"W3Schools.com\" width=\"104\" height=\"142\"&gt;\n\nYou may scrape src (image URL) or alt (description)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-tables-common-data-source",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-tables-common-data-source",
+    "title": "Lecture 4",
+    "section": "HTML Tables (common data source)",
+    "text": "HTML Tables (common data source)\n\nTable structure:\n\n&lt;table&gt; table container\n&lt;tr&gt; row\n&lt;th&gt; header cell\n&lt;td&gt; data cell\n\n\n&lt;table style=\"width:100%\"&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Firstname&lt;/th&gt;\n    &lt;th&gt;Lastname&lt;/th&gt; \n    &lt;th&gt;Age&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Eve&lt;/td&gt;\n    &lt;td&gt;Jackson&lt;/td&gt;\n    &lt;td&gt;94&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#lists-youll-see-in-the-wild",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#lists-youll-see-in-the-wild",
+    "title": "Lecture 4",
+    "section": "Lists you’ll see in the wild",
+    "text": "Lists you’ll see in the wild\nUnordered list (&lt;ul&gt;)\n&lt;ul&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ul&gt;\nOrdered list (&lt;ol&gt;)\n&lt;ol&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ol&gt;"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
+    "title": "Lecture 4",
+    "section": "Containers you’ll target a lot: <div> and <span>",
+    "text": "Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;London&lt;/h2&gt;\n  &lt;p&gt;London is the capital city of England...&lt;/p&gt;\n&lt;/div&gt;\n\nOften used to group major page sections.\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\nOften used inside text; can carry classes/ids that help selection."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-selenium-skill",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-selenium-skill",
+    "title": "Lecture 4",
+    "section": "Inspecting HTML (your #1 Selenium skill)",
+    "text": "Inspecting HTML (your #1 Selenium skill)\n\nOpen DevTools:\n\nF12 (Chrome/Firefox), or right-click → Inspect\n\nUse it to find:\n\nelement text,\nid / class,\nattributes (like href, data-*),\nwhether content is static or injected by JavaScript."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-source-code-dom-why-selenium-sees-a-tree",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-source-code-dom-why-selenium-sees-a-tree",
+    "title": "Lecture 4",
+    "section": "HTML Source Code: DOM (why Selenium “sees” a tree)",
+    "text": "HTML Source Code: DOM (why Selenium “sees” a tree)\n\nBrowsers represent HTML as a tree called the DOM (Document Object Model).\nSelenium interacts with the DOM, not with “pixels.”\nSo scraping is often:\n\n“find the node”\n“extract its text/attribute”"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#dom-visualization",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#dom-visualization",
+    "title": "Lecture 4",
+    "section": "DOM visualization",
+    "text": "DOM visualization"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-browser-vs-html-in-devtools",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-browser-vs-html-in-devtools",
+    "title": "Lecture 4",
+    "section": "HTML in browser vs HTML in DevTools",
+    "text": "HTML in browser vs HTML in DevTools"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#javascript-js-dynamic-content",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#javascript-js-dynamic-content",
+    "title": "Lecture 4",
+    "section": "JavaScript (JS): dynamic content",
+    "text": "JavaScript (JS): dynamic content\n\nJavaScript runs in the browser and can:\n\nload more data after the page “finishes” loading,\nupdate content when you click/scroll,\nbuild HTML dynamically.\n\n\nKey point:\nIf data appears only after a click/scroll, or after a delay, the page is likely JS-driven."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#cascading-style-sheets-css-and-why-scrapers-still-care",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#cascading-style-sheets-css-and-why-scrapers-still-care",
+    "title": "Lecture 4",
+    "section": "Cascading Style Sheets (CSS) — and why scrapers still care",
+    "text": "Cascading Style Sheets (CSS) — and why scrapers still care\n\nCSS controls the appearance of elements.\nScrapers care because:\n\nCSS selectors are used to find elements (.class, #id, tags).\n\nHouse analogy:\n\nHTML = structure\nCSS = decoration\nJS = interactivity"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#when-not-to-use-selenium",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#when-not-to-use-selenium",
+    "title": "Lecture 4",
+    "section": "When NOT to use Selenium",
+    "text": "When NOT to use Selenium\n\nSelenium is heavier and slower (it runs a real browser).\nIf the page is static:\n\nprefer requests + BeautifulSoup (faster, simpler, more “polite”).\n\nUse Selenium when:\n\ncontent is generated by JavaScript,\nyou must click/scroll/login (with permission),\nthe workflow requires real browser interaction."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#css-selectors-target-the-right-element",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#css-selectors-target-the-right-element",
+    "title": "Lecture 4",
+    "section": "1) CSS selectors = target the right element 🎯",
+    "text": "1) CSS selectors = target the right element 🎯\n\nSelenium doesn’t “read the page like a human” — it selects DOM elements.\nCSS selectors are a compact way to say: “find this element in the HTML.”\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile paths that break when layout changes.\n\n\n\n\n\nNote\n\n\nEthics angle: Accurate targeting means you collect only what you need (data minimization) and avoid “scrape-everything” behavior."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#explicit-waits-dont-fight-the-website",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#explicit-waits-dont-fight-the-website",
+    "title": "Lecture 4",
+    "section": "2) Explicit waits = don’t fight the website ⏳",
+    "text": "2) Explicit waits = don’t fight the website ⏳\n\nModern pages load content asynchronously (JavaScript).\nUse explicit waits to wait for a specific element/state instead of guessing with time.sleep().\nReliability tip:\n\nFewer random failures.\nLess repeated reloading/clicking (which can generate extra traffic).\n\n\n\n\n\nNote\n\n\nEthics angle: Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#rate-limiting-be-polite-to-the-server",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#rate-limiting-be-polite-to-the-server",
+    "title": "Lecture 4",
+    "section": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑",
+    "text": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑\n\nAdd pauses between actions/requests (and keep volumes small).\nReliability tip:\n\nFewer blocks / CAPTCHAs.\nLess chance of IP bans.\n\nPractical habits:\n\nRandomized delay ranges (not constant).\nCache results; don’t re-fetch the same page repeatedly.\n\n\n\n\n\nWarning\n\n\nEthics angle: Rate limiting is about respecting shared infrastructure—your script should not degrade service for real users."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-one-sentence-takeaway",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#the-one-sentence-takeaway",
+    "title": "Lecture 4",
+    "section": "The one-sentence takeaway ✅",
+    "text": "The one-sentence takeaway ✅\nCSS selectors help you extract the right thing, explicit waits help you extract it reliably, and rate limiting helps you extract it responsibly."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#why-ethics-matters-even-more-with-selenium",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#why-ethics-matters-even-more-with-selenium",
+    "title": "Lecture 4",
+    "section": "Why ethics matters even more with Selenium",
+    "text": "Why ethics matters even more with Selenium\n\nSelenium can:\n\nrapidly simulate clicks/scrolls,\ncreate lots of requests unintentionally,\nlook like bot activity.\n\nSo: slow down, log actions, and keep runs small and deliberate."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#practical-guardrails-for-class-projects",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#practical-guardrails-for-class-projects",
+    "title": "Lecture 4",
+    "section": "Practical guardrails for class projects",
+    "text": "Practical guardrails for class projects\n\nStart with:\n\nsmall samples\nfew pages\nclear pauses between actions\n\nKeep:\n\na reproducible script\nsource documentation (URL, time, what you collected)\n\nStop immediately if:\n\nthe site blocks you,\nyou suspect you are causing load,\nyou notice personal/sensitive info."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#what-to-remember",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#what-to-remember",
+    "title": "Lecture 4",
+    "section": "What to remember",
+    "text": "What to remember\n\nEthics first: permission, privacy, server respect, reproducibility.\nHTML/DOM is the “map” of the page—scraping is selecting nodes from it.\nSelenium is for dynamic/interactive pages, but it’s heavier and easier to abuse."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#next-lecture",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#next-lecture",
+    "title": "Lecture 4",
+    "section": "Next lecture",
+    "text": "Next lecture\n\nSelenium basics:\n\nlaunching a driver,\nwaiting for elements,\nselecting elements (CSS/XPath),\nextracting text/attributes,\nsafe pacing (delays + retries)."
   }
 ]
