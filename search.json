@@ -1152,7 +1152,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\nLecture 3\n\n\nData Collection I: DataFrame; Spyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nFebruary 9, 2026\n\n\n\n\nLecture 4\n\n\nData Collection II: Web-scrapping Primer; Scrapping Data with selenium\n\n\nFebruary 13, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\nLecture 3\n\n\nData Collection I: DataFrame; Spyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nFebruary 9, 2026\n\n\n\n\nLecture 4\n\n\nData Collection II: Web-scrapping Primer; Scrapping Data with selenium\n\n\nFebruary 13, 2026\n\n\n\n\nLecture 4\n\n\nPrimer on Web-scraping (Python + Selenium)\n\n\nFebruary 13, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-lec-pdf.html",
@@ -2384,7 +2384,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical",
     "title": "Lecture 4",
     "section": "“Legal” Is Not the Same as “Ethical”",
-    "text": "“Legal” Is Not the Same as “Ethical”\n\nhiQ Labs vs. LinkedIn Corp. court ruling.\nIn the U.S., publicly available data may sometimes be scraped with automated tools, but:\n\nToS can still restrict access,\nprivacy/copyright issues can still apply,\nplatforms may still block you.\n\nCourse norm: We scrape in ways that are respectful, reproducible, and defensible."
+    "text": "“Legal” Is Not the Same as “Ethical”\n\n\n“If you can see things in your web browser, you can scrape them.”\n\n\n\nLegally (U.S.): publicly available data may sometimes be scraped using automated tools in US (e.g., hiQ Labs vs. LinkedIn Corp.)\nBut legality ≠ permission or responsibility:\n\nTechnically: it may be possible.\nEthically: you still must consider terms or service (ToS), robots.txt, privacy, and data minimization.\nPractically: you can trigger blocks or harm service quality (e.g., overloading servers, ToS/privacy issues).\n\n\n\n\n\n\nWarning\n\n\nLegal ≠ ethical. Even if data is “public,” ToS, privacy expectations, and platform blocks still matter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#good-scraping-behavior-what-polite-looks-like",
@@ -2636,7 +2636,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#document-object-model-dom",
     "title": "Lecture 4",
     "section": "Document Object Model (DOM)",
-    "text": "Document Object Model (DOM)"
+    "text": "Document Object Model (DOM)\nThe Browser’s “Tree” of the Page\n\n\n\n\n\n\n\n\n\nThe browser represents HTML as the DOM (Document Object Model).\nSelenium interacts with the DOM.\nScraping often becomes:\n\n“Find the node”\n“Extract its text/attribute”"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-browser-vs.-html-in-devtools",
@@ -2665,5 +2665,201 @@
     "title": "Lecture 4",
     "section": "1) XPath = target the right element 🎯",
     "text": "1) XPath = target the right element 🎯\n\nSelenium doesn’t “read the page like a human” — it selects DOM elements.\nXPaths are a compact way to say: “find this element in the HTML.”\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile paths that break when layout changes.\n\n\n\n\n\nNote\n\n\nEthics angle: Accurate targeting means you collect only what you need (data minimization) and avoid “scrape-everything” behavior."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#data-collection-via-web-scraping",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#data-collection-via-web-scraping",
+    "title": "Lecture 4",
+    "section": "Data Collection via Web-scraping",
+    "text": "Data Collection via Web-scraping\n\nWeb pages can be a rich data source, but web scraping is powerful.\n\nCareless scraping can harm websites, violate rules, or compromise privacy.\n\nOur goal in this module:\n\nLearn the web fundamentals (client/server, HTTPS, URL, HTML/DOM),\nPractice ethical, responsible scraping (ToS/robots.txt, privacy, rate limiting),\nUse Selenium when pages are dynamic (JS-driven)."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#learning-goals-today",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#learning-goals-today",
+    "title": "Lecture 4",
+    "section": "Learning goals (today)",
+    "text": "Learning goals (today)\nBy the end, you should be able to:\n\nExplain what scraping is—and when it’s appropriate.\nDescribe client/server and what happens in an HTTPS request/response.\nExplain HTML + DOM and why they matter for Selenium.\nTell whether a page is static vs dynamic (JS-driven).\nApply a simple responsible scraping checklist."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#the-quote-and-the-correction",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#the-quote-and-the-correction",
+    "title": "Lecture 4",
+    "section": "The quote (and the correction)",
+    "text": "The quote (and the correction)\n\n“If you can see things in your web browser, you can scrape them.”\n\n\nTechnically: often true.\nEthically: incomplete.\nPractically: risky.\n\nYou can unintentionally overload servers.\nYou can violate terms, copyright, or privacy expectations."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#ethical-considerations-what-we-owe-others",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#ethical-considerations-what-we-owe-others",
+    "title": "Lecture 4",
+    "section": "Ethical considerations (what we owe others)",
+    "text": "Ethical considerations (what we owe others)\n\nRespect Terms of Service (ToS).\nRespect robots.txt (not law, but a strong norm for automated access).\nRespect copyright / intellectual property.\nRespect server resources (rate limits, delays, off-peak runs).\nRespect privacy:\n\nAvoid personal data unless necessary and justified.\nMinimize what you collect.\nStore it securely."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#robots.txt-in-one-slide",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#robots.txt-in-one-slide",
+    "title": "Lecture 4",
+    "section": "robots.txt in one slide",
+    "text": "robots.txt in one slide\n\nrobots.txt is a website’s public “rules-of-the-road” for crawlers.\nIt typically specifies:\n\nwhich bots the rules apply to (User-agent)\nwhich paths are blocked (Disallow) or allowed (Allow)\n\nKey point: robots.txt is a request for polite behavior, not a password wall.\n\n\n\n\nNote\n\n\nClass norm: Always check robots.txt before scraping and follow it unless you have explicit permission to do otherwise."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#responsible-scraping-checklist",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#responsible-scraping-checklist",
+    "title": "Lecture 4",
+    "section": "Responsible scraping checklist ✅",
+    "text": "Responsible scraping checklist ✅\nBefore you scrape, ask:\n\nPermission? (ToS, robots.txt, course policy)\nAPI available? Prefer official APIs/datasets when they exist.\nSensitive data? If yes: rethink, minimize, or stop.\nGentle execution? Add delays, avoid parallel hammering, cache results.\nReproducible? Record source, timestamp, query logic, and versions.\n\n\n\n\nWarning\n\n\nLegal ≠ ethical. Even if data is “public,” ToS, privacy expectations, and platform blocks still matter."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#polite-scraping-behavior-practical-habits",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#polite-scraping-behavior-practical-habits",
+    "title": "Lecture 4",
+    "section": "Polite scraping behavior (practical habits)",
+    "text": "Polite scraping behavior (practical habits)\n\nAdd randomized delays between requests/actions.\nKeep volumes small; start with samples.\nAvoid scraping behind logins/paywalls unless you have explicit permission.\nDon’t bypass anti-bot protections.\nStop if you’re blocked or suspect you’re causing load."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#clients-and-servers",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#clients-and-servers",
+    "title": "Lecture 4",
+    "section": "Clients and servers",
+    "text": "Clients and servers\n\n\n\n\n\n\nDevices on the web act as clients and servers.\nYour browser is a client; websites and data live on servers.\n\nClient: your computer/phone + a browser (Chrome/Firefox/Safari).\nServer: a computer that stores webpages/data and sends them when requested.\n\nWhen you load a page, your browser sends a request and the server sends back a response."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#https-requestresponse-what-your-browser-does",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#https-requestresponse-what-your-browser-does",
+    "title": "Lecture 4",
+    "section": "HTTPS request/response (what your browser does)",
+    "text": "HTTPS request/response (what your browser does)\n\n\nHTTP is how clients and servers communicate.\nHTTPS is encrypted HTTP (safer).\n\n\nWhen you type a URL starting with https://:\n\nBrowser finds the server.\nBrowser and server establish a secure connection.\nBrowser sends a request for content.\nServer responds (e.g., 200 OK) and sends data.\nBrowser decrypts and displays the page."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#http-status-codes-a-fast-check",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#http-status-codes-a-fast-check",
+    "title": "Lecture 4",
+    "section": "HTTP Status Codes (a fast check)",
+    "text": "HTTP Status Codes (a fast check)\nimport requests\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n200 OK → success; content returned.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n404 Not Found → URL/page doesn’t exist (typo, removed page, broken link)."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#url-anatomy-what-youre-actually-requesting",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#url-anatomy-what-youre-actually-requesting",
+    "title": "Lecture 4",
+    "section": "URL anatomy (what you’re actually requesting)",
+    "text": "URL anatomy (what you’re actually requesting)\n\n\nA URL is a location for a resource on the internet.\nOften includes:\n\nprotocol (https)\ndomain (example.com)\npath (/products)\nquery string (?id=...&cat=...) ← common in data pages\nfragment (#section) ← in-page reference"
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#the-big-idea-scraping-selecting-from-html",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#the-big-idea-scraping-selecting-from-html",
+    "title": "Lecture 4",
+    "section": "The big idea: scraping = selecting from HTML",
+    "text": "The big idea: scraping = selecting from HTML\n\nTypical workflow:\n\nload a page\nread the HTML\nextract specific elements (title, price, table rows, links, etc.)\n\nIf you don’t understand HTML/DOM, you can’t reliably target the right data.\nSelenium is not “magic”—it automates a browser, but you still need:\n\nDOM inspection\nselectors (CSS selectors / XPath)\nstable identifiers (id, class, attributes)"
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#html-in-one-sentence-tiny-example",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#html-in-one-sentence-tiny-example",
+    "title": "Lecture 4",
+    "section": "HTML in one sentence + tiny example",
+    "text": "HTML in one sentence + tiny example\n\nHTML defines the structure of a web page.\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Page Title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;My First Heading&lt;/h1&gt;\n    &lt;p&gt;My first paragraph.&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;"
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#common-tags-you-scrape-links-and-images",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#common-tags-you-scrape-links-and-images",
+    "title": "Lecture 4",
+    "section": "Common tags you scrape: links and images",
+    "text": "Common tags you scrape: links and images\n&lt;a&gt; (link)\n&lt;a href=\"https://www.w3schools.com\"&gt;This is a link&lt;/a&gt;\n\nhref is often the data you want.\n\n&lt;img&gt; (image)\n&lt;img src=\"w3schools.jpg\" alt=\"W3Schools.com\" width=\"104\" height=\"142\"&gt;\n\nsrc (image URL) or alt can be useful."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#html-tables-very-common-data-source",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#html-tables-very-common-data-source",
+    "title": "Lecture 4",
+    "section": "HTML tables (very common data source)",
+    "text": "HTML tables (very common data source)\n\nTable structure:\n\n&lt;table&gt; container\n&lt;tr&gt; row\n&lt;th&gt; header cell\n&lt;td&gt; data cell\n\n\n&lt;table&gt;\n  &lt;tr&gt;&lt;th&gt;Firstname&lt;/th&gt;&lt;th&gt;Lastname&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;\n  &lt;tr&gt;&lt;td&gt;Eve&lt;/td&gt;&lt;td&gt;Jackson&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;"
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#lists-containers-youll-see-everywhere",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#lists-containers-youll-see-everywhere",
+    "title": "Lecture 4",
+    "section": "Lists + containers you’ll see everywhere",
+    "text": "Lists + containers you’ll see everywhere\nLists\n&lt;ul&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Tea&lt;/li&gt;&lt;/ul&gt;\n&lt;ol&gt;&lt;li&gt;Coffee&lt;/li&gt;&lt;li&gt;Tea&lt;/li&gt;&lt;/ol&gt;\nContainers\n&lt;div&gt; ...block-level container... &lt;/div&gt;\n&lt;span&gt; ...inline container... &lt;/span&gt;\n\n&lt;div&gt; groups sections; &lt;span&gt; targets small inline pieces."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#inspecting-html-your-1-selenium-skill",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#inspecting-html-your-1-selenium-skill",
+    "title": "Lecture 4",
+    "section": "Inspecting HTML (your #1 Selenium skill)",
+    "text": "Inspecting HTML (your #1 Selenium skill)\n\nOpen DevTools:\n\nF12 (Chrome/Firefox), or right-click → Inspect\n\nUse it to find:\n\nelement text,\nid / class,\nattributes (href, data-*),\nwhether content is static or injected by JavaScript."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#dom-the-browsers-tree-of-the-page",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#dom-the-browsers-tree-of-the-page",
+    "title": "Lecture 4",
+    "section": "DOM: the browser’s “tree” of the page",
+    "text": "DOM: the browser’s “tree” of the page\n\nThe browser represents HTML as the DOM (Document Object Model).\nSelenium interacts with the DOM, not with pixels.\nScraping often becomes:\n\n“find the node”\n“extract its text/attribute”"
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#selectors-preview-css-vs-xpath-reliability-tip",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#selectors-preview-css-vs-xpath-reliability-tip",
+    "title": "Lecture 4",
+    "section": "Selectors preview: CSS vs XPath (reliability tip)",
+    "text": "Selectors preview: CSS vs XPath (reliability tip)\n\nCSS selectors (common, concise): #id, .class, tag, [attr=value]\nXPath (powerful, flexible): good when CSS isn’t enough\nReliability rule:\n\nPrefer stable selectors (unique IDs, meaningful classes, attributes),\nAvoid fragile “deep” paths that break when layout changes."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#javascript-js-makes-pages-dynamic",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#javascript-js-makes-pages-dynamic",
+    "title": "Lecture 4",
+    "section": "JavaScript (JS) makes pages dynamic",
+    "text": "JavaScript (JS) makes pages dynamic\n\nJS can:\n\nload more data after the page “finishes” loading,\nupdate content when you click/scroll,\nbuild HTML dynamically.\n\n\nKey test:\nIf data appears only after a click/scroll or delay, the page is likely JS-driven."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#tool-choice-requestsbs4-vs-selenium",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#tool-choice-requestsbs4-vs-selenium",
+    "title": "Lecture 4",
+    "section": "Tool choice: requests/BS4 vs Selenium",
+    "text": "Tool choice: requests/BS4 vs Selenium\n\nIf a page is static:\n\nprefer requests + BeautifulSoup (faster, simpler, more “polite”)\n\nUse Selenium when:\n\ncontent is generated by JavaScript,\nyou must click/scroll to reveal content,\nthe workflow requires real browser interaction (with permission)."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#three-things-you-must-know-next-ethics-reliability",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#three-things-you-must-know-next-ethics-reliability",
+    "title": "Lecture 4",
+    "section": "Three things you must know next (ethics + reliability)",
+    "text": "Three things you must know next (ethics + reliability)"
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#css-selectors-target-the-right-element",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#css-selectors-target-the-right-element",
+    "title": "Lecture 4",
+    "section": "1) CSS selectors = target the right element 🎯",
+    "text": "1) CSS selectors = target the right element 🎯\n\nSelenium selects DOM elements using selectors.\nReliability tip:\n\nPrefer stable identifiers: #id, unique classes, meaningful attributes.\nAvoid fragile selectors that break when layout changes.\n\n\n\n\n\nNote\n\n\nEthics angle: Accurate targeting helps you collect only what you need (data minimization)."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#explicit-waits-dont-fight-the-website",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#explicit-waits-dont-fight-the-website",
+    "title": "Lecture 4",
+    "section": "2) Explicit waits = don’t fight the website ⏳",
+    "text": "2) Explicit waits = don’t fight the website ⏳\n\nModern pages load content asynchronously (JavaScript).\nUse explicit waits instead of guessing with time.sleep().\n\n\n\n\nNote\n\n\nEthics angle: Proper waits reduce extra reloads/retries → fewer unnecessary requests."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#rate-limiting-be-polite-to-the-server",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#rate-limiting-be-polite-to-the-server",
+    "title": "Lecture 4",
+    "section": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑",
+    "text": "3) Rate limiting = be polite to the server 🧑‍🤝‍🧑\n\nAdd pauses between actions/requests (keep volumes small).\nPrefer randomized delays and caching.\n\n\n\n\nWarning\n\n\nEthics angle: Rate limiting respects shared infrastructure—don’t degrade service for real users."
+  },
+  {
+    "objectID": "danl-lec/lecture4_primer_webscraping_30slides.html#guardrails-for-class-projects",
+    "href": "danl-lec/lecture4_primer_webscraping_30slides.html#guardrails-for-class-projects",
+    "title": "Lecture 4",
+    "section": "Guardrails for class projects",
+    "text": "Guardrails for class projects\n\nStart with small samples and few pages.\nLog what you did (URL, time, pages visited, outputs saved).\nStop immediately if:\n\nyou’re blocked,\nyou suspect you’re causing load,\nyou see personal/sensitive info you don’t need."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical-1",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical-1",
+    "title": "Lecture 4",
+    "section": "“Legal” Is Not the Same as “Ethical”",
+    "text": "“Legal” Is Not the Same as “Ethical”\n\nToS can still restrict access\nprivacy/copyright issues can still apply\nplatforms may still block you\nCourse norm: We scrape in ways that are respectful, reproducible, and defensible."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#document-object-model-dom-the-browsers-tree-of-the-page",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#document-object-model-dom-the-browsers-tree-of-the-page",
+    "title": "Lecture 4",
+    "section": "Document Object Model (DOM): the browser’s “tree” of the page",
+    "text": "Document Object Model (DOM): the browser’s “tree” of the page\n\n\n\n\n\n\n\n\n\nThe browser represents HTML as the DOM (Document Object Model).\nSelenium interacts with the DOM.\nScraping often becomes:\n\n“Find the node”\n“Extract its text/attribute”"
   }
 ]

@@ -69,69 +69,27 @@ theme_set(theme_fivethirtyeight()+
   - Understand **ethical, responsible scraping**
 
 
-
-# Ethics First: Scraping is Not “Free” {background-color="#1c4982"}
-
-## The Quote (and the Correction)
-
-> *"If you can see things in your web browser, you can scrape them."*
-
-- *Technically*: often true.
-- *Ethically*: incomplete.
-- *Practically*: risky.
-  - You can unintentionally overload servers.
-  - You can violate terms, copyright, or privacy expectations.
-
-
-
-## Ethical considerations (what we owe others)
-
-- Respect **website owners’ Terms of Service (ToS)**.
-- Respect **robots.txt** (not law, but a strong norm about automated access).
-- Respect **copyright / intellectual property**.
-- Respect **server resources** (rate limits, delays, off-peak runs).
-- Respect **privacy**:
-  - Avoid collecting personal data unless you have a clear, legitimate reason.
-  - Minimize what you collect.
-  - Store it securely.
-
-
-
-## A Simple “Responsible Scraping” Checklist ✅
-
-Before you scrape, ask:
-
-1) **Do I have permission?**
-   - ToS, robots.txt, course policy, and (if needed) instructor approval.
-2) **Is there an official API (application programming interface) or dataset?**
-   - Prefer APIs when available (more stable + intended for reuse).
-3) **Am I collecting personal or sensitive data?**
-   - If yes: rethink, minimize, or stop.
-4) **Can I do this gently?**
-   - rate-limit, add delays.
-5) **Can I reproduce and cite properly?**
-   - record source, timestamp, query logic, and versioning.
-
-
-
 ## “Legal” Is Not the Same as “Ethical”
 
-- [**hiQ Labs vs. LinkedIn Corp. court ruling**](https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn).
-- In the U.S., **publicly available** data may sometimes be scraped with automated tools, but:
-  - ToS can still restrict access,
-  - privacy/copyright issues can still apply,
-  - platforms may still block you.
-- **Course norm:** We scrape in ways that are respectful, reproducible, and defensible.
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+  <blockquote>
+    *"If you can see things in your web browser, you can scrape them."*
+  </blockquote>
+</div>
 
+- *Legally (U.S.)*: **publicly available** data may sometimes be scraped using automated tools in US (e.g., [**hiQ Labs vs. LinkedIn Corp.**](https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn))
+- *But legality ≠ permission or responsibility*:
+  - *Technically*: it may be possible.
+  - *Ethically*: you still must consider terms or service (ToS), robots.txt, privacy, and data minimization.
+  - *Practically*: you can trigger blocks or harm service quality (e.g., overloading servers, ToS/privacy issues).
 
+:::: fragment
+::: {.callout-warning}
 
-## Good Scraping Behavior (What “Polite” Looks Like)
+**Legal ≠ ethical.** Even if data is “public,” ToS, privacy expectations, and platform blocks still matter.
 
-- Add **randomized delays** between requests/actions.
-- Avoid hammering pages (especially pages that trigger heavy database queries).
-- Keep volumes small; start with **samples**.
-- Don’t scrape behind logins/paywalls unless you have explicit permission.
-- Don’t bypass anti-bot protections.
+:::
+::::
 
 
 
@@ -382,21 +340,33 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## HTML Source Code: DOM
-
-- Browsers represent HTML as a tree called the **DOM** (Document Object Model).
-- Selenium interacts with the **DOM**, not with “pixels.”
-- So scraping is often:
-  - “find the node”
-  - “extract its text/attribute”
-
-
-
 ## Document Object Model (DOM)
+### The Browser’s "Tree" of the Page
 
-```{r, echo=FALSE, eval=TRUE, out.width='40%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/DOM.png")
-```
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/DOM.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="50%"}
+- The browser represents HTML as the **DOM** (Document Object Model).
+- Selenium interacts with the **DOM**.
+- Scraping often becomes:
+  - “Find the node”
+  - “Extract its text/attribute”
+  
+:::
+
+::::
+
+
+
 
 
 
@@ -414,159 +384,4 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-web.png")
 ```
 :::
 ::::
-
-
-
-# Static vs. Dynamic Pages {background-color="#1c4982"}
-
-## JavaScript (JS): Dynamic Content
-
-- **JavaScript** runs in the browser and can:
-  - load more data after the page “finishes” loading,
-  - update content when you click/scroll,
-  - build HTML dynamically.
-
-**Key point:**  
-If data appears only after a click/scroll, or after a delay, the page is likely **JS-driven**.
-
-
-
-## Cascading Style Sheets (CSS) — and why scrapers still care
-
-- CSS controls the **appearance** of elements.
-- Scrapers care because:
-  - CSS selectors are used to **find** elements (`.class`, `#id`, tags).
-- House analogy:
-  - **HTML** = structure
-  - **CSS** = decoration
-  - **JS** = interactivity
-
-
-
-## When NOT to use Selenium
-
-- Selenium is heavier and slower (it runs a real browser).
-- If the page is static:
-  - prefer `requests + BeautifulSoup` (faster, simpler, more “polite”).
-- Use Selenium when:
-  - content is generated by JavaScript,
-  - you must click/scroll/login (with permission),
-  - the workflow requires real browser interaction.
-
-
-
-# Selenium-ready preview {background-color="#1c4982"}
-
-## 1) XPath = *target the right element* 🎯
-
-- Selenium doesn’t “read the page like a human” — it selects **DOM elements**.
-- **XPaths** are a compact way to say: *“find this element in the HTML.”*
-- Reliability tip:
-  - Prefer stable identifiers: `#id`, unique classes, meaningful attributes.
-  - Avoid fragile paths that break when layout changes.
-
-::: {.callout-note}
-**Ethics angle:** Accurate targeting means you collect **only what you need** (data minimization) and avoid “scrape-everything” behavior.
-:::
-
-## 2) Explicit waits = *don’t fight the website* ⏳
-
-- Modern pages load content **asynchronously** (JavaScript).
-- Use **explicit waits** to wait for a specific element/state instead of guessing with `time.sleep()`.
-- Reliability tip:
-  - Fewer random failures.
-  - Less repeated reloading/clicking (which can generate extra traffic).
-
-::: {.callout-note}
-**Ethics angle:** Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops.
-:::
-
-## 3) Rate limiting = *be polite to the server* 🧑‍🤝‍🧑
-
-- Add pauses between actions/requests (and keep volumes small).
-- Reliability tip:
-  - Fewer blocks / CAPTCHAs.
-  - Less chance of IP bans.
-- Practical habits:
-  - Randomized delay ranges (not constant).
-  - Cache results; don’t re-fetch the same page repeatedly.
-
-::: {.callout-warning}
-**Ethics angle:** Rate limiting is about **respecting shared infrastructure**—your script should not degrade service for real users.
-:::
-
-## The one-sentence takeaway ✅
-
-**CSS selectors** help you extract the *right* thing, **explicit waits** help you extract it *reliably*, and **rate limiting** helps you extract it *responsibly*.
-
-
-
-<!-- # Ethics again: Selenium can do *more* harm {background-color="#1c4982"} -->
-
-
-
-
-<!-- ## Practical guardrails for class projects -->
-
-<!-- - Start with: -->
-<!--   - **small samples** -->
-<!--   - **few pages** -->
-<!--   - clear pauses between actions -->
-<!-- - Keep: -->
-<!--   - a reproducible script -->
-<!--   - source documentation (URL, time, what you collected) -->
-<!-- - Stop immediately if: -->
-<!--   - the site blocks you, -->
-<!--   - you suspect you are causing load, -->
-<!--   - you notice personal/sensitive info. -->
-
-
-
-# Selenium-ready: what you must know next {background-color="#1c4982"}
-
-## Why ethics matters even more with Selenium
-
-- Selenium can:
-  - rapidly simulate clicks/scrolls,
-  - create lots of requests unintentionally,
-  - look like bot activity.
-- So: slow down, log actions, and keep runs small and deliberate.
-
-## 1) XPath = *target the right element* 🎯
-
-- Selenium doesn’t “read the page like a human” — it selects **DOM elements**.
-- **XPaths** are a compact way to say: *“find this element in the HTML.”*
-- Reliability tip:
-  - Prefer stable identifiers: `#id`, unique classes, meaningful attributes.
-  - Avoid fragile paths that break when layout changes.
-
-::: {.callout-note}
-**Ethics angle:** Accurate targeting means you collect **only what you need** (data minimization) and avoid “scrape-everything” behavior.
-:::
-
-## 2) Explicit waits = *don’t fight the website* ⏳
-
-- Modern pages load content **asynchronously** (JavaScript).
-- Use **explicit waits** to wait for a specific element/state instead of guessing with `time.sleep()`.
-- Reliability tip:
-  - Fewer random failures.
-  - Less repeated reloading/clicking (which can generate extra traffic).
-
-::: {.callout-note}
-**Ethics angle:** Waiting properly reduces unnecessary requests and prevents accidental “hammering” caused by retry loops.
-:::
-
-## 3) Rate limiting = *be polite to the server* 🧑‍🤝‍🧑
-
-- Add pauses between actions/requests (and keep volumes small).
-- Reliability tip:
-  - Fewer blocks / CAPTCHAs.
-  - Less chance of IP bans.
-- Practical habits:
-  - Randomized delay ranges (not constant).
-  - Cache results; don’t re-fetch the same page repeatedly.
-
-::: {.callout-warning}
-**Ethics angle:** Rate limiting is about **respecting shared infrastructure**—your script should not degrade service for real users.
-:::
 

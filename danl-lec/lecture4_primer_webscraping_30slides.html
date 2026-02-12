@@ -394,7 +394,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Lecture 4</h1>
-  <p class="subtitle">Data Collection II: Web-scrapping Primer; Scrapping Data with <code>selenium</code></p>
+  <p class="subtitle">Primer on Web-scraping (Python + Selenium)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -413,8 +413,8 @@ Byeong-Hak Choe
   <p class="date">February 13, 2026</p>
 </section>
 <section>
-<section id="premier-on-web-scrapping" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Premier on Web-scrapping</strong></h1>
+<section id="primer-on-web-scraping" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1><strong>Primer on Web-scraping</strong></h1>
 
 </section>
 <section id="data-collection-via-web-scraping" class="slide level2">
@@ -427,27 +427,89 @@ Byeong-Hak Choe
 <li class="fragment">Our goal in this module:
 <ul>
 <li class="fragment">Learn the <strong>web fundamentals</strong> (client/server, HTTPS, URL, HTML/DOM),</li>
-<li class="fragment">Understand <strong>ethical, responsible scraping</strong></li>
+<li class="fragment">Practice <strong>ethical, responsible scraping</strong> (ToS/robots.txt, privacy, rate limiting),</li>
+<li class="fragment">Use <strong>Selenium</strong> when pages are <strong>dynamic</strong> (JS-driven).</li>
 </ul></li>
 </ul>
 </section>
-<section id="legal-is-not-the-same-as-ethical" class="slide level2">
-<h2>“Legal” Is Not the Same as “Ethical”</h2>
-<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+<section id="learning-goals-today" class="slide level2">
+<h2>Learning goals (today)</h2>
+<p>By the end, you should be able to:</p>
+<ul>
+<li class="fragment">Explain what scraping is—and when it’s appropriate.</li>
+<li class="fragment">Describe <strong>client/server</strong> and what happens in an <strong>HTTPS request/response</strong>.</li>
+<li class="fragment">Explain <strong>HTML + DOM</strong> and why they matter for Selenium.</li>
+<li class="fragment">Tell whether a page is <strong>static vs dynamic</strong> (JS-driven).</li>
+<li class="fragment">Apply a simple <strong>responsible scraping checklist</strong>.</li>
+</ul>
+</section></section>
+<section>
+<section id="ethics-first-scraping-is-not-free" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Ethics First: Scraping is Not “Free”</h1>
+
+</section>
+<section id="the-quote-and-the-correction" class="slide level2">
+<h2>The quote (and the correction)</h2>
 <blockquote>
-<em>“If you can see things in your web browser, you can scrape them.”</em>
+<p><em>“If you can see things in your web browser, you can scrape them.”</em></p>
 </blockquote>
-</div>
 <ul>
-<li class="fragment"><em>Legally (U.S.)</em>: <strong>publicly available</strong> data may sometimes be scraped using automated tools in US (e.g., <a href="https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn"><strong>hiQ Labs vs.&nbsp;LinkedIn Corp.</strong></a>)</li>
-<li class="fragment"><em>But legality ≠ permission or responsibility</em>:
+<li class="fragment"><em>Technically</em>: often true.</li>
+<li class="fragment"><em>Ethically</em>: incomplete.</li>
+<li class="fragment"><em>Practically</em>: risky.
 <ul>
-<li class="fragment"><em>Technically</em>: it may be possible.</li>
-<li class="fragment"><em>Ethically</em>: you still must consider terms or service (ToS), robots.txt, privacy, and data minimization.</li>
-<li class="fragment"><em>Practically</em>: you can trigger blocks or harm service quality (e.g., overloading servers, ToS/privacy issues).</li>
+<li class="fragment">You can unintentionally overload servers.</li>
+<li class="fragment">You can violate terms, copyright, or privacy expectations.</li>
 </ul></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="ethical-considerations-what-we-owe-others" class="slide level2">
+<h2>Ethical considerations (what we owe others)</h2>
+<ul>
+<li class="fragment">Respect <strong>Terms of Service (ToS)</strong>.</li>
+<li class="fragment">Respect <strong>robots.txt</strong> (not law, but a strong norm for automated access).</li>
+<li class="fragment">Respect <strong>copyright / intellectual property</strong>.</li>
+<li class="fragment">Respect <strong>server resources</strong> (rate limits, delays, off-peak runs).</li>
+<li class="fragment">Respect <strong>privacy</strong>:
+<ul>
+<li class="fragment">Avoid personal data unless necessary and justified.</li>
+<li class="fragment">Minimize what you collect.</li>
+<li class="fragment">Store it securely.</li>
+</ul></li>
+</ul>
+</section>
+<section id="robots.txt-in-one-slide" class="slide level2">
+<h2>robots.txt in one slide</h2>
+<ul>
+<li class="fragment"><code>robots.txt</code> is a website’s <strong>public “rules-of-the-road”</strong> for crawlers.</li>
+<li class="fragment">It typically specifies:
+<ul>
+<li class="fragment">which bots the rules apply to (<code>User-agent</code>)</li>
+<li class="fragment">which paths are blocked (<code>Disallow</code>) or allowed (<code>Allow</code>)</li>
+</ul></li>
+<li class="fragment"><strong>Key point:</strong> robots.txt is a <strong>request</strong> for polite behavior, not a password wall.</li>
+</ul>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Class norm:</strong> Always check <code>robots.txt</code> before scraping and follow it unless you have explicit permission to do otherwise.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="responsible-scraping-checklist" class="slide level2">
+<h2>Responsible scraping checklist ✅</h2>
+<p>Before you scrape, ask:</p>
+<ol type="1">
+<li class="fragment"><strong>Permission?</strong> (ToS, robots.txt, course policy)</li>
+<li class="fragment"><strong>API available?</strong> Prefer official APIs/datasets when they exist.</li>
+<li class="fragment"><strong>Sensitive data?</strong> If yes: rethink, minimize, or stop.</li>
+<li class="fragment"><strong>Gentle execution?</strong> Add delays, avoid parallel hammering, cache results.</li>
+<li class="fragment"><strong>Reproducible?</strong> Record source, timestamp, query logic, and versions.</li>
+</ol>
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -458,7 +520,16 @@ Byeong-Hak Choe
 </div>
 </div>
 </div>
-</div>
+</section>
+<section id="polite-scraping-behavior-practical-habits" class="slide level2">
+<h2>Polite scraping behavior (practical habits)</h2>
+<ul>
+<li class="fragment">Add <strong>randomized delays</strong> between requests/actions.</li>
+<li class="fragment">Keep volumes small; start with <strong>samples</strong>.</li>
+<li class="fragment">Avoid scraping behind logins/paywalls unless you have explicit permission.</li>
+<li class="fragment">Don’t bypass anti-bot protections.</li>
+<li class="fragment">Stop if you’re blocked or suspect you’re causing load.</li>
+</ul>
 </section></section>
 <section>
 <section id="web-basics-clients-and-servers" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -466,7 +537,7 @@ Byeong-Hak Choe
 
 </section>
 <section id="clients-and-servers" class="slide level2">
-<h2>Clients and Servers</h2>
+<h2>Clients and servers</h2>
 <div style="text-align: center; width: 75%; margin: auto;">
 <img src="https://bcdanl.github.io/lec_figs/client-server.jpg" style="width: 100%; margin-bottom: -50px;">
 <p style="font-weight: bold;">
@@ -479,18 +550,18 @@ Byeong-Hak Choe
 <li class="fragment"><strong>Client</strong>: your computer/phone + a browser (Chrome/Firefox/Safari).</li>
 <li class="fragment"><strong>Server</strong>: a computer that stores webpages/data and sends them when requested.</li>
 </ul></li>
-<li class="fragment">When you load a page, your browser sends a <strong>request</strong> and the server sends back a <strong>response</strong> (the page content).</li>
+<li class="fragment">When you load a page, your browser sends a <strong>request</strong> and the server sends back a <strong>response</strong>.</li>
 </ul>
 </section>
-<section id="hypertext-transfer-protocol-secure-https" class="slide level2">
-<h2>Hypertext Transfer Protocol Secure (HTTPS)</h2>
+<section id="https-requestresponse-what-your-browser-does" class="slide level2">
+<h2>HTTPS request/response (what your browser does)</h2>
 <div>
 <ul>
 <li><strong>HTTP</strong> is how clients and servers communicate.</li>
 <li><strong>HTTPS</strong> is encrypted HTTP (safer).</li>
 </ul>
 </div>
-<p>When we type a URL starting with <code>https://</code>:</p>
+<p>When you type a URL starting with <code>https://</code>:</p>
 <ol type="1">
 <li class="fragment">Browser finds the server.</li>
 <li class="fragment">Browser and server establish a secure connection.</li>
@@ -499,10 +570,9 @@ Byeong-Hak Choe
 <li class="fragment">Browser decrypts and displays the page.</li>
 </ol>
 </section>
-<section id="http-status-codes" class="slide level2">
-<h2>HTTP Status Codes</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># library for making HTTPS requests in Python</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> requests</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="http-status-codes-a-fast-check" class="slide level2">
+<h2>HTTP Status Codes (a fast check)</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> requests</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>p <span class="op">=</span> <span class="st">'https://bcdanl.github.io/210'</span></span>
@@ -523,8 +593,8 @@ Byeong-Hak Choe
 </div>
 </div>
 </section>
-<section id="url-what-youre-actually-requesting" class="slide level2">
-<h2>URL (what you’re actually requesting)</h2>
+<section id="url-anatomy-what-youre-actually-requesting" class="slide level2">
+<h2>URL anatomy (what you’re actually requesting)</h2>
 
 <img data-src="https://bcdanl.github.io/lec_figs/URL.png" style="width:75.0%" class="r-stretch quarto-figure-center"><ul>
 <li class="fragment">A <strong>URL</strong> is a location for a resource on the internet.</li>
@@ -544,36 +614,28 @@ Byeong-Hak Choe
 
 </section>
 <section id="the-big-idea-scraping-selecting-from-html" class="slide level2">
-<h2>The Big Idea: Scraping = Selecting from HTML</h2>
+<h2>The big idea: scraping = selecting from HTML</h2>
 <ul>
-<li class="fragment">When you “scrape,” you usually:
+<li class="fragment">Typical workflow:
 <ol type="1">
-<li class="fragment">load a page,</li>
-<li class="fragment">read the <strong>HTML</strong>,</li>
-<li class="fragment">extract specific elements (title, price, table, links, etc.).</li>
+<li class="fragment">load a page</li>
+<li class="fragment">read the <strong>HTML</strong></li>
+<li class="fragment">extract specific elements (title, price, table rows, links, etc.)</li>
 </ol></li>
 <li class="fragment"><strong>If you don’t understand HTML/DOM, you can’t reliably target the right data.</strong></li>
 <li class="fragment">Selenium is not “magic”—it automates a browser, but you still need:
 <ul>
 <li class="fragment"><strong>DOM inspection</strong></li>
-<li class="fragment"><strong>selectors</strong> (XPath)</li>
-<li class="fragment">stable element identifiers (<code>id</code>, <code>class</code>, attributes)</li>
+<li class="fragment"><strong>selectors</strong> (CSS selectors / XPath)</li>
+<li class="fragment">stable identifiers (<code>id</code>, <code>class</code>, attributes)</li>
 </ul></li>
 </ul>
 </section>
-<section id="html-in-one-sentence" class="slide level2">
-<h2>HTML in one sentence</h2>
+<section id="html-in-one-sentence-tiny-example" class="slide level2">
+<h2>HTML in one sentence + tiny example</h2>
 <ul>
-<li class="fragment"><strong>HTML</strong> is the markup that defines the <strong>structure</strong> of a web page (headings, paragraphs, links, tables, etc.).</li>
+<li class="fragment"><strong>HTML</strong> defines the <strong>structure</strong> of a web page.</li>
 </ul>
-</section>
-<section id="html-example" class="slide level2">
-<h2>HTML Example</h2>
-<div>
-<ul>
-<li>A minimal HTML document:</li>
-</ul>
-</div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">&lt;head&gt;</span></span>
@@ -585,88 +647,45 @@ Byeong-Hak Choe
 <span id="cb4-9"><a href="#cb4-9"></a>  <span class="kw">&lt;/body&gt;</span></span>
 <span id="cb4-10"><a href="#cb4-10"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="html-elements-what-you-actually-scrape" class="slide level2">
-<h2>HTML elements (what you actually scrape)</h2>
-<ul>
-<li class="fragment">Most HTML is built from <strong>elements</strong> like:</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;tagname&gt;</span>Content goes here...<span class="kw">&lt;/tagname&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">Common ones you’ll extract:
-<ul>
-<li class="fragment">headings: <code>&lt;h1&gt; ... &lt;/h1&gt;</code></li>
-<li class="fragment">text blocks: <code>&lt;p&gt; ... &lt;/p&gt;</code></li>
-<li class="fragment">links: <code>&lt;a href="..."&gt; ... &lt;/a&gt;</code></li>
-<li class="fragment">tables: <code>&lt;table&gt; ... &lt;/table&gt;</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="html-body-links-and-images" class="slide level2">
-<h2>HTML body: links and images</h2>
+<section id="common-tags-you-scrape-links-and-images" class="slide level2">
+<h2>Common tags you scrape: links and images</h2>
 <h4 id="a-link"><code>&lt;a&gt;</code> (link)</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://www.w3schools.com"</span><span class="kw">&gt;</span>This is a link<span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://www.w3schools.com"</span><span class="kw">&gt;</span>This is a link<span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">The <code>href</code> attribute is often what you scrape.</li>
+<li class="fragment"><code>href</code> is often the data you want.</li>
 </ul>
 <h4 id="img-image"><code>&lt;img&gt;</code> (image)</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"w3schools.jpg"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"W3Schools.com"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"104"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"142"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"w3schools.jpg"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"W3Schools.com"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"104"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"142"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">You may scrape <code>src</code> (image URL) or <code>alt</code> (description).</li>
+<li class="fragment"><code>src</code> (image URL) or <code>alt</code> can be useful.</li>
 </ul>
 </section>
-<section id="html-tables-common-data-source" class="slide level2">
-<h2>HTML Tables (common data source)</h2>
+<section id="html-tables-very-common-data-source" class="slide level2">
+<h2>HTML tables (very common data source)</h2>
 <ul>
 <li class="fragment">Table structure:
 <ul>
-<li class="fragment"><code>&lt;table&gt;</code> table container</li>
+<li class="fragment"><code>&lt;table&gt;</code> container</li>
 <li class="fragment"><code>&lt;tr&gt;</code> row</li>
 <li class="fragment"><code>&lt;th&gt;</code> header cell</li>
 <li class="fragment"><code>&lt;td&gt;</code> data cell</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;table</span> <span class="er">style</span><span class="ot">=</span><span class="st">"width:100%"</span><span class="kw">&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>    <span class="kw">&lt;th&gt;</span>Firstname<span class="kw">&lt;/th&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="kw">&lt;th&gt;</span>Lastname<span class="kw">&lt;/th&gt;</span> </span>
-<span id="cb8-5"><a href="#cb8-5"></a>    <span class="kw">&lt;th&gt;</span>Age<span class="kw">&lt;/th&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>    <span class="kw">&lt;td&gt;</span>Eve<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>    <span class="kw">&lt;td&gt;</span>Jackson<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>    <span class="kw">&lt;td&gt;</span>94<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="kw">&lt;/table&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;table&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Firstname<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Lastname<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Age<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="kw">&lt;tr&gt;&lt;td&gt;</span>Eve<span class="kw">&lt;/td&gt;&lt;td&gt;</span>Jackson<span class="kw">&lt;/td&gt;&lt;td&gt;</span>94<span class="kw">&lt;/td&gt;&lt;/tr&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">&lt;/table&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="lists-youll-see-in-the-wild" class="slide level2">
-<h2>Lists you’ll see in the wild</h2>
-<h3 id="unordered-list-ul">Unordered list (<code>&lt;ul&gt;</code>)</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="kw">&lt;li&gt;</span>Coffee<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">&lt;li&gt;</span>Tea<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="kw">&lt;li&gt;</span>Milk<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="kw">&lt;/ul&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="ordered-list-ol">Ordered list (<code>&lt;ol&gt;</code>)</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">&lt;ol&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="kw">&lt;li&gt;</span>Coffee<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="kw">&lt;li&gt;</span>Tea<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="kw">&lt;li&gt;</span>Milk<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="kw">&lt;/ol&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="containers-youll-target-a-lot-div-and-span" class="slide level2">
-<h2>Containers you’ll target a lot: <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></h2>
-<h3 id="div-block-level-container"><code>&lt;div&gt;</code> – block-level container</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">"background-color:black;color:white;padding:20px;"</span><span class="kw">&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="kw">&lt;h2&gt;</span>London<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="kw">&lt;p&gt;</span>London is the capital city of England...<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="lists-containers-youll-see-everywhere" class="slide level2">
+<h2>Lists + containers you’ll see everywhere</h2>
+<h3 id="lists">Lists</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;ul&gt;&lt;li&gt;</span>Coffee<span class="kw">&lt;/li&gt;&lt;li&gt;</span>Tea<span class="kw">&lt;/li&gt;&lt;/ul&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">&lt;ol&gt;&lt;li&gt;</span>Coffee<span class="kw">&lt;/li&gt;&lt;li&gt;</span>Tea<span class="kw">&lt;/li&gt;&lt;/ol&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="containers">Containers</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;div&gt;</span> ...block-level container... <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">&lt;span&gt;</span> ...inline container... <span class="kw">&lt;/span&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">Often used to group major page sections.</li>
-</ul>
-<h3 id="span-inline-container"><code>&lt;span&gt;</code> – inline container</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">&lt;p&gt;</span>My mother has <span class="kw">&lt;span</span> <span class="er">style</span><span class="ot">=</span><span class="st">"color:blue;font-weight:bold"</span><span class="kw">&gt;</span>blue<span class="kw">&lt;/span&gt;</span> eyes...<span class="kw">&lt;/p&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment">Often used inside text; can carry classes/ids that help selection.</li>
+<li class="fragment"><code>&lt;div&gt;</code> groups sections; <code>&lt;span&gt;</code> targets small inline pieces.</li>
 </ul>
 </section>
 <section id="inspecting-html-your-1-selenium-skill" class="slide level2">
@@ -680,64 +699,158 @@ Byeong-Hak Choe
 <ul>
 <li class="fragment">element text,</li>
 <li class="fragment"><code>id</code> / <code>class</code>,</li>
-<li class="fragment">attributes (like <code>href</code>, <code>data-*</code>),</li>
+<li class="fragment">attributes (<code>href</code>, <code>data-*</code>),</li>
 <li class="fragment">whether content is static or injected by JavaScript.</li>
 </ul></li>
 </ul>
 </section>
-<section id="document-object-model-dom" class="slide level2">
-<h2>Document Object Model (DOM)</h2>
-<h3 id="the-browsers-tree-of-the-page">The Browser’s “Tree” of the Page</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="text-align: center; width: 100%; margin: auto;">
-<img src="https://bcdanl.github.io/lec_figs/DOM.png" style="width: 100%; margin-bottom: -50px;">
-<p style="font-weight: bold;">
-</p>
-</div>
-</div><div class="column" style="width:50%;">
+<section id="dom-the-browsers-tree-of-the-page" class="slide level2">
+<h2>DOM: the browser’s “tree” of the page</h2>
 <ul>
 <li class="fragment">The browser represents HTML as the <strong>DOM</strong> (Document Object Model).</li>
-<li class="fragment">Selenium interacts with the <strong>DOM</strong>.</li>
+<li class="fragment">Selenium interacts with the <strong>DOM</strong>, not with pixels.</li>
 <li class="fragment">Scraping often becomes:
 <ul>
-<li class="fragment">“Find the node”</li>
-<li class="fragment">“Extract its text/attribute”</li>
+<li class="fragment">“find the node”</li>
+<li class="fragment">“extract its text/attribute”</li>
 </ul></li>
 </ul>
+
+<img data-src="https://bcdanl.github.io/lec_figs/DOM.png" style="width:40.0%" class="r-stretch quarto-figure-center"></section>
+<section id="selectors-preview-css-vs-xpath-reliability-tip" class="slide level2">
+<h2>Selectors preview: CSS vs XPath (reliability tip)</h2>
+<ul>
+<li class="fragment"><strong>CSS selectors</strong> (common, concise): <code>#id</code>, <code>.class</code>, <code>tag</code>, <code>[attr=value]</code></li>
+<li class="fragment"><strong>XPath</strong> (powerful, flexible): good when CSS isn’t enough</li>
+<li class="fragment">Reliability rule:
+<ul>
+<li class="fragment">Prefer <strong>stable</strong> selectors (unique IDs, meaningful classes, attributes),</li>
+<li class="fragment">Avoid fragile “deep” paths that break when layout changes.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="static-vs.-dynamic-pages" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Static vs.&nbsp;Dynamic Pages</h1>
+
+</section>
+<section id="javascript-js-makes-pages-dynamic" class="slide level2">
+<h2>JavaScript (JS) makes pages dynamic</h2>
+<ul>
+<li class="fragment">JS can:
+<ul>
+<li class="fragment">load more data after the page “finishes” loading,</li>
+<li class="fragment">update content when you click/scroll,</li>
+<li class="fragment">build HTML dynamically.</li>
+</ul></li>
+</ul>
+<p><strong>Key test:</strong><br>
+If data appears only after a click/scroll or delay, the page is likely <strong>JS-driven</strong>.</p>
+</section>
+<section id="tool-choice-requestsbs4-vs-selenium" class="slide level2">
+<h2>Tool choice: requests/BS4 vs Selenium</h2>
+<ul>
+<li class="fragment">If a page is static:
+<ul>
+<li class="fragment">prefer <code>requests + BeautifulSoup</code> (faster, simpler, more “polite”)</li>
+</ul></li>
+<li class="fragment">Use Selenium when:
+<ul>
+<li class="fragment">content is generated by JavaScript,</li>
+<li class="fragment">you must click/scroll to reveal content,</li>
+<li class="fragment">the workflow requires real browser interaction (with permission).</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="selenium-ready-preview" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Selenium-ready preview</h1>
+
+</section>
+<section id="three-things-you-must-know-next-ethics-reliability" class="slide level2">
+<h2>Three things you must know next (ethics + reliability)</h2>
+</section>
+<section id="css-selectors-target-the-right-element" class="slide level2">
+<h2>1) CSS selectors = <em>target the right element</em> 🎯</h2>
+<ul>
+<li class="fragment">Selenium selects <strong>DOM elements</strong> using selectors.</li>
+<li class="fragment">Reliability tip:
+<ul>
+<li class="fragment">Prefer stable identifiers: <code>#id</code>, unique classes, meaningful attributes.</li>
+<li class="fragment">Avoid fragile selectors that break when layout changes.</li>
+</ul></li>
+</ul>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Ethics angle:</strong> Accurate targeting helps you collect <strong>only what you need</strong> (data minimization).</p>
+</div>
 </div>
 </div>
 </section>
-<section id="html-in-browser-vs.-html-in-devtools" class="slide level2">
-<h2>HTML in Browser vs.&nbsp;HTML in DevTools</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://bcdanl.github.io/lec_figs/html-code.png" style="width:75.0%"></p>
-</figure>
+<section id="explicit-waits-dont-fight-the-website" class="slide level2">
+<h2>2) Explicit waits = <em>don’t fight the website</em> ⏳</h2>
+<ul>
+<li class="fragment">Modern pages load content <strong>asynchronously</strong> (JavaScript).</li>
+<li class="fragment">Use <strong>explicit waits</strong> instead of guessing with <code>time.sleep()</code>.</li>
+</ul>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Ethics angle:</strong> Proper waits reduce extra reloads/retries → fewer unnecessary requests.</p>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://bcdanl.github.io/lec_figs/html-web.png" style="width:50.0%"></p>
-</figure>
+</section>
+<section id="rate-limiting-be-polite-to-the-server" class="slide level2">
+<h2>3) Rate limiting = <em>be polite to the server</em> 🧑‍🤝‍🧑</h2>
+<ul>
+<li class="fragment">Add pauses between actions/requests (keep volumes small).</li>
+<li class="fragment">Prefer randomized delays and caching.</li>
+</ul>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Ethics angle:</strong> Rate limiting respects shared infrastructure—don’t degrade service for real users.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+<section id="guardrails-for-class-projects" class="slide level2">
+<h2>Guardrails for class projects</h2>
+<ul>
+<li class="fragment">Start with <strong>small samples</strong> and <strong>few pages</strong>.</li>
+<li class="fragment">Log what you did (URL, time, pages visited, outputs saved).</li>
+<li class="fragment">Stop immediately if:
+<ul>
+<li class="fragment">you’re blocked,</li>
+<li class="fragment">you suspect you’re causing load,</li>
+<li class="fragment">you see personal/sensitive info you don’t need.</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="wrap-up" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>Wrap-up</h1>
+<ul>
+<li class="fragment"><strong>Ethics first:</strong> ToS/robots.txt, privacy, rate limiting, reproducibility.</li>
+<li class="fragment"><strong>HTML/DOM</strong> is the map—scraping is selecting elements from it.</li>
+<li class="fragment"><strong>Selenium</strong> is for dynamic, JS-driven pages (heavier, easier to misuse).</li>
+<li class="fragment">Next lecture: Selenium basics (driver, selectors, waits, extracting text/attributes, safe pacing).</li>
+</ul>
 
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
