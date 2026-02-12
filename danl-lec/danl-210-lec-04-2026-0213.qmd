@@ -195,24 +195,24 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## HTML Example
+<!-- ## HTML Example -->
 
-:::{.nonincremental}
-- A minimal HTML document:
-:::
+<!-- :::{.nonincremental} -->
+<!-- - A minimal HTML document: -->
+<!-- ::: -->
 
-```{.html}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-  </head>
-  <body>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-  </body>
-</html>
-```
+<!-- ```{.html} -->
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!--   <head> -->
+<!--     <title>Page Title</title> -->
+<!--   </head> -->
+<!--   <body> -->
+<!--     <h1>My First Heading</h1> -->
+<!--     <p>My first paragraph.</p> -->
+<!--   </body> -->
+<!-- </html> -->
+<!-- ``` -->
 
 
 
@@ -221,20 +221,67 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 :::: {.columns}
 ::: {.column width="50%"}
-```{r, echo=FALSE, eval=TRUE, out.width='75%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-web-210.png")
-```
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/html-web-210.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
 :::
 ::: {.column width="50%"}
-```{r, echo=FALSE, eval=TRUE, out.width='50%', fig.align='center'}
-knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code-210.png")
-```
+
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/html-code-210.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
 :::
 ::::
 
 
 
-## HTML elements (what you actually scrape)
+
+## Document Object Model (DOM)
+### The Browser’s "Tree" of the Page
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<div style="text-align: center; width: 100%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/DOM-model.png" style="width: 100%; margin-bottom: -50px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+:::
+
+::: {.column width="50%"}
+- The browser represents HTML as the **DOM** (Document Object Model).
+- Selenium interacts with the **DOM**.
+- Scraping often becomes:
+  - “Find the node”
+  - “Extract its text/attribute”
+  
+:::
+
+::::
+
+
+
+## Inspecting HTML (your #1 web-scrapping skill)
+
+- Open a **Chrome** browser.
+- Open DevTools:
+  - **F12**, or right-click → **Inspect**
+- Use it to find:
+  - Element text
+  - `id` / `class`
+  - Attributes (like `href`, `data-*`)
+
+
+
+## HTML Elements (what you actually scrape)
 
 ::: nonincremental
 - Most HTML is built from **elements** like:
@@ -252,7 +299,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code-210.png")
   - Tables: `<table> ... </table>`
   - Containers: `<div> ... </div>`
   - Inline text: `<span> ... </span>`
-  
+
 
 ## HTML Body: Links and Images
 
@@ -389,8 +436,8 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code-210.png")
 
 ```{.html}
 <div style="background-color:black;color:white;padding:20px;">
-  <h2>London</h2>
-  <p>London is the capital city of England...</p>
+  <h2>Seoul</h2>
+  <p>Seoul is the capital city of South Korea...</p>
 </div>
 ```
 
@@ -399,8 +446,8 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code-210.png")
 ::: fragment
 
 <div style="background-color:black;color:white;padding:20px;">
-  <h2>London</h2>
-  <p>London is the capital city of England...</p>
+  <h2>Seoul</h2>
+  <p>Seoul is the capital city of South Korea...</p>
 </div>
 
 :::
@@ -440,51 +487,13 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/html-code-210.png")
 
 
 
-## Document Object Model (DOM)
-### The Browser’s "Tree" of the Page
-
-
-:::: {.columns}
-::: {.column width="50%"}
-
-<div style="text-align: center; width: 100%; margin: auto;">
-  <img src="https://bcdanl.github.io/lec_figs/DOM.png" style="width: 100%; margin-bottom: -50px;">
-  <p style="font-weight: bold;"></p>
-</div>
-
-:::
-
-::: {.column width="50%"}
-- The browser represents HTML as the **DOM** (Document Object Model).
-- Selenium interacts with the **DOM**.
-- Scraping often becomes:
-  - “Find the node”
-  - “Extract its text/attribute”
-  
-:::
-
-::::
-
-
-
-## Inspecting HTML (your #1 web-scrapping skill)
-
-- Use a **Chrome** browser.
-- Open DevTools:
-  - **F12** (Chrome/Firefox), or right-click → **Inspect**
-- Use it to find:
-  - Element text
-  - `id` / `class`
-  - Attributes (like `href`, `data-*`)
-
-
-
-
 # **Web-scrapping with Python `selenium`** {background-color="#1c4982"}
 
 ## What is Selenium?
 
-<div style="text-align: center; width: 50%; margin: auto;">
+<div style="display:block; margin:-15px;"></div>
+
+<div style="text-align: center; width: 33%; margin: auto;">
   <img src="https://bcdanl.github.io/lec_figs/se-py.jpg" style="width: 100%; margin-bottom: -50px;">
   <p style="font-weight: bold;"></p>
 </div>

@@ -2446,8 +2446,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-elements-what-you-actually-scrape",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-elements-what-you-actually-scrape",
     "title": "Lecture 4",
-    "section": "HTML elements (what you actually scrape)",
-    "text": "HTML elements (what you actually scrape)\n\n\nMost HTML is built from elements like:\n\n\n&lt;tagname&gt;Content goes here...&lt;/tagname&gt;\n\nCommon ones you’ll extract:\n\nHeadings: &lt;h1&gt; ... &lt;/h1&gt;\nText blocks: &lt;p&gt; ... &lt;/p&gt;\nLinks: &lt;a href=\"...\"&gt; ... &lt;/a&gt;\nTables: &lt;table&gt; ... &lt;/table&gt;\nContainers: &lt;div&gt; ... &lt;/div&gt;\nInline text: &lt;span&gt; ... &lt;/span&gt;"
+    "section": "HTML Elements (what you actually scrape)",
+    "text": "HTML Elements (what you actually scrape)\n\n\nMost HTML is built from elements like:\n\n\n&lt;tagname&gt;Content goes here...&lt;/tagname&gt;\n\nCommon ones you’ll extract:\n\nHeadings: &lt;h1&gt; ... &lt;/h1&gt;\nText blocks: &lt;p&gt; ... &lt;/p&gt;\nLinks: &lt;a href=\"...\"&gt; ... &lt;/a&gt;\nTables: &lt;table&gt; ... &lt;/table&gt;\nContainers: &lt;div&gt; ... &lt;/div&gt;\nInline text: &lt;span&gt; ... &lt;/span&gt;"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-body-links-and-images",
@@ -2475,7 +2475,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
     "title": "Lecture 4",
     "section": "Containers you’ll target a lot: <div> and <span>",
-    "text": "Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n\n\n\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;London&lt;/h2&gt;\n  &lt;p&gt;London is the capital city of England...&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n\nLondon\n\n\nLondon is the capital city of England…\n\n\n\n\n\nOften used to group major page sections.\n\n\n\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\n\n\n\n\n\nMy mother has blue eyes…\n\n\n\n\n\n\n\nOften used inside text."
+    "text": "Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n\n\n\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;Seoul&lt;/h2&gt;\n  &lt;p&gt;Seoul is the capital city of South Korea...&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n\nSeoul\n\n\nSeoul is the capital city of South Korea…\n\n\n\n\n\nOften used to group major page sections.\n\n\n\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\n\n\n\n\n\nMy mother has blue eyes…\n\n\n\n\n\n\n\nOften used inside text."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-selenium-skill",
@@ -2881,14 +2881,14 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-web-scrapping-skill",
     "title": "Lecture 4",
     "section": "Inspecting HTML (your #1 web-scrapping skill)",
-    "text": "Inspecting HTML (your #1 web-scrapping skill)\n\nUse a Chrome browser.\nOpen DevTools:\n\nF12 (Chrome/Firefox), or right-click → Inspect\n\nUse it to find:\n\nElement text\nid / class\nAttributes (like href, data-*)"
+    "text": "Inspecting HTML (your #1 web-scrapping skill)\n\nOpen a Chrome browser.\nOpen DevTools:\n\nF12, or right-click → Inspect\n\nUse it to find:\n\nElement text\nid / class\nAttributes (like href, data-*)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#what-is-selenium",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#what-is-selenium",
     "title": "Lecture 4",
     "section": "What is Selenium?",
-    "text": "What is Selenium?\n\nSelenium is a tool that lets Python control a real web browser (like Chrome or Firefox) automatically.\nIt is used for:\n\nWeb automation (click buttons, fill forms, scroll pages)\nWeb scraping when a website is dynamic (JavaScript loads content after the page opens)\n\nSelenium works by interacting with the page’s DOM (Document Object Model):\n\nIt finds elements using CSS selectors or XPath\nThen reads text/attributes or performs actions (click, type, scroll)\n\n\n\n\n\nNote\n\n\nEthics reminder: Selenium is powerful—use explicit waits and rate limiting to avoid unnecessary traffic and reduce load on servers."
+    "text": "What is Selenium?\n\n\n\n\n\n\n\n\n\nSelenium is a tool that lets Python control a real web browser (like Chrome or Firefox) automatically.\nIt is used for:\n\nWeb automation (click buttons, fill forms, scroll pages)\nWeb scraping when a website is dynamic (JavaScript loads content after the page opens)\n\nSelenium works by interacting with the page’s DOM (Document Object Model):\n\nIt finds elements using CSS selectors or XPath\nThen reads text/attributes or performs actions (click, type, scroll)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#webdriver",
@@ -3063,7 +3063,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-1",
     "title": "Lecture 4",
     "section": "Web-scrapping with Python selenium",
-    "text": "Web-scrapping with Python selenium\nLet’s do Classwork 9!"
+    "text": "Web-scrapping with Python selenium\nLet’s do Classwork 4!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#nosuchelementexception-and-try-except-blocks",
@@ -3105,13 +3105,13 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#selenium-with-pd.read_html-for-yahoo-finance-data",
     "title": "Lecture 4",
     "section": "Selenium with pd.read_html() for Yahoo! Finance Data",
-    "text": "Selenium with pd.read_html() for Yahoo! Finance Data\n\nSetupURLget_attribute(\"outerHTML\")\n\n\nimport pandas as pd\nimport os, time, random\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom io import StringIO\n\n# Set working directory\nos.chdir('/Users/bchoe/.../lecture-code/')\n\n# Launch Chrome browser\ndriver = webdriver.Chrome()\n\nStringIO turns that string into a file-like object, which is what pd.read_json() expects moving forward.\n\n\n\n\n# Load content page\nurl = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1743379200'\ndriver.get(url)\ntime.sleep(random.uniform(3, 5))  # wait for table to load\n\nperiod1 and period2 values for Yahoo Finance URLs uses Unix timestamps (number of seconds since January 1, 1970),\n\n1672531200 → 2023-01-01\n1743379200 → 2025-03-31\n\n\n\n\n# Extract the &lt;table&gt; HTML element\ntable_html = driver.find_element(By.TAG_NAME, 'table').get_attribute(\"outerHTML\")\n\n# Parse the HTML table into a pandas DataFrame\ndf = pd.read_html(StringIO(table_html))[0]\n\n.get_attribute(\"outerHTML\"): gets the entire HTML from the WebElement.\npd.read_html() parses HTML tables from a given URL or from raw HTML content, and returns a list of DataFrames."
+    "text": "Selenium with pd.read_html() for Yahoo! Finance Data\n\nSetupURLget_attribute(\"outerHTML\")\n\n\nimport pandas as pd\nimport os, time, random\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom io import StringIO\n\n# Set working directory\nos.chdir('/Users/bchoe/.../lecture-code/')\n\n# Launch Chrome browser\ndriver = webdriver.Chrome()\n\nStringIO turns that string into a file-like object, which is what pd.read_json() expects moving forward.\n\n\n\n# Load content page\nurl = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1743379200'\ndriver.get(url)\ntime.sleep(random.uniform(3, 5))  # wait for table to load\n\nperiod1 and period2 values for Yahoo Finance URLs uses Unix timestamps (number of seconds since January 1, 1970),\n\n1672531200 → 2023-01-01\n1743379200 → 2025-03-31\n\n\n\n\n# Extract the &lt;table&gt; HTML element\ntable_html = driver.find_element(By.TAG_NAME, 'table').get_attribute(\"outerHTML\")\n\n# Parse the HTML table into a pandas DataFrame\ndf = pd.read_html(StringIO(table_html))[0]\n\n.get_attribute(\"outerHTML\"): gets the entire HTML from the WebElement.\npd.read_html() parses HTML tables from a given URL or from raw HTML content, and returns a list of DataFrames."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-2",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-2",
     "title": "Lecture 4",
     "section": "Web-scrapping with Python selenium",
-    "text": "Web-scrapping with Python selenium\nLet’s do Classwork 10!"
+    "text": "Web-scrapping with Python selenium\nLet’s do Classwork 5!"
   }
 ]
