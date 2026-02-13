@@ -86,7 +86,7 @@ df_abs = pd.read_csv(path_absolute)
 
 <br><br>
 
-# Question 2. Scrapping a Web-table with `pd.read_csv()`
+# Question 2. Scrapping a Web-table with `pd.read_html()`
 
 - Store the table in the following webpage as a **pandas** `DataFrame`:
   - [Gasoline Pump Components History](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
@@ -121,7 +121,7 @@ Series = pd.to_datetime(Series, format='%b-%y')
 
 <br><br>
 
-# Question 3. Scrapping Multiple Web-tables with `pd.read_csv()`
+# Question 3. Scrapping Multiple Web-tables with `pd.read_html()`
 - Store each table in the following webpage as a `pandas`' `DataFrame`:
   - [https://www.geneseo.edu/business/student%20outcomes](https://www.geneseo.edu/business/student%20outcomes)
 
