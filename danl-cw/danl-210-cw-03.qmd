@@ -66,6 +66,10 @@ If your working directory is set to the project folder, you can load the file li
 
 ```{.python}
 path_relative = "data/custdata_rev.csv"
+
+# Read the CSV file into a pandas DataFrame.
+# pd.read_csv(...) loads the file and creates a table-like object (a DataFrame) in Python.
+# After this line runs, df_rel will contain all rows and columns from the CSV.
 df_rel = pd.read_csv(path_relative)
 ```
 
