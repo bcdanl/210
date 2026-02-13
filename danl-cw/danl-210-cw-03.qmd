@@ -19,6 +19,17 @@ library(reticulate)
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
+
+For Classwork 3, import `os` and `pandas` libraries:
+
+```{python}
+#| echo: true
+
+import os  
+import pandas as pd
+```
+
+
 # Question 1. Load a CSV file into pandas
 
 In this question, you will **download a CSV file**, put it into a **data** folder, and then **load it into Python** using pandas.
@@ -83,6 +94,29 @@ df_abs = pd.read_csv(path_absolute)
 ```
 
 
+::: {.callout-tip collapse="true"}
+#### Show answer
+
+```{python}
+#| echo: true
+
+# Set the working directory path
+wd_path = 'YOUR_ABSOLUTE_PATHNAME_FOR_DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+path_relative = "data/custdata_rev.csv"
+df_rel = pd.read_csv(path_relative)
+
+path_absolute = "YOUR_ABSOLUTE_PATHNAME_FOR_DANL-210/data/custdata_rev.csv"
+df_abs = pd.read_csv(path_absolute)
+
+```
+
+:::
+
+
+
 
 <br><br>
 
@@ -113,10 +147,29 @@ Series = pd.to_datetime(Series, format='%b-%y')
 
 - Export the `DataFrame` as a CSV file.
 
-*Answer*:
+
+::: {.callout-tip collapse="true"}
+#### Show answer
+
 ```{python}
+#| echo: true
+
+url_eia = "https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php"
+df_eia = pd.read_html(url_eia)
+df_eia = df_eia[0]
+
+df_eia.to_csv('data/eia_table.csv', index=False)
+
+# Storing 'eia_table_new.csv' directly in the working directory.
+df_eia.to_csv('eia_table_new.csv', index=False)
+
+# Storing 'eia_table_abs.csv' using the absolte pathname
+df_eia.to_csv('/Users/bchoe/Documents/DANL-210/eia_table_abs.csv',
+              index=False)
 
 ```
+
+:::
 
 
 <br><br>
@@ -137,10 +190,32 @@ url_geneseo = "https://www.geneseo.edu/business/student%20outcomes"
 
 - Export the `DataFrame` as a CSV file.
 
-*Answer*:
-```{python}
+::: {.callout-tip collapse="true"}
+#### Show answer
 
+```{python}
+#| echo: true
+
+url_sob = 'https://www.geneseo.edu/business/student-outcomes/'
+
+df_list = pd.read_html(url_sob)
+
+df_sob_0 = df_list[0]
+df_sob_1 = df_list[1]
+df_sob_2 = df_list[2]
+df_sob_3 = df_list[3]
+df_sob_4 = df_list[4]
+
+
+df_sob_1.columns = df_sob_1.iloc[0] + df_sob_1.iloc[1]
+df_sob_1 = df_sob_1.iloc[2:]
+df_sob_1.columns = ['Program', 'Percent (%)2015-16',
+                   'Percent (%)2016-17', 'Percent (%)2017-18',
+                   'Percent (%)2018-19', 'Percent (%)2019-20',
+                   'Percent (%)5-Year % Change']
 ```
+
+:::
 
 
 <br><br>

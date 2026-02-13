@@ -1376,7 +1376,7 @@
     "href": "danl-cw/danl-210-cw-03.html",
     "title": "Classwork 3",
     "section": "",
-    "text": "In this question, you will download a CSV file, put it into a data folder, and then load it into Python using pandas.\n\n\n\nGo to Brightspace → Course Files.\nDownload custdata_rev.csv to your computer.\n\n\n\n\nIn your course project folder (your working directory), create a folder named:\n\ndata\n\nExample:\n\nIf your course folder is DANL-210 and this folder is in your Documents folder, then you should have:\n\nMac: '/Users/YOUR_USERNAME/Documents/DANL-210/data'\nWindows: 'C:\\\\Users\\\\YOUR_USERNAME\\\\Documents\\\\DANL-210\\\\data'\n\n\n\n\n\nMove custdata_rev.csv into the data folder so it looks like:\n\nMac: DANL-210/data/custdata_rev.csv\nWindows: DANL-210\\\\data\\\\custdata_rev.csv\n\n\n\n\nReplace the path below with the folder that contains your project (the folder that contains data).\nimport os\nimport pandas as pd\n\n# Replace this with YOUR project folder path (the folder that contains the \"data\" folder)\nwd_path = \"ABSOLUTE_PATH_TO_YOUR_WORKING_DIRECTORY\"\n\nos.chdir(wd_path)      # set working directory\nos.getcwd()            # check current working directory\n\n\n\n\n\nIf your working directory is set to the project folder, you can load the file like this:\npath_relative = \"data/custdata_rev.csv\"\n\n# Read the CSV file into a pandas DataFrame.\n# pd.read_csv(...) loads the file and creates a table-like object (a DataFrame) in Python.\n# After this line runs, df_rel will contain all rows and columns from the CSV.\ndf_rel = pd.read_csv(path_relative)\n\n\n\nYou can also load the file using the full path to the file:\npath_absolute = \"ABSOLUTE_PATHNAME_OF_custdata_rev.csv\"\ndf_abs = pd.read_csv(path_absolute)"
+    "text": "For Classwork 3, import os and pandas libraries:\nimport os  \nimport pandas as pd"
   },
   {
     "objectID": "danl-lec/danl-210-lec-03-2026-0209.html",
@@ -3118,35 +3118,35 @@
     "objectID": "danl-cw/danl-210-cw-03.html#step-1-download-the-file",
     "href": "danl-cw/danl-210-cw-03.html#step-1-download-the-file",
     "title": "Classwork 3",
-    "section": "",
-    "text": "Go to Brightspace → Course Files.\nDownload custdata_rev.csv to your computer."
+    "section": "Step 1) Download the file",
+    "text": "Step 1) Download the file\n\nGo to Brightspace → Course Files.\nDownload custdata_rev.csv to your computer."
   },
   {
     "objectID": "danl-cw/danl-210-cw-03.html#step-2-create-a-data-folder",
     "href": "danl-cw/danl-210-cw-03.html#step-2-create-a-data-folder",
     "title": "Classwork 3",
-    "section": "",
-    "text": "In your course project folder (your working directory), create a folder named:\n\ndata\n\nExample:\n\nIf your course folder is DANL-210 and this folder is in your Documents folder, then you should have:\n\nMac: '/Users/YOUR_USERNAME/Documents/DANL-210/data'\nWindows: 'C:\\\\Users\\\\YOUR_USERNAME\\\\Documents\\\\DANL-210\\\\data'"
+    "section": "Step 2) Create a data folder",
+    "text": "Step 2) Create a data folder\nIn your course project folder (your working directory), create a folder named:\n\ndata\n\nExample:\n\nIf your course folder is DANL-210 and this folder is in your Documents folder, then you should have:\n\nMac: '/Users/YOUR_USERNAME/Documents/DANL-210/data'\nWindows: 'C:\\\\Users\\\\YOUR_USERNAME\\\\Documents\\\\DANL-210\\\\data'"
   },
   {
     "objectID": "danl-cw/danl-210-cw-03.html#step-3-move-the-csv-file-into-data",
     "href": "danl-cw/danl-210-cw-03.html#step-3-move-the-csv-file-into-data",
     "title": "Classwork 3",
-    "section": "",
-    "text": "Move custdata_rev.csv into the data folder so it looks like:\n\nMac: DANL-210/data/custdata_rev.csv\nWindows: DANL-210\\\\data\\\\custdata_rev.csv"
+    "section": "Step 3) Move the CSV file into data",
+    "text": "Step 3) Move the CSV file into data\nMove custdata_rev.csv into the data folder so it looks like:\n\nMac: DANL-210/data/custdata_rev.csv\nWindows: DANL-210\\\\data\\\\custdata_rev.csv"
   },
   {
     "objectID": "danl-cw/danl-210-cw-03.html#step-4-set-your-working-directory-in-python",
     "href": "danl-cw/danl-210-cw-03.html#step-4-set-your-working-directory-in-python",
     "title": "Classwork 3",
-    "section": "",
-    "text": "Replace the path below with the folder that contains your project (the folder that contains data).\nimport os\nimport pandas as pd\n\n# Replace this with YOUR project folder path (the folder that contains the \"data\" folder)\nwd_path = \"ABSOLUTE_PATH_TO_YOUR_WORKING_DIRECTORY\"\n\nos.chdir(wd_path)      # set working directory\nos.getcwd()            # check current working directory"
+    "section": "Step 4) Set your working directory in Python",
+    "text": "Step 4) Set your working directory in Python\nReplace the path below with the folder that contains your project (the folder that contains data).\nimport os\nimport pandas as pd\n\n# Replace this with YOUR project folder path (the folder that contains the \"data\" folder)\nwd_path = \"ABSOLUTE_PATH_TO_YOUR_WORKING_DIRECTORY\"\n\nos.chdir(wd_path)      # set working directory\nos.getcwd()            # check current working directory"
   },
   {
     "objectID": "danl-cw/danl-210-cw-03.html#step-5-read-the-csv-in-two-ways",
     "href": "danl-cw/danl-210-cw-03.html#step-5-read-the-csv-in-two-ways",
     "title": "Classwork 3",
-    "section": "",
-    "text": "If your working directory is set to the project folder, you can load the file like this:\npath_relative = \"data/custdata_rev.csv\"\n\n# Read the CSV file into a pandas DataFrame.\n# pd.read_csv(...) loads the file and creates a table-like object (a DataFrame) in Python.\n# After this line runs, df_rel will contain all rows and columns from the CSV.\ndf_rel = pd.read_csv(path_relative)\n\n\n\nYou can also load the file using the full path to the file:\npath_absolute = \"ABSOLUTE_PATHNAME_OF_custdata_rev.csv\"\ndf_abs = pd.read_csv(path_absolute)"
+    "section": "Step 5) Read the CSV in two ways",
+    "text": "Step 5) Read the CSV in two ways\n\n(a) Using a relative path\nIf your working directory is set to the project folder, you can load the file like this:\npath_relative = \"data/custdata_rev.csv\"\n\n# Read the CSV file into a pandas DataFrame.\n# pd.read_csv(...) loads the file and creates a table-like object (a DataFrame) in Python.\n# After this line runs, df_rel will contain all rows and columns from the CSV.\ndf_rel = pd.read_csv(path_relative)\n\n\n(b) Using an absolute path\nYou can also load the file using the full path to the file:\npath_absolute = \"ABSOLUTE_PATHNAME_OF_custdata_rev.csv\"\ndf_abs = pd.read_csv(path_absolute)\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n# Set the working directory path\nwd_path = 'YOUR_ABSOLUTE_PATHNAME_FOR_DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\npath_relative = \"data/custdata_rev.csv\"\ndf_rel = pd.read_csv(path_relative)\n\npath_absolute = \"YOUR_ABSOLUTE_PATHNAME_FOR_DANL-210/data/custdata_rev.csv\"\ndf_abs = pd.read_csv(path_absolute)"
   }
 ]
