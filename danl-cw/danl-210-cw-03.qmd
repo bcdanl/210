@@ -19,8 +19,70 @@ library(reticulate)
 reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 ```
 
+# Question 1. Load a CSV file into pandas
 
-# Question 1
+In this question, you will **download a CSV file**, put it into a **data** folder, and then **load it into Python** using pandas.
+
+## Step 1) Download the file
+1. Go to **Brightspace → Course Files**.
+2. Download **`custdata_rev.csv`** to your computer.
+
+## Step 2) Create a `data` folder
+In your course project folder (your **working directory**), create a folder named:
+
+- `data`
+
+Example:
+
+- If your course folder is `DANL-210` and this folder is in your `Documents` folder, then you should have:
+  - Mac: `'/Users/YOUR_USERNAME/Documents/DANL-210/data'`
+  - Windows: `'C:\\Users\\YOUR_USERNAME\\Documents\\DANL-210\\data'`
+
+## Step 3) Move the CSV file into `data`
+Move `custdata_rev.csv` into the `data` folder so it looks like:
+
+- Mac: `DANL-210/data/custdata_rev.csv`
+- Windows: `DANL-210\\data\\custdata_rev.csv`
+
+## Step 4) Set your working directory in Python
+Replace the path below with the folder that contains your project (the folder that contains `data`).
+
+```{.python}
+import os
+import pandas as pd
+
+# Replace this with YOUR project folder path (the folder that contains the "data" folder)
+wd_path = "ABSOLUTE_PATH_TO_YOUR_WORKING_DIRECTORY"
+
+os.chdir(wd_path)      # set working directory
+os.getcwd()            # check current working directory
+```
+
+## Step 5) Read the CSV in two ways
+
+### (a) Using a relative path
+
+If your working directory is set to the project folder, you can load the file like this:
+
+```{.python}
+path_relative = "data/custdata_rev.csv"
+df_rel = pd.read_csv(path_relative)
+```
+
+### (b) Using an absolute path
+
+You can also load the file using the full path to the file:
+
+```{.python}
+path_absolute = "ABSOLUTE_PATHNAME_OF_custdata_rev.csv"
+df_abs = pd.read_csv(path_absolute)
+```
+
+
+
+<br><br>
+
+# Question 2. Scrapping a Web-table with `pd.read_csv()`
 
 - Store the table in the following webpage as a **pandas** `DataFrame`:
   - [Gasoline Pump Components History](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
@@ -55,7 +117,7 @@ Series = pd.to_datetime(Series, format='%b-%y')
 
 <br><br>
 
-# Question 2
+# Question 3. Scrapping Multiple Web-tables with `pd.read_csv()`
 - Store each table in the following webpage as a `pandas`' `DataFrame`:
   - [https://www.geneseo.edu/business/student%20outcomes](https://www.geneseo.edu/business/student%20outcomes)
 

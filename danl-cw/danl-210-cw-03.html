@@ -258,8 +258,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <br>On this page</h2>
    
   <ul>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-1.-load-a-csv-file-into-pandas" id="toc-question-1.-load-a-csv-file-into-pandas" class="nav-link active" data-scroll-target="#question-1.-load-a-csv-file-into-pandas">Question 1. Load a CSV file into pandas</a>
+  <ul>
+  <li><a href="#step-1-download-the-file" id="toc-step-1-download-the-file" class="nav-link" data-scroll-target="#step-1-download-the-file">Step 1) Download the file</a></li>
+  <li><a href="#step-2-create-a-data-folder" id="toc-step-2-create-a-data-folder" class="nav-link" data-scroll-target="#step-2-create-a-data-folder">Step 2) Create a <code>data</code> folder</a></li>
+  <li><a href="#step-3-move-the-csv-file-into-data" id="toc-step-3-move-the-csv-file-into-data" class="nav-link" data-scroll-target="#step-3-move-the-csv-file-into-data">Step 3) Move the CSV file into <code>data</code></a></li>
+  <li><a href="#step-4-set-your-working-directory-in-python" id="toc-step-4-set-your-working-directory-in-python" class="nav-link" data-scroll-target="#step-4-set-your-working-directory-in-python">Step 4) Set your working directory in Python</a></li>
+  <li><a href="#step-5-read-the-csv-in-two-ways" id="toc-step-5-read-the-csv-in-two-ways" class="nav-link" data-scroll-target="#step-5-read-the-csv-in-two-ways">Step 5) Read the CSV in two ways</a>
+  <ul>
+  <li><a href="#a-using-a-relative-path" id="toc-a-using-a-relative-path" class="nav-link" data-scroll-target="#a-using-a-relative-path">(a) Using a relative path</a></li>
+  <li><a href="#b-using-an-absolute-path" id="toc-b-using-an-absolute-path" class="nav-link" data-scroll-target="#b-using-an-absolute-path">(b) Using an absolute path</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#question-2.-scrapping-a-web-table-with-pd.read_csv" id="toc-question-2.-scrapping-a-web-table-with-pd.read_csv" class="nav-link" data-scroll-target="#question-2.-scrapping-a-web-table-with-pd.read_csv">Question 2. Scrapping a Web-table with <code>pd.read_csv()</code></a></li>
+  <li><a href="#question-3.-scrapping-multiple-web-tables-with-pd.read_csv" id="toc-question-3.-scrapping-multiple-web-tables-with-pd.read_csv" class="nav-link" data-scroll-target="#question-3.-scrapping-multiple-web-tables-with-pd.read_csv">Question 3. Scrapping Multiple Web-tables with <code>pd.read_csv()</code></a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
@@ -294,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 11, 2026</p>
+      <p class="date-modified">February 13, 2026</p>
     </div>
   </div>
     
@@ -303,8 +315,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="question-1" class="level1">
-<h1>Question 1</h1>
+<section id="question-1.-load-a-csv-file-into-pandas" class="level1">
+<h1>Question 1. Load a CSV file into pandas</h1>
+<p>In this question, you will <strong>download a CSV file</strong>, put it into a <strong>data</strong> folder, and then <strong>load it into Python</strong> using pandas.</p>
+<section id="step-1-download-the-file" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-download-the-file">Step 1) Download the file</h2>
+<ol type="1">
+<li>Go to <strong>Brightspace → Course Files</strong>.</li>
+<li>Download <strong><code>custdata_rev.csv</code></strong> to your computer.</li>
+</ol>
+</section>
+<section id="step-2-create-a-data-folder" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-create-a-data-folder">Step 2) Create a <code>data</code> folder</h2>
+<p>In your course project folder (your <strong>working directory</strong>), create a folder named:</p>
+<ul>
+<li><code>data</code></li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>If your course folder is <code>DANL-210</code> and this folder is in your <code>Documents</code> folder, then you should have:
+<ul>
+<li>Mac: <code>'/Users/YOUR_USERNAME/Documents/DANL-210/data'</code></li>
+<li>Windows: <code>'C:\\Users\\YOUR_USERNAME\\Documents\\DANL-210\\data'</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="step-3-move-the-csv-file-into-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-move-the-csv-file-into-data">Step 3) Move the CSV file into <code>data</code></h2>
+<p>Move <code>custdata_rev.csv</code> into the <code>data</code> folder so it looks like:</p>
+<ul>
+<li>Mac: <code>DANL-210/data/custdata_rev.csv</code></li>
+<li>Windows: <code>DANL-210\\data\\custdata_rev.csv</code></li>
+</ul>
+</section>
+<section id="step-4-set-your-working-directory-in-python" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-set-your-working-directory-in-python">Step 4) Set your working directory in Python</h2>
+<p>Replace the path below with the folder that contains your project (the folder that contains <code>data</code>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace this with YOUR project folder path (the folder that contains the "data" folder)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">"ABSOLUTE_PATH_TO_YOUR_WORKING_DIRECTORY"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)      <span class="co"># set working directory</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>os.getcwd()            <span class="co"># check current working directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-5-read-the-csv-in-two-ways" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-read-the-csv-in-two-ways">Step 5) Read the CSV in two ways</h2>
+<section id="a-using-a-relative-path" class="level3">
+<h3 class="anchored" data-anchor-id="a-using-a-relative-path">(a) Using a relative path</h3>
+<p>If your working directory is set to the project folder, you can load the file like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>path_relative <span class="op">=</span> <span class="st">"data/custdata_rev.csv"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_rel <span class="op">=</span> pd.read_csv(path_relative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="b-using-an-absolute-path" class="level3">
+<h3 class="anchored" data-anchor-id="b-using-an-absolute-path">(b) Using an absolute path</h3>
+<p>You can also load the file using the full path to the file:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>path_absolute <span class="op">=</span> <span class="st">"ABSOLUTE_PATHNAME_OF_custdata_rev.csv"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_abs <span class="op">=</span> pd.read_csv(path_absolute)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br><br></p>
+</section>
+</section>
+</section>
+<section id="question-2.-scrapping-a-web-table-with-pd.read_csv" class="level1">
+<h1>Question 2. Scrapping a Web-table with <code>pd.read_csv()</code></h1>
 <ul>
 <li>Store the table in the following webpage as a <strong>pandas</strong> <code>DataFrame</code>:
 <ul>
@@ -315,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!--   - If necessary, use the `Series.str.replace()` method. -->
 <!--     - For example, `Series.str.replace('A', 'B')` replaces "A" with "B" in `Series`. -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url_eia <span class="op">=</span> <span class="st">"https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>url_eia <span class="op">=</span> <span class="st">"https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Export the <code>DataFrame</code> as a CSV file.</li>
@@ -323,8 +397,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>Answer</em>:</p>
 <p><br><br></p>
 </section>
-<section id="question-2" class="level1">
-<h1>Question 2</h1>
+<section id="question-3.-scrapping-multiple-web-tables-with-pd.read_csv" class="level1">
+<h1>Question 3. Scrapping Multiple Web-tables with <code>pd.read_csv()</code></h1>
 <ul>
 <li>Store each table in the following webpage as a <code>pandas</code>’ <code>DataFrame</code>:
 <ul>
@@ -332,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url_geneseo <span class="op">=</span> <span class="st">"https://www.geneseo.edu/business/student</span><span class="sc">%20o</span><span class="st">utcomes"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>url_geneseo <span class="op">=</span> <span class="st">"https://www.geneseo.edu/business/student</span><span class="sc">%20o</span><span class="st">utcomes"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <!-- - Ensure each table has appropriate column names and properly structured observations. -->
