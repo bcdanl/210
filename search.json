@@ -2383,8 +2383,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#legal-is-not-the-same-as-ethical",
     "title": "Lecture 4",
-    "section": "“Legal” Is Not the Same as “Ethical”",
-    "text": "“Legal” Is Not the Same as “Ethical”\n\n\n“If you can see things in your web browser, you can scrape them.”\n\n\n\nLegally (U.S.): publicly available data may sometimes be scraped using automated tools in US (e.g., hiQ Labs vs. LinkedIn Corp.)\nBut legality ≠ permission or responsibility:\n\nTechnically: it may be possible.\nEthically: you still must consider terms or service (ToS), robots.txt, privacy, and data minimization.\nPractically: you can trigger blocks or harm service quality (e.g., overloading servers, ToS/privacy issues).\n\n\n\n\n\n\nWarning\n\n\nLegal ≠ ethical. Even if data is “public,” ToS, privacy expectations, and platform blocks still matter."
+    "section": "⚖️🤔 “Legal” Is Not the Same as “Ethical”",
+    "text": "⚖️🤔 “Legal” Is Not the Same as “Ethical”\n\n\n“If you can see things in your web browser, you can scrape them.”\n\n\n\nLegally (U.S.): publicly available data may sometimes be scraped using automated tools in US (e.g., hiQ Labs vs. LinkedIn Corp.)\nBut legality ≠ permission or responsibility:\n\nTechnically: it may be possible.\nEthically: you still must consider terms or service (ToS), robots.txt, privacy, and data minimization.\nPractically: you can trigger blocks or harm service quality (e.g., overloading servers, ToS/privacy issues).\n\n\n\n\n\n\nWarning\n\n\nLegal ≠ ethical. Even if data is “public,” ToS, privacy expectations, and platform blocks still matter."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#good-scraping-behavior-what-polite-looks-like",
@@ -2397,15 +2397,15 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#clients-and-servers",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#clients-and-servers",
     "title": "Lecture 4",
-    "section": "Clients and Servers",
-    "text": "Clients and Servers\n\n\n\n\n\n\nDevices on the web act as clients and servers.\nYour browser is a client; websites and data live on servers.\n\nClient: your computer/phone + a browser (Chrome/Firefox/Safari).\nServer: a computer that stores webpages/data and sends them when requested.\n\nWhen you load a page, your browser sends a request and the server sends back a response (the page content)."
+    "section": "💻↔︎️🗄️️ Clients and Servers",
+    "text": "💻↔︎️🗄️️ Clients and Servers\n\n\n\n\n\n\nDevices on the web act as clients and servers.\nYour browser is a client; websites and data live on servers.\n\nClient: your computer/phone + a browser (Chrome/Firefox/Safari).\nServer: a computer that stores webpages/data and sends them when requested.\n\nWhen you load a page, your browser sends a request and the server sends back a response (the page content)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#hypertext-transfer-protocol-secure-https",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#hypertext-transfer-protocol-secure-https",
     "title": "Lecture 4",
-    "section": "Hypertext Transfer Protocol Secure (HTTPS)",
-    "text": "Hypertext Transfer Protocol Secure (HTTPS)\n\n\nHTTP is how clients and servers communicate.\nHTTPS is encrypted HTTP (safer).\n\n\nWhen we type a URL starting with https://:\n\nBrowser finds the server.\nBrowser and server establish a secure connection.\nBrowser sends a request for content.\nServer responds (e.g., 200 OK) and sends data.\nBrowser decrypts and displays the page."
+    "section": "🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)",
+    "text": "🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)\n\n\nHTTP is how clients and servers communicate.\nHTTPS is encrypted HTTP (safer).\n\n\nWhen we type a URL starting with https://:\n\nBrowser finds the server.\nBrowser and server establish a secure connection.\nBrowser sends a request for content.\nServer responds (e.g., 200 OK) and sends data.\nBrowser decrypts and displays the page."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#http-status-codes-why-they-matter",
@@ -2418,15 +2418,15 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#url-what-youre-actually-requesting",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#url-what-youre-actually-requesting",
     "title": "Lecture 4",
-    "section": "URL (what you’re actually requesting)",
-    "text": "URL (what you’re actually requesting)\n\n\nA URL is a location for a resource on the internet.\nOften includes:\n\nProtocol (https)\nDomain (example.com)\nPath (/products)\nQuery string (?id=...&cat=...) ← common in data pages\nFragment (#section) ← in-page reference"
+    "section": "🔗📍 URL (what you’re actually requesting)",
+    "text": "🔗📍 URL (what you’re actually requesting)\n\n\nA URL is a location for a resource on the internet.\nOften includes:\n\nProtocol (https)\nDomain (example.com)\nPath (/products)\nQuery string (?id=...&cat=...) ← common in data pages\nFragment (#section) ← in-page reference"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#the-big-idea-scraping-selecting-from-html",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#the-big-idea-scraping-selecting-from-html",
     "title": "Lecture 4",
-    "section": "The Big Idea: Scraping = Selecting from HTML",
-    "text": "The Big Idea: Scraping = Selecting from HTML\n\nHTML (HyperText Markup Language) is the markup that defines the structure of a web page (headings, paragraphs, links, tables, etc.).\nWhen you “scrape,” you usually:\n\nLoad a page\nExamine the HTML\nExtract specific elements (title, price, table, links, etc.)\n\nIf you don’t understand HTML, you can’t reliably target the right data.\nSelenium is not “magic”—it automates a browser, but you still need to:\n\nInspect the HTML to identify and target the right elements"
+    "section": "🎯🤏 The Big Idea: Scraping = Selecting from HTML",
+    "text": "🎯🤏 The Big Idea: Scraping = Selecting from HTML\n\nHTML (HyperText Markup Language) is the markup that defines the structure of a web page (headings, paragraphs, links, tables, etc.).\nWhen you “scrape,” you usually:\n\nLoad a page\nExamine the HTML\nExtract specific elements (title, price, table, links, etc.)\n\nIf you don’t understand HTML, you can’t reliably target the right data.\nSelenium is not “magic”—it automates a browser, but you still need to:\n\nInspect the HTML to identify and target the right elements"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-one-sentence",
@@ -2446,15 +2446,15 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-elements-what-you-actually-scrape",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-elements-what-you-actually-scrape",
     "title": "Lecture 4",
-    "section": "HTML Elements (what you actually scrape)",
-    "text": "HTML Elements (what you actually scrape)\n\n\nMost HTML is built from elements like:\n\n\n&lt;tagname&gt;Content goes here...&lt;/tagname&gt;\n\nCommon ones you’ll extract:\n\nHeadings: &lt;h1&gt; ... &lt;/h1&gt;\nText blocks: &lt;p&gt; ... &lt;/p&gt;\nLinks: &lt;a href=\"...\"&gt; ... &lt;/a&gt;\nTables: &lt;table&gt; ... &lt;/table&gt;\nContainers: &lt;div&gt; ... &lt;/div&gt;\nInline text: &lt;span&gt; ... &lt;/span&gt;"
+    "section": "🧱🧩 HTML Elements (what you actually scrape)",
+    "text": "🧱🧩 HTML Elements (what you actually scrape)\n\n\nMost HTML is built from elements like:\n\n\n&lt;tagname&gt;Content goes here...&lt;/tagname&gt;\n\nCommon ones you’ll extract:\n\nHeadings: &lt;h1&gt; ... &lt;/h1&gt;\nText blocks: &lt;p&gt; ... &lt;/p&gt;\nLinks: &lt;a href=\"...\"&gt; ... &lt;/a&gt;\nTables: &lt;table&gt; ... &lt;/table&gt;\nContainers: &lt;div&gt; ... &lt;/div&gt;\nInline text: &lt;span&gt; ... &lt;/span&gt;"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-body-links-and-images",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-body-links-and-images",
     "title": "Lecture 4",
-    "section": "HTML Body: Links and Images",
-    "text": "HTML Body: Links and Images\n\n\n\n&lt;a&gt; (Link)\n&lt;a href=\"https://www.w3schools.com\"&gt;This is a link&lt;/a&gt;\n\nThe href attribute is often what you scrape.\n\n\n\n\n&lt;img&gt; (Image)\n&lt;img src=\"w3schools.jpg\" alt=\"W3Schools.com\" width=\"104\" height=\"142\"&gt;\n\nYou may scrape src (image URL) or alt (description)."
+    "section": "🔗🖼️ HTML Body: Links and Images",
+    "text": "🔗🖼️ HTML Body: Links and Images\n\n\n\n&lt;a&gt; (Link)\n&lt;a href=\"https://www.w3schools.com\"&gt;This is a link&lt;/a&gt;\n\nThe href attribute is often what you scrape.\n\n\n\n\n&lt;img&gt; (Image)\n&lt;img src=\"w3schools.jpg\" alt=\"W3Schools.com\" width=\"104\" height=\"142\"&gt;\n\nYou may scrape src (image URL) or alt (description)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-tables-common-data-source",
@@ -2467,15 +2467,15 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#lists-youll-see-in-the-wild",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#lists-youll-see-in-the-wild",
     "title": "Lecture 4",
-    "section": "Lists you’ll see in the wild",
-    "text": "Lists you’ll see in the wild\n\n\n\n\n\nUnordered List (&lt;ul&gt;)\n&lt;ul&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ul&gt;\n\n\n\n\n\n\nCoffee\nTea\nMilk\n\n\n\n\n\nOrdered List (&lt;ol&gt;)\n&lt;ol&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ol&gt;\n\n\n\n\n\n\nCoffee\nTea\nMilk"
+    "section": "📋 Lists you’ll see in the wild",
+    "text": "📋 Lists you’ll see in the wild\n\n\n\n\n\n⚫ Unordered List (&lt;ul&gt;)\n&lt;ul&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ul&gt;\n\n\n\n\n\n\nCoffee\nTea\nMilk\n\n\n\n\n\n🔢 Ordered List (&lt;ol&gt;)\n&lt;ol&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ol&gt;\n\n\n\n\n\n\nCoffee\nTea\nMilk"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#containers-youll-target-a-lot-div-and-span",
     "title": "Lecture 4",
-    "section": "Containers you’ll target a lot: <div> and <span>",
-    "text": "Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n\n\n\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;Seoul&lt;/h2&gt;\n  &lt;p&gt;Seoul is the capital city of South Korea...&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n\nSeoul\n\n\nSeoul is the capital city of South Korea…\n\n\n\n\n\nOften used to group major page sections.\n\n\n\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\n\n\n\n\n\nMy mother has blue eyes…\n\n\n\n\n\n\n\nOften used inside text."
+    "section": "🎯📦 Containers you’ll target a lot: <div> and <span>",
+    "text": "🎯📦 Containers you’ll target a lot: &lt;div&gt; and &lt;span&gt;\n\n\n\n&lt;div&gt; – block-level container\n&lt;div style=\"background-color:black;color:white;padding:20px;\"&gt;\n  &lt;h2&gt;Seoul&lt;/h2&gt;\n  &lt;p&gt;Seoul is the capital city of South Korea...&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n\nSeoul\n\n\nSeoul is the capital city of South Korea…\n\n\n\n\n\nOften used to group major page sections.\n\n\n\n\n&lt;span&gt; – inline container\n&lt;p&gt;My mother has &lt;span style=\"color:blue;font-weight:bold\"&gt;blue&lt;/span&gt; eyes...&lt;/p&gt;\n\n\n\n\n\n\nMy mother has blue eyes…\n\n\n\n\n\n\n\nOften used inside text."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-selenium-skill",
@@ -2586,8 +2586,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#data-collection-via-web-scraping",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#data-collection-via-web-scraping",
     "title": "Lecture 4",
-    "section": "Data Collection via Web-scraping",
-    "text": "Data Collection via Web-scraping\n\nWeb pages can be a rich data source, but web scraping is powerful.\n\nCareless scraping can harm websites, violate rules, or compromise privacy.\n\nOur goal in this module:\n\nLearn the web fundamentals (client/server, HTTPS, URL, HTML/DOM),\nUnderstand ethical, responsible scraping"
+    "section": "🎣📥 Data Collection via Web-scraping",
+    "text": "🎣📥 Data Collection via Web-scraping\n\nWeb pages can be a rich data source, but web scraping is powerful.\n\nCareless scraping can harm websites, violate rules, or compromise privacy.\n\nOur goal in this module:\n\nLearn the web fundamentals (client/server, HTTPS, URL, HTML/DOM),\nUnderstand ethical, responsible scraping"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#css-selectors-target-the-right-element-1",
@@ -2621,8 +2621,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#http-status-codes",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#http-status-codes",
     "title": "Lecture 4",
-    "section": "HTTP Status Codes",
-    "text": "HTTP Status Codes\n# library for making HTTPS requests in Python\nimport requests\n\n\n\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n200 OK → success; content returned.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n404 Not Found → URL/page doesn’t exist (typo, removed page, broken link)."
+    "section": "🚦🔢 HTTP Status Codes",
+    "text": "🚦🔢 HTTP Status Codes\n# library for making HTTPS requests in Python\nimport requests\n\n\n\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n200 OK → success; content returned.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n404 Not Found → URL/page doesn’t exist (typo, removed page, broken link)."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-source-code-dom",
@@ -2635,8 +2635,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#document-object-model-dom",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#document-object-model-dom",
     "title": "Lecture 4",
-    "section": "Document Object Model (DOM)",
-    "text": "Document Object Model (DOM)\nThe Browser’s “Tree” of the Page\n\n\n\n\n\n\n\n\n\nThe browser represents HTML as the DOM (Document Object Model).\nSelenium interacts with the DOM.\nScraping often becomes:\n\n“Find the node”\n“Extract its text/attribute”"
+    "section": "🌳📑 Document Object Model (DOM)",
+    "text": "🌳📑 Document Object Model (DOM)\nThe Browser’s “Tree” of the Page\n\n\n\n\n\n\n\n\n\nThe browser represents HTML as the DOM (Document Object Model).\nSelenium interacts with the DOM.\nScraping often becomes:\n\n“Find the node”\n“Extract its text/attribute”"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-browser-vs.-html-in-devtools",
@@ -2866,29 +2866,29 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-tables",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-tables",
     "title": "Lecture 4",
-    "section": "HTML Tables",
-    "text": "HTML Tables\n\n\n&lt;table style=\"width:100%\"&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Firstname&lt;/th&gt;\n    &lt;th&gt;Lastname&lt;/th&gt; \n    &lt;th&gt;Age&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Eve&lt;/td&gt;\n    &lt;td&gt;Jackson&lt;/td&gt;\n    &lt;td&gt;94&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;\n\n\nTable structure:\n\n&lt;table&gt; table container\n&lt;tr&gt; row\n&lt;th&gt; header cell\n&lt;td&gt; data cell"
+    "section": "🧾 HTML Tables",
+    "text": "🧾 HTML Tables\n\n\n&lt;table style=\"width:100%\"&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Firstname&lt;/th&gt;\n    &lt;th&gt;Lastname&lt;/th&gt; \n    &lt;th&gt;Age&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Eve&lt;/td&gt;\n    &lt;td&gt;Jackson&lt;/td&gt;\n    &lt;td&gt;94&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;\n\n\nTable structure:\n\n&lt;table&gt; table container\n&lt;tr&gt; row\n&lt;th&gt; header cell\n&lt;td&gt; data cell"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-browser-vs.-html-source-code",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#html-in-browser-vs.-html-source-code",
     "title": "Lecture 4",
-    "section": "HTML in Browser vs. HTML Source Code",
-    "text": "HTML in Browser vs. HTML Source Code"
+    "section": "🖼️🆚📝 HTML in Browser vs. HTML Source Code",
+    "text": "🖼️🆚📝 HTML in Browser vs. HTML Source Code"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-web-scrapping-skill",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-html-your-1-web-scrapping-skill",
     "title": "Lecture 4",
-    "section": "Inspecting HTML (your #1 web-scrapping skill)",
-    "text": "Inspecting HTML (your #1 web-scrapping skill)\n\nOpen a Chrome browser.\nOpen DevTools:\n\nF12, or right-click → Inspect\n\nUse it to find:\n\nElement text\nid / class\nAttributes (like href, data-*)"
+    "section": "🔍🕵️ Inspecting HTML (your #1 web-scrapping skill)",
+    "text": "🔍🕵️ Inspecting HTML (your #1 web-scrapping skill)\n\nOpen a Chrome browser.\nOpen DevTools:\n\nF12, or right-click → Inspect\n\nUse it to find:\n\nElement text\nid / class\nAttributes (like href, data-*)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#what-is-selenium",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#what-is-selenium",
     "title": "Lecture 4",
     "section": "What is Selenium?",
-    "text": "What is Selenium?\n\n\n\n\n\n\n\n\n\nSelenium is a tool that lets Python control a real web browser (like Chrome or Firefox) automatically.\nIt is used for:\n\nWeb automation (click buttons, fill forms, scroll pages)\nWeb scraping when a website is dynamic (JavaScript loads content after the page opens)\n\nSelenium works by interacting with the page’s DOM (Document Object Model):\n\nIt finds elements using CSS selectors or XPath\nThen reads text/attributes or performs actions (click, type, scroll)"
+    "text": "What is Selenium?\n\n\n\n\n\n\n\n\n\nSelenium is a tool that lets Python control a real web browser (like Chrome or Firefox) automatically.\nIt is used for:\n\nWeb automation (click buttons, fill forms, scroll pages)\nWeb scraping when a website is dynamic (JavaScript loads content after the page opens)\n\nSelenium works by interacting with the page’s DOM (Document Object Model):\n\nIt finds elements in HTML\nThen reads text/attributes or performs actions (click, type, scroll)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#webdriver",

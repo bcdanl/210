@@ -57,9 +57,9 @@ theme_set(theme_fivethirtyeight()+
 ```
 
 
-# **Premier on Web-scrapping** {background-color="#1c4982"}
+# 🕸  **Premier on Web-scrapping** {background-color="#1c4982"}
 
-## Data Collection via Web-scraping
+## 🎣📥 Data Collection via Web-scraping
 
 - Web pages can be a rich data source, but **web scraping is powerful**.
   - Careless scraping can **harm websites, violate rules, or compromise privacy**.
@@ -69,7 +69,7 @@ theme_set(theme_fivethirtyeight()+
   - Understand **ethical, responsible scraping**
 
 
-## “Legal” Is Not the Same as “Ethical”
+## ⚖️🤔 “Legal” Is Not the Same as “Ethical”
 
 <div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
   <blockquote>
@@ -93,9 +93,9 @@ theme_set(theme_fivethirtyeight()+
 
 
 
-# **Web Basics: Clients and Servers** {background-color="#1c4982"}
+# 🌐 **Web Basics: Clients and Servers** {background-color="#1c4982"}
 
-## Clients and Servers
+## 💻↔️🗄️️ Clients and Servers
 
 <div style="text-align: center; width: 75%; margin: auto;">
   <img src="https://bcdanl.github.io/lec_figs/client-server.jpg" style="width: 100%; margin-bottom: -50px;">
@@ -109,7 +109,7 @@ theme_set(theme_fivethirtyeight()+
 - When you load a page, your browser sends a **request** and the server sends back a **response** (the page content).
 
 
-## Hypertext Transfer Protocol Secure (HTTPS)
+## 🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)
 
 ::: nonincremental
 - **HTTP** is how clients and servers communicate.
@@ -127,7 +127,7 @@ When we type a URL starting with `https://`:
 
 
 
-## HTTP Status Codes
+## 🚦🔢 HTTP Status Codes
 
 ```{.python}
 # library for making HTTPS requests in Python
@@ -162,7 +162,7 @@ print(response.reason)
 
 
 
-## URL (what you’re actually requesting)
+## 🔗📍 URL (what you’re actually requesting)
 
 ```{r, echo=FALSE, eval=TRUE, out.width='75%', fig.align='center'}
 knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
@@ -178,9 +178,9 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-# **HTML Basics** {background-color="#1c4982"}
+# 🏗️ **HTML Basics** {background-color="#1c4982"}
 
-## The Big Idea: Scraping = Selecting from HTML
+## 🎯🤏 The Big Idea: Scraping = Selecting from HTML
 
 - **HTML** (HyperText Markup Language) is the markup that defines the **structure** of a web page (headings, paragraphs, links, tables, etc.).
 
@@ -217,7 +217,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## HTML in Browser vs. HTML Source Code
+## 🖼️🆚📝 HTML in Browser vs. HTML Source Code
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -243,7 +243,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## Document Object Model (DOM)
+## 🌳📑 Document Object Model (DOM)
 ### The Browser’s "Tree" of the Page
 
 :::: {.columns}
@@ -269,7 +269,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## Inspecting HTML (your #1 web-scrapping skill)
+## 🔍🕵️ Inspecting HTML (your #1 web-scrapping skill)
 
 - Open a **Chrome** browser.
 - Open DevTools:
@@ -281,7 +281,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## HTML Elements (what you actually scrape)
+## 🧱🧩 HTML Elements (what you actually scrape)
 
 ::: nonincremental
 - Most HTML is built from **elements** like:
@@ -301,7 +301,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
   - Inline text: `<span> ... </span>`
 
 
-## HTML Body: Links and Images
+## 🔗🖼️ HTML Body: Links and Images
 
 :::: nonincremental
 
@@ -329,7 +329,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 ::::
 
 
-## HTML Tables
+## 🧾 HTML Tables
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -361,7 +361,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 :::
 ::::
 
-## Lists you’ll see in the wild
+## 📋 Lists you’ll see in the wild
 
 
 
@@ -372,7 +372,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 ::: {.column width="50%"}
 ::: fragment
 
-#### Unordered List (`<ul>`)
+#### ⚫ Unordered List (`<ul>`)
 
 ```{.html}
 <ul>
@@ -399,7 +399,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 ::: {.column width="50%"}
 ::: fragment
-#### Ordered List (`<ol>`)
+#### 🔢 Ordered List (`<ol>`)
 
 ```{.html}
 <ol>
@@ -426,7 +426,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 ::::
 :::: 
 
-## Containers you’ll target a lot: `<div>` and `<span>`
+## 🎯📦 Containers you’ll target a lot: `<div>` and `<span>`
 
 
 :::: nonincremental
@@ -503,7 +503,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
   - **Web automation** (click buttons, fill forms, scroll pages)
   - **Web scraping** when a website is **dynamic** (JavaScript loads content after the page opens)
 - Selenium works by interacting with the page’s **DOM** (Document Object Model):
-  - It finds elements using **CSS selectors** or **XPath**
+  - It finds elements in HTML
   - Then reads **text/attributes** or performs actions (click, type, scroll)
 
 
