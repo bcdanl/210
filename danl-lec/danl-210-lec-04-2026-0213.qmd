@@ -80,7 +80,7 @@ theme_set(theme_fivethirtyeight()+
 - *Legally (U.S.)*: **publicly available** data may sometimes be scraped using automated tools in US (e.g., [**hiQ Labs vs. LinkedIn Corp.**](https://en.wikipedia.org/wiki/HiQ_Labs_v._LinkedIn))
 - *But legality ≠ permission or responsibility*:
   - *Technically*: it may be possible.
-  - *Ethically*: you still must consider terms or service (ToS), robots.txt, privacy, and data minimization.
+  - *Ethically*: you still must consider terms or service (ToS), [robots.txt](https://en.wikipedia.org/wiki/Robots.txt), privacy, and data minimization.
   - *Practically*: you can trigger blocks or harm service quality (e.g., overloading servers, ToS/privacy issues).
 
 :::: fragment
