@@ -7,7 +7,7 @@ execute:
   eval: false
 format:
   html:
-    code-fold: false
+    code-fold: true
 css: styles.css
 ---
 
@@ -41,40 +41,11 @@ css: styles.css
 ## Question 0a
 Create a variable named `github_username` (string) and print it.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-
-github_username = "YOUR_GITHUB_USERNAME"
-print(github_username)
-```
-
-:::
-
 ## Question 0b
 In one code cell, print:
 
 - your Python version (hint: `import sys`)
 - today’s date (hint: `import datetime`)
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-import sys
-import datetime
-
-print(sys.version)
-print(datetime.date.today())
-
-```
-
-:::
 
 ---
 
@@ -89,22 +60,6 @@ print(datetime.date.today())
 3) Remove `6`.
 4) Print the final list.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-seat_numbers = list(range(2, 10))  # 2 through 9
-seat_numbers.append(10)
-seat_numbers.remove(6)
-print(seat_numbers)
-```
-
-:::
-
-
-
 ## Question 1b (Tuple: immutability)
 Create a tuple named `campus`:
 
@@ -115,33 +70,6 @@ Then:
 1) Print the second element.
 2) Write one line of code that *tries* to change the year to 2027.
 3) In a Markdown cell, explain what happens and why.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-campus = ("SUNY Geneseo", 2026)
-
-print(campus[1])
-
-# One line that tries to change the year (this will fail):
-# campus[1] = 2027
-
-# Demonstrate safely:
-try:
-    campus[1] = 2027
-except:
-    print("TypeError")
-
-
-```
-
-**Explanation:** Tuples are *immutable*, so you cannot modify an existing element after the tuple is created.
-
-
-:::
 
 ## Question 1c (Dictionary: add/update/iterate)
 Start with:
@@ -156,27 +84,6 @@ menu_prices = {"coffee": 2.75, "tea": 2.25, "sandwich": 6.50}
    - all item names (keys)
    - all prices (values)
    - each `(item, price)` pair on its own line
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-menu_prices = {"coffee": 2.75, "tea": 2.25, "sandwich": 6.50}
-
-menu_prices["cookie"] = 1.50
-menu_prices["coffee"] = 3.00
-
-print("Keys:", list(menu_prices.keys()))
-print("Values:", list(menu_prices.values()))
-print("Items:")
-
-for item, price in menu_prices.items():
-    print(item, price)
-```
-
-:::
 
 ---
 
@@ -195,28 +102,6 @@ Compute and print:
 
 - `x + y`, `x - y`, `x * y`, `x ** y`, `x / y`, `x // y`, `x % y`
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-x = 17
-y = 4
-
-print(x + y)
-print(x - y)
-print(x * y)
-print(x ** y)
-print(x / y)
-print(x // y)
-print(x % y)
-
-
-```
-
-:::
-
 ## Question 2b (Operators with strings and lists)
 1) Using only `+` and `*`, build and print this exact string:
 
@@ -229,24 +114,6 @@ chant = "Go Knights!"
 
 2) Using only `+` and `*`, create a list that repeats `["lab", "lecture"]` **4 times**.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-chant = "Go Knights!"
-
-# Only + and * (no join)
-triple = (chant + " ") * 2 + chant
-print(triple)
-
-repeat_list = ["lab", "lecture"] * 4
-print(repeat_list)
-```
-
-:::
-
 ## Question 2c (Casting)
 Given:
 ```{.python}
@@ -255,25 +122,6 @@ pi_text = "3.14159"
 1) Convert `pi_text` to a float named `pi_value`.
 2) Convert `pi_value` to an integer named `pi_int`.
 3) Print `pi_text`, `pi_value`, `pi_int` and their types.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-pi_text = "3.14159"
-pi_value = float(pi_text)
-pi_int = int(pi_value)
-
-print(pi_text, type(pi_text))
-print(pi_value, type(pi_value))
-print(pi_int, type(pi_int))
-
-
-```
-
-:::
 
 ---
 
@@ -289,45 +137,12 @@ mixed = ["42", 99, 0.5, False, None, {"course": "DANL 210"}, (1, 2, 3)]
 ```
 Use a `for` loop to print each element and its type.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-mixed = ["42", 99, 0.5, False, None, {"course": "DANL 210"}, (1, 2, 3)]
-
-for x in mixed:
-    print(x, type(x))
-```
-
-:::
-
 ## Question 3b (Targeted conversions)
 Using `mixed` above, do the following conversions and print results + types:
 
 - Convert the string `"42"` to an integer.
 - Convert the integer `99` to a string.
 - Convert `False` to an integer.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-mixed = ["42", 99, 0.5, False, None, {"course": "DANL 210"}, (1, 2, 3)]
-
-a = int(mixed[0])        # "42" -> 42
-b = str(mixed[1])        # 99 -> "99"
-c = int(mixed[3])        # False -> 0
-
-print(a, type(a))
-print(b, type(b))
-print(c, type(c))
-```
-
-:::
 
 ---
 
@@ -348,26 +163,6 @@ Print:
 - `"Great"` if 80 <= score < 95
 - `"Perfect"` if score >= 95
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-score = 83
-
-if score < 60:
-    print("Fail")
-elif score < 80:
-    print("Pass")
-elif score < 95:
-    print("Great")
-else:
-    print("Perfect")
-```
-
-:::
-
 ## Question 4b (Nested if)
 Set:
 ```{.python}
@@ -379,31 +174,6 @@ Print:
 - `"Free shipping"` if membership is `"Gold"` and total_spent >= 100
 - `"5% coupon"` if membership is `"Silver"` and total_spent >= 100
 - `"No perk"` otherwise
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-membership = "Gold"
-total_spent = 120
-
-if membership == "Gold":
-    if total_spent >= 100:
-        print("Free shipping")
-    else:
-        print("No perk")
-elif membership == "Silver":
-    if total_spent >= 100:
-        print("5% coupon")
-    else:
-        print("No perk")
-else:
-    print("No perk")
-```
-
-:::
 
 ## Question 4c (`in` membership test + f-string)
 Given:
@@ -418,23 +188,6 @@ Use `in` to print:
 
 (Use an f-string.)
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-cities = ["Rochester", "Buffalo", "Syracuse", "Albany"]
-target = "Albany"
-
-if target in cities:
-    print(f"{target} is on the list!")
-else:
-    print(f"{target} is not on the list.")
-```
-
-:::
-
 ## Question 4d (Boolean reasoning)
 Compute and print the value of:
 
@@ -442,20 +195,6 @@ Compute and print the value of:
 - `7 == "7"`
 - `(10 > 3) and (2 >= 2)`
 - `(10 < 3) or (2 == 2)`
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-print(not (not False))
-print(7 == "7")
-print((10 > 3) and (2 >= 2))
-print((10 < 3) or (2 == 2))
-```
-
-:::
 
 ---
 
@@ -479,25 +218,6 @@ Print the result of each:
 6) `word[::3]`
 7) `word[::-1]`
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-word = "datascience"
-
-print(word[:])
-print(word[4:])
-print(word[:4])
-print(word[:-3])
-print(word[2:8])
-print(word[::3])
-print(word[::-1])
-```
-
-:::
-
 ## Question 5b (List slicing)
 Given:
 ```{.python}
@@ -510,42 +230,12 @@ Print:
 3) the last 2 items
 4) the list reversed (using slicing)
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-playlist = ["Intro", "Beat", "Chorus", "Bridge", "Solo", "Outro"]
-
-print(playlist[:3])
-print(playlist[::2])
-print(playlist[-2:])
-print(playlist[::-1])
-```
-
-:::
-
 ## Question 5c (`len()` practice)
 Compute and print:
 
 - `len("machinelearning")`
 - `len([10, 20, 30, 40])`
 - `len(playlist)`
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-
-print(len("machinelearning"))
-print(len([10, 20, 30, 40]))
-print(len(playlist))
-```
-
-:::
 
 ---
 
@@ -562,25 +252,6 @@ temps = [32, 28, 30, 35, 27]
 1) Compute the average temperature.
 2) For each temperature, print `"Above Avg"` if it is above average, otherwise `"Below Avg"`.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-temps = [32, 28, 30, 35, 27]
-avg = sum(temps) / len(temps)
-print("Average:", avg)
-
-for t in temps:
-    if t > avg:
-        print("Above Avg")
-    else:
-        print("Below Avg")
-```
-
-:::
-
 ## Question 6b (`while` loop: savings)
 Start with:
 ```{.python}
@@ -590,40 +261,12 @@ Each week you save `25`. Use a `while` loop until the balance **reaches or excee
 
 Print the balance each week.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-balance = 150
-
-while balance < 300:
-    balance += 25
-    print(balance)
-```
-
-:::
-
 ## Question 6c (`range()` patterns)
 Using `range()`, create and print:
 
 1) integers from 5 to 15
 2) multiples of 3 from 0 to 30
 3) countdown from 12 to 0
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-print(list(range(5, 16)))
-print(list(range(0, 31, 3)))
-print(list(range(12, -1, -1)))
-```
-
-:::
 
 ## Question 6d (`enumerate()` index + value)
 Given:
@@ -633,20 +276,6 @@ tasks = ["download", "open", "run", "submit"]
 Use `enumerate()` to print each task with its step number starting at 1 like:
 
 - `Step 1: download`
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-tasks = ["download", "open", "run", "submit"]
-
-for i, task in enumerate(tasks, start=1):
-    print(f"Step {i}: {task}")
-```
-
-:::
 
 ---
 
@@ -660,37 +289,12 @@ Use list comprehension to create a list of cubes for 1 through 6.
 
 Store it in `cubes` and print it.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-cubes = [x**3 for x in range(1, 7)]
-print(cubes)
-```
-
-:::
-
 ## Question 7b (List comprehension: filter)
 Given:
 ```{.python}
 vals = [0, 5, 10, 0, 20, 0, 25]
 ```
 Use list comprehension to create a new list that removes all zeros.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-vals = [0, 5, 10, 0, 20, 0, 25]
-no_zeros = [v for v in vals if v != 0]
-print(no_zeros)
-```
-
-:::
 
 ## Question 7c (Dictionary comprehension: length of words)
 Given:
@@ -701,19 +305,6 @@ Use dictionary comprehension to create a dictionary mapping each word to its len
 
 Print the dictionary.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-words = ["data", "science", "python", "loop"]
-word_len = {w: len(w) for w in words}
-print(word_len)
-```
-
-:::
-
 ## Question 7d (Modify list: remove/keep/delete)
 Given:
 ```{.python}
@@ -722,28 +313,6 @@ tickets = ["A", "B", "C", "B", "D", "B"]
 1) Remove only the first `"B"` using `.remove()` and print the list.
 2) Starting from the original list again, remove *all* `"B"` values using list comprehension and print.
 3) Starting from the original list again, delete the middle two elements using `del` with slicing and print.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-tickets = ["A", "B", "C", "B", "D", "B"]
-
-t1 = tickets.copy()
-t1.remove("B")
-print(t1)
-
-t2 = [x for x in tickets if x != "B"]
-print(t2)
-
-t3 = tickets.copy()
-del t3[2:4]   # delete the middle two elements (indices 2 and 3)
-print(t3)
-```
-
-:::
 
 ## Question 7e (Modify dictionary: update + delete)
 Given:
@@ -755,26 +324,6 @@ inventory = {"pens": 10, "notebooks": 5, "erasers": 2}
 3) Delete `"erasers"` using `del`
 
 Print after each step.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-inventory = {"pens": 10, "notebooks": 5, "erasers": 2}
-
-inventory.update({"markers": 4})
-print(inventory)
-
-inventory.update({"pens": 12})
-print(inventory)
-
-del inventory["erasers"]
-print(inventory)
-```
-
-:::
 
 ---
 
@@ -791,23 +340,6 @@ denominator = 0
 ```
 Use `try-except` to attempt division. If an error occurs, print `"Division failed!"`.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-numerator = 24
-denominator = 0
-
-try:
-    print(numerator / denominator)
-except ZeroDivisionError:
-    print("Division failed!")
-```
-
-:::
-
 ## Question 8b (Convert text to number)
 Given:
 ```{.python}
@@ -818,23 +350,6 @@ Loop through `entries` and try to convert each to an integer.
 - If conversion works, print the integer.
 - If it fails, print `"Not a number: oops"` (use the actual bad value).
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-entries = ["10", "8", "oops", "15"]
-
-for e in entries:
-    try:
-        print(int(e))
-    except:
-        print(f"Not a number: {e}")
-```
-
-:::
-
 ## Question 8c (Missing values)
 Given:
 ```{.python}
@@ -842,46 +357,12 @@ hours = {"Mon": 2, "Tue": None, "Wed": 3, "Thu": None, "Fri": 4}
 ```
 Compute the total of non-missing hours and print the total.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-hours = {"Mon": 2, "Tue": None, "Wed": 3, "Thu": None, "Fri": 4}
-
-total = 0
-for day, h in hours.items():
-    if h is not None:
-        total += h
-
-print(total)
-```
-
-:::
-
 ## Question 8d (Missing dictionary key)
 Given:
 ```{.python}
 capitals = {"NY": "Albany", "CA": "Sacramento"}
 ```
 Try to print `capitals["TX"]`. Handle the error so the program prints `"State not found"`.
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-capitals = {"NY": "Albany", "CA": "Sacramento"}
-
-try:
-    print(capitals["TX"])
-except KeyError:
-    print("State not found")
-```
-
-:::
 
 ---
 
@@ -893,18 +374,6 @@ except KeyError:
 ## Question 9a (`math`)
 Import `math` and compute `math.sqrt(144)`. Print the result.
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-import math
-print(math.sqrt(144))
-```
-
-:::
-
 ## Question 9b (`import ... as ...`)
 Import `math` as `m`. Compute and print:
 
@@ -912,35 +381,9 @@ Import `math` as `m`. Compute and print:
 - `m.floor(9.99)`
 - `m.ceil(9.01)`
 
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-import math as m
-print(m.sqrt(144))
-print(m.floor(9.99))
-print(m.ceil(9.01))
-```
-
-:::
-
 ## Question 9c (`from ... import ...`)
 Import only `ceil` from `math` and compute `ceil(12.2)`. Print it.
 
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-from math import ceil
-print(ceil(12.2))
-```
-
-:::
 
 ---
 
@@ -977,43 +420,6 @@ Write code that:
 5) Use `try/except` to attempt to print `exercise_to_minutes["stretch"]`.
 
    - If missing, print `"stretch is not in the plan."`
-
-
-::: {.callout-tip collapse="true"}
-### Show answer
-
-```{python}
-#| echo: true
-exercises = ["pushups", "plank", "squats", "jog"]
-minutes   = [10, 5, 12, 20]
-
-# 1) enumerate
-for i, ex in enumerate(exercises, start=1):
-    print(f"{i}) {ex}")
-
-# 2) average minutes
-avg = sum(minutes) / len(minutes)
-print("Average minutes:", avg)
-
-# 3) above/below average
-for i in range(len(exercises)):
-    ex = exercises[i]
-    m  = minutes[i]
-    label = "Above Avg" if m > avg else "Below Avg"
-    print(f"{ex}: {m} min ({label})")
-
-# 4) dictionary comprehension
-exercise_to_minutes = {exercises[i]: minutes[i] for i in range(len(exercises))}
-print(exercise_to_minutes)
-
-# 5) try/except for missing key (catch KeyError specifically)
-try:
-    print(exercise_to_minutes["stretch"])
-except:
-    print("stretch is not in the plan.")
-```
-
-:::
 
 ---
 
