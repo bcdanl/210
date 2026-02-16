@@ -695,6 +695,8 @@ find_element(By.XPATH, "xpath")
 ```
 :::
 
+<div style="display:block; margin:30px;"></div>
+
 ::: fragment
 - Example of locating the form using `find_element(By.ID, "")`:
 
@@ -724,6 +726,10 @@ form.text  # Retrieves text content if available
 ```
 
 :::
+
+<div style="display:block; margin:30px;"></div>
+
+
 ::: fragment
 
 ```{.python}
@@ -748,6 +754,9 @@ driver.back()  # Navigates back to the previous page
 <input type="button" class="btn" name="home" value="Home" />
 ```
 :::
+
+<div style="display:block; margin:30px;"></div>
+
 ::: fragment
 
 ```{.python}
@@ -818,6 +827,8 @@ thead.text
 ```
 
 :::
+
+<div style="display:block; margin:30px;"></div>
 
 ::: fragment
 
@@ -958,6 +969,12 @@ print(elt.text)  # Output the extracted text
 - **For our tasks, however, XPath remains a reliable and effective method!**
 
 
+## Web-scrapping with Python `selenium`
+
+Let's do [**Classwork 4**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)!
+
+
+
 
 ## 🧾 Retrieving Attribute Values with `get_attribute()`
 
@@ -1003,12 +1020,6 @@ except:
   - `try-except` can be used to avoid the termination of the selenium code.
 
 - This solution is to address the **inconsistency** in the DOM among the seemingly same pages.
-
-
-
-## Web-scrapping with Python `selenium`
-
-Let's do [**Classwork 4**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)!
 
 
 
@@ -1156,10 +1167,6 @@ df = pd.read_html(StringIO(table_html))[0]
 
 - `.get_attribute("outerHTML")`: gets the entire HTML from the WebElement.
 
-
-## Web-scrapping with Python `selenium`
-
-Let's do [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
 
 
 

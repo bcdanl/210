@@ -2958,21 +2958,21 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.id",
     "title": "Lecture 4",
     "section": "find_element(By.ID, \"\")",
-    "text": "find_element(By.ID, \"\")\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that match a given ID attribute value.\n\nExample HTML code where an element has an ID attribute form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\nExample of locating the form using find_element(By.ID, \"\"):\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # Retrieves text content if available"
+    "text": "find_element(By.ID, \"\")\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that match a given ID attribute value.\n\nExample HTML code where an element has an ID attribute form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\n\n\n\nExample of locating the form using find_element(By.ID, \"\"):\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # Retrieves text content if available"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.class_name",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.class_name",
     "title": "Lecture 4",
     "section": "find_element(By.CLASS_NAME, \"\")",
-    "text": "find_element(By.CLASS_NAME, \"\")\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) matching a specific class attribute.\n\nExample HTML code with a homebtn class:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click()  # Clicks the home button\ndriver.back()  # Navigates back to the previous page"
+    "text": "find_element(By.CLASS_NAME, \"\")\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) matching a specific class attribute.\n\nExample HTML code with a homebtn class:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\n\n\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click()  # Clicks the home button\ndriver.back()  # Navigates back to the previous page"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.name",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.name",
     "title": "Lecture 4",
     "section": "find_element(By.NAME, \"\")",
-    "text": "find_element(By.NAME, \"\")\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) with a matching name attribute.\n\nExample HTML code with a name attribute home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
+    "text": "find_element(By.NAME, \"\")\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) with a matching name attribute.\n\nExample HTML code with a name attribute home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\n\n\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.css_selector",
@@ -2993,7 +2993,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.link_text",
     "title": "Lecture 4",
     "section": "find_element(By.LINK_TEXT, \"\")",
-    "text": "find_element(By.LINK_TEXT, \"\")\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nLocate link(s) using the exact text displayed.\n\nExample HTML for a Selenium link:\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()\ndriver.back()"
+    "text": "find_element(By.LINK_TEXT, \"\")\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nLocate link(s) using the exact text displayed.\n\nExample HTML for a Selenium link:\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\n\n\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()\ndriver.back()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.partial_link_text",

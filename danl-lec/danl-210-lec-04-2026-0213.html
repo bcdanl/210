@@ -1024,6 +1024,9 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;form</span> <span class="er">id</span><span class="ot">=</span><span class="st">"form1"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/form&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div style="display:block; margin:30px;">
+
+</div>
 <div class="fragment">
 <ul>
 <li>Example of locating the form using <code>find_element(By.ID, "")</code>:</li>
@@ -1046,6 +1049,9 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"homebtn"</span> <span class="er">align</span><span class="ot">=</span><span class="st">"center"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div style="display:block; margin:30px;">
+
+</div>
 <div class="fragment">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>home_button <span class="op">=</span> driver.find_element(By.CLASS_NAME, <span class="st">"homebtn"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2"></a>home_button.click()  <span class="co"># Clicks the home button</span></span>
@@ -1065,6 +1071,9 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <li>Example HTML code with a name attribute <code>home</code>:</li>
 </ul>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">"button"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"btn"</span> <span class="er">name</span><span class="ot">=</span><span class="st">"home"</span> <span class="er">value</span><span class="ot">=</span><span class="st">"Home"</span> <span class="kw">/&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="display:block; margin:30px;">
+
 </div>
 <div class="fragment">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>home_button2 <span class="op">=</span> driver.find_element(By.NAME, <span class="st">"home"</span>)</span>
@@ -1127,6 +1136,9 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <li>Example HTML for a Selenium link:</li>
 </ul>
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://www.selenium.dev/"</span><span class="kw">&gt;</span>Selenium<span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="display:block; margin:30px;">
+
 </div>
 <div class="fragment">
 <div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>selenium_link <span class="op">=</span> driver.find_element(By.LINK_TEXT, <span class="st">"Selenium"</span>)</span>
@@ -1259,6 +1271,10 @@ In practice: prefer <strong>XPath</strong> (the shorter one) over <strong>Full X
 <li class="fragment"><strong>For our tasks, however, XPath remains a reliable and effective method!</strong></li>
 </ul>
 </section>
+<section id="web-scrapping-with-python-selenium-1" class="slide level2">
+<h2>Web-scrapping with Python <code>selenium</code></h2>
+<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html"><strong>Classwork 4</strong></a>!</p>
+</section>
 <section id="retrieving-attribute-values-with-get_attribute" class="slide level2">
 <h2>🧾 Retrieving Attribute Values with <code>get_attribute()</code></h2>
 <div>
@@ -1294,10 +1310,6 @@ In practice: prefer <strong>XPath</strong> (the shorter one) over <strong>Full X
 </ul></li>
 <li class="fragment">This solution is to address the <strong>inconsistency</strong> in the DOM among the seemingly same pages.</li>
 </ul>
-</section>
-<section id="web-scrapping-with-python-selenium-1" class="slide level2">
-<h2>Web-scrapping with Python <code>selenium</code></h2>
-<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html"><strong>Classwork 4</strong></a>!</p>
 </section></section>
 <section>
 <section id="webdriverwait" class="title-slide slide level1 center" data-background-color="#1c4982">
@@ -1439,10 +1451,6 @@ Best practice: <strong>Use both</strong>—<code>WebDriverWait</code> for robust
 <li class="fragment"><p><code>StringIO</code> turns that string into a file-like object, which is what <code>pd.read_json()</code> expects moving forward.</p></li>
 <li class="fragment"><p><code>.get_attribute("outerHTML")</code>: gets the entire HTML from the WebElement.</p></li>
 </ul>
-</section>
-<section id="web-scrapping-with-python-selenium-2" class="slide level2">
-<h2>Web-scrapping with Python <code>selenium</code></h2>
-<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html"><strong>Classwork 5</strong></a>!</p>
 
 <div class="footer footer-default">
 
