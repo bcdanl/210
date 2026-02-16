@@ -805,11 +805,11 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </section></section>
 <section>
 <section id="web-scrapping-with-python-selenium" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Web-scrapping with Python <code>selenium</code></strong></h1>
+<h1>⚙️🕸️ <strong>Web-scrapping with Python <code>selenium</code></strong></h1>
 
 </section>
 <section id="what-is-selenium" class="slide level2">
-<h2>What is Selenium?</h2>
+<h2>❓ What is Selenium?</h2>
 <div style="display:block; margin:-15px;">
 
 </div>
@@ -867,8 +867,8 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <!-- - Newer versions of Python `selenium` do **not** require manual driver downloads. -->
 </section>
-<section id="interaction-diagram" class="slide level2">
-<h2>Interaction Diagram</h2>
+<section id="webdriver-browser-interaction" class="slide level2">
+<h2>🔁 WebDriver-Browser Interaction</h2>
 <div>
 <ul>
 <li>A simplified diagram of how <strong>WebDriver</strong> interacts with <strong>browser</strong> might look like this:</li>
@@ -889,7 +889,7 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 </section>
 <section id="setting-up" class="slide level2">
-<h2>Setting up</h2>
+<h2>🔧 Setting up</h2>
 <ul>
 <li class="fragment">Install the Chrome or FireFox web-browser if you do not have either of them.
 <ul>
@@ -904,7 +904,7 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 </section>
 <section id="setting-up---webdriver.chrome" class="slide level2">
-<h2>Setting up - <code>webdriver.Chrome()</code></h2>
+<h2>🧩 Setting up - <code>webdriver.Chrome()</code></h2>
 <div>
 <ul>
 <li>To begin with, we import (1) <code>webdriver</code> from <code>selenium</code> and (2) the <code>By</code> and <code>Options</code> classes.
@@ -913,22 +913,28 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul></li>
 </ul>
 </div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Import the necessary modules from the Selenium library</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver  <span class="co"># Main module to control the browser</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By  <span class="co"># Helps locate elements on the webpage</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options  <span class="co"># Allows setting browser options</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># Create an instance of Chrome options</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>options <span class="op">=</span> Options()</span>
-<span id="cb12-8"><a href="#cb12-8"></a>options.add_argument(<span class="st">"window-size=1400,1200"</span>)  <span class="co"># Set the browser window size to 1400x1200</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)  <span class="co"># Correct implementation</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a></span>
-<span id="cb12-13"><a href="#cb12-13"></a><span class="co"># Now you can use 'driver' to control the Chrome browser</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="im">import</span> os, time, random</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># Import the necessary modules from the Selenium library</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver  <span class="co"># Main module to control the browser</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By  <span class="co"># Helps locate elements on the webpage</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options  <span class="co"># Allows setting browser options</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> NoSuchElementException</span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> TimeoutException</span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
+<span id="cb12-14"><a href="#cb12-14"></a></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="co"># Create an instance of Chrome options</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a>options <span class="op">=</span> Options()</span>
+<span id="cb12-17"><a href="#cb12-17"></a></span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="get-method-in-webdriver" class="slide level2">
-<h2><code>get()</code> Method in WebDriver</h2>
+<h2>🌐 <code>get()</code> Method in WebDriver</h2>
 <div>
 <ul>
 <li><code>get(url)</code> from <code>webdriver</code> opens the specified URL in a web browser.</li>
@@ -947,8 +953,8 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <li class="fragment"><code>quit()</code> completely exits the <code>webdriver</code> session, closing a browser window.</li>
 </ul>
 </section>
-<section id="inspecting-web-elements-with-find_element" class="slide level2">
-<h2><strong>Inspecting Web Elements</strong> with <code>find_element()</code></h2>
+<section id="inspecting-a-web-element-with-find_element" class="slide level2">
+<h2>🔎 <strong>Inspecting a Web Element</strong> with <code>find_element()</code></h2>
 <ul>
 <li class="fragment">Once the Google Chrome window loads with the provided URL, we need to <strong>find specific elements</strong> to interact with.
 <ul>
@@ -962,8 +968,8 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ol></li>
 </ul>
 </section>
-<section id="inspecting-web-elements-with-find_element-1" class="slide level2">
-<h2><strong>Inspecting Web Elements</strong> with <code>find_element()</code></h2>
+<section id="inspecting-a-web-element-with-find_element-1" class="slide level2">
+<h2>🔍 <strong>Inspecting a Web Element</strong> with <code>find_element()</code></h2>
 <ul>
 <li class="fragment">When inspecting an element, look for:
 <ul>
@@ -979,11 +985,11 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </section></section>
 <section>
 <section id="locating-web-elements-by-find_element-find_elements" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Locating Web Elements by <code>find_element()</code> &amp; <code>find_elements()</code></strong></h1>
+<h1>📍 <strong>Locating Web Elements by <code>find_element()</code> &amp; <code>find_elements()</code></strong></h1>
 
 </section>
 <section id="locating-web-elements-by-find_element" class="slide level2">
-<h2>Locating Web Elements by <code>find_element()</code></h2>
+<h2>📍 Locating Web Elements by <code>find_element()</code></h2>
 <div>
 <ul>
 <li>There are various strategies to locate elements in a page.</li>
@@ -1008,10 +1014,7 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <section id="find_elementby.id" class="slide level2">
 <h2><strong><code>find_element(By.ID, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">(1)</a></li><li><a href="#tabset-1-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
+<div class="fragment">
 <ul>
 <li><code>find_element(By.ID, "")</code> &amp; <code>find_elements(By.ID, "")</code>:
 <ul>
@@ -1021,7 +1024,7 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;form</span> <span class="er">id</span><span class="ot">=</span><span class="st">"form1"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/form&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-1-2">
+<div class="fragment">
 <ul>
 <li>Example of locating the form using <code>find_element(By.ID, "")</code>:</li>
 </ul>
@@ -1029,16 +1032,11 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <span id="cb16-2"><a href="#cb16-2"></a>form.text  <span class="co"># Retrieves text content if available</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div>
-</div>
 </section>
 <section id="find_elementby.class_name" class="slide level2">
 <h2><strong><code>find_element(By.CLASS_NAME, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">(1)</a></li><li><a href="#tabset-2-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
+<div class="fragment">
 <ul>
 <li><code>find_element(By.CLASS_NAME, "")</code> &amp; <code>find_elements(By.CLASS_NAME, "")</code>:
 <ul>
@@ -1048,22 +1046,17 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"homebtn"</span> <span class="er">align</span><span class="ot">=</span><span class="st">"center"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-2-2">
+<div class="fragment">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>home_button <span class="op">=</span> driver.find_element(By.CLASS_NAME, <span class="st">"homebtn"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2"></a>home_button.click()  <span class="co"># Clicks the home button</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a>driver.back()  <span class="co"># Navigates back to the previous page</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </div>
 </section>
 <section id="find_elementby.name" class="slide level2">
 <h2><strong><code>find_element(By.NAME, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">(1)</a></li><li><a href="#tabset-3-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1">
+<div class="fragment">
 <ul>
 <li><code>find_element(By.NAME, "")</code> &amp; <code>find_elements(By.NAME, "")</code>:
 <ul>
@@ -1073,22 +1066,17 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">"button"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"btn"</span> <span class="er">name</span><span class="ot">=</span><span class="st">"home"</span> <span class="er">value</span><span class="ot">=</span><span class="st">"Home"</span> <span class="kw">/&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-3-2">
+<div class="fragment">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>home_button2 <span class="op">=</span> driver.find_element(By.NAME, <span class="st">"home"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2"></a>home_button2.click()</span>
 <span id="cb20-3"><a href="#cb20-3"></a>driver.back()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </div>
 </section>
 <section id="find_elementby.css_selector" class="slide level2">
 <h2><strong><code>find_element(By.CSS_SELECTOR, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">(1)</a></li><li><a href="#tabset-4-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
+<div class="fragment">
 <ul>
 <li><code>find_element(By.CSS_SELECTOR, "")</code> &amp; <code>find_elements(By.CSS_SELECTOR, "")</code>:
 <ul>
@@ -1102,22 +1090,17 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul></li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div class="fragment">
 <div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>home_button3 <span class="op">=</span> driver.find_element(By.CSS_SELECTOR, <span class="st">"body &gt; div &gt; a &gt; input"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2"></a>home_button3.click()</span>
 <span id="cb21-3"><a href="#cb21-3"></a>driver.back()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </div>
 </section>
 <section id="find_elementby.tag_name" class="slide level2">
 <h2><strong><code>find_element(By.TAG_NAME, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">(1)</a></li><li><a href="#tabset-5-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
+<div class="fragment">
 <ul>
 <li><code>find_element(By.TAG_NAME, "")</code> &amp; <code>find_elements(By.TAG_NAME, "")</code>:
 <ul>
@@ -1125,22 +1108,17 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul></li>
 </ul>
 </div>
-<div id="tabset-5-2">
+<div class="fragment">
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>table01 <span class="op">=</span> driver.find_element(By.ID, <span class="st">"table01"</span>)</span>
 <span id="cb22-2"><a href="#cb22-2"></a>thead <span class="op">=</span> table01.find_element(By.TAG_NAME, <span class="st">"thead"</span>)</span>
 <span id="cb22-3"><a href="#cb22-3"></a>thead.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </div>
 </section>
 <section id="find_elementby.link_text" class="slide level2">
 <h2><strong><code>find_element(By.LINK_TEXT, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">(1)</a></li><li><a href="#tabset-6-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1">
+<div class="fragment">
 <ul>
 <li><code>find_element(By.LINK_TEXT, "")</code> &amp; <code>find_elements(By.LINK_TEXT, "")</code>:
 <ul>
@@ -1150,86 +1128,100 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul>
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://www.selenium.dev/"</span><span class="kw">&gt;</span>Selenium<span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-6-2">
+<div class="fragment">
 <div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>selenium_link <span class="op">=</span> driver.find_element(By.LINK_TEXT, <span class="st">"Selenium"</span>)</span>
 <span id="cb24-2"><a href="#cb24-2"></a>selenium_link.click()</span>
 <span id="cb24-3"><a href="#cb24-3"></a>driver.back()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </div>
 </section>
 <section id="find_elementby.partial_link_text" class="slide level2">
 <h2><strong><code>find_element(By.PARTIAL_LINK_TEXT, "")</code></strong></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">(1)</a></li><li><a href="#tabset-7-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-7-1">
+<div class="fragment">
 <ul>
 <li>Finds link(s) containing <strong>partial</strong> text.</li>
 </ul>
 </div>
-<div id="tabset-7-2">
+<div class="fragment">
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>Selen_links <span class="op">=</span> driver.find_elements(By.PARTIAL_LINK_TEXT, <span class="st">"qav"</span>)</span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(<span class="bu">len</span>(Selen_links))</span>
 <span id="cb25-3"><a href="#cb25-3"></a>Selen_links[<span class="dv">0</span>].click()</span>
 <span id="cb25-4"><a href="#cb25-4"></a>driver.back()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div>
-</div>
 </section>
 <section id="find_elementby.xpath" class="slide level2">
 <h2><strong><code>find_element(By.XPATH, "")</code></strong></h2>
-<h3 id="understanding-xpath">Understanding XPath</h3>
 <ul>
-<li class="fragment"><code>find_element(By.XPATH, "")</code> &amp; <code>find_elements(By.XPATH, "")</code>:
+<li class="fragment"><code>find_element(By.XPATH, "…")</code> and <code>find_elements(By.XPATH, "…")</code>:
 <ul>
-<li class="fragment">Return element(s) that match the specified XPath query.</li>
+<li class="fragment">Find element(s) that match the given <strong>XPath</strong> expression.</li>
+<li class="fragment"><code>find_element(...)</code> returns <strong>one</strong> matching element (the first match).</li>
+<li class="fragment"><code>find_elements(...)</code> returns a <strong>list</strong> of all matching elements.</li>
 </ul></li>
-<li class="fragment"><strong>XPath</strong> is a query language for searching and locating nodes in an <strong>XML document</strong>.
+<li class="fragment"><strong>XPath</strong> is a query language for locating nodes in a tree structure.
 <ul>
-<li class="fragment">Supported by all major web browsers.</li>
-<li class="fragment">Used in Selenium to find elements when <strong>ID, name, or class attributes</strong> are not available.</li>
-<li class="fragment">Powerful for navigating complex HTML structures.</li>
-</ul></li>
-</ul>
-</section>
-<section id="basic-xpath-syntax" class="slide level2">
-<h2>Basic XPath Syntax</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1"></a>//tag_name[@attribute='value']</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><code>//</code> → Selects elements anywhere in the document.</li>
-<li class="fragment"><code>tag_name</code> → HTML tag (<code>input</code>, <code>div</code>, <code>span</code>, etc.).</li>
-<li class="fragment"><code>@attribute</code> → Attribute name (<code>id</code>, <code>class</code>, <code>aria-label</code>, etc.).</li>
-<li class="fragment"><code>value</code> → Attribute’s assigned value.</li>
-</ul>
-</section>
-<section id="absolute-vs.-relative-xpath" class="slide level2">
-<h2>Absolute vs.&nbsp;Relative XPath</h2>
-<ul>
-<li class="fragment"><strong>Absolute XPath</strong> → Defines the full path from the root node.
-<ul>
-<li class="fragment">Reliable if the webpage structure does not change.</li>
-</ul></li>
-<li class="fragment"><strong>Relative XPath</strong> → Defines the path starting from a known element.
-<ul>
-<li class="fragment">More flexible—doesn’t break as easily if the structure changes.</li>
+<li class="fragment">Web pages are written in <strong>HTML</strong>, and the browser represents them as a <strong>DOM tree</strong>, which XPath can query.</li>
+<li class="fragment">Selenium supports XPath in all major browsers.</li>
+<li class="fragment">XPath is useful when <strong>id/name/class</strong> selectors are missing, duplicated, or unstable.</li>
+<li class="fragment">It’s powerful for navigating <strong>nested or complex</strong> HTML structures.</li>
 </ul></li>
 </ul>
 </section>
-<section id="example-finding-a-table-element-with-xpath" class="slide level2">
-<h2>Example: Finding a Table Element with XPath</h2>
+<section id="basic-xpath-pattern" class="slide level2">
+<h2>Basic XPath Pattern</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="op">//</span>tag_name[<span class="op">@</span>attribute<span class="op">=</span><span class="st">'value'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment">XPath can use attributes <strong>other than ID, name, or class</strong> to locate elements.</li>
-<li class="fragment">Suppose we want to retrieve data from a <strong>second table</strong> on a webpage.</li>
-<li class="fragment">The table contains multiple <code>&lt;tr&gt;</code> (rows) and <code>&lt;th&gt;</code> (headers) <strong>without</strong> an easily identifiable ID or class.</li>
-<li class="fragment"><code>find_element(By.TAG_NAME, "")</code> is <strong>not reliable</strong> due to multiple <code>&lt;tr&gt;</code> and <code>&lt;th&gt;</code> tags.</li>
+<li class="fragment"><code>//</code> → search <strong>anywhere</strong> in the document</li>
+<li class="fragment"><code>tag_name</code> → HTML tag name (<code>input</code>, <code>div</code>, <code>span</code>, <code>table</code>, etc.)</li>
+<li class="fragment"><code>@attribute</code> → attribute name (<code>id</code>, <code>class</code>, <code>aria-label</code>, <code>role</code>, <code>data-*</code>, etc.)</li>
+<li class="fragment"><code>'value'</code> → the attribute’s value (quoted)</li>
 </ul>
+</section>
+<section id="xpath-vs.-full-xpath" class="slide level2">
+<h2>XPath vs.&nbsp;Full XPath</h2>
+<div style="display:block; margin:-25px;">
+
+</div>
+<p>When you right-click an element in <strong>Chrome DevTools</strong> → <strong>Copy</strong>, you often see:</p>
+<ul>
+<li class="fragment"><strong>Copy XPath</strong> (often a <em>relative-style</em> XPath)
+<ul>
+<li class="fragment">Typically starts with <code>//...</code></li>
+<li class="fragment">Tries to find the element using attributes and structure</li>
+<li class="fragment">Usually <strong>more flexible</strong> if the page layout changes</li>
+</ul></li>
+<li class="fragment"><strong>Copy Full XPath</strong>
+<ul>
+<li class="fragment">Typically starts with <code>/html/body/...</code></li>
+<li class="fragment">A complete path from the root of the document tree</li>
+<li class="fragment">Often <strong>fragile</strong>: if the page structure changes, it can break easily</li>
+</ul></li>
+</ul>
+<div style="display:block; margin:-15px;">
+
+</div>
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+<blockquote>
+In practice: prefer <strong>XPath</strong> (the shorter one) over <strong>Full XPath</strong> when possible.
+</blockquote>
+</div>
+</section>
+<section id="example-finding-the-2nd-table-with-xpath" class="slide level2">
+<h2>Example: Finding the 2nd Table with XPath</h2>
+<ul>
+<li class="fragment">Suppose we want the <strong>second <code>&lt;table&gt;</code></strong> on a page, but the tables have no unique <code>id</code> or <code>class</code>.</li>
+<li class="fragment">Using <code>find_element(By.TAG_NAME, "table")</code> is <strong>too vague</strong> because it returns only the <strong>first</strong> table.</li>
+<li class="fragment">XPath can target the second one:</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># second table on the page:</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>second_table <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">"(//table)[2]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="extracting-xpath-from-developer-tools" class="slide level2">
-<h2>Extracting XPath from Developer Tools</h2>
+<h2>🛠️ Extracting XPath from Developer Tools</h2>
 <div>
 <ul>
 <li><strong>Inspect</strong> the webpage using browser Developer Tools.</li>
@@ -1238,18 +1230,18 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <li>Example extracted XPath:</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1"></a>//*[@id="table02"]/tbody/tr[1]/td[1]</span>
-<span id="cb27-2"><a href="#cb27-2"></a>/html/body/form/fieldset/div/div/table/tbody/tr[1]/td[1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb28-1"><a href="#cb28-1"></a>//*[@id="table02"]/tbody/tr[1]/td[1]</span>
+<span id="cb28-2"><a href="#cb28-2"></a>/html/body/form/fieldset/div/div/table/tbody/tr[1]/td[1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="finding-an-element-using-xpath" class="slide level2">
-<h2>Finding an Element Using XPath</h2>
+<section id="example-finding-an-element-using-xpath" class="slide level2">
+<h2>🎯 Example: Finding an Element Using XPath</h2>
 <div>
 <ul>
 <li>Locate <strong>“Tiger Nixon”</strong> in the second table:</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>elt <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="table02"]/tbody/tr[1]/td[1]'</span>)</span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="bu">print</span>(elt.text)  <span class="co"># Output the extracted text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>elt <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="table02"]/tbody/tr[1]/td[1]'</span>)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="bu">print</span>(elt.text)  <span class="co"># Output the extracted text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="when-to-use-xpath" class="slide level2">
 <h2>When to Use XPath</h2>
@@ -1261,51 +1253,40 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 </ul></li>
 <li class="fragment"><strong>Limitations:</strong>
 <ul>
-<li class="fragment">XPath is <strong>less efficient</strong> than ID-based locators.</li>
+<li class="fragment">XPath can be <strong>less efficient</strong> than ID-based locators.</li>
 <li class="fragment">Page structure changes may break XPath-based automation.</li>
 </ul></li>
 <li class="fragment"><strong>For our tasks, however, XPath remains a reliable and effective method!</strong></li>
 </ul>
 </section>
 <section id="retrieving-attribute-values-with-get_attribute" class="slide level2">
-<h2><strong>Retrieving Attribute Values with <code>get_attribute()</code></strong></h2>
+<h2>🧾 Retrieving Attribute Values with <code>get_attribute()</code></h2>
 <div>
-<div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">(1)</a></li><li><a href="#tabset-8-2">(2)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-8-1">
+<div class="fragment">
+<!-- -->
+<h4 id="html-example">HTML Example</h4>
 <ul>
 <li><code>get_attribute()</code> extracts an element’s <strong>attribute value</strong>.</li>
 <li>Useful for retrieving <strong>hidden</strong> properties not visible on the page.</li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://www.selenium.dev/"</span><span class="kw">&gt;</span>Selenium<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="kw">&lt;input</span> <span class="er">id</span><span class="ot">=</span><span class="st">"btn"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"btn"</span> <span class="er">type</span><span class="ot">=</span><span class="st">"button"</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">"change_text(this)"</span> <span class="er">value</span><span class="ot">=</span><span class="st">"Delete"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://www.selenium.dev/"</span><span class="kw">&gt;</span>Selenium<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="kw">&lt;input</span> <span class="er">id</span><span class="ot">=</span><span class="st">"btn"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"btn"</span> <span class="er">type</span><span class="ot">=</span><span class="st">"button"</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">"change_text(this)"</span> <span class="er">value</span><span class="ot">=</span><span class="st">"Delete"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-8-2">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="table01"]/tbody/tr[2]/td[3]/a'</span>).get_attribute(<span class="st">'href'</span>)</span>
-<span id="cb30-2"><a href="#cb30-2"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="btn"]'</span>).get_attribute(<span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<!-- -->
+<h4 id="python-example">Python Example</h4>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="table01"]/tbody/tr[2]/td[3]/a'</span>).get_attribute(<span class="st">'href'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="btn"]'</span>).get_attribute(<span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="web-scrapping-with-python-selenium-1" class="slide level2">
-<h2>Web-scrapping with Python <code>selenium</code></h2>
-<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html"><strong>Classwork 4</strong></a>!</p>
-</section></section>
-<section>
-<section id="nosuchelementexception-and-webdriverwait" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong><code>NoSuchElementException</code> and <code>WebDriverWait</code></strong></h1>
-
 </section>
 <section id="nosuchelementexception-and-try-except-blocks" class="slide level2">
-<h2><code>NoSuchElementException</code> and <code>try-except</code> blocks</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> NoSuchElementException</span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="cf">try</span>:</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    elem <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">"element_xpath"</span>)</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    elem.click()</span>
-<span id="cb31-5"><a href="#cb31-5"></a><span class="cf">except</span> NoSuchElementException:</span>
-<span id="cb31-6"><a href="#cb31-6"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>🚫🔎 <code>NoSuchElementException</code> and <code>try-except</code> blocks</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="cf">try</span>:</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    elem <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">"element_xpath"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    elem.click()</span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="cf">except</span>:</span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">When a web element is not found, it throws the <code>NoSuchElementException</code>.
 <ul>
@@ -1314,158 +1295,150 @@ My mother has <span style="color:blue;font-weight:bold">blue</span> eyes…
 <li class="fragment">This solution is to address the <strong>inconsistency</strong> in the DOM among the seemingly same pages.</li>
 </ul>
 </section>
-<section id="explicit-wait-with-time.sleep" class="slide level2">
-<h2>Explicit wait with <code>time.sleep()</code></h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="im">import</span> time</span>
-<span id="cb32-2"><a href="#cb32-2"></a></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="co"># example webpage</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>url <span class="op">=</span> <span class="st">"https://qavbox.github.io/demo/delay/"</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>driver.get(url)</span>
-<span id="cb32-6"><a href="#cb32-6"></a></span>
-<span id="cb32-7"><a href="#cb32-7"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
-<span id="cb32-8"><a href="#cb32-8"></a>time.sleep(<span class="dv">5</span>)</span>
-<span id="cb32-9"><a href="#cb32-9"></a>element <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="two"]'</span>)</span>
-<span id="cb32-10"><a href="#cb32-10"></a>element.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><p>The <code>time.sleep()</code> method is an explicit wait to set the condition to be an exact time period to wait.</p></li>
-<li class="fragment"><p>In general, a more efficient solution than <code>time.sleep()</code> would be to make <code>WebDriver()</code> wait only as long as required.</p></li>
-</ul>
+<section id="web-scrapping-with-python-selenium-1" class="slide level2">
+<h2>Web-scrapping with Python <code>selenium</code></h2>
+<p>Let’s do <a href="https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html"><strong>Classwork 4</strong></a>!</p>
+</section></section>
+<section>
+<section id="webdriverwait" class="title-slide slide level1 center" data-background-color="#1c4982">
+<h1>⏳ <strong><code>WebDriverWait</code></strong></h1>
+
 </section>
-<section id="implicit-wait-with-implicitly_wait" class="slide level2">
-<h2>Implicit wait with <code>implicitly_wait()</code></h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="oneMore"]/input[1]'</span>).click()</span>
-<span id="cb33-2"><a href="#cb33-2"></a>driver.implicitly_wait(<span class="dv">10</span>)  <span class="co"># Wait up to 10 seconds for elements to appear</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>element2 <span class="op">=</span> driver.find_element(By.ID, <span class="st">'delay'</span>)</span>
-<span id="cb33-4"><a href="#cb33-4"></a>element2.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="two-different-waits" class="slide level2">
+<h2>🆚⏱️ Two different “waits”</h2>
 <ul>
-<li class="fragment">Implicit wait with <code>implicitly_wait()</code> directs the <code>webdriver</code> to wait for a certain measure of time before throwing an exception.
+<li class="fragment"><strong>Pause to respect servers</strong> (politeness):
 <ul>
-<li class="fragment">Applies globally for the lifetime of the driver session.</li>
+<li class="fragment">Use <strong><code>time.sleep(random.uniform(a, b))</code></strong> as a small <em>human-like</em> delay <strong>between actions/pages</strong>.</li>
+<li class="fragment">This helps avoid hammering a website with rapid-fire requests.</li>
+<li class="fragment"><strong>Use <code>time.sleep(random.uniform())</code></strong> for <em>politeness</em> (respect servers).</li>
 </ul></li>
-<li class="fragment">Once this time is set, <code>webdriver</code> will wait for the element before the exception occurs.</li>
-</ul>
-</section>
-<section id="explicit-wait-with-webdriverwait-and-ec" class="slide level2">
-<h2>Explicit wait with <code>WebDriverWait</code> and <code>EC</code></h2>
-<div>
-<div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">(0)</a></li><li><a href="#tabset-9-2">(1)</a></li><li><a href="#tabset-9-3">(2)</a></li><li><a href="#tabset-9-4">(3)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-9-1">
+<li class="fragment"><strong>Wait for the page to be ready</strong> (robustness):
 <ul>
-<li>An explicit wait allows you to <strong>wait for a specific condition</strong> before continuing.</li>
-<li>Uses:
-<ul>
-<li>Wait for elements to <strong>appear</strong>, <strong>be visible</strong>, or <strong>be clickable</strong>.</li>
-<li>More flexible and precise than implicit waits.</li>
+<li class="fragment">Use <strong><code>WebDriverWait()</code></strong> + a condition (presence/clickable).</li>
+<li class="fragment">This prevents flaky failures on slow networks or busy sites.</li>
+<li class="fragment"><strong>Use <code>WebDriverWait()</code></strong> for <em>robustness</em> (wait for conditions).</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="display:block; margin:-15px;">
+
 </div>
-<div id="tabset-9-2">
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+<blockquote>
+Best practice: <strong>Use both</strong>—<code>WebDriverWait</code> for robustness, and small randomized sleeps for politeness.
+</blockquote>
+</div>
+</section>
+<section id="polite-scraping-randomized-pauses-with-time.sleeprandom.uniform" class="slide level2">
+<h2>🤝🎲 Polite Scraping: Randomized Pauses with <code>time.sleep(random.uniform())</code></h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="im">import</span> time, random</span>
+<span id="cb33-2"><a href="#cb33-2"></a></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co"># Example: polite delay between actions/pages</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>time.sleep(random.uniform(<span class="fl">0.5</span>, <span class="fl">1.5</span>))  <span class="co"># small jitter (adjust as needed)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>To wait for <code>presence_of_element_located</code>:</li>
+<li class="fragment">After each page load, click, or data extraction, add a <strong>small randomized pause</strong>.</li>
+<li class="fragment">This is not about “waiting for the DOM”—it is about <strong>respecting servers</strong> and reducing bursty traffic.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>element <span class="op">=</span> ( </span>
-<span id="cb35-2"><a href="#cb35-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)  <span class="co"># 20 is timeout in seconds when an expectation is called</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  .until(</span>
-<span id="cb35-4"><a href="#cb35-4"></a>    EC.presence_of_element_located(</span>
-<span id="cb35-5"><a href="#cb35-5"></a>      (By.XPATH, <span class="st">"element_xpath"</span>)</span>
-<span id="cb35-6"><a href="#cb35-6"></a>      )</span>
+</section>
+<section id="why-time.sleep-alone-is-not-robust" class="slide level2">
+<h2>⚠️😴 Why <code>time.sleep()</code> Alone is Not Robust</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="im">import</span> time</span>
+<span id="cb34-2"><a href="#cb34-2"></a></span>
+<span id="cb34-3"><a href="#cb34-3"></a>url <span class="op">=</span> <span class="st">"https://qavbox.github.io/demo/delay/"</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>driver.get(url)</span>
+<span id="cb34-5"><a href="#cb34-5"></a></span>
+<span id="cb34-6"><a href="#cb34-6"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
+<span id="cb34-7"><a href="#cb34-7"></a></span>
+<span id="cb34-8"><a href="#cb34-8"></a>time.sleep(<span class="dv">2</span>)  <span class="co"># blind wait: always 2 seconds</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a></span>
+<span id="cb34-10"><a href="#cb34-10"></a>element <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="two"]'</span>)</span>
+<span id="cb34-11"><a href="#cb34-11"></a>element.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><code>time.sleep()</code> is a <strong>blind wait</strong>:
+<ul>
+<li class="fragment">If content loads <strong>faster</strong>, you waste time.</li>
+<li class="fragment">If content loads <strong>slower</strong>, your code may crash (element not found).</li>
+</ul></li>
+<li class="fragment">For reliable automation/scraping, use <strong>condition-based waits</strong>.</li>
+</ul>
+</section>
+<section id="robust-wait-for-presence-exists-in-dom-with-webdriverwait-expected_conditions" class="slide level2">
+<h2>✅👀 Robust Wait for Presence (exists in DOM) with <code>WebDriverWait()</code> + <code>expected_conditions</code></h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>driver.get(<span class="st">"https://qavbox.github.io/demo/delay/"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
+<span id="cb35-3"><a href="#cb35-3"></a></span>
+<span id="cb35-4"><a href="#cb35-4"></a><span class="cf">try</span>:</span>
+<span id="cb35-5"><a href="#cb35-5"></a>    element <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
+<span id="cb35-6"><a href="#cb35-6"></a>        EC.presence_of_element_located((By.XPATH, <span class="st">'//*[@id="two"]'</span>))</span>
 <span id="cb35-7"><a href="#cb35-7"></a>    )</span>
-<span id="cb35-8"><a href="#cb35-8"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-9-3">
+<span id="cb35-8"><a href="#cb35-8"></a>    <span class="bu">print</span>(element.text)</span>
+<span id="cb35-9"><a href="#cb35-9"></a><span class="cf">except</span> TimeoutException:</span>
+<span id="cb35-10"><a href="#cb35-10"></a>    <span class="bu">print</span>(<span class="st">"Timed out: element did not appear within 10 seconds."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>To wait for <code>visibility_of_element_located</code>:</li>
+<li class="fragment">Good when the element is added to the DOM but might not be visible yet.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>element <span class="op">=</span> (</span>
-<span id="cb36-2"><a href="#cb36-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)</span>
-<span id="cb36-3"><a href="#cb36-3"></a>  .until(</span>
-<span id="cb36-4"><a href="#cb36-4"></a>    EC.visibility_of_element_located(</span>
-<span id="cb36-5"><a href="#cb36-5"></a>      (By.CSS_SELECTOR, <span class="st">"element_css"</span>)</span>
-<span id="cb36-6"><a href="#cb36-6"></a>      )</span>
-<span id="cb36-7"><a href="#cb36-7"></a>  )</span>
-<span id="cb36-8"><a href="#cb36-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-9-4">
+</section>
+<section id="robust-wait-for-clickable-visible-enabled-with-webdriverwait-expected_conditions" class="slide level2">
+<h2>✅🖱️ Robust Wait for Clickable (Visible + Enabled) with <code>WebDriverWait()</code> + <code>expected_conditions</code></h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>btn <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
+<span id="cb36-2"><a href="#cb36-2"></a>    EC.element_to_be_clickable((By.XPATH, <span class="st">'//*[@id="one"]/input'</span>))</span>
+<span id="cb36-3"><a href="#cb36-3"></a>)</span>
+<span id="cb36-4"><a href="#cb36-4"></a>btn.click()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>To wait for <code>element_to_be_clickable</code>:</li>
+<li class="fragment">Best when you want to click reliably.</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>element <span class="op">=</span> (</span>
-<span id="cb37-2"><a href="#cb37-2"></a>  WebDriverWait(driver, <span class="dv">20</span>)</span>
-<span id="cb37-3"><a href="#cb37-3"></a>  .until(</span>
-<span id="cb37-4"><a href="#cb37-4"></a>    EC.element_to_be_clickable(</span>
-<span id="cb37-5"><a href="#cb37-5"></a>      (By.LINK_TEXT, <span class="st">"element_link_text"</span>)</span>
-<span id="cb37-6"><a href="#cb37-6"></a>      )</span>
-<span id="cb37-7"><a href="#cb37-7"></a>    )</span>
-<span id="cb37-8"><a href="#cb37-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section id="a-common-pattern-robust-polite" class="slide level2">
+<h2>🤝 A Common Pattern (Robust + Polite)</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Robust: wait until the table is present</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>table <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
+<span id="cb37-3"><a href="#cb37-3"></a>    EC.presence_of_element_located((By.TAG_NAME, <span class="st">"table"</span>))</span>
+<span id="cb37-4"><a href="#cb37-4"></a>)</span>
+<span id="cb37-5"><a href="#cb37-5"></a></span>
+<span id="cb37-6"><a href="#cb37-6"></a><span class="co"># Extract something...</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a>html <span class="op">=</span> table.get_attribute(<span class="st">"outerHTML"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8"></a></span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="co"># Polite: pause before the next request/action</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a>time.sleep(random.uniform(<span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="selenium-with-pd.read_html-for-table-scrapping" class="title-slide slide level1 center" data-background-color="#1c4982">
-<h1><strong>Selenium with <code>pd.read_html()</code> for Table Scrapping</strong></h1>
+<h1>📋🔎 <strong>Selenium with <code>pd.read_html()</code> for Table Scrapping</strong></h1>
 
 </section>
 <section id="selenium-with-pd.read_html-for-table-scrapping-1" class="slide level2">
 <h2>Selenium with <code>pd.read_html()</code> for Table Scrapping</h2>
 <ul>
 <li class="fragment"><p>Yahoo! Finance has probably renewed its database system, so that <code>yfinance</code> does not work now.</p></li>
-<li class="fragment"><p><a href="https://finance.yahoo.com/quote/NVDA/history/?p=NVDA&amp;period1=1672531200&amp;period2=1743379200">Yahoo! Finance</a> uses web table to display historical data about a company’s stock.</p></li>
+<li class="fragment"><p><a href="https://finance.yahoo.com/quote/NVDA/history/?p=NVDA&amp;period1=1672531200&amp;period2=1772323200">Yahoo! Finance</a> uses web table to display historical data about a company’s stock.</p></li>
 <li class="fragment"><p>Let’s use Selenium with <code>pd.read_html()</code> to collect stock price data!</p></li>
 </ul>
 </section>
 <section id="selenium-with-pd.read_html-for-yahoo-finance-data" class="slide level2">
-<h2>Selenium with <code>pd.read_html()</code> for Yahoo! Finance Data</h2>
-<div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Setup</a></li><li><a href="#tabset-10-2">URL</a></li><li><a href="#tabset-10-3"><code>get_attribute("outerHTML")</code></a></li></ul>
-<div class="tab-content">
-<div id="tabset-10-1">
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="im">import</span> os, time, random</span>
-<span id="cb38-3"><a href="#cb38-3"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver</span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By</span>
-<span id="cb38-5"><a href="#cb38-5"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
-<span id="cb38-6"><a href="#cb38-6"></a></span>
-<span id="cb38-7"><a href="#cb38-7"></a><span class="co"># Set working directory</span></span>
-<span id="cb38-8"><a href="#cb38-8"></a>os.chdir(<span class="st">'/Users/bchoe/.../lecture-code/'</span>)</span>
-<span id="cb38-9"><a href="#cb38-9"></a></span>
-<span id="cb38-10"><a href="#cb38-10"></a><span class="co"># Launch Chrome browser</span></span>
-<span id="cb38-11"><a href="#cb38-11"></a>driver <span class="op">=</span> webdriver.Chrome()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li class="fragment"><code>StringIO</code> turns that string into a file-like object, which is what <code>pd.read_json()</code> expects moving forward.</li>
-</ul>
-</div>
-<div id="tabset-10-2">
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Load content page</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>url <span class="op">=</span> <span class="st">'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&amp;period1=1672531200&amp;period2=1743379200'</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>driver.get(url)</span>
-<span id="cb39-4"><a href="#cb39-4"></a>time.sleep(random.uniform(<span class="dv">3</span>, <span class="dv">5</span>))  <span class="co"># wait for table to load</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>💹📈 Selenium with <code>pd.read_html()</code> for Yahoo! Finance Data</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Load content page</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>url <span class="op">=</span> <span class="st">'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&amp;period1=1672531200&amp;period2=1772323200'</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>driver.get(url)</span>
+<span id="cb38-4"><a href="#cb38-4"></a>time.sleep(random.uniform(<span class="dv">3</span>, <span class="dv">5</span>))  <span class="co"># wait for table to load</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>period1</code> and <code>period2</code> values for Yahoo Finance URLs uses <strong>Unix timestamps</strong> (number of seconds since January 1, 1970),
 <ul>
 <li class="fragment">1672531200 → 2023-01-01</li>
-<li class="fragment">1743379200 → 2025-03-31</li>
+<li class="fragment">1772323200 → 2026-03-01</li>
 </ul></li>
 </ul>
-</div>
-<div id="tabset-10-3">
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Extract the &lt;table&gt; HTML element</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>table_html <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'table'</span>).get_attribute(<span class="st">"outerHTML"</span>)</span>
-<span id="cb40-3"><a href="#cb40-3"></a></span>
-<span id="cb40-4"><a href="#cb40-4"></a><span class="co"># Parse the HTML table into a pandas DataFrame</span></span>
-<span id="cb40-5"><a href="#cb40-5"></a>df <span class="op">=</span> pd.read_html(StringIO(table_html))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="get_attributeouterhtml" class="slide level2">
+<h2>🧾🔍 <code>get_attribute("outerHTML")</code></h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Extract the &lt;table&gt; HTML element</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>table_html <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'table'</span>).get_attribute(<span class="st">"outerHTML"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3"></a></span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="co"># Parse the HTML table into a pandas DataFrame</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>df <span class="op">=</span> pd.read_html(StringIO(table_html))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
+<li class="fragment"><p><code>StringIO</code> turns that string into a file-like object, which is what <code>pd.read_json()</code> expects moving forward.</p></li>
 <li class="fragment"><p><code>.get_attribute("outerHTML")</code>: gets the entire HTML from the WebElement.</p></li>
-<li class="fragment"><p><code>pd.read_html()</code> parses HTML tables from a given URL or from raw HTML content, and returns a list of DataFrames.</p></li>
 </ul>
-</div>
-</div>
-</div>
 </section>
 <section id="web-scrapping-with-python-selenium-2" class="slide level2">
 <h2>Web-scrapping with Python <code>selenium</code></h2>

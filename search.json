@@ -2887,8 +2887,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#what-is-selenium",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#what-is-selenium",
     "title": "Lecture 4",
-    "section": "What is Selenium?",
-    "text": "What is Selenium?\n\n\n\n\n\n\n\n\n\nSelenium is a tool that lets Python control a real web browser (like Chrome or Firefox) automatically.\nIt is used for:\n\nWeb automation (click buttons, fill forms, scroll pages)\nWeb scraping when a website is dynamic (JavaScript loads content after the page opens)\n\nSelenium works by interacting with the page’s DOM (Document Object Model):\n\nIt finds elements in HTML\nThen reads text/attributes or performs actions (click, type, scroll)"
+    "section": "❓ What is Selenium?",
+    "text": "❓ What is Selenium?\n\n\n\n\n\n\n\n\n\nSelenium is a tool that lets Python control a real web browser (like Chrome or Firefox) automatically.\nIt is used for:\n\nWeb automation (click buttons, fill forms, scroll pages)\nWeb scraping when a website is dynamic (JavaScript loads content after the page opens)\n\nSelenium works by interacting with the page’s DOM (Document Object Model):\n\nIt finds elements in HTML\nThen reads text/attributes or performs actions (click, type, scroll)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#webdriver",
@@ -2915,22 +2915,22 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#setting-up",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#setting-up",
     "title": "Lecture 4",
-    "section": "Setting up",
-    "text": "Setting up\n\nInstall the Chrome or FireFox web-browser if you do not have either of them.\n\nI will use the Chrome.\n\nInstall Selenium using pip:\n\nOn the Spyder Console, run the following:\npip install selenium\n\nSelenium with Python is a well-documented reference."
+    "section": "🔧 Setting up",
+    "text": "🔧 Setting up\n\nInstall the Chrome or FireFox web-browser if you do not have either of them.\n\nI will use the Chrome.\n\nInstall Selenium using pip:\n\nOn the Spyder Console, run the following:\npip install selenium\n\nSelenium with Python is a well-documented reference."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#setting-up---webdriver.chrome",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#setting-up---webdriver.chrome",
     "title": "Lecture 4",
-    "section": "Setting up - webdriver.Chrome()",
-    "text": "Setting up - webdriver.Chrome()\n\n\nTo begin with, we import (1) webdriver from selenium and (2) the By and Options classes.\n\nwebdriver.Chrome() opens the Chrome browser that is being controlled by automated test software, selenium.\n\n\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\n\n# Create an instance of Chrome options\noptions = Options()\noptions.add_argument(\"window-size=1400,1200\")  # Set the browser window size to 1400x1200\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)  # Correct implementation\n\n# Now you can use 'driver' to control the Chrome browser"
+    "section": "🧩 Setting up - webdriver.Chrome()",
+    "text": "🧩 Setting up - webdriver.Chrome()\n\n\nTo begin with, we import (1) webdriver from selenium and (2) the By and Options classes.\n\nwebdriver.Chrome() opens the Chrome browser that is being controlled by automated test software, selenium.\n\n\n\nimport pandas as pd\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#get-method-in-webdriver",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#get-method-in-webdriver",
     "title": "Lecture 4",
-    "section": "get() Method in WebDriver",
-    "text": "get() Method in WebDriver\n\n\nget(url) from webdriver opens the specified URL in a web browser.\nWhen using webdriver in Google Chrome, you may see the message:\n\n“Chrome is being controlled by automated test software.”\n\n\n\nform_url = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](form_url)\ndriver.close()\ndriver.quit()\n\nclose() terminates the current browser window.\nquit() completely exits the webdriver session, closing a browser window."
+    "section": "🌐 get() Method in WebDriver",
+    "text": "🌐 get() Method in WebDriver\n\n\nget(url) from webdriver opens the specified URL in a web browser.\nWhen using webdriver in Google Chrome, you may see the message:\n\n“Chrome is being controlled by automated test software.”\n\n\n\nform_url = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](form_url)\ndriver.close()\ndriver.quit()\n\nclose() terminates the current browser window.\nquit() completely exits the webdriver session, closing a browser window."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-web-elements-with-find_element",
@@ -2950,64 +2950,64 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#locating-web-elements-by-find_element",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#locating-web-elements-by-find_element",
     "title": "Lecture 4",
-    "section": "Locating Web Elements by find_element()",
-    "text": "Locating Web Elements by find_element()\n\n\nThere are various strategies to locate elements in a page.\n\n\nfind_element(By.ID, \"id\")\nfind_element(By.CLASS_NAME, \"class name\")\nfind_element(By.NAME, \"name\")\nfind_element(By.CSS_SELECTOR, \"css selector\")\nfind_element(By.TAG_NAME, \"tag name\")\nfind_element(By.LINK_TEXT, \"link text\")\nfind_element(By.PARTIAL_LINK_TEXT, \"partial link text\")\nfind_element(By.XPATH, \"xpath\")\n\nSelenium provides the find_element() method to locate elements in a page.\nTo find multiple elements (these methods will return a list):\n\nfind_elements()"
+    "section": "📍 Locating Web Elements by find_element()",
+    "text": "📍 Locating Web Elements by find_element()\n\n\nThere are various strategies to locate elements in a page.\n\n\nfind_element(By.ID, \"id\")\nfind_element(By.CLASS_NAME, \"class name\")\nfind_element(By.NAME, \"name\")\nfind_element(By.CSS_SELECTOR, \"css selector\")\nfind_element(By.TAG_NAME, \"tag name\")\nfind_element(By.LINK_TEXT, \"link text\")\nfind_element(By.PARTIAL_LINK_TEXT, \"partial link text\")\nfind_element(By.XPATH, \"xpath\")\n\nSelenium provides the find_element() method to locate elements in a page.\nTo find multiple elements (these methods will return a list):\n\nfind_elements()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.id",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.id",
     "title": "Lecture 4",
     "section": "find_element(By.ID, \"\")",
-    "text": "find_element(By.ID, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that match a given ID attribute value.\n\nExample HTML code where an element has an ID attribute form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\nExample of locating the form using find_element(By.ID, \"\"):\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # Retrieves text content if available"
+    "text": "find_element(By.ID, \"\")\n\n\n\nfind_element(By.ID, \"\") & find_elements(By.ID, \"\"):\n\nReturn element(s) that match a given ID attribute value.\n\nExample HTML code where an element has an ID attribute form1:\n\n&lt;form id=\"form1\"&gt;...&lt;/form&gt;\n\n\n\nExample of locating the form using find_element(By.ID, \"\"):\n\nform = driver.find_element(By.ID, \"form1\")\nform.text  # Retrieves text content if available"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.class_name",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.class_name",
     "title": "Lecture 4",
     "section": "find_element(By.CLASS_NAME, \"\")",
-    "text": "find_element(By.CLASS_NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) matching a specific class attribute.\n\nExample HTML code with a homebtn class:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click()  # Clicks the home button\ndriver.back()  # Navigates back to the previous page"
+    "text": "find_element(By.CLASS_NAME, \"\")\n\n\n\nfind_element(By.CLASS_NAME, \"\") & find_elements(By.CLASS_NAME, \"\"):\n\nReturn element(s) matching a specific class attribute.\n\nExample HTML code with a homebtn class:\n\n&lt;div class=\"homebtn\" align=\"center\"&gt;...&lt;/div&gt;\n\n\nhome_button = driver.find_element(By.CLASS_NAME, \"homebtn\")\nhome_button.click()  # Clicks the home button\ndriver.back()  # Navigates back to the previous page"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.name",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.name",
     "title": "Lecture 4",
     "section": "find_element(By.NAME, \"\")",
-    "text": "find_element(By.NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) with a matching name attribute.\n\nExample HTML code with a name attribute home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
+    "text": "find_element(By.NAME, \"\")\n\n\n\nfind_element(By.NAME, \"\") & find_elements(By.NAME, \"\"):\n\nReturn element(s) with a matching name attribute.\n\nExample HTML code with a name attribute home:\n\n&lt;input type=\"button\" class=\"btn\" name=\"home\" value=\"Home\" /&gt;\n\n\nhome_button2 = driver.find_element(By.NAME, \"home\")\nhome_button2.click()\ndriver.back()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.css_selector",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.css_selector",
     "title": "Lecture 4",
     "section": "find_element(By.CSS_SELECTOR, \"\")",
-    "text": "find_element(By.CSS_SELECTOR, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.CSS_SELECTOR, \"\") & find_elements(By.CSS_SELECTOR, \"\"):\n\nLocate element(s) using a CSS selector.\n\nInspect the webpage using browser Developer Tools.\nLocate the desired element in the Elements panel.\nRight-click and select Copy selector\n\nLet’s find out CSS selector for the Home button.\n\n\n\n\nhome_button3 = driver.find_element(By.CSS_SELECTOR, \"body &gt; div &gt; a &gt; input\")\nhome_button3.click()\ndriver.back()"
+    "text": "find_element(By.CSS_SELECTOR, \"\")\n\n\n\nfind_element(By.CSS_SELECTOR, \"\") & find_elements(By.CSS_SELECTOR, \"\"):\n\nLocate element(s) using a CSS selector.\n\nInspect the webpage using browser Developer Tools.\nLocate the desired element in the Elements panel.\nRight-click and select Copy selector\n\nLet’s find out CSS selector for the Home button.\n\n\n\n\nhome_button3 = driver.find_element(By.CSS_SELECTOR, \"body &gt; div &gt; a &gt; input\")\nhome_button3.click()\ndriver.back()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.tag_name",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.tag_name",
     "title": "Lecture 4",
     "section": "find_element(By.TAG_NAME, \"\")",
-    "text": "find_element(By.TAG_NAME, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.TAG_NAME, \"\") & find_elements(By.TAG_NAME, \"\"):\n\nLocate element(s) by a specific HTML tag.\n\n\n\n\ntable01 = driver.find_element(By.ID, \"table01\")\nthead = table01.find_element(By.TAG_NAME, \"thead\")\nthead.text"
+    "text": "find_element(By.TAG_NAME, \"\")\n\n\n\nfind_element(By.TAG_NAME, \"\") & find_elements(By.TAG_NAME, \"\"):\n\nLocate element(s) by a specific HTML tag.\n\n\n\n\ntable01 = driver.find_element(By.ID, \"table01\")\nthead = table01.find_element(By.TAG_NAME, \"thead\")\nthead.text"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.link_text",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.link_text",
     "title": "Lecture 4",
     "section": "find_element(By.LINK_TEXT, \"\")",
-    "text": "find_element(By.LINK_TEXT, \"\")\n\n\n(1)(2)\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nLocate link(s) using the exact text displayed.\n\nExample HTML for a Selenium link:\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()\ndriver.back()"
+    "text": "find_element(By.LINK_TEXT, \"\")\n\n\n\nfind_element(By.LINK_TEXT, \"\") & find_elements(By.LINK_TEXT, \"\"):\n\nLocate link(s) using the exact text displayed.\n\nExample HTML for a Selenium link:\n\n&lt;a href=\"http://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n\n\nselenium_link = driver.find_element(By.LINK_TEXT, \"Selenium\")\nselenium_link.click()\ndriver.back()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.partial_link_text",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.partial_link_text",
     "title": "Lecture 4",
     "section": "find_element(By.PARTIAL_LINK_TEXT, \"\")",
-    "text": "find_element(By.PARTIAL_LINK_TEXT, \"\")\n\n\n(1)(2)\n\n\n\nFinds link(s) containing partial text.\n\n\n\nSelen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, \"qav\")\nprint(len(Selen_links))\nSelen_links[0].click()\ndriver.back()"
+    "text": "find_element(By.PARTIAL_LINK_TEXT, \"\")\n\n\n\nFinds link(s) containing partial text.\n\n\n\nSelen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, \"qav\")\nprint(len(Selen_links))\nSelen_links[0].click()\ndriver.back()"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.xpath",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#find_elementby.xpath",
     "title": "Lecture 4",
     "section": "find_element(By.XPATH, \"\")",
-    "text": "find_element(By.XPATH, \"\")\nUnderstanding XPath\n\nfind_element(By.XPATH, \"\") & find_elements(By.XPATH, \"\"):\n\nReturn element(s) that match the specified XPath query.\n\nXPath is a query language for searching and locating nodes in an XML document.\n\nSupported by all major web browsers.\nUsed in Selenium to find elements when ID, name, or class attributes are not available.\nPowerful for navigating complex HTML structures."
+    "text": "find_element(By.XPATH, \"\")\n\nfind_element(By.XPATH, \"…\") and find_elements(By.XPATH, \"…\"):\n\nFind element(s) that match the given XPath expression.\nfind_element(...) returns one matching element (the first match).\nfind_elements(...) returns a list of all matching elements.\n\nXPath is a query language for locating nodes in a tree structure.\n\nWeb pages are written in HTML, and the browser represents them as a DOM tree, which XPath can query.\nSelenium supports XPath in all major browsers.\nXPath is useful when id/name/class selectors are missing, duplicated, or unstable.\nIt’s powerful for navigating nested or complex HTML structures."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#basic-xpath-syntax",
@@ -3034,8 +3034,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#extracting-xpath-from-developer-tools",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#extracting-xpath-from-developer-tools",
     "title": "Lecture 4",
-    "section": "Extracting XPath from Developer Tools",
-    "text": "Extracting XPath from Developer Tools\n\n\nInspect the webpage using browser Developer Tools.\nLocate the desired element in the Elements panel.\nRight-click and select Copy XPath.\nExample extracted XPath:\n\n\n//*[@id=\"table02\"]/tbody/tr[1]/td[1]\n/html/body/form/fieldset/div/div/table/tbody/tr[1]/td[1]"
+    "section": "🛠️ Extracting XPath from Developer Tools",
+    "text": "🛠️ Extracting XPath from Developer Tools\n\n\nInspect the webpage using browser Developer Tools.\nLocate the desired element in the Elements panel.\nRight-click and select Copy XPath.\nExample extracted XPath:\n\n\n//*[@id=\"table02\"]/tbody/tr[1]/td[1]\n/html/body/form/fieldset/div/div/table/tbody/tr[1]/td[1]"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#finding-an-element-using-xpath",
@@ -3049,14 +3049,14 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#when-to-use-xpath",
     "title": "Lecture 4",
     "section": "When to Use XPath",
-    "text": "When to Use XPath\n\nUse XPath when:\n\nThe element lacks a unique ID or class.\nOther locator methods (By.ID, By.CLASS_NAME, etc.) don’t work.\n\nLimitations:\n\nXPath is less efficient than ID-based locators.\nPage structure changes may break XPath-based automation.\n\nFor our tasks, however, XPath remains a reliable and effective method!"
+    "text": "When to Use XPath\n\nUse XPath when:\n\nThe element lacks a unique ID or class.\nOther locator methods (By.ID, By.CLASS_NAME, etc.) don’t work.\n\nLimitations:\n\nXPath can be less efficient than ID-based locators.\nPage structure changes may break XPath-based automation.\n\nFor our tasks, however, XPath remains a reliable and effective method!"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#retrieving-attribute-values-with-get_attribute",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#retrieving-attribute-values-with-get_attribute",
     "title": "Lecture 4",
-    "section": "Retrieving Attribute Values with get_attribute()",
-    "text": "Retrieving Attribute Values with get_attribute()\n\n\n(1)(2)\n\n\n\nget_attribute() extracts an element’s attribute value.\nUseful for retrieving hidden properties not visible on the page.\n\n&lt;a href=\"https://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n&lt;input id=\"btn\" class=\"btn\" type=\"button\" onclick=\"change_text(this)\" value=\"Delete\"&gt;\n\n\ndriver.find_element(By.XPATH, '//*[@id=\"table01\"]/tbody/tr[2]/td[3]/a').get_attribute('href')\ndriver.find_element(By.XPATH, '//*[@id=\"btn\"]').get_attribute('value')"
+    "section": "🧾 Retrieving Attribute Values with get_attribute()",
+    "text": "🧾 Retrieving Attribute Values with get_attribute()\n\n\n\nHTML Example\n\nget_attribute() extracts an element’s attribute value.\nUseful for retrieving hidden properties not visible on the page.\n\n&lt;a href=\"https://www.selenium.dev/\"&gt;Selenium&lt;/a&gt;\n&lt;input id=\"btn\" class=\"btn\" type=\"button\" onclick=\"change_text(this)\" value=\"Delete\"&gt;\n\n\n\nPython Example\ndriver.find_element(By.XPATH, '//*[@id=\"table01\"]/tbody/tr[2]/td[3]/a').get_attribute('href')\ndriver.find_element(By.XPATH, '//*[@id=\"btn\"]').get_attribute('value')"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-1",
@@ -3069,8 +3069,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#nosuchelementexception-and-try-except-blocks",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#nosuchelementexception-and-try-except-blocks",
     "title": "Lecture 4",
-    "section": "NoSuchElementException and try-except blocks",
-    "text": "NoSuchElementException and try-except blocks\nfrom selenium.common.exceptions import NoSuchElementException\ntry:\n    elem = driver.find_element(By.XPATH, \"element_xpath\")\n    elem.click()\nexcept NoSuchElementException:\n    pass\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
+    "section": "🚫🔎 NoSuchElementException and try-except blocks",
+    "text": "🚫🔎 NoSuchElementException and try-except blocks\ntry:\n    elem = driver.find_element(By.XPATH, \"element_xpath\")\n    elem.click()\nexcept:\n    pass\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#explicit-wait-with-time.sleep",
@@ -3104,8 +3104,8 @@
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#selenium-with-pd.read_html-for-yahoo-finance-data",
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#selenium-with-pd.read_html-for-yahoo-finance-data",
     "title": "Lecture 4",
-    "section": "Selenium with pd.read_html() for Yahoo! Finance Data",
-    "text": "Selenium with pd.read_html() for Yahoo! Finance Data\n\nSetupURLget_attribute(\"outerHTML\")\n\n\nimport pandas as pd\nimport os, time, random\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom io import StringIO\n\n# Set working directory\nos.chdir('/Users/bchoe/.../lecture-code/')\n\n# Launch Chrome browser\ndriver = webdriver.Chrome()\n\nStringIO turns that string into a file-like object, which is what pd.read_json() expects moving forward.\n\n\n\n# Load content page\nurl = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1743379200'\ndriver.get(url)\ntime.sleep(random.uniform(3, 5))  # wait for table to load\n\nperiod1 and period2 values for Yahoo Finance URLs uses Unix timestamps (number of seconds since January 1, 1970),\n\n1672531200 → 2023-01-01\n1743379200 → 2025-03-31\n\n\n\n\n# Extract the &lt;table&gt; HTML element\ntable_html = driver.find_element(By.TAG_NAME, 'table').get_attribute(\"outerHTML\")\n\n# Parse the HTML table into a pandas DataFrame\ndf = pd.read_html(StringIO(table_html))[0]\n\n.get_attribute(\"outerHTML\"): gets the entire HTML from the WebElement.\npd.read_html() parses HTML tables from a given URL or from raw HTML content, and returns a list of DataFrames."
+    "section": "💹📈 Selenium with pd.read_html() for Yahoo! Finance Data",
+    "text": "💹📈 Selenium with pd.read_html() for Yahoo! Finance Data\n# Load content page\nurl = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200'\ndriver.get(url)\ntime.sleep(random.uniform(3, 5))  # wait for table to load\n\nperiod1 and period2 values for Yahoo Finance URLs uses Unix timestamps (number of seconds since January 1, 1970),\n\n1672531200 → 2023-01-01\n1772323200 → 2026-03-01"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-2",
@@ -3148,5 +3148,103 @@
     "title": "Classwork 3",
     "section": "Step 5) Read the CSV in two ways",
     "text": "Step 5) Read the CSV in two ways\n\n(a) Using a relative path\nIf your working directory is set to the project folder, you can load the file like this:\npath_relative = \"data/custdata_rev.csv\"\n\n# Read the CSV file into a pandas DataFrame.\n# pd.read_csv(...) loads the file and creates a table-like object (a DataFrame) in Python.\n# After this line runs, df_rel will contain all rows and columns from the CSV.\ndf_rel = pd.read_csv(path_relative)\n\n\n(b) Using an absolute path\nYou can also load the file using the full path to the file:\npath_absolute = \"ABSOLUTE_PATHNAME_OF_custdata_rev.csv\"\ndf_abs = pd.read_csv(path_absolute)\n\n\n\n\n\n\nShow answer\n\n\n\n\n\n\n# Set the working directory path\nwd_path = 'YOUR_ABSOLUTE_PATHNAME_FOR_DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\npath_relative = \"data/custdata_rev.csv\"\ndf_rel = pd.read_csv(path_relative)\n\npath_absolute = \"YOUR_ABSOLUTE_PATHNAME_FOR_DANL-210/data/custdata_rev.csv\"\ndf_abs = pd.read_csv(path_absolute)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#webdriver-browser-interaction",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#webdriver-browser-interaction",
+    "title": "Lecture 4",
+    "section": "🔁 WebDriver-Browser Interaction",
+    "text": "🔁 WebDriver-Browser Interaction\n\n\nA simplified diagram of how WebDriver interacts with browser might look like this:\n\n\n\n\n\n\n\n\n\nWebDriver interacts with the browser via the driver in a two-way communication process:\n\nSends commands (e.g., open a page, click a button) to the browser.\nReceives responses from the browser."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#xpath-vs.-full-xpath",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#xpath-vs.-full-xpath",
+    "title": "Lecture 4",
+    "section": "XPath vs. Full XPath",
+    "text": "XPath vs. Full XPath\n\n\n\nWhen you right-click an element in Chrome DevTools → Copy, you often see:\n\nCopy XPath (often a relative-style XPath)\n\nTypically starts with //...\nTries to find the element using attributes and structure\nUsually more flexible if the page layout changes\n\nCopy Full XPath\n\nTypically starts with /html/body/...\nA complete path from the root of the document tree\nOften fragile: if the page structure changes, it can break easily\n\n\n\n\n\n\n\nIn practice: prefer XPath (the shorter one) over Full XPath when possible."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#example-finding-the-2nd-table-with-xpath",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#example-finding-the-2nd-table-with-xpath",
+    "title": "Lecture 4",
+    "section": "Example: Finding the 2nd Table with XPath",
+    "text": "Example: Finding the 2nd Table with XPath\n\nSuppose we want the second &lt;table&gt; on a page, but the tables have no unique id or class.\nUsing find_element(By.TAG_NAME, \"table\") is too vague because it returns only the first table.\nXPath can target the second one:\n\n\n# second table on the page:\nsecond_table = driver.find_element(By.XPATH, \"(//table)[2]\")"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#two-different-waits",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#two-different-waits",
+    "title": "Lecture 4",
+    "section": "🆚⏱️ Two different “waits”",
+    "text": "🆚⏱️ Two different “waits”\n\nPause to respect servers (politeness):\n\nUse time.sleep(random.uniform(a, b)) as a small human-like delay between actions/pages.\nThis helps avoid hammering a website with rapid-fire requests.\nUse time.sleep(random.uniform()) for politeness (respect servers).\n\nWait for the page to be ready (robustness):\n\nUse WebDriverWait() + a condition (presence/clickable).\nThis prevents flaky failures on slow networks or busy sites.\nUse WebDriverWait() for robustness (wait for conditions).\n\n\n\n\n\n\n\nBest practice: Use both—WebDriverWait for robustness, and small randomized sleeps for politeness."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#polite-scraping-randomized-pauses-with-time.sleeprandom.uniform",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#polite-scraping-randomized-pauses-with-time.sleeprandom.uniform",
+    "title": "Lecture 4",
+    "section": "🤝🎲 Polite Scraping: Randomized Pauses with time.sleep(random.uniform())",
+    "text": "🤝🎲 Polite Scraping: Randomized Pauses with time.sleep(random.uniform())\nimport time, random\n\n# Example: polite delay between actions/pages\ntime.sleep(random.uniform(0.5, 1.5))  # small jitter (adjust as needed)\n\nAfter each page load, click, or data extraction, add a small randomized pause.\nThis is not about “waiting for the DOM”—it is about respecting servers and reducing bursty traffic."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#why-time.sleep-alone-is-not-robust",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#why-time.sleep-alone-is-not-robust",
+    "title": "Lecture 4",
+    "section": "⚠️😴 Why time.sleep() Alone is Not Robust",
+    "text": "⚠️😴 Why time.sleep() Alone is Not Robust\nimport time\n\nurl = \"https://qavbox.github.io/demo/delay/\"\ndriver.get(url)\n\ndriver.find_element(By.XPATH, '//*[@id=\"one\"]/input').click()\n\ntime.sleep(2)  # blind wait: always 2 seconds\n\nelement = driver.find_element(By.XPATH, '//*[@id=\"two\"]')\nelement.text\n\ntime.sleep() is a blind wait:\n\nIf content loads faster, you waste time.\nIf content loads slower, your code may crash (element not found).\n\nFor reliable automation/scraping, use condition-based waits."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#robust-wait-for-presence-exists-in-dom-with-webdriverwait-expected_conditions",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#robust-wait-for-presence-exists-in-dom-with-webdriverwait-expected_conditions",
+    "title": "Lecture 4",
+    "section": "✅👀 Robust Wait for Presence (exists in DOM) with WebDriverWait() + expected_conditions",
+    "text": "✅👀 Robust Wait for Presence (exists in DOM) with WebDriverWait() + expected_conditions\ndriver.get(\"https://qavbox.github.io/demo/delay/\")\ndriver.find_element(By.XPATH, '//*[@id=\"one\"]/input').click()\n\ntry:\n    element = WebDriverWait(driver, 10).until(\n        EC.presence_of_element_located((By.XPATH, '//*[@id=\"two\"]'))\n    )\n    print(element.text)\nexcept TimeoutException:\n    print(\"Timed out: element did not appear within 10 seconds.\")\n\nGood when the element is added to the DOM but might not be visible yet."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#robust-wait-for-clickable-visible-enabled-with-webdriverwait-expected_conditions",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#robust-wait-for-clickable-visible-enabled-with-webdriverwait-expected_conditions",
+    "title": "Lecture 4",
+    "section": "✅🖱️ Robust Wait for Clickable (Visible + Enabled) with WebDriverWait() + expected_conditions",
+    "text": "✅🖱️ Robust Wait for Clickable (Visible + Enabled) with WebDriverWait() + expected_conditions\nbtn = WebDriverWait(driver, 10).until(\n    EC.element_to_be_clickable((By.XPATH, '//*[@id=\"one\"]/input'))\n)\nbtn.click()\n\nBest when you want to click reliably."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#a-common-pattern-robust-polite",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#a-common-pattern-robust-polite",
+    "title": "Lecture 4",
+    "section": "🤝 A Common Pattern (Robust + Polite)",
+    "text": "🤝 A Common Pattern (Robust + Polite)\n# Robust: wait until the table is present\ntable = WebDriverWait(driver, 10).until(\n    EC.presence_of_element_located((By.TAG_NAME, \"table\"))\n)\n\n# Extract something...\nhtml = table.get_attribute(\"outerHTML\")\n\n# Polite: pause before the next request/action\ntime.sleep(random.uniform(1, 3))"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-a-web-element-with-find_element",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-a-web-element-with-find_element",
+    "title": "Lecture 4",
+    "section": "🔎 Inspecting a Web Element with find_element()",
+    "text": "🔎 Inspecting a Web Element with find_element()\n\nOnce the Google Chrome window loads with the provided URL, we need to find specific elements to interact with.\n\nThe easiest way to identify elements is by using Developer Tools to inspect the webpage structure.\n\nTo inspect an element:\n\nRight-click anywhere on the webpage.\nSelect the Inspect option from the pop-up menu.\nIn the Elements panel, hover over the DOM structure to locate the desired element."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-a-web-element-with-find_element-1",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-a-web-element-with-find_element-1",
+    "title": "Lecture 4",
+    "section": "🔍 Inspecting a Web Element with find_element()",
+    "text": "🔍 Inspecting a Web Element with find_element()\n\nWhen inspecting an element, look for:\n\nHTML tag (e.g., &lt;input&gt;, &lt;button&gt;, &lt;div&gt;) used for the element.\nAttributes (e.g., id, class, name) that define the element.\nAttribute values that help uniquely identify the element.\nPage structure to understand how elements are nested within each other."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#basic-xpath-pattern",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#basic-xpath-pattern",
+    "title": "Lecture 4",
+    "section": "Basic XPath Pattern",
+    "text": "Basic XPath Pattern\n//tag_name[@attribute='value']\n\n// → search anywhere in the document\ntag_name → HTML tag name (input, div, span, table, etc.)\n@attribute → attribute name (id, class, aria-label, role, data-*, etc.)\n'value' → the attribute’s value (quoted)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#example-finding-an-element-using-xpath",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#example-finding-an-element-using-xpath",
+    "title": "Lecture 4",
+    "section": "🎯 Example: Finding an Element Using XPath",
+    "text": "🎯 Example: Finding an Element Using XPath\n\n\nLocate “Tiger Nixon” in the second table:\n\n\nelt = driver.find_element(By.XPATH, '//*[@id=\"table02\"]/tbody/tr[1]/td[1]')\nprint(elt.text)  # Output the extracted text"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#get_attributeouterhtml",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#get_attributeouterhtml",
+    "title": "Lecture 4",
+    "section": "🧾🔍 get_attribute(\"outerHTML\")",
+    "text": "🧾🔍 get_attribute(\"outerHTML\")\n# Extract the &lt;table&gt; HTML element\ntable_html = driver.find_element(By.TAG_NAME, 'table').get_attribute(\"outerHTML\")\n\n# Parse the HTML table into a pandas DataFrame\ndf = pd.read_html(StringIO(table_html))[0]\n\nStringIO turns that string into a file-like object, which is what pd.read_json() expects moving forward.\n.get_attribute(\"outerHTML\"): gets the entire HTML from the WebElement."
   }
 ]

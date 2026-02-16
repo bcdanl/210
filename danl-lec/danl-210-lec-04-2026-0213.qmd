@@ -487,9 +487,9 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-# **Web-scrapping with Python `selenium`** {background-color="#1c4982"}
+# ⚙️🕸️ **Web-scrapping with Python `selenium`** {background-color="#1c4982"}
 
-## What is Selenium?
+## ❓ What is Selenium?
 
 <div style="display:block; margin:-15px;"></div>
 
@@ -536,7 +536,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 <!-- - Newer versions of Python `selenium` do **not** require manual driver downloads. -->
 
-## Interaction Diagram
+## 🔁 WebDriver-Browser Interaction
 
 :::{.nonincremental}
 
@@ -557,7 +557,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 
 
 
-## Setting up
+## 🔧 Setting up
 
 - Install the Chrome or FireFox web-browser if you do not have either of them.
   - I will use the Chrome.
@@ -569,7 +569,7 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 - [**Selenium with Python**](https://selenium-python.readthedocs.io/index.html) is a well-documented reference.
 
 
-## Setting up - `webdriver.Chrome()`
+## 🧩 Setting up - `webdriver.Chrome()`
 
 :::{.nonincremental}
 
@@ -579,25 +579,31 @@ knitr::include_graphics("https://bcdanl.github.io/lec_figs/URL.png")
 :::
 
 ```{.python}
+import pandas as pd
+import os, time, random
+from io import StringIO
+
 # Import the necessary modules from the Selenium library
 from selenium import webdriver  # Main module to control the browser
 from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
 from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
 
 # Create an instance of Chrome options
 options = Options()
-options.add_argument("window-size=1400,1200")  # Set the browser window size to 1400x1200
 
 # Initialize the Chrome WebDriver with the specified options
-driver = webdriver.Chrome(options=options)  # Correct implementation
-
-# Now you can use 'driver' to control the Chrome browser
+driver = webdriver.Chrome(options=options)
 ```
 
 
 
 
-## `get()` Method in WebDriver
+## 🌐 `get()` Method in WebDriver
 
 :::{.nonincremental}
 
@@ -619,7 +625,7 @@ driver.quit()
 -	`quit()` completely exits the `webdriver` session, closing a browser window.
 
 
-## **Inspecting Web Elements** with `find_element()`
+## 🔎 **Inspecting a Web Element** with `find_element()`
 
 - Once the Google Chrome window loads with the provided URL, we need to **find specific elements** to interact with.
   - The easiest way to identify elements is by using **Developer Tools** to inspect the webpage structure.
@@ -630,7 +636,7 @@ driver.quit()
   3. In the `Elements` panel, **hover over** the DOM structure to locate the desired element.
 
 
-## **Inspecting Web Elements** with `find_element()`
+## 🔍 **Inspecting a Web Element** with `find_element()`
 
 - When inspecting an element, look for:
   - **HTML tag** (e.g., `<input>`, `<button>`, `<div>`) used for the element.
@@ -646,10 +652,10 @@ driver.quit()
 <!--   - We then need to find information such as what HTML tag is used for the *element*, the defined *attribute*, and the *values* for the attributes and the structure of the page. -->
 
 
-# **Locating Web Elements by `find_element()` & `find_elements()`** {background-color="#1c4982"}
+# 📍 **Locating Web Elements by `find_element()` & `find_elements()`** {background-color="#1c4982"}
 
 
-## Locating Web Elements by `find_element()`
+## 📍 Locating Web Elements by `find_element()`
 
 :::{.nonincremental}
 - There are various strategies to locate elements in a page.
@@ -677,9 +683,8 @@ find_element(By.XPATH, "xpath")
 ## **`find_element(By.ID, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1) 
 
+::: fragment
 - `find_element(By.ID, "")` & `find_elements(By.ID, "")`:
   - Return element(s) that match a given **ID** attribute value.
 
@@ -688,9 +693,9 @@ find_element(By.XPATH, "xpath")
 ```{.html}
 <form id="form1">...</form>
 ```
+:::
 
-## (2) 
-
+::: fragment
 - Example of locating the form using `find_element(By.ID, "")`:
 
 ```{.python}
@@ -698,6 +703,7 @@ form = driver.find_element(By.ID, "form1")
 form.text  # Retrieves text content if available
 ```
 :::
+
 ::::
 
 
@@ -706,8 +712,7 @@ form.text  # Retrieves text content if available
 ## **`find_element(By.CLASS_NAME, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
+::: fragment
 
 - `find_element(By.CLASS_NAME, "")` & `find_elements(By.CLASS_NAME, "")`:
   - Return element(s) matching a specific **class attribute**.
@@ -718,7 +723,8 @@ form.text  # Retrieves text content if available
 <div class="homebtn" align="center">...</div>
 ```
 
-## (2)
+:::
+::: fragment
 
 ```{.python}
 home_button = driver.find_element(By.CLASS_NAME, "homebtn")
@@ -731,8 +737,7 @@ driver.back()  # Navigates back to the previous page
 ## **`find_element(By.NAME, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
+::: fragment
 
 - `find_element(By.NAME, "")` & `find_elements(By.NAME, "")`:
   - Return element(s) with a matching **name attribute**.
@@ -742,8 +747,8 @@ driver.back()  # Navigates back to the previous page
 ```{.html}
 <input type="button" class="btn" name="home" value="Home" />
 ```
-
-## (2)
+:::
+::: fragment
 
 ```{.python}
 home_button2 = driver.find_element(By.NAME, "home")
@@ -756,8 +761,7 @@ driver.back()
 ## **`find_element(By.CSS_SELECTOR, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
+::: fragment
 
 - `find_element(By.CSS_SELECTOR, "")` & `find_elements(By.CSS_SELECTOR, "")`:
   - Locate element(s) using a **CSS selector**.
@@ -766,8 +770,9 @@ driver.back()
 - Locate the desired element in the Elements panel.
 - Right-click and select **Copy selector**
   - Let's find out CSS selector for the Home button.
+:::
 
-## (2)
+::: fragment
 
 ```{.python}
 home_button3 = driver.find_element(By.CSS_SELECTOR, "body > div > a > input")
@@ -781,13 +786,14 @@ driver.back()
 ## **`find_element(By.TAG_NAME, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
+::: fragment
 
 - `find_element(By.TAG_NAME, "")` & `find_elements(By.TAG_NAME, "")`:
   - Locate element(s) by a specific **HTML tag**.
 
-## (2)
+:::
+
+::: fragment
 
 ```{.python}
 table01 = driver.find_element(By.ID, "table01")
@@ -800,8 +806,7 @@ thead.text
 ## **`find_element(By.LINK_TEXT, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
+::: fragment
 
 - `find_element(By.LINK_TEXT, "")` & `find_elements(By.LINK_TEXT, "")`:
   - Locate link(s) using the exact **text displayed**.
@@ -812,7 +817,9 @@ thead.text
 <a href="http://www.selenium.dev/">Selenium</a>
 ```
 
-## (2)
+:::
+
+::: fragment
 
 ```{.python}
 selenium_link = driver.find_element(By.LINK_TEXT, "Selenium")
@@ -825,12 +832,13 @@ driver.back()
 ## **`find_element(By.PARTIAL_LINK_TEXT, "")`**
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1)
+::: fragment
 
 - Finds link(s) containing **partial** text.
 
-## (2)
+:::
+
+::: fragment
 
 ```{.python}
 Selen_links = driver.find_elements(By.PARTIAL_LINK_TEXT, "qav")
@@ -844,45 +852,71 @@ driver.back()
 
 
 ## **`find_element(By.XPATH, "")`**
-### Understanding XPath
 
-- `find_element(By.XPATH, "")` & `find_elements(By.XPATH, "")`:
-  - Return element(s) that match the specified XPath query.
+- `find_element(By.XPATH, "…")` and `find_elements(By.XPATH, "…")`:
+  - Find element(s) that match the given **XPath** expression.
+  - `find_element(...)` returns **one** matching element (the first match).
+  - `find_elements(...)` returns a **list** of all matching elements.
 
-- **XPath** is a query language for searching and locating nodes in an **XML document**.
-  - Supported by all major web browsers.
-  - Used in Selenium to find elements when **ID, name, or class attributes** are not available.
-  - Powerful for navigating complex HTML structures.
+- **XPath** is a query language for locating nodes in a tree structure.
+  - Web pages are written in **HTML**, and the browser represents them as a **DOM tree**, which XPath can query.
+  - Selenium supports XPath in all major browsers.
+  - XPath is useful when **id/name/class** selectors are missing, duplicated, or unstable.
+  - It’s powerful for navigating **nested or complex** HTML structures.
 
-## Basic XPath Syntax
 
-```{.html}
+## Basic XPath Pattern
+```{.python}
 //tag_name[@attribute='value']
 ```
 
-- `//` → Selects elements anywhere in the document.
-- `tag_name` → HTML tag (`input`, `div`, `span`, etc.).
-- `@attribute` → Attribute name (`id`, `class`, `aria-label`, etc.).
-- `value` → Attribute's assigned value.
+- `//` → search **anywhere** in the document
+- `tag_name` → HTML tag name (`input`, `div`, `span`, `table`, etc.)
+- `@attribute` → attribute name (`id`, `class`, `aria-label`, `role`, `data-*`, etc.)
+- `'value'` → the attribute’s value (quoted)
 
 
 
-## Absolute vs. Relative XPath
 
-- **Absolute XPath** → Defines the full path from the root node.
-  - Reliable if the webpage structure does not change.
-- **Relative XPath** → Defines the path starting from a known element.
-  - More flexible—doesn’t break as easily if the structure changes.
+## XPath vs. Full XPath
+<div style="display:block; margin:-25px;"></div>
+
+When you right-click an element in **Chrome DevTools** → **Copy**, you often see:
+
+- **Copy XPath** (often a *relative-style* XPath)
+  - Typically starts with `//...`
+  - Tries to find the element using attributes and structure
+  - Usually **more flexible** if the page layout changes
+
+- **Copy Full XPath**
+  - Typically starts with `/html/body/...`
+  - A complete path from the root of the document tree
+  - Often **fragile**: if the page structure changes, it can break easily
+
+<div style="display:block; margin:-15px;"></div>
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+  <blockquote>
+    In practice: prefer **XPath** (the shorter one) over **Full XPath** when possible.
+  </blockquote>
+</div>
 
 
-## Example: Finding a Table Element with XPath
 
-- XPath can use attributes **other than ID, name, or class** to locate elements.
-- Suppose we want to retrieve data from a **second table** on a webpage.
-- The table contains multiple `<tr>` (rows) and `<th>` (headers) **without** an easily identifiable ID or class.
-- `find_element(By.TAG_NAME, "")` is **not reliable** due to multiple `<tr>` and `<th>` tags.
+## Example: Finding the 2nd Table with XPath
 
-## Extracting XPath from Developer Tools
+- Suppose we want the **second `<table>`** on a page, but the tables have no unique `id` or `class`.
+- Using `find_element(By.TAG_NAME, "table")` is **too vague** because it returns only the **first** table.
+- XPath can target the second one:
+
+::: fragment
+```{.python}
+# second table on the page:
+second_table = driver.find_element(By.XPATH, "(//table)[2]")
+```
+
+:::
+
+## 🛠️ Extracting XPath from Developer Tools
 
 :::: {.nonincremental}
 
@@ -898,7 +932,8 @@ driver.back()
 /html/body/form/fieldset/div/div/table/tbody/tr[1]/td[1]
 ```
 
-## Finding an Element Using XPath
+
+## 🎯 Example: Finding an Element Using XPath
 :::{.nonincremental}
 - Locate **"Tiger Nixon"** in the second table:
 
@@ -909,25 +944,27 @@ elt = driver.find_element(By.XPATH, '//*[@id="table02"]/tbody/tr[1]/td[1]')
 print(elt.text)  # Output the extracted text
 ```
 
+
+
 ## When to Use XPath
 
 - **Use XPath when:**
   - The element lacks a unique **ID** or **class**.
   - Other locator methods (`By.ID`, `By.CLASS_NAME`, etc.) **don't work**.
 - **Limitations:**
-  - XPath is **less efficient** than ID-based locators.
+  - XPath can be **less efficient** than ID-based locators.
   - Page structure changes may break XPath-based automation.
 
 - **For our tasks, however, XPath remains a reliable and effective method!**
 
 
 
-## **Retrieving Attribute Values with `get_attribute()`**
+## 🧾 Retrieving Attribute Values with `get_attribute()`
 
 
 :::: {.nonincremental}
-::: {.panel-tabset}
-## (1) 
+::: fragment
+#### HTML Example
 
 - `get_attribute()` extracts an element's **attribute value**.
 - Useful for retrieving **hidden** properties not visible on the page.
@@ -937,8 +974,10 @@ print(elt.text)  # Output the extracted text
 <input id="btn" class="btn" type="button" onclick="change_text(this)" value="Delete">
 ```
 
+:::
 
-## (2)
+::: fragment
+#### Python Example
 
 ```{.python}
 driver.find_element(By.XPATH, '//*[@id="table01"]/tbody/tr[2]/td[3]/a').get_attribute('href')
@@ -948,23 +987,14 @@ driver.find_element(By.XPATH, '//*[@id="btn"]').get_attribute('value')
 :::
 ::::
 
-## Web-scrapping with Python `selenium`
 
-Let's do [**Classwork 4**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)!
-
-
-
-# **`NoSuchElementException` and `WebDriverWait`** {background-color="#1c4982"}
-
-
-## `NoSuchElementException` and `try-except` blocks
+## 🚫🔎 `NoSuchElementException` and `try-except` blocks
 
 ```{.python}
-from selenium.common.exceptions import NoSuchElementException
 try:
     elem = driver.find_element(By.XPATH, "element_xpath")
     elem.click()
-except NoSuchElementException:
+except:
     pass
 ```
 
@@ -975,164 +1005,144 @@ except NoSuchElementException:
 - This solution is to address the **inconsistency** in the DOM among the seemingly same pages.
 
 
-## Explicit wait with `time.sleep()`
+
+## Web-scrapping with Python `selenium`
+
+Let's do [**Classwork 4**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-04.html)!
+
+
+
+# ⏳ **`WebDriverWait`** {background-color="#1c4982"}
+
+## 🆚⏱️ Two different “waits”
+
+- **Pause to respect servers** (politeness):
+  - Use **`time.sleep(random.uniform(a, b))`** as a small *human-like* delay **between actions/pages**.
+  - This helps avoid hammering a website with rapid-fire requests.
+  - **Use `time.sleep(random.uniform())`** for *politeness* (respect servers).
+
+- **Wait for the page to be ready** (robustness):
+  - Use **`WebDriverWait()`** + a condition (presence/clickable).
+  - This prevents flaky failures on slow networks or busy sites.
+  - **Use `WebDriverWait()`** for *robustness* (wait for conditions).
+
+
+<div style="display:block; margin:-15px;"></div>
+<div class="fragment" style="font-size:1.75rem; text-align:center; margin-top:1.5rem;">
+  <blockquote>
+    Best practice: **Use both**—`WebDriverWait` for robustness, and small randomized sleeps for politeness.
+  </blockquote>
+</div>
+
+
+
+
+## 🤝🎲 Polite Scraping: Randomized Pauses with `time.sleep(random.uniform())`
+
+```{.python}
+import time, random
+
+# Example: polite delay between actions/pages
+time.sleep(random.uniform(0.5, 1.5))  # small jitter (adjust as needed)
+```
+
+- After each page load, click, or data extraction, add a **small randomized pause**.
+- This is not about “waiting for the DOM”—it is about **respecting servers** and reducing bursty traffic.
+
+
+## ⚠️😴 Why `time.sleep()` Alone is Not Robust
 
 ```{.python}
 import time
 
-# example webpage
 url = "https://qavbox.github.io/demo/delay/"
 driver.get(url)
 
 driver.find_element(By.XPATH, '//*[@id="one"]/input').click()
-time.sleep(5)
+
+time.sleep(2)  # blind wait: always 2 seconds
+
 element = driver.find_element(By.XPATH, '//*[@id="two"]')
 element.text
 ```
 
-
--  The `time.sleep()` method is an explicit wait to set the condition to be an exact time period to wait.
-
-- In general, a more efficient solution than `time.sleep()` would be to make `WebDriver()` wait only as long as required. 
-
-
+- `time.sleep()` is a **blind wait**:
+  - If content loads **faster**, you waste time.
+  - If content loads **slower**, your code may crash (element not found).
+- For reliable automation/scraping, use **condition-based waits**.
 
 
 
-## Implicit wait with `implicitly_wait()`
+## ✅👀 Robust Wait for Presence (exists in DOM) with `WebDriverWait()` + `expected_conditions`
 
 ```{.python}
-driver.find_element(By.XPATH, '//*[@id="oneMore"]/input[1]').click()
-driver.implicitly_wait(10)  # Wait up to 10 seconds for elements to appear
-element2 = driver.find_element(By.ID, 'delay')
-element2.text
-```
+driver.get("https://qavbox.github.io/demo/delay/")
+driver.find_element(By.XPATH, '//*[@id="one"]/input').click()
 
-
-- Implicit wait with `implicitly_wait()` directs the `webdriver` to wait for a certain measure of time before throwing an exception. 
-  - Applies globally for the lifetime of the driver session.
-
-- Once this time is set, `webdriver` will wait for the element before the exception occurs.
-
-
-
-
-
-## Explicit wait with  `WebDriverWait` and `EC`
-
-:::: {.nonincremental}
-::: {.panel-tabset}
-## (0)
-
-- An explicit wait allows you to **wait for a specific condition** before continuing.
-- Uses:
-  - Wait for elements to **appear**, **be visible**, or **be clickable**.
-  - More flexible and precise than implicit waits.
-
-```{.python}
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-```
-
-## (1)
-
-- To wait for `presence_of_element_located`:
-
-```{.python}
-element = ( 
-  WebDriverWait(driver, 20)  # 20 is timeout in seconds when an expectation is called
-  .until(
-    EC.presence_of_element_located(
-      (By.XPATH, "element_xpath")
-      )
+try:
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="two"]'))
     )
-) 
+    print(element.text)
+except TimeoutException:
+    print("Timed out: element did not appear within 10 seconds.")
 ```
 
+- Good when the element is added to the DOM but might not be visible yet.
 
-## (2)
-- To wait for `visibility_of_element_located`:
+
+## ✅🖱️ Robust Wait for Clickable (Visible + Enabled) with `WebDriverWait()` + `expected_conditions`
 
 ```{.python}
-element = (
-  WebDriverWait(driver, 20)
-  .until(
-    EC.visibility_of_element_located(
-      (By.CSS_SELECTOR, "element_css")
-      )
-  )
+btn = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.XPATH, '//*[@id="one"]/input'))
 )
+btn.click()
 ```
 
+- Best when you want to click reliably.
 
 
-
-
-## (3)
-- To wait for `element_to_be_clickable`:
+## 🤝 A Common Pattern (Robust + Polite)
 
 ```{.python}
-element = (
-  WebDriverWait(driver, 20)
-  .until(
-    EC.element_to_be_clickable(
-      (By.LINK_TEXT, "element_link_text")
-      )
-    )
+# Robust: wait until the table is present
+table = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.TAG_NAME, "table"))
 )
+
+# Extract something...
+html = table.get_attribute("outerHTML")
+
+# Polite: pause before the next request/action
+time.sleep(random.uniform(1, 3))
 ```
 
 
-
-::: 
-::::
-
-# **Selenium with `pd.read_html()` for Table Scrapping** {background-color="#1c4982"}
+# 📋🔎 **Selenium with `pd.read_html()` for Table Scrapping** {background-color="#1c4982"}
 
 ## Selenium with `pd.read_html()` for Table Scrapping
 - Yahoo! Finance has probably renewed its database system, so that `yfinance` does not work now.
 
-- [Yahoo! Finance](https://finance.yahoo.com/quote/NVDA/history/?p=NVDA&period1=1672531200&period2=1743379200) uses web table to display historical data about a company's stock.
+- [Yahoo! Finance](https://finance.yahoo.com/quote/NVDA/history/?p=NVDA&period1=1672531200&period2=1772323200) uses web table to display historical data about a company's stock.
 
 - Let's use Selenium with `pd.read_html()` to collect stock price data!
 
 
-## Selenium with `pd.read_html()` for Yahoo! Finance Data
-
-::: {.panel-tabset}
-## Setup
-```{.python}
-import pandas as pd
-import os, time, random
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from io import StringIO
-
-# Set working directory
-os.chdir('/Users/bchoe/.../lecture-code/')
-
-# Launch Chrome browser
-driver = webdriver.Chrome()
-
-```
-
-- `StringIO` turns that string into a file-like object, which is what `pd.read_json()` expects moving forward.
-
-
-## URL
+## 💹📈 Selenium with `pd.read_html()` for Yahoo! Finance Data
 
 ```{.python}
 # Load content page
-url = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1743379200'
+url = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200'
 driver.get(url)
 time.sleep(random.uniform(3, 5))  # wait for table to load
 ```
 
 - `period1` and `period2` values for Yahoo Finance URLs uses **Unix timestamps** (number of seconds since January 1, 1970), 
   - 1672531200 → 2023-01-01
-  - 1743379200 → 2025-03-31
+  - 1772323200 → 2026-03-01
 
-## `get_attribute("outerHTML")`
+## 🧾🔍 `get_attribute("outerHTML")`
 
 ```{.python}
 # Extract the <table> HTML element
@@ -1142,11 +1152,10 @@ table_html = driver.find_element(By.TAG_NAME, 'table').get_attribute("outerHTML"
 df = pd.read_html(StringIO(table_html))[0]
 ```
 
+- `StringIO` turns that string into a file-like object, which is what `pd.read_json()` expects moving forward.
+
 - `.get_attribute("outerHTML")`: gets the entire HTML from the WebElement.
 
-- `pd.read_html()` parses HTML tables from a given URL or from raw HTML content, and returns a list of DataFrames.
-
-:::
 
 ## Web-scrapping with Python `selenium`
 
