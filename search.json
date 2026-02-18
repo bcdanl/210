@@ -256,7 +256,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Data with Python selenium\n\n\nFebruary 18, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-wk/wk-05.html",
@@ -1943,7 +1943,7 @@
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Data with Python selenium\n\n\nFebruary 18, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -2196,5 +2196,26 @@
     "title": "DANL 210 - Homework Submission",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html",
+    "href": "danl-cw/danl-210-cw-04.html",
+    "title": "Classwork 4",
+    "section": "",
+    "text": "Below is to set up the web scrapping environment with Python selenium:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#result",
+    "href": "danl-cw/danl-210-cw-04.html#result",
+    "title": "Classwork 4",
+    "section": "Result",
+    "text": "Result\nAfter the loop finishes, df contains five identical rows:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-04.html#question-2-scrape-with-a-nested-for-loop",
+    "href": "danl-cw/danl-210-cw-04.html#question-2-scrape-with-a-nested-for-loop",
+    "title": "Classwork 4",
+    "section": "Question 2 — Scrape with a nested for loop",
+    "text": "Question 2 — Scrape with a nested for loop\nTask: Do the same scraping task as Question 1, but this time use a nested for loop:\n\nOuter loop: iterate over rows (tr)\nInner loop: iterate over columns (td)\n\nIn the inner loop, append value to the data list.\n\n\nAnswer:\n\n# TODO: find out the number of rows (&lt;tr&gt;) and the number of columns (&lt;td&gt;) in each row in the body table (&lt;tbody&gt;)\nnrows = \nncols = \n\ndf = pd.DataFrame()\nfor i in range(1, nrows + 1):\n  \n    data = []    # creating an empty list for one row\n    \n    for j in range(1, ncols + 1):  # Iterate over column positions\n        \n        # TODO: scrape each cell's text in a single row\n        value =\n        \n        # TODO: append value to the data list\n\n        \n    obs = pd.DataFrame([data])\n    df = pd.concat([df, obs], ignore_index=True)"
   }
 ]

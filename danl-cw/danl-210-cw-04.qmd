@@ -1,0 +1,235 @@
+---
+title: Classwork 4
+subtitle: Scrapping Data with Python `selenium`
+date: 2026-02-18
+execute: 
+  eval: false
+  echo: false
+  warning: false
+  message: false
+  
+from: markdown+emoji
+---
+
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(DT)
+library(reticulate)
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+<div style="text-align: center; width: 75%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif" style="width: 100%; margin-bottom: 0px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+<br>
+
+
+Below is to set up the web scrapping environment with Python `selenium`:
+
+```{.python}
+import pandas as pd
+import os, time, random
+from io import StringIO
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+# Set the working directory path
+wd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+```
+
+<br>
+
+
+# Collecting Rows into a pandas `DataFrame`
+
+```{.python}
+df = pd.DataFrame()
+
+for i in range(1, 6):
+
+    obs_lst = ["Ava", "Geneseo", 2025]
+    
+    obs = pd.DataFrame([obs_lst])
+    df = pd.concat([df, obs], ignore_index = True)
+    
+df.columns = ['name', 'school', 'year']
+```
+
+1. **Start with an empty `DataFrame`**
+- `df = pd.DataFrame()` creates an empty table (no rows yet).
+
+2. **Repeat the same process five times**
+- `for i in range(1, 6):` runs the indented block **5 times** (for `i = 1, 2, 3, 4, 5`).
+
+3. **Create one “observation” as a list**
+- `obs_lst = ["Ava", "Geneseo", 2026]` is a Python list with **3 values**.
+- Think of this list as **one row of data** you want to add.
+
+4. **Turn the list into a one-row `DataFrame`**
+- `obs = pd.DataFrame([obs_lst])`
+- Wrapping `obs_lst` with brackets (`[obs_lst]`) makes it a **list of rows** (2D), so pandas creates a **1-row DataFrame**.
+- Because no column names are given, pandas assigns default column labels: `0`, `1`, `2`.
+
+5. **Append the new row to `df` by concatenation**
+- `df = pd.concat([df, obs], ignore_index=True)`
+- `pd.concat([...])` stacks DataFrames **row-wise** (adds rows).
+- `ignore_index=True` resets the row index to `0, 1, 2, ...` so the final table has clean numbering.
+
+6. **Assign column names to the `DataFrame`**
+
+- `df.columns = ['name', 'school', 'year']` renames the columns of `df`.
+- This replaces the default column labels (`0`, `1`, `2`) with meaningful names:
+  - `name` for the first column
+  - `school` for the second column
+  - `year` for the third column
+- After this, you can refer to columns using `df['name']`, `df['school']`, and `df['year']`.
+
+## Result
+After the loop finishes, `df` contains **five identical rows**:
+
+```{r}
+#| echo: false
+#| eval: true
+
+
+rmarkdown::paged_table(
+  data.frame(
+    name = rep("Ava", 5),
+    school = rep("Geneseo", 5),
+    year = rep(2025, 5)
+  )
+)
+
+```
+
+
+
+<br>
+
+# Question 1.
+**Task:** Using Selenium and a **single `for` loop**, scrape the table on the EIA page into a **pandas `DataFrame`**.
+
+  - [https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
+  
+### Hints
+- Start by scraping the body rows (`tr`) for cell values (`td`)
+- You can build XPaths with an f-string inside a loop.
+
+Example idea (XPath f-string):
+
+```{python}
+#| eval: false
+#| echo: true
+for i in range(1, 10):
+    xpath = f'//*[@id="main-content"]//table/tbody/tr[{i}]/td[1]'
+    print(xpath)
+```
+
+
+*Answer*:
+```{python}
+#| eval: false
+#| echo: true
+
+# TODO: find out the number of rows (<tr>) in the body table (<tbody>)
+nrows = 
+
+df = pd.DataFrame()
+for i in range(1, nrows + 1):
+
+    # TODO: scrape each cell's text in a single row
+    mon_yr = 
+    retail_price = 
+    refining = 
+    distribution_marketing = 
+    taxes = 
+    crude_oil = 
+    
+    obs_lst = [mon_yr, retail_price, refining, distribution_marketing, taxes, crude_oil]
+    obs = pd.DataFrame([obs_lst])
+    
+    df = pd.concat([df, obs], ignore_index = True)
+
+
+```
+
+<br><br>
+
+# Question 2 — Scrape with a nested `for` loop
+
+**Task:** Do the same scraping task as Question 1, but this time use a **nested `for` loop**:
+
+- Outer loop: iterate over **rows** (`tr`)
+- Inner loop: iterate over **columns** (`td`)
+  - In the inner loop, append `value` to the `data` list.
+
+
+*Answer*:
+```{python}
+#| eval: false
+#| echo: true
+
+# TODO: find out the number of rows (<tr>) and the number of columns (<td>) in each row in the body table (<tbody>)
+nrows = 
+ncols = 
+
+df = pd.DataFrame()
+for i in range(1, nrows + 1):
+  
+    data = []    # creating an empty list for one row
+    
+    for j in range(1, ncols + 1):  # Iterate over column positions
+        
+        # TODO: scrape each cell's text in a single row
+        value =
+        
+        # TODO: append value to the data list
+
+        
+    obs = pd.DataFrame([data])
+    df = pd.concat([df, obs], ignore_index=True)
+
+```
+
+<br><br>
+
+
+# Discussion
+
+
+<font size = "5">Welcome to our Classwork 4 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 4.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 4 materials or need clarification on any points, don't hesitate to ask here. 
+
+All comments will be stored [here](https://github.com/bcdanl/210/discussions/).
+
+Let's collaborate and learn from each other!
+
+
