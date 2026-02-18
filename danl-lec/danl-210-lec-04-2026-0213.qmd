@@ -1067,6 +1067,12 @@ time.sleep(random.uniform(0.5, 1.5))  # small jitter (adjust as needed)
 - This is not about “waiting for the DOM”—it is about **respecting servers** and reducing bursty traffic.
 
 
+## Web-scrapping with Python `selenium`
+
+Let's do [**Classwork 5**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-05.html)!
+
+
+
 ## ⚠️😴 Why `time.sleep()` Alone is Not Robust
 
 ```{.python}
@@ -1173,6 +1179,11 @@ df = pd.read_html(StringIO(table_html))[0]
 
 - `.get_attribute("outerHTML")`: gets the entire HTML from the WebElement.
 
+
+
+## Web-scrapping with Python `selenium`
+
+Let's do [**Classwork 6**](https://bcdanl.github.io/210/danl-cw/danl-210-cw-06.html)!
 
 
 

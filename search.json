@@ -1621,7 +1621,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#setting-up---webdriver.chrome",
     "title": "Lecture 4",
     "section": "🧩 Setting up - webdriver.Chrome()",
-    "text": "🧩 Setting up - webdriver.Chrome()\n\n\nTo begin with, we import (1) webdriver from selenium and (2) the By and Options classes.\n\nwebdriver.Chrome() opens the Chrome browser that is being controlled by automated test software, selenium.\n\n\n\nimport pandas as pd\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)"
+    "text": "🧩 Setting up - webdriver.Chrome()\n\n\nTo begin with, we import (1) webdriver from selenium and (2) the By and Options classes.\n\nwebdriver.Chrome() opens the Chrome browser that is being controlled by automated test software, selenium.\n\n\n\nimport pandas as pd\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#get-method-in-webdriver",
@@ -2217,5 +2217,19 @@
     "title": "Classwork 4",
     "section": "Question 2 — Scrape with a nested for loop",
     "text": "Question 2 — Scrape with a nested for loop\nTask: Do the same scraping task as Question 1, but this time use a nested for loop:\n\nOuter loop: iterate over rows (tr)\nInner loop: iterate over columns (td)\n\nIn the inner loop, append value to the data list.\n\n\nAnswer:\n\n# TODO: find out the number of rows (&lt;tr&gt;) and the number of columns (&lt;td&gt;) in each row in the body table (&lt;tbody&gt;)\nnrows = \nncols = \n\ndf = pd.DataFrame()\nfor i in range(1, nrows + 1):\n  \n    data = []    # creating an empty list for one row\n    \n    for j in range(1, ncols + 1):  # Iterate over column positions\n        \n        # TODO: scrape each cell's text in a single row\n        value =\n        \n        # TODO: append value to the data list\n\n        \n    obs = pd.DataFrame([data])\n    df = pd.concat([df, obs], ignore_index=True)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-2",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-2",
+    "title": "Lecture 4",
+    "section": "Web-scrapping with Python selenium",
+    "text": "Web-scrapping with Python selenium\nLet’s do Classwork 5!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-3",
+    "href": "danl-lec/danl-210-lec-04-2026-0213.html#web-scrapping-with-python-selenium-3",
+    "title": "Lecture 4",
+    "section": "Web-scrapping with Python selenium",
+    "text": "Web-scrapping with Python selenium\nLet’s do Classwork 6!"
   }
 ]
