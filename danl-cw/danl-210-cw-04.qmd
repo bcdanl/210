@@ -94,8 +94,9 @@ df.columns = ['id', 'name', 'school', 'year']
 
 5. **Append the new row to `df` by concatenation**
 - `df = pd.concat([df, obs], ignore_index=True)`
-- `pd.concat([...])` stacks DataFrames **row-wise** (adds rows).
-- `ignore_index=True` resets the row index to `0, 1, 2, ...` so the final table has clean numbering.
+- **`pd.concat(...)` stacks DataFrames **row-wise** (adds rows).**
+  - The first argument `[df, obs]` for `pd.concat(...)` is a **list** of **DataFrames**.
+  - `ignore_index=True` resets the row index to `0, 1, 2, ...` so the final table has clean numbering.
 
 6. **Assign column names to the `DataFrame`**
 
@@ -116,6 +117,7 @@ After the loop finishes, `df` contains **five identical rows**:
 
 rmarkdown::paged_table(
   data.frame(
+    id = c(1,2,3,4,5),
     name = rep("Ava", 5),
     school = rep("Geneseo", 5),
     year = rep(2025, 5)
@@ -174,6 +176,157 @@ for i in range(1, nrows + 1):
 
 
 ```
+
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+### Web-scraping Strategy with XPath
+
+**Step 0. Set up your environment**
+
+- Import the libraries/modules you need (e.g., Selenium, pandas, time).
+- Set your working directory (so your output file saves where you expect).
+
+**Step 1. Find an XPath pattern for the element(s) you want**
+
+- Use your browser’s Developer Tools (Inspect) to locate the target element.
+- Identify what changes across repeated elements (often an index like `[1]`, `[2]`, `[3]`).
+
+**Step 2. Build a dynamic XPath using an f-string**
+
+- Turn the XPath pattern into a template.
+- Replace the changing part (usually the index) with `{i}` so you can loop over it.
+
+**Step 3. Write a loop to collect the data**. 
+Things to decide before you code:
+
+- **How many times to iterate** (e.g., number of rows, pages, or cards).
+- **How to locate elements**
+  - `find_element()` for a single element.
+  - `find_elements()` for a list of elements.
+- **How to store results**
+  - Append each observation (row) to a list of dictionaries.
+  - Convert the list into a pandas `DataFrame` at the end.
+
+**Step 4. Export the DataFrame to a CSV**
+
+- Use `df.to_csv("filename.csv", index=False)` so the CSV is clean and ready to use.
+
+```{python}
+#| echo: true
+
+# %%
+# =============================================================================
+# Step 0. Set up your environment
+# =============================================================================
+import pandas as pd
+import os, time, random
+from io import StringIO
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+# Set the working directory path
+wd_path = '/Users/bchoe/Documents/DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+
+
+# %%
+# =============================================================================
+# Scrapping
+# =============================================================================
+url = 'https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php'
+
+driver.get(url)
+
+
+# Step 1. Find an XPath pattern for the element(s) you want
+# Mon-yr
+# Row 1 
+# /html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[1]/td[1]
+# Row 2
+# /html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[2]/td[1]
+
+# retail price
+# /html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[1]/td[2]
+# /html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[2]/td[2]
+
+
+
+# How many times to iterate
+# TODO: find out the number of rows (<tr>) in the body table (<tbody>)
+table = driver.find_element(By.TAG_NAME, 'tbody')
+rows = table.find_elements(By.TAG_NAME, 'tr')
+nrows = len(rows)
+
+
+# Step 3. Write a loop to collect the data
+df = pd.DataFrame()
+
+for i in range(1, nrows + 1):
+
+    # Step 2. Build a dynamic XPath using an f-string
+    xpath_mon_yr = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[1]'
+    xpath_retail_price = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[2]'
+    xpath_refining = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[3]'
+    xpath_distribution_marketing = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[4]'
+    xpath_taxes = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[5]'
+    xpath_crude_oil = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[6]'
+    
+    # How to locate elements
+    mon_yr = driver.find_element(By.XPATH, 
+                                 xpath_mon_yr).text
+    
+    retail_price = driver.find_element(By.XPATH, 
+                                       xpath_retail_price).text
+    refining = driver.find_element(By.XPATH, 
+                                   xpath_refining).text
+    distribution_marketing = driver.find_element(By.XPATH, 
+                                                 xpath_distribution_marketing).text
+    taxes = driver.find_element(By.XPATH, 
+                                xpath_refining).text
+    crude_oil = driver.find_element(By.XPATH, 
+                                    xpath_refining).text
+    
+    # How to store results
+    obs_lst = [mon_yr, retail_price, refining, 
+               distribution_marketing, taxes, crude_oil]
+    obs = pd.DataFrame([obs_lst])
+    
+    df = pd.concat([df, obs], ignore_index = True)
+
+
+
+# Step 4. Export the DataFrame to a CSV
+# Column names
+df.columns = ['mon_yr', 'retail_price', 'refining', 
+              'distribution_marketing', 'taxes', 'crude_oil']
+
+
+df.to_csv('data/eia_2026_0220', index= False)
+
+
+```
+
+
+
+:::
 
 <br><br>
 
