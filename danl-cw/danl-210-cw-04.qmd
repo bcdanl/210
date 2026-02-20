@@ -68,13 +68,13 @@ driver = webdriver.Chrome(options=options)
 df = pd.DataFrame()
 
 for i in range(1, 6):
-
-    obs_lst = ["Ava", "Geneseo", 2025]
+    
+    obs_lst = [i, "Ava", "Geneseo", 2025]
     
     obs = pd.DataFrame([obs_lst])
     df = pd.concat([df, obs], ignore_index = True)
     
-df.columns = ['name', 'school', 'year']
+df.columns = ['id', 'name', 'school', 'year']
 ```
 
 1. **Start with an empty `DataFrame`**
@@ -84,7 +84,7 @@ df.columns = ['name', 'school', 'year']
 - `for i in range(1, 6):` runs the indented block **5 times** (for `i = 1, 2, 3, 4, 5`).
 
 3. **Create one “observation” as a list**
-- `obs_lst = ["Ava", "Geneseo", 2026]` is a Python list with **3 values**.
+- `obs_lst = [i, "Ava", "Geneseo", 2026]` is a Python list with **3 values**.
 - Think of this list as **one row of data** you want to add.
 
 4. **Turn the list into a one-row `DataFrame`**

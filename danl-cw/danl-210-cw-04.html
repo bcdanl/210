@@ -310,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 17, 2026</p>
+      <p class="date-modified">February 20, 2026</p>
     </div>
   </div>
     
@@ -356,13 +356,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    obs_lst <span class="op">=</span> [<span class="st">"Ava"</span>, <span class="st">"Geneseo"</span>, <span class="dv">2025</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    obs_lst <span class="op">=</span> [i, <span class="st">"Ava"</span>, <span class="st">"Geneseo"</span>, <span class="dv">2025</span>]</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([obs_lst])</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'name'</span>, <span class="st">'school'</span>, <span class="st">'year'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'id'</span>, <span class="st">'name'</span>, <span class="st">'school'</span>, <span class="st">'year'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
 <li><strong>Start with an empty <code>DataFrame</code></strong></li>
 </ol>
@@ -379,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Create one “observation” as a list</strong></li>
 </ol>
 <ul>
-<li><code>obs_lst = ["Ava", "Geneseo", 2026]</code> is a Python list with <strong>3 values</strong>.</li>
+<li><code>obs_lst = [i, "Ava", "Geneseo", 2026]</code> is a Python list with <strong>3 values</strong>.</li>
 <li>Think of this list as <strong>one row of data</strong> you want to add.</li>
 </ul>
 <ol start="4" type="1">
