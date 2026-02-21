@@ -1,0 +1,296 @@
+---
+title: Homework 2
+subtitle: "Scrapping Data with Python `selenium`"
+date: 2026-02-20
+from: markdown+emoji
+execute: 
+  eval: false
+format:
+  html:
+    code-fold: false
+css: styles.css
+---
+
+# 📌 Directions
+
+- Submit your Python script (*.py) to Brightspace using this format:
+  - `danl-210-hw2-LASTNAME-FIRSTNAME.py`  
+    (e.g., `danl-210-hw2-choe-byeonghak.py`)
+
+- **Due:** **March 4, 2026, 10:30 A.M.**
+- Questions? Email Prof. Choe: <bchoe@geneseo.edu>
+
+<br>
+
+# Setup
+
+```{.python}
+import pandas as pd
+import os, time, random
+from io import StringIO
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+# Set the working directory path
+wd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+```
+
+
+<br><br>
+
+# Part 1. Collecting the IMDb Data using Python `selenium`
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/IMDB_Logo.png" width="600px">
+</p>
+
+Write Python code that uses **Selenium** to collect movie and TV series information from IMDb.
+
+## Target page
+
+Go to the IMDb search page for:
+
+- **Top 100 Family Movies and TV Shows (sorted by Popularity)**  
+  <https://www.imdb.com/search/title/?genres=family&sort=popularity,desc&count=100>
+
+## Tasks
+
+1. Use Selenium to open the target page.
+2. For each of the 100 titles listed on the page, scrape the following fields and store them in a single pandas DataFrame:
+  - `ranking` (e.g., `1`, `2`, `3`)
+  - `title` (e.g., *How to Train Your Dragon*)
+  - `year` (e.g., `2025`, `2025-`)
+  - `runtime` (e.g., `1h 56m`, `1h 40m`)
+  - `rating` (e.g., `PG`, `TV-G`, `G`)
+  - `is_series` (e.g., True if `TV Series`; False otherwise)
+  - `metascore` (e.g., `56`, `74`)
+  - `imdb_score` (e.g., `7.6`, `6.5`)
+  - `votes` (e.g., `1.4k`, `70k`)
+  - `plot` (one-sentence description shown for the title)
+
+3. Export the final DataFrame to a CSV file (e.g., `imdb_family_top100.csv`).
+
+
+
+::: callout-note
+- To handle **inconsistencies in the webpage structure** (some titles may be missing fields):
+  - Use a `try`–`except` block to **skip missing elements safely** (e.g., no metascore, no rating) and fill with `pd.NA` or `''`.
+  - Use an `if`–`elif`–`else` chain (with the `in` keyword) to classify whether an item is a **TV Series** or a **Movie** based on the text you scraped. For example, check whether the text contains `"TV Series"` and set `is_series` accordingly.
+  
+:::
+
+
+
+## Helpful Data-Cleaning Snippet: Splitting `ranking_title`
+
+Sometimes you may scrape the rank and title together as a single string like:
+
+- **"1. Snow White"**
+- **"2. Freakier Friday"**
+
+If your DataFrame has a combined column named `ranking_title`, you can split it into `ranking` and `title` like this:
+
+```{.python}
+# Example: "1. Snow White" -> ranking="1", title=" Snow White"
+df[["ranking", "title"]] = df["ranking_title"].str.split(".", n=1, expand=True)
+
+# Optional: drop the original combined column
+df = df.drop(columns=["ranking_title"])
+```
+
+## Changing the Order of Columns
+
+In pandas, you can **reorder columns** by selecting them in the exact order you want.
+
+- `df[[...]]` means: “keep only these columns, and arrange them in this order.”
+- This is useful right before exporting to CSV so your dataset has a clean, consistent layout.
+- If you include a column name that does **not** exist (typo, missing column), pandas will raise a `KeyError`.
+
+```{.python}
+# Reorder columns in df (and keep only these columns)
+df = df[[
+    "ranking", "title", "year", "runtime", "rating",
+    "is_series", "metascore", "imdb_score", "votes", "plot"
+]]
+```
+
+
+## Output DataFrame
+
+Finally, export your results:
+
+```{.python}
+df.to_csv("data/imdb_family_top100.csv", index=False)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+
+readr::read_csv("https://bcdanl.github.io/data/imdb_family_2026_0220.csv") |> 
+  rmarkdown::paged_table(
+    options = list(max.rows = 12350)
+  )
+
+
+```
+
+
+
+<br><br>
+
+# Part 2. Collecting NBA Player Salaries (1999–2000 to 2025–2026) with `pandas.read_html()` + `selenium`
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/nba.png" width="500px">
+</p>
+
+
+Write Python code that uses **Selenium** (to navigate pages) and **`pandas.read_html()`** (to extract the salary tables) to collect NBA player salary data from ESPN.
+
+## Target pages
+
+- Main page: <https://www.espn.com/nba/salaries>
+- Year/page format:  
+  `https://www.espn.com/nba/salaries/_/year/{YEAR}/page/{PAGE}`  
+  Example: <https://www.espn.com/nba/salaries/_/year/2026/page/1>
+
+## Tasks
+
+1. Open the ESPN NBA salaries site using Selenium.
+2. Loop over:
+   - **Years:** 2000 through 2026 (these correspond to seasons **1999–2000** through **2025–2026**), and
+   - **Pages:** 1 through the last page for that year.
+3. For each year–page:
+   - Use `pd.read_html()` to read the salary table into a DataFrame.
+   - Clean/rename columns as needed and keep only:
+     - `ranking`
+     - `name_position`
+     - `team`
+     - `salary`
+   - Add a `season` column (e.g., `1999-2000`, `2025-2026`).
+   - Split the `name_position` column into `name` and `position` columns.
+4. Append all pages and years into **one** DataFrame with exactly these columns:
+
+   - `season`
+   - `ranking`
+   - `name`
+   - `position`
+   - `team`
+   - `salary`
+
+5. Finally, export your results:
+
+```{.python}
+dfs.to_csv("data/nba_salary.csv", index=False)
+```
+
+
+### Helpful Parsing Snippet (page count)
+
+ESPN pagination text often looks like:
+
+```{.python}
+p_num = "1 of 12"
+last_page = int(p_num.split(" of ")[1])  # -> 12
+```
+
+Use this to determine how many pages exist for each year, rather than hard-coding page limits.
+
+
+## Respectful Scraping: Add Randomized Delays
+
+- **Be polite to ESPN’s servers:** for **each webpage visit**, pause with a randomized delay before scraping (or before moving to the next page), for example:
+
+```{.python}
+import time
+import random
+
+driver.get(url)
+time.sleep(random.uniform(2, 3))
+```
+
+
+## How to Add a Column to a DataFrame
+
+In pandas, you can create (or overwrite) a column using **square-bracket assignment**:
+
+- `df_example["season"]` refers to the column named `season`.
+- Assigning a single value like `"1999-2000"` will **broadcast** that value to **every row** in the DataFrame.
+- If the column already exists, this will **replace** its values.
+
+
+```{.python}
+df_example = pd.DataFrame({
+    "ranking": [1, 2, 3],
+    "name_position": ["Stephen Curry, G", "Joel Embiid, C", "Nikola Jokic, C"],
+    "team": ["GSW", "PHX", "LAL"],
+    "salary": ["$59,606,817", "$55,224,526", "$55,224,526"]
+})
+
+df_example["season"] = "2025-2026"   # adds a new column to df
+```
+
+
+## Helpful Data-Cleaning Snippet: Splitting `name_position`
+
+```{.python}
+# Example: "Stephen Curry, G" -> name="Stephen Curry", position="G"
+df_example[["name", "position"]] = df_example["name_position"].str.split(", ", n=1, expand=True)
+
+# Optional: drop the original combined column
+df_example = df_example.drop(columns=["name_position"])
+```
+
+## Replacing Values in a String
+
+When you scrape salary values from a webpage, they often come in a **formatted string** like:
+
+- `"$51,915,615"`
+
+Before you can convert salaries to numbers, you need to remove formatting characters such as:
+
+- the dollar sign (`$`)
+- commas (`,`)
+
+In pandas, `.str.replace()` applies a text replacement to **every value in the column** (element-by-element).
+
+```{.python}
+# Remove "$" and "," so the values become plain digits like "51915615"
+dfs["salary"] = dfs["salary"].str.replace("$", "", regex=False)
+dfs["salary"] = dfs["salary"].str.replace(",", "", regex=False)
+```
+
+
+## Output DataFrame
+```{r}
+#| echo: false
+#| eval: true
+
+readr::read_csv("https://bcdanl.github.io/data/nba_salaries_1999-2020_2025-2026.csv") |> 
+  rmarkdown::paged_table()
+
+```
+
+<br><br><br>
+
+---
+
+# ✅ End of Homework 2

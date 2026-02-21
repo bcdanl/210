@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\nHomework 2\n\n\nScrapping Data with Python selenium\n\n\nFebruary 20, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-210-hw-01.html",
@@ -1950,7 +1950,7 @@
     "href": "index.html#homework",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "💻 Homework",
-    "text": "💻 Homework\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "💻 Homework\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\nHomework 2\n\n\nScrapping Data with Python selenium\n\n\nFebruary 20, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-wk/wk-01.html",
@@ -2231,5 +2231,110 @@
     "title": "Lecture 4",
     "section": "Web-scrapping with Python selenium",
     "text": "Web-scrapping with Python selenium\nLet’s do Classwork 6!"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html",
+    "href": "danl-hw/danl-210-hw-02.html",
+    "title": "Homework 2",
+    "section": "",
+    "text": "Submit your Python script (*.py) to Brightspace using this format:\n\ndanl-210-hw2-LASTNAME-FIRSTNAME.py\n(e.g., danl-210-hw2-choe-byeonghak.py)\n\nDue: March 4, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#target-pages",
+    "href": "danl-hw/danl-210-hw-02.html#target-pages",
+    "title": "Homework 2",
+    "section": "Target pages",
+    "text": "Target pages\n\nMain page: https://www.espn.com/nba/salaries\nYear/page format:\nhttps://www.espn.com/nba/salaries/_/year/{YEAR}/page/{PAGE}\nExample: https://www.espn.com/nba/salaries/_/year/2026/page/1"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#tasks",
+    "href": "danl-hw/danl-210-hw-02.html#tasks",
+    "title": "Homework 2",
+    "section": "Tasks",
+    "text": "Tasks\n\nUse Selenium to open the target page.\nFor each of the 100 titles listed on the page, scrape the following fields and store them in a single pandas DataFrame:\n\n\nranking (e.g., 1, 2, 3)\ntitle (e.g., How to Train Your Dragon)\nyear (e.g., 2025, 2025-)\nruntime (e.g., 1h 56m, 1h 40m)\nrating (e.g., PG, TV-G, G)\nis_series (e.g., True if TV Series; False otherwise)\nmetascore (e.g., 56, 74)\nimdb_score (e.g., 7.6, 6.5)\nvotes (e.g., 1.4k, 70k)\nplot (one-sentence description shown for the title)\n\n\nExport the final DataFrame to a CSV file (e.g., imdb_family_top100.csv).\n\n\n\n\n\n\n\nNote\n\n\n\n\nTo handle inconsistencies in the webpage structure (some titles may be missing fields):\n\nUse a try–except block to skip missing elements safely (e.g., no metascore, no rating) and fill with pd.NA or ''.\nUse an if–elif–else chain (with the in keyword) to classify whether an item is a TV Series or a Movie based on the text you scraped. For example, check whether the text contains \"TV Series\" and set is_series accordingly."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#respectful-scraping-add-randomized-delays",
+    "href": "danl-hw/danl-210-hw-02.html#respectful-scraping-add-randomized-delays",
+    "title": "Homework 2",
+    "section": "Respectful Scraping: Add Randomized Delays",
+    "text": "Respectful Scraping: Add Randomized Delays\n\nBe polite to ESPN’s servers: for each webpage visit, pause with a randomized delay before scraping (or before moving to the next page), for example:\n\nimport time\nimport random\n\ndriver.get(url)\ntime.sleep(random.uniform(2, 3))"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#helpful-parsing-snippet-page-count",
+    "href": "danl-hw/danl-210-hw-02.html#helpful-parsing-snippet-page-count",
+    "title": "Homework 2",
+    "section": "Helpful Parsing Snippet (page count)",
+    "text": "Helpful Parsing Snippet (page count)\nESPN pagination text often looks like:\np_num = \"1 of 12\"\nlast_page = int(p_num.split(\" of \")[1])  # -&gt; 12\nUse this to determine how many pages exist for each year, rather than hard-coding page limits."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#how-to-add-a-column-to-a-dataframe",
+    "href": "danl-hw/danl-210-hw-02.html#how-to-add-a-column-to-a-dataframe",
+    "title": "Homework 2",
+    "section": "How to Add a Column to a DataFrame",
+    "text": "How to Add a Column to a DataFrame\nIn pandas, you can create (or overwrite) a column using square-bracket assignment:\n\ndf_example[\"season\"] refers to the column named season.\nAssigning a single value like \"1999-2000\" will broadcast that value to every row in the DataFrame.\nIf the column already exists, this will replace its values.\n\ndf_example = pd.DataFrame({\n    \"ranking\": [1, 2, 3],\n    \"name_position\": [\"Stephen Curry, G\", \"Joel Embiid, C\", \"Nikola Jokic, C\"],\n    \"team\": [\"GSW\", \"PHX\", \"LAL\"],\n    \"salary\": [\"$59,606,817\", \"$55,224,526\", \"$55,224,526\"]\n})\n\ndf_example[\"season\"] = \"2025-2026\"   # adds a new column to df"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#target-page",
+    "href": "danl-hw/danl-210-hw-02.html#target-page",
+    "title": "Homework 2",
+    "section": "Target page",
+    "text": "Target page\nGo to the IMDb search page for:\n\nTop 100 Family Movies and TV Shows (sorted by Popularity)\nhttps://www.imdb.com/search/title/?genres=family&sort=popularity,desc&count=100"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#tasks-1",
+    "href": "danl-hw/danl-210-hw-02.html#tasks-1",
+    "title": "Homework 2",
+    "section": "Tasks",
+    "text": "Tasks\n\nOpen the ESPN NBA salaries site using Selenium.\nLoop over:\n\nYears: 2000 through 2026 (these correspond to seasons 1999–2000 through 2025–2026), and\nPages: 1 through the last page for that year.\n\nFor each year–page:\n\nUse pd.read_html() to read the salary table into a DataFrame.\nClean/rename columns as needed and keep only:\n\nranking\nname_position\nteam\nsalary\n\nAdd a season column (e.g., 1999-2000, 2025-2026).\nSplit the name_position column into name and position columns.\n\nAppend all pages and years into one DataFrame with exactly these columns:\n\nseason\nranking\nname\nposition\nteam\nsalary\n\nFinally, export your results:\n\ndfs.to_csv(\"data/nba_salary.csv\", index=False)\n\nHelpful Parsing Snippet (page count)\nESPN pagination text often looks like:\np_num = \"1 of 12\"\nlast_page = int(p_num.split(\" of \")[1])  # -&gt; 12\nUse this to determine how many pages exist for each year, rather than hard-coding page limits."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#helpful-data-cleaning-snippet-splitting-ranking_title",
+    "href": "danl-hw/danl-210-hw-02.html#helpful-data-cleaning-snippet-splitting-ranking_title",
+    "title": "Homework 2",
+    "section": "Helpful Data-Cleaning Snippet: Splitting ranking_title",
+    "text": "Helpful Data-Cleaning Snippet: Splitting ranking_title\nSometimes you may scrape the rank and title together as a single string like:\n\n“1. Snow White”\n“2. Freakier Friday”\n\nIf your DataFrame has a combined column named ranking_title, you can split it into ranking and title like this:\n# Example: \"1. Snow White\" -&gt; ranking=\"1\", title=\" Snow White\"\ndf[[\"ranking\", \"title\"]] = df[\"ranking_title\"].str.split(\".\", n=1, expand=True)\n\n# Optional: drop the original combined column\ndf = df.drop(columns=[\"ranking_title\"])"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#output",
+    "href": "danl-hw/danl-210-hw-02.html#output",
+    "title": "Homework 2",
+    "section": "Output",
+    "text": "Output\nFinally, export your results:\ndf.to_csv(\"data/imdb_family_top100.csv\", index=False)\n\n\nTo deal with inconsistency in the data structure in the webpage:\n\nUse try-except block\nUse if-elif-else chain (with in keyword) about whether a text of a WebElement includes “TV Series” or not."
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#helpful-data-cleaning-snippet-splitting-name_position",
+    "href": "danl-hw/danl-210-hw-02.html#helpful-data-cleaning-snippet-splitting-name_position",
+    "title": "Homework 2",
+    "section": "Helpful Data-Cleaning Snippet: Splitting name_position",
+    "text": "Helpful Data-Cleaning Snippet: Splitting name_position\n# Example: \"Stephen Curry, G\" -&gt; name=\"Stephen Curry\", position=\"G\"\ndf_example[[\"name\", \"position\"]] = df_example[\"name_position\"].str.split(\", \", n=1, expand=True)\n\n# Optional: drop the original combined column\ndf_example = df_example.drop(columns=[\"name_position\"])"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#output-dataframe",
+    "href": "danl-hw/danl-210-hw-02.html#output-dataframe",
+    "title": "Homework 2",
+    "section": "Output DataFrame",
+    "text": "Output DataFrame\nFinally, export your results:\ndf.to_csv(\"data/imdb_family_top100.csv\", index=False)"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#changing-the-order-of-columns",
+    "href": "danl-hw/danl-210-hw-02.html#changing-the-order-of-columns",
+    "title": "Homework 2",
+    "section": "Changing the Order of Columns",
+    "text": "Changing the Order of Columns\nIn pandas, you can reorder columns by selecting them in the exact order you want.\n\ndf[[...]] means: “keep only these columns, and arrange them in this order.”\nThis is useful right before exporting to CSV so your dataset has a clean, consistent layout.\nIf you include a column name that does not exist (typo, missing column), pandas will raise a KeyError.\n\n# Reorder columns in df (and keep only these columns)\ndf = df[[\n    \"ranking\", \"title\", \"year\", \"runtime\", \"rating\",\n    \"is_series\", \"metascore\", \"imdb_score\", \"votes\", \"plot\"\n]]"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#output-dataframe-1",
+    "href": "danl-hw/danl-210-hw-02.html#output-dataframe-1",
+    "title": "Homework 2",
+    "section": "Output DataFrame",
+    "text": "Output DataFrame"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-02.html#replacing-values-in-a-string",
+    "href": "danl-hw/danl-210-hw-02.html#replacing-values-in-a-string",
+    "title": "Homework 2",
+    "section": "Replacing Values in a String",
+    "text": "Replacing Values in a String\nWhen you scrape salary values from a webpage, they often come in a formatted string like:\n\n\"$51,915,615\"\n\nBefore you can convert salaries to numbers, you need to remove formatting characters such as:\n\nthe dollar sign ($)\ncommas (,)\n\nIn pandas, .str.replace() applies a text replacement to every value in the column (element-by-element).\n# Remove \"$\" and \",\" so the values become plain digits like \"51915615\"\ndfs[\"salary\"] = dfs[\"salary\"].str.replace(\"$\", \"\", regex=False)\ndfs[\"salary\"] = dfs[\"salary\"].str.replace(\",\", \"\", regex=False)"
   }
 ]
