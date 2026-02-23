@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.3.450" />
 
-<meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2026-02-18">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="author" content="Byeong-Hak Choe" />
+<meta name="dcterms.date" content="2026-02-18" />
 
 <title>Classwork 4 | Byeong-Hak Choe</title>
 <style>
@@ -58,24 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -97,37 +82,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css"/>
 
 
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="../assets/css/font.css">
-<meta property="og:title" content="Classwork 4 | Byeong-Hak Choe">
-<meta property="og:description" content="Scrapping Table Data with Python selenium with XPath approach">
-<meta property="og:image" content="/assets/img/posts.png">
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="../assets/css/font.css" />
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    <a href="/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="/img/geneseo-logo-squared.png" alt="" class="navbar-logo" />
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/bcdanl/210-code" rel="" target="_blank"><i class="bi bi-code-slash" role="img">
+    <a class="nav-link" href="https://github.com/bcdanl/210-code" rel="" target="_blank"><i 
+  class="bi bi-code-slash" 
+  role="img" 
+>
 </i> 
  <span class="menu-text">Class Code</span></a>
   </li>  
@@ -142,11 +129,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn"
+      data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 4</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
@@ -159,55 +151,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🏠 Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="/syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📓 Syllabus</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://mylearning.suny.edu/d2l/home/2533587" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
+  <a href="https://mylearning.suny.edu/d2l/home/2533587" class="sidebar-item-text sidebar-link" target=&quot;_blank&quot;>
  <span class="menu-text">🅱 Brightspace</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://colab.research.google.com/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
+  <a href="https://colab.research.google.com/" class="sidebar-item-text sidebar-link" target=&quot;_blank&quot;>
  <span class="menu-text">🟧 Google Colab</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link">
+  <a href="/listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📑 Lecture (PDF)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
+  <a href="/listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🚀 Lecture</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
+  <a href="/listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">⌨️ Classwork</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
+  <a href="/listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">💻 Homework</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
+  <a href="/listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📝 Exams</span></a>
   </div>
 </li>
@@ -226,37 +218,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+  <a href="/danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
+  <a href="/danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
+  <a href="/danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
+  <a href="/danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 04</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
+  <a href="/danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 05</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
+  <a href="/danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 06</span></a>
   </div>
 </li>
@@ -265,26 +257,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" ></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
-    <h2 id="toc-title"><img src="../img/logo-geneseo.jpg" style="height:48px; display:inline-block; vertical-align:middle; margin-right:0px;"> <span style="display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;"> Data<br>Analytics </span><br>
-<br>On this page</h2>
-   
-  <ul>
-  <li><a href="#collecting-rows-into-a-pandas-dataframe" id="toc-collecting-rows-into-a-pandas-dataframe" class="nav-link active" data-scroll-target="#collecting-rows-into-a-pandas-dataframe">Collecting Rows into a pandas <code>DataFrame</code></a>
-  <ul>
-  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
-  </ul></li>
-  <li><a href="#question-1." id="toc-question-1." class="nav-link" data-scroll-target="#question-1.">Question 1.</a>
-  <ul>
-  <li><a href="#hints" id="toc-hints" class="nav-link" data-scroll-target="#hints">Hints</a></li>
-  </ul></li>
-  <li><a href="#question-2-scrape-with-a-nested-for-loop" id="toc-question-2-scrape-with-a-nested-for-loop" class="nav-link" data-scroll-target="#question-2-scrape-with-a-nested-for-loop">Question 2 — Scrape with a nested <code>for</code> loop</a></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
-  </ul>
-</nav>
+        <div id="quarto-toc-target"></div>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -316,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 22, 2026</p>
+      <p class="date-modified">February 23, 2026</p>
     </div>
   </div>
     
@@ -324,7 +300,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 </header>
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title"><img src='../img/logo-geneseo.jpg' style='height:48px; display:inline-block; vertical-align:middle; margin-right:0px;'> <span style="display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;"> Data<br>Analytics </span><br />
+<br>On this page</h2>
+   
+  <ul>
+  <li><a href="#collecting-rows-into-a-pandas-dataframe" id="toc-collecting-rows-into-a-pandas-dataframe">Collecting Rows into a pandas <code>DataFrame</code></a>
+  <ul>
+  <li><a href="#result" id="toc-result">Result</a></li>
+  </ul></li>
+  <li><a href="#question-1." id="toc-question-1.">Question 1.</a>
+  <ul>
+  <li><a href="#hints" id="toc-hints">Hints</a></li>
+  </ul></li>
+  <li><a href="#question-2-scrape-with-a-nested-for-loop" id="toc-question-2-scrape-with-a-nested-for-loop">Question 2 — Scrape with a nested <code>for</code> loop</a></li>
+  <li><a href="#discussion" id="toc-discussion">Discussion</a></li>
+  </ul>
+</nav>
 <div style="text-align: center; width: 75%; margin: auto;">
 <img src="https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif" style="width: 100%; margin-bottom: 0px;">
 <p style="font-weight: bold;">
@@ -332,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><br></p>
 <p>Below is to set up the web scrapping environment with Python <code>selenium</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, time, random</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -347,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the working directory path</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">&#39;ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY&#39;</span> <span class="co"># e.g., &#39;/Users/bchoe/Documents/DANL-210&#39;</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
@@ -355,20 +347,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>options <span class="op">=</span> Options()</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span></code></pre></div>
 <p><br></p>
 <section id="collecting-rows-into-a-pandas-dataframe" class="level1">
 <h1>Collecting Rows into a pandas <code>DataFrame</code></h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    obs_lst <span class="op">=</span> [i, <span class="st">"Ava"</span>, <span class="st">"Geneseo"</span>, <span class="dv">2025</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    obs_lst <span class="op">=</span> [i, <span class="st">&quot;Ava&quot;</span>, <span class="st">&quot;Geneseo&quot;</span>, <span class="dv">2025</span>]</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([obs_lst])</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'id'</span>, <span class="st">'name'</span>, <span class="st">'school'</span>, <span class="st">'year'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">&#39;id&#39;</span>, <span class="st">&#39;name&#39;</span>, <span class="st">&#39;school&#39;</span>, <span class="st">&#39;year&#39;</span>]</span></code></pre></div>
 <ol type="1">
 <li><strong>Start with an empty <code>DataFrame</code></strong></li>
 </ol>
@@ -421,13 +413,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>After this, you can refer to columns using <code>df['name']</code>, <code>df['school']</code>, and <code>df['year']</code>.</li>
 </ul>
 <section id="result" class="level2">
-<h2 class="anchored" data-anchor-id="result">Result</h2>
+<h2>Result</h2>
 <p>After the loop finishes, <code>df</code> contains <strong>five identical rows</strong>:</p>
 <div class="cell">
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
+  <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["id"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["school"],"name":[3],"type":["chr"],"align":["left"]},{"label":["year"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"Ava","3":"Geneseo","4":"2025"},{"1":"2","2":"Ava","3":"Geneseo","4":"2025"},{"1":"3","2":"Ava","3":"Geneseo","4":"2025"},{"1":"4","2":"Ava","3":"Geneseo","4":"2025"},{"1":"5","2":"Ava","3":"Geneseo","4":"2025"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
@@ -443,26 +435,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php">https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php</a></li>
 </ul>
 <section id="hints" class="level3">
-<h3 class="anchored" data-anchor-id="hints">Hints</h3>
+<h3>Hints</h3>
 <ul>
 <li>Start by scraping the body rows (<code>tr</code>) for cell values (<code>td</code>)</li>
 <li>You can build XPaths with an f-string inside a loop.</li>
 </ul>
 <p>Example idea (XPath f-string):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    xpath <span class="op">=</span> <span class="ss">f'//*[@id="main-content"]//table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[1]'</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(xpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    xpath <span class="op">=</span> <span class="ss">f&#39;//*[@id=&quot;main-content&quot;]//table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[1]&#39;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(xpath)</span></code></pre></div>
 </div>
 <p><em>Answer</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) in the body table (&lt;tbody&gt;)</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) in the body table (&lt;tbody&gt;)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, nrows <span class="op">+</span> <span class="dv">1</span>):</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: scrape each cell's text in a single row</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: scrape each cell&#39;s text in a single row</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    mon_yr <span class="op">=</span> </span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    retail_price <span class="op">=</span> </span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    refining <span class="op">=</span> </span>
@@ -473,25 +465,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    obs_lst <span class="op">=</span> [mon_yr, retail_price, refining, distribution_marketing, taxes, crude_oil]</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([obs_lst])</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class='callout-icon'></i>
 </div>
 <div class="callout-title-container flex-fill">
 Show answer
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+<div class='callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end'><i class='callout-toggle'></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<section id="web-scraping-strategy-with-xpath" class="level3 callout-body-container callout-body">
-<h3 class="anchored" data-anchor-id="web-scraping-strategy-with-xpath">Web-scraping Strategy with XPath</h3>
+<section id="web-scraping-strategy-with-xpath" class="level4 callout-body-container callout-body">
+<h4>Web-scraping Strategy with XPath</h4>
 <p><strong>Step 0. Set up your environment</strong></p>
 <ul>
 <li>Import the libraries/modules you need (e.g., Selenium, pandas, time).</li>
 <li>Set your working directory (so your output file saves where you expect).</li>
+<li>Get to the webpage.</li>
 </ul>
 <p><strong>Step 1. Find an XPath pattern for the element(s) you want</strong></p>
 <ul>
@@ -522,7 +515,7 @@ Show answer
 <li>Use <code>df.to_csv("filename.csv", index=False)</code> so the CSV is clean and ready to use.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 0. Set up your environment</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
@@ -541,7 +534,7 @@ Show answer
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the working directory path</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'/Users/bchoe/Documents/DANL-210'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">&#39;/Users/bchoe/Documents/DANL-210&#39;</span> <span class="co"># e.g., &#39;/Users/bchoe/Documents/DANL-210&#39;</span></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
@@ -556,7 +549,7 @@ Show answer
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Scrapping</span></span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php'</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&#39;https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php&#39;</span></span>
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>driver.get(url)</span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
@@ -573,17 +566,17 @@ Show answer
 <span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="co"># /html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[2]/td[2]</span></span>
 <span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2. Build a dynamic XPath using an f-string</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_mon_yr = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[1]'</span></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_retail_price = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[2]'</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_refining = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[3]'</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_distribution_marketing = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[4]'</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_taxes = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[5]'</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_crude_oil = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[6]'</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_mon_yr = f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[1]&#39;</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_retail_price = f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[2]&#39;</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_refining = f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[3]&#39;</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_distribution_marketing = f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[4]&#39;</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_taxes = f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[5]&#39;</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="co"># xpath_crude_oil = f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[6]&#39;</span></span>
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="co"># How many times to iterate</span></span>
 <span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) in the body table (&lt;tbody&gt;)</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'tbody'</span>)</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> table.find_elements(By.TAG_NAME, <span class="st">'tr'</span>)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">&#39;tbody&#39;</span>)</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> table.find_elements(By.TAG_NAME, <span class="st">&#39;tr&#39;</span>)</span>
 <span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> <span class="bu">len</span>(rows)</span>
 <span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
@@ -592,12 +585,12 @@ Show answer
 <span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, nrows <span class="op">+</span> <span class="dv">1</span>):</span>
 <span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>    xpath_mon_yr <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[1]'</span></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>    xpath_retail_price <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[2]'</span></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>    xpath_refining <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[3]'</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    xpath_distribution_marketing <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[4]'</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>    xpath_taxes <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[5]'</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>    xpath_crude_oil <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[6]'</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>    xpath_mon_yr <span class="op">=</span> <span class="ss">f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[1]&#39;</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>    xpath_retail_price <span class="op">=</span> <span class="ss">f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[2]&#39;</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>    xpath_refining <span class="op">=</span> <span class="ss">f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[3]&#39;</span></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    xpath_distribution_marketing <span class="op">=</span> <span class="ss">f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[4]&#39;</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>    xpath_taxes <span class="op">=</span> <span class="ss">f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[5]&#39;</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>    xpath_crude_oil <span class="op">=</span> <span class="ss">f&#39;/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[6]&#39;</span></span>
 <span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>    <span class="co"># How to locate elements</span></span>
 <span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>    mon_yr <span class="op">=</span> driver.find_element(By.XPATH, </span>
@@ -623,10 +616,10 @@ Show answer
 <span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4. Export the DataFrame to a CSV</span></span>
 <span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="co"># Column names</span></span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'mon_yr'</span>, <span class="st">'retail_price'</span>, <span class="st">'refining'</span>, </span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>              <span class="st">'distribution_marketing'</span>, <span class="st">'taxes'</span>, <span class="st">'crude_oil'</span>]</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">&#39;mon_yr&#39;</span>, <span class="st">&#39;retail_price&#39;</span>, <span class="st">&#39;refining&#39;</span>, </span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;distribution_marketing&#39;</span>, <span class="st">&#39;taxes&#39;</span>, <span class="st">&#39;crude_oil&#39;</span>]</span>
 <span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/eia_2026_0220'</span>, index<span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">&#39;data/eia_2026_0220&#39;</span>, index<span class="op">=</span> <span class="va">False</span>)</span></code></pre></div>
 </div>
 </section>
 </div>
@@ -646,7 +639,7 @@ Show answer
 </ul>
 <p><em>Answer</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) and the number of columns (&lt;td&gt;) in each row in the body table (&lt;tbody&gt;)</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) and the number of columns (&lt;td&gt;) in each row in the body table (&lt;tbody&gt;)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ncols <span class="op">=</span> </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -657,30 +650,34 @@ Show answer
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, ncols <span class="op">+</span> <span class="dv">1</span>):  <span class="co"># Iterate over column positions</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># </span><span class="al">TODO</span><span class="co">: scrape each cell's text in a single row</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># </span><span class="al">TODO</span><span class="co">: scrape each cell&#39;s text in a single row</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># </span><span class="al">TODO</span><span class="co">: append value to the data list</span></span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([data])</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </div>
 <p><br><br></p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p><font size="5">Welcome to our Classwork 4 Discussion Board! 👋 </font></p>
+<p><font size = "5">Welcome to our Classwork 4 Discussion Board! 👋 </font></p>
 <p>This space is designed for you to engage with your classmates about the material covered in Classwork 4.</p>
 <p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
 <p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 4 materials or need clarification on any points, don’t hesitate to ask here.</p>
 <p>All comments will be stored <a href="https://github.com/bcdanl/210/discussions/">here</a>.</p>
 <p>Let’s collaborate and learn from each other!</p>
-
-
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Classwork 4</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Classwork 4</span> <span class="hidden" data-render-id="quarto-int-sidebar:/index.html">🏠 Home</span> <span class="hidden" data-render-id="quarto-int-sidebar:/syllabus.html">📓 Syllabus</span> <span class="hidden" data-render-id="quarto-int-sidebar:https://mylearning.suny.edu/d2l/home/2533587">🅱 Brightspace</span> <span class="hidden" data-render-id="quarto-int-sidebar:https://colab.research.google.com/">🟧 Google Colab</span> <span class="hidden" data-render-id="quarto-int-sidebar:/listing-danl-210-lec-pdf.html">📑 Lecture (PDF)</span> <span class="hidden" data-render-id="quarto-int-sidebar:/listing-danl-210-lec.html">🚀 Lecture</span> <span class="hidden" data-render-id="quarto-int-sidebar:/listing-danl-210-cw.html">⌨️ Classwork</span> <span class="hidden" data-render-id="quarto-int-sidebar:/listing-danl-210-hw.html">💻 Homework</span> <span class="hidden" data-render-id="quarto-int-sidebar:/listing-danl-210-ex.html">📝 Exams</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">🗣️️ Project</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-2">🗓️ Weeks</span> <span class="hidden" data-render-id="quarto-int-sidebar:/danl-wk/wk-01.html">Week 01</span> <span class="hidden" data-render-id="quarto-int-sidebar:/danl-wk/wk-02.html">Week 02</span> <span class="hidden" data-render-id="quarto-int-sidebar:/danl-wk/wk-03.html">Week 03</span> <span class="hidden" data-render-id="quarto-int-sidebar:/danl-wk/wk-04.html">Week 04</span> <span class="hidden" data-render-id="quarto-int-sidebar:/danl-wk/wk-05.html">Week 05</span> <span class="hidden" data-render-id="quarto-int-sidebar:/danl-wk/wk-06.html">Week 06</span> <span class="hidden" data-render-id="quarto-int-navbar:Class Code">Class Code</span> <span class="hidden" data-render-id="quarto-int-navbar:https://github.com/bcdanl/210-code">https://github.com/bcdanl/210-code</span> <span class="hidden" data-render-id="quarto-int-navbar:"></span> <span class="hidden" data-render-id="footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2026</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metatitle">Classwork 4 | Byeong-Hak Choe</span> <span class="hidden" data-render-id="quarto-twittercardtitle">Classwork 4 | Byeong-Hak Choe</span> <span class="hidden" data-render-id="quarto-ogcardtitle">Classwork 4 | Byeong-Hak Choe</span> <span class="hidden" data-render-id="quarto-twittercarddesc">Scrapping Table Data with Python <code>selenium</code> with XPath approach</span> <span class="hidden" data-render-id="quarto-ogcardddesc">Scrapping Table Data with Python <code>selenium</code> with XPath approach</span></p>
+</div>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const btn = document.querySelector('.quarto-btn-toggle');
@@ -694,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { capture: true });
 });
 </script>
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1056,7 +1053,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="bcdanl/210-spr-2026-discussion" data-repo-id="R_kgDOQ8ghEg" data-category="General" data-category-id="DIC_kwDOQ8ghEs4C1IRP" data-mapping="title" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+<script src="https://giscus.app/client.js"
+        data-repo="bcdanl/210-spr-2026-discussion"
+        data-repo-id="R_kgDOQ8ghEg"
+        data-category="General"
+        data-category-id="DIC_kwDOQ8ghEs4C1IRP"
+        data-mapping="title"
+        data-reactions-enabled="0"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
 </script>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1064,16 +1073,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">powered with github, quarto, and rstudio<br>byeong-hak choe, 2026</div>
+    <div class="nav-footer-center">
+      <div class='footer-contents'>powered with github, quarto, and rstudio<br>byeong-hak choe, 2026</div>  
+    </div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
 <div id="scroll-padding"></div>
-<script src="../assets/js/site.js"></script>
-<script src="../assets/js/posts.js"></script>
+<script src='/assets/js/site.js'></script>
+<script src='/assets/js/posts.js'></script>
 
+</body>
 
-
-</body></html>
+</html>

@@ -182,12 +182,13 @@ for i in range(1, nrows + 1):
 ::: {.callout-tip collapse="true"}
 ### Show answer
 
-### Web-scraping Strategy with XPath
+#### Web-scraping Strategy with XPath
 
 **Step 0. Set up your environment**
 
 - Import the libraries/modules you need (e.g., Selenium, pandas, time).
 - Set your working directory (so your output file saves where you expect).
+- Get to the webpage.
 
 **Step 1. Find an XPath pattern for the element(s) you want**
 
