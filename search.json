@@ -1628,7 +1628,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#get-method-in-webdriver",
     "title": "Lecture 4",
     "section": "🌐 get() Method in WebDriver",
-    "text": "🌐 get() Method in WebDriver\n\n\nget(url) from webdriver opens the specified URL in a web browser.\nWhen using webdriver in Google Chrome, you may see the message:\n\n“Chrome is being controlled by automated test software.”\n\n\n\nform_url = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](form_url)\ndriver.close()\ndriver.quit()\n\nclose() terminates the current browser window.\nquit() completely exits the webdriver session, closing a browser window."
+    "text": "🌐 get() Method in WebDriver\n\n\nget(url) from webdriver opens the specified URL in a web browser.\nWhen using webdriver in Google Chrome, you may see the message:\n\n“Chrome is being controlled by automated test software.”\n\n\n\nurl = \"https://qavbox.github.io/demo/webtable/\"\ndriver.[?](url)\ndriver.close()\ndriver.quit()\n\nclose() terminates the current browser window.\nquit() completely exits the webdriver session, closing a browser window."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#inspecting-a-web-element-with-find_element",

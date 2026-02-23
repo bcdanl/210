@@ -620,8 +620,8 @@ driver = webdriver.Chrome(options=options)
 :::
 
 ```{.python}
-form_url = "https://qavbox.github.io/demo/webtable/"
-driver.[?](form_url)
+url = "https://qavbox.github.io/demo/webtable/"
+driver.[?](url)
 driver.close()
 driver.quit()
 ```
