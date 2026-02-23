@@ -256,7 +256,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Data with Python selenium\n\n\nFebruary 18, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-wk/wk-05.html",
@@ -1943,7 +1943,7 @@
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Data with Python selenium\n\n\nFebruary 18, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -2336,5 +2336,12 @@
     "title": "Homework 2",
     "section": "Replacing Values in a String",
     "text": "Replacing Values in a String\nWhen you scrape salary values from a webpage, they often come in a formatted string like:\n\n\"$51,915,615\"\n\nBefore you can convert salaries to numbers, you need to remove formatting characters such as:\n\nthe dollar sign ($)\ncommas (,)\n\nIn pandas, .str.replace() applies a text replacement to every value in the column (element-by-element).\n# Remove \"$\" and \",\" so the values become plain digits like \"51915615\"\ndfs[\"salary\"] = dfs[\"salary\"].str.replace(\"$\", \"\", regex=False)\ndfs[\"salary\"] = dfs[\"salary\"].str.replace(\",\", \"\", regex=False)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-05.html",
+    "href": "danl-cw/danl-210-cw-05.html",
+    "title": "Classwork 5",
+    "section": "",
+    "text": "Below is to set up the web scrapping environment with Python selenium:\nimport pandas as pd\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)\n\n\n\nProvide your Python Selenium code to scrape all the quotes in this website.\nYou should create the two DataFrames with the following variables:\n\nDataFrame about each quote with the following variables:\n\n\nquote\nauthor\ntags\nabout, URL for description about each author.\n\n\nDataFrame about each author with the following variables:\n\n\nabout, URL for description about each author.\nborn_date\nborn_location\nauthor_description\n\nExport each DataFrame as a CSV file.\n\nAnswer:\n\n\nDiscussion\nWelcome to our Classwork 5 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 5.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 5 materials or need clarification on any points, don’t hesitate to ask here.\nAll comments will be stored here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
   }
 ]
