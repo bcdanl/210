@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 22, 2026</p>
+      <p class="date-modified">February 23, 2026</p>
     </div>
   </div>
     
@@ -348,9 +348,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br></p>
 <ul>
 <li><p>Provide your Python Selenium code to scrape all the quotes in <a href="http://quotes.toscrape.com">this website</a>.</p></li>
-<li><p>You should create the two DataFrames with the following variables:</p>
+<li><p>You should create the two DataFrames:</p>
 <ol type="1">
-<li>DataFrame about each quote with the following variables:</li>
+<li>DataFrame about each quote with the following columns:</li>
 </ol>
 <ul>
 <li><code>quote</code></li>
@@ -359,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>about</code>, URL for description about each author.</li>
 </ul>
 <ol start="2" type="1">
-<li>DataFrame about each author with the following variables:</li>
+<li>DataFrame about each author with the following columns:</li>
 </ol>
 <ul>
 <li><code>about</code>, URL for description about each author.</li>
@@ -367,7 +367,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>born_location</code></li>
 <li><code>author_description</code></li>
 </ul></li>
-<li><p>Export each DataFrame as a CSV file.</p></li>
+<li><p>Drop duplicate rows in a DataFrame:</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop duplicate authors</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the 'about' column (this column contains each author's profile/about URL)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> df[[<span class="st">'about'</span>]]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicate URLs so each author's URL appears only once</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> author_url.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Export each DataFrame as a CSV file.</li>
 </ul>
 <p><em>Answer</em>:</p>
 <p><br><br></p>

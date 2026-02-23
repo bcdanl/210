@@ -69,18 +69,30 @@ driver = webdriver.Chrome(options=options)
 
 - Provide your Python Selenium code to scrape all the quotes in [this website](http://quotes.toscrape.com).
 
-- You should create the two DataFrames with the following variables:
+- You should create the two DataFrames:
   
-  1. DataFrame about each quote with the following variables:
+  1. DataFrame about each quote with the following columns:
     - `quote`
     - `author`
     - `tags`
     - `about`, URL for description about each author.
-  2. DataFrame about each author with the following variables:
+    
+  2. DataFrame about each author with the following columns:
     - `about`, URL for description about each author.
     - `born_date`
     - `born_location`
     - `author_description`
+
+- Drop duplicate rows in a DataFrame:
+```{.python}
+# drop duplicate authors
+# Keep only the 'about' column (this column contains each author's profile/about URL)
+author_url = df[['about']]
+
+# Remove duplicate URLs so each author's URL appears only once
+author_url = author_url.drop_duplicates()
+```
+
 
 - Export each DataFrame as a CSV file.
 
