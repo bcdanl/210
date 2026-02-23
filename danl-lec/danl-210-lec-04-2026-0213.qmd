@@ -1014,13 +1014,14 @@ driver.find_element(By.XPATH, '//*[@id="btn"]').get_attribute('value')
 ## 🚫🔎 `NoSuchElementException` and `try-except` blocks
 
 ```{.python}
-try:
-    elem = driver.find_element(By.XPATH, "element_xpath")
-    elem.click()
-except:
-    pass
-```
+url = "https://qavbox.github.io/demo/webtable/"
+driver.get(url)
 
+try:
+    href = driver.find_element(By.LINK_TEXT, "Selen").get_attribute("href")
+except:
+    href = ""
+```
 
 - When a web element is not found, it throws the `NoSuchElementException`.
   - `try-except` can be used to avoid the termination of the selenium code.

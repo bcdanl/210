@@ -1768,7 +1768,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#nosuchelementexception-and-try-except-blocks",
     "title": "Lecture 4",
     "section": "🚫🔎 NoSuchElementException and try-except blocks",
-    "text": "🚫🔎 NoSuchElementException and try-except blocks\ntry:\n    elem = driver.find_element(By.XPATH, \"element_xpath\")\n    elem.click()\nexcept:\n    pass\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
+    "text": "🚫🔎 NoSuchElementException and try-except blocks\nurl = \"https://qavbox.github.io/demo/webtable/\"\ndriver.get(url)\n\ntry:\n    href = driver.find_element(By.LINK_TEXT, \"Selen\").get_attribute(\"href\")\nexcept:\n    href = \"\"\n\nWhen a web element is not found, it throws the NoSuchElementException.\n\ntry-except can be used to avoid the termination of the selenium code.\n\nThis solution is to address the inconsistency in the DOM among the seemingly same pages."
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#two-different-waits",
