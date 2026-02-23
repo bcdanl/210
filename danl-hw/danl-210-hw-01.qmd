@@ -707,7 +707,11 @@ tickets = ["A", "B", "C", "B", "D", "B"]
 #| echo: true
 tickets = ["A", "B", "C", "B", "D", "B"]
 
-t1 = tickets.copy()
+t1 = tickets.copy()  # Make a NEW list with the same items (a separate object in memory).
+                     # Why? If we later change t1 (e.g., t1.append("E") or t1[0] = "Z"),
+                     # tickets will NOT change. Without .copy(), both names could refer
+                     # to the same list and edits would affect both.
+                     
 t1.remove("B")
 print(t1)
 
@@ -975,7 +979,16 @@ print("Average minutes:", avg)
 for i in range(len(exercises)):
     ex = exercises[i]
     m  = minutes[i]
+
+    # "Ternary" (one-line) if-else:
+    # If m > avg is True, label becomes "Above Avg"; otherwise it becomes "Below Avg".
+    # Same as:
+    # if m > avg:
+    #     label = "Above Avg"
+    # else:
+    #     label = "Below Avg"
     label = "Above Avg" if m > avg else "Below Avg"
+
     print(f"{ex}: {m} min ({label})")
 
 # 4) dictionary comprehension
