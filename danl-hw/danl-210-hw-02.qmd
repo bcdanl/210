@@ -224,7 +224,7 @@ import time
 import random
 
 driver.get(url)
-time.sleep(random.uniform(2, 3))
+time.sleep(random.uniform(3, 5))
 ```
 
 

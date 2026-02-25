@@ -67,7 +67,7 @@
     "href": "danl-hw/danl-210-hw-02.html#respectful-scraping-add-randomized-delays",
     "title": "Homework 2",
     "section": "Respectful Scraping: Add Randomized Delays",
-    "text": "Respectful Scraping: Add Randomized Delays\n\nBe polite to ESPN’s servers: for each webpage visit, pause with a randomized delay before scraping (or before moving to the next page), for example:\n\nimport time\nimport random\n\ndriver.get(url)\ntime.sleep(random.uniform(2, 3))"
+    "text": "Respectful Scraping: Add Randomized Delays\n\nBe polite to ESPN’s servers: for each webpage visit, pause with a randomized delay before scraping (or before moving to the next page), for example:\n\nimport time\nimport random\n\ndriver.get(url)\ntime.sleep(random.uniform(3, 5))"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html#how-to-add-a-column-to-a-dataframe",
