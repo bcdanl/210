@@ -30,6 +30,8 @@ reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
 <br>
 
 
+## Setup
+
 Below is to set up the web scrapping environment with Python `selenium`:
 
 ```{.python}
@@ -63,38 +65,118 @@ driver = webdriver.Chrome(options=options)
 <br>
 
 
+## Goal
+
+You will scrape **all quotes** from <https://quotes.toscrape.com> using Python `selenium`, then build **two DataFrames**:
+
+- **Part 1 (quotes table):** one row per quote  
+- **Part 2 (authors table):** one row per author profile page  
+
+You will export both DataFrames as CSV files.
 
 <br>
 
+# Part 1. Quotes DataFrame
 
-- Provide your Python Selenium code to scrape all the quotes in [this website](http://quotes.toscrape.com).
+## Target
 
-- You should create the two DataFrames:
-  
-  1. DataFrame about each quote with the following columns:
-    - `quote`
-    - `author`
-    - `tags`
-    - `about`, URL for description about each author.
-    
-  2. DataFrame about each author with the following columns:
-    - `about`, URL for description about each author.
-    - `born_date`
-    - `born_location`
-    - `author_description`
+Create a DataFrame with **one row per quote** and these columns:
 
-- Drop duplicate rows in a DataFrame:
-```{.python}
-# drop duplicate authors
-# Keep only the 'about' column (this column contains each author's profile/about URL)
-author_url = df[['about']]
+- `quote` (the quote text)
+- `author` (author name)
+- `tags` (all tags for the quote; store as one string like `"life|humor|inspirational"`)
+- `about` (URL to the author's profile page)
 
-# Remove duplicate URLs so each author's URL appears only once
-author_url = author_url.drop_duplicates()
+Export as: `data/quotes.csv`
+
+---
+
+## Question 1. URL pattern (pages 1 to 10)
+
+Suppose we **know** the page URL format:
+
+- Page format: `https://quotes.toscrape.com/page/{PAGE}/`
+- Example: <https://quotes.toscrape.com/page/1/>
+
+Write a loop that visits pages 1 to 10 and collects all quotes.
+
+
+*Answer*:
+```{python}
+#| eval: false
+#| echo: true
+
+
 ```
 
 
-- Export each DataFrame as a CSV file.
+<br>
+
+## Question 2. Unknown page count (click "Next" until it disappears)
+
+Now suppose you **do not know** how many pages exist.
+
+Instead of guessing the last page number, do this:
+
+1. Start at page 1  
+2. Scrape the quotes on the current page  
+3. Click the **Next** button  
+4. Repeat until the **Next** button is not found
+
+
+*Answer*:
+```{python}
+#| eval: false
+#| echo: true
+
+
+```
+
+
+<br><br>
+
+
+
+
+# Part 2. Authors DataFrame
+
+## Target
+
+Create a DataFrame with **one row per author** and these columns:
+
+- `about` (URL to the author's profile page)
+- `born_date`
+- `born_location`
+- `author_description` (the long bio paragraph)
+
+Export as: `data/authors.csv`
+
+---
+
+## Step 1. Get unique author URLs
+
+You will first build `df` in Part 1 (quotes table).  
+Then you can extract unique author profile links like this:
+
+```{.python}
+# Keep only the 'about' column (this column contains each author's profile/about URL)
+author_url = df[["about"]]
+
+# Remove duplicate URLs so each author's URL appears only once
+author_url = author_url.drop_duplicates()
+
+author_url.head()
+```
+
+---
+
+## Step 2. Visit each author page and scrape details
+
+On each author page, scrape:
+
+- Born date
+- Born location
+- Author description (bio)
 
 
 
@@ -123,7 +205,7 @@ Whether you are looking to delve deeper into the content, share insights, or hav
 
 If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 5 materials or need clarification on any points, don't hesitate to ask here. 
 
-All comments will be stored [here](https://github.com/bcdanl/210/discussions/).
+All comments will be stored [here](https://github.com/bcdanl/210-spr-2026-discussion/discussions).
 
 Let's collaborate and learn from each other!
 

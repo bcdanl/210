@@ -107,7 +107,7 @@ df.columns = ['id', 'name', 'school', 'year']
   - `year` for the third column
 - After this, you can refer to columns using `df['name']`, `df['school']`, and `df['year']`.
 
-## Result
+#### Result
 After the loop finishes, `df` contains **five identical rows**:
 
 ```{r}
@@ -135,7 +135,7 @@ rmarkdown::paged_table(
 
   - [https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php](https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php)
   
-### Hints
+#### Hints
 - Start by scraping the body rows (`tr`) for cell values (`td`)
 - You can build XPaths with an f-string inside a loop.
 
@@ -339,8 +339,6 @@ df.to_csv('data/eia_2026_0220', index= False)
 - Inner loop: iterate over **columns** (`td`)
   - In the inner loop, append `value` to the `data` list.
 
-
-*Answer*:
 ```{python}
 #| eval: false
 #| echo: true
@@ -367,6 +365,81 @@ for i in range(1, nrows + 1):
 
 ```
 
+
+::: {.callout-tip collapse="true"}
+### Show answer
+
+#### Nested for-loop
+A **nested loop** is simply a loop **inside** another loop.
+
+- The **outer loop** controls the “big step” (the main repetition).
+- The **inner loop** runs **all the way through** for *each* single outer loop step.
+
+So the pattern is:
+
+1. Do outer step #1  
+   - run inner loop from start to finish  
+2. Do outer step #2  
+   - run inner loop from start to finish  
+3. Repeat…
+
+##### Generic example
+
+```{.python}
+for i in range(1, 4):        # outer loop: i = 1, 2, 3
+    for j in range(1, 3):    # inner loop: j = 1, 2 (restarts each time)
+        print(i, j)
+```
+
+##### The key idea
+
+If the outer loop runs **A** times and the inner loop runs **B** times, the inner block executes **A × B** times.
+
+##### Why we use nested loops
+
+Nested loops are useful whenever you’re working with **two dimensions**, like:
+
+- rows × columns in a table
+- pages × items on each page
+- years × months
+
+
+```{.python}
+# TODO: find out the number of rows (<tr>) and the number of columns (<td>) in each row in the body table (<tbody>)
+tbody = driver.find_element(By.TAG_NAME, 'tbody')
+rows =tbody.find_elements(By.TAG_NAME, 'tr')
+nrows = len(rows)
+
+thead = driver.find_element(By.TAG_NAME, 'thead')
+cols = thead.find_elements(By.TAG_NAME, 'th')
+ncols = len(cols)
+
+df = pd.DataFrame()
+for i in range(1, nrows + 1):
+  
+    data = []    # creating an empty list for one row
+    
+    for j in range(1, ncols + 1):  # Iterate over column positions
+        
+        # TODO: scrape each cell's text in a single row
+        xpath_value = f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[{i}]/td[{j}]'
+        value = driver.find_element(By.XPATH, xpath_value).text
+        
+        # TODO: append value to the data list
+        data.append(value)
+        
+    obs = pd.DataFrame([data])
+    df = pd.concat([df, obs], ignore_index=True)
+    
+
+df.columns = ['mon_yr', 'retail_price', 'refining', 'dist_mkt', 
+              'taxes', 'crude_oil']
+
+df.to_csv('data/eia_q2_2026_0223.csv', index = False)
+```
+
+:::
+
 <br><br>
 
 
@@ -382,7 +455,7 @@ Whether you are looking to delve deeper into the content, share insights, or hav
 
 If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 4 materials or need clarification on any points, don't hesitate to ask here. 
 
-All comments will be stored [here](https://github.com/bcdanl/210/discussions/).
+All comments will be stored [here](https://github.com/bcdanl/210-spr-2026-discussion/discussions).
 
 Let's collaborate and learn from each other!
 

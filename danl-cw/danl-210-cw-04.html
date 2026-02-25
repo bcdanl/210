@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 23, 2026</p>
+      <p class="date-modified">February 25, 2026</p>
     </div>
   </div>
     
@@ -420,8 +420,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>After this, you can refer to columns using <code>df['name']</code>, <code>df['school']</code>, and <code>df['year']</code>.</li>
 </ul>
-<section id="result" class="level2">
-<h2 class="anchored" data-anchor-id="result">Result</h2>
+<section id="result" class="level4">
+<h4 class="anchored" data-anchor-id="result">Result</h4>
 <p>After the loop finishes, <code>df</code> contains <strong>five identical rows</strong>:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -442,8 +442,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><a href="https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php">https://www.eia.gov/petroleum/gasdiesel/gaspump_hist.php</a></li>
 </ul>
-<section id="hints" class="level3">
-<h3 class="anchored" data-anchor-id="hints">Hints</h3>
+<section id="hints" class="level4">
+<h4 class="anchored" data-anchor-id="hints">Hints</h4>
 <ul>
 <li>Start by scraping the body rows (<code>tr</code>) for cell values (<code>td</code>)</li>
 <li>You can build XPaths with an f-string inside a loop.</li>
@@ -645,7 +645,6 @@ Show answer
 <li>In the inner loop, append <code>value</code> to the <code>data</code> list.</li>
 </ul></li>
 </ul>
-<p><em>Answer</em>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) and the number of columns (&lt;td&gt;) in each row in the body table (&lt;tbody&gt;)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> </span>
@@ -667,6 +666,91 @@ Show answer
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([data])</span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<section id="nested-for-loop" class="level4 callout-body-container callout-body">
+<h4 class="anchored" data-anchor-id="nested-for-loop">Nested for-loop</h4>
+<p>A <strong>nested loop</strong> is simply a loop <strong>inside</strong> another loop.</p>
+<ul>
+<li>The <strong>outer loop</strong> controls the “big step” (the main repetition).</li>
+<li>The <strong>inner loop</strong> runs <strong>all the way through</strong> for <em>each</em> single outer loop step.</li>
+</ul>
+<p>So the pattern is:</p>
+<ol type="1">
+<li>Do outer step #1
+<ul>
+<li>run inner loop from start to finish<br>
+</li>
+</ul></li>
+<li>Do outer step #2
+<ul>
+<li>run inner loop from start to finish<br>
+</li>
+</ul></li>
+<li>Repeat…</li>
+</ol>
+<section id="generic-example" class="level5">
+<h5 class="anchored" data-anchor-id="generic-example">Generic example</h5>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):        <span class="co"># outer loop: i = 1, 2, 3</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">3</span>):    <span class="co"># inner loop: j = 1, 2 (restarts each time)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, j)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-key-idea" class="level5">
+<h5 class="anchored" data-anchor-id="the-key-idea">The key idea</h5>
+<p>If the outer loop runs <strong>A</strong> times and the inner loop runs <strong>B</strong> times, the inner block executes <strong>A × B</strong> times.</p>
+</section>
+<section id="why-we-use-nested-loops" class="level5">
+<h5 class="anchored" data-anchor-id="why-we-use-nested-loops">Why we use nested loops</h5>
+<p>Nested loops are useful whenever you’re working with <strong>two dimensions</strong>, like:</p>
+<ul>
+<li>rows × columns in a table</li>
+<li>pages × items on each page</li>
+<li>years × months</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: find out the number of rows (&lt;tr&gt;) and the number of columns (&lt;td&gt;) in each row in the body table (&lt;tbody&gt;)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tbody <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'tbody'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span>tbody.find_elements(By.TAG_NAME, <span class="st">'tr'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> <span class="bu">len</span>(rows)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>thead <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'thead'</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> thead.find_elements(By.TAG_NAME, <span class="st">'th'</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>ncols <span class="op">=</span> <span class="bu">len</span>(cols)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, nrows <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> []    <span class="co"># creating an empty list for one row</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, ncols <span class="op">+</span> <span class="dv">1</span>):  <span class="co"># Iterate over column positions</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># </span><span class="al">TODO</span><span class="co">: scrape each cell's text in a single row</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        xpath_value <span class="op">=</span> <span class="ss">f'/html/body/div[1]/div[2]/div/div[4]/div/div[1]/div/table/tbody/tr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]/td[</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">]'</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> driver.find_element(By.XPATH, xpath_value).text</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># </span><span class="al">TODO</span><span class="co">: append value to the data list</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        data.append(value)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([data])</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'mon_yr'</span>, <span class="st">'retail_price'</span>, <span class="st">'refining'</span>, <span class="st">'dist_mkt'</span>, </span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>              <span class="st">'taxes'</span>, <span class="st">'crude_oil'</span>]</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/eia_q2_2026_0223.csv'</span>, index <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</div>
+</div>
 <p><br><br></p>
 </section>
 <section id="discussion" class="level1">
@@ -675,7 +759,7 @@ Show answer
 <p>This space is designed for you to engage with your classmates about the material covered in Classwork 4.</p>
 <p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
 <p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 4 materials or need clarification on any points, don’t hesitate to ask here.</p>
-<p>All comments will be stored <a href="https://github.com/bcdanl/210/discussions/">here</a>.</p>
+<p>All comments will be stored <a href="https://github.com/bcdanl/210-spr-2026-discussion/discussions">here</a>.</p>
 <p>Let’s collaborate and learn from each other!</p>
 
 

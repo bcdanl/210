@@ -270,7 +270,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <br>On this page</h2>
    
   <ul>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link active" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#part-1.-quotes-dataframe" id="toc-part-1.-quotes-dataframe" class="nav-link" data-scroll-target="#part-1.-quotes-dataframe">Part 1. Quotes DataFrame</a>
+  <ul>
+  <li><a href="#target" id="toc-target" class="nav-link" data-scroll-target="#target">Target</a></li>
+  <li><a href="#question-1.-url-pattern-pages-1-to-10" id="toc-question-1.-url-pattern-pages-1-to-10" class="nav-link" data-scroll-target="#question-1.-url-pattern-pages-1-to-10">Question 1. URL pattern (pages 1 to 10)</a></li>
+  <li><a href="#question-2.-unknown-page-count-click-next-until-it-disappears" id="toc-question-2.-unknown-page-count-click-next-until-it-disappears" class="nav-link" data-scroll-target="#question-2.-unknown-page-count-click-next-until-it-disappears">Question 2. Unknown page count (click “Next” until it disappears)</a></li>
+  </ul></li>
+  <li><a href="#part-2.-authors-dataframe" id="toc-part-2.-authors-dataframe" class="nav-link" data-scroll-target="#part-2.-authors-dataframe">Part 2. Authors DataFrame</a>
+  <ul>
+  <li><a href="#target-1" id="toc-target-1" class="nav-link" data-scroll-target="#target-1">Target</a></li>
+  <li><a href="#step-1.-get-unique-author-urls" id="toc-step-1.-get-unique-author-urls" class="nav-link" data-scroll-target="#step-1.-get-unique-author-urls">Step 1. Get unique author URLs</a></li>
+  <li><a href="#step-2.-visit-each-author-page-and-scrape-details" id="toc-step-2.-visit-each-author-page-and-scrape-details" class="nav-link" data-scroll-target="#step-2.-visit-each-author-page-and-scrape-details">Step 2. Visit each author page and scrape details</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -304,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 23, 2026</p>
+      <p class="date-modified">February 25, 2026</p>
     </div>
   </div>
     
@@ -319,6 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </p>
 </div>
 <p><br></p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>Below is to set up the web scrapping environment with Python <code>selenium</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, time, random</span>
@@ -345,48 +361,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<p><br></p>
+</section>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>You will scrape <strong>all quotes</strong> from <a href="https://quotes.toscrape.com" class="uri">https://quotes.toscrape.com</a> using Python <code>selenium</code>, then build <strong>two DataFrames</strong>:</p>
 <ul>
-<li><p>Provide your Python Selenium code to scrape all the quotes in <a href="http://quotes.toscrape.com">this website</a>.</p></li>
-<li><p>You should create the two DataFrames:</p>
-<ol type="1">
-<li>DataFrame about each quote with the following columns:</li>
-</ol>
-<ul>
-<li><code>quote</code></li>
-<li><code>author</code></li>
-<li><code>tags</code></li>
-<li><code>about</code>, URL for description about each author.</li>
+<li><strong>Part 1 (quotes table):</strong> one row per quote<br>
+</li>
+<li><strong>Part 2 (authors table):</strong> one row per author profile page</li>
 </ul>
-<ol start="2" type="1">
-<li>DataFrame about each author with the following columns:</li>
-</ol>
+<p>You will export both DataFrames as CSV files.</p>
+<p><br></p>
+</section>
+<section id="part-1.-quotes-dataframe" class="level1">
+<h1>Part 1. Quotes DataFrame</h1>
+<section id="target" class="level2">
+<h2 class="anchored" data-anchor-id="target">Target</h2>
+<p>Create a DataFrame with <strong>one row per quote</strong> and these columns:</p>
 <ul>
-<li><code>about</code>, URL for description about each author.</li>
+<li><code>quote</code> (the quote text)</li>
+<li><code>author</code> (author name)</li>
+<li><code>tags</code> (all tags for the quote; store as one string like <code>"life|humor|inspirational"</code>)</li>
+<li><code>about</code> (URL to the author’s profile page)</li>
+</ul>
+<p>Export as: <code>data/quotes.csv</code></p>
+<hr>
+</section>
+<section id="question-1.-url-pattern-pages-1-to-10" class="level2">
+<h2 class="anchored" data-anchor-id="question-1.-url-pattern-pages-1-to-10">Question 1. URL pattern (pages 1 to 10)</h2>
+<p>Suppose we <strong>know</strong> the page URL format:</p>
+<ul>
+<li>Page format: <code>https://quotes.toscrape.com/page/{PAGE}/</code></li>
+<li>Example: <a href="https://quotes.toscrape.com/page/1/" class="uri">https://quotes.toscrape.com/page/1/</a></li>
+</ul>
+<p>Write a loop that visits pages 1 to 10 and collects all quotes.</p>
+<p><em>Answer</em>:</p>
+<p><br></p>
+</section>
+<section id="question-2.-unknown-page-count-click-next-until-it-disappears" class="level2">
+<h2 class="anchored" data-anchor-id="question-2.-unknown-page-count-click-next-until-it-disappears">Question 2. Unknown page count (click “Next” until it disappears)</h2>
+<p>Now suppose you <strong>do not know</strong> how many pages exist.</p>
+<p>Instead of guessing the last page number, do this:</p>
+<ol type="1">
+<li>Start at page 1<br>
+</li>
+<li>Scrape the quotes on the current page<br>
+</li>
+<li>Click the <strong>Next</strong> button<br>
+</li>
+<li>Repeat until the <strong>Next</strong> button is not found</li>
+</ol>
+<p><em>Answer</em>:</p>
+<p><br><br></p>
+</section>
+</section>
+<section id="part-2.-authors-dataframe" class="level1">
+<h1>Part 2. Authors DataFrame</h1>
+<section id="target-1" class="level2">
+<h2 class="anchored" data-anchor-id="target-1">Target</h2>
+<p>Create a DataFrame with <strong>one row per author</strong> and these columns:</p>
+<ul>
+<li><code>about</code> (URL to the author’s profile page)</li>
 <li><code>born_date</code></li>
 <li><code>born_location</code></li>
-<li><code>author_description</code></li>
-</ul></li>
-<li><p>Drop duplicate rows in a DataFrame:</p></li>
+<li><code>author_description</code> (the long bio paragraph)</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop duplicate authors</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the 'about' column (this column contains each author's profile/about URL)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> df[[<span class="st">'about'</span>]]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicate URLs so each author's URL appears only once</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> author_url.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Export as: <code>data/authors.csv</code></p>
+<hr>
+</section>
+<section id="step-1.-get-unique-author-urls" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-get-unique-author-urls">Step 1. Get unique author URLs</h2>
+<p>You will first build <code>df</code> in Part 1 (quotes table).<br>
+Then you can extract unique author profile links like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the 'about' column (this column contains each author's profile/about URL)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> df[[<span class="st">"about"</span>]]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicate URLs so each author's URL appears only once</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> author_url.drop_duplicates()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>author_url.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="step-2.-visit-each-author-page-and-scrape-details" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-visit-each-author-page-and-scrape-details">Step 2. Visit each author page and scrape details</h2>
+<p>On each author page, scrape:</p>
 <ul>
-<li>Export each DataFrame as a CSV file.</li>
+<li>Born date</li>
+<li>Born location</li>
+<li>Author description (bio)</li>
 </ul>
 <p><em>Answer</em>:</p>
 <p><br><br></p>
+</section>
+</section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
 <p><font size="5">Welcome to our Classwork 5 Discussion Board! 👋 </font></p>
 <p>This space is designed for you to engage with your classmates about the material covered in Classwork 5.</p>
 <p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
 <p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 5 materials or need clarification on any points, don’t hesitate to ask here.</p>
-<p>All comments will be stored <a href="https://github.com/bcdanl/210/discussions/">here</a>.</p>
+<p>All comments will be stored <a href="https://github.com/bcdanl/210-spr-2026-discussion/discussions">here</a>.</p>
 <p>Let’s collaborate and learn from each other!</p>
 
 
