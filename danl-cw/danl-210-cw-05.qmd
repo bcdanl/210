@@ -101,14 +101,114 @@ Suppose we **know** the page URL format:
 Write a loop that visits pages 1 to 10 and collects all quotes.
 
 
-*Answer*:
+::: {.callout-tip collapse="true"}
+### Show answer
+
 ```{python}
-#| eval: false
 #| echo: true
 
+# %%
+# =============================================================================
+# Setup
+# =============================================================================
+import pandas as pd
+import os, time, random
+from io import StringIO
 
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+# Set the working directory path
+wd_path = '/Users/bchoe/Documents/DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+
+
+# =============================================================================
+# Question 1
+# =============================================================================
+url = 'https://quotes.toscrape.com/'
+driver.get(url)
+
+# %%
+# =============================================================================
+# Figuring out web-scrapping strategies
+# =============================================================================
+
+# It turns out that `By.CLASS_NAME` can be a very effective approach.
+# When "available", `id` and `class` are often the most convenient ways to locate web elements.
+# Of course, XPath would also work.
+
+quotes = driver.find_elements(By.CLASS_NAME, 'text')   # list of 10 WebElements
+quotes[0].text
+quotes[1].text
+quotes[2].text
+
+authors = driver.find_elements(By.CLASS_NAME, 'author')   # list of 10 WebElements
+authors[0].text
+authors[1].text
+authors[2].text
+authors[9].text
+
+tags_all = driver.find_elements(By.CLASS_NAME, 'tags')   # list of 10 WebElements
+tags_all[0].text
+# Out[133]: 'Tags: change deep-thoughts thinking world'
+
+tags_all[1].text
+
+abouts = driver.find_elements(By.LINK_TEXT, '(about)')   # list of 10 WebElements
+
+abouts[0].get_attribute('href')
+abouts[1].get_attribute('href')
+abouts[2].get_attribute('href')
+abouts[4].get_attribute('href')
+
+
+# %%
+# =============================================================================
+# For-loop construction
+# =============================================================================
+df = pd.DataFrame()
+for p in range(1, 11):
+    f_url = f'https://quotes.toscrape.com/page/{p}'
+    driver.get(f_url)
+    time.sleep( random.uniform(1, 2) )   # Be polite: pause between requests to reduce load on the server
+    
+    quotes = driver.find_elements(By.CLASS_NAME, 'text')
+    authors = driver.find_elements(By.CLASS_NAME, 'author')
+    tags_all = driver.find_elements(By.CLASS_NAME, 'tags')
+    abouts = driver.find_elements(By.LINK_TEXT, '(about)')
+    
+    for item in range( len(quotes) ):      
+        
+        quote = quotes[item].text
+        author = authors[item].text
+        tags = tags_all[item].text
+        about = abouts[item].get_attribute('href')
+        
+        obs_lst = [quote, author, tags, about]
+        obs_df = pd.DataFrame([obs_lst])
+        
+        df = pd.concat([df, obs_df])
+        
+df.columns =['quote', 'author', 'tags', 'about']
+df.to_csv('data/quotes_2026_0225.csv', index = False)
 ```
 
+:::
 
 <br>
 
