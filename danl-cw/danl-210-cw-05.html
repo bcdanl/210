@@ -102,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
 <meta property="og:title" content="Classwork 5 | Byeong-Hak Choe">
-<meta property="og:description" content="Scrapping Data with Python selenium">
+<meta property="og:description" content="Scrapping Quote Data with Python selenium">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
@@ -294,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Classwork 5</h1>
-<p class="subtitle lead">Scrapping Data with Python <code>selenium</code></p>
+<p class="subtitle lead">Scrapping Quote Data with Python <code>selenium</code></p>
 </div>
 
 
@@ -318,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 26, 2026</p>
+      <p class="date-modified">February 27, 2026</p>
     </div>
   </div>
     
@@ -553,7 +553,9 @@ Then you can extract unique author profile links like this:</p>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicate URLs so each author's URL appears only once</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>author_url <span class="op">=</span> author_url.drop_duplicates()</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>author_url.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the 'about' column (a pandas Series) </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># into a Python list.</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>author_url_lst <span class="op">=</span> author_url[<span class="st">'about'</span>].tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="step-2.-visit-each-author-page-and-scrape-details" class="level2">

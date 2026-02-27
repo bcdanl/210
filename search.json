@@ -2398,7 +2398,7 @@
     "href": "danl-cw/danl-210-cw-05.html#step-1.-get-unique-author-urls",
     "title": "Classwork 5",
     "section": "Step 1. Get unique author URLs",
-    "text": "Step 1. Get unique author URLs\nYou will first build df in Part 1 (quotes table).\nThen you can extract unique author profile links like this:\n# Keep only the 'about' column (this column contains each author's profile/about URL)\nauthor_url = df[[\"about\"]]\n\n# Remove duplicate URLs so each author's URL appears only once\nauthor_url = author_url.drop_duplicates()\n\nauthor_url.head()"
+    "text": "Step 1. Get unique author URLs\nYou will first build df in Part 1 (quotes table).\nThen you can extract unique author profile links like this:\n# Keep only the 'about' column (this column contains each author's profile/about URL)\nauthor_url = df[[\"about\"]]\n\n# Remove duplicate URLs so each author's URL appears only once\nauthor_url = author_url.drop_duplicates()\n\n# Convert the 'about' column (a pandas Series) \n  # into a Python list.\nauthor_url_lst = author_url['about'].tolist()"
   },
   {
     "objectID": "danl-cw/danl-210-cw-05.html#step-2.-visit-each-author-page-and-scrape-details",

@@ -264,7 +264,9 @@ author_url = df[["about"]]
 # Remove duplicate URLs so each author's URL appears only once
 author_url = author_url.drop_duplicates()
 
-author_url.head()
+# Convert the 'about' column (a pandas Series) 
+  # into a Python list.
+author_url_lst = author_url['about'].tolist()
 ```
 
 ---
