@@ -64,11 +64,6 @@ driver = webdriver.Chrome(options=options)
 
 <br>
 
-- Provide your Python Selenium code to scrape the following information for each book in [this website](http://books.toscrape.com){target="_blank"}.
-  - `category`: category of a book
-  - `title`: title of a book
-  - `price`: price of a book
-
 
 ## Goal
 
