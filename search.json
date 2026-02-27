@@ -1992,7 +1992,7 @@
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Quote Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\nClasswork 6\n\n\nScrapping Book Data with Python selenium\n\n\nMarch 2, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -2097,7 +2097,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Quote Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\nClasswork 6\n\n\nScrapping Book Data with Python selenium\n\n\nMarch 2, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-210-hw-01.html",
@@ -2406,5 +2406,26 @@
     "title": "Classwork 5",
     "section": "Step 2. Visit each author page and scrape details",
     "text": "Step 2. Visit each author page and scrape details\nOn each author page, scrape:\n\nBorn date\nBorn location\nAuthor description (bio)\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-06.html#setup",
+    "href": "danl-cw/danl-210-cw-06.html#setup",
+    "title": "Classwork 6",
+    "section": "Setup",
+    "text": "Setup\nBelow is to set up the web scrapping environment with Python selenium:\nimport pandas as pd\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)\n\n\nProvide your Python Selenium code to scrape the following information for each book in this website.\n\ncategory: category of a book\ntitle: title of a book\nprice: price of a book"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-06.html#goal",
+    "href": "danl-cw/danl-210-cw-06.html#goal",
+    "title": "Classwork 6",
+    "section": "Goal",
+    "text": "Goal\nYou will scrape all books from https://books.toscrape.com using Python selenium, then build a DataFrame:\n\nBook table: one row per book\n\nYou will export a DataFrame as a CSV file."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-06.html#target",
+    "href": "danl-cw/danl-210-cw-06.html#target",
+    "title": "Classwork 6",
+    "section": "Target",
+    "text": "Target\nCreate a DataFrame with one row per book and these columns:\n\ncategory: category of a book\ntitle: title of a book\nprice: price of a book\n\nExport as: data/books.csv\nAnswer:"
   }
 ]
