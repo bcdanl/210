@@ -148,7 +148,6 @@ driver.get(url)
 # Figuring out web-scrapping strategies
 # =============================================================================
 
-# It turns out that `By.CLASS_NAME` can be a very effective approach.
 # When "available", `id` and `class` are often the most convenient ways to locate web elements.
 # Of course, XPath would also work.
 
