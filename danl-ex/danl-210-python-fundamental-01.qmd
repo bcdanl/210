@@ -1,0 +1,219 @@
+---
+title: "Python Fundamental"
+subtitle: Midterm Exam I, DANL 210-01, Spring 2025
+date: 2025-03-05
+from: markdown+emoji
+execute: 
+  eval: false
+format:
+  html:
+    code-fold: false
+---
+
+# Section 1. Python Basics - Multiple Choice Questions (Questions 1-6)
+
+
+## Question 1
+What is the output of the following code?
+
+```{python}
+#| eval: false
+name_lst = ['Alice', 'David', 'Ethan']
+print(name_lst[-1][1])
+```
+
+
+**A.** `a`
+
+**B.** `v`
+
+**C.** `t`
+
+**D.** `h`
+
+**E.** `d`
+
+<br>
+
+
+
+
+
+## Question 2
+How many times will the following loop execute the `print()` statement?
+
+```{python}
+#| eval: false
+a = 2
+
+while True:
+  if a == 6:
+    print("Number", a, "reached")
+    break
+  elif a < 6:
+    a += 2
+    print("Adding 2... Reached", a)
+  else:
+    a = a - 1
+    print("Subtracting 1... Reached", a)
+```
+
+**A.** 1
+
+**B.** 2
+
+**C.** 3
+
+**D.** 4
+
+**E.** 5
+
+
+
+<br>
+
+
+## Question 3
+What is the output of the following code?
+
+```{python}
+#| eval: false
+numbers = [2, 3, 4, 11, 5]
+i = 0
+total = 0
+
+while i < len (numbers) :
+  if numbers[i] == 11:
+    break
+  else:
+    total += numbers[i]
+    i = i + 1
+    
+print (total)
+```
+
+
+**A.** `0`
+
+**B.** `8`
+
+**C.** `9`
+
+**D.** `10`
+
+**E.** `11`
+
+
+
+<br>
+
+## Question 4
+What is the output of the following code?
+
+```{python}
+#| eval: false
+data = {"x": 10, "y": 20, "z": 30}
+keys = ["y", "a", "x", "z"]
+result = 10
+
+for key in keys:
+    try:
+        if key == "x":
+            result = result - data[key] * 2
+            break
+        elif key == "z":
+            result = result + data[key] 
+        else:
+            result = result - data[key] 
+    except KeyError:
+        result = result + 10
+
+print(result)
+```
+
+
+**A.** `0`
+
+**B.** `10`
+
+**C.** `-10`
+
+**D.** `20`
+
+**E.** `-20`
+
+
+
+
+<br>
+
+## Question 5
+What is the output of the following code?
+
+```{python}
+#| eval: false
+result = []
+for i in range(5):
+    if i == 2:
+        continue
+    elif i == 4:
+        pass
+    result.append(i)
+
+print(result)
+```
+
+**A.** `[0, 1, 3, 4]`
+
+**B.** `[0, 1, 2, 3, 4]`
+
+**C.** `[0, 1, 3]`
+
+**D.** `[0, 1, 3, 4, 5]`
+
+**E.** `Error`
+
+<br>
+
+## Question 6
+```{python}
+#| eval: false
+result = []
+for i in range(0, 5):
+  if i ** 2 < 10:
+    result.append(i * 2)
+```
+
+Which of the following list comprehensions produces the same output as the above code?
+
+**A.**
+```{python}
+#| eval: false
+result = [i * 2 for i in range(5) if i * i < 9]
+```
+
+**B.**
+```{python}
+#| eval: false
+result = [i * 2 for i in range(5) if i in [0, 1, 2, 3, 4]]
+```
+
+**C.** 
+```{python}
+#| eval: false
+result = [i * 2 for i in range(5) if i ** 2 != 32]
+```
+
+**D.** 
+```{python}
+#| eval: false
+result = [i * 2 for i in range(5) if i ** 2 < 10]
+```
+
+**E.** 
+```{python}
+#| eval: false
+result = [i * 2 for i in range(5) if i ** 2 <= 8]
+```
+
+

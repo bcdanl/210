@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-01">
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2025-05-13">
 
-<title>DANL 210 - Exams | Byeong-Hak Choe</title>
+<title>Scrapping WebMD Data with Python selenium | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +22,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,62 +96,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
-<style>
-#toc-welcome {
-      font-size: 1.67em;
-}
-#toc-bullet-lecture {
-      font-size: 1.67em;
-}
-#toc-bullet-classwork {
-      font-size: 1.67em;
-}
-#toc-bullet-homework {
-      font-size: 1.67em;
-}
-a {
-text-decoration: none; /* This removes the underline */
-padding: 5px 10px; /* Top & Bottom, Left & Right Padding */
-border-radius: 5px; /* Rounds the corners */
-}
-</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/css/font.css">
-<meta property="og:title" content="DANL 210 - Exams | Byeong-Hak Choe">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<meta property="og:title" content="Scrapping WebMD Data with Python selenium | Byeong-Hak Choe">
+<meta property="og:description" content="Final Exam, DANL 210-01, Spring 2025">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
@@ -129,8 +113,8 @@ border-radius: 5px; /* Rounds the corners */
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -158,27 +142,27 @@ border-radius: 5px; /* Rounds the corners */
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./listing-danl-210-ex.html">📝 Exams</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Scrapping WebMD Data with Python <code>selenium</code></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🏠 Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📓 Syllabus</span></a>
   </div>
 </li>
@@ -196,31 +180,31 @@ border-radius: 5px; /* Rounds the corners */
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📑 Lecture (PDF)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🚀 Lecture</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">⌨️ Classwork</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">💻 Homework</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-ex.html" class="sidebar-item-text sidebar-link active">
+  <a href="../listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📝 Exams</span></a>
   </div>
 </li>
@@ -239,37 +223,37 @@ border-radius: 5px; /* Rounds the corners */
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 04</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 05</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 06</span></a>
   </div>
 </li>
@@ -280,135 +264,218 @@ border-radius: 5px; /* Rounds the corners */
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title"><img src="../img/logo-geneseo.jpg" style="height:48px; display:inline-block; vertical-align:middle; margin-right:0px;"> <span style="display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;"> Data<br>Analytics </span><br>
+<br>On this page</h2>
+   
+  <ul>
+  <li><a href="#directions" id="toc-directions" class="nav-link active" data-scroll-target="#directions">📌 Directions</a>
+  <ul>
+  <li><a href="#data-collection-with-selenium-points-24" id="toc-data-collection-with-selenium-points-24" class="nav-link" data-scroll-target="#data-collection-with-selenium-points-24">Data Collection with Selenium (Points: 24)</a>
+  <ul>
+  <li><a href="#screenshots" id="toc-screenshots" class="nav-link" data-scroll-target="#screenshots">Screenshots</a></li>
+  <li><a href="#dom-structure" id="toc-dom-structure" class="nav-link" data-scroll-target="#dom-structure">DOM Structure</a></li>
+  <li><a href="#webelement-examples" id="toc-webelement-examples" class="nav-link" data-scroll-target="#webelement-examples"><code>WebElement</code> Examples</a></li>
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">Task:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><font style="font-family:Optima"><b>DANL 210 - Exams</b></font></h1>
+<h1 class="title">Scrapping WebMD Data with Python <code>selenium</code></h1>
+<p class="subtitle lead">Final Exam, DANL 210-01, Spring 2025</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Byeong-Hak Choe </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2026</p>
+      <p class="date">May 13, 2025</p>
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 1, 2026</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<section id="directions" class="level1">
+<h1>📌 Directions</h1>
+<p>This is an exam on a paper, so minor coding errors are expected. My main focus is on your approach to each question — the logic, algorithms, and syntax you use. Nearly perfect code will be rewarded with bonus credit.</p>
+<p><br></p>
+<section id="data-collection-with-selenium-points-24" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-with-selenium-points-24">Data Collection with Selenium (Points: 24)</h2>
+<p>You will be collecting data from <strong>WebMD.com</strong> on internal medicine doctors located in <strong>Rochester, NY</strong>:</p>
+<section id="screenshots" class="level3">
+<h3 class="anchored" data-anchor-id="screenshots">Screenshots</h3>
+<p>Start of the first page</p>
+<p><img src="webmd-1-start.png" class="img-fluid" style="width:97.5%"></p>
+<p>End of the first page</p>
+<p><img src="webmd-1-end.png" class="img-fluid"></p>
+<p>Start of the second page</p>
+<p><img src="webmd-2-start.png" class="img-fluid"></p>
+<p>End of the second page</p>
+<p><img src="webmd-2-end.png" class="img-fluid"></p>
+</section>
+<section id="dom-structure" class="level3">
+<h3 class="anchored" data-anchor-id="dom-structure">DOM Structure</h3>
+<p>Each doctor’s information is contained within a <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="card-content.png" class="img-fluid"></p>
+<ul>
+<li>The site contains <strong>35 pages</strong>, with each page accessible via a URL of the form:</li>
+</ul>
+<div style="font-size: 0.85em; line-height: 1.25;">
+<ul>
+<li>
+https://doctor.webmd.com/providers/specialty/internal-medicine/new-york/rochester?pagenumber=1
+</li>
+<li>
+https://doctor.webmd.com/providers/specialty/internal-medicine/new-york/rochester?pagenumber=2
+</li>
+<li>
+…
+</li>
+<li>
+https://doctor.webmd.com/providers/specialty/internal-medicine/new-york/rochester?pagenumber=35
+</li>
+</ul>
 </div>
+<ul>
+<li>Each page has 68 <code>WebElement</code>s with <strong>class = “card-content”</strong>, except page 35, which may have fewer.
+<ul>
+<li>Across all pages (1-35), the <strong>first eight of those 68 <code>WebElement</code>s</strong> on each page are <em>featured results</em> and should be <strong>excluded</strong> from scraping.</li>
+<li>The <strong>remaining <code>WebElement</code>s</strong> represent a <strong>standard listing</strong> and should be <strong>included</strong> in your data collection.</li>
+</ul></li>
+<li>For each <code>WebElement</code> with <strong>class = “card-content”</strong> in the standard listing, these <strong>child elements</strong> are present:
+<ul>
+<li><strong>class = “prov-name”</strong> (Doctor’s name)</li>
+<li><strong>class = “prov-specialty”</strong> (Specialty)</li>
+<li><strong>class = “webmd-rate.on-desktop”</strong> (Number of ratings)</li>
+</ul></li>
+<li>Some <code>WebElements</code> with <strong>class = “card-content”</strong> in the standard listing might also include:
+<ul>
+<li><strong>class = “addr-text-dist”</strong>: Parent <code>WebElements</code> with <strong>class = “addr-text-dist”</strong> include:
+<ul>
+<li><strong>class = “addr-text”</strong> (Address)</li>
+</ul></li>
+<li><strong>class = “avg-ratings”</strong> (Average rating)</li>
+<li><strong>class = “prov-award”</strong> (Awards)</li>
+<li><strong>class = “prov-experience”</strong> (Years of experience)</li>
+</ul></li>
+<li>However, these optional child <code>WebElement</code>s (class values with <strong>addr-text</strong>, <strong>avg-ratings</strong>, <strong>prov-experience</strong>, <strong>prov-award</strong>) are not present in some <code>WebElement</code>s with <strong>class = “card-content”</strong></li>
+</ul>
+</section>
+<section id="webelement-examples" class="level3">
+<h3 class="anchored" data-anchor-id="webelement-examples"><code>WebElement</code> Examples</h3>
+<p>The <code>WebElement</code> of <strong>class = “prov-name”</strong> is selected within one <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="prov-name.png" class="img-fluid"></p>
+<p>The <code>WebElement</code> of <strong>class = “addr-text”</strong> is selected within one <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="addr-text.png" class="img-fluid"></p>
+<p>The <code>WebElement</code> of <strong>class = “webmd-rate”</strong> is selected within one <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="webmd-rate--number.png" class="img-fluid"></p>
+<p>The <code>WebElement</code> of <strong>class = “avg-ratings”</strong> is selected within one <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="avg-ratings.png" class="img-fluid"></p>
+<p>The <code>WebElement</code> of <strong>class = “prov-award”</strong> is selected within one <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="prov-award.png" class="img-fluid"></p>
+<p>The <code>WebElement</code> of <strong>class = “prov-experience”</strong> is selected within one <code>WebElement</code> with <strong>class = “card-content”</strong>:</p>
+<p><img src="prov-experience.png" class="img-fluid"></p>
+</section>
+<section id="task" class="level3">
+<h3 class="anchored" data-anchor-id="task">Task:</h3>
+<ol type="1">
+<li>Loop through pages 1 to 35 by constructing the URL with an f-string using the format:
+<ul>
+<li><code>f"{base_url}?pagenumber={page}"</code></li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>base_url <span class="op">=</span> <span class="st">'https://doctor.webmd.com/providers/specialty/internal-medicine/new-york/rochester'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example URLs</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>url_1 <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>base_url<span class="sc">}</span><span class="ss">?pagenumber=1"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url_2 <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>base_url<span class="sc">}</span><span class="ss">?pagenumber=2"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>url_35 <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>base_url<span class="sc">}</span><span class="ss">?pagenumber=35"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><p>On each page:</p>
+<ul>
+<li>Locate all elements with <strong>class=“card-content”</strong>.</li>
+<li>Skip the first 16 elements (0-15).</li>
+<li>Collect information about the providers who are <strong>not</strong> featured.</li>
+<li>For each remaining element, extract:
+<ul>
+<li><strong>name</strong> (<strong>class=“prov-name”</strong>)</li>
+<li><strong>specialty</strong> (<strong>class=“prov-specialty”</strong>)</li>
+<li><strong>address</strong> (<strong>class=“addr-text”</strong>)</li>
+<li><strong>rated_number</strong> (<strong>class=“webmd-rate–number”</strong>)</li>
+<li><strong>avg_rating</strong> (<strong>class=“avg-ratings”</strong>, if present)</li>
+<li><strong>award</strong> (<strong>class=“prov-award”</strong>, if present)</li>
+<li><strong>experience</strong> (<strong>class=“prov-experience”</strong>, if present)</li>
+</ul></li>
+</ul></li>
+<li><p>Concatenate each doctor’s data as a row in a pandas DataFrame</p></li>
+<li><p>After loading each page, pause execution for a random 5–8 second interval.</p></li>
+</ol>
+<p><strong>Your Task: Complete the Script Below</strong></p>
+<p><strong><em>Answer</em></strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, time, random</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the necessary modules from the Selenium library</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver  <span class="co"># Main module to control the browser</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By  <span class="co"># Helps locate elements on the webpage</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options  <span class="co"># Allows setting browser options</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> NoSuchElementException</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> TimeoutException</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the working directory path</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance of Chrome options</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>options <span class="op">=</span> Options()</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>options.add_argument(<span class="st">'--disable-blink-features=AutomationControlled'</span>)  <span class="co"># Prevent detection of automation by disabling blink features</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>options.page_load_strategy <span class="op">=</span> <span class="st">'eager'</span>  <span class="co"># Load only essential content first, skipping non-critical resources</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>_______________PROVIDE_YOUR_CODE_FROM_HERE_______________</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>Answer</em></strong>:</p>
 
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody class="list">
 
-<tr data-index="0" data-listing-date-sort="1715313600000" data-listing-file-modified-sort="1772395622478" data-listing-date-modified-sort="1772395622000" data-listing-reading-time-sort="1" data-listing-title-sort="Scrapping Table Data with Python `selenium`" data-listing-filename-sort="danl-210-webscrapping-01.qmd">
-<td>
-<a href="./danl-ex/danl-210-webscrapping-01.html" class="title listing-title">Scrapping Table Data with Python <code>selenium</code></a>
-</td>
-<td>
-<span class="listing-subtitle">Final Exam, DANL 210-01, Spring 2024</span>
-</td>
-<td>
-<span class="listing-date">May 10, 2024</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1741150800000" data-listing-file-modified-sort="1772395618612" data-listing-date-modified-sort="1772395618000" data-listing-reading-time-sort="3" data-listing-title-sort="Python Fundamental" data-listing-filename-sort="danl-210-python-fundamental-01.qmd">
-<td>
-<a href="./danl-ex/danl-210-python-fundamental-01.html" class="title listing-title">Python Fundamental</a>
-</td>
-<td>
-<span class="listing-subtitle">Midterm Exam I, DANL 210-01, Spring 2025</span>
-</td>
-<td>
-<span class="listing-date">March 5, 2025</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1745208000000" data-listing-file-modified-sort="1772395614749" data-listing-date-modified-sort="1772395614000" data-listing-reading-time-sort="2" data-listing-title-sort="Collecting FRED Data with Python `requests`" data-listing-filename-sort="danl-210-api-01.qmd">
-<td>
-<a href="./danl-ex/danl-210-api-01.html" class="title listing-title">Collecting FRED Data with Python <code>requests</code></a>
-</td>
-<td>
-<span class="listing-subtitle">Midterm Exam II, DANL 210-01, Spring 2025</span>
-</td>
-<td>
-<span class="listing-date">April 21, 2025</span>
-</td>
-</tr>
+</section>
+</section>
+</section>
 
-<tr data-index="3" data-listing-date-sort="1745294400000" data-listing-file-modified-sort="1772395626612" data-listing-date-modified-sort="1772395626000" data-listing-reading-time-sort="4" data-listing-title-sort="Scrapping Table Data with Python `selenium`" data-listing-filename-sort="danl-210-webscrapping-02.qmd">
-<td>
-<a href="./danl-ex/danl-210-webscrapping-02.html" class="title listing-title">Scrapping Table Data with Python <code>selenium</code></a>
-</td>
-<td>
-<span class="listing-subtitle">Midterm Exam II, DANL 210-01, Spring 2025</span>
-</td>
-<td>
-<span class="listing-date">April 22, 2025</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1747108800000" data-listing-file-modified-sort="1772395608015" data-listing-date-modified-sort="1772395608000" data-listing-reading-time-sort="4" data-listing-title-sort="Collecting Premier League Data with Python `requests`" data-listing-filename-sort="danl-210-api-02.qmd">
-<td>
-<a href="./danl-ex/danl-210-api-02.html" class="title listing-title">Collecting Premier League Data with Python <code>requests</code></a>
-</td>
-<td>
-<span class="listing-subtitle">Final Exam, DANL 210-01, Spring 2025</span>
-</td>
-<td>
-<span class="listing-date">May 13, 2025</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1747108800000" data-listing-file-modified-sort="1772395682456" data-listing-date-modified-sort="1772395682000" data-listing-reading-time-sort="4" data-listing-title-sort="Scrapping WebMD Data with Python `selenium`" data-listing-filename-sort="danl-210-webscrapping-03.qmd">
-<td>
-<a href="./danl-ex/danl-210-webscrapping-03.html" class="title listing-title">Scrapping WebMD Data with Python <code>selenium</code></a>
-</td>
-<td>
-<span class="listing-subtitle">Final Exam, DANL 210-01, Spring 2025</span>
-</td>
-<td>
-<span class="listing-date">May 13, 2025</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const btn = document.querySelector('.quarto-btn-toggle');
@@ -784,6 +851,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/210-spr-2026-discussion" data-repo-id="R_kgDOQ8ghEg" data-category="General" data-category-id="DIC_kwDOQ8ghEs4C1IRP" data-mapping="title" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -797,8 +866,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 <div id="scroll-padding"></div>
-<script src="./assets/js/site.js"></script>
-<script src="./assets/js/posts.js"></script>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
 
 
 
