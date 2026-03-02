@@ -7,7 +7,7 @@ listing:
   fields: [title, subtitle, date]
   sort: 
     - "date"
-    - "title"
+    - "title desc"
     - "subtitle"
   sort-ui: false
   page-size: 36
