@@ -19,6 +19,13 @@ This is an exam on a paper, so minor coding errors are expected. My main focus i
 
 ## Data Collection with APIs (Points: 12)
 
+
+<div style="text-align: center; width: 75%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/premier-league.png" style="width: 100%; margin-bottom: 0px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+
 The code below fetches the Premier League’s top-10 scorers for the 2024–25 season (**compSeasons = 719**) from the Premier League API (which powers the Stats Center at **https://www.premierleague.com/stats/top/players/goals?se=719**):
 
 ```{.python}

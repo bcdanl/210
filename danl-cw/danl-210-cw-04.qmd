@@ -34,6 +34,7 @@ Below is to set up the web scrapping environment with Python `selenium`:
 
 ```{.python}
 import pandas as pd
+import numpy as np
 import os, time, random
 from io import StringIO
 
@@ -223,6 +224,7 @@ Things to decide before you code:
 # Step 0. Set up your environment
 # =============================================================================
 import pandas as pd
+import numpy as np
 import os, time, random
 from io import StringIO
 

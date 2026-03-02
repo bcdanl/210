@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Byeong-Hak Choe">
-<meta name="dcterms.date" content="2024-05-10">
+<meta name="dcterms.date" content="2026-03-04">
 
-<title>Scrapping Table Data with Python selenium | Byeong-Hak Choe</title>
+<title>Classwork 7 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,8 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../assets/css/font.css">
-<meta property="og:title" content="Scrapping Table Data with Python selenium | Byeong-Hak Choe">
-<meta property="og:description" content="Final Exam, DANL 210-01, Spring 2024">
+<meta property="og:title" content="Classwork 7 | Byeong-Hak Choe">
+<meta property="og:description" content="Scrapping Stock Data with Python selenium + pd.read_html()">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
@@ -142,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Scrapping Table Data with Python <code>selenium</code></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classwork 7</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -276,12 +276,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <br>On this page</h2>
    
   <ul>
-  <li><a href="#directions" id="toc-directions" class="nav-link active" data-scroll-target="#directions">📌 Directions</a></li>
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a>
-  <ul>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
-  </ul></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -290,8 +287,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Scrapping Table Data with Python <code>selenium</code></h1>
-<p class="subtitle lead">Final Exam, DANL 210-01, Spring 2024</p>
+<h1 class="title">Classwork 7</h1>
+<p class="subtitle lead">Scrapping Stock Data with Python <code>selenium</code> + <code>pd.read_html()</code></p>
 </div>
 
 
@@ -308,14 +305,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 10, 2024</p>
+      <p class="date">March 4, 2026</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 1, 2026</p>
+      <p class="date-modified">March 2, 2026</p>
     </div>
   </div>
     
@@ -324,39 +321,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="directions" class="level1">
-<h1>📌 Directions</h1>
-<p>This is an exam on a paper, so minor coding errors are expected. My main focus is on your approach to each question — the logic, algorithms, and syntax you use. Nearly perfect code will be rewarded with bonus credit.</p>
+<div style="text-align: center; width: 75%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif" style="width: 100%; margin-bottom: 0px;">
+<p style="font-weight: bold;">
+</p>
+</div>
+<p><br></p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Below is to set up the web scrapping environment with Python <code>selenium</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, time, random</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the necessary modules from the Selenium library</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver  <span class="co"># Main module to control the browser</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By  <span class="co"># Helps locate elements on the webpage</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options  <span class="co"># Allows setting browser options</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> NoSuchElementException</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> TimeoutException</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the working directory path</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance of Chrome options</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>options <span class="op">=</span> Options()</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
-<section id="data-collection" class="level1">
-<h1>Data Collection</h1>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="table-scraping.png" class="img-fluid" width="927"></p>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<div style="text-align: center; width: 75%; margin: auto;">
+<img src="https://bcdanl.github.io/lec_figs/yahoo-finance.png" style="width: 100%; margin-bottom: 0px;">
+<p style="font-weight: bold;">
+</p>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://webscraper.io/test-sites/tables/tables-semantically-correct'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ul>
-<li>Convert the first table in the above webpage into the DataFrame, <code>table_0</code>, using the <code>pandas</code> table scrapping method.</li>
+<li>From <strong>Yahoo! Finance</strong>, collect <strong>historical price data</strong> for <strong>AAPL</strong>, <strong>MSFT</strong>, and <strong>NVDA</strong> using a <strong>for-loop</strong>, <strong><code>selenium</code></strong>, and <strong><code>pd.read_html()</code></strong>.
+<ul>
+<li>Combine results into <strong>one DataFrame</strong>.</li>
+<li>Add a <code>Symbol</code> column (e.g., <code>AAPL</code>, <code>MSFT</code>, <code>NVDA</code>) so each row keeps its ticker label.</li>
+<li>Use the date range <strong>2023-01-01</strong> to <strong>2026-03-01</strong>.</li>
+</ul></li>
+<li>Export the final dataset as: <code>data/stocks.csv</code></li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Yahoo Finance "Historical Data" page (MSFT)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&amp;period1=1672531200&amp;period2=1772323200"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>In Yahoo Finance URLs, <code>period1</code> and <code>period2</code> are <strong>Unix timestamps</strong> (seconds since <strong>1970-01-01</strong>):
+<ul>
+<li><code>1672531200</code> → <strong>2023-01-01</strong></li>
+<li><code>1772323200</code> → <strong>2026-03-01</strong></li>
+</ul></li>
+</ul>
+<p><em>Answer</em>:</p>
 <p><br><br></p>
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<ul>
-<li>Use selenium to load the webpage.</li>
-<li>Then, scrap the all the data in the first table in the webpage using the <code>selenium</code>’s Inspect-<code>find_element(s)</code> strategy with <code>for</code>-loop.</li>
-<li>Then, export the table data as a CSV file with the file name, <strong>table_0.csv</strong></li>
-</ul>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p><font size="5">Welcome to our Classwork 7 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Classwork 7.</p>
+<p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) regarding the Classwork 7 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>All comments will be stored <a href="https://github.com/bcdanl/210-spr-2026-discussion/discussions">here</a>.</p>
+<p>Let’s collaborate and learn from each other!</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
