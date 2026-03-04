@@ -1,0 +1,107 @@
+---
+title: Classwork 8
+subtitle: "`WebDriverWait()` and `expected_conditions` in Python `selenium`"
+date: 2026-03-23
+execute: 
+  eval: false
+  echo: false
+  warning: false
+  message: false
+  
+from: markdown+emoji
+---
+
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(DT)
+library(reticulate)
+reticulate::use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+```
+
+
+<div style="text-align: center; width: 75%; margin: auto;">
+  <img src="https://bcdanl.github.io/lec_figs/giphy-hacking-start.gif" style="width: 100%; margin-bottom: 0px;">
+  <p style="font-weight: bold;"></p>
+</div>
+
+<br>
+
+
+## Setup
+
+Below is to set up the web scrapping environment with Python `selenium`:
+
+```{.python}
+import pandas as pd
+import numpy as np
+import os, time, random
+from io import StringIO
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+# Set the working directory path
+wd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+
+```
+
+<br>
+
+## Goal
+
+- Use selenium to get to [https://qavbox.github.io/demo/delay/](https://qavbox.github.io/demo/delay/){target="_blank"}.
+  1. Use selenium to click the button with "Click me!"
+  2. Use selenium to locate the text element that will be displayed after 5 seconds using `WebDriverWait` with `EC.presence_of_element_located`.
+    - Its XPath is `'//*[@id="two"]'`
+
+
+*Answer*:
+```{python}
+#| eval: false
+#| echo: true
+
+
+```
+
+
+<br><br>
+
+
+
+
+
+# Discussion
+
+
+<font size = "5">Welcome to our Classwork 8 Discussion Board! 👋 </font>
+
+
+This space is designed for you to engage with your classmates about the material covered in Classwork 8.
+
+Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.
+
+If you have any specific questions for Byeong-Hak (**@bcdanl**) regarding the Classwork 8 materials or need clarification on any points, don't hesitate to ask here. 
+
+All comments will be stored [here](https://github.com/bcdanl/210-spr-2026-discussion/discussions).
+
+Let's collaborate and learn from each other!
+
+

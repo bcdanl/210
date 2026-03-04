@@ -431,14 +431,14 @@
     "href": "index.html#lecture",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "🚀 Lecture",
-    "text": "🚀 Lecture\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\nLecture 3\n\n\nData Collection I: DataFrame; Spyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nFebruary 9, 2026\n\n\n\n\nLecture 4\n\n\nData Collection II: Web-scrapping Primer; Scrapping Data with selenium\n\n\nFebruary 13, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "🚀 Lecture\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\nLecture 3\n\n\nData Collection I: DataFrame; Spyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nFebruary 9, 2026\n\n\n\n\nLecture 4\n\n\nData Collection II: Web-scrapping Primer; Scrapping Data with selenium\n\n\nFebruary 13, 2026\n\n\n\n\nLecture 5\n\n\nData Collection III: Collecting Data with requests and APIs\n\n\nMarch 4, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#classwork",
     "href": "index.html#classwork",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "⌨️ Classwork",
-    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Quote Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\nClasswork 6\n\n\nScrapping Book Data with Python selenium\n\n\nMarch 2, 2026\n\n\n\n\nClasswork 7\n\n\nScrapping Stock Data with Python selenium + pd.read_html()\n\n\nMarch 4, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "⌨️ Classwork\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Quote Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\nClasswork 6\n\n\nScrapping Book Data with Python selenium\n\n\nMarch 2, 2026\n\n\n\n\nClasswork 7\n\n\nScrapping Stock Data with Python selenium + pd.read_html()\n\n\nMarch 4, 2026\n\n\n\n\nClasswork 8\n\n\nWebDriverWait() and expected_conditions in Python selenium\n\n\nMarch 23, 2026\n\n\n\n\nClasswork 9\n\n\nCollecting Data with Python requests and APIs\n\n\nMarch 6, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#homework",
@@ -2167,7 +2167,7 @@
     "href": "listing-danl-210-lec.html",
     "title": "DANL 210 - Lecture",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\nLecture 3\n\n\nData Collection I: DataFrame; Spyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nFebruary 9, 2026\n\n\n\n\nLecture 4\n\n\nData Collection II: Web-scrapping Primer; Scrapping Data with selenium\n\n\nFebruary 13, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nLecture 1\n\n\nSyllabus and Course Outline\n\n\nJanuary 21, 2026\n\n\n\n\nLecture 2\n\n\nPython Fundamentals\n\n\nJanuary 23, 2026\n\n\n\n\nLecture 3\n\n\nData Collection I: DataFrame; Spyder IDE; Scrapping Web-tables with pd.read_html()\n\n\nFebruary 9, 2026\n\n\n\n\nLecture 4\n\n\nData Collection II: Web-scrapping Primer; Scrapping Data with selenium\n\n\nFebruary 13, 2026\n\n\n\n\nLecture 5\n\n\nData Collection III: Collecting Data with requests and APIs\n\n\nMarch 4, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "listing-danl-210-lec-pdf.html",
@@ -2265,7 +2265,7 @@
     "href": "listing-danl-210-cw.html",
     "title": "DANL 210 - Classwork",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Quote Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\nClasswork 6\n\n\nScrapping Book Data with Python selenium\n\n\nMarch 2, 2026\n\n\n\n\nClasswork 7\n\n\nScrapping Stock Data with Python selenium + pd.read_html()\n\n\nMarch 4, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nClasswork 1\n\n\nMarkdown Basics\n\n\nJanuary 23, 2026\n\n\n\n\nClasswork 2\n\n\nPython Fundamentals\n\n\nJanuary 28, 2026\n\n\n\n\nClasswork 3\n\n\nScrapping Web-tables with pd.read_html()\n\n\nFebruary 11, 2026\n\n\n\n\nClasswork 4\n\n\nScrapping Table Data with Python selenium with XPath approach\n\n\nFebruary 18, 2026\n\n\n\n\nClasswork 5\n\n\nScrapping Quote Data with Python selenium\n\n\nFebruary 25, 2026\n\n\n\n\nClasswork 6\n\n\nScrapping Book Data with Python selenium\n\n\nMarch 2, 2026\n\n\n\n\nClasswork 7\n\n\nScrapping Stock Data with Python selenium + pd.read_html()\n\n\nMarch 4, 2026\n\n\n\n\nClasswork 9\n\n\nCollecting Data with Python requests and APIs\n\n\nMarch 6, 2026\n\n\n\n\nClasswork 8\n\n\nWebDriverWait() and expected_conditions in Python selenium\n\n\nMarch 23, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-ex/danl-210-api-02.html",
@@ -2637,5 +2637,460 @@
     "title": "Homework 3",
     "section": "Setup",
     "text": "Setup\n# %%\n# =============================================================================\n# Part 1\n# =============================================================================\nimport pandas as pd\nimport numpy as np\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)\n\n\n# =============================================================================\n# PROVIDE YOUR CODE FROM HERE\n# ============================================================================="
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#clients-and-servers",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#clients-and-servers",
+    "title": "Lecture 5",
+    "section": "💻↔︎️🗄️️ Clients and Servers",
+    "text": "💻↔︎️🗄️️ Clients and Servers\n\n\n\n\n\n\nDevices on the web act as clients and servers.\nYour browser is a client; websites and data live on servers.\n\nClient: your computer/phone + a browser (Chrome/Firefox/Safari).\nServer: a computer that stores webpages/data and sends them when requested.\n\nWhen you load a page, your browser sends a request and the server sends back a response (the page content)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#what-is-an-api",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#what-is-an-api",
+    "title": "Lecture 5",
+    "section": "What is an API?",
+    "text": "What is an API?\n\n\n\n\n\n\n\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between a client and a server.\nThink of it like a waiter in a restaurant:\n\nCustomer (client) → places an order → Waiter (API) → relays it → Kitchen (server) → returns the food (data)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#api-key-concepts",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#api-key-concepts",
+    "title": "Lecture 5",
+    "section": "API: Key Concepts",
+    "text": "API: Key Concepts\n\n\n\nMethods: The “verbs” that define what action the client wants the server to perform.\n\n\n\n\n\n\n\nMethod\nPurpose\n\n\n\n\nGET\nRetrieve data from a server ✅ (main one we use)\n\n\nPOST\nSend new data to a server\n\n\nPUT\nUpdate existing data on a server\n\n\nDELETE\nRemove data from a server\n\n\n\n\n\nRequest: What the client sends to the server — specifying the method, endpoint URL, and optional parameters (e.g., search terms, API keys).\nResponse: What the server sends back, consisting of three parts:\n\nStatus Code — indicates success or failure (e.g., 200 OK, 404 Not Found, 401 Unauthorized)\nContent — the actual data of interest in JSON or XML format\nHeader — meta-information about the response"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#hypertext-transfer-protocol-secure-https",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#hypertext-transfer-protocol-secure-https",
+    "title": "Lecture 5",
+    "section": "🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)",
+    "text": "🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)\n\n\nHTTP is how clients and servers communicate.\nHTTPS is encrypted HTTP (safer).\n\n\nWhen we type a URL starting with https://:\n\nBrowser finds the server.\nBrowser and server establish a secure connection.\nBrowser sends a request for content.\nServer responds (e.g., 200 OK) and sends data.\nBrowser decrypts and displays the page."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#http-status-codes",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#http-status-codes",
+    "title": "Lecture 5",
+    "section": "🚦🔢 HTTP Status Codes",
+    "text": "🚦🔢 HTTP Status Codes\n# library for making HTTPS requests in Python\nimport requests\n\n\n\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n200 OK → success; content returned.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n404 Not Found → URL/page doesn’t exist (typo, removed page, broken link)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#understanding-the-requests-method",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#understanding-the-requests-method",
+    "title": "Lecture 5",
+    "section": "Understanding the requests Method",
+    "text": "Understanding the requests Method\n\nWhat is requests?\n\nA Python library used to make HTTP requests to APIs as well as websites.\nSupports methods like GET, POST, PUT, DELETE, etc.\n\nUsing requests.get():\n\nSends a GET request to retrieve data from a specified URL.\nCommonly used when fetching data from APIs.\n\n\nimport requests\nurl = 'https://www.example.com/.....'\nparam_dicts = {.....}  # Optional, but we often need this\nresponse = requests.get(url, params=param_dicts)\n\nurl: API endpoint where data is requested.\nparam_dicts: Dictionary of query parameters sent with the request."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#api-endpoints",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#api-endpoints",
+    "title": "Lecture 5",
+    "section": "API Endpoints",
+    "text": "API Endpoints\n\nIn the case of web APIs, we can access information directly from the API database if we specify the correct URL(s).\n\nThese URLs are known as API endpoints.\n\nNavigating your browser to an API endpoint will display raw text in one of these formats:\n\nJSON (JavaScript Object Notation), or\nXML (Extensible Markup Language).\n\nInstall JSONView to render JSON output nicely in Chrome.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#inspecting-the-response-object",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#inspecting-the-response-object",
+    "title": "Lecture 5",
+    "section": "Inspecting the Response Object",
+    "text": "Inspecting the Response Object\n\nKey attributes and methods:\n\nresponse.status_code: Returns HTTP status code (e.g., 200 for success).\nresponse.json(): Converts JSON format data into a Python dictionary.\nresponse.text: Decoded text version of the response.content\n\nBest practices:\n\nAlways check status_code before processing the response.\nUse response.json() for easier handling of JSON data."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-nyc-open-data",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-nyc-open-data",
+    "title": "Lecture 5",
+    "section": "Example: NYC Open Data",
+    "text": "Example: NYC Open Data\n\n\n(1)(2)(3)\n\n\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nMany metropolitan cities have the Open Data websites too:\n\nhttps://data.lacity.org\nhttps://opendata.dc.gov\nhttps://data.cityofchicago.org\n\n\n\n\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nCopy the API endpoint that appears in the popup box.\n\n\n\n\nimport requests\nimport pandas as pd\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse = requests.get(endpoint)\ncontent = response.json() # to convert JSON response data to a dictionary\ndf = pd.DataFrame(content)\n\nThe request.get() method sends a GET request to the specified URL.\nresponse.json() automatically convert JSON data into a dictionary.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-federal-reserve-economic-data-fred",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-federal-reserve-economic-data-fred",
+    "title": "Lecture 5",
+    "section": "Example: Federal Reserve Economic Data (FRED)",
+    "text": "Example: Federal Reserve Economic Data (FRED)\n\n\n(1)(2)(3)(4)(5)\n\n\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account.\n\n\n\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json\n\n\n\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs.\n\n\nimport requests  # to handle API requests\nimport json      # to parse JSON response data\nimport pandas as pd\nparam_dicts = {\n  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n  'file_type': 'json',\n  'series_id': 'GDPC1'    ## ID for US real GDP\n}\nurl = \"https://api.stlouisfed.org/\"\nendpoint = \"series/observations\"\napi_endpoint = url + \"fred/\" + endpoint   # sum of strings\nresponse = requests.get(api_endpoint, params = param_dicts)\n\n\n\njson(): Converts JSON into a Python dictionary object.\n\n# Convert JSON response to Python dictionary.\ncontent = response.json() \n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\n\n\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contains columns we do not need."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#data-collection-with-apis",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#data-collection-with-apis",
+    "title": "Lecture 5",
+    "section": "Data Collection with APIs",
+    "text": "Data Collection with APIs\nLet’s do Classwork 9!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#using-the-new-york-times-api-1",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#using-the-new-york-times-api-1",
+    "title": "Lecture 5",
+    "section": "Using the New York Times API",
+    "text": "Using the New York Times API\n\n\nStep 1Step 2Step 3Step 4ExamplesArticle Search\n\n\nSign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in.\n\n\n\nRegister apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app.\n\n\n\n\nAccess the API keys\n\nSelect My Apps from th user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved.\n\n\n\nCollect Data with pynytimes\npip install pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time-consuming to go through the documentation.\nThere is an unofficial Python library called pynytimes that provides a more user-friendly interface for working with the NYTimes API.\nTo get started, check out Introduction to pynytimes.\n\n\n\n# Settings\nfrom pynytimes import NYTAPI\n\n# Initialize API with your key\nnyt = NYTAPI(\"YOUR_NYTIMES_API_KEY\", parse_dates=True)\n# Top Stories\ntop_stories = nyt.top_stories()\n\n# Get all the top stories from a specific category\ntop_climate_stories = nyt.top_stories(section = \"climate\")\n# Most Viewed\nmost_viewed = nyt.most_viewed()\n\n# Get most viewed articles of last 7 or 30 days\nmost_viewed = nyt.most_viewed(days = 7)\nmost_viewed = nyt.most_viewed(days = 30)\n\n\nfrom datetime import datetime\n\n# Define the date range\nstart = datetime(2025, 1, 1)\nend = datetime(2026, 02, 28)\n\n# Search articles related to climate within a date range\n  # This return only up to 10 articles.\narticles = nyt.article_search(\n    query=\"climate\",\n    dates={\"begin\": start, \"end\": end},\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api-1",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api-1",
+    "title": "Lecture 5",
+    "section": "Hidden API",
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL (Client URL)\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api-2",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api-2",
+    "title": "Lecture 5",
+    "section": "Hidden API",
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL (Client URL)\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#details-on-requests-methods",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#details-on-requests-methods",
+    "title": "Lecture 5",
+    "section": "Details on requests methods",
+    "text": "Details on requests methods\n\nOur course contents are limited to the very very basics of the requests methods.\nFor those who are interested in the Python’s requests, I recommend the following references:\n\nPython’s Requests Library (Guide)\nRequests: HTTP for Humans™"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#fyi-on-web-data-collection-approaches",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#fyi-on-web-data-collection-approaches",
+    "title": "Lecture 5",
+    "section": "FYI on Web-Data Collection Approaches",
+    "text": "FYI on Web-Data Collection Approaches\n\nUse API services if available; otherwise, use web scraping tools."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#nyc-open-data",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#nyc-open-data",
+    "title": "Lecture 5",
+    "section": "NYC Open Data",
+    "text": "NYC Open Data\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nMany metropolitan cities have the Open Data websites too:\n\nhttps://data.lacity.org\nhttps://opendata.dc.gov\nhttps://data.cityofchicago.org"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#nycs-payroll-data",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#nycs-payroll-data",
+    "title": "Lecture 5",
+    "section": "NYC’s Payroll Data",
+    "text": "NYC’s Payroll Data\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nCopy the API endpoint that appears in the popup box."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code",
+    "title": "Lecture 5",
+    "section": "Example Code",
+    "text": "Example Code\nimport requests\nimport pandas as pd\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse = requests.get(endpoint)\ncontent = response.json() # to convert JSON response data to a dictionary\ndf = pd.DataFrame(content)\n\nThe requests.get() method sends a GET request to the specified URL.\nresponse.json() automatically converts JSON data into a dictionary.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#federal-reserve-economic-data-fred",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#federal-reserve-economic-data-fred",
+    "title": "Lecture 5",
+    "section": "Federal Reserve Economic Data (FRED)",
+    "text": "Federal Reserve Economic Data (FRED)\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#fred-api-key",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#fred-api-key",
+    "title": "Lecture 5",
+    "section": "FRED API Key",
+    "text": "FRED API Key\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-1",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-1",
+    "title": "Lecture 5",
+    "section": "Example Code",
+    "text": "Example Code\nimport requests  # to handle API requests\nimport json      # to parse JSON response data\nimport pandas as pd\nparam_dicts = {\n  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n  'file_type': 'json',\n  'series_id': 'GDPC1'    ## ID for US real GDP\n}\nurl = \"https://api.stlouisfed.org/\"\nendpoint = \"series/observations\"\napi_endpoint = url + \"fred/\" + endpoint   # sum of strings\nresponse = requests.get(api_endpoint, params = param_dicts)\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-2",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-2",
+    "title": "Lecture 5",
+    "section": "Example Code (2)",
+    "text": "Example Code (2)\n# Convert JSON response to Python dictionary.\ncontent = response.json() \n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\njson(): Converts JSON into a Python dictionary object.\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contains columns we do not need."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#using-the-new-york-times-api",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#using-the-new-york-times-api",
+    "title": "Lecture 5",
+    "section": "Using the New York Times API",
+    "text": "Using the New York Times API\nSign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#register-apps",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#register-apps",
+    "title": "Lecture 5",
+    "section": "Register Apps",
+    "text": "Register Apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#access-the-api-keys",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#access-the-api-keys",
+    "title": "Lecture 5",
+    "section": "Access the API keys",
+    "text": "Access the API keys\n\nSelect My Apps from the user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#collect-data-with-pynytimes",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#collect-data-with-pynytimes",
+    "title": "Lecture 5",
+    "section": "Collect Data with pynytimes",
+    "text": "Collect Data with pynytimes\npip install pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time-consuming to go through the documentation.\nThere is an unofficial Python library called pynytimes that provides a more user-friendly interface for working with the NYTimes API.\nTo get started, check out Introduction to pynytimes."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#examples-code",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#examples-code",
+    "title": "Lecture 5",
+    "section": "Examples Code",
+    "text": "Examples Code\n# Settings\nfrom pynytimes import NYTAPI\n\n# Initialize API with your key\nnyt = NYTAPI(\"YOUR_NYTIMES_API_KEY\", parse_dates=True)\n# Top Stories\ntop_stories = nyt.top_stories()\n\n# Get all the top stories from a specific category\ntop_climate_stories = nyt.top_stories(section = \"climate\")\n# Most Viewed\nmost_viewed = nyt.most_viewed()\n\n# Get most viewed articles of last 7 or 30 days\nmost_viewed = nyt.most_viewed(days = 7)\nmost_viewed = nyt.most_viewed(days = 30)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#examples-code-article-search",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#examples-code-article-search",
+    "title": "Lecture 5",
+    "section": "Examples Code: Article Search",
+    "text": "Examples Code: Article Search\nfrom datetime import datetime\n\n# Define the date range\nstart = datetime(2025, 1, 1)\nend = datetime(2026, 02, 28)\n\n# Search articles related to climate within a date range\n  # This return only up to 10 articles.\narticles = nyt.article_search(\n    query=\"climate\",\n    dates={\"begin\": start, \"end\": end},\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api",
+    "title": "Lecture 5",
+    "section": "Hidden API",
+    "text": "Hidden API\n\nMost industry-scale websites display data from their database servers.\n\nMany of them do NOT provide official APIs to retrieve data.\n\nSometimes, it is possible to find their hidden APIs to retrieve data!\nExamples:\n\nPremier League Stats\nNordstrom"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#references-details-on-requests-methods",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#references-details-on-requests-methods",
+    "title": "Lecture 5",
+    "section": "References: Details on requests Methods",
+    "text": "References: Details on requests Methods\n\nOur course covers only the basics of the requests library.\nFor those who are interested in the Python’s requests, I recommend the following references:\n\nPython’s Requests Library (Guide)\nRequests: HTTP for Humans™"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-response.json",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-response.json",
+    "title": "Lecture 5",
+    "section": "Example Code: response.json()",
+    "text": "Example Code: response.json()\n# Convert JSON response to Python dictionary.\ncontent = response.json() \n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\njson(): Converts JSON into a Python dictionary object.\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contain columns we do not need."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#understanding-the-requests-methods",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#understanding-the-requests-methods",
+    "title": "Lecture 5",
+    "section": "Understanding the requests Methods",
+    "text": "Understanding the requests Methods\n\nWhat is requests?\n\nA Python library used to make HTTP requests to APIs as well as websites.\nSupports methods like GET, POST, PUT, DELETE, etc.\n\nUsing requests.get():\n\nSends a GET request to retrieve data from a specified URL.\nCommonly used when fetching data from APIs.\n\n\n\nimport requests\nurl = 'https://www.example.com/.....'\nparam_dicts = {.....}  # Optional, but we often need this\nresponse = requests.get(url, params=param_dicts)\n\nurl: API endpoint where data is requested.\nparam_dicts: Dictionary of query parameters sent with the request."
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-08.html#setup",
+    "href": "danl-cw/danl-210-cw-08.html#setup",
+    "title": "Classwork 8",
+    "section": "Setup",
+    "text": "Setup\nBelow is to set up the web scrapping environment with Python selenium:\nimport pandas as pd\nimport numpy as np\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-08.html#goal",
+    "href": "danl-cw/danl-210-cw-08.html#goal",
+    "title": "Classwork 8",
+    "section": "Goal",
+    "text": "Goal\n\nUse selenium to get to https://qavbox.github.io/demo/delay/.\n\nUse selenium to click the button with “Click me!”\nUse selenium to locate the text element that will be displayed after 5 seconds using WebDriverWait with EC.presence_of_element_located.\n\n\nIts XPath is '//*[@id=\"two\"]'\n\n\nAnswer:"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-09.html#setup",
+    "href": "danl-cw/danl-210-cw-09.html#setup",
+    "title": "Classwork 9",
+    "section": "Setup",
+    "text": "Setup\nBelow is to set up the web scrapping environment with Python selenium:\nimport pandas as pd\nimport numpy as np\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)"
+  },
+  {
+    "objectID": "danl-cw/danl-210-cw-09.html",
+    "href": "danl-cw/danl-210-cw-09.html",
+    "title": "Classwork 9",
+    "section": "",
+    "text": "Question 1\nProvide a Python code to get New York City air quality surveillance data using the following API endpoint:\nhttps://data.cityofnewyork.us/resource/c3uy-2p5r.json\n\nUse the following query parameter dictionary in your request, which sets the “$limit” to control how many rows are returned:\n\n# query parameters (e.g., limit rows)\nparam_dict = {\n    \"$limit\": 100   # You can increase this to get more observations\n}\nAnswer:\n\n\n\nQuestion 2\n\nUse the FRED API to retrieve two macroeconomic indicators:\n\nU.S. Real GDP (series_id = “GDPC1”)\nU.S. Unemployment Rate (series_id = “UNRATE”)\n\n\nAnswer:\n\n\n\nDiscussion\nWelcome to our Classwork 9 Discussion Board! 👋 \nThis space is designed for you to engage with your classmates about the material covered in Classwork 9.\nWhether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.\nIf you have any specific questions for Byeong-Hak (@bcdanl) regarding the Classwork 9 materials or need clarification on any points, don’t hesitate to ask here.\nAll comments will be stored here.\nLet’s collaborate and learn from each other!\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#clients-and-servers",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#clients-and-servers",
+    "title": "Lecture 5",
+    "section": "💻↔︎️🗄️️ Clients and Servers",
+    "text": "💻↔︎️🗄️️ Clients and Servers\n\n\n\n\n\n\nDevices on the web act as clients and servers.\nYour browser is a client; websites and data live on servers.\n\nClient: your computer/phone + a browser (Chrome/Firefox/Safari).\nServer: a computer that stores webpages/data and sends them when requested.\n\nWhen you load a page, your browser sends a request and the server sends back a response (the page content)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#what-is-an-api",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#what-is-an-api",
+    "title": "Lecture 5",
+    "section": "What is an API?",
+    "text": "What is an API?\n\n\n\n\n\n\n\n\n\nAPI stands for Application Programming Interface.\n\nIt enables data transmission between a client and a server.\nThink of it like a waiter in a restaurant:\n\nCustomer (client) → places an order → Waiter (API) → relays it → Kitchen (server) → returns the food (data)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#api-key-concepts",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#api-key-concepts",
+    "title": "Lecture 5",
+    "section": "API: Key Concepts",
+    "text": "API: Key Concepts\n\n\n\nMethods: The “verbs” that define what action the client wants the server to perform.\n\n\n\n\n\n\n\nMethod\nPurpose\n\n\n\n\nGET\nRetrieve data from a server ✅ (main one we use)\n\n\nPOST\nSend new data to a server\n\n\nPUT\nUpdate existing data on a server\n\n\nDELETE\nRemove data from a server\n\n\n\n\n\nRequest: What the client sends to the server — specifying the method, endpoint URL, and optional parameters (e.g., search terms, API keys).\nResponse: What the server sends back, consisting of three parts:\n\nStatus Code — indicates success or failure (e.g., 200 OK, 404 Not Found, 401 Unauthorized)\nContent — the actual data of interest in JSON or XML format\nHeader — meta-information about the response"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#hypertext-transfer-protocol-secure-https",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#hypertext-transfer-protocol-secure-https",
+    "title": "Lecture 5",
+    "section": "🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)",
+    "text": "🔒🛡️ Hypertext Transfer Protocol Secure (HTTPS)\n\n\nHTTP is how clients and servers communicate.\nHTTPS is encrypted HTTP (safer).\n\n\nWhen we type a URL starting with https://:\n\nBrowser finds the server.\nBrowser and server establish a secure connection.\nBrowser sends a request for content.\nServer responds (e.g., 200 OK) and sends data.\nBrowser decrypts and displays the page."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#http-status-codes",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#http-status-codes",
+    "title": "Lecture 5",
+    "section": "🚦🔢 HTTP Status Codes",
+    "text": "🚦🔢 HTTP Status Codes\n# library for making HTTPS requests in Python\nimport requests\n\n\n\n\n\np = 'https://bcdanl.github.io/210'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n200 OK → success; content returned.\n\n\np = 'https://bcdanl.github.io/2100'\nresponse = requests.get(p)\nprint(response.status_code)\nprint(response.reason)\n\n404 Not Found → URL/page doesn’t exist (typo, removed page, broken link)."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#understanding-the-requests-methods",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#understanding-the-requests-methods",
+    "title": "Lecture 5",
+    "section": "Understanding the requests Methods",
+    "text": "Understanding the requests Methods\n\nWhat is requests?\n\nA Python library used to make HTTP requests to APIs as well as websites.\nSupports methods like GET, POST, PUT, DELETE, etc.\n\nUsing requests.get():\n\nSends a GET request to retrieve data from a specified URL.\nCommonly used when fetching data from APIs.\n\n\n\nimport requests\nurl = 'https://www.example.com/.....'\nparam_dicts = {.....}  # Optional, but we often need this\nresponse = requests.get(url, params=param_dicts)\n\nurl: API endpoint where data is requested.\nparam_dicts: Dictionary of query parameters sent with the request."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#api-endpoints",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#api-endpoints",
+    "title": "Lecture 5",
+    "section": "API Endpoints",
+    "text": "API Endpoints\n\nIn the case of web APIs, we can access information directly from the API database if we specify the correct URL(s).\n\nThese URLs are known as API endpoints.\n\nNavigating your browser to an API endpoint will display raw text in one of these formats:\n\nJSON (JavaScript Object Notation), or\nXML (Extensible Markup Language).\n\nInstall JSONView to render JSON output nicely in Chrome.\n\nhttps://jsonview.com/"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#inspecting-the-response-object",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#inspecting-the-response-object",
+    "title": "Lecture 5",
+    "section": "Inspecting the Response Object",
+    "text": "Inspecting the Response Object\n\nKey attributes and methods:\n\nresponse.status_code: Returns HTTP status code (e.g., 200 for success).\nresponse.json(): Converts JSON format data into a Python dictionary.\nresponse.text: Decoded text version of the response.content\n\nBest practices:\n\nAlways check status_code before processing the response.\nUse response.json() for easier handling of JSON data."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#nyc-open-data",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#nyc-open-data",
+    "title": "Lecture 5",
+    "section": "NYC Open Data",
+    "text": "NYC Open Data\n\nNYC Open Data (https://opendata.cityofnewyork.us) is free public data published by NYC agencies and other partners.\nMany metropolitan cities have the Open Data websites too:\n\nhttps://data.lacity.org\nhttps://opendata.dc.gov\nhttps://data.cityofchicago.org"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#nycs-payroll-data",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#nycs-payroll-data",
+    "title": "Lecture 5",
+    "section": "NYC’s Payroll Data",
+    "text": "NYC’s Payroll Data\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nCopy the API endpoint that appears in the popup box."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code",
+    "title": "Lecture 5",
+    "section": "Example Code",
+    "text": "Example Code\nimport requests\nimport pandas as pd\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse = requests.get(endpoint)\ncontent = response.json() # to convert JSON response data to a dictionary\ndf = pd.DataFrame(content)\n\nThe requests.get() method sends a GET request to the specified URL.\nresponse.json() automatically converts JSON data into a dictionary.\n\nJSON objects have the same format as Python dictionaries."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#federal-reserve-economic-data-fred",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#federal-reserve-economic-data-fred",
+    "title": "Lecture 5",
+    "section": "Federal Reserve Economic Data (FRED)",
+    "text": "Federal Reserve Economic Data (FRED)\n\nMost API interfaces will only let you access and download data after you have registered an API key with them.\nLet’s download economic data from the FRED https://fred.stlouisfed.org using its API.\nYou need to create an account https://fredaccount.stlouisfed.org/login/ to get an API key for your FRED account."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#fred-api-key",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#fred-api-key",
+    "title": "Lecture 5",
+    "section": "FRED API Key",
+    "text": "FRED API Key\n\nAs with all APIs, a good place to start is the FRED API developer docs https://fred.stlouisfed.org/docs/api/fred/.\nWe are interested in series/observations https://fred.stlouisfed.org/docs/api/fred/series_observations.html\nThe parameters that we will use are api_key, file_type, and series_id.\nReplace “YOUR_API_KEY” with your actual API key in the following web address: https://api.stlouisfed.org/fred/series/observations?series_id=GNPCA&api_key=YOUR_API_KEY&file_type=json"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-1",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-1",
+    "title": "Lecture 5",
+    "section": "Example Code",
+    "text": "Example Code\nimport requests  # to handle API requests\nimport json      # to parse JSON response data\nimport pandas as pd\nparam_dicts = {\n  'api_key': 'YOUR_FRED_API_KEY', ## Change to your own key\n  'file_type': 'json',\n  'series_id': 'GDPC1'    ## ID for US real GDP\n}\nurl = \"https://api.stlouisfed.org/\"\nendpoint = \"series/observations\"\napi_endpoint = url + \"fred/\" + endpoint   # sum of strings\nresponse = requests.get(api_endpoint, params = param_dicts)\n\nWe’re going to go through the requests, json, and pandas libraries.\n\nrequests comes with a variety of features that allow us to interact more flexibly and securely with web APIs."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-response.json",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-response.json",
+    "title": "Lecture 5",
+    "section": "Example Code: response.json()",
+    "text": "Example Code: response.json()\n# Convert JSON response to Python dictionary.\ncontent = response.json() \n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\njson(): Converts JSON into a Python dictionary object.\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contain columns we do not need."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#data-collection-with-apis",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#data-collection-with-apis",
+    "title": "Lecture 5",
+    "section": "Data Collection with APIs",
+    "text": "Data Collection with APIs\nLet’s do Classwork 9!"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#using-the-new-york-times-api",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#using-the-new-york-times-api",
+    "title": "Lecture 5",
+    "section": "Using the New York Times API",
+    "text": "Using the New York Times API\nSign Up and Sign In\n\nSign up at NYTimes Developer Portal\nVerify your NYT Developer account via email you use.\nSign in."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#register-apps",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#register-apps",
+    "title": "Lecture 5",
+    "section": "Register Apps",
+    "text": "Register Apps\n\nSelect My Apps from the user drop-down at the navigation bar.\nClick + New App to create a new app.\nEnter a name and description for the app in the New App dialog.\nClick Create.\nClick the APIs tab.\nClick the access toggle to enable or disable access to an API product from the app."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#access-the-api-keys",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#access-the-api-keys",
+    "title": "Lecture 5",
+    "section": "Access the API keys",
+    "text": "Access the API keys\n\nSelect My Apps from the user drop-down.\nClick the app in the list.\nView the API key on the App Details tab.\nConfirm that the status of the API key is Approved."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#collect-data-with-pynytimes",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#collect-data-with-pynytimes",
+    "title": "Lecture 5",
+    "section": "Collect Data with pynytimes",
+    "text": "Collect Data with pynytimes\npip install pynytimes\n\nWhile NYTimes Developer Portal APIs provides API documentation, it is time-consuming to go through the documentation.\nThere is an unofficial Python library called pynytimes that provides a more user-friendly interface for working with the NYTimes API.\nTo get started, check out Introduction to pynytimes."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-pynytimes",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-pynytimes",
+    "title": "Lecture 5",
+    "section": "Example Code: pynytimes",
+    "text": "Example Code: pynytimes\n# Settings\nfrom pynytimes import NYTAPI\n\n# Initialize API with your key\nnyt = NYTAPI(\"YOUR_NYTIMES_API_KEY\", parse_dates=True)\n# Top Stories\ntop_stories = nyt.top_stories()\n\n# Get all the top stories from a specific category\ntop_climate_stories = nyt.top_stories(section = \"climate\")\n# Most Viewed\nmost_viewed = nyt.most_viewed()\n\n# Get most viewed articles of last 7 or 30 days\nmost_viewed = nyt.most_viewed(days = 7)\nmost_viewed = nyt.most_viewed(days = 30)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-article-search",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#example-code-article-search",
+    "title": "Lecture 5",
+    "section": "Example Code: Article Search",
+    "text": "Example Code: Article Search\nfrom datetime import datetime\n\n# Define the date range\nstart = datetime(2025, 1, 1)\nend = datetime(2026, 2, 28)\n\n# Search articles related to climate within a date range\n# This returns only up to 10 articles.\narticles = nyt.article_search(\n    query=\"climate\",\n    dates={\"begin\": start, \"end\": end},\n)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#hidden-api",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#hidden-api",
+    "title": "Lecture 5",
+    "section": "Hidden API",
+    "text": "Hidden API\n\nMost industry-scale websites display data from their database servers.\n\nMany of them do NOT provide official APIs to retrieve data.\n\nSometimes, it is possible to find their hidden APIs to retrieve data!\nExamples:\n\nPremier League Stats\nNordstrom"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#hidden-api-1",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#hidden-api-1",
+    "title": "Lecture 5",
+    "section": "Hidden API",
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL (Client URL)\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#references-details-on-requests-methods",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#references-details-on-requests-methods",
+    "title": "Lecture 5",
+    "section": "References: Details on requests Methods",
+    "text": "References: Details on requests Methods\n\nOur course covers only the basics of the requests library.\nFor those who are interested in the Python’s requests, I recommend the following references:\n\nPython’s Requests Library (Guide)\nRequests: HTTP for Humans™"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304n.html#fyi-on-web-data-collection-approaches",
+    "href": "danl-lec/danl-210-lec-05-2026-0304n.html#fyi-on-web-data-collection-approaches",
+    "title": "Lecture 5",
+    "section": "FYI on Web-Data Collection Approaches",
+    "text": "FYI on Web-Data Collection Approaches\n\nUse API services if available; otherwise, use web scraping tools."
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-pynytimes",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-pynytimes",
+    "title": "Lecture 5",
+    "section": "Example Code: pynytimes",
+    "text": "Example Code: pynytimes\n# Settings\nfrom pynytimes import NYTAPI\n\n# Initialize API with your key\nnyt = NYTAPI(\"YOUR_NYTIMES_API_KEY\", parse_dates=True)\n# Top Stories\ntop_stories = nyt.top_stories()\n\n# Get all the top stories from a specific category\ntop_climate_stories = nyt.top_stories(section = \"climate\")\n# Most Viewed\nmost_viewed = nyt.most_viewed()\n\n# Get most viewed articles of last 7 or 30 days\nmost_viewed = nyt.most_viewed(days = 7)\nmost_viewed = nyt.most_viewed(days = 30)"
+  },
+  {
+    "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-article-search",
+    "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-article-search",
+    "title": "Lecture 5",
+    "section": "Example Code: Article Search",
+    "text": "Example Code: Article Search\nfrom datetime import datetime\n\n# Define the date range\nstart = datetime(2025, 1, 1)\nend = datetime(2026, 2, 28)\n\n# Search articles related to climate within a date range\n# This returns only up to 10 articles.\narticles = nyt.article_search(\n    query=\"climate\",\n    dates={\"begin\": start, \"end\": end},\n)"
   }
 ]
