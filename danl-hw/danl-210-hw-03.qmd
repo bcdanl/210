@@ -1,0 +1,232 @@
+---
+title: Homework 3
+subtitle: "Collecting Data with Python `selenium` and `requests`"
+date: 2026-03-03
+from: markdown+emoji
+execute: 
+  eval: false
+format:
+  html:
+    code-fold: false
+css: styles.css
+---
+
+# 📌 Directions
+
+- Submit your Python script (*.py) to Brightspace using this format:
+  - `danl-210-hw3-LASTNAME-FIRSTNAME.py`  
+    (e.g., `danl-210-hw3-choe-byeonghak.py`)
+  -  In your Homework 2 script, **exclude your FRED API key**.
+
+- **Due:** **March 11, 2026, 10:30 A.M.**
+- Questions? Email Prof. Choe: <bchoe@geneseo.edu>
+
+
+<br><br>
+
+# Part 1. Collecting New York City Property Sales Data
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/new-york-real-estate-market.jpg" width="600px">
+</p>
+
+<br>
+
+- Go to the following webpage:
+[https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page](https://www.nyc.gov/site/finance/property/property-annualized-sales-update.page)
+
+
+❓ Provide a Python Selenium code to download all the MS Excel files (.xls or .xlsx) in the webpage above.
+
+  - Please make sure that you do not download any PDF files.
+  - After each download, make sure your Python sleeps 2-3 seconds.
+
+
+## Setup
+
+```{.python}
+# %%
+# =============================================================================
+# Part 1
+# =============================================================================
+import pandas as pd
+import numpy as np
+import os, time, random
+from io import StringIO
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+# Set the working directory path
+wd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+
+
+# =============================================================================
+# PROVIDE YOUR CODE FROM HERE
+# =============================================================================
+
+
+
+
+```
+
+
+<br><br>
+
+# Part 2. Collecting Home Price Index Data with `requests` and the FRED API
+
+
+<p align="center">
+  <img src="https://bcdanl.github.io/lec_figs/case-shiller-home-price-index.jpg" width="600px">
+</p>
+
+<br>
+
+The `series_housing_price` DataFrame contains FRED series `id`s for the Home Price Index across 16 metropolitan statistical areas, each categorized into three price tiers: Low, Middle, and High.
+
+```{.python}
+url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
+series_housing_price = pd.read_csv(url)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+df <- readr::read_csv('https://bcdanl.github.io/data/fred_api_series_housing_price.csv')
+DT::datatable(df)
+```
+
+<br>
+
+For more information regarding the index, please visit [Standard & Poor's](https://www.spglobal.com/spdji/en/index-family/indicators/sp-cotality-case-shiller/sp-cotality-case-shiller-composite/#overview). There is more information about home price sales pairs in the Methodology section. Copyright, 2016, Standard & Poor's Financial Services LLC. 
+
+
+Professor Choe construct the following DataFrame about Standard & Poor's Home Price Index in the US using Python `requests` with FRED API:
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+df <- readr::read_csv('https://bcdanl.github.io/data/home_price_index_2026_0303.csv')
+DT::datatable(df)
+```
+
+<br>
+
+
+❓ Filling in the blanks in the Python code below to construct the above DataFrame:
+
+```{.python}
+# %%
+# =============================================================================
+# Part 2
+# =============================================================================
+import requests
+import pandas as pd
+
+
+url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
+series_housing_price = pd.read_csv(url)
+
+api_key = 'YOUR_API_KEY'
+url = "https://api.stlouisfed.org/"
+endpoint = "series/observations"
+
+api_endpoint = url + "fred/" + endpoint
+series_id_housing_price = series_housing_price['id'].tolist()
+
+# =============================================================================
+# In the above, assign api_key to your FRED API key.
+# FILLING IN THE BLANKs (????????) IN THE CODE BELOW 
+# =============================================================================
+
+df_all = pd.DataFrame()
+
+for val in ????????:    
+    param_dict = {
+      'api_key': ????????, 
+      'file_type': 'json',
+      'series_id': ????????
+    }
+    
+    response = ????????
+    
+    # Convert JSON response to Python dictionary.
+    fred = ????????
+    
+    # Extract the "observations" list element.
+    df = pd.DataFrame( fred['observations'] )
+
+    # To select only 'date' and 'value' columns in the `df` DataFrame
+    df = df[['date', 'value']]   
+    
+    # To add an 'id' column to the `df` DataFrame
+    df['id'] = val  
+    
+    # To append the `df` DataFrame to the `df_all` DataFrame
+        # Ensure that a row index of df_all starts from 0, 1, 2, ...
+    df_all = ????????
+    
+    
+
+# =============================================================================
+# Below transforms the `df_all` DataFrame you have collected.
+# Do the following:
+# 1. In the last line below, replace "PATHNAME_OF_df_clean.csv" 
+#    with your pathname for the CSV file of the `df_clean` DataFrame.
+# 2. Then run the code below.
+# =============================================================================
+
+# Join
+df_clean = df_all.merge(series_housing_price, on = 'id', how = 'left')
+
+
+# String operations
+df_clean['title'] = df_clean['title'].str.replace('Home Price Index (', '')
+df_clean[['tier', 'city']] = df_clean['title'].str.split(' Tier\) for ', expand=True)
+df_clean[['city', 'state']] = df_clean['city'].str.split(', ', expand=True)
+
+# Selecting variables
+df_clean = df_clean[['city', 'state', 'tier', 'date', 'value']]
+
+# Renaming
+df_clean = df_clean.rename( columns = { "value": "home_price_index" } )
+
+# Converting Data Types
+df_clean = df_clean.astype({'home_price_index': 'float',
+                          'date': 'datetime64[ns]'})
+tier_order = ['Low', 'Middle', 'High']  # your desired order
+df_clean['tier'] = pd.Categorical(df_clean['tier'], categories=tier_order, ordered=True)
+
+# Sorting
+df_clean = df_clean.sort_values(['state', 'city', 'date', 'tier'],
+                            ascending = [True, True, False, True])
+# Exporting DataFrame as a CSV file
+df_clean.to_csv("PATHNAME_OF_df_clean.csv", index=False)
+```
+
+<br><br><br>
+
+---
+
+# ✅ End of Homework 3

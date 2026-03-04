@@ -4,7 +4,7 @@
     "href": "listing-danl-210-hw.html",
     "title": "DANL 210 - Homework",
     "section": "",
-    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\nHomework 2\n\n\nScrapping Data with Python selenium\n\n\nFebruary 20, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\nHomework 2\n\n\nScrapping Data with Python selenium\n\n\nFebruary 20, 2026\n\n\n\n\nHomework 3\n\n\nCollecting Data with Python selenium and requests\n\n\nMarch 3, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "danl-hw/danl-210-hw-02.html",
@@ -445,7 +445,7 @@
     "href": "index.html#homework",
     "title": "DANL 210: Data Preparation and Management, Spring 2026",
     "section": "💻 Homework",
-    "text": "💻 Homework\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\nHomework 2\n\n\nScrapping Data with Python selenium\n\n\nFebruary 20, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "💻 Homework\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\nHomework 2\n\n\nScrapping Data with Python selenium\n\n\nFebruary 20, 2026\n\n\n\n\nHomework 3\n\n\nCollecting Data with Python selenium and requests\n\n\nMarch 3, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "listing-danl-210-wk.html",
@@ -2623,5 +2623,19 @@
     "title": "DANL 210 - Homework Submission",
     "section": "",
     "text": "Title\n\n\nSubtitle\n\n\nDate\n\n\n\n\n\n\nHomework 1\n\n\nPython Fundamentals\n\n\nFebruary 1, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html",
+    "href": "danl-hw/danl-210-hw-03.html",
+    "title": "Homework 3",
+    "section": "",
+    "text": "Submit your Python script (*.py) to Brightspace using this format:\n\ndanl-210-hw3-LASTNAME-FIRSTNAME.py\n(e.g., danl-210-hw3-choe-byeonghak.py)\nIn your Homework 2 script, exclude your FRED API key.\n\nDue: March 11, 2026, 10:30 A.M.\nQuestions? Email Prof. Choe: bchoe@geneseo.edu"
+  },
+  {
+    "objectID": "danl-hw/danl-210-hw-03.html#setup",
+    "href": "danl-hw/danl-210-hw-03.html#setup",
+    "title": "Homework 3",
+    "section": "Setup",
+    "text": "Setup\n# %%\n# =============================================================================\n# Part 1\n# =============================================================================\nimport pandas as pd\nimport numpy as np\nimport os, time, random\nfrom io import StringIO\n\n# Import the necessary modules from the Selenium library\nfrom selenium import webdriver  # Main module to control the browser\nfrom selenium.webdriver.common.by import By  # Helps locate elements on the webpage\nfrom selenium.webdriver.chrome.options import Options  # Allows setting browser options\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.common.exceptions import NoSuchElementException\nfrom selenium.common.exceptions import TimeoutException\nfrom selenium.common.exceptions import StaleElementReferenceException\n\n# Set the working directory path\nwd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'\nos.chdir(wd_path)  # Change the current working directory to wd_path\nos.getcwd()  # Retrieve and return the current working directory\n\n# Create an instance of Chrome options\noptions = Options()\n\n# Initialize the Chrome WebDriver with the specified options\ndriver = webdriver.Chrome(options=options)\n\n\n# =============================================================================\n# PROVIDE YOUR CODE FROM HERE\n# ============================================================================="
   }
 ]
