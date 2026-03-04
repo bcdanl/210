@@ -1356,7 +1356,7 @@ In practice: prefer <strong>XPath</strong> (the shorter one) over <strong>Full X
 <div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Load content page</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>url <span class="op">=</span> <span class="st">'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&amp;period1=1672531200&amp;period2=1772323200'</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a>driver.get(url)</span>
-<span id="cb34-4"><a href="#cb34-4"></a>time.sleep(random.uniform(<span class="dv">3</span>, <span class="dv">5</span>))  <span class="co"># wait for table to load</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-4"><a href="#cb34-4"></a>time.sleep(random.uniform(<span class="dv">4</span>, <span class="dv">8</span>))  <span class="co"># wait for table to load</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>period1</code> and <code>period2</code> values for Yahoo Finance URLs uses <strong>Unix timestamps</strong> (number of seconds since January 1, 1970),
 <ul>
@@ -1364,14 +1364,20 @@ In practice: prefer <strong>XPath</strong> (the shorter one) over <strong>Full X
 <li class="fragment">1772323200 → 2026-03-01</li>
 </ul></li>
 </ul>
+<div class="fragment">
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>dfs <span class="op">=</span> pd.read_html(url) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Does <code>pd.read_html()</code> work?</li>
+</ul>
+</div>
 </section>
 <section id="get_attributeouterhtml" class="slide level2">
 <h2>🧾🔍 <code>get_attribute("outerHTML")</code></h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Extract the &lt;table&gt; HTML element</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>table_html <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'table'</span>).get_attribute(<span class="st">"outerHTML"</span>)</span>
-<span id="cb35-3"><a href="#cb35-3"></a></span>
-<span id="cb35-4"><a href="#cb35-4"></a><span class="co"># Parse the HTML table into a pandas DataFrame</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a>df <span class="op">=</span> pd.read_html(StringIO(table_html))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Extract the &lt;table&gt; HTML element</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>table_html <span class="op">=</span> driver.find_element(By.TAG_NAME, <span class="st">'table'</span>).get_attribute(<span class="st">"outerHTML"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="co"># Parse the HTML table into a pandas DataFrame</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>df <span class="op">=</span> pd.read_html(StringIO(table_html))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><p><code>StringIO</code> turns that string into a file-like object, which is what <code>pd.read_json()</code> expects moving forward.</p></li>
 <li class="fragment"><p><code>.get_attribute("outerHTML")</code>: gets the entire HTML from the WebElement.</p></li>
@@ -1413,17 +1419,17 @@ Best practice: <strong>Use both</strong>—<code>WebDriverWait</code> for robust
 </section>
 <section id="why-time.sleep-alone-is-not-robust" class="slide level2">
 <h2>⚠️😴 Why <code>time.sleep()</code> Alone is Not Robust</h2>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="im">import</span> time</span>
-<span id="cb36-2"><a href="#cb36-2"></a></span>
-<span id="cb36-3"><a href="#cb36-3"></a>url <span class="op">=</span> <span class="st">"https://qavbox.github.io/demo/delay/"</span></span>
-<span id="cb36-4"><a href="#cb36-4"></a>driver.get(url)</span>
-<span id="cb36-5"><a href="#cb36-5"></a></span>
-<span id="cb36-6"><a href="#cb36-6"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
-<span id="cb36-7"><a href="#cb36-7"></a></span>
-<span id="cb36-8"><a href="#cb36-8"></a>time.sleep(<span class="dv">2</span>)  <span class="co"># blind wait: always 2 seconds</span></span>
-<span id="cb36-9"><a href="#cb36-9"></a></span>
-<span id="cb36-10"><a href="#cb36-10"></a>element <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="two"]'</span>)</span>
-<span id="cb36-11"><a href="#cb36-11"></a>element.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="im">import</span> time</span>
+<span id="cb37-2"><a href="#cb37-2"></a></span>
+<span id="cb37-3"><a href="#cb37-3"></a>url <span class="op">=</span> <span class="st">"https://qavbox.github.io/demo/delay/"</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>driver.get(url)</span>
+<span id="cb37-5"><a href="#cb37-5"></a></span>
+<span id="cb37-6"><a href="#cb37-6"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
+<span id="cb37-7"><a href="#cb37-7"></a></span>
+<span id="cb37-8"><a href="#cb37-8"></a>time.sleep(<span class="dv">2</span>)  <span class="co"># blind wait: always 2 seconds</span></span>
+<span id="cb37-9"><a href="#cb37-9"></a></span>
+<span id="cb37-10"><a href="#cb37-10"></a>element <span class="op">=</span> driver.find_element(By.XPATH, <span class="st">'//*[@id="two"]'</span>)</span>
+<span id="cb37-11"><a href="#cb37-11"></a>element.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>time.sleep()</code> is a <strong>blind wait</strong>:
 <ul>
@@ -1435,42 +1441,42 @@ Best practice: <strong>Use both</strong>—<code>WebDriverWait</code> for robust
 </section>
 <section id="robust-wait-for-presence-exists-in-dom-with-webdriverwait-expected_conditions" class="slide level2">
 <h2>✅👀 Robust Wait for Presence (exists in DOM) with <code>WebDriverWait()</code> + <code>expected_conditions</code></h2>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>driver.get(<span class="st">"https://qavbox.github.io/demo/delay/"</span>)</span>
-<span id="cb37-2"><a href="#cb37-2"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
-<span id="cb37-3"><a href="#cb37-3"></a></span>
-<span id="cb37-4"><a href="#cb37-4"></a><span class="cf">try</span>:</span>
-<span id="cb37-5"><a href="#cb37-5"></a>    element <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
-<span id="cb37-6"><a href="#cb37-6"></a>        EC.presence_of_element_located((By.XPATH, <span class="st">'//*[@id="two"]'</span>))</span>
-<span id="cb37-7"><a href="#cb37-7"></a>    )</span>
-<span id="cb37-8"><a href="#cb37-8"></a>    <span class="bu">print</span>(element.text)</span>
-<span id="cb37-9"><a href="#cb37-9"></a><span class="cf">except</span> TimeoutException:</span>
-<span id="cb37-10"><a href="#cb37-10"></a>    <span class="bu">print</span>(<span class="st">"Timed out: element did not appear within 10 seconds."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>driver.get(<span class="st">"https://qavbox.github.io/demo/delay/"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2"></a>driver.find_element(By.XPATH, <span class="st">'//*[@id="one"]/input'</span>).click()</span>
+<span id="cb38-3"><a href="#cb38-3"></a></span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="cf">try</span>:</span>
+<span id="cb38-5"><a href="#cb38-5"></a>    element <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
+<span id="cb38-6"><a href="#cb38-6"></a>        EC.presence_of_element_located((By.XPATH, <span class="st">'//*[@id="two"]'</span>))</span>
+<span id="cb38-7"><a href="#cb38-7"></a>    )</span>
+<span id="cb38-8"><a href="#cb38-8"></a>    <span class="bu">print</span>(element.text)</span>
+<span id="cb38-9"><a href="#cb38-9"></a><span class="cf">except</span> TimeoutException:</span>
+<span id="cb38-10"><a href="#cb38-10"></a>    <span class="bu">print</span>(<span class="st">"Timed out: element did not appear within 10 seconds."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Good when the element is added to the DOM but might not be visible yet.</li>
 </ul>
 </section>
 <section id="robust-wait-for-clickable-visible-enabled-with-webdriverwait-expected_conditions" class="slide level2">
 <h2>✅🖱️ Robust Wait for Clickable (Visible + Enabled) with <code>WebDriverWait()</code> + <code>expected_conditions</code></h2>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>btn <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
-<span id="cb38-2"><a href="#cb38-2"></a>    EC.element_to_be_clickable((By.XPATH, <span class="st">'//*[@id="one"]/input'</span>))</span>
-<span id="cb38-3"><a href="#cb38-3"></a>)</span>
-<span id="cb38-4"><a href="#cb38-4"></a>btn.click()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>btn <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
+<span id="cb39-2"><a href="#cb39-2"></a>    EC.element_to_be_clickable((By.XPATH, <span class="st">'//*[@id="one"]/input'</span>))</span>
+<span id="cb39-3"><a href="#cb39-3"></a>)</span>
+<span id="cb39-4"><a href="#cb39-4"></a>btn.click()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Best when you want to click reliably.</li>
 </ul>
 </section>
 <section id="a-common-pattern-robust-polite" class="slide level2">
 <h2>🤝 A Common Pattern (Robust + Polite)</h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Robust: wait until the table is present</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>table <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
-<span id="cb39-3"><a href="#cb39-3"></a>    EC.presence_of_element_located((By.TAG_NAME, <span class="st">"table"</span>))</span>
-<span id="cb39-4"><a href="#cb39-4"></a>)</span>
-<span id="cb39-5"><a href="#cb39-5"></a></span>
-<span id="cb39-6"><a href="#cb39-6"></a><span class="co"># Extract something...</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a>html <span class="op">=</span> table.get_attribute(<span class="st">"outerHTML"</span>)</span>
-<span id="cb39-8"><a href="#cb39-8"></a></span>
-<span id="cb39-9"><a href="#cb39-9"></a><span class="co"># Polite: pause before the next request/action</span></span>
-<span id="cb39-10"><a href="#cb39-10"></a>time.sleep(random.uniform(<span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Robust: wait until the table is present</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>table <span class="op">=</span> WebDriverWait(driver, <span class="dv">10</span>).until(</span>
+<span id="cb40-3"><a href="#cb40-3"></a>    EC.presence_of_element_located((By.TAG_NAME, <span class="st">"table"</span>))</span>
+<span id="cb40-4"><a href="#cb40-4"></a>)</span>
+<span id="cb40-5"><a href="#cb40-5"></a></span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="co"># Extract something...</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>html <span class="op">=</span> table.get_attribute(<span class="st">"outerHTML"</span>)</span>
+<span id="cb40-8"><a href="#cb40-8"></a></span>
+<span id="cb40-9"><a href="#cb40-9"></a><span class="co"># Polite: pause before the next request/action</span></span>
+<span id="cb40-10"><a href="#cb40-10"></a>time.sleep(random.uniform(<span class="dv">1</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="web-scrapping-with-python-selenium-4" class="slide level2">
 <h2>Web-scrapping with Python <code>selenium</code></h2>

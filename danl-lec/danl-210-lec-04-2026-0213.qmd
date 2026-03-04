@@ -1069,12 +1069,22 @@ Let's do:
 # Load content page
 url = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200'
 driver.get(url)
-time.sleep(random.uniform(3, 5))  # wait for table to load
+time.sleep(random.uniform(4, 8))  # wait for table to load
 ```
 
 - `period1` and `period2` values for Yahoo Finance URLs uses **Unix timestamps** (number of seconds since January 1, 1970), 
   - 1672531200 → 2023-01-01
   - 1772323200 → 2026-03-01
+
+::: fragment
+```{.python}
+dfs = pd.read_html(url) 
+```
+
+- Does `pd.read_html()` work?
+
+:::
+
 
 ## 🧾🔍 `get_attribute("outerHTML")`
 

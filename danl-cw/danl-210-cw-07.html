@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 2, 2026</p>
+      <p class="date-modified">March 4, 2026</p>
     </div>
   </div>
     
@@ -382,6 +382,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>1772323200</code> → <strong>2026-03-01</strong></li>
 </ul></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your DataFrame may have an entry of dividend.</p>
+<p>To separate these dividend entries from the actual stock trading data, we use the <code>str.contains()</code> method:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter rows where the 'Open' column contains the word 'Dividend' (these represent dividend entries)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_dividend <span class="op">=</span> df_all[df_all[<span class="st">'Open'</span>].<span class="bu">str</span>.contains(<span class="st">'Dividend'</span>, na<span class="op">=</span><span class="va">False</span>)]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out dividend rows to keep only stock price data</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>df_stock <span class="op">=</span> df_all[<span class="op">~</span>df_all[<span class="st">'Open'</span>].<span class="bu">str</span>.contains(<span class="st">'Dividend'</span>, na<span class="op">=</span><span class="va">False</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <p><em>Answer</em>:</p>
 <p><br><br></p>
 </section>

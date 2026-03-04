@@ -543,7 +543,7 @@
     "href": "danl-cw/danl-210-cw-07.html#goal",
     "title": "Classwork 7",
     "section": "Goal",
-    "text": "Goal\n\n\n\n\n\n\nFrom Yahoo! Finance, collect historical price data for AAPL, MSFT, and NVDA using a for-loop, selenium, and pd.read_html().\n\nCombine results into one DataFrame.\nAdd a Symbol column (e.g., AAPL, MSFT, NVDA) so each row keeps its ticker label.\nUse the date range 2023-01-01 to 2026-03-01.\n\nExport the final dataset as: data/stocks.csv\n\n# Example: Yahoo Finance \"Historical Data\" page (MSFT)\nurl = \"https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200\"\n\nIn Yahoo Finance URLs, period1 and period2 are Unix timestamps (seconds since 1970-01-01):\n\n1672531200 → 2023-01-01\n1772323200 → 2026-03-01\n\n\nAnswer:"
+    "text": "Goal\n\n\n\n\n\n\nFrom Yahoo! Finance, collect historical price data for AAPL, MSFT, and NVDA using a for-loop, selenium, and pd.read_html().\n\nCombine results into one DataFrame.\nAdd a Symbol column (e.g., AAPL, MSFT, NVDA) so each row keeps its ticker label.\nUse the date range 2023-01-01 to 2026-03-01.\n\nExport the final dataset as: data/stocks.csv\n\n# Example: Yahoo Finance \"Historical Data\" page (MSFT)\nurl = \"https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200\"\n\nIn Yahoo Finance URLs, period1 and period2 are Unix timestamps (seconds since 1970-01-01):\n\n1672531200 → 2023-01-01\n1772323200 → 2026-03-01\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYour DataFrame may have an entry of dividend.\nTo separate these dividend entries from the actual stock trading data, we use the str.contains() method:\n# Filter rows where the 'Open' column contains the word 'Dividend' (these represent dividend entries)\ndf_dividend = df_all[df_all['Open'].str.contains('Dividend', na=False)]\n\n# Filter out dividend rows to keep only stock price data\ndf_stock = df_all[~df_all['Open'].str.contains('Dividend', na=False)]\n\n\nAnswer:"
   },
   {
     "objectID": "danl-cw/danl-210-cw-04.html",
@@ -879,7 +879,7 @@
     "href": "danl-lec/danl-210-lec-04-2026-0213.html#selenium-with-pd.read_html-for-yahoo-finance-data",
     "title": "Lecture 4",
     "section": "💹📈 Selenium with pd.read_html() for Yahoo! Finance Data",
-    "text": "💹📈 Selenium with pd.read_html() for Yahoo! Finance Data\n# Load content page\nurl = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200'\ndriver.get(url)\ntime.sleep(random.uniform(3, 5))  # wait for table to load\n\nperiod1 and period2 values for Yahoo Finance URLs uses Unix timestamps (number of seconds since January 1, 1970),\n\n1672531200 → 2023-01-01\n1772323200 → 2026-03-01"
+    "text": "💹📈 Selenium with pd.read_html() for Yahoo! Finance Data\n# Load content page\nurl = 'https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&period2=1772323200'\ndriver.get(url)\ntime.sleep(random.uniform(4, 8))  # wait for table to load\n\nperiod1 and period2 values for Yahoo Finance URLs uses Unix timestamps (number of seconds since January 1, 1970),\n\n1672531200 → 2023-01-01\n1772323200 → 2026-03-01\n\n\n\ndfs = pd.read_html(url) \n\nDoes pd.read_html() work?"
   },
   {
     "objectID": "danl-lec/danl-210-lec-04-2026-0213.html#get_attributeouterhtml",

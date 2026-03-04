@@ -89,7 +89,22 @@ url = "https://finance.yahoo.com/quote/MSFT/history/?p=MSFT&period1=1672531200&p
   - `1772323200` → **2026-03-01**
   
 
-  
+::: callout-warning
+Your DataFrame may have an entry of dividend.
+
+To separate these dividend entries from the actual stock trading data, we use the `str.contains()` method:
+
+```{.python}
+# Filter rows where the 'Open' column contains the word 'Dividend' (these represent dividend entries)
+df_dividend = df_all[df_all['Open'].str.contains('Dividend', na=False)]
+
+# Filter out dividend rows to keep only stock price data
+df_stock = df_all[~df_all['Open'].str.contains('Dividend', na=False)]
+```
+
+:::
+
+
 *Answer*:
 ```{python}
 #| eval: false
