@@ -70,9 +70,11 @@ DT::datatable(df, rownames = FALSE)
 ```
 
 
-:::callout-tips
+::: callout-note
 
-`df_all = df_all[ ['date', 'value', 'series'] ]` means: “keep only these columns, and arrange them in this order.”
+`df_all = df_all[ ['date', 'value', 'series'] ]` means: 
+
+- “keep only these columns, and relocate them in this order.”
 
 :::
 
