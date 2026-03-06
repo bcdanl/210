@@ -267,7 +267,7 @@ df = pd.DataFrame(content)
 ```
 
 - The `requests.get()` method sends a `GET` request to the specified URL.
-- `response.json()` automatically converts JSON data into a dictionary. 
+- `response.json()` automatically converts JSON data into a dictionary or a list of dictionaries. 
   - JSON objects have the same format as Python dictionaries.
 
 
@@ -328,7 +328,7 @@ content = response.json()
 df = pd.DataFrame( content['observations'] )
 ```
   
-- `json()`: Converts JSON into a Python dictionary object.
+- `json()`: Converts JSON into a Python dictionary object (or a list of dictionaries).
   
 - By default, all columns in the DataFrame from `content` are `string`-type.
   - So, we need to convert their types properly.

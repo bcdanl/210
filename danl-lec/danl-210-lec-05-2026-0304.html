@@ -645,7 +645,7 @@ Byeong-Hak Choe
 <span id="cb5-7"><a href="#cb5-7"></a>df <span class="op">=</span> pd.DataFrame(content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The <code>requests.get()</code> method sends a <code>GET</code> request to the specified URL.</li>
-<li class="fragment"><code>response.json()</code> automatically converts JSON data into a dictionary.
+<li class="fragment"><code>response.json()</code> automatically converts JSON data into a dictionary or a list of dictionaries.
 <ul>
 <li class="fragment">JSON objects have the same format as Python dictionaries.</li>
 </ul></li>
@@ -702,7 +702,7 @@ Byeong-Hak Choe
 <span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Extract the "observations" list element.</span></span>
 <span id="cb7-5"><a href="#cb7-5"></a>df <span class="op">=</span> pd.DataFrame( content[<span class="st">'observations'</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p><code>json()</code>: Converts JSON into a Python dictionary object.</p></li>
+<li class="fragment"><p><code>json()</code>: Converts JSON into a Python dictionary object (or a list of dictionaries).</p></li>
 <li class="fragment"><p>By default, all columns in the DataFrame from <code>content</code> are <code>string</code>-type.</p>
 <ul>
 <li class="fragment">So, we need to convert their types properly.</li>

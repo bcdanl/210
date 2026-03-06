@@ -2769,7 +2769,7 @@
     "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code",
     "title": "Lecture 5",
     "section": "Example Code",
-    "text": "Example Code\nimport requests\nimport pandas as pd\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse = requests.get(endpoint)\ncontent = response.json() # to convert JSON response data to a dictionary\ndf = pd.DataFrame(content)\n\nThe requests.get() method sends a GET request to the specified URL.\nresponse.json() automatically converts JSON data into a dictionary.\n\nJSON objects have the same format as Python dictionaries."
+    "text": "Example Code\nimport requests\nimport pandas as pd\n\nendpoint = 'https://data.cityofnewyork.us/resource/ic3t-wcy2.json'  ## API endpoint\nresponse = requests.get(endpoint)\ncontent = response.json() # to convert JSON response data to a dictionary\ndf = pd.DataFrame(content)\n\nThe requests.get() method sends a GET request to the specified URL.\nresponse.json() automatically converts JSON data into a dictionary or a list of dictionaries.\n\nJSON objects have the same format as Python dictionaries."
   },
   {
     "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#federal-reserve-economic-data-fred",
@@ -2860,7 +2860,7 @@
     "href": "danl-lec/danl-210-lec-05-2026-0304.html#example-code-response.json",
     "title": "Lecture 5",
     "section": "Example Code: response.json()",
-    "text": "Example Code: response.json()\n# Convert JSON response to Python dictionary.\ncontent = response.json() \n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\njson(): Converts JSON into a Python dictionary object.\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contain columns we do not need."
+    "text": "Example Code: response.json()\n# Convert JSON response to Python dictionary.\ncontent = response.json() \n\n# Extract the \"observations\" list element.\ndf = pd.DataFrame( content['observations'] )\n\njson(): Converts JSON into a Python dictionary object (or a list of dictionaries).\nBy default, all columns in the DataFrame from content are string-type.\n\nSo, we need to convert their types properly.\nThe DataFrame may also contain columns we do not need."
   },
   {
     "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#understanding-the-requests-methods",
