@@ -49,10 +49,32 @@ param_dict = {
 <br><br>
 
 # Question 2
-- Use the FRED API to retrieve two macroeconomic indicators:
-	1.	U.S. Real GDP (`series_id` = "GDPC1")
-	2.	U.S. Unemployment Rate (`series_id` = "UNRATE")
 
+Use a for-loop, `requests`, and the FRED API to retrieve two macroeconomic indicators:
+
+1. U.S. Real GDP (`series_id` = `"GDPC1"`)
+2. U.S. Unemployment Rate (`series_id` = `"UNRATE"`)
+
+Store them into one single DataFrame called `df_all`.
+
+The `df_all` DataFrame contains both FRED series `id`s for (1) U.S. Real GDP (`series_id` = `"GDPC1"`) and (2) U.S. Unemployment Rate (`series_id` = `"UNRATE"`), and has three columns as shown below:
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+df <- readr::read_csv('https://bcdanl.github.io/data/fred-gdp-unrate.csv')
+DT::datatable(df, rownames = FALSE)
+```
+
+
+:::callout-tips
+
+`df_all = df_all[ ['date', 'value', 'series'] ]` means: “keep only these columns, and arrange them in this order.”
+
+:::
 
 
 *Answer*:

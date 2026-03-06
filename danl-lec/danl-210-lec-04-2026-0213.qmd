@@ -1096,7 +1096,7 @@ table_html = driver.find_element(By.TAG_NAME, 'table').get_attribute("outerHTML"
 df = pd.read_html(StringIO(table_html))[0]
 ```
 
-- `StringIO` turns that string into a file-like object, which is what `pd.read_json()` expects moving forward.
+- `StringIO` turns that string into a file-like object, which is what `pd.read_html()` expects moving forward.
 
 - `.get_attribute("outerHTML")`: gets the entire HTML from the WebElement.
 

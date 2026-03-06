@@ -1379,7 +1379,7 @@ In practice: prefer <strong>XPath</strong> (the shorter one) over <strong>Full X
 <span id="cb36-4"><a href="#cb36-4"></a><span class="co"># Parse the HTML table into a pandas DataFrame</span></span>
 <span id="cb36-5"><a href="#cb36-5"></a>df <span class="op">=</span> pd.read_html(StringIO(table_html))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p><code>StringIO</code> turns that string into a file-like object, which is what <code>pd.read_json()</code> expects moving forward.</p></li>
+<li class="fragment"><p><code>StringIO</code> turns that string into a file-like object, which is what <code>pd.read_html()</code> expects moving forward.</p></li>
 <li class="fragment"><p><code>.get_attribute("outerHTML")</code>: gets the entire HTML from the WebElement.</p></li>
 </ul>
 </section>
