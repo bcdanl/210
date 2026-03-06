@@ -224,14 +224,60 @@ Instead of guessing the last page number, do this:
 4. Repeat until the **Next** button is not found
 
 
-*Answer*:
+
+
+::: {.callout-tip collapse="true"}
+### Show answer
 ```{python}
 #| eval: false
 #| echo: true
 
+url = 'https://quotes.toscrape.com/'
+driver.get(url)
+
+df = pd.DataFrame()
+
+while True:
+# for p in range(1, 11):
+    # f_url = f'https://quotes.toscrape.com/page/{p}'
+    # driver.get(f_url)
+    
+    try:
+        next_btn = driver.find_element(By.PARTIAL_LINK_TEXT,
+                                       "Next")
+    except:
+        next_btn = []
+    
+    quotes = driver.find_elements(By.CLASS_NAME, 'text')
+    authors = driver.find_elements(By.CLASS_NAME, 'author')
+    tags_all = driver.find_elements(By.CLASS_NAME, 'tags')
+    abouts = driver.find_elements(By.LINK_TEXT, '(about)')
+    
+    for item in range( len(quotes) ):      
+        
+        quote = quotes[item].text
+        author = authors[item].text
+        tags = tags_all[item].text
+        about = abouts[item].get_attribute('href')
+        
+        obs_lst = [quote, author, tags, about]
+        obs_df = pd.DataFrame([obs_lst])
+        
+        df = pd.concat([df, obs_df])
+    
+    if next_btn != []:
+        next_btn.click()
+    else:
+        break
+    
+    time.sleep( random.uniform(1, 2) )   # Be polite: pause between requests to reduce load on the server
+    
+df.columns =['quote', 'author', 'tags', 'about']
+df.to_csv('data/quotes_2026_0227.csv', index = False)
 
 ```
 
+:::
 
 <br><br>
 
@@ -282,14 +328,57 @@ On each author page, scrape:
 
 
 
-*Answer*:
-```{python}
-#| eval: false
-#| echo: true
 
+::: {.callout-tip collapse="true"}
+### Show answer
+
+```{python}
+#| echo: true
+#| eval: false
+
+# %%
+# =============================================================================
+# Part 2. Author DataFrame
+# =============================================================================
+
+# Keep only the 'about' column (this column contains each author's profile/about URL)
+author_url = df[["about"]]
+
+# Remove duplicate URLs so each author's URL appears only once
+author_url = author_url.drop_duplicates()
+
+# Convert the 'about' column (a pandas Series) 
+  # into a Python list.
+author_url_lst = author_url['about'].tolist()
+
+df_authors = pd.DataFrame()
+for item in author_url_lst:
+    driver.get(item)
+    s = random.uniform(1, 2)
+    time.sleep(s)
+    
+    born_date = driver.find_element(By.CLASS_NAME, 
+                                    "author-born-date").text
+    
+    born_location = driver.find_element(By.CLASS_NAME, 
+                                    "author-born-location").text
+    
+    author_description = driver.find_element(By.CLASS_NAME, 
+                                    "author-description").text
+    
+    obs_lst = [item, born_date, born_location, author_description]
+    df_obs = pd.DataFrame([obs_lst])
+    df_authors = pd.concat([df_authors, df_obs], ignore_index=True)
+
+
+df_authors.columns = ['about_url', 'born_date', 
+                      'born_location', 'author_description']
+
+df_authors.to_csv('data/quote_authors.csv', index = False)
 
 ```
 
+:::
 
 
 <br><br>
