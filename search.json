@@ -2762,7 +2762,7 @@
     "href": "danl-lec/danl-210-lec-05-2026-0304.html#nycs-payroll-data",
     "title": "Lecture 5",
     "section": "NYC’s Payroll Data",
-    "text": "NYC’s Payroll Data\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nCopy the API endpoint that appears in the popup box."
+    "text": "NYC’s Payroll Data\n\nLet’s get the NYC’s Payroll Data.\n\nOpen the web page https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e in your browser.\nClick the “Actions”, and then “API”\nChoose the Version: “SODA2”\nCopy the API endpoint."
   },
   {
     "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#example-code",
