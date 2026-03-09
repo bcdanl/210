@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="Byeong-Hak Choe">
+<meta name="dcterms.date" content="2026-03-09">
 
-<title>Lecture Slides (PDF) | Byeong-Hak Choe</title>
+<title>Week 8 | Byeong-Hak Choe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,11 +65,11 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
 
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/css/font.css">
-<link rel="stylesheet" href="weeks/styles-wk.css">
-<meta property="og:title" content="Lecture Slides (PDF) | Byeong-Hak Choe">
-<meta property="og:description" content="DANL 210-01: Data Preparation and Management">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/font.css">
+<link rel="stylesheet" href="styles-wk.css">
+<meta property="og:title" content="Week 8 | Byeong-Hak Choe">
+<meta property="og:description" content="Requesting Data with Python requests and APIs; Midterm Exam">
 <meta property="og:image" content="/assets/img/posts.png">
 </head>
 
@@ -79,8 +80,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/geneseo-logo-squared.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/geneseo-logo-squared.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -108,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./listing-danl-210-lec-pdf.html">📑 Lecture (PDF)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../danl-wk/wk-01.html">🗓️ Weeks</a></li><li class="breadcrumb-item"><a href="../danl-wk/wk-08.html">Week 08</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -122,13 +123,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🏠 Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📓 Syllabus</span></a>
   </div>
 </li>
@@ -146,31 +147,31 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link active">
+  <a href="../listing-danl-210-lec-pdf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📑 Lecture (PDF)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-lec.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🚀 Lecture</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-cw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">⌨️ Classwork</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">💻 Homework</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
+  <a href="../listing-danl-210-ex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📝 Exams</span></a>
   </div>
 </li>
@@ -189,49 +190,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 04</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 05</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 06</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-07.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 07</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./danl-wk/wk-08.html" class="sidebar-item-text sidebar-link">
+  <a href="../danl-wk/wk-08.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 08</span></a>
   </div>
 </li>
@@ -243,70 +244,82 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title"><img src="../img/logo-geneseo.jpg" style="height:48px; display:inline-block; vertical-align:middle; margin-right:0px;"> <span style="display:inline-block; vertical-align:middle; font-family:Arial; font-weight:bold; line-height:1.05;"> Data<br>Analytics </span><br>
+<br>On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-slides" id="toc-lecture-slides" class="nav-link active" data-scroll-target="#lecture-slides">🏫 Lecture Slides</a></li>
+  <li><a href="#classwork" id="toc-classwork" class="nav-link" data-scroll-target="#classwork">✍️ Classwork</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">💬 Discussion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture Slides (PDF)</h1>
-<p class="subtitle lead">DANL 210-01: Data Preparation and Management</p>
+<h1 class="title">Week 8</h1>
+<p class="subtitle lead">Requesting Data with Python <code>requests</code> and APIs; Midterm Exam</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Byeong-Hak Choe </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 9, 2026</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 9, 2026</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-<blockquote class="blockquote">
-<p>ℹ️ <em>Choose <strong>Portrait</strong> or <strong>Landscape</strong> depending on your device or printing preference.</em></p>
-</blockquote>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Title</th>
-<th>Portrait</th>
-<th>Landscape</th>
-<th>Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Lecture 1 - Syllabus and Course Outline</td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-1-portrait.pdf" target="blank">📄 PDF</a></td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-1-landscape.pdf" target="blank">📄 PDF</a></td>
-<td>Jan 26</td>
-</tr>
-<tr class="even">
-<td>Lecture 2 - Python Fundamentals</td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-2-portrait.pdf" target="blank">📄 PDF</a></td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-2-landscape.pdf" target="blank">📄 PDF</a></td>
-<td>Feb 4</td>
-</tr>
-<tr class="odd">
-<td>Lecture 3 - Data Collection I: Scraping Web-Tables with <code>pd.read_html()</code></td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-3-portrait.pdf" target="blank">📄 PDF</a></td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-3-landscape.pdf" target="blank">📄 PDF</a></td>
-<td>Feb 9</td>
-</tr>
-<tr class="even">
-<td>Lecture 4 - Data Collection II: Web-scrapping Primer</td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-4-portrait.pdf" target="blank">📄 PDF</a></td>
-<td><a href="../210/danl-lec-pdf/danl-210-lecture-4-landscape.pdf" target="blank">📄 PDF</a></td>
-<td>Feb 13</td>
-</tr>
-</tbody>
-</table>
+<p>In the week 8, we will wrap up requesting data with Python <code>requests</code> and APIs, and will have the midterm exam</p>
+<section id="lecture-slides" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-slides">🏫 Lecture Slides</h2>
+<ul>
+<li><strong>Lecture 5 — Collecting Data with <code>requests</code> and APIs</strong><br>
+<a href="../danl-lec/danl-210-lec-05-2026-0304.html" target="_blank">View Slides</a></li>
+</ul>
+<p>🎥 Looking for lecture recordings? You can only find those on Brightspace.</p>
+</section>
+<section id="classwork" class="level2">
+<h2 class="anchored" data-anchor-id="classwork">✍️ Classwork</h2>
+<ul>
+<li><strong>Classwork 9 - Scrapping Stock Data with <code>selenium</code></strong><br>
+<a href="../danl-cw/danl-210-cw-09.html" target="_blank">View Classwork</a></li>
+</ul>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">💬 Discussion</h2>
+<p><font size="5">Welcome to our Week 8 Discussion Board! 👋 </font></p>
+<p>This space is designed for you to engage with your classmates about the material covered in Week 8.</p>
+<p>Whether you are looking to delve deeper into the content, share insights, or have questions about the content, this is the perfect place for you.</p>
+<p>If you have any specific questions for Byeong-Hak (<strong><span class="citation" data-cites="bcdanl">@bcdanl</span></strong>) or peer classmate (<span class="citation" data-cites="GitHub-Username">@GitHub-Username</span>) regarding the Week 8 materials or need clarification on any points, don’t hesitate to ask here.</p>
+<p>Let’s collaborate and learn from each other!</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script>
@@ -684,6 +697,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="bcdanl/210-spr-2026-discussion" data-repo-id="R_kgDOQ8ghEg" data-category="General" data-category-id="DIC_kwDOQ8ghEs4C1IRP" data-mapping="title" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -697,8 +712,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 <div id="scroll-padding"></div>
-<script src="./assets/js/site.js"></script>
-<script src="./assets/js/posts.js"></script>
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/posts.js"></script>
 
 
 
