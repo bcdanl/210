@@ -2097,7 +2097,7 @@
     "href": "danl-lec/danl-210-lec-05-2026-0304.html#hidden-api-1",
     "title": "Lecture 5",
     "section": "Hidden API",
-    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL (Client URL)\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
+    "text": "Hidden API\nHow can we find a hidden API?\n\nOn a web-browser (FireFox is recommended)\n\nF12 -&gt; Network -&gt; XHR (XMLHttpRequest)\nRefresh the webpage that loads data\nFind json type response that seems to have data\nRight-click that response -&gt; Copy as cURL (Client URL)\n\n\ncURL lets you talk to a server by specifying the location of the data you want.\n\nOn an API tool such as Python curlconverter,\n\nPaste the cURL to the curl command textbox, and then click “Copy to clipboard” right below the code cell.\nPaste it on your Python script, and run it."
   },
   {
     "objectID": "danl-lec/danl-210-lec-05-2026-0304.html#references-details-on-requests-methods",

@@ -455,6 +455,7 @@ articles = nyt.article_search(
   2. Refresh the webpage that loads data
   3. Find `json` type response that seems to have data
   4. Right-click that response -> Copy as **cURL** (Client URL)
+    - **cURL** lets you talk to a server by specifying the location of the data you want.
 
 - On an API tool such as Python [curlconverter](https://curlconverter.com/python/),
   5. Paste the cURL to the *curl command textbox*, and then click "Copy to clipboard" right below the code cell.
