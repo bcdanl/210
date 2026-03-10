@@ -141,19 +141,23 @@ DT::datatable(df)
 # =============================================================================
 # Part 2
 # =============================================================================
+
+import os
 import requests
 import pandas as pd
 
+# Set the working directory path
+wd_path = 'ABSOLUTE_PATHNAME_OF_YOUR_WORKING_DIRECTORY' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
 
 url = 'https://bcdanl.github.io/data/fred_api_series_housing_price.csv'
 series_housing_price = pd.read_csv(url)
+series_id_housing_price = series_housing_price['id'].tolist()
 
 api_key = 'YOUR_API_KEY'
 url = "https://api.stlouisfed.org/"
 endpoint = "series/observations"
-
 api_endpoint = url + "fred/" + endpoint
-series_id_housing_price = series_housing_price['id'].tolist()
 
 # =============================================================================
 # In the above, assign api_key to your FRED API key.
