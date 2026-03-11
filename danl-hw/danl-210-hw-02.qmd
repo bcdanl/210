@@ -152,6 +152,257 @@ readr::read_csv("https://bcdanl.github.io/data/imdb_family_2026_0220.csv") |>
 ```
 
 
+## ✅ Example Answer
+::: {.callout-tip collapse="true"}
+### Show answer
+
+```{python}
+#| echo: true
+
+# %%
+# =============================================================================
+# Setup
+# =============================================================================
+
+import pandas as pd
+import os, time, random
+from io import StringIO
+import numpy as np
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+
+# Set the working directory path
+wd_path = '/Users/bchoe/Documents/DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+
+url = 'https://www.imdb.com/search/title/?genres=family&sort=popularity,desc&count=100'
+driver.get(url)
+time.sleep(random.uniform(5,8))
+
+# %%
+# =============================================================================
+# Patterns of WebElements
+# =============================================================================
+
+# <h3 class="ipc-title__text">1. A Minecraft Movie</h3>
+# ranking_titles[0].text
+# ranking_titles[1].text
+# ranking_titles[200].text
+
+# //*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[1]/div/div/div/div[1]/div[2]/div[2]/span[1]
+# //*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[2]/div/div/div/div[1]/div[2]/div[2]/span[1]
+
+# <span class="ipc-rating-star--rating">7.2</span>
+# <span class="ipc-rating-star--votesCount">&nbsp;(<!-- -->149K<!-- -->)</span>
+
+# <div class="ipc-html-content-inner-div" role="presentation">A princess joins forces with seven dwarfs and a group of rebels to liberate her kingdom from her cruel stepmother the Evil Queen.</div>
+# plots[0].text
+# plots[199].text
+
+# class_imdb_scores = "ipc-rating-star--rating"
+# imdb_scores = driver.find_elements(By.CLASS_NAME, class_imdb_scores)
+# <span aria-label="IMDb rating: 6.6" class="ipc-rating-star ipc-rating-star--base ipc-rating-star--imdb ratingGroup--imdb-rating" data-testid="ratingGroup--imdb-rating"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ipc-icon ipc-icon--star-inline" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg><span class="ipc-rating-star--rating">6.6</span><span class="ipc-rating-star--votesCount">&nbsp;(<!-- -->100K<!-- -->)</span></span>
+# <span                               class="ipc-rating-star ipc-rating-star--base ipc-rating-star--placeholder ratingGroup--placeholder standalone-star" data-testid="ratingGroup--placeholder" aria-hidden="true"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ipc-icon ipc-icon--star-inline" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg></span>
+# class_imdb_scores = "ipc-rating-star--base"
+# imdb_scores = driver.find_elements(By.CLASS_NAME, class_imdb_scores)
+# imdb_scores[0].text
+
+# class_votess = "ipc-rating-star--votesCount"
+# votess = driver.find_elements(By.CLASS_NAME, class_votess)
+
+
+# class_item = "ipc-metadata-list-summary-item"
+# item_contents = driver.find_elements(By.CLASS_NAME, class_item)
+# len(item_contents)
+
+# class_items = "sc-a55f6282-5 bhUIDq dli-title-metadata"
+# series_contents = driver.find_elements(By.CLASS_NAME, class_items)
+# len(series_contents)
+
+# <div class="sc-a55f6282-5 bhUIDq dli-title-metadata"><span class="sc-a55f6282-6 iMumIM dli-title-metadata-item">2009</span><span class="sc-a55f6282-6 iMumIM dli-title-metadata-item">1h 27m</span><span class="sc-a55f6282-6 iMumIM dli-title-metadata-item">PG</span><span class="sc-a55f6282-8 gdLTlA"><span class="sc-9fe7b0ef-0 hDuMnh metacritic-score-box" style="background-color: rgb(84, 167, 42);">83</span><span class="metacritic-score-label">Metascore</span></span></div>
+# <div class="sc-a55f6282-5 bhUIDq dli-title-metadata"><span class="sc-a55f6282-6 iMumIM dli-title-metadata-item">1974–1983</span><span class="sc-a55f6282-6 iMumIM dli-title-metadata-item">TV-PG</span><span class="sc-a55f6282-4 htRxhS dli-title-type-data">TV Series</span></div>
+
+
+# %%
+# =============================================================================
+# Loop
+# =============================================================================
+
+class_ranking_titles = "ipc-title__text"
+ranking_titles = driver.find_elements(By.CLASS_NAME, class_ranking_titles)
+
+# class_plots = "ipc-html-content-inner-div"
+# plots = driver.find_elements(By.CLASS_NAME, class_plots)
+
+df = pd.DataFrame()
+for item in range(1, len(ranking_titles)-1):
+    
+    ranking_title = ranking_titles[item].text
+    
+    xpath_year = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[1]'
+    year = driver.find_element(By.XPATH, xpath_year).text
+                    
+    xpath_items = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]'
+    items_txt = driver.find_element(By.XPATH, xpath_items).text
+    
+    # `"TV Series" in items_txt` returns True if "TV Series" is a substring of items_txt; False otherwise.
+    
+    if "TV Series" in items_txt:
+        
+        # np.nan or pd.NA is a missing value; 
+        # Empty string ('') can also be used instead,
+        # but np.nan or pd.NA is more recommended.
+        runtime = np.nan 
+        
+        xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'
+        rating = driver.find_element(By.XPATH, xpath_rating).text
+        
+        metascore = np.nan
+        
+        is_series = True
+        
+    # elif "TV Movie" in items_txt:
+    #     xpath_runtime = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'
+    #     runtime = driver.find_element(By.XPATH, xpath_runtime).text
+        
+    #     xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[3]'
+    #     rating = driver.find_element(By.XPATH, xpath_rating).text 
+        
+    #     metascore = np.nan
+        
+    #     is_series = "TV Movie"
+        
+    else:
+        
+        try:
+            xpath_runtime = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'
+            runtime = driver.find_element(By.XPATH, xpath_runtime).text
+        except:
+            runtime = np.nan
+            
+        try:
+            xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[3]'
+            rating = driver.find_element(By.XPATH, xpath_rating).text
+        except:
+            rating = np.nan
+        
+        try:
+            xpath_metascore = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[4]/span[1]'
+            metascore = driver.find_element(By.XPATH, xpath_metascore).text
+        except:
+            metascore = np.nan
+        
+        is_series = False
+        
+    
+    try:
+        xpath_imdb_score = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/span/div/span/span[1]'
+        imdb_score = driver.find_element(By.XPATH, xpath_imdb_score).text
+    except:
+        imdb_score = np.nan
+    
+    try:
+        xpath_votes = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/span/div/span/span[2]'
+        votes = driver.find_element(By.XPATH, xpath_votes).text
+    except:
+        votes = np.nan
+        
+    
+    try:
+        xpath_plot = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[2]/div/div'
+        plot = driver.find_element(By.XPATH, xpath_plot).text
+    except:
+        plot = np.nan
+    
+    lst = [ranking_title, year, runtime, rating, is_series, metascore, imdb_score, votes, plot]
+    obs = pd.DataFrame([lst])
+    df = pd.concat([df, obs], ignore_index=True)
+    
+    
+df.columns = ['ranking_title', 'year', 'runtime', 'rating', 'is_series', 'metascore', 'imdb_score', 'votes', 'plot']
+
+
+# %%
+# =============================================================================
+# Data Cleaning
+# =============================================================================
+
+df[['ranking', 'title']] = df['ranking_title'].str.split('.', n=1, expand=True)
+df = df.drop(columns=['ranking_title'])
+df['ranking'] = df['ranking'].astype('int')
+
+df['votes'] = df['votes'].str.replace(' (', '')
+df['votes'] = df['votes'].str.replace(')', '')
+
+df[['runtime_h', 'runtime_m']] = df['runtime'].str.split(' ', n=1, expand=True)
+df['runtime_h'] = df['runtime_h'].str.replace('h', '')
+df['runtime_m'] = df['runtime_m'].str.replace('m', '')
+
+df['runtime_h'] = pd.to_numeric(df['runtime_h'], errors='coerce')
+df['runtime_m'] = pd.to_numeric(df['runtime_m'], errors='coerce')
+
+df['runtime'] = df['runtime_h'] * 60 + df['runtime_m']
+df = df.drop(columns=['runtime_h', 'runtime_m'])
+
+df['metascore'] = pd.to_numeric(df['metascore'], errors='coerce') # errors='coerce' to avoid an error
+df['imdb_score'] = pd.to_numeric(df['imdb_score'], errors='coerce')
+
+df['is_k'] = df['votes'].str.endswith('K')
+df['is_m'] = df['votes'].str.endswith('M')
+df['votes'] = df['votes'].str.replace('K', '').str.replace('M', '')
+df['votes'] = pd.to_numeric(df['votes'], errors='coerce')
+df['votes'] = np.where(df['is_k'] == True, df['votes'] * 1000, df['votes'])
+df['votes'] = np.where(df['is_m'] == True, df['votes'] * 1000000, df['votes'])
+df = df.drop(columns=['is_k', 'is_m'])
+
+
+df[['year_start', 'year_end']] = df['year'].str.split('–', n=1, expand=True)
+# df['year_start'] = df['year_start'].astype('int')
+df['year_end'] = np.where(df['year_end'] == '', 'present', df['year_end'])
+
+# %%
+# =============================================================================
+# Data Export
+# =============================================================================
+
+# df.columns
+# Selecting and re-ordering columns
+df = df[['ranking', 'title', 'year', 'year_start', 'year_end', 'runtime', 'rating', 'metascore', 'is_series', 'imdb_score', 'votes', 'plot']]
+
+# Export df as CSV
+  # `encoding = 'utf-8-sig'` to correctly display special characters (e.g., characters with accents) 
+df.to_csv('data/imdb_family_2026_0309.csv', index = False, encoding = 'utf-8-sig')
+
+
+# %%
+# =============================================================================
+# This Section is intentionally left as blank.
+# =============================================================================
+
+
+
+```
+
+:::
+
+---
+
 
 <br><br>
 
@@ -289,8 +540,127 @@ readr::read_csv("https://bcdanl.github.io/data/nba_salaries_1999-2020_2025-2026.
 
 ```
 
-<br><br><br>
+
+## ✅ Example Answer
+::: {.callout-tip collapse="true"}
+### Show answer
+
+```{python}
+#| echo: true
+
+# %%
+# =============================================================================
+# Setup
+# =============================================================================
+
+import pandas as pd
+import os, time, random
+from io import StringIO
+
+# Import the necessary modules from the Selenium library
+from selenium import webdriver  # Main module to control the browser
+from selenium.webdriver.common.by import By  # Helps locate elements on the webpage
+from selenium.webdriver.chrome.options import Options  # Allows setting browser options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
+
+
+# Set the working directory path
+wd_path = '/Users/bchoe/Documents/DANL-210' # e.g., '/Users/bchoe/Documents/DANL-210'
+os.chdir(wd_path)  # Change the current working directory to wd_path
+os.getcwd()  # Retrieve and return the current working directory
+
+# Create an instance of Chrome options
+options = Options()
+
+# Initialize the Chrome WebDriver with the specified options
+driver = webdriver.Chrome(options=options)
+
+driver.get("https://www.espn.com/nba/salaries")
+
+
+# %%
+# =============================================================================
+# Loop
+# =============================================================================
+
+start_year = 2018
+end_year = 2026
+
+dfs = pd.DataFrame()
+for yr in range(start_year, end_year + 1):
+    p = 1
+    url = f"https://www.espn.com/nba/salaries/_/year/{yr}/page/{p}"
+    driver.get(url)
+    time.sleep(random.uniform(2, 3))
+    
+    p_num = driver.find_element(By.CLASS_NAME, "page-numbers").text
+    p_num = int(p_num.split(' of ')[1])
+    
+    for p in range(1, p_num + 1):
+        url = f"https://www.espn.com/nba/salaries/_/year/{yr}/page/{p}"
+        
+        driver.get(url)
+        time.sleep(random.uniform(3, 5))
+        df_list = pd.read_html(url)
+
+        df = df_list[0]
+        df['season'] = str(yr-1) + '-' + str(yr)
+        dfs = pd.concat([dfs, df], ignore_index=True)
+        
+dfs.columns = ['rank', 'name_position', 'team', 'salary', 'season']
+
+
+# %%
+# =============================================================================
+# Data Cleaning
+# =============================================================================
+
+# Remove rows where rank != "RK"
+dfs = dfs.query('rank != "RK"')
+
+
+# Example: "Stephen Curry, G" -> name="Stephen Curry", position="G"
+dfs[["name", "position"]] = dfs["name_position"].str.split(", ", n=1, expand=True)
+
+# Optional: drop the original combined column
+dfs = dfs.drop(columns=["name_position"])
+
+dfs = dfs.reset_index(drop = True)
+dfs['salary'] = dfs['salary'].str.replace('$', '')
+dfs['salary'] = dfs['salary'].str.replace(',', '')
+
+dfs = dfs.astype({
+    'rank' : 'int',
+    'salary' : 'int'
+    })
+
+
+
+# %%
+# =============================================================================
+# Data Export
+# =============================================================================
+
+dfs = dfs[['season', 'rank', 'name', 'position', 'team', 'salary']]
+dfs.to_csv('data/nba_salaries_1999-2020_2025-2026_.csv', index = False)
+
+
+
+# %%
+# =============================================================================
+# This Section is intentionally left as blank.
+# =============================================================================
+
+```
+
+:::
 
 ---
+
+<br><br>
 
 # ✅ End of Homework 2

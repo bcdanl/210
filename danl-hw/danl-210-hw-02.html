@@ -294,6 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#helpful-data-cleaning-snippet-splitting-ranking_title" id="toc-helpful-data-cleaning-snippet-splitting-ranking_title" class="nav-link" data-scroll-target="#helpful-data-cleaning-snippet-splitting-ranking_title">Helpful Data-Cleaning Snippet: Splitting <code>ranking_title</code></a></li>
   <li><a href="#changing-the-order-of-columns" id="toc-changing-the-order-of-columns" class="nav-link" data-scroll-target="#changing-the-order-of-columns">Changing the Order of Columns</a></li>
   <li><a href="#output-dataframe" id="toc-output-dataframe" class="nav-link" data-scroll-target="#output-dataframe">Output DataFrame</a></li>
+  <li><a href="#example-answer" id="toc-example-answer" class="nav-link" data-scroll-target="#example-answer">✅ Example Answer</a></li>
   </ul></li>
   <li><a href="#part-2.-collecting-nba-player-salaries-19992000-to-20252026-with-pandas.read_html-selenium" id="toc-part-2.-collecting-nba-player-salaries-19992000-to-20252026-with-pandas.read_html-selenium" class="nav-link" data-scroll-target="#part-2.-collecting-nba-player-salaries-19992000-to-20252026-with-pandas.read_html-selenium">Part 2. Collecting NBA Player Salaries (1999–2000 to 2025–2026) with <code>pandas.read_html()</code> + <code>selenium</code></a>
   <ul>
@@ -307,6 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#helpful-data-cleaning-snippet-splitting-name_position" id="toc-helpful-data-cleaning-snippet-splitting-name_position" class="nav-link" data-scroll-target="#helpful-data-cleaning-snippet-splitting-name_position">Helpful Data-Cleaning Snippet: Splitting <code>name_position</code></a></li>
   <li><a href="#replacing-values-in-a-string" id="toc-replacing-values-in-a-string" class="nav-link" data-scroll-target="#replacing-values-in-a-string">Replacing Values in a String</a></li>
   <li><a href="#output-dataframe-1" id="toc-output-dataframe-1" class="nav-link" data-scroll-target="#output-dataframe-1">Output DataFrame</a></li>
+  <li><a href="#example-answer-1" id="toc-example-answer-1" class="nav-link" data-scroll-target="#example-answer-1">✅ Example Answer</a></li>
   </ul></li>
   <li><a href="#end-of-homework-2" id="toc-end-of-homework-2" class="nav-link" data-scroll-target="#end-of-homework-2">✅ End of Homework 2</a></li>
   </ul>
@@ -342,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 25, 2026</p>
+      <p class="date-modified">March 11, 2026</p>
     </div>
   </div>
     
@@ -489,6 +491,262 @@ Note
 </div>
 </div>
 </div>
+</section>
+<section id="example-answer" class="level2">
+<h2 class="anchored" data-anchor-id="example-answer">✅ Example Answer</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, time, random</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the necessary modules from the Selenium library</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver  <span class="co"># Main module to control the browser</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By  <span class="co"># Helps locate elements on the webpage</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options  <span class="co"># Allows setting browser options</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> NoSuchElementException</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> TimeoutException</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the working directory path</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'/Users/bchoe/Documents/DANL-210'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance of Chrome options</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>options <span class="op">=</span> Options()</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.imdb.com/search/title/?genres=family&amp;sort=popularity,desc&amp;count=100'</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>driver.get(url)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>time.sleep(random.uniform(<span class="dv">5</span>,<span class="dv">8</span>))</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Patterns of WebElements</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;h3 class="ipc-title__text"&gt;1. A Minecraft Movie&lt;/h3&gt;</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="co"># ranking_titles[0].text</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="co"># ranking_titles[1].text</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="co"># ranking_titles[200].text</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="co"># //*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[1]/div/div/div/div[1]/div[2]/div[2]/span[1]</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="co"># //*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[2]/div/div/div/div[1]/div[2]/div[2]/span[1]</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;span class="ipc-rating-star--rating"&gt;7.2&lt;/span&gt;</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;span class="ipc-rating-star--votesCount"&gt;&amp;nbsp;(&lt;!-- --&gt;149K&lt;!-- --&gt;)&lt;/span&gt;</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;div class="ipc-html-content-inner-div" role="presentation"&gt;A princess joins forces with seven dwarfs and a group of rebels to liberate her kingdom from her cruel stepmother the Evil Queen.&lt;/div&gt;</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co"># plots[0].text</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co"># plots[199].text</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="co"># class_imdb_scores = "ipc-rating-star--rating"</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="co"># imdb_scores = driver.find_elements(By.CLASS_NAME, class_imdb_scores)</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;span aria-label="IMDb rating: 6.6" class="ipc-rating-star ipc-rating-star--base ipc-rating-star--imdb ratingGroup--imdb-rating" data-testid="ratingGroup--imdb-rating"&gt;&lt;svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ipc-icon ipc-icon--star-inline" viewBox="0 0 24 24" fill="currentColor" role="presentation"&gt;&lt;path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;span class="ipc-rating-star--rating"&gt;6.6&lt;/span&gt;&lt;span class="ipc-rating-star--votesCount"&gt;&amp;nbsp;(&lt;!-- --&gt;100K&lt;!-- --&gt;)&lt;/span&gt;&lt;/span&gt;</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;span                               class="ipc-rating-star ipc-rating-star--base ipc-rating-star--placeholder ratingGroup--placeholder standalone-star" data-testid="ratingGroup--placeholder" aria-hidden="true"&gt;&lt;svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ipc-icon ipc-icon--star-inline" viewBox="0 0 24 24" fill="currentColor" role="presentation"&gt;&lt;path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="co"># class_imdb_scores = "ipc-rating-star--base"</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="co"># imdb_scores = driver.find_elements(By.CLASS_NAME, class_imdb_scores)</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="co"># imdb_scores[0].text</span></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="co"># class_votess = "ipc-rating-star--votesCount"</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="co"># votess = driver.find_elements(By.CLASS_NAME, class_votess)</span></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="co"># class_item = "ipc-metadata-list-summary-item"</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="co"># item_contents = driver.find_elements(By.CLASS_NAME, class_item)</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="co"># len(item_contents)</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="co"># class_items = "sc-a55f6282-5 bhUIDq dli-title-metadata"</span></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="co"># series_contents = driver.find_elements(By.CLASS_NAME, class_items)</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="co"># len(series_contents)</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;div class="sc-a55f6282-5 bhUIDq dli-title-metadata"&gt;&lt;span class="sc-a55f6282-6 iMumIM dli-title-metadata-item"&gt;2009&lt;/span&gt;&lt;span class="sc-a55f6282-6 iMumIM dli-title-metadata-item"&gt;1h 27m&lt;/span&gt;&lt;span class="sc-a55f6282-6 iMumIM dli-title-metadata-item"&gt;PG&lt;/span&gt;&lt;span class="sc-a55f6282-8 gdLTlA"&gt;&lt;span class="sc-9fe7b0ef-0 hDuMnh metacritic-score-box" style="background-color: rgb(84, 167, 42);"&gt;83&lt;/span&gt;&lt;span class="metacritic-score-label"&gt;Metascore&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;div class="sc-a55f6282-5 bhUIDq dli-title-metadata"&gt;&lt;span class="sc-a55f6282-6 iMumIM dli-title-metadata-item"&gt;1974–1983&lt;/span&gt;&lt;span class="sc-a55f6282-6 iMumIM dli-title-metadata-item"&gt;TV-PG&lt;/span&gt;&lt;span class="sc-a55f6282-4 htRxhS dli-title-type-data"&gt;TV Series&lt;/span&gt;&lt;/div&gt;</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop</span></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>class_ranking_titles <span class="op">=</span> <span class="st">"ipc-title__text"</span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>ranking_titles <span class="op">=</span> driver.find_elements(By.CLASS_NAME, class_ranking_titles)</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="co"># class_plots = "ipc-html-content-inner-div"</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="co"># plots = driver.find_elements(By.CLASS_NAME, class_plots)</span></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(ranking_titles)<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>    ranking_title <span class="op">=</span> ranking_titles[item].text</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>    xpath_year <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]/span[1]'</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> driver.find_element(By.XPATH, xpath_year).text</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>                    </span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>    xpath_items <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]'</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>    items_txt <span class="op">=</span> driver.find_element(By.XPATH, xpath_items).text</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `"TV Series" in items_txt` returns True if "TV Series" is a substring of items_txt; False otherwise.</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"TV Series"</span> <span class="kw">in</span> items_txt:</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>        <span class="co"># np.nan or pd.NA is a missing value; </span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Empty string ('') can also be used instead,</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>        <span class="co"># but np.nan or pd.NA is more recommended.</span></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>        runtime <span class="op">=</span> np.nan </span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>        xpath_rating <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]/span[2]'</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>        rating <span class="op">=</span> driver.find_element(By.XPATH, xpath_rating).text</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>        metascore <span class="op">=</span> np.nan</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>        is_series <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>    <span class="co"># elif "TV Movie" in items_txt:</span></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     xpath_runtime = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[2]'</span></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     runtime = driver.find_element(By.XPATH, xpath_runtime).text</span></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     xpath_rating = f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[{item}]/div/div/div/div[1]/div[2]/div[2]/span[3]'</span></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     rating = driver.find_element(By.XPATH, xpath_rating).text </span></span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     metascore = np.nan</span></span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     is_series = "TV Movie"</span></span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>            xpath_runtime <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]/span[2]'</span></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>            runtime <span class="op">=</span> driver.find_element(By.XPATH, xpath_runtime).text</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>            runtime <span class="op">=</span> np.nan</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>            xpath_rating <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]/span[3]'</span></span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>            rating <span class="op">=</span> driver.find_element(By.XPATH, xpath_rating).text</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>            rating <span class="op">=</span> np.nan</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>            xpath_metascore <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/div[2]/span[4]/span[1]'</span></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>            metascore <span class="op">=</span> driver.find_element(By.XPATH, xpath_metascore).text</span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>            metascore <span class="op">=</span> np.nan</span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>        is_series <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>        xpath_imdb_score <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/span/div/span/span[1]'</span></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>        imdb_score <span class="op">=</span> driver.find_element(By.XPATH, xpath_imdb_score).text</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>        imdb_score <span class="op">=</span> np.nan</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>        xpath_votes <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[1]/div[2]/span/div/span/span[2]'</span></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>        votes <span class="op">=</span> driver.find_element(By.XPATH, xpath_votes).text</span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>        votes <span class="op">=</span> np.nan</span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>        xpath_plot <span class="op">=</span> <span class="ss">f'//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/div[2]/div[2]/ul/li[</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">]/div/div/div/div[2]/div/div'</span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>        plot <span class="op">=</span> driver.find_element(By.XPATH, xpath_plot).text</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>        plot <span class="op">=</span> np.nan</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>    lst <span class="op">=</span> [ranking_title, year, runtime, rating, is_series, metascore, imdb_score, votes, plot]</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>    obs <span class="op">=</span> pd.DataFrame([lst])</span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.concat([df, obs], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'ranking_title'</span>, <span class="st">'year'</span>, <span class="st">'runtime'</span>, <span class="st">'rating'</span>, <span class="st">'is_series'</span>, <span class="st">'metascore'</span>, <span class="st">'imdb_score'</span>, <span class="st">'votes'</span>, <span class="st">'plot'</span>]</span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Cleaning</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'ranking'</span>, <span class="st">'title'</span>]] <span class="op">=</span> df[<span class="st">'ranking_title'</span>].<span class="bu">str</span>.split(<span class="st">'.'</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ranking_title'</span>])</span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'ranking'</span>] <span class="op">=</span> df[<span class="st">'ranking'</span>].astype(<span class="st">'int'</span>)</span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'votes'</span>] <span class="op">=</span> df[<span class="st">'votes'</span>].<span class="bu">str</span>.replace(<span class="st">' ('</span>, <span class="st">''</span>)</span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'votes'</span>] <span class="op">=</span> df[<span class="st">'votes'</span>].<span class="bu">str</span>.replace(<span class="st">')'</span>, <span class="st">''</span>)</span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'runtime_h'</span>, <span class="st">'runtime_m'</span>]] <span class="op">=</span> df[<span class="st">'runtime'</span>].<span class="bu">str</span>.split(<span class="st">' '</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'runtime_h'</span>] <span class="op">=</span> df[<span class="st">'runtime_h'</span>].<span class="bu">str</span>.replace(<span class="st">'h'</span>, <span class="st">''</span>)</span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'runtime_m'</span>] <span class="op">=</span> df[<span class="st">'runtime_m'</span>].<span class="bu">str</span>.replace(<span class="st">'m'</span>, <span class="st">''</span>)</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'runtime_h'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'runtime_h'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'runtime_m'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'runtime_m'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'runtime'</span>] <span class="op">=</span> df[<span class="st">'runtime_h'</span>] <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> df[<span class="st">'runtime_m'</span>]</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'runtime_h'</span>, <span class="st">'runtime_m'</span>])</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'metascore'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'metascore'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>) <span class="co"># errors='coerce' to avoid an error</span></span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_score'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'imdb_score'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'is_k'</span>] <span class="op">=</span> df[<span class="st">'votes'</span>].<span class="bu">str</span>.endswith(<span class="st">'K'</span>)</span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'is_m'</span>] <span class="op">=</span> df[<span class="st">'votes'</span>].<span class="bu">str</span>.endswith(<span class="st">'M'</span>)</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'votes'</span>] <span class="op">=</span> df[<span class="st">'votes'</span>].<span class="bu">str</span>.replace(<span class="st">'K'</span>, <span class="st">''</span>).<span class="bu">str</span>.replace(<span class="st">'M'</span>, <span class="st">''</span>)</span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'votes'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'votes'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'votes'</span>] <span class="op">=</span> np.where(df[<span class="st">'is_k'</span>] <span class="op">==</span> <span class="va">True</span>, df[<span class="st">'votes'</span>] <span class="op">*</span> <span class="dv">1000</span>, df[<span class="st">'votes'</span>])</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'votes'</span>] <span class="op">=</span> np.where(df[<span class="st">'is_m'</span>] <span class="op">==</span> <span class="va">True</span>, df[<span class="st">'votes'</span>] <span class="op">*</span> <span class="dv">1000000</span>, df[<span class="st">'votes'</span>])</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'is_k'</span>, <span class="st">'is_m'</span>])</span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'year_start'</span>, <span class="st">'year_end'</span>]] <span class="op">=</span> df[<span class="st">'year'</span>].<span class="bu">str</span>.split(<span class="st">'–'</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a><span class="co"># df['year_start'] = df['year_start'].astype('int')</span></span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'year_end'</span>] <span class="op">=</span> np.where(df[<span class="st">'year_end'</span>] <span class="op">==</span> <span class="st">''</span>, <span class="st">'present'</span>, df[<span class="st">'year_end'</span>])</span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Export</span></span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a><span class="co"># df.columns</span></span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting and re-ordering columns</span></span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[[<span class="st">'ranking'</span>, <span class="st">'title'</span>, <span class="st">'year'</span>, <span class="st">'year_start'</span>, <span class="st">'year_end'</span>, <span class="st">'runtime'</span>, <span class="st">'rating'</span>, <span class="st">'metascore'</span>, <span class="st">'is_series'</span>, <span class="st">'imdb_score'</span>, <span class="st">'votes'</span>, <span class="st">'plot'</span>]]</span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a><span class="co"># Export df as CSV</span></span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>  <span class="co"># `encoding = 'utf-8-sig'` to correctly display special characters (e.g., characters with accents) </span></span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/imdb_family_2026_0309.csv'</span>, index <span class="op">=</span> <span class="va">False</span>, encoding <span class="op">=</span> <span class="st">'utf-8-sig'</span>)</span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a><span class="co"># This Section is intentionally left as blank.</span></span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 <p><br><br></p>
 </section>
 </section>
@@ -540,12 +798,12 @@ Example: <a href="https://www.espn.com/nba/salaries/_/year/2026/page/1" class="u
 </ul></li>
 <li><p>Finally, export your results:</p></li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dfs.to_csv(<span class="st">"data/nba_salary.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dfs.to_csv(<span class="st">"data/nba_salary.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="helpful-parsing-snippet-page-count" class="level3">
 <h3 class="anchored" data-anchor-id="helpful-parsing-snippet-page-count">Helpful Parsing Snippet (page count)</h3>
 <p>ESPN pagination text often looks like:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p_num <span class="op">=</span> <span class="st">"1 of 12"</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>last_page <span class="op">=</span> <span class="bu">int</span>(p_num.split(<span class="st">" of "</span>)[<span class="dv">1</span>])  <span class="co"># -&gt; 12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p_num <span class="op">=</span> <span class="st">"1 of 12"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>last_page <span class="op">=</span> <span class="bu">int</span>(p_num.split(<span class="st">" of "</span>)[<span class="dv">1</span>])  <span class="co"># -&gt; 12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Use this to determine how many pages exist for each year, rather than hard-coding page limits.</p>
 </section>
 </section>
@@ -554,11 +812,11 @@ Example: <a href="https://www.espn.com/nba/salaries/_/year/2026/page/1" class="u
 <ul>
 <li><strong>Be polite to ESPN’s servers:</strong> for <strong>each webpage visit</strong>, pause with a randomized delay before scraping (or before moving to the next page), for example:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>driver.get(url)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>time.sleep(random.uniform(<span class="dv">3</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>driver.get(url)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>time.sleep(random.uniform(<span class="dv">3</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="how-to-add-a-column-to-a-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-add-a-column-to-a-dataframe">How to Add a Column to a DataFrame</h2>
@@ -568,22 +826,22 @@ Example: <a href="https://www.espn.com/nba/salaries/_/year/2026/page/1" class="u
 <li>Assigning a single value like <code>"1999-2000"</code> will <strong>broadcast</strong> that value to <strong>every row</strong> in the DataFrame.</li>
 <li>If the column already exists, this will <strong>replace</strong> its values.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_example <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ranking"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"name_position"</span>: [<span class="st">"Stephen Curry, G"</span>, <span class="st">"Joel Embiid, C"</span>, <span class="st">"Nikola Jokic, C"</span>],</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"team"</span>: [<span class="st">"GSW"</span>, <span class="st">"PHX"</span>, <span class="st">"LAL"</span>],</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salary"</span>: [<span class="st">"$59,606,817"</span>, <span class="st">"$55,224,526"</span>, <span class="st">"$55,224,526"</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>df_example[<span class="st">"season"</span>] <span class="op">=</span> <span class="st">"2025-2026"</span>   <span class="co"># adds a new column to df</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_example <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ranking"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"name_position"</span>: [<span class="st">"Stephen Curry, G"</span>, <span class="st">"Joel Embiid, C"</span>, <span class="st">"Nikola Jokic, C"</span>],</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"team"</span>: [<span class="st">"GSW"</span>, <span class="st">"PHX"</span>, <span class="st">"LAL"</span>],</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salary"</span>: [<span class="st">"$59,606,817"</span>, <span class="st">"$55,224,526"</span>, <span class="st">"$55,224,526"</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>df_example[<span class="st">"season"</span>] <span class="op">=</span> <span class="st">"2025-2026"</span>   <span class="co"># adds a new column to df</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="helpful-data-cleaning-snippet-splitting-name_position" class="level2">
 <h2 class="anchored" data-anchor-id="helpful-data-cleaning-snippet-splitting-name_position">Helpful Data-Cleaning Snippet: Splitting <code>name_position</code></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: "Stephen Curry, G" -&gt; name="Stephen Curry", position="G"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df_example[[<span class="st">"name"</span>, <span class="st">"position"</span>]] <span class="op">=</span> df_example[<span class="st">"name_position"</span>].<span class="bu">str</span>.split(<span class="st">", "</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: drop the original combined column</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>df_example <span class="op">=</span> df_example.drop(columns<span class="op">=</span>[<span class="st">"name_position"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: "Stephen Curry, G" -&gt; name="Stephen Curry", position="G"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_example[[<span class="st">"name"</span>, <span class="st">"position"</span>]] <span class="op">=</span> df_example[<span class="st">"name_position"</span>].<span class="bu">str</span>.split(<span class="st">", "</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: drop the original combined column</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>df_example <span class="op">=</span> df_example.drop(columns<span class="op">=</span>[<span class="st">"name_position"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="replacing-values-in-a-string" class="level2">
 <h2 class="anchored" data-anchor-id="replacing-values-in-a-string">Replacing Values in a String</h2>
@@ -597,9 +855,9 @@ Example: <a href="https://www.espn.com/nba/salaries/_/year/2026/page/1" class="u
 <li>commas (<code>,</code>)</li>
 </ul>
 <p>In pandas, <code>.str.replace()</code> applies a text replacement to <strong>every value in the column</strong> (element-by-element).</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove "$" and "," so the values become plain digits like "51915615"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dfs[<span class="st">"salary"</span>] <span class="op">=</span> dfs[<span class="st">"salary"</span>].<span class="bu">str</span>.replace(<span class="st">"$"</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>dfs[<span class="st">"salary"</span>] <span class="op">=</span> dfs[<span class="st">"salary"</span>].<span class="bu">str</span>.replace(<span class="st">","</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove "$" and "," so the values become plain digits like "51915615"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dfs[<span class="st">"salary"</span>] <span class="op">=</span> dfs[<span class="st">"salary"</span>].<span class="bu">str</span>.replace(<span class="st">"$"</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dfs[<span class="st">"salary"</span>] <span class="op">=</span> dfs[<span class="st">"salary"</span>].<span class="bu">str</span>.replace(<span class="st">","</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="output-dataframe-1" class="level2">
 <h2 class="anchored" data-anchor-id="output-dataframe-1">Output DataFrame</h2>
@@ -613,8 +871,134 @@ Example: <a href="https://www.espn.com/nba/salaries/_/year/2026/page/1" class="u
 </div>
 </div>
 </div>
-<p><br><br><br></p>
+</section>
+<section id="example-answer-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-answer-1">✅ Example Answer</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, time, random</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the necessary modules from the Selenium library</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium <span class="im">import</span> webdriver  <span class="co"># Main module to control the browser</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.common.by <span class="im">import</span> By  <span class="co"># Helps locate elements on the webpage</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.chrome.options <span class="im">import</span> Options  <span class="co"># Allows setting browser options</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support.ui <span class="im">import</span> WebDriverWait</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.webdriver.support <span class="im">import</span> expected_conditions <span class="im">as</span> EC</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> NoSuchElementException</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> TimeoutException</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> selenium.common.exceptions <span class="im">import</span> StaleElementReferenceException</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the working directory path</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>wd_path <span class="op">=</span> <span class="st">'/Users/bchoe/Documents/DANL-210'</span> <span class="co"># e.g., '/Users/bchoe/Documents/DANL-210'</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>os.chdir(wd_path)  <span class="co"># Change the current working directory to wd_path</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>os.getcwd()  <span class="co"># Retrieve and return the current working directory</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance of Chrome options</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>options <span class="op">=</span> Options()</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Chrome WebDriver with the specified options</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>driver <span class="op">=</span> webdriver.Chrome(options<span class="op">=</span>options)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>driver.get(<span class="st">"https://www.espn.com/nba/salaries"</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>start_year <span class="op">=</span> <span class="dv">2018</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>end_year <span class="op">=</span> <span class="dv">2026</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> yr <span class="kw">in</span> <span class="bu">range</span>(start_year, end_year <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f"https://www.espn.com/nba/salaries/_/year/</span><span class="sc">{</span>yr<span class="sc">}</span><span class="ss">/page/</span><span class="sc">{</span>p<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>    driver.get(url)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>    time.sleep(random.uniform(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>    p_num <span class="op">=</span> driver.find_element(By.CLASS_NAME, <span class="st">"page-numbers"</span>).text</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    p_num <span class="op">=</span> <span class="bu">int</span>(p_num.split(<span class="st">' of '</span>)[<span class="dv">1</span>])</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, p_num <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>        url <span class="op">=</span> <span class="ss">f"https://www.espn.com/nba/salaries/_/year/</span><span class="sc">{</span>yr<span class="sc">}</span><span class="ss">/page/</span><span class="sc">{</span>p<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>        driver.get(url)</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>        time.sleep(random.uniform(<span class="dv">3</span>, <span class="dv">5</span>))</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>        df_list <span class="op">=</span> pd.read_html(url)</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>        df <span class="op">=</span> df_list[<span class="dv">0</span>]</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>        df[<span class="st">'season'</span>] <span class="op">=</span> <span class="bu">str</span>(yr<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> <span class="bu">str</span>(yr)</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>        dfs <span class="op">=</span> pd.concat([dfs, df], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>dfs.columns <span class="op">=</span> [<span class="st">'rank'</span>, <span class="st">'name_position'</span>, <span class="st">'team'</span>, <span class="st">'salary'</span>, <span class="st">'season'</span>]</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Cleaning</span></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows where rank != "RK"</span></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> dfs.query(<span class="st">'rank != "RK"'</span>)</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: "Stephen Curry, G" -&gt; name="Stephen Curry", position="G"</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>dfs[[<span class="st">"name"</span>, <span class="st">"position"</span>]] <span class="op">=</span> dfs[<span class="st">"name_position"</span>].<span class="bu">str</span>.split(<span class="st">", "</span>, n<span class="op">=</span><span class="dv">1</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: drop the original combined column</span></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> dfs.drop(columns<span class="op">=</span>[<span class="st">"name_position"</span>])</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> dfs.reset_index(drop <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>dfs[<span class="st">'salary'</span>] <span class="op">=</span> dfs[<span class="st">'salary'</span>].<span class="bu">str</span>.replace(<span class="st">'$'</span>, <span class="st">''</span>)</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>dfs[<span class="st">'salary'</span>] <span class="op">=</span> dfs[<span class="st">'salary'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>)</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> dfs.astype({</span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rank'</span> : <span class="st">'int'</span>,</span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">'salary'</span> : <span class="st">'int'</span></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Export</span></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> dfs[[<span class="st">'season'</span>, <span class="st">'rank'</span>, <span class="st">'name'</span>, <span class="st">'position'</span>, <span class="st">'team'</span>, <span class="st">'salary'</span>]]</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>dfs.to_csv(<span class="st">'data/nba_salaries_1999-2020_2025-2026_.csv'</span>, index <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a><span class="co"># This Section is intentionally left as blank.</span></span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 <hr>
+<p><br><br></p>
 </section>
 </section>
 <section id="end-of-homework-2" class="level1">
